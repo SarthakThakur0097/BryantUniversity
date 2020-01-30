@@ -2,20 +2,16 @@
 using BryantUniversity.Models;
 using BryantUniversity.Models.Repo;
 using BryantUniversity.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 
 namespace BryantUniversity.Controllers
 {
-    public class RegisterationController : Controller
+    public class RegistrationController : Controller
     {
         private Context context;
 
-        public RegisterationController()
+        public RegistrationController()
         {
             context = new Context();
         }
@@ -38,13 +34,14 @@ namespace BryantUniversity.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Register(UserViewModel viewModel)
         {
+            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(viewModel.Password, 12);
             if (ModelState.IsValid)
             {
                 // Create an instance of the user database model.
                 User user = new User()
                 {
                     Email = viewModel.Email,
-                    HashedPassword = viewModel.Password,
+                    HashedPassword = hashedPassword,
                     Name = viewModel.Name
                 };
 
