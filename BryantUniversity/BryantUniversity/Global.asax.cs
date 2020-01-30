@@ -16,8 +16,9 @@ namespace BryantUniversity
         {
             // Code that runs on application startup
             AreaRegistration.RegisterAllAreas();
+            GlobalFilters.Filters.Add(new System.Web.Mvc.AuthorizeAttribute());
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);            
+            RouteConfig.RegisterRoutes(RouteTable.Routes);          
         }
     }
 }

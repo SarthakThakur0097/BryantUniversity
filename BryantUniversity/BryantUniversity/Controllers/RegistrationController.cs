@@ -7,6 +7,7 @@ using System.Web.Security;
 
 namespace BryantUniversity.Controllers
 {
+    [AllowAnonymous]
     public class RegistrationController : Controller
     {
         private Context context;
