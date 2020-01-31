@@ -5,8 +5,6 @@
 
 <h2>Login</h2>
 
-
-<h2>Login</h2>
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
@@ -35,6 +33,7 @@
         </div>
     </div>
 }
+
 <div>
-    @Html.ActionLink("Register", "Register")
+    @Html.ActionLink("Account", "Register")
 </div>
