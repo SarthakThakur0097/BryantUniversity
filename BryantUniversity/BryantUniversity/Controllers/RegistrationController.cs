@@ -7,9 +7,9 @@ using System.Web.Security;
 
 namespace BryantUniversity.Controllers
 {
+    [AllowAnonymous]
     public class RegistrationController : Controller
     {
-        //For merge
         private Context context;
 
         public RegistrationController()

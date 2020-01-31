@@ -7,6 +7,8 @@ using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 using System.Web.Http;
+using System.Data.Entity;
+using BryantUniversity.Data;
 
 namespace BryantUniversity
 {
@@ -16,8 +18,10 @@ namespace BryantUniversity
         {
             // Code that runs on application startup
             AreaRegistration.RegisterAllAreas();
+            GlobalFilters.Filters.Add(new System.Web.Mvc.AuthorizeAttribute());
             GlobalConfiguration.Configure(WebApiConfig.Register);
-            RouteConfig.RegisterRoutes(RouteTable.Routes);            
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
+            Database.SetInitializer(new DatabaseIntializer());
         }
     }
 }

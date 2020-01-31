@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using BryantUniversity.Models;
 
 namespace BryantUniversity.Models.Repo
 {

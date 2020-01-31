@@ -16,6 +16,8 @@ namespace BryantUniversity.Models
         [Required]
         public string Name { get; set; }
 
+        public List<Role> Roles { get; set; }
+
         public User()
         {
 
