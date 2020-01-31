@@ -9,6 +9,7 @@ namespace BryantUniversity.Controllers
 {
     public class RegistrationController : Controller
     {
+        //For merge
         private Context context;
 
         public RegistrationController()
