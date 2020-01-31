@@ -7,6 +7,5 @@
         public int RoleId { get; set; }
         public User user { get; set; }
         public Role role { get; set; }
-        
     }
 }
