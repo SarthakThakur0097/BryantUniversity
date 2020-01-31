@@ -29,13 +29,13 @@
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    @Html.ActionLink("Academic Calendar", "Home", "Homepage", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Academic Calendar", "Calendar", "Homepage", new { area = "" }, new { @class = "navbar-brand" })
                 </li>
                 <li class="nav-item">
-                    @Html.ActionLink("Course Catalog", "Home", "Homepage", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Course Catalog", "Catalog", "Homepage", new { area = "" }, new { @class = "navbar-brand" })
                 </li>
                 <li class="nav-item">
-                    >@Html.ActionLink("Current Schedule", "Home", "Homepage", new { area = "" }, new { @class = "navbar-brand" })
+                    >@Html.ActionLink("Current Schedule", "Schedule", "Homepage", new { area = "" }, new { @class = "navbar-brand" })
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
@@ -57,7 +57,7 @@
                     <a class="nav-link" href="#">Right</a>
                 </li>
                 <li class="nav-item">
-                    <div class="col">@Html.ActionLink("Log In", "Home", "Homepage", new { area = "" }, new { @class = "navbar-brand" })</div>
+                    <div class="col">@Html.ActionLink("Log In", "Login", "Account", new { area = "" }, new { @class = "navbar-brand" })</div>
                 </li>
             </ul>
         </div>

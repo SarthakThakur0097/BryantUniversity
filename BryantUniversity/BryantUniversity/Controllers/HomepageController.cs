@@ -14,5 +14,20 @@ namespace BryantUniversity.Controllers
         {
             return View();
         }
+
+        public ActionResult Calendar()
+        {
+            return View();
+        }
+
+        public ActionResult Catalog()
+        {
+            return View();
+        }
+
+        public ActionResult Schedule()
+        {
+            return View();
+        }
     }
 }

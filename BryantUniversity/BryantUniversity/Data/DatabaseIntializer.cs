@@ -26,20 +26,11 @@ namespace BryantUniversity.Data
 
             userRoleRepo.Insert(userRole);
 
-            Role admin = new Role()
-            {
-                RoleName = "Admin"
-            };
+            Role admin = new Role("Admin");
 
-            Role faculty = new Role()
-            {
-                RoleName = "Faculty"
-            };
+            Role faculty = new Role("Faculty");
 
-            Role student = new Role()
-            {
-                RoleName = "Student"
-            };
+            Role student = new Role("Student");
 
             roleRepo.Insert(admin);
             roleRepo.Insert(faculty);

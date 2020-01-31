@@ -214,6 +214,9 @@
     <Content Include="Views\Account\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Homepage\Home.cshtml" />
+    <Content Include="Views\Homepage\Calendar.cshtml" />
+    <Content Include="Views\Homepage\Catalog.cshtml" />
+    <Content Include="Views\Homepage\Schedule.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
