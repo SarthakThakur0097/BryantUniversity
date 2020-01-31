@@ -10,7 +10,6 @@ namespace BryantUniversity.Controllers
     [AllowAnonymous]
     public class RegistrationController : Controller
     {
-        //For merge fix 2
         private Context context;
 
         public RegistrationController()
