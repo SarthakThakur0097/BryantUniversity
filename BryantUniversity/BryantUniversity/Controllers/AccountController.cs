@@ -2,32 +2,26 @@
 using BryantUniversity.Models;
 using BryantUniversity.Models.Repo;
 using BryantUniversity.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
 
 namespace BryantUniversity.Controllers
 {
-    public class LoginController : Controller
+    public class AccountController : Controller
     {
         private Context context;
 
-        public LoginController()
+        public AccountController()
         {
             context = new Context();
         }
 
-        // GET: Login
         [AllowAnonymous]
         public ActionResult Login()
         {
             var viewModel = new LoginViewModel();
             return View(viewModel);
         }
-
 
         [HttpPost]
         [AllowAnonymous]
@@ -36,14 +30,9 @@ namespace BryantUniversity.Controllers
         {
             if (ModelState.IsValidField("Email") && ModelState.IsValidField("Password"))
             {
-                // TODO Get the user record from the database by their email.
                 var userRepo = new UserRepo(context);
 
                 User user = userRepo.GetByEmail(viewModel.Email);
-
-                // If we didn't get a user back from the database
-                // or if the provided password doesn't match the password stored in the database
-                // then login failed.
                 if (user == null || !BCrypt.Net.BCrypt.Verify(viewModel.Password, user.HashedPassword))
                 {
                     ModelState.AddModelError("", "Login failed.");
@@ -52,11 +41,34 @@ namespace BryantUniversity.Controllers
 
             if (ModelState.IsValid)
             {
-                // Login the user.
+                FormsAuthentication.SetAuthCookie(viewModel.Email, false);
+                return RedirectToAction("Index", "Home");
+            }
+
+            return View(viewModel);
+        }
+
+        [AllowAnonymous]
+        public ActionResult Register()
+        {
+            var viewModel = new UserViewModel();
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [AllowAnonymous]
+        [ValidateAntiForgeryToken]
+        public ActionResult Register(UserViewModel viewModel)
+        {
+            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(viewModel.Password, 12);
+            if (ModelState.IsValid)
+            {
+                User user = new User(viewModel.Email, hashedPassword, viewModel.Name);
+                var userRepo = new UserRepo(context);
+                userRepo.Insert(user);
                 FormsAuthentication.SetAuthCookie(viewModel.Email, false);
 
-                // Send them to the home page.
-                return RedirectToAction("register", "Registration");
+                return RedirectToAction("Login", "Account");
             }
 
             return View(viewModel);
