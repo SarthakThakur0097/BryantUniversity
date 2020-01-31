@@ -35,16 +35,26 @@
                     @Html.ActionLink("Course Catalog", "Home", "Homepage", new { area = "" }, new { @class = "navbar-brand" })
                 </li>
                 <li class="nav-item">
-                    >@Html.ActionLink("Current Schedule", "Home", "Homepage", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Current Schedule", "Home", "Homepage", new { area = "" }, new { @class = "navbar-brand" })
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                    @if (Request.IsAuthenticated)
+                    {
+                        <div class="navbar-text navbar-right">
+                            <span>Welcome @(((BryantUniversity.Security.CustomPrincipal)User).Identity.Name)! </span>
+                        </div>
+                    }
                 </li>
             </ul>
         </div>
+
+
         <div class="mx-auto order-0">
             <a class="navbar-brand mx-auto" href="#">Navbar 2</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
