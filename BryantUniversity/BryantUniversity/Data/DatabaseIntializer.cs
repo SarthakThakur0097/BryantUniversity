@@ -12,7 +12,19 @@ namespace BryantUniversity.Data
     {
         protected override void Seed(Context context)
         {
+            User adminUser = new User("Admin@gmail.com", "1234", "Admin 1");
+
+            UserRepo userRepo = new UserRepo(context);
             RoleRepo roleRepo = new RoleRepo(context);
+            UserRoleRepo userRoleRepo = new UserRoleRepo(context);
+
+            userRepo.Insert(adminUser);
+
+            int adminId = userRepo.GetByEmail("Admin@gmail.com").Id;
+
+            UserRole userRole = new UserRole(adminId, 1);
+
+            userRoleRepo.Insert(userRole);
 
             Role admin = new Role()
             {
