@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace BryantUniversity.Models
+﻿namespace BryantUniversity.Models
 {
     public class UserRole
     {
@@ -12,7 +7,7 @@ namespace BryantUniversity.Models
         public int RoleId { get; set; }
         //public User user { get; set; }
         //public Role role { get; set; }
-        
+
         public UserRole(int userId, int roleId)
         {
             UserId = userId;
