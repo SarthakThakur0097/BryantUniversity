@@ -42,7 +42,8 @@ namespace BryantUniversity.Controllers
             if (ModelState.IsValid)
             {
                 FormsAuthentication.SetAuthCookie(viewModel.Email, false);
-                return RedirectToAction("Index", "Homepage");
+                FormsAuthentication.SetAuthCookie(viewModel.Email, false);
+                return RedirectToAction("Index", "Home");
             }
 
             return View(viewModel);
@@ -66,7 +67,7 @@ namespace BryantUniversity.Controllers
                 User user = new User(viewModel.Email, hashedPassword, viewModel.Name);
                 var userRepo = new UserRepo(context);
                 userRepo.Insert(user);
-                FormsAuthentication.SetAuthCookie(viewModel.Email, false);
+                
 
                 return RedirectToAction("Login", "Account");
             }
