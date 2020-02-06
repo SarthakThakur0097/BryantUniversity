@@ -8,7 +8,6 @@
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
-
     <style>
         /* Modify the background color */
 
@@ -29,13 +28,13 @@
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    @Html.ActionLink("Academic Calendar", "Home", "Homepage", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Academic Calendar", "Calendar", "Homepage", new { area = "" }, new { @class = "navbar-brand" })
                 </li>
                 <li class="nav-item">
-                    @Html.ActionLink("Course Catalog", "Home", "Homepage", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Course Catalog", "Catalog", "Homepage", new { area = "" }, new { @class = "navbar-brand" })
                 </li>
                 <li class="nav-item">
-                    @Html.ActionLink("Current Schedule", "Home", "Homepage", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("Current Schedule", "Schedule", "Homepage", new { area = "" }, new { @class = "navbar-brand" })
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
@@ -53,21 +52,19 @@
                 </li>
             </ul>
         </div>
-
-
         <div class="mx-auto order-0">
-            <a class="navbar-brand mx-auto" href="#">Navbar 2</a>
+            <img class="navbar-brand mx-auto" src="~/Resources/KobePic.png" style="width:188px;height:128px" href="#"/>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
+                @*<li class="nav-item">
                     <a class="nav-link" href="#">Right</a>
-                </li>
+                </li>*@
                 <li class="nav-item">
-                    <div class="col">@Html.ActionLink("Log In", "Home", "Homepage", new { area = "" }, new { @class = "navbar-brand" })</div>
+                    <div class="col">@Html.ActionLink("Log In", "Login", "Account", new { area = "" }, new { @class = "navbar-brand" })</div>
                 </li>
             </ul>
         </div>
@@ -79,8 +76,9 @@
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
-
+      
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/bootstrap.min.js"></script>
-</body>
+  
+  </body>
 </html>
