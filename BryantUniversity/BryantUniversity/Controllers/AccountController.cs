@@ -19,25 +19,19 @@ namespace BryantUniversity.Controllers
 
         public ActionResult Index()
         {
-            if (Request.IsAuthenticated)
+            using (context)
             {
-                using (context)
+                var userRepo = new UserRepo(context);
+                var userEmail = ((CustomPrincipal)User).Identity.Name;
+                var user = userRepo.GetByEmail(userEmail);
+                var viewModel = new UserDetailsViewModel()
                 {
-                    var userRepo = new UserRepo(context);
-                    var userEmail = ((CustomPrincipal)User).Identity.Name;
-                    var user = userRepo.GetByEmail(userEmail);
-                    var viewModel = new UserDetailsViewModel()
-                    {
-                        Email = user.Email,
-                        Name = user.Name,
-                        Roles = user.Roles
-                    };
-                    return View(viewModel);
-                }
+                    Email = user.Email,
+                    Name = user.Name,
+                    Roles = user.Roles
+                };
+                return View(viewModel);
             }
-                        //    <span>Welcome @(((BryantUniversity.Security.CustomPrincipal) User).Identity.Name)! </span>
-                        //</div>
-            return RedirectToAction("Index", "Home");
         }
 
         [AllowAnonymous]
@@ -69,6 +63,13 @@ namespace BryantUniversity.Controllers
             }
 
             return View(viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Home");
         }
 
         [AllowAnonymous]
