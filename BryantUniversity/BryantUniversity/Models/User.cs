@@ -5,9 +5,12 @@ namespace BryantUniversity.Models
 {
     public class User
     {
-        public User() { }
+        public User()
+        {
+            Roles = new List<Role>();
+        }
 
-        public User(string email, string passWord, string name)
+        public User(string email, string passWord, string name) : base()
         {
             Email = email;
             HashedPassword = passWord;
