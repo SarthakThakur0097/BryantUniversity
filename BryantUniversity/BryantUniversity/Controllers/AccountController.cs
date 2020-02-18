@@ -37,13 +37,11 @@ namespace BryantUniversity.Controllers
                 {
                     ModelState.AddModelError("", "Login failed.");
                 }
-            }
-
-            if (ModelState.IsValid)
-            {
-                FormsAuthentication.SetAuthCookie(viewModel.Email, false);
-                FormsAuthentication.SetAuthCookie(viewModel.Email, false);
-                return RedirectToAction("Index", "Home");
+                else 
+                {
+                    FormsAuthentication.SetAuthCookie(viewModel.Email, false);
+                    return RedirectToAction("Index", "Home");
+                }
             }
 
             return View(viewModel);
