@@ -9,7 +9,7 @@ namespace BryantUniversity.Controllers
     public class RoleController : Controller
     {
 
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "1")]
         public ActionResult Index()
         {
             return View();
