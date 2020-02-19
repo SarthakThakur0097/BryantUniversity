@@ -15,6 +15,11 @@ namespace BryantUniversity.Models.Repo
             _context = context;
         }
 
+        public IList<UserRole> GetAllUserRoles(int id)
+        {
+            return _context.UserRoles.Where(c => c.Id == id).ToList();
+        }
+
         public UserRole GetById(int id)
         {
             return _context.UserRoles.SingleOrDefault(c => c.Id == id);

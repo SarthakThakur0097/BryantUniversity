@@ -8,6 +8,8 @@
         //public User user { get; set; }
         //public Role role { get; set; }
 
+        public UserRole() { }
+
         public UserRole(int userId, int roleId)
         {
             UserId = userId;
