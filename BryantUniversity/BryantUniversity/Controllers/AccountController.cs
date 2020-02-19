@@ -1,6 +1,7 @@
 ﻿using BryantUniversity.Data;
 using BryantUniversity.Models;
 using BryantUniversity.Models.Repo;
+using BryantUniversity.Security;
 using BryantUniversity.ViewModels;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -14,6 +15,23 @@ namespace BryantUniversity.Controllers
         public AccountController()
         {
             context = new Context();
+        }
+
+        public ActionResult Index()
+        {
+            using (context)
+            {
+                var userRepo = new UserRepo(context);
+                var userEmail = ((CustomPrincipal)User).Identity.Name;
+                var user = userRepo.GetByEmail(userEmail);
+                var viewModel = new UserDetailsViewModel()
+                {
+                    Email = user.Email,
+                    Name = user.Name,
+                    Roles = user.Roles
+                };
+                return View(viewModel);
+            }
         }
 
         [AllowAnonymous]
@@ -37,16 +55,21 @@ namespace BryantUniversity.Controllers
                 {
                     ModelState.AddModelError("", "Login failed.");
                 }
-            }
-
-            if (ModelState.IsValid)
-            {
-                FormsAuthentication.SetAuthCookie(viewModel.Email, false);
-                FormsAuthentication.SetAuthCookie(viewModel.Email, false);
-                return RedirectToAction("Index", "Home");
+                else 
+                {
+                    FormsAuthentication.SetAuthCookie(viewModel.Email, false);
+                    return RedirectToAction("Index", "Home");
+                }
             }
 
             return View(viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Home");
         }
 
         [AllowAnonymous]

@@ -64,7 +64,19 @@
                     <a class="nav-link" href="#">Right</a>
                 </li>*@
                 <li class="nav-item">
-                    <div class="col">@Html.ActionLink("Log In", "Login", "Account", new { area = "" }, new { @class = "navbar-brand" })</div>
+                    <div class="col">
+                        @if (Request.IsAuthenticated)
+                        {
+                            using (Html.BeginForm("Logout", "Account", FormMethod.Post))
+                            {
+                                <button class="btn btn-link navbar-brand" type="submit">Log Out</button>
+                            }
+                        }
+                        else
+                        {
+                            @Html.ActionLink("Log In", "Login", "Account", new { area = "" }, new { @class = "navbar-brand" })
+                        }
+                    </div>
                 </li>
             </ul>
         </div>

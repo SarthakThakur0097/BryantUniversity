@@ -1,7 +1,31 @@
-﻿@{
+﻿@model BryantUniversity.ViewModels.UserDetailsViewModel
+
+@{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
 
-
+<h1>User Details</h1>
+<table>
+    <thead>
+        <tr>
+            <th>Key</th>
+            <th>Value</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Html.LabelFor(m => m.Email)</td>
+            <td>@Model.Email</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.Name)</td>
+            <td>@Model.Name</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(m => m.Roles)</td>
+            <td>@Model.RolesString</td>
+        </tr>
+    </tbody>
+</table>
