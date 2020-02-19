@@ -8,7 +8,7 @@ namespace BryantUniversity.Data
     {
         protected override void Seed(Context context)
         {
-            User adminUser = new User("Admin@gmail.com", "1234", "Admin 1");
+            User adminUser = new User("Admin@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Admin 1");
 
             UserRepo userRepo = new UserRepo(context);
             RoleRepo roleRepo = new RoleRepo(context);
