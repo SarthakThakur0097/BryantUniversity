@@ -5,15 +5,12 @@
 
 <h2>Calendar</h2>
 
-<div class="dropdown">
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Dropdown button
-    </button>
-    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <a id ="spring20" class="dropdown-item" href="#">Spring 2020</a>
-        <a id ="fall19" class="dropdown-item" href="#">Fall 2019</a>
-        <a id ="spring19"class="dropdown-item" href="#">Spring 2019</a>
-    </div>
-</div>
+@*@using (Html.BeginForm())
+{
+    @Html.DropDownListFor(m => m.CategoryId, Model.CategorySelectList, "Tool Type")
+    @Html.DropDownListFor(m => m.AgeId, Model.AgeSelectList, "Age")
+    @Html.TextBoxFor(m => m.ItemName)
+    <button type="submit">Submit</button>
+}*@
 
-<script src="~/Scripts/CalendarScript.js"></script>
+<script src="~/scripts/CalendarScript.js"></script>

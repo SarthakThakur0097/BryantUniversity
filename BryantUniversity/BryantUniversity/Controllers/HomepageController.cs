@@ -17,6 +17,7 @@ namespace BryantUniversity.Controllers
 
         public ActionResult Calendar()
         {
+
             return View();
         }
 

@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using BryantUniversity.Models;
 using BryantUniversity.Models.Repo;
+using System;
 
 namespace BryantUniversity.Data
 {
@@ -13,6 +14,7 @@ namespace BryantUniversity.Data
             UserRepo userRepo = new UserRepo(context);
             RoleRepo roleRepo = new RoleRepo(context);
             UserRoleRepo userRoleRepo = new UserRoleRepo(context);
+            CalendarRepo calendarRepo = new CalendarRepo(context);
 
             userRepo.Insert(adminUser);
 
@@ -31,6 +33,8 @@ namespace BryantUniversity.Data
             roleRepo.Insert(admin);
             roleRepo.Insert(faculty);
             roleRepo.Insert(student);
+
+            Calendar event1 = new Calendar(DateTime.Now.Date, "First event");
         }
     }
 }

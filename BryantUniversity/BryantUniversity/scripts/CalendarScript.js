@@ -1,5 +1,12 @@
 ﻿const gebi = (e) => document.getElementById(e);
 
-let domItem = gebi("item1")
+let dropDownMenu = gebi("dropdownMenuButton")
+let dropDownOptions = gebi("dropDownOptions")
 
-console.log(domItem)
+var selectedYear = dropDownMenu.textContent
+
+
+dropDownOptions.onclick = function () {
+
+       
+};
