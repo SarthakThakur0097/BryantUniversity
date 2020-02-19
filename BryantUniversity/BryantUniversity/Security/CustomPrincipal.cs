@@ -40,12 +40,12 @@ namespace BryantUniversity.Security
         {
             int userId = User.Id;
             UserRoleRepo userRoleRepo = new UserRoleRepo(context);
-            UserRole userRole = userRoleRepo.GetById(userId);
-            List<Role> userRoles = user.Roles;
+           
+            IList<UserRole> userRoles = userRoleRepo.GetAllUserRoles(userId);
 
             for(int i = 0; i<userRoles.Count; i++)
             {
-                if (userRoles[i].Equals(role))
+                if (userRoles[i].RoleId.ToString().Equals(role))
                 {
                     return true;
                 }
