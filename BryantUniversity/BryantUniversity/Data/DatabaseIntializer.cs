@@ -33,8 +33,7 @@ namespace BryantUniversity.Data
             roleRepo.Insert(admin);
             roleRepo.Insert(faculty);
             roleRepo.Insert(student);
-
-            Calendar event1 = new Calendar(DateTime.Now.Date, "First event");
+       
         }
     }
 }

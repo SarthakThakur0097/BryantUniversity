@@ -15,23 +15,30 @@ namespace BryantUniversity.Models.Repo
             _context = context;
         }
 
-        public IList<Calendar> GetAllCalendarEvents()
+        public IList<SemesterDetails> GetAllCalendarEvents()
         {
             return _context.CalendarEvents.ToList();
 
         }
 
-        public Calendar GetById(int id)
+        public SemesterDetails GetById(int id)
         {
             return _context.CalendarEvents.SingleOrDefault(c => c.Id == id);
         }
 
 
-        public void Update(Calendar calendar)
+        public void Update(SemesterDetails calendar)
         {
             _context.CalendarEvents.Attach(calendar);
             _context.Entry(calendar).State = System.Data.Entity.EntityState.Modified;
             _context.SaveChanges();
         }
+
+        public void Insert(SemesterDetails calendar)
+        {
+            _context.CalendarEvents.Add(calendar);
+            _context.SaveChanges();
+        }
+
     }
 }

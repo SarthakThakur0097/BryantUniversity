@@ -7,15 +7,33 @@ namespace BryantUniversity.Controllers
     public class HomeController : Controller
     {
         [AllowAnonymous]
-        public ActionResult Index()
+        public ActionResult Calendar()
         {
-            var viewModel = new LoginViewModel();
+            var viewModel = new SemesterDetailsViewModel();
+           
             return View(viewModel);
         }
 
         [HttpPost]
         [AllowAnonymous]
-        public ActionResult Index(CalendarViewModel viewModel)
+        public ActionResult Calendar(SemesterDetailsViewModel viewModel)
+        {
+                   
+            return View();
+        }
+
+        public ActionResult Home()
+        {
+            return View();
+        }
+
+       
+        public ActionResult Catalog()
+        {
+            return View();
+        }
+
+        public ActionResult Schedule()
         {
             return View();
         }

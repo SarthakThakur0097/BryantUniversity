@@ -1,0 +1,54 @@
+﻿@model BryantUniversity.ViewModels.SemesterDetailsViewModel
+@{
+    ViewBag.Title = "Calendar";
+}
+
+<h2>Calendar</h2>
+
+<div class="dropdown">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" onclick="semesterChoice()" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        Dropdown button
+    </button>
+    <div id= "dropDownOptions" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        @{ 
+            for(int i = 0; i<Model.semesterDetails.Capacity-1; i++)
+            {
+                <a href="@Model.semesterDetails[i].UrlSlug" class="dropdown-item">@Model.semesterDetails[i].Name </a>;
+            }
+        }
+        @*<a id ="spring20" class="dropdown-item" href="#">Spring 2020</a>
+        <a id ="fall19" class="dropdown-item" href="#">Fall 2019</a>
+        <a id ="spring19"class="dropdown-item" href="#">Spring 2019</a>*@
+    </div>
+</div>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>        
+            <th scope="col">Date</th>
+            <th scope="col">Academic Event</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+           
+            <td>Mark</td>
+            <td>Otto</td>
+           
+        </tr>
+        <tr>
+           
+            <td>Jacob</td>
+            <td>Thornton</td>
+            
+        </tr>
+        <tr>
+           
+            <td>Larry</td>
+            <td>the Bird</td>
+          
+        </tr>
+    </tbody>
+</table>
+
+<script src="~/scripts/CalendarScript.js"></script>
