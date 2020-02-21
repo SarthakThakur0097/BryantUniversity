@@ -27,16 +27,16 @@ namespace BryantUniversity.Models.Repo
         }
 
 
-        public void Update(SemesterDetails calendar)
+        public void Update(SemesterDetails semesterEvent)
         {
-            _context.CalendarEvents.Attach(calendar);
-            _context.Entry(calendar).State = System.Data.Entity.EntityState.Modified;
+            _context.CalendarEvents.Attach(semesterEvent);
+            _context.Entry(semesterEvent).State = System.Data.Entity.EntityState.Modified;
             _context.SaveChanges();
         }
 
-        public void Insert(SemesterDetails calendar)
+        public void Insert(SemesterDetails semesterEvent)
         {
-            _context.CalendarEvents.Add(calendar);
+            _context.CalendarEvents.Add(semesterEvent);
             _context.SaveChanges();
         }
 

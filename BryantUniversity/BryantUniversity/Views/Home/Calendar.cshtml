@@ -30,24 +30,16 @@
         </tr>
     </thead>
     <tbody>
+        @for (int i = 0; i < Model.semesterDetails.Capacity - 1; i++)
+        {
         <tr>
            
-            <td>Mark</td>
-            <td>Otto</td>
+            <td>@Model.semesterDetails[i].Date</td>
+            <td>@Model.semesterDetails[i].EventDescription</td>
            
         </tr>
-        <tr>
-           
-            <td>Jacob</td>
-            <td>Thornton</td>
-            
-        </tr>
-        <tr>
-           
-            <td>Larry</td>
-            <td>the Bird</td>
-          
-        </tr>
+        }
+
     </tbody>
 </table>
 

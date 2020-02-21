@@ -196,6 +196,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AcademicEvent.cs" />
     <Compile Include="Models\SemesterDetails.cs" />
     <Compile Include="Repo\CalendarRepo.cs" />
     <Compile Include="Repo\RoleRepo.cs" />
