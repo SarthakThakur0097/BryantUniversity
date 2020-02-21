@@ -1,4 +1,6 @@
-﻿using BryantUniversity.ViewModels;
+﻿using BryantUniversity.Data;
+using BryantUniversity.Models.Repo;
+using BryantUniversity.ViewModels;
 using System.Web.Mvc;
 
 namespace BryantUniversity.Controllers
@@ -6,11 +8,14 @@ namespace BryantUniversity.Controllers
     [AllowAnonymous]
     public class HomeController : Controller
     {
+        private Context context = new Context();
         [AllowAnonymous]
         public ActionResult Calendar()
         {
             var viewModel = new SemesterDetailsViewModel();
-           
+            CalendarRepo cRepo = new CalendarRepo(context);
+
+            viewModel.semesterDetails = cRepo.GetAllCalendarEvents();
             return View(viewModel);
         }
 
