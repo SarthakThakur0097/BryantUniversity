@@ -19,8 +19,6 @@ namespace BryantUniversity.Controllers
             return View(viewModel);
         }
 
-        [HttpPost]
-        [AllowAnonymous]
         public ActionResult Calendar(SemesterDetailsViewModel viewModel)
         {
                    
