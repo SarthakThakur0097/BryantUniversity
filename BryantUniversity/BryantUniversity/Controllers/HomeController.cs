@@ -13,8 +13,11 @@ namespace BryantUniversity.Controllers
         public ActionResult Calendar()
         {
             var viewModel = new SemesterDetailsViewModel();
-            CalendarRepo cRepo = new CalendarRepo(context);
-
+            using(context)
+            {
+                CalendarRepo cRepo = new CalendarRepo(context);
+            }
+            
             viewModel.semesterDetails = cRepo.GetAllCalendarEvents();
             return View(viewModel);
         }
