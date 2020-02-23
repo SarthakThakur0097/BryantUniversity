@@ -16,7 +16,7 @@ namespace BryantUniversity.Controllers
         {
             context = new Context();
         }
-
+    
         public ActionResult Index()
         {
             using (context)
