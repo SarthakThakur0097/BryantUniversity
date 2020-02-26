@@ -9,22 +9,22 @@
     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" onclick="semesterChoice()" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         Select A Date
     </button>
-    <div id= "dropDownOptions" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        @{ 
-            for(int i = 0; i<Model.SemesterDates.Count; i++)
+    <div id="dropDownOptions" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        @{
+            for (int i = 0; i < Model.SemesterDates.Count; i++)
             {
                 <a href="@Model.semesterDetails[i].UrlSlug" class="dropdown-item">@Model.SemesterDates[i]</a>;
             }
         }
         @*<a id ="spring20" class="dropdown-item" href="#">Spring 2020</a>
-        <a id ="fall19" class="dropdown-item" href="#">Fall 2019</a>
-        <a id ="spring19"class="dropdown-item" href="#">Spring 2019</a>*@
+            <a id ="fall19" class="dropdown-item" href="#">Fall 2019</a>
+            <a id ="spring19"class="dropdown-item" href="#">Spring 2019</a>*@
     </div>
 </div>
 
 <table class="table">
     <thead class="thead-dark">
-        <tr>        
+        <tr>
             <th scope="col">Date</th>
             <th scope="col">Academic Event</th>
         </tr>
@@ -32,12 +32,12 @@
     <tbody>
         @for (int i = 0; i < Model.semesterDetails.Count; i++)
         {
-        <tr>
-           
-            <td>@Model.semesterDetails[i].Date</td>
-            <td>@Model.semesterDetails[i].EventDescription</td>
-           
-        </tr>
+            <tr>
+
+                <td>@Model.semesterDetails[i].Date</td>
+                <td>@Model.semesterDetails[i].EventDescription</td>
+
+            </tr>
         }
 
     </tbody>

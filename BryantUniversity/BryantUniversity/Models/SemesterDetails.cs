@@ -13,8 +13,7 @@ namespace BryantUniversity.Models
         public string UrlSlug { get; set; }
         public DateTime Date { get; set; }
         public string EventDescription { get; set; }
- 
-
+        
         public SemesterDetails() { }
 
         public SemesterDetails(DateTime date, string eventDescription)

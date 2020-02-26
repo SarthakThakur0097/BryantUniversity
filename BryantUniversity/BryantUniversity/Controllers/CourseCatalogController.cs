@@ -6,10 +6,9 @@ using System.Web.Mvc;
 
 namespace BryantUniversity.Controllers
 {
-    public class RoleController : Controller
+    public class CourseCatalogController : Controller
     {
-
-        [Authorize(Roles = "1")]
+        // GET: CourseCatalog
         public ActionResult Index()
         {
             return View();

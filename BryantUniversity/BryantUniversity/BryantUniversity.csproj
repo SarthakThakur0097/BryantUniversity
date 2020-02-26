@@ -188,9 +188,9 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CalendarController.cs" />
+    <Compile Include="Controllers\CourseCatalogController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\HomepageController.cs" />
-    <Compile Include="Controllers\RoleController.cs" />
     <Compile Include="Data\Context.cs" />
     <Compile Include="Data\DatabaseIntializer.cs" />
     <Compile Include="Global.asax.cs">
@@ -230,9 +230,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Home.cshtml" />
     <Content Include="Views\Home\Calendar.cshtml" />
-    <Content Include="Views\Home\Catalog.cshtml" />
-    <Content Include="Views\Home\Schedule.cshtml" />
-    <Content Include="Views\Role\Index.cshtml" />
+    <Content Include="Views\Calendar\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -242,6 +240,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\CourseCatalog\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
