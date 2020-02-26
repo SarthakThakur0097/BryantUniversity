@@ -37,7 +37,10 @@
                     @Html.ActionLink("Current Schedule", "Schedule", "Home", new { area = "" }, new { @class = "navbar-brand" })
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    @if (Request.IsAuthenticated && ((BryantUniversity.Security.CustomPrincipal)User).IsInRole("1"))
+                    {
+                        @Html.ActionLink("Add", "Schedule", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    }
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>

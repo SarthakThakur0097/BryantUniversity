@@ -58,7 +58,7 @@ namespace BryantUniversity.Controllers
                 else 
                 {
                     FormsAuthentication.SetAuthCookie(viewModel.Email, false);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Home", "Home");
                 }
             }
 

@@ -32,7 +32,6 @@ namespace BryantUniversity.Controllers
             return View();
         }
 
-       
         public ActionResult Catalog()
         {
             return View();
