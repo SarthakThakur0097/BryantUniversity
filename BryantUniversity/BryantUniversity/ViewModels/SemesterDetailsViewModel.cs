@@ -1,8 +1,10 @@
 ﻿using BryantUniversity.Data;
 using BryantUniversity.Models;
 using BryantUniversity.Models.Repo;
+using BryantUniversity.Repo;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -12,22 +14,30 @@ namespace BryantUniversity.ViewModels
     public class SemesterDetailsViewModel
     {
         public int Id { get; set; }
+        [DisplayName("Semester: ")]
+        public int PeriodId { get; set; }
         public string Name { get; set; }
         public string UrlSlug { get; set; }
-
-        public IList<SemesterDetails> semesterDetails = new List<SemesterDetails>();
-
-        public List<string> SemesterDates;
+        
+        public IList<SemesterPeriod> SemesterPeriods { get; set; }
 
         public SemesterDetailsViewModel()
         {
-            SemesterDates = new List<string>()
+
+        }
+
+        public SelectList PeriodList
+        {
+            get
             {
-                "Fall 2020",
-                "Spring 2020",
-                "Fall 2019",
-                "Spring 2019"
-            };
+                return new SelectList(SemesterPeriods, "Id", "Period");
+            }
+        }
+
+        public void PopulateSelectList(Context context)
+        {
+            SemesterPeriodRepo srRepo = new SemesterPeriodRepo(context);
+            SemesterPeriods = srRepo.GetAllSemesterPeriods();
         }
     }
 }

@@ -1,12 +1,40 @@
-﻿const gebi = (e) => document.getElementById(e);
+﻿(async() => {
+    const gebi = (e) => document.getElementById(e);
 
-let dropDownMenu = gebi("dropdownMenuButton")
-let dropDownOptions = gebi("dropDownOptions")
+    async function changePeriod(periodId)
+    {
+        try{
+            const response = await fetch ('https://localhost:51934/api/Calendar/' + periodId ,{
+                method: "GET",
+                credentials:"include",
+                header:{
+                    "Context-Type":"application/json"
+                }
+            });
 
-var selectedYear = dropDownMenu.textContent
+            const data = await response.json();
+            console.log(data);
+            return data
+        }
+        catch(error){
+            console.log('ERROR: ' + error);
+        }
+    }
+
+    let dropDownMenu = gebi("period-list")
+    let dropDownOptions = gebi("dropDownOptions")
 
 
-dropDownOptions.onclick = function () {
+    var selectedYear = dropDownMenu.textContent
 
+    console.log(dropDownMenu)
+    dropDownMenu.onclick = function () {
+        let chosenPeriod = event.target
+        var periodId = chosenPeriod.options[chosenPeriod.selectedIndex].value
+
+        changePeriod(periodId)
+    
        
-};
+    };
+
+})();
