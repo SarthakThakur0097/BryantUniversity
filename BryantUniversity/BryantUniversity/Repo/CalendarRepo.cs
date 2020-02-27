@@ -21,9 +21,11 @@ namespace BryantUniversity.Models.Repo
 
         }
 
-        public CalendarEvent GetById(int id)
+        public IList<CalendarEvent> GetById(int periodId)
         {
-            return _context.CalendarEvents.SingleOrDefault(c => c.Id == id);
+            return _context.CalendarEvents
+                .Where(c => c.SemPeriod.Id == periodId).ToList();
+                //SingleOrDefault(c => c.Id == id);
         }
 
 
