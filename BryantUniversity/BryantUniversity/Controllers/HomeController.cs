@@ -27,7 +27,7 @@ namespace BryantUniversity.Controllers
             return View(viewModel);
         }
 
-        public ActionResult Home()
+        public ActionResult Index()
         {
             return View();
         }
