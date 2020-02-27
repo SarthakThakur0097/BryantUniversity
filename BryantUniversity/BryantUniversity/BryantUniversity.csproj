@@ -176,6 +176,7 @@
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\calendar.js" />
     <Content Include="scripts\jquery-1.10.2.js" />

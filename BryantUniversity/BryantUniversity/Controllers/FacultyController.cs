@@ -2,17 +2,12 @@
 using BryantUniversity.Models;
 using BryantUniversity.Models.Repo;
 using BryantUniversity.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace BryantUniversity.Controllers
 {
     public class FacultyController : Controller
     {
-
         private Context context;
 
         public FacultyController()
@@ -50,7 +45,7 @@ namespace BryantUniversity.Controllers
                 switch (userViewModel.RoleType)
                 {
                     case RoleType.Admin:
-                        userRole = new UserRole(userId, 1);
+                         userRole = new UserRole(userId, 1);
                         break;
                     case RoleType.Faculty:
                         userRole = new UserRole(userId, 2);
