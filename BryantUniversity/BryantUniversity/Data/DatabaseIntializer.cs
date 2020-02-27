@@ -28,6 +28,8 @@ namespace BryantUniversity.Data
 
             Role faculty = new Role("Faculty");
 
+            Role researcher = new Role("Researcher");
+
             Role student = new Role("Student");
 
             var event1 = new DateTime(2020, 1, 2);
@@ -78,6 +80,7 @@ namespace BryantUniversity.Data
 
             roleRepo.Insert(admin);
             roleRepo.Insert(faculty);
+            roleRepo.Insert(researcher);
             roleRepo.Insert(student);
        
         }

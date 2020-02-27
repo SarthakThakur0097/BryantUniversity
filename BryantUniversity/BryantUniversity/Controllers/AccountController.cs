@@ -69,7 +69,7 @@ namespace BryantUniversity.Controllers
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Home", "Home");
         }
 
         [AllowAnonymous]
