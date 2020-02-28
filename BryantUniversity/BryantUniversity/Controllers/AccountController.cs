@@ -90,7 +90,6 @@ namespace BryantUniversity.Controllers
                 User user = new User(viewModel.Email, hashedPassword, viewModel.Name);
                 var userRepo = new UserRepo(context);
                 userRepo.Insert(user);
-                
 
                 return RedirectToAction("Login", "Account");
             }
