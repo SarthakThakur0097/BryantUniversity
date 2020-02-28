@@ -40,26 +40,25 @@ namespace BryantUniversity.Controllers
             return View("Index", viewModel);
         }
 
-        [HttpGet]
         public ActionResult Create()
         {
-            CourseViewModel formModel = new CourseViewModel();
-            return View("Create", formModel);
+            var viewModel = new CourseViewModel();
+            return View(viewModel);
         }
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Course formModel)
+        public ActionResult Create(CourseViewModel formModel)
         {
             CoursesRepo courseRepo;
-
             using (context)
             {
                 courseRepo = new CoursesRepo(context);
 
                 try
                 {
-                    var course = new Course(formModel.CourseTitle, formModel.Description, formModel.Credits, formModel.Level);
+                    var course = new Course(0,formModel.CourseTitle, formModel.Description, formModel.Credits, formModel.Level);
                     courseRepo.Insert(course);
 
                     return RedirectToAction("Index");
