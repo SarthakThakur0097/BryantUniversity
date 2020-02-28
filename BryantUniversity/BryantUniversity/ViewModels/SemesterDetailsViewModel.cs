@@ -18,7 +18,8 @@ namespace BryantUniversity.ViewModels
         public int PeriodId { get; set; }
         public string Name { get; set; }
         public string UrlSlug { get; set; }
-        
+        public IList<CalendarEvent> CalendarEvents { get; set; }
+
         public IList<SemesterPeriod> SemesterPeriods { get; set; }
 
         public SemesterDetailsViewModel()

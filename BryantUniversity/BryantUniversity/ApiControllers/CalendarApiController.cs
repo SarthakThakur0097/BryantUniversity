@@ -23,7 +23,6 @@ namespace BryantUniversity.ApiControllers
         
         // GET: CalendarApi
 
-
         [Route("{periodId}")]
         [HttpPost]
         public IHttpActionResult ChangePeriod(int periodId)

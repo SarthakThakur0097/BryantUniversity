@@ -18,7 +18,6 @@ namespace BryantUniversity.Models.Repo
         public IList<Role> GetAllUsers()
         {
             return _context.Roles.ToList();
-
         }
 
         public Role GetById(int id)
