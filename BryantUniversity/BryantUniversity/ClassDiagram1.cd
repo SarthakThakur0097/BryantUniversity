@@ -1,0 +1,188 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BryantUniversity.RouteConfig" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\RouteConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BryantUniversity.UnityConfig" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\UnityConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BryantUniversity.WebApiConfig" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\WebApiConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BryantUniversity.Global" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAEAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BryantUniversity.Controllers.AccountController" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAIAAAABAAAAAAEQAAAAAAA=</HashCode>
+      <FileName>Controllers\AccountController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BryantUniversity.Controllers.CalendarController" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\CalendarController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BryantUniversity.Controllers.CourseCatalogController" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\CourseCatalogController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BryantUniversity.Controllers.FacultyController" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\FacultyController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BryantUniversity.Controllers.HomeController" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAABAEQAAAAEAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BryantUniversity.Data.Context" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAEgQAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\Context.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BryantUniversity.Data.DatabaseIntializer" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Data\DatabaseIntializer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BryantUniversity.Models.Role" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Models\Role.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BryantUniversity.Models.SemesterDetails" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAABAAgAAIAAAAA=</HashCode>
+      <FileName>Models\SemesterDetails.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BryantUniversity.Models.User" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAAAAAAAAAAAAQgAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\User.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BryantUniversity.Models.UserRole" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAIAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\UserRole.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BryantUniversity.Models.Repo.CalendarRepo" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAABAAAAACAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Repo\CalendarRepo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BryantUniversity.Models.Repo.RoleRepo" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAEAAIA=</HashCode>
+      <FileName>Repo\RoleRepo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BryantUniversity.Models.Repo.UserRepo" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAABAAAAAAAAAAAAACAAAAAAAAAAAEAAIA=</HashCode>
+      <FileName>Repo\UserRepo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BryantUniversity.Models.Repo.UserRoleRepo" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAAAAAABAAAAAAAAAAAAAAAAAAAAAABAAAAAIA=</HashCode>
+      <FileName>Repo\UserRoleRepo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BryantUniversity.Security.CustomIdentity" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAAAACAAAAAQgAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Security\CustomIdentity.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BryantUniversity.Security.CustomPrincipal" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAACAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAQA=</HashCode>
+      <FileName>Security\CustomPrincipal.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="BryantUniversity.ViewModels.LoginViewModel" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\LoginViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BryantUniversity.ViewModels.SemesterDetailsViewModel" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAACAAAAAAAAAAAAAAQAAAAAAAAAACgAAAAAAAA=</HashCode>
+      <FileName>ViewModels\SemesterDetailsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BryantUniversity.ViewModels.UserDetailsViewModel" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAEAQAAgAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\UserDetailsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BryantUniversity.ViewModels.UserViewModel" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACIAAAAAACAAAAAAAAAAAAQAAAAAAAACAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\UserViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="BryantUniversity.Models.RoleType" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAIAAAAABAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\RoleType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

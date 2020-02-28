@@ -18,12 +18,11 @@ namespace BryantUniversity.Controllers
         }
 
 
-        public ActionResult Home()
+        public ActionResult Index()
         {
             return View();
         }
 
-       
         public ActionResult Catalog()
         {
             return View();
