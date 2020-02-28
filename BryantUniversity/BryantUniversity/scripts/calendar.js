@@ -4,8 +4,8 @@
     async function changePeriod(periodId)
     {
         try{
-            const response = await fetch ('https://localhost:51934/api/Calendar/' + periodId ,{
-                method: "GET",
+            const response = await fetch ('http://localhost:51934/api/Calendar/' + periodId ,{
+                method: "POST",
                 credentials:"include",
                 header:{
                     "Context-Type":"application/json"
