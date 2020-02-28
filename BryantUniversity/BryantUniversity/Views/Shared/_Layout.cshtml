@@ -12,19 +12,27 @@
         /* Modify the background color */
 
         .navbar-custom {
-            background-color: mediumpurple
+            background-color: #552583;
+            margin-top: 0;
         }
             /* Modify brand and text color */
 
-            .navbar-custom .navbar-brand,
-            .navbar-custom .navbar-text {
-                color: black;
-            }
+        .navbar-custom .navbar-brand,
+        .navbar-custom .navbar-text {
+            color: #fdb927;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        /*#username::after{
+            content: url(../../Resources/KobePic2.png);
+        }*/
+
     </style>
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark navbar-custom">
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
@@ -37,7 +45,10 @@
                     @Html.ActionLink("Current Schedule", "Schedule", "Home", new { area = "" }, new { @class = "navbar-brand" })
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    @if (Request.IsAuthenticated && ((BryantUniversity.Security.CustomPrincipal)User).IsInRole("1"))
+                    {
+                        @Html.ActionLink("Create Users", "Create", "Faculty", new { area = "" }, new { @class = "navbar-brand" })
+                    }
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
@@ -45,8 +56,8 @@
                 <li class="nav-item">
                     @if (Request.IsAuthenticated)
                     {
-                        <div class="navbar-text navbar-right">
-                            <span>Welcome @(((BryantUniversity.Security.CustomPrincipal)User).Identity.Name)! </span>
+                        <div class="navbar-text navbar-right" id="username">
+                            <span>Welcome @(((BryantUniversity.Security.CustomPrincipal)User).User.Name)! </span>
                         </div>
                     }
                 </li>
@@ -69,7 +80,7 @@
                         {
                             using (Html.BeginForm("Logout", "Account", FormMethod.Post))
                             {
-                                <button class="btn btn-link navbar-brand" type="submit">Log Out</button>
+                                <button class="btn navbar-brand" type="submit">Log Out</button>
                             }
                         }
                         else
@@ -85,7 +96,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Mamba University</p>
         </footer>
     </div>
       
