@@ -1,33 +1,35 @@
 ﻿using BryantUniversity.Data;
+using BryantUniversity.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace BryantUniversity.Models.Repo
+namespace BryantUniversity.Repo
 {
-    public class RoleRepo
+    public class SemesterPeriodRepo
     {
         private Context _context;
 
-        public RoleRepo(Context context)
+        public SemesterPeriodRepo(Context context)
         {
             _context = context;
         }
 
-        public IList<Role> GetAllUsers()
+        public IList<SemesterPeriod> GetAllSemesterPeriods()
         {
-            return _context.Roles.ToList();
+            return _context.SemesterPeriods.ToList();
+
         }
 
-        public Role GetById(int id)
+        public SemesterPeriod GetById(int id)
         {
-            return _context.Roles.SingleOrDefault(c => c.Id == id);
+            return _context.SemesterPeriods.SingleOrDefault(c => c.Id == id);
         }
 
-        public void Insert(Role role)
+        public void Insert(SemesterPeriod semesterPeriod)
         {
-            _context.Roles.Add(role);
+            _context.SemesterPeriods.Add(semesterPeriod);
             _context.SaveChanges();
         }
 

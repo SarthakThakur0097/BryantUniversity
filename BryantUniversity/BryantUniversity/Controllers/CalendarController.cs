@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using BryantUniversity.Data;
+using BryantUniversity.Repo;
 
 namespace BryantUniversity.Controllers
 {
@@ -20,8 +21,10 @@ namespace BryantUniversity.Controllers
         {
             var viewModel = new SemesterDetailsViewModel();
             CalendarRepo cRepo = new CalendarRepo(context);
+            SemesterPeriodRepo spRepo = new SemesterPeriodRepo(context);
+            
+            viewModel.PopulateSelectList(context);
 
-            viewModel.semesterDetails = cRepo.GetAllCalendarEvents();
             return View(viewModel);
   
         }

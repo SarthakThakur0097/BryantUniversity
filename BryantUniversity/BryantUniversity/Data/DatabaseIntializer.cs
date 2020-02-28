@@ -32,18 +32,24 @@ namespace BryantUniversity.Data
             var event14 = new DateTime(2020, 3, 23);
             var event15 = new DateTime(2020, 3, 25);
 
-            SemesterDetails semEvent1 = new SemesterDetails(event1, "Continual registration for Spring 2020 for all students on the Web");
-            SemesterDetails semEvent2 = new SemesterDetails(event2, "Advising for All students 10am – 6pm");
-            SemesterDetails semEvent3 = new SemesterDetails(event3, "Advising for all students 10 A.M. – 4 P.M.");
-            SemesterDetails semEvent4 = new SemesterDetails(event4, "Advising for All students 10am – 3pm");
-            SemesterDetails semEvent5 = new SemesterDetails(event5, "Residence Halls Open");
-            SemesterDetails semEvent6 = new SemesterDetails(event6, "Martin Luther King, Jr. Birthday observed");
-            SemesterDetails semEvent7 = new SemesterDetails(event7, "Spring 2020 Classes begin");
-            SemesterDetails semEvent8 = new SemesterDetails(event8, "Add/Drop (no fee)/Late Registration ($50 fee) on the Web ");
-            SemesterDetails semEvent9 = new SemesterDetails(event9, "Lincoln’s Birthday – classes in session; offices minimally staffed");
-            SemesterDetails semEvent10 = new SemesterDetails(event10, "	President’s Day – no classes; offices closed");
-            SemesterDetails semEvent11 = new SemesterDetails(event11, "Applications for graduation (Registrar’s office) due from candidates who expect to complete requirements by May 2020");
-            SemesterDetails semEvent12 = new SemesterDetails(event12, "	Advising begins in department offices for Fall 2020 registration (By appointment)");
+
+            SemesterPeriod Fall2020 = new SemesterPeriod("Fall 2020");
+            SemesterPeriod Spring2020 = new SemesterPeriod("Spring 2019");
+            SemesterPeriod Fall2019 = new SemesterPeriod("Fall 2019");
+            SemesterPeriod Spring2019 = new SemesterPeriod("Spring 2019");
+
+            CalendarEvent semEvent1 = new CalendarEvent(event1, "Continual registration for Spring 2020 for all students on the Web", Fall2020);
+            CalendarEvent semEvent2 = new CalendarEvent(event2, "Advising for All students 10am – 6pm", Spring2020);
+            CalendarEvent semEvent3 = new CalendarEvent(event3, "Advising for all students 10 A.M. – 4 P.M.", Fall2019);
+            CalendarEvent semEvent4 = new CalendarEvent(event4, "Advising for All students 10am – 3pm", Fall2020);
+            CalendarEvent semEvent5 = new CalendarEvent(event5, "Residence Halls Open", Fall2020);
+            CalendarEvent semEvent6 = new CalendarEvent(event6, "Martin Luther King, Jr. Birthday observed", Fall2020);
+            CalendarEvent semEvent7 = new CalendarEvent(event7, "Spring 2020 Classes begin", Fall2020);
+            CalendarEvent semEvent8 = new CalendarEvent(event8, "Add/Drop (no fee)/Late Registration ($50 fee) on the Web ", Fall2020);
+            CalendarEvent semEvent9 = new CalendarEvent(event9, "Lincoln’s Birthday – classes in session; offices minimally staffed", Fall2020);
+            CalendarEvent semEvent10 = new CalendarEvent(event10, "	President’s Day – no classes; offices closed", Fall2020);
+            CalendarEvent semEvent11 = new CalendarEvent(event11, "Applications for graduation (Registrar’s office) due from candidates who expect to complete requirements by May 2020", Fall2020);
+            CalendarEvent semEvent12 = new CalendarEvent(event12, "	Advising begins in department offices for Fall 2020 registration (By appointment)", Fall2020);
 
             context.Users.Add(adminUser);
             context.UserRoles.Add(userRole);
@@ -52,7 +58,7 @@ namespace BryantUniversity.Data
             context.Roles.Add(faculty);
             context.Roles.Add(researcher);
             context.Roles.Add(student);
-
+            
             context.CalendarEvents.Add(semEvent1);
             context.CalendarEvents.Add(semEvent2);
             context.CalendarEvents.Add(semEvent3);
@@ -67,6 +73,7 @@ namespace BryantUniversity.Data
             context.CalendarEvents.Add(semEvent12);
 
             context.SaveChanges();
+
         }
     }
 }

@@ -17,15 +17,6 @@ namespace BryantUniversity.Controllers
             return View();
         }
 
-        [HttpGet]
-        public ActionResult Calendar()
-        {
-            var viewModel = new SemesterDetailsViewModel();
-            CalendarRepo cRepo = new CalendarRepo(context);
-
-            viewModel.semesterDetails = cRepo.GetAllCalendarEvents();
-            return View(viewModel);
-        }
 
         public ActionResult Index()
         {
