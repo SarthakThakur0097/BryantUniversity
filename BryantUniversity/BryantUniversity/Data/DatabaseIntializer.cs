@@ -65,6 +65,8 @@ namespace BryantUniversity.Data
             context.CalendarEvents.Add(semEvent10);
             context.CalendarEvents.Add(semEvent11);
             context.CalendarEvents.Add(semEvent12);
+
+            context.SaveChanges();
         }
     }
 }

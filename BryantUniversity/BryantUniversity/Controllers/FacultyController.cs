@@ -27,6 +27,7 @@ namespace BryantUniversity.Controllers
             return View(userViewModel);
         }
 
+        [ValidateAntiForgeryToken]
         [HttpPost]
         public ActionResult Create(UserViewModel userViewModel)
         {
@@ -38,7 +39,7 @@ namespace BryantUniversity.Controllers
                 repository.Insert(user);
 
                 var roleRepo = new UserRoleRepo(context);
-                UserRole userRole = new UserRole();
+                UserRole userRole;
 
                 int userId = repository.GetById(user.Id).Id;
 
@@ -57,6 +58,7 @@ namespace BryantUniversity.Controllers
                         userRole = new UserRole(userId, 4);
                         break;
                     default:
+                        userRole = new UserRole();
                         break;
                 }
 
