@@ -35,7 +35,13 @@ namespace BryantUniversity.Controllers
             {
                 string hashedPassword = BCrypt.Net.BCrypt.HashPassword(userViewModel.Password);
                 User user = new User(userViewModel.Email, hashedPassword, userViewModel.Name);
-                var repository = new UserRepo(context);
+                UserRepo repository;
+
+                using (context)
+                {
+                    repository = new UserRepo(context);
+                }
+
                 repository.Insert(user);
 
                 var roleRepo = new UserRoleRepo(context);

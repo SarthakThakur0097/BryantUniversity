@@ -24,7 +24,7 @@
     }
 
     function resetList(){
-        var container = gebi("tableContainer");
+        let container = gebi("tableContainer");
         container.innerHTML =
         `<table id="list" class="pure-table pure-table-horizontal">
       <thead>
@@ -54,16 +54,15 @@
         let rows = table.getElementsByTagName("tr");
         rows[0].style.display = "";
 
-        var childNodes = table.childNodes
+        let childNodes = table.childNodes
         console.log("Body: ");
         console.log(childNodes);
         let tableHead = childNodes[1];
         tableHead.className = "thead-dark"
-        var tbody = childNodes[3];
+        let tbody = childNodes[3];
         console.log(tbody)
         let tableRow = childNodes[1].childNodes[1];
-
-        var headers = '<th scope="col">Date</th> <th scope="col">Academic Event</th>'
+        let headers = '<th scope="col">Date</th> <th scope="col">Academic Event</th>'
 
         tableRow.innerHTML = headers;
 
@@ -80,12 +79,12 @@
 
     let dropDownMenu = gebi("period-list")
     let dropDownOptions = gebi("dropDownOptions")
-    var selectedYear = dropDownMenu.textContent
+    let selectedYear = dropDownMenu.textContent
 
     console.log(dropDownMenu)
     dropDownMenu.onclick = function () {
         let chosenPeriod = event.target
-        var periodId = chosenPeriod.options[chosenPeriod.selectedIndex].value
+        let periodId = chosenPeriod.options[chosenPeriod.selectedIndex].value
 
         updateList(changePeriod(periodId));
     };
