@@ -27,8 +27,11 @@ namespace BryantUniversity.ApiControllers
         [HttpPost]
         public IHttpActionResult ChangePeriod(int periodId)
         {
-            CalendarRepo cRepo = new CalendarRepo(context);
-
+            CalendarRepo cRepo;
+            using (context)
+            {
+                cRepo = new CalendarRepo(context);
+            }
             return Ok(cRepo.GetById(periodId));
         }
     }

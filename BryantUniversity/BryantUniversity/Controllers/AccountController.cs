@@ -88,7 +88,11 @@ namespace BryantUniversity.Controllers
             if (ModelState.IsValid)
             {
                 User user = new User(viewModel.Email, hashedPassword, viewModel.Name);
-                var userRepo = new UserRepo(context);
+                UserRepo userRepo;
+                using (context)
+                {
+                    userRepo = new UserRepo(context);
+                }
                 userRepo.Insert(user);
 
                 return RedirectToAction("Login", "Account");

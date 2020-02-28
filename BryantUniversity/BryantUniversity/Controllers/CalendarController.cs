@@ -20,9 +20,14 @@ namespace BryantUniversity.Controllers
         public ActionResult Index()
         {
             var viewModel = new SemesterDetailsViewModel();
-            CalendarRepo cRepo = new CalendarRepo(context);
-            SemesterPeriodRepo spRepo = new SemesterPeriodRepo(context);
-            
+            CalendarRepo cRepo;
+            SemesterPeriodRepo spRepo;
+            using (context)
+            {
+                cRepo = new CalendarRepo(context);
+                spRepo = new SemesterPeriodRepo(context);
+            }
+                 
             viewModel.PopulateSelectList(context);
 
             return View(viewModel);
