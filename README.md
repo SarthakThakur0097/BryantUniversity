@@ -1,1 +1,1 @@
-# BryantRepository
+# BryantUniversity
