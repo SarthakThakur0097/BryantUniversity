@@ -16,7 +16,7 @@ namespace BryantUniversity.ViewModels
         public string Password { get; set; }
         [Required]
         public string Name { get; set; }
-
+        public IList<UserRole> Users { get; set; }
         public RoleType RoleType { get; set; }
 
         public SelectList RoleTypeList
