@@ -27,6 +27,21 @@ namespace BryantUniversity.Models.Repo
             return _context.Users.SingleOrDefault(c => c.Id == id);
         }
 
+        public User GetByIdAndRole(int id, string role)
+        {
+
+            return _context.Users.Join(
+            _context.UserRoles,
+            user => user.Id,
+            usersRole => usersRole.UserId,
+            (user, usersRole) => new
+            {
+                userId = user.Id.
+                roleName = user.Name
+
+            }).ToList();
+        }
+
         public User GetByEmail(string email)
         {
             return _context.Users.SingleOrDefault(c => c.Email == email);
