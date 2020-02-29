@@ -1,0 +1,42 @@
+﻿@model BryantUniversity.ViewModels.CourseViewModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<h1>Add a course</h1>
+
+
+@using (Html.BeginForm("Create", "Courses", FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
+{
+    @Html.AntiForgeryToken()
+
+    <fieldset>
+        <div class="pure-control-group">
+            @Html.LabelFor(model => model.CourseTitle)
+            @Html.EditorFor(model => model.CourseTitle)
+            @Html.ValidationMessageFor(model => model.CourseTitle, "", new { @class = "pure-form-message-inline" })
+        </div>
+
+        <div class="pure-controls">
+            @Html.LabelFor(model => model.Description)
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "pure-form-message-inline" })
+        </div>
+
+        <div class="pure-controls">
+            @Html.LabelFor(model => model.Credits)
+            @Html.EditorFor(model => model.Credits) 
+            @Html.ValidationMessageFor(model => model.Credits, "", new { @class = "pure-form-message-inline" })
+        </div>
+
+        <div class="pure-controls">
+            @Html.LabelFor(model => model.Level)
+            @Html.EditorFor(model => model.Level) Is active
+            @Html.ValidationMessageFor(model => model.Level, "", new { @class = "pure-form-message-inline" })
+        </div>
+        <div class="pure-controls">
+            @Html.ActionLink("Cancel", "Index", new { }, new { @class = "pure-button" })
+            <button type="submit" class="pure-button pure-button-primary">Submit</button>
+        </div>
+    </fieldset>
+}

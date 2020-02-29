@@ -40,35 +40,37 @@ namespace BryantUniversity.Controllers
                 using (context)
                 {
                     repository = new UserRepo(context);
+
+
+                    repository.Insert(user);
+
+                    var roleRepo = new UserRoleRepo(context);
+                    UserRole userRole;
+
+                    int userId = repository.GetById(user.Id).Id;
+
+                    switch (userViewModel.RoleType)
+                    {
+                        case RoleType.Admin:
+                            userRole = new UserRole(userId, 1);
+                            break;
+                        case RoleType.Faculty:
+                            userRole = new UserRole(userId, 2);
+                            break;
+                        case RoleType.Researcher:
+                            userRole = new UserRole(userId, 3);
+                            break;
+                        case RoleType.Student:
+                            userRole = new UserRole(userId, 4);
+                            break;
+                        default:
+                            userRole = new UserRole();
+                            break;
+
+                    }
+
+                    roleRepo.Insert(userRole);
                 }
-
-                repository.Insert(user);
-
-                var roleRepo = new UserRoleRepo(context);
-                UserRole userRole;
-
-                int userId = repository.GetById(user.Id).Id;
-
-                switch (userViewModel.RoleType)
-                {
-                    case RoleType.Admin:
-                         userRole = new UserRole(userId, 1);
-                        break;
-                    case RoleType.Faculty:
-                        userRole = new UserRole(userId, 2);
-                        break;
-                    case RoleType.Researcher:
-                        userRole = new UserRole(userId, 3);
-                        break;
-                    case RoleType.Student:
-                        userRole = new UserRole(userId, 4);
-                        break;
-                    default:
-                        userRole = new UserRole();
-                        break;
-                }
-
-                roleRepo.Insert(userRole);
                 return RedirectToAction("Index", "Home");
             }
 

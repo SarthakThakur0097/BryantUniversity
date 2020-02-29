@@ -44,15 +44,17 @@
                 <li class="nav-item">
                     @Html.ActionLink("Current Schedule", "Schedule", "Home", new { area = "" }, new { @class = "navbar-brand" })
                 </li>
-                <li class="nav-item">
-                    @if (Request.IsAuthenticated && ((BryantUniversity.Security.CustomPrincipal)User).IsInRole("1"))
-                    {
+                @if (Request.IsAuthenticated && ((BryantUniversity.Security.CustomPrincipal)User).IsInRole("1"))
+                {
+                    <li class="nav-item">
+                   
                         @Html.ActionLink("Create Users", "Create", "Faculty", new { area = "" }, new { @class = "navbar-brand" })
-                    }
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
+                    </li>
+
+                    <li class="nav-item">
+                        @Html.ActionLink("Add Courses", "Create", "Courses", new { area = "" }, new { @class = "navbar-brand" })
+                    </li>
+                }
                 <li class="nav-item">
                     @if (Request.IsAuthenticated)
                     {

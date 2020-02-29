@@ -1,0 +1,44 @@
+﻿@model BryantUniversity.ViewModels.CourseViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Courses</h2>
+
+<p>
+    @Html.ActionLink("Create a course", "Create", new { }, new { @class = "pure-button pure-button-primary" })
+</p>
+
+<table class="pure-table pure-table-bordered">
+    <thead>
+        <tr>
+            <th>Course ID</th>
+            <th>Description</th>
+            <th>Credits</th>
+            <th>Level</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var course in Model.Courses)
+            {
+            <tr>
+                <td>@course.Id</td>
+                <td>@course.CourseTitle</td>
+                <td>@course.Description</td>
+                <td>@course.Credits</td>
+                <td>@course.Level</td>
+
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { Id = course.Id })
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
+
