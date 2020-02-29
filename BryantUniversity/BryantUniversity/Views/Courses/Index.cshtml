@@ -23,27 +23,17 @@
         @foreach (var course in Model.Courses)
             {
             <tr>
-                <td>course.Id</td>
+                <td>@course.Id</td>
+                <td>@course.CourseTitle</td>
+                <td>@course.Description</td>
+                <td>@course.Credits</td>
+                <td>@course.Level</td>
 
-            </tr>
-            <tr>
-                <td>course.CourseTitle</td>
-            </tr>
-            <tr>
-                <td>course.Description</td>
-
-            </tr>
-            <tr>
-                <td>course.Credits</td>
-
-            </tr>
-            <tr>
-                <td>course.Level</td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { Id = course.Id })
                 </td>
-            </tr>
 
+            </tr>
         }
     </tbody>
 </table>
