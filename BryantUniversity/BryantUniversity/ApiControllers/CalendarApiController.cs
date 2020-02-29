@@ -1,4 +1,5 @@
 ﻿using BryantUniversity.Data;
+using BryantUniversity.Models;
 using BryantUniversity.Models.Repo;
 using System;
 using System.Collections.Generic;
@@ -28,11 +29,13 @@ namespace BryantUniversity.ApiControllers
         public IHttpActionResult ChangePeriod(int periodId)
         {
             CalendarRepo cRepo;
+            IList<CalendarEvent> allEvents;
             using (context)
             {
                 cRepo = new CalendarRepo(context);
+                allEvents = cRepo.GetById(periodId);
             }
-            return Ok(cRepo.GetById(periodId));
+            return Ok(allEvents);
         }
     }
 }
