@@ -27,20 +27,20 @@ namespace BryantUniversity.Models.Repo
             return _context.Users.SingleOrDefault(c => c.Id == id);
         }
 
-        public User GetByIdAndRole(int id, string role)
-        {
+        //public User GetByIdAndRole(int id, string role)
+        //{
 
-            return _context.Users.Join(
-            _context.UserRoles,
-            user => user.Id,
-            usersRole => usersRole.UserId,
-            (user, usersRole) => new
-            {
-                userId = user.Id.
-                roleName = user.Name
+        //    return _context.Users.Join(
+        //    _context.UserRoles,
+        //    user => user.Id,
+        //    usersRole => usersRole.UserId,
+        //    (user, usersRole) => new
+        //    {
+        //        //userId = user.Id.
+        //        //roleName = user.Name
 
-            }).ToList();
-        }
+        //    }).ToList();
+        //}
 
         public User GetByEmail(string email)
         {
