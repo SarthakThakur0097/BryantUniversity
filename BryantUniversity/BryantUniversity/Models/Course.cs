@@ -19,8 +19,9 @@ namespace BryantUniversity.Models
 
         public Course() { }
 
-        public Course(int Id, string courseTitle, string description, int credits, string level)
+        public Course(int id, string courseTitle, string description, int credits, string level)
         {
+            Id = id;
             CourseTitle = courseTitle;
             Description = description;
             Credits = credits;

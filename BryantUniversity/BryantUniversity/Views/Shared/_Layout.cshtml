@@ -35,34 +35,34 @@
     <nav class="navbar navbar-expand-md navbar-dark navbar-custom">
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    @Html.ActionLink("Academic Calendar", "Index", "Calendar", new { area = "" }, new { @class = "navbar-brand" })
-                </li>
-                <li class="nav-item">
-                    @Html.ActionLink("Course Catalog", "Index", "CourseCatalog", new { area = "" }, new { @class = "navbar-brand" })
-                </li>
-                <li class="nav-item">
-                    @Html.ActionLink("Current Schedule", "Schedule", "Home", new { area = "" }, new { @class = "navbar-brand" })
-                </li>
                 @if (Request.IsAuthenticated && ((BryantUniversity.Security.CustomPrincipal)User).IsInRole("1"))
                 {
-                    <li class="nav-item">
-                   
-                        @Html.ActionLink("Create Users", "Create", "Faculty", new { area = "" }, new { @class = "navbar-brand" })
+                    <li class="nav-item active">
+                        @Html.ActionLink("Users", "Index", "Faculty", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
-
                     <li class="nav-item">
-                        @Html.ActionLink("Add Courses", "Create", "Courses", new { area = "" }, new { @class = "navbar-brand" })
+                        @Html.ActionLink("Courses", "Create", "Courses", new { area = "" }, new { @class = "navbar-brand" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Manage Holds", "Create", "Courses", new { area = "" }, new { @class = "navbar-brand" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Students", "Index", "Courses", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
                 }
-                <li class="nav-item">
-                    @if (Request.IsAuthenticated)
-                    {
-                        <div class="navbar-text navbar-right" id="username">
-                            <span>Welcome @(((BryantUniversity.Security.CustomPrincipal)User).User.Name)! </span>
-                        </div>
-                    }
-                </li>
+                else
+                {
+                    <li class="nav-item active">
+                        @Html.ActionLink("Academic Calendar", "Index", "Calendar", new { area = "" }, new { @class = "navbar-brand" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Course Catalog", "Index", "CourseCatalog", new { area = "" }, new { @class = "navbar-brand" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Current Schedule", "Schedule", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    </li>
+                }
+               
             </ul>
         </div>
         <div class="mx-auto order-0">
@@ -73,9 +73,17 @@
         </div>
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <ul class="navbar-nav ml-auto">
-                @*<li class="nav-item">
-                    <a class="nav-link" href="#">Right</a>
-                </li>*@
+
+            <li class="nav-item">
+                <div>
+                    @if (Request.IsAuthenticated)
+                    {
+                        <div class="navbar-text navbar-right" id="username">
+                            <span>Welcome @(((BryantUniversity.Security.CustomPrincipal)User).User.Name)! </span>
+                        </div>
+                    }
+                </div>
+                </li>
                 <li class="nav-item">
                     <div class="col">
                         @if (Request.IsAuthenticated)

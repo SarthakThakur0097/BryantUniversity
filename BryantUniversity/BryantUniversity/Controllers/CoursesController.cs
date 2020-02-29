@@ -71,6 +71,57 @@ namespace BryantUniversity.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            CoursesRepo courseRepo;
+            CourseViewModel viewModel = new CourseViewModel();
+            Course course;
+            using (context)
+            {
+                courseRepo = new CoursesRepo(context);
+                course = courseRepo.GetById(id);
+
+                
+                viewModel.Id = course.Id;
+                viewModel.CourseTitle = course.CourseTitle;
+                viewModel.Description = course.Description;
+                viewModel.Credits = course.Credits;
+                viewModel.Level = course.Level;
+            }
+            return View("Edit", viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(int id, Course course)
+        {
+            CoursesRepo courseRepo;
+            Course newCourse;
+            CourseViewModel viewModel = new CourseViewModel();
+            using (context)
+            {
+                courseRepo = new CoursesRepo(context);
+                try
+                {
+                    newCourse = new Course(id, course.CourseTitle, course.Description, course.Credits, course.Level);
+                    viewModel.Id = id;
+                    viewModel.CourseTitle = course.CourseTitle;
+                    viewModel.Description = course.Description;
+                    viewModel.Credits = course.Credits;
+                    viewModel.Level = course.Level;
+                    
+                    courseRepo.Update(newCourse);
+                    return RedirectToAction("Index");
+                }
+                catch (DbUpdateException ex)
+                {
+                    HandleDbUpdateException(ex);
+                    newCourse = null;
+                }
+            }
+            return View("Edit", viewModel);
+        }
+
         private void HandleDbUpdateException(DbUpdateException ex)
         {
             if (ex.InnerException != null && ex.InnerException.InnerException != null)
