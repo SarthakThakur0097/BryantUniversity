@@ -4,6 +4,7 @@ using BryantUniversity.Models.Repo;
 using BryantUniversity.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -26,9 +27,9 @@ namespace BryantUniversity.Controllers
             using (context)
             {
                 urRepo = new UserRoleRepo(context);
-                viewModel.Users = urRepo.GetAllUserRolesById(4);
+                viewModel.Users = urRepo.GetUsersByRole(4);
 
-            }
+        }
             return View(viewModel);
         }
     }

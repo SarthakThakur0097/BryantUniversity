@@ -4,7 +4,7 @@ using System;
 
 namespace BryantUniversity.Data
 {
-    public class DatabaseIntializer : DropCreateDatabaseAlways<Context>
+    public class DatabaseIntializer : CreateDatabaseIfNotExists<Context>
     {
         protected override void Seed(Context context)
         {
@@ -52,13 +52,15 @@ namespace BryantUniversity.Data
             CalendarEvent semEvent12 = new CalendarEvent(event12, "	Advising begins in department offices for Fall 2020 registration (By appointment)", Fall2020);
 
             context.Users.Add(adminUser);
-            context.UserRoles.Add(userRole);
+            
 
             context.Roles.Add(admin);
             context.Roles.Add(faculty);
             context.Roles.Add(researcher);
             context.Roles.Add(student);
-            
+
+            context.UserRoles.Add(userRole);
+
             context.CalendarEvents.Add(semEvent1);
             context.CalendarEvents.Add(semEvent2);
             context.CalendarEvents.Add(semEvent3);
