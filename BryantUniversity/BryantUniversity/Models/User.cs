@@ -7,7 +7,7 @@ namespace BryantUniversity.Models
     {
         public User()
         {
-            Roles = new List<Role>();
+            
         }
 
         public User(string email, string passWord, string name) : base()
@@ -15,6 +15,7 @@ namespace BryantUniversity.Models
             Email = email;
             HashedPassword = passWord;
             Name = name;
+            UserRoles = new List<UserRole>();
         }
 
         public int Id { get; set; }
@@ -25,6 +26,7 @@ namespace BryantUniversity.Models
         [Required]
         public string Name { get; set; }
 
-        public List<Role> Roles { get; set; }
+        public List<UserRole> UserRoles { get; set; }
+ 
     }
 }
