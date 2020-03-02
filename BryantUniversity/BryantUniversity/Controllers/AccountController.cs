@@ -28,7 +28,7 @@ namespace BryantUniversity.Controllers
                 {
                     Email = user.Email,
                     Name = user.Name,
-                    Roles = user.Roles
+                  
                 };
                 return View(viewModel);
             }
