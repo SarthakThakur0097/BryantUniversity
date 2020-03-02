@@ -17,7 +17,7 @@ namespace BryantUniversity.Models.Repo
         public IList<User> GetAllUsers()
         {
             return _context.Users
-                .Include(u => u.Roles)
+                .Include(u => u.UserRoles)
                 .ToList();
         }
 

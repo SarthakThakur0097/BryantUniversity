@@ -5,10 +5,7 @@ namespace BryantUniversity.Models
 {
     public class User
     {
-        public User()
-        {
-            
-        }
+        public User() {}
 
         public User(string email, string passWord, string name) : base()
         {
