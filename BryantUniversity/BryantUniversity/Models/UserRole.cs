@@ -7,8 +7,8 @@ namespace BryantUniversity.Models
         public int Id { get; set; }
         public int UserId { get; set; }
         public int RoleId { get; set; }
-        public List<User> Users {get; set; }
-        public List<Role> Roles { get; set; }
+        public User User {get; set; }
+        public Role Role { get; set; }
 
         public UserRole() { }
 
@@ -16,8 +16,7 @@ namespace BryantUniversity.Models
         {
             UserId = userId;
             RoleId = roleId;
-            Users = new List<User>();
-            Roles = new List<Role>();
+            
         }
     }
 }

@@ -26,7 +26,7 @@ namespace BryantUniversity.Models.Repo
 
             IList<User> students = _context.Users
                 .Include(u => u.UserRoles)
-                //.Where(u => u.UserRoles.Any(r => r.RoleId == roleId))
+                .Where(u => u.UserRoles.Any(r => r.RoleId == roleId))
                 .ToList();
 
             _context.SaveChanges();
