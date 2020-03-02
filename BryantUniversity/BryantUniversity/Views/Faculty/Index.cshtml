@@ -1,0 +1,26 @@
+﻿@model IList<BryantUniversity.Models.User>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+    </tr>
+
+    <tbody>
+        @foreach(var user in Model)
+        {
+            <tr>
+                <td>@user.Name</td>
+                <td>@user.Email</td>
+                <td>@user.Roles</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
