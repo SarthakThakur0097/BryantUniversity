@@ -1,6 +1,8 @@
 ﻿using BryantUniversity.Data;
 using System.Collections.Generic;
 using System.Linq;
+using System.Data.Entity;
+using System;
 
 namespace BryantUniversity.Models.Repo
 {
@@ -16,6 +18,21 @@ namespace BryantUniversity.Models.Repo
         public IList<UserRole> GetAllUserRolesById(int id)
         {
             return _context.UserRoles.Where(c => c.Id == id).ToList();
+        }
+
+        public IList<User> GetUsersByRole(int roleId)
+        {
+            _context.Database.Log = Console.Write;
+
+            IList<User> students = _context.Users
+                .Include(u => u.UserRoles)
+                //.Where(u => u.UserRoles.Any(r => r.RoleId == roleId))
+                .ToList();
+
+            _context.SaveChanges();
+          
+
+            return students;
         }
 
         public UserRole GetById(int id)
