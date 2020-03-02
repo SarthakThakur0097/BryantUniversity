@@ -30,8 +30,6 @@ namespace BryantUniversity.Models.Repo
                 .ToList();
 
             _context.SaveChanges();
-          
-
             return students;
         }
 

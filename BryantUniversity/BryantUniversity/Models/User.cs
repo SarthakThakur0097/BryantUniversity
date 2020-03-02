@@ -15,6 +15,15 @@ namespace BryantUniversity.Models
             UserRoles = new List<UserRole>();
         }
 
+        public User(int id, string email, string passWord, string name) : base()
+        {
+            Id = id;
+            Email = email;
+            HashedPassword = passWord;
+            Name = name;
+            UserRoles = new List<UserRole>();
+        }
+
         public int Id { get; set; }
         [Required]
         public string Email { get; set; }
