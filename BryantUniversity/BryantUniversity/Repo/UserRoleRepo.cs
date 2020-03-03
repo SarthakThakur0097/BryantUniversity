@@ -20,19 +20,6 @@ namespace BryantUniversity.Models.Repo
             return _context.UserRoles.Where(c => c.Id == id).ToList();
         }
 
-        public IList<User> GetUsersByRole(int roleId)
-        {
-            _context.Database.Log = Console.Write;
-
-            IList<User> students = _context.Users
-                .Include(u => u.UserRoles)
-                .Where(u => u.UserRoles.Any(r => r.RoleId == roleId))
-                .ToList();
-
-            _context.SaveChanges();
-            return students;
-        }
-
         public UserRole GetById(int id)
         {
             return _context.UserRoles.SingleOrDefault(c => c.Id == id);

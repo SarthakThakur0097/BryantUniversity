@@ -12,6 +12,11 @@ namespace BryantUniversity.Data
         public DbSet<CalendarEvent> CalendarEvents { get; set; }
         public DbSet<SemesterPeriod> SemesterPeriods { get; set; }
         public DbSet<Course> Courses { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<FacultyDepartment> FacultyDepartments {get; set;}
+        public DbSet<Building> Buildings { get; set; }
+        public DbSet<CourseSection> CourseSections { get; set; }
+        public DbSet<Room> Rooms { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

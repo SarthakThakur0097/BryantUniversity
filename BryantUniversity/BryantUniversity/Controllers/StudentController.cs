@@ -24,12 +24,12 @@ namespace BryantUniversity.Controllers
         // GET: Student
         public ActionResult Index()
         {
-            UserRoleRepo urRepo;
+            UserRepo uRepo;
             UserViewModel viewModel = new UserViewModel();
             using (context)
             {
-                urRepo = new UserRoleRepo(context);
-                viewModel.Users = urRepo.GetUsersByRole(4);
+                uRepo = new UserRepo(context);
+                viewModel.Users = uRepo.GetUsersByRole(4);
 
             }
             return View(viewModel);
@@ -54,6 +54,37 @@ namespace BryantUniversity.Controllers
             return View("Edit", viewModel);
         }
 
+
+        public ActionResult Create()
+        {
+            var viewModel = new UserViewModel();
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(UserViewModel formModel)
+        {
+            UserRepo userRepo;
+            using (context)
+            {
+                userRepo = new UserRepo(context);
+
+                try
+                {
+                    var student = new User(0, formModel.Email, formModel.Password, formModel.Name);
+                    userRepo.Insert(student);
+
+                    return RedirectToAction("Index");
+                }
+                catch (DbUpdateException ex)
+                {
+                    HandleDbUpdateException(ex);
+                }
+            }
+            return View();
+        }
+
         [HttpPost]
         public ActionResult Edit(int id, User student)
         {
@@ -65,7 +96,7 @@ namespace BryantUniversity.Controllers
                 userRepo = new UserRepo(context);
                 try
                 {
-                    newStudent = new User(id, student.Email, student.HashedPassword, student.Name);
+                    newStudent = new User(id, student.Email, student.Name);
                     viewModel.Id = id;
                     viewModel.Email = student.Email;
                     viewModel.Name = student.Name; 
