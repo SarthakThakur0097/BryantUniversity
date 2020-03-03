@@ -42,7 +42,7 @@
     }
 
     async function updateList(data){
-        resetList();
+       resetList();
        let table = gebi("list");
        table.className = "table";
 
@@ -66,7 +66,7 @@
 
         tableRow.innerHTML = headers;
 
-        for (let i=0; i < rows.length; i++){
+        for (let i=0; i < toDisplay.length; i++){
 
             var currEvent = await toDisplay[i]
             //var items =  '<td>${data[0]}</td> <td>@Model.semesterDetails[i].EventDescription</td>'
