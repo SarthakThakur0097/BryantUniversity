@@ -189,6 +189,7 @@
   <ItemGroup>
     <Compile Include="ApiControllers\CalendarApiController.cs" />
     <Compile Include="ApiControllers\FacultyApiController.cs" />
+    <Compile Include="ApiControllers\UserApiController.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
@@ -229,6 +230,7 @@
     <Compile Include="ViewModels\SemesterDetailsViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\UserDetailsViewModel.cs" />
+    <Compile Include="ViewModels\UserListViewModel.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -255,6 +257,8 @@
     <Content Include="Views\Courses\Edit.cshtml" />
     <Content Include="Views\Student\Index.cshtml" />
     <Content Include="Views\Student\Edit.cshtml" />
+    <Content Include="Views\Faculty\Edit.cshtml" />
+    <Content Include="Views\Faculty\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

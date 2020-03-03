@@ -2,6 +2,7 @@
 using BryantUniversity.Models;
 using BryantUniversity.Models.Repo;
 using BryantUniversity.ViewModels;
+using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace BryantUniversity.Controllers
@@ -16,11 +17,21 @@ namespace BryantUniversity.Controllers
         }
 
         // GET: Faculty
+        [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            using(context)
+            {
+                var viewModel = new UserListViewModel();
+                var userRepository = new UserRepo(context);
+
+                viewModel.Users = userRepository.GetAllUsers();
+
+                return View(viewModel);
+            }
         }
 
+        [HttpGet]
         public ActionResult Create()
         {
             var userViewModel = new UserViewModel();
@@ -40,8 +51,6 @@ namespace BryantUniversity.Controllers
                 using (context)
                 {
                     repository = new UserRepo(context);
-
-
                     repository.Insert(user);
 
                     var roleRepo = new UserRoleRepo(context);
@@ -66,7 +75,6 @@ namespace BryantUniversity.Controllers
                         default:
                             userRole = new UserRole();
                             break;
-
                     }
 
                     roleRepo.Insert(userRole);
@@ -76,5 +84,19 @@ namespace BryantUniversity.Controllers
 
             return View(userViewModel);
         }
+
+        //[HttpGet]
+        //public ActionResult Edit(int id)
+        //{
+        //    using (context)
+        //    {
+        //        var repo = new UserRepo(context);
+        //        User user = repo.GetById(id);
+
+
+        //    }
+
+        //    return View();
+        //}
     }
 }
