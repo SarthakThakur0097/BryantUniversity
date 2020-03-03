@@ -27,20 +27,28 @@ namespace BryantUniversity.Models.Repo
                 .SingleOrDefault(c => c.Id == id);
         }
 
-        //public User GetByIdAndRole(int id, string role)
-        //{
+        public IList<User> GetUsersByRole(int roleId)
+        {
+            IList<User> students = _context.Users
+                .Include(u => u.UserRoles)
+                .Where(u => u.UserRoles.Any(r => r.RoleId == roleId))
+                .ToList();
+            _context.SaveChanges();
 
-        //    return _context.Users.Join(
-        //    _context.UserRoles,
-        //    user => user.Id,
-        //    usersRole => usersRole.UserId,
-        //    (user, usersRole) => new
-        //    {
-        //        //userId = user.Id.
-        //        //roleName = user.Name
+            return students;
+        }
 
-        //    }).ToList();
-        //}
+        public IList<User> GetAllFaculty()
+        {
+            IList<User> faculty = _context.Users
+                .Include(u => u.UserRoles)
+                .Where(u => u.UserRoles.Any(r => r.RoleId == 2))
+                .ToList();
+            _context.SaveChanges();
+
+            return faculty;
+        }
+
 
         public User GetByEmail(string email)
         {
