@@ -1,0 +1,47 @@
+﻿@model BryantUniversity.ViewModels.UserListViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.RoleType, htmlAttributes: new { @class = "control-label col-md-2" })
+        @Html.DropDownListFor(model => model.RoleType, Model.RoleTypeList, "", new { @class = "form-control", id = "role-list" })
+        @Html.ValidationMessageFor(model => model.RoleTypeList, "", new { @class = "text-danger" })
+    </div>
+}
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Role</th>
+    </tr>
+
+    <tbody>
+        @foreach (var user in Model.Users)
+        {
+            <tr>
+                <td>@user.Name</td>
+                <td>@user.Email</td>
+                <td>@user.UserRoles[0].RoleId</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div id="tableContainer">
+    <table id="list" class="pure-table pure-table-horizontal">
+        <thead>
+            <tr></tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<script src="~/scripts/user.js"></script>
