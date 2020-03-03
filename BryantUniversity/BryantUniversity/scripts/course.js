@@ -6,7 +6,7 @@
     async function GetAllFaculty()
     {
         try{
-            const response = await fetch ('http://localhost:51934/api/Faculty/AllFaculty',{
+            const response = await fetch ('http://localhost:51934/api/User/AllFaculty',{
                 method: "POST",
                 credentials:"include",
                 header:{

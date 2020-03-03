@@ -20,7 +20,7 @@ namespace BryantUniversity.ApiControllers
 
         [Route("{roleId}")]
         [HttpPost]
-        public IHttpActionResult ChangePeriod(int roleId)
+        public IHttpActionResult ChangeUser(int roleId)
         {
             using (context)
             {
@@ -29,6 +29,20 @@ namespace BryantUniversity.ApiControllers
                 return Ok(users);
             }
             
+        }
+
+        [Route("AllFaculty")]
+        [HttpPost]
+        public IHttpActionResult GetAllFaculty()
+        {
+            UserRepo uRepo;
+            IList<User> allFaculty;
+            using (context)
+            {
+                uRepo = new UserRepo(context);
+                allFaculty = uRepo.GetUsersByRole(2);
+            }
+            return Ok(allFaculty);
         }
     }
 }

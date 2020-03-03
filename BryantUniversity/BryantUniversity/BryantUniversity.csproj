@@ -188,7 +188,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiControllers\CalendarApiController.cs" />
-    <Compile Include="ApiControllers\FacultyApiController.cs" />
     <Compile Include="ApiControllers\UserApiController.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
