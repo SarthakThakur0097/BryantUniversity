@@ -5,38 +5,135 @@
 }
 
 <h2>Edit</h2>
+<link rel="stylesheet" type="text/css" href="~/styles/scrollablemenu.css" />
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
 
-@using (Html.BeginForm("Edit", "Courses", FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
-{
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary()
-    <fieldset>
+            @using (Html.BeginForm("Edit", "Courses", FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary()
+                <fieldset>
 
-        <div class="pure-control-group">
-            @Html.LabelFor(model => model.CourseTitle)
-            @Html.EditorFor(model => model.CourseTitle)
-            @Html.ValidationMessageFor(model => model.CourseTitle, "", new { @class = "pure-form-message-inline" })
-        </div>
+                    <div class="pure-control-group">
+                        @Html.LabelFor(model => model.CourseTitle)
+                        @Html.EditorFor(model => model.CourseTitle)
+                        @Html.ValidationMessageFor(model => model.CourseTitle, "", new { @class = "pure-form-message-inline" })
+                    </div>
 
-        <div class="pure-control-group">
-            @Html.LabelFor(model => model.Description)
-            @Html.EditorFor(model => model.Description)
-            @Html.ValidationMessageFor(model => model.Description, "", new { @class = "pure-form-message-inline" })
-        </div>
+                    <div class="pure-control-group">
+                        @Html.LabelFor(model => model.Description)
+                        @Html.EditorFor(model => model.Description)
+                        @Html.ValidationMessageFor(model => model.Description, "", new { @class = "pure-form-message-inline" })
+                    </div>
 
-        <div class="pure-controls">
-            @Html.LabelFor(model => model.Credits)
-            @Html.EditorFor(model => model.Credits)
-            @Html.ValidationMessageFor(model => model.Credits, "", new { @class = "pure-form-message-inline" })
+                    <div class="pure-controls">
+                        @Html.LabelFor(model => model.Credits)
+                        @Html.EditorFor(model => model.Credits)
+                        @Html.ValidationMessageFor(model => model.Credits, "", new { @class = "pure-form-message-inline" })
+                    </div>
+                    <div class="pure-controls">
+                        @Html.LabelFor(model => model.Level)
+                        @Html.EditorFor(model => model.Level) Is active
+                        @Html.ValidationMessageFor(model => model.Level, "", new { @class = "pure-form-message-inline" })
+                    </div>
+                    <div class="pure-controls">
+                        @Html.ActionLink("Cancel", "Index", new { }, new { @class = "pure-button" })
+                        <button type="submit" class="pure-button pure-button-primary">Submit</button>
+                    </div>
+                </fieldset>
+            }
         </div>
-        <div class="pure-controls">
-            @Html.LabelFor(model => model.Level)
-            @Html.EditorFor(model => model.Level) Is active
-            @Html.ValidationMessageFor(model => model.Level, "", new { @class = "pure-form-message-inline" })
+        <div class="col-sm">
+            <table id="dtHorizontalVerticalExample" class="table table-striped table-bordered table-sm " cellspacing="0"
+                   width="100%">
+                <thead>
+                    <tr>
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th>Position</th>
+                        <th>Office</th>
+                        <th>Age</th>
+                        <th>Start date</th>
+                        <th>Salary</th>
+                        <th>Extn.</th>
+                        <th>E-mail</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Tiger</td>
+                        <td>Nixon</td>
+                        <td>System Architect</td>
+                        <td>Edinburgh</td>
+                        <td>61</td>
+                        <td>2011/04/25</td>
+                        <td>$320,800</td>
+                        <td>5421</td>
+                        <td>t.nixon@datatables.net</td>
+                    </tr>
+                    <tr>
+                        <td>Garrett</td>
+                        <td>Winters</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>63</td>
+                        <td>2011/07/25</td>
+                        <td>$170,750</td>
+                        <td>8422</td>
+                        <td>g.winters@datatables.net</td>
+                    </tr>
+                    <tr>
+                        <td>Ashton</td>
+                        <td>Cox</td>
+                        <td>Junior Technical Author</td>
+                        <td>San Francisco</td>
+                        <td>66</td>
+                        <td>2009/01/12</td>
+                        <td>$86,000</td>
+                        <td>1562</td>
+                        <td>a.cox@datatables.net</td>
+                    </tr>
+                    <tr>
+                        <td>Cedric</td>
+                        <td>Kelly</td>
+                        <td>Senior Javascript Developer</td>
+                        <td>Edinburgh</td>
+                        <td>22</td>
+                        <td>2012/03/29</td>
+                        <td>$433,060</td>
+                        <td>6224</td>
+                        <td>c.kelly@datatables.net</td>
+                    </tr>
+                    <tr>
+                        <td>Airi</td>
+                        <td>Satou</td>
+                        <td>Accountant</td>
+                        <td>Tokyo</td>
+                        <td>33</td>
+                        <td>2008/11/28</td>
+                        <td>$162,700</td>
+                        <td>5407</td>
+                        <td>a.satou@datatables.net</td>
+                    </tr>
+                    <tr>
+                        <td>Brielle</td>
+                        <td>Williamson</td>
+                        <td>Integration Specialist</td>
+                        <td>New York</td>
+                        <td>61</td>
+                        <td>2012/12/02</td>
+                        <td>$372,000</td>
+                        <td>4804</td>
+                        <td>b.williamson@datatables.net</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <div class="pure-controls">
-            @Html.ActionLink("Cancel", "Index", new { }, new { @class = "pure-button" })
-            <button type="submit" class="pure-button pure-button-primary">Submit</button>
+        <div class="col-sm">
+            One of three columns
         </div>
-    </fieldset>
-}
+    </div>
+</div>
+<script src="~/scripts/course.js"></script>
