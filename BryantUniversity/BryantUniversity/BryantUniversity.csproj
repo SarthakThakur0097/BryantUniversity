@@ -179,13 +179,16 @@
     <Content Include="ClassDiagram1.cd" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\calendar.js" />
+    <Content Include="scripts\course.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
+    <Content Include="styles\scrollablemenu.css" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiControllers\CalendarApiController.cs" />
+    <Compile Include="ApiControllers\FacultyApiController.cs" />
     <Compile Include="ApiControllers\UserApiController.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
@@ -265,6 +268,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\CalendarApi\" />
+    <Folder Include="Views\FacultyApi\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

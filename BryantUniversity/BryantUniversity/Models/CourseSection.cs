@@ -9,6 +9,12 @@ namespace BryantUniversity.Models
     {
         public CourseSection(){}
 
+        public CourseSection(DateTime timeSlot, int sectionNumber, Course course)
+        {
+            TimeSlot = timeSlot;
+            SectionNumber = sectionNumber;
+            Course = course;
+        }
         public int Id { get; set; }
         public Course Course { get; set; }
         public Room Room { get; set; }

@@ -10,6 +10,13 @@ namespace BryantUniversity.Models
     {
         public Building() { }
 
+        public Building(string buildingName, int capacity)
+        {
+            BuildingName = buildingName;
+            Capacity = capacity;
+            Rooms = new List<Room>();
+        }
+
         public int Id { get; set; }
         [Required]
         public string BuildingName { get; set; }

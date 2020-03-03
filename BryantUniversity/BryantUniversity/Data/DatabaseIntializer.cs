@@ -9,7 +9,14 @@ namespace BryantUniversity.Data
         protected override void Seed(Context context)
         {
             User adminUser = new User("Admin@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Admin 1");
-            UserRole userRole = new UserRole(1, 1);
+            User adminUser2 = new User("Admin2@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Admin 2");
+            User teacherUser = new User("Teacher@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Teacher 1");
+            User teacherUser2 = new User("Teacher2@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Teacher 2");
+
+            UserRole adminRole = new UserRole(1, 2);
+            UserRole teacherRole = new UserRole(2, 1);
+            UserRole admin2Role = new UserRole(3, 1);
+            UserRole teacher2Role = new UserRole(4, 2);
 
             Role admin = new Role("Admin");
             Role faculty = new Role("Faculty");
@@ -51,15 +58,38 @@ namespace BryantUniversity.Data
             CalendarEvent semEvent11 = new CalendarEvent(event11, "Applications for graduation (Registrar’s office) due from candidates who expect to complete requirements by May 2020", Fall2020);
             CalendarEvent semEvent12 = new CalendarEvent(event12, "	Advising begins in department offices for Fall 2020 registration (By appointment)", Fall2020);
 
+            Building mainCampus = new Building("Main Campus", 8100);
+            Room room1 = new Room(mainCampus.BuildingName, "Lecture");
+            room1.Building = mainCampus;
+
+            Department compSci = new Department("Computer Science", "516-389-2930");
+            Course introToProg = new Course(0, "Intro to Computer Science", "Basic programming with Java", 4, "Level 200");
+
+            FacultyDepartment facultyDepartment = new FacultyDepartment(teacherUser, compSci);
+
+            introToProg.Department = compSci;
+
+            CourseSection courseSection = new CourseSection(DateTime.Now, 5, introToProg);
+            courseSection.Professor = teacherUser;
+            courseSection.Room = room1;
+      
+         
+           
             context.Users.Add(adminUser);
-            
+            context.Users.Add(adminUser2);
+
+            context.Users.Add(teacherUser);
+            context.Users.Add(teacherUser2);
 
             context.Roles.Add(admin);
             context.Roles.Add(faculty);
             context.Roles.Add(researcher);
             context.Roles.Add(student);
 
-            context.UserRoles.Add(userRole);
+            context.UserRoles.Add(adminRole);
+            context.UserRoles.Add(teacherRole);
+            context.UserRoles.Add(admin2Role);
+            context.UserRoles.Add(teacher2Role);
 
             context.CalendarEvents.Add(semEvent1);
             context.CalendarEvents.Add(semEvent2);
@@ -74,6 +104,13 @@ namespace BryantUniversity.Data
             context.CalendarEvents.Add(semEvent11);
             context.CalendarEvents.Add(semEvent12);
 
+            context.Buildings.Add(mainCampus);
+            context.Rooms.Add(room1);
+            context.Departments.Add(compSci);
+
+            context.Courses.Add(introToProg);
+            context.CourseSections.Add(courseSection);
+            context.FacultyDepartments.Add(facultyDepartment);
             context.SaveChanges();
 
         }
