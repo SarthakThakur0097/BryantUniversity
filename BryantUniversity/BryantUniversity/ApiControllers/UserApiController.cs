@@ -1,9 +1,11 @@
 ﻿using BryantUniversity.Data;
 using BryantUniversity.Models;
 using BryantUniversity.Models.Repo;
+using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using System.Web.Http;
-
 namespace BryantUniversity.ApiControllers
 {
     [RoutePrefix("api/User")]
