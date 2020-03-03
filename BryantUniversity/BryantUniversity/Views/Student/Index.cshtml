@@ -4,11 +4,9 @@
 }
 
 <h2>Courses</h2>
-
 <p>
     @Html.ActionLink("Create a course", "Create", new { }, new { @class = "pure-button pure-button-primary" })
 </p>
-
 <table class="pure-table pure-table-horizontal">
     <thead>
         <tr lass="bench-row">
@@ -17,7 +15,6 @@
             <th>Email</th>
         </tr>
     </thead>
-
     <tbody>
         @foreach (var student in Model.Users)
             {
@@ -25,12 +22,9 @@
                 <td>@student.Id</td>
                 <td>@student.Name</td>
                 <td>@student.Email</td>
-                
-
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { Id = student.Id })
                 </td>
-
             </tr>
         }
     </tbody>
