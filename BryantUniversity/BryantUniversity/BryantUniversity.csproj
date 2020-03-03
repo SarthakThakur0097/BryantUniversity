@@ -200,12 +200,18 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Building.cs" />
     <Compile Include="Models\Course.cs" />
+    <Compile Include="Models\CourseSection.cs" />
+    <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\FacultyDepartment.cs" />
+    <Compile Include="Models\Room.cs" />
     <Compile Include="Models\SemesterPeriod.cs" />
     <Compile Include="Models\CalendarEvent.cs" />
     <Compile Include="Models\RoleType.cs" />
     <Compile Include="Repo\CalendarRepo.cs" />
     <Compile Include="Repo\CoursesRepo.cs" />
+    <Compile Include="Repo\DepartmentRepo.cs" />
     <Compile Include="Repo\RoleRepo.cs" />
     <Compile Include="Repo\SemesterPeriodRepo.cs" />
     <Compile Include="Repo\UserRepo.cs" />
@@ -245,6 +251,7 @@
     <Content Include="Views\Courses\Create.cshtml" />
     <Content Include="Views\Courses\Edit.cshtml" />
     <Content Include="Views\Student\Index.cshtml" />
+    <Content Include="Views\Student\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
