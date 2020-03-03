@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-namespace BryantUniversity.Models
+﻿namespace BryantUniversity.Models
 {
     public class UserRole
     {
@@ -16,6 +14,7 @@ namespace BryantUniversity.Models
         public int UserId { get; set; }
         public int RoleId { get; set; }
 
-        public List<User> Users {get; set; }
+        public User User {get; set; }
+        public Role Role { get; set; }
     }
 }
