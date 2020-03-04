@@ -92,9 +92,8 @@ namespace BryantUniversity.Controllers
                 using (context)
                 {
                     userRepo = new UserRepo(context);
+                    userRepo.Insert(user);
                 }
-                userRepo.Insert(user);
-
                 return RedirectToAction("Login", "Account");
             }
 
