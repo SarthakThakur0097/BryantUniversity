@@ -79,7 +79,7 @@ namespace BryantUniversity.Controllers
 
                     roleRepo.Insert(userRole);
                 }
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Create", "Faculty");
             }
 
             return View(userViewModel);

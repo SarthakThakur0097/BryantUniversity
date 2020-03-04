@@ -38,7 +38,7 @@
                 @if (Request.IsAuthenticated && ((BryantUniversity.Security.CustomPrincipal)User).IsInRole("1"))
                 {
                     <li class="nav-item active">
-                        @Html.ActionLink("Users", "Index", "Faculty", new { area = "" }, new { @class = "navbar-brand" })
+                        @Html.ActionLink("Users", "Create", "Faculty", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
                     <li class="nav-item">
                         @Html.ActionLink("Courses", "Create", "Courses", new { area = "" }, new { @class = "navbar-brand" })

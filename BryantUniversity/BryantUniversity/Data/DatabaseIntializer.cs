@@ -73,8 +73,6 @@ namespace BryantUniversity.Data
             courseSection.Professor = teacherUser;
             courseSection.Room = room1;
       
-         
-           
             context.Users.Add(adminUser);
             context.Users.Add(adminUser2);
 
