@@ -1,9 +1,8 @@
 ﻿using BryantUniversity.Data;
 using BryantUniversity.Models;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
+using System.Data.Entity;
 
 namespace BryantUniversity.Repo
 {
@@ -18,8 +17,9 @@ namespace BryantUniversity.Repo
 
         public IList<Course> GetAllCourses()
         {
-            return _context.Courses.ToList();
-
+            return _context.Courses
+                .Include(c => c.Department)
+                .ToList();
         }
 
         public Course GetById(int id)
@@ -36,7 +36,7 @@ namespace BryantUniversity.Repo
         public void Update(Course course)
         {
             _context.Courses.Attach(course);
-            _context.Entry(course).State = System.Data.Entity.EntityState.Modified;
+            _context.Entry(course).State = EntityState.Modified;
             _context.SaveChanges();
         }
     }

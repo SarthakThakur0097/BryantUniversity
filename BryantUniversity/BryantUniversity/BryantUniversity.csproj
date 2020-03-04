@@ -199,6 +199,7 @@
     <Compile Include="Controllers\FacultyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
+    <Compile Include="Controllers\ScheduleController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Data\Context.cs" />
     <Compile Include="Data\DatabaseIntializer.cs" />
@@ -212,13 +213,16 @@
     <Compile Include="Models\FacultyDepartment.cs" />
     <Compile Include="Models\Period.cs" />
     <Compile Include="Models\Room.cs" />
+    <Compile Include="Models\Schedule.cs" />
     <Compile Include="Models\SemesterPeriod.cs" />
     <Compile Include="Models\CalendarEvent.cs" />
     <Compile Include="Models\RoleType.cs" />
     <Compile Include="Repo\CalendarRepo.cs" />
+    <Compile Include="Repo\CourseSectionRepo.cs" />
     <Compile Include="Repo\CoursesRepo.cs" />
     <Compile Include="Repo\DepartmentRepo.cs" />
     <Compile Include="Repo\RoleRepo.cs" />
+    <Compile Include="Repo\ScheduleRepo.cs" />
     <Compile Include="Repo\SemesterPeriodRepo.cs" />
     <Compile Include="Repo\UserRepo.cs" />
     <Compile Include="Repo\UserRoleRepo.cs" />
@@ -262,6 +266,8 @@
     <Content Include="Views\Faculty\Edit.cshtml" />
     <Content Include="Views\Faculty\Index.cshtml" />
     <Content Include="Views\Registration\Index.cshtml" />
+    <Content Include="Views\Registration\Details.cshtml" />
+    <Content Include="Views\Schedule\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -269,7 +275,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Views\CourseSection\" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

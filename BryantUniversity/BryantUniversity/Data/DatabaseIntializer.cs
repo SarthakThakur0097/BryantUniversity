@@ -6,6 +6,8 @@ namespace BryantUniversity.Data
 {
     public class DatabaseIntializer : DropCreateDatabaseAlways<Context>
     {
+        public object Response { get; private set; }
+
         protected override void Seed(Context context)
         {
             User adminUser = new User("Admin@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Admin 1");
@@ -67,7 +69,8 @@ namespace BryantUniversity.Data
 
             FacultyDepartment facultyDepartment = new FacultyDepartment(teacherUser, compSci);
             CourseSection courseSection = new CourseSection(DateTime.Now, 5, introToProg, room1, teacherUser, Fall2020);
-      
+            CourseSection courseSection2 = new CourseSection(DateTime.Now, 6, introToProg, room1, teacherUser2, Fall2019);
+
             context.Users.Add(adminUser);
             context.Users.Add(adminUser2);
       
@@ -106,6 +109,7 @@ namespace BryantUniversity.Data
 
             context.Courses.Add(introToProg);
             context.CourseSections.Add(courseSection);
+            context.CourseSections.Add(courseSection2);
             context.FacultyDepartments.Add(facultyDepartment);
 
             context.SaveChanges();

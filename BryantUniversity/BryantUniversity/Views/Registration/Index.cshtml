@@ -1,7 +1,33 @@
-﻿
+﻿@model IList<BryantUniversity.Models.Course>
+
 @{
     ViewBag.Title = "Index";
 }
 
 <h2>Index</h2>
 
+<table>
+    <tr>
+        <th>Level</th>
+        <th>Course Name</th>
+        <th>Description</th>
+        <th>Department Name</th>
+        <th>Credits</th>
+    </tr>
+
+    <tbody>
+        @foreach (var course in Model)
+        {
+            <tr>
+                <td>@course.Level</td>
+                <td>@course.CourseTitle</td>
+                <td>@course.Description</td>
+                <td>@course.Department.Name</td>
+                <td>@course.Credits</td>
+                <td>
+                    @Html.ActionLink("See Sections", "Details", new {id = course.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
