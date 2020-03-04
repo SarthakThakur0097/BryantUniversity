@@ -2,7 +2,6 @@
 using BryantUniversity.Models;
 using BryantUniversity.Models.Repo;
 using BryantUniversity.ViewModels;
-using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace BryantUniversity.Controllers
@@ -84,19 +83,5 @@ namespace BryantUniversity.Controllers
 
             return View(userViewModel);
         }
-
-        //[HttpGet]
-        //public ActionResult Edit(int id)
-        //{
-        //    using (context)
-        //    {
-        //        var repo = new UserRepo(context);
-        //        User user = repo.GetById(id);
-
-
-        //    }
-
-        //    return View();
-        //}
     }
 }
