@@ -189,7 +189,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApiControllers\CalendarApiController.cs" />
-    <Compile Include="ApiControllers\CourseApiController.cs" />
+    <Compile Include="ApiControllers\CourseSectionApiController.cs" />
     <Compile Include="ApiControllers\UserApiController.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
@@ -277,7 +277,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Views\CourseApi\" />
     <Folder Include="Views\CourseSection\" />
   </ItemGroup>
   <PropertyGroup>

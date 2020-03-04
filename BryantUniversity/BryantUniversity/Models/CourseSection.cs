@@ -15,6 +15,7 @@ namespace BryantUniversity.Models
             Room = room;
             Professor = professor;
             SemesterPeriod = semesterPeriod;
+            new DateTime();
         }
 
         public int Id { get; set; }

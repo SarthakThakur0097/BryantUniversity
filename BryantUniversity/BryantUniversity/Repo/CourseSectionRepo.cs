@@ -38,5 +38,19 @@ namespace BryantUniversity.Repo
                 .Where(cR => cR.Course.Id == courseId)
                 .ToList();
         }
+
+        public void Insert(CourseSection courseSection)
+        {
+            _context.CourseSections.Add(courseSection);
+            _context.SaveChanges();
+           
+        }
+
+        public void Update(CourseSection courseSection)
+        {
+            _context.CourseSections.Attach(courseSection);
+            _context.Entry(courseSection).State = EntityState.Modified;
+            _context.SaveChanges();
+        }
     }
 }
