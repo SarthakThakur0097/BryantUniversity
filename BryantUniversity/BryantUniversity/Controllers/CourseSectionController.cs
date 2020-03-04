@@ -10,32 +10,18 @@ using System.Web.Mvc;
 
 namespace BryantUniversity.Controllers
 {
-    public class RegistrationController : Controller
+    public class CourseSectionController : Controller
     {
         private Context context;
 
-        public RegistrationController()
+        public CourseSectionController()
         {
             context = new Context();
         }
 
-        [HttpGet]
         public ActionResult Index()
         {
-            using (context)
-            {
-                IList<Course> courses = new CoursesRepo(context).GetAllCourses();
-                return View(courses);
-            }
-        }
-
-        [HttpGet]
-        public ActionResult Details(int id)
-        {
-            using (context) {
-                IList<CourseSection> courseSections = new CourseSectionRepo(context).GetCourseSectionsByCourseId(id);
-                return View(courseSections);
-            }
+            return View();
         }
 
         [HttpPost]
@@ -50,5 +36,6 @@ namespace BryantUniversity.Controllers
                 return RedirectToAction("Index");
             }
         }
+
     }
 }

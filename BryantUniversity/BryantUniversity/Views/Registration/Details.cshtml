@@ -31,7 +31,7 @@
                 <td>@courseSection.Room.RoomType</td>
                 <td>@courseSection.Course.Credits</td>
                 <td>
-                    @Html.ActionLink("Enroll", "Details", new { id = courseSection.Id })
+                    @Html.ActionLink("Enroll", "Add", new { id = courseSection.Id }, null)
                 </td>
             </tr>
         }
