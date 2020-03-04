@@ -27,13 +27,14 @@ namespace BryantUniversity.ViewModels
         {
             get
             {
-                return new SelectList(SemesterPeriods, "Id", "Period");
+                return new SelectList(SemesterPeriods, "Id", "Period.Value");
             }
         }
 
         public void PopulateSelectList(Context context)
         {
             SemesterPeriodRepo srRepo = new SemesterPeriodRepo(context);
+
             SemesterPeriods = srRepo.GetAllSemesterPeriods();
         }
     }
