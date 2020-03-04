@@ -1,5 +1,4 @@
 ﻿using BryantUniversity.Data;
-using BryantUniversity.Models.Repo;
 using BryantUniversity.ViewModels;
 using System.Web.Mvc;
 
@@ -13,10 +12,8 @@ namespace BryantUniversity.Controllers
         [HttpPost]
         public ActionResult Calendar(SemesterDetailsViewModel viewModel)
         {
-
             return View();
         }
-
 
         public ActionResult Index()
         {

@@ -216,6 +216,7 @@
     <Compile Include="Models\CalendarEvent.cs" />
     <Compile Include="Models\RoleType.cs" />
     <Compile Include="Repo\CalendarRepo.cs" />
+    <Compile Include="Repo\CourseSectionRepo.cs" />
     <Compile Include="Repo\CoursesRepo.cs" />
     <Compile Include="Repo\DepartmentRepo.cs" />
     <Compile Include="Repo\RoleRepo.cs" />
@@ -262,6 +263,7 @@
     <Content Include="Views\Faculty\Edit.cshtml" />
     <Content Include="Views\Faculty\Index.cshtml" />
     <Content Include="Views\Registration\Index.cshtml" />
+    <Content Include="Views\Registration\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

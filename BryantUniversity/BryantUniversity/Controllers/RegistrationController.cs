@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BryantUniversity.Data;
+using BryantUniversity.Models;
+using BryantUniversity.Repo;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,10 +11,32 @@ namespace BryantUniversity.Controllers
 {
     public class RegistrationController : Controller
     {
-        // GET: Registration
+        private Context context;
+
+        public RegistrationController()
+        {
+            context = new Context();
+        }
+
+        [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            using (context)
+            {
+                var repository = new CoursesRepo(context);
+                IList<Course> courses = repository.GetAllCourses();
+                return View(courses);
+            }
+        }
+
+        [HttpGet]
+        public ActionResult Details(int id)
+        {
+            using (context) {
+                var repository = new CourseSectionRepo(context);
+                IList<CourseSection> courseSections = repository.GetCourseSectionsByCourseId(id);
+                return View(courseSections);
+            }
         }
     }
 }

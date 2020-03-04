@@ -28,7 +28,7 @@ namespace BryantUniversity.Models
         public int Id { get; set; }
         [Required]
         public string CourseTitle { get; set; }
-        [Required]
+        [Required] 
         public string Description { get; set; }
         public int Credits { get; set; }
         [Required]

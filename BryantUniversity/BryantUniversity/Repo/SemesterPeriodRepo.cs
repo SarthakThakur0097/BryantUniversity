@@ -19,7 +19,6 @@ namespace BryantUniversity.Repo
         public IList<SemesterPeriod> GetAllSemesterPeriods()
         {
             return _context.SemesterPeriods.ToList();
-
         }
 
         public SemesterPeriod GetById(int id)
