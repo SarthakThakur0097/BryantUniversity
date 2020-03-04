@@ -21,7 +21,7 @@ namespace BryantUniversity.ApiControllers
         // GET: CalendarApi
 
         [Route("{roleId}")]
-        [HttpPost]
+        [HttpGet]
         public IHttpActionResult ChangeUser(int roleId)
         {
             using (context)
@@ -34,7 +34,7 @@ namespace BryantUniversity.ApiControllers
         }
 
         [Route("AllFaculty")]
-        [HttpPost]
+        [HttpGet]
         public IHttpActionResult GetAllFaculty()
         {
             UserRepo uRepo;

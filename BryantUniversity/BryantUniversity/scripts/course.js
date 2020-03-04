@@ -7,7 +7,7 @@
     {
         try{
             const response = await fetch ('http://localhost:51934/api/User/' + RoleId,{
-                method: "POST",
+                method: "GET",
                 credentials:"include",
                 header:{
                     "Context-Type":"application/json"
@@ -73,20 +73,45 @@
 
         //tableRow.innerHTML = headers;
         for (let i=0; i < toDisplay.length; i++){
-
-            var teacher = await toDisplay[i];
+           
+            var teacher = toDisplay[i];
             console.log("Teacher: " )
             console.log(teacher)
             //var items =  '<td>${data[0]}</td> <td>@Model.semesterDetails[i].EventDescription</td>'
-            tbody.innerHTML+= `<td>${teacher.Id}</td> <td>${teacher.Name}</td> <td>${teacher.Email}</td>`
-            
+            tbody.innerHTML+= `<td>${teacher.Id}</td> <td>${teacher.Name}</td> <td>${teacher.Email}</td> <td><div id="AssignButtons"><button type="button" data-teacher-id=${teacher.Id} class="btn btn-success" >Assign</button></div></td>`
+        }
+       
+    }
+   
+    await PopulateTable();
+    let assignButton = gebi("tableContainer");
+
+    console.log(assignButton);
+
+    function AssignToCourse(teacherID, courseID){
+        try{
+            const response = await fetch ('http://localhost:51934/api/Course/' + RoleId,{
+                method: "POST",
+                credentials:"include",
+                header:{
+                    "Context-Type":"application/json"
+                }
+            });
+
+            const data = await response.json();
+            console.log(data);
+            console.log("JSON: " + JSON.stringify(data))
+            return data
+        }
+        catch(error){
+            console.log('ERROR: ' + error);
         }
     }
-    
-    PopulateTable();
-})();
+    assignButton.onclick = function() {
+        let butt = event.target;
 
-$(document).ready(function () {
-    $('#TeachersTable').DataTable();
-    $('.dataTables_length').addClass('bs-select');
-});
+        AssignToCourse();
+    }
+   
+    
+})();
