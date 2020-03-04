@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace BryantUniversity.Models
 {
@@ -9,17 +6,22 @@ namespace BryantUniversity.Models
     {
         public CourseSection(){}
 
-        public CourseSection(DateTime timeSlot, int sectionNumber, Course course)
+        public CourseSection(DateTime timeSlot, int sectionNumber, Course course, Room room, User professor, SemesterPeriod semesterPeriod)
         {
             TimeSlot = timeSlot;
             SectionNumber = sectionNumber;
             Course = course;
+            Room = room;
+            Professor = professor;
+            SemesterPeriod = semesterPeriod;
         }
+
         public int Id { get; set; }
+        public int SectionNumber { get; set; }
+        public DateTime TimeSlot { get; set; }
         public Course Course { get; set; }
         public Room Room { get; set; }
-        public DateTime TimeSlot { get; set; }
         public User Professor { get; set; }
-        public int SectionNumber { get; set; }
+        public SemesterPeriod SemesterPeriod { get; set; }
     }
 }
