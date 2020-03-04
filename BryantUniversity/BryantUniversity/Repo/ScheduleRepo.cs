@@ -2,8 +2,7 @@
 using BryantUniversity.Models;
 using System.Collections.Generic;
 using System.Data.Entity;
-
-
+using System.Linq;
 
 namespace BryantUniversity.Repo
 {
@@ -18,8 +17,14 @@ namespace BryantUniversity.Repo
 
         public IList<Schedule> GetScheduleByUserId(int id)
         {
-            _context.Schedules.Include(s => s.User).Include(s => s.CourseSection).
+            return _context.Schedules
+                .Include(s => s.User)
+                .Include(s => s.CourseSection)
+                .Include(s => s.CourseSection.Course)
+                .Where(s => s.UserId == id).
+                ToList();
         }
+
         public void Insert(Schedule schedule)
         {
             _context.Schedules.Add(schedule);
