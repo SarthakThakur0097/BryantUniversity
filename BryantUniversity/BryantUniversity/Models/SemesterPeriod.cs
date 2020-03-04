@@ -7,16 +7,16 @@ namespace BryantUniversity.Models
 {
     public class SemesterPeriod
     {
-        public int Id { get; set; }
-        public string Period { get; set; }
-        
-        public List<CalendarEvent> SemesterDetails { get; set; }
-        public SemesterPeriod(){}
+        public SemesterPeriod() { }
 
-        public SemesterPeriod(string period)
+        public SemesterPeriod(Period period)
         {
             Period = period;
         }
 
+        public int Id { get; set; }
+        public Period Period { get; set; }
+        
+        public List<CalendarEvent> SemesterDetails { get; set; }
     }
 }

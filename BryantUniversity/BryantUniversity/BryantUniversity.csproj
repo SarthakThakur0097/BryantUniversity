@@ -198,6 +198,7 @@
     <Compile Include="Controllers\CoursesController.cs" />
     <Compile Include="Controllers\FacultyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Data\Context.cs" />
     <Compile Include="Data\DatabaseIntializer.cs" />
@@ -209,6 +210,7 @@
     <Compile Include="Models\CourseSection.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\FacultyDepartment.cs" />
+    <Compile Include="Models\Period.cs" />
     <Compile Include="Models\Room.cs" />
     <Compile Include="Models\SemesterPeriod.cs" />
     <Compile Include="Models\CalendarEvent.cs" />
@@ -259,6 +261,7 @@
     <Content Include="Views\Student\Edit.cshtml" />
     <Content Include="Views\Faculty\Edit.cshtml" />
     <Content Include="Views\Faculty\Index.cshtml" />
+    <Content Include="Views\Registration\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -266,11 +269,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-    <Folder Include="Views\CalendarApi\" />
-    <Folder Include="Views\FacultyApi\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

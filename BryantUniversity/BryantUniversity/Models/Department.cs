@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
 
 namespace BryantUniversity.Models
 {
     public class Department
     {
         public Department() { }
+
         public Department(string name, string contactNumber)
         {
             Name = name;
             ContactNumber = contactNumber;
         }
-
 
         public int Id { get; set; }
         [Required]

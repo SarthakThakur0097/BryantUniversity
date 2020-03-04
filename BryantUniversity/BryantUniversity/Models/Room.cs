@@ -10,17 +10,18 @@ namespace BryantUniversity.Models
     {
         public Room() { }
 
-        public Room(string buildingName, string roomType)
+        public Room(string buildingName, string roomType, Building building)
         {
             BuildingName = buildingName;
             RoomType = roomType;
+            Building = building; 
         }
+
         public int Id { get; set; }
         [Required]
         public string BuildingName { get; set; }
         [Required]
         public string RoomType { get; set; }
         public Building Building { get; set; }
-
     }
 }

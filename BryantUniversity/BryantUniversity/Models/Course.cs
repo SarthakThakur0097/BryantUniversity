@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Web;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace BryantUniversity.Models
 {
@@ -17,6 +13,16 @@ namespace BryantUniversity.Models
             Description = description;
             Credits = credits;
             Level = level;
+        }
+
+        public Course(int id, string courseTitle, string description, int credits, string level, Department department)
+        {
+            Id = id;
+            CourseTitle = courseTitle;
+            Description = description;
+            Credits = credits;
+            Level = level;
+            Department = department;
         }
 
         public int Id { get; set; }

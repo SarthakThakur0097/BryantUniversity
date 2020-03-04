@@ -4,7 +4,7 @@ using System;
 
 namespace BryantUniversity.Data
 {
-    public class DatabaseIntializer : CreateDatabaseIfNotExists<Context>
+    public class DatabaseIntializer : DropCreateDatabaseAlways<Context>
     {
         protected override void Seed(Context context)
         {
@@ -12,11 +12,13 @@ namespace BryantUniversity.Data
             User adminUser2 = new User("Admin2@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Admin 2");
             User teacherUser = new User("Teacher@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Teacher 1");
             User teacherUser2 = new User("Teacher2@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Teacher 2");
+            User studentUser = new User("Student@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Student 1");
 
             UserRole adminRole = new UserRole(1, 2);
             UserRole teacherRole = new UserRole(2, 1);
             UserRole admin2Role = new UserRole(3, 1);
             UserRole teacher2Role = new UserRole(4, 2);
+            UserRole studentRole = new UserRole(5, 4);
 
             Role admin = new Role("Admin");
             Role faculty = new Role("Faculty");
@@ -39,11 +41,10 @@ namespace BryantUniversity.Data
             var event14 = new DateTime(2020, 3, 23);
             var event15 = new DateTime(2020, 3, 25);
 
-
-            SemesterPeriod Fall2020 = new SemesterPeriod("Fall 2020");
-            SemesterPeriod Spring2020 = new SemesterPeriod("Spring 2019");
-            SemesterPeriod Fall2019 = new SemesterPeriod("Fall 2019");
-            SemesterPeriod Spring2019 = new SemesterPeriod("Spring 2019");
+            SemesterPeriod Fall2020 = new SemesterPeriod(Period.Fall2020);
+            SemesterPeriod Spring2020 = new SemesterPeriod(Period.Spring2020);
+            SemesterPeriod Fall2019 = new SemesterPeriod(Period.Fall2019);
+            SemesterPeriod Spring2019 = new SemesterPeriod(Period.Spring2019);
 
             CalendarEvent semEvent1 = new CalendarEvent(event1, "Continual registration for Spring 2020 for all students on the Web", Fall2020);
             CalendarEvent semEvent2 = new CalendarEvent(event2, "Advising for All students 10am – 6pm", Spring2020);
@@ -59,25 +60,21 @@ namespace BryantUniversity.Data
             CalendarEvent semEvent12 = new CalendarEvent(event12, "	Advising begins in department offices for Fall 2020 registration (By appointment)", Fall2020);
 
             Building mainCampus = new Building("Main Campus", 8100);
-            Room room1 = new Room(mainCampus.BuildingName, "Lecture");
-            room1.Building = mainCampus;
+            Room room1 = new Room(mainCampus.BuildingName, "Lecture", mainCampus);
 
             Department compSci = new Department("Computer Science", "516-389-2930");
-            Course introToProg = new Course(0, "Intro to Computer Science", "Basic programming with Java", 4, "Level 200");
+            Course introToProg = new Course(0, "Intro to Computer Science", "Basic programming with Java", 4, "Level 100", compSci);
 
             FacultyDepartment facultyDepartment = new FacultyDepartment(teacherUser, compSci);
-
-            introToProg.Department = compSci;
-
-            CourseSection courseSection = new CourseSection(DateTime.Now, 5, introToProg);
-            courseSection.Professor = teacherUser;
-            courseSection.Room = room1;
+            CourseSection courseSection = new CourseSection(DateTime.Now, 5, introToProg, room1, teacherUser, Fall2020);
       
             context.Users.Add(adminUser);
             context.Users.Add(adminUser2);
-
+      
             context.Users.Add(teacherUser);
             context.Users.Add(teacherUser2);
+
+            context.Users.Add(studentUser);
 
             context.Roles.Add(admin);
             context.Roles.Add(faculty);
@@ -88,6 +85,7 @@ namespace BryantUniversity.Data
             context.UserRoles.Add(teacherRole);
             context.UserRoles.Add(admin2Role);
             context.UserRoles.Add(teacher2Role);
+            context.UserRoles.Add(studentRole);
 
             context.CalendarEvents.Add(semEvent1);
             context.CalendarEvents.Add(semEvent2);
@@ -109,8 +107,8 @@ namespace BryantUniversity.Data
             context.Courses.Add(introToProg);
             context.CourseSections.Add(courseSection);
             context.FacultyDepartments.Add(facultyDepartment);
-            context.SaveChanges();
 
+            context.SaveChanges();
         }
     }
 }
