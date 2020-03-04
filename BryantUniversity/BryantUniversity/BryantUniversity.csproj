@@ -172,6 +172,7 @@
     <Content Include="Resources\KobeLogoTransparent.png" />
     <Content Include="Resources\KobePic.png" />
     <Content Include="Resources\KobePic2.png" />
+    <Content Include="Resources\mambacad.png" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="scripts\bootstrap.js" />

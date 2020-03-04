@@ -28,18 +28,17 @@
         let container = gebi("tableContainer");
         container.innerHTML =
         `<table id="list" class="pure-table pure-table-horizontal">
-      <thead>
-          <tr>
-          </tr>
-      </thead>
-      <tbody>
-              <tr data-numseats= data-id= class="bench-row">
-                  <td>
-                  </td>
-              </tr>
-
-      </tbody>
-  </table>`
+            <thead>
+                <tr>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr data-numseats= data-id= class="bench-row">
+                        <td>
+                        </td>
+                    </tr>
+            </tbody>
+        </table>`
     }
 
     async function updateList(data){
@@ -47,7 +46,6 @@
        let table = gebi("list");
        table.className = "table";
 
-       
         let toDisplay = await data;
         console.log("Display List")
         console.log()
@@ -68,13 +66,8 @@
         tableRow.innerHTML = headers;
 
         for (let i=0; i < rows.length; i++){
-
             var currUser = await toDisplay[i]
-            //var items =  '<td>${data[0]}</td> <td>@Model.semesterDetails[i].EventDescription</td>'
-
-        
-            tbody.innerHTML+= `<td>${currUser.Name}</td> <td>${currUser.Email}</td>`
-            
+            tbody.innerHTML+= `<td>${currUser.Name}</td> <td>${currUser.Email}</td>`  
             }
         }
 
@@ -88,9 +81,15 @@
         let roleId = chosenRole.options[chosenRole.selectedIndex].value
 
         console.log(roleId)
-        
+
         if (roleId == 'Admin') {
             roleId = 1
+        } else if (roleId == 'Faculty') {
+            roleId = 2
+        } else if (roleId == 'Researcher') {
+            roleId = 3
+        } else if (roleId == 'Student') {
+            roleId = 4
         }
 
         updateList(changeUsers(roleId));
