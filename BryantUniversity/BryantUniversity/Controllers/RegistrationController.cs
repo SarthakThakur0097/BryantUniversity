@@ -38,14 +38,14 @@ namespace BryantUniversity.Controllers
             }
         }
 
-        [HttpPost]
+        [HttpGet]
         public ActionResult Add(int id)
         {
             using (context)
             {
-                User student = new UserRepo(context).GetByEmail(User.Identity.Name);
+                User currUser = new UserRepo(context).GetByEmail(User.Identity.Name);
                 CourseSection courseSection = new CourseSectionRepo(context).GetCourseSectionById(id);
-                Schedule schedule = new Schedule(student, courseSection);
+                Schedule schedule = new Schedule(currUser, courseSection);
                 new ScheduleRepo(context).Insert(schedule);
                 return RedirectToAction("Index");
             }

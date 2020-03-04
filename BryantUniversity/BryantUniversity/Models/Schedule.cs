@@ -9,7 +9,7 @@ namespace BryantUniversity.Models
         public Schedule(User user, CourseSection courseSection)
         {
             User = user;
-            CourseSection = CourseSection;
+            CourseSection = courseSection;
         }
 
         public int Id { get; set; }

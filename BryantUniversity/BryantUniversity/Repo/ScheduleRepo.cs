@@ -1,9 +1,9 @@
 ﻿using BryantUniversity.Data;
 using BryantUniversity.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Data.Entity;
+
+
 
 namespace BryantUniversity.Repo
 {
@@ -16,6 +16,10 @@ namespace BryantUniversity.Repo
             _context = context;
         }
 
+        public IList<Schedule> GetScheduleByUserId(int id)
+        {
+            _context.Schedules.Include(s => s.User).Include(s => s.CourseSection).
+        }
         public void Insert(Schedule schedule)
         {
             _context.Schedules.Add(schedule);

@@ -24,7 +24,5 @@ namespace BryantUniversity.Models
         public Room Room { get; set; }
         public User Professor { get; set; }
         public SemesterPeriod SemesterPeriod { get; set; }
-
-        public List<Schedule> Schedules { get; set; }
     }
 }
