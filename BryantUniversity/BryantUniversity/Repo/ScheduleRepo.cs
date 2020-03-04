@@ -24,7 +24,7 @@ namespace BryantUniversity.Repo
                 .Where(s => s.UserId == id).
                 ToList();
         }
-
+        //To Fix
         public void Insert(Schedule schedule)
         {
             _context.Schedules.Add(schedule);
