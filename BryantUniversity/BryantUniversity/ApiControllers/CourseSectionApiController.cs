@@ -22,9 +22,9 @@ namespace BryantUniversity.ApiControllers
             context = new Context();
         }
 
-        [Route("{teacherId}/course/{courseId}")]
+        [Route("{teacherId}/course/{courseId}/time/{time}")]
         [HttpPost]
-        public IHttpActionResult AssignTeacherToCourse(int teacherId, int courseId)
+        public IHttpActionResult AssignTeacherToCourse(int teacherId, int courseId, string time)
         {
             CourseSectionRepo csRepo;
             UserRepo userRepo;
@@ -48,7 +48,7 @@ namespace BryantUniversity.ApiControllers
                 CourseSection courseSection = new CourseSection(DateTime.Now, course, room, teacher, semPeriod);
                 csRepo.Insert(courseSection);
             }
-                return Ok();
+                return Json(new { redirectUrl = "/checkout/thank-you" });
         }
     }
 }

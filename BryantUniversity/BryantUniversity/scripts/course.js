@@ -88,10 +88,13 @@
 
     console.log(assignButton);
 
-    async function AssignToCourse(teacherID, courseID){
+    async function AssignToCourse(teacherID, courseID, time){
         try{
+          
+            let timeString = time.toString();
+            console.log(timeString)
 
-            const response = await fetch ('http://localhost:51934/api/Coursesection/' + teacherID +'/course/' + courseID,{
+            const response = await fetch ('http://localhost:51934/api/Coursesection/' + teacherID +'/course/' + courseID + '/time/'+ timeString,{
                 method: "POST",
                 credentials:"include",
                 header:{
@@ -113,7 +116,17 @@
         let courseId = gebi("getCourseId").dataset.courseId;
         let teacherId = butt.dataset.teacherId;
         
-        AssignToCourse(teacherId, courseId);
+        var time = gebi("appt").value;
+        console.log(time);
+        let hours = time.substring(0,2);
+        console.log(hours)
+        let minutes = time.substring(3,5);
+        console.log(minutes)
+
+        var d = new Date(2020, 2, 24, hours, minutes);
+        console.log(d)
+        console.log(time.value);
+        //AssignToCourse(teacherId, courseId, time.value);
     }
    
     
