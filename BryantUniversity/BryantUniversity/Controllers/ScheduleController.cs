@@ -20,15 +20,15 @@ namespace BryantUniversity.Controllers
         }
 
         // GET: Schedule
+        [HttpGet]
         public ActionResult Index()
         {
             using (context)
             {
                 User currUser = new UserRepo(context).GetByEmail(User.Identity.Name);
-                IList<Schedule> schedules = new ScheduleRepo(context)
-                return View();
+                IList<Schedule> schedules = new ScheduleRepo(context).GetScheduleByUserId(currUser.Id);
+                return View(schedules);
             }
-            
         }
     }
 }
