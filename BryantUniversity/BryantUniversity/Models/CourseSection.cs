@@ -5,9 +5,12 @@ namespace BryantUniversity.Models
 {
     public class CourseSection
     {
-        public CourseSection(){}
+        public CourseSection()
+        {
+            Schedules = new List<Schedule>();
+        }
 
-        public CourseSection(DateTime timeSlot, int sectionNumber, Course course, Room room, User professor, SemesterPeriod semesterPeriod)
+        public CourseSection(DateTime timeSlot, int sectionNumber, Course course, Room room, User professor, SemesterPeriod semesterPeriod) : this()
         {
             TimeSlot = timeSlot;
             SectionNumber = sectionNumber;
@@ -24,5 +27,7 @@ namespace BryantUniversity.Models
         public Room Room { get; set; }
         public User Professor { get; set; }
         public SemesterPeriod SemesterPeriod { get; set; }
+
+        public List<Schedule> Schedules { get; set; }
     }
 }
