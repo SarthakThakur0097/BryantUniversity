@@ -2,10 +2,7 @@
 using BryantUniversity.Models;
 using BryantUniversity.Models.Repo;
 using BryantUniversity.Repo;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace BryantUniversity.Controllers
@@ -44,7 +41,7 @@ namespace BryantUniversity.Controllers
             using (context)
             {
                 User currUser = new UserRepo(context).GetByEmail(User.Identity.Name);
-                CourseSection courseSection = new CourseSectionRepo(context).GetCourseSectionById(id);
+                CourseSection courseSection = new CourseSectionRepo(context).GetCourseSectionById(id, currUser.Id);
                 Schedule schedule = new Schedule(currUser, courseSection);
                 new ScheduleRepo(context).Insert(schedule);
                 return RedirectToAction("Index");

@@ -15,7 +15,7 @@ namespace BryantUniversity.Repo
             _context = context;
         }
 
-        public CourseSection GetCourseSectionById (int courseSectionId)
+        public CourseSection GetCourseSectionById (int courseSectionId, int userId)
         {
             return _context.CourseSections
                             .Include(cR => cR.Course)
@@ -23,6 +23,7 @@ namespace BryantUniversity.Repo
                             .Include(cR => cR.Room)
                             .Include(cR => cR.SemesterPeriod)
                             .Include(cR => cR.Course.Department)
+                            //.Include(cR => cR.Schedules.Select(s => s.CourseSectionId == courseSectionId && s.UserId == userId))
                             .Where(cR => cR.Id == courseSectionId)
                             .SingleOrDefault();
         }
