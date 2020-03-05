@@ -29,11 +29,24 @@ namespace BryantUniversity.ApiControllers
             CourseSectionRepo csRepo;
             UserRepo userRepo;
             CoursesRepo courseRepo;
+            RoomRepo roomRepo;
+            SemesterPeriodRepo semRepo;
+
             using (context)
             {
                 csRepo = new CourseSectionRepo(context);
-                userRepo = 
-                
+                userRepo = new UserRepo(context);
+                courseRepo = new CoursesRepo(context);
+                roomRepo = new RoomRepo(context);
+                semRepo = new SemesterPeriodRepo(context);
+
+                Course course = courseRepo.GetById(courseId);
+                Room room = roomRepo.GetById(1);
+                User teacher = userRepo.GetById(teacherId);
+                SemesterPeriod semPeriod = semRepo.GetById(1);
+
+                CourseSection courseSection = new CourseSection(DateTime.Now, course, room, teacher, semPeriod);
+                csRepo.Insert(courseSection);
             }
                 return Ok();
         }

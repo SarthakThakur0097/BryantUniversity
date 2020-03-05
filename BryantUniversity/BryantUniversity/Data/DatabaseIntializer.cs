@@ -68,8 +68,7 @@ namespace BryantUniversity.Data
             Course introToProg = new Course(0, "Intro to Computer Science", "Basic programming with Java", 4, "Level 100", compSci);
 
             FacultyDepartment facultyDepartment = new FacultyDepartment(teacherUser, compSci);
-            CourseSection courseSection = new CourseSection(DateTime.Now, 5, introToProg, room1, teacherUser, Fall2020);
-            CourseSection courseSection2 = new CourseSection(DateTime.Now, 6, introToProg, room1, teacherUser2, Fall2019);
+           
 
             context.Users.Add(adminUser);
             context.Users.Add(adminUser2);
@@ -108,8 +107,7 @@ namespace BryantUniversity.Data
             context.Departments.Add(compSci);
 
             context.Courses.Add(introToProg);
-            context.CourseSections.Add(courseSection);
-            context.CourseSections.Add(courseSection2);
+            
             context.FacultyDepartments.Add(facultyDepartment);
 
             context.SaveChanges();

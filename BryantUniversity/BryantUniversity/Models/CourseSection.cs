@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BryantUniversity.Models
 {
@@ -7,10 +8,9 @@ namespace BryantUniversity.Models
     {
         public CourseSection(){}
 
-        public CourseSection(DateTime timeSlot, int sectionNumber, Course course, Room room, User professor, SemesterPeriod semesterPeriod)
+        public CourseSection(DateTime timeSlot, Course course, Room room, User professor, SemesterPeriod semesterPeriod)
         {
             TimeSlot = timeSlot;
-            SectionNumber = sectionNumber;
             Course = course;
             Room = room;
             Professor = professor;
@@ -19,6 +19,7 @@ namespace BryantUniversity.Models
         }
 
         public int Id { get; set; }
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int SectionNumber { get; set; }
         public DateTime TimeSlot { get; set; }
         public Course Course { get; set; }

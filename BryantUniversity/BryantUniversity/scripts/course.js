@@ -88,9 +88,10 @@
 
     console.log(assignButton);
 
-    function AssignToCourse(teacherID, courseID){
+    async function AssignToCourse(teacherID, courseID){
         try{
-            const response = await fetch ('http://localhost:51934/api/Course/' + RoleId,{
+
+            const response = await fetch ('http://localhost:51934/api/Coursesection/' + teacherID +'/course/' + courseID,{
                 method: "POST",
                 credentials:"include",
                 header:{
@@ -109,8 +110,10 @@
     }
     assignButton.onclick = function() {
         let butt = event.target;
-
-        AssignToCourse();
+        let courseId = gebi("getCourseId").dataset.courseId;
+        let teacherId = butt.dataset.teacherId;
+        
+        AssignToCourse(teacherId, courseId);
     }
    
     
