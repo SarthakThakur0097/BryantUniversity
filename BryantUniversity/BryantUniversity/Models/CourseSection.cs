@@ -25,9 +25,13 @@ namespace BryantUniversity.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int SectionNumber { get; set; }
         public DateTime TimeSlot { get; set; }
+        public int CourseId { get; set; }
         public Course Course { get; set; }
+        public int RoomId { get; set; }
         public Room Room { get; set; }
+        public int UserId { get; set; }
         public User Professor { get; set; }
+        public int SemesterPeriodId { get; set; }
         public SemesterPeriod SemesterPeriod { get; set; }
         public ClassPattern Pattern { get; set; }
         public List<Schedule> Schedules { get; set; }

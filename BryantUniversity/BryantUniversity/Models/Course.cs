@@ -33,6 +33,7 @@ namespace BryantUniversity.Models
         public int Credits { get; set; }
         [Required]
         public string Level { get; set; }
+        public int DepartmentId { get; set; }
         public Department Department { get; set; }
     }
 }

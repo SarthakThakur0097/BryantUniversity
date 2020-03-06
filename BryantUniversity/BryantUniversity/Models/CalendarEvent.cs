@@ -28,6 +28,7 @@ namespace BryantUniversity.Models
         public string UrlSlug { get; set; }
         public DateTime Date { get; set; }
         public string EventDescription { get; set; }
+        public int SemesterPeriodId { get; set; }
         public SemesterPeriod SemPeriod { get; set; }
         public List<SemesterPeriod> SemesterDetails { get; set; }
         public IList<SemesterPeriod> SemesterPeriods { get; set; }

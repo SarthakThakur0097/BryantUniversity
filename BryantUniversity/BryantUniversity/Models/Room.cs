@@ -22,6 +22,7 @@ namespace BryantUniversity.Models
        
         [Required]
         public string RoomType { get; set; }
+        public int BuildingId { get; set; }
         public Building Building { get; set; }
     }
 }
