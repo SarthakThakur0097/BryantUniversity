@@ -81,10 +81,34 @@
             </table>
         </div>
         <div class="col-sm">
-            <label for="appt">Choose a time for the Class: </label>
+            <div class="dropdown" id="PatternDiv">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownPattern" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Class Pattern
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">MonWed</a>
+                    <a class="dropdown-item" href="#">TueThurs</a>
+                   
+                </div>
+            </div>
+            <div class="dropdown" id="TimeDiv">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Class Pattern
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <a class="dropdown-item" href="#">9:40AM-11:10AM</a>
+                    <a class="dropdown-item" href="#">11:20AM-12:50PM</a>
+                    <a class="dropdown-item" href="#">1:00PM-:2:00PM</a>
+                    <a class="dropdown-item" href="#">3:50PM-:5:20PM</a>
+                    <a class="dropdown-item" href="#">5:30PM-6:50PM</a>
+                   <a class="dropdown-item" href="#">7:10PM-:8:30PM</a>
+
+                </div>
+            </div>
+            @*<label for="appt">Choose a time for the Class: </label>
 
             <input type="time" id="appt" name="appt"
-                   min="09:00" max="18:00" required>
+                   min="09:00" max="18:00" required>*@
     </div>
 </div>
 

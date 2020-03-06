@@ -22,9 +22,9 @@ namespace BryantUniversity.ApiControllers
             context = new Context();
         }
 
-        [Route("{teacherId}/course/{courseId}/time/{time}")]
+        [Route("{teacherId}/course/{courseId}/time/{time}/pattern/{classPattern}")]
         [HttpPost]
-        public IHttpActionResult AssignTeacherToCourse(int teacherId, int courseId, string time)
+        public IHttpActionResult AssignTeacherToCourse(int teacherId, int courseId, [FromBody] string time, [FromBody] string classPattern)
         {
             CourseSectionRepo csRepo;
             UserRepo userRepo;

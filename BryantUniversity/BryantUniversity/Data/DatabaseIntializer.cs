@@ -43,6 +43,8 @@ namespace BryantUniversity.Data
             var event14 = new DateTime(2020, 3, 23);
             var event15 = new DateTime(2020, 3, 25);
 
+            DateTime fall2020StartTime = new DateTime(2020, 08, 15);
+            DateTime fall2020EndTime = new DateTime(2021, 01, 21);
             SemesterPeriod Fall2020 = new SemesterPeriod(Period.Fall2020);
             SemesterPeriod Spring2020 = new SemesterPeriod(Period.Spring2020);
             SemesterPeriod Fall2019 = new SemesterPeriod(Period.Fall2019);

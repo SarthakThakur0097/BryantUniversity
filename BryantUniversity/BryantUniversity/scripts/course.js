@@ -1,7 +1,8 @@
 ﻿(async() => {
 
     const gebi = (e) => document.getElementById(e);
-   
+    let patternString;
+    let timeString;
 
     async function GetAllFaculty(RoleId)
     {
@@ -88,13 +89,9 @@
 
     console.log(assignButton);
 
-    async function AssignToCourse(teacherID, courseID, time){
+    async function AssignToCourse(teacherID, courseID){
         try{
-          
-            let timeString = time.toString();
-            console.log(timeString)
-
-            const response = await fetch ('http://localhost:51934/api/Coursesection/' + teacherID +'/course/' + courseID + '/time/'+ timeString,{
+            const response = await fetch ('http://localhost:51934/api/Coursesection/' + teacherID +'/course/' + courseID + '/time/'+ timeString + '/pattern/' + patternString,{
                 method: "POST",
                 credentials:"include",
                 header:{
@@ -115,19 +112,20 @@
         let butt = event.target;
         let courseId = gebi("getCourseId").dataset.courseId;
         let teacherId = butt.dataset.teacherId;
-        
-        var time = gebi("appt").value;
-        console.log(time);
-        let hours = time.substring(0,2);
-        console.log(hours)
-        let minutes = time.substring(3,5);
-        console.log(minutes)
-
-        var d = new Date(2020, 2, 24, hours, minutes);
-        console.log(d)
-        console.log(time.value);
-        //AssignToCourse(teacherId, courseId, time.value);
+     
+        AssignToCourse(teacherId, courseId);
     }
-   
+
+    let choosePattern = gebi("PatternDiv");
+    choosePattern.onclick = function (){
+        let patternButton = event.target;
+        patternString = patternButton.text
+        
+    }
+    let chooseTime = gebi("TimeDiv");
+    chooseTime.onclick = function (){
+        let timeButton = event.target;
+        timeString = timeButton.text
+    }
     
 })();

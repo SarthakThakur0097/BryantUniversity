@@ -26,7 +26,7 @@ namespace BryantUniversity.Controllers
             {
                 cRepo = new CalendarRepo(context);
                 spRepo = new SemesterPeriodRepo(context);
-                viewModel.PopulateSelectList(context);
+                viewModel.PopulateSelectList(spRepo.GetAllSemesterPeriods());
             }
                  
             return View(viewModel);
