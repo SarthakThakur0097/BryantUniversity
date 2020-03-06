@@ -7,6 +7,8 @@
     <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
     <link href="~/Content/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
     <script src="http://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
@@ -23,12 +25,51 @@
 
         .navbar-custom .navbar-brand,
         .navbar-custom .navbar-text {
-            color: #f8f8ff;
-                /*#fdb927;*/
+            color: #fdb927;
+                /*#f8f8ff*/
             font-size: 15px;
             font-weight: bold;
         }
 
+        p {
+            color: #a17f1a;
+            font-family: Roboto;
+            font-weight:800;
+            font-size: 15px;
+        }
+
+        .fa {
+          padding: 20px;
+          font-size: 30px;
+          width: 50px;
+          text-align: center;
+          text-decoration: none;
+          color: #fdb927;
+        }
+
+        /* Add a hover effect if you want */
+        .fa:hover {
+          opacity: 0.7;
+          color: #552583;
+        }
+
+        .copyright {
+            color: #1B1B1B;
+            font-family: Roboto;
+            font-weight: 800;
+            font-size: 14px;
+        }
+
+        a {
+            color: #fdb927;
+            font-family: Roboto;
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        a:hover {
+            color: #552583;
+        }
         /*#username::after{
             content: url(../../Resources/KobePic2.png);
         }*/
@@ -37,7 +78,7 @@
 
 </head>
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark navbar-custom">
+    <nav class="navbar navbar-expand-md navbar-dark navbar-custom" style="align-content:center">
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <ul class="navbar-nav mr-auto">
                 @if (Request.IsAuthenticated && ((BryantUniversity.Security.CustomPrincipal)User).IsInRole("1"))
@@ -54,8 +95,7 @@
                     <li class="nav-item">
                         @Html.ActionLink("Students", "Index", "Courses", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
-                }
-                else
+                } else
                 {
                     <li class="nav-item active">
                         @Html.ActionLink("Academic Calendar", "Index", "Calendar", new { area = "" }, new { @class = "navbar-brand" })
@@ -67,11 +107,11 @@
                         @Html.ActionLink("Current Schedule", "Index", "Schedule", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
                 }
-               
+
             </ul>
         </div>
         <div class="mx-auto order-0">
-            <img class="navbar-brand mx-auto" src="~/Resources/KobePic.png" style="width:188px;height:128px" href="#"/>
+            <img class="navbar-brand mx-auto " src="~/Resources/mugold.png" style="width:188px;" href="#"/>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -95,7 +135,7 @@
                         {
                             using (Html.BeginForm("Logout", "Account", FormMethod.Post))
                             {
-                                <button class="btn navbar-brand" type="submit">Log Out</button>
+                                <button class="btn navbar-brand cen" type="submit">Log Out</button>
                             }
                         }
                         else
@@ -110,9 +150,89 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Mamba University</p>
+        <!-- Footer -->
+        <footer class="page-footer font-small stylish-color-dark pt-4">
+
+            <!-- Footer Links -->
+            <div class="container text-center text-md-left">
+
+                <!-- Grid row -->
+                <div class="row">
+
+                    <!-- Grid column -->
+                    <div class="col-md-3 mx-auto">
+
+                        <!-- Content -->
+                        <img src="~/Resources/logo.png" style="width:inherit; height:inherit" />
+                        <p>
+                            <br />Gigi Towers
+                            <br />8-24 Mamba Drive
+                            <br />Bryant, CA 02824
+                            <br />(111) 222-3333
+                            <br /> <a href="#" class="fa fa-facebook"> </a> <a href="#" class="fa fa-twitter"></a> <a href="#" class="fa fa-instagram"></a> <a href="#" class="fa fa-youtube"></a>
+                        </p>
+                        
+                    </div>
+                    <!-- Grid column -->
+
+                    <hr class="clearfix w-100 d-md-none">
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 mx-auto">
+                        <ul class="list-unstyled links">
+                            <li>
+                                <a href="#!">Contact</a>
+                            </li>
+                            <li>
+                                <a href="#!">About</a>
+                            </li>
+                            <li>
+                                <a href="#!">Jobs & Careers</a>
+                            </li>
+                            <li>
+                                <a href="#!">Policies</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+
+                    <hr class="clearfix w-100 d-md-none">
+
+                    <!-- Grid column -->
+                    <div class="col-md-2 mx-auto">
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#!">Link 1</a>
+                            </li>
+                            <li>
+                                <a href="#!">Link 2</a>
+                            </li>
+                            <li>
+                                <a href="#!">Link 3</a>
+                            </li>
+                            <li>
+                                <a href="#!">Link 4</a>
+                            </li>
+                        </ul>
+
+                    </div>
+                    <!-- Grid column -->
+
+                </div>
+                <!-- Grid row -->
+
+            </div>
+            <!-- Footer Links -->
+
+            <!-- Copyright -->
+            <div class="footer-copyright text-center py-3 copyright">
+                © 2020 Copyright: Mamba University
+            </div>
+            <!-- Copyright -->
+
         </footer>
+        <!-- Footer -->
     </div>
 
     @*<script type="text/javascript" src="https://cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js"></script>*@

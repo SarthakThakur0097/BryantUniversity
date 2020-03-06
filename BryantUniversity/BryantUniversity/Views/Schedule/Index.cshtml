@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>My Schedule</h2>
 
 <table>
     <tr>
@@ -12,6 +12,11 @@
         <th>Course Name</th>
         <th>Description</th>
         <th>Department Name</th>
+        <th>Professor</th>
+        <th>Room</th>
+        <th>Building</th>
+        <th>Time</th>
+        <th>Semester</th>
         <th>Credits</th>
     </tr>
 
@@ -23,10 +28,12 @@
                 <td>@schedule.CourseSection.Course.CourseTitle</td>
                 <td>@schedule.CourseSection.Course.Description</td>
                 <td>@schedule.CourseSection.Course.Department.Name</td>
+                <td>@schedule.CourseSection.Professor.Name</td>
+                <td>@schedule.CourseSection.Room.RoomType</td>
+                <td>@schedule.CourseSection.Room.BuildingName</td>
+                <td>@schedule.CourseSection.TimeSlot</td>
+                <td>@schedule.CourseSection.SemesterPeriod.Period.Value</td>
                 <td>@schedule.CourseSection.Course.Credits</td>
-                @*<td>
-                    @Html.ActionLink("See Sections", "Details", new { id = course.Id })
-                </td>*@
             </tr>
         }
     </tbody>
