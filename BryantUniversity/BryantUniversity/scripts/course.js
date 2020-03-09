@@ -4,6 +4,7 @@
     let patternString;
     let timeString;
     let chosenBuildingId;
+    let chosenRoomId;
     let chosenSemPeriodId;
 
     async function GetAllFaculty(RoleId)
@@ -88,10 +89,11 @@
 
     console.log(assignButton);
 
-    async function AssignToCourse(teacherID, courseID, roomID){
+    async function AssignToCourse(teacherId, courseID){
         try{
-           // var courseSection = {CourseId:courseID,  }
-            const response = await fetch ('http://localhost:51934/api/Coursesection/' + teacherID +'/course/' + courseID +'/room/' + roomID +'/time/'+ timeString + '/pattern/' + patternString,{
+            let courseSection = {CourseId:courseID, RoomId: chosenRoomId, UserId: teacherId, TimeSlot: timeString, SemesterPeriodId: chosenSemPeriodId }
+            //const response = await fetch ('http://localhost:51934/api/Coursesection/' + teacherID +'/course/' + courseID +'/room/' + roomID +'/time/'+ timeString + '/pattern/' + patternString,{
+            const response = await fetch ('http://localhost:51934/api/Coursesection/Assign' + courseSection ,{
                 method: "POST",
                 credentials:"include",
                 header:{
@@ -176,8 +178,8 @@
         let butt = event.target;
         let courseId = gebi("getCourseId").dataset.courseId;
         let teacherId = butt.dataset.teacherId;
-     
-        var car = {type:"Fiat", model:"500", color:"white"};
+        console.log(teacherId)
+      
         AssignToCourse(teacherId, courseId);
     }
 
@@ -238,13 +240,22 @@
     }
 
     let buildingDiv = gebi("BuildingDiv");
-    buildingDiv.onclick = function (){
+    buildingDiv.onclick = function (){ 
+        console.log("Click")
         let buildingOptions = gebi("BuildingOptions");
         let chosenBuilding = event.target;
-        chosenBuildingId =  chosenBuilding.dataset.buildingId;
+        chosenBuildingId = chosenBuilding.dataset.buildingId;
         console.log(chosenBuildingId);
         setUpRoomDropDown();
     }
+
+    let roomDiv = gebi("RoomDiv");
+    roomDiv.onclick = function (){
+        let roomOptions = gebi("RoomOptions");
+        let chosenRoom = event.target;
+        chosenRoomId =  chosenRoom.dataset.roomId;
+    }
+
 
     setUpSemPeriodDropDown()
     setUpBuildingDropDown();

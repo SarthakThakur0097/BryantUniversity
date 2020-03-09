@@ -11,12 +11,13 @@ namespace BryantUniversity.Models
             Schedules = new List<Schedule>();
         }
 
-        public CourseSection(DateTime timeSlot, int courseId, int roomId, int professorId, int semesterPeriodId) : this()
+        public CourseSection(int courseId, int roomId, int professorId, DateTime timeSlot, int semesterPeriodId) : this()
         {
-            TimeSlot = timeSlot;
+            
             CourseId = courseId;
             RoomId = roomId;
             UserId = professorId;
+            TimeSlot = timeSlot;
             SemesterPeriodId = semesterPeriodId;
             new DateTime();
         }
