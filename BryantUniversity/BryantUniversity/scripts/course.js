@@ -93,7 +93,7 @@
         try{
             let courseSection = {CourseId:courseID, RoomId: chosenRoomId, UserId: teacherId, TimeSlot: timeString, SemesterPeriodId: chosenSemPeriodId }
             //const response = await fetch ('http://localhost:51934/api/Coursesection/' + teacherID +'/course/' + courseID +'/room/' + roomID +'/time/'+ timeString + '/pattern/' + patternString,{
-            const response = await fetch ('http://localhost:51934/api/Coursesection/Assign' + courseSection ,{
+            const response = await fetch ('http://localhost:51934/api/Coursesection/Assign/' + courseSection ,{
                 method: "POST",
                 credentials:"include",
                 header:{
