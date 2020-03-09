@@ -1,6 +1,7 @@
 ﻿using BryantUniversity.Data;
 using BryantUniversity.Models;
 using BryantUniversity.Models.Repo;
+using BryantUniversity.Repo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,10 +21,19 @@ namespace BryantUniversity.ApiControllers
         {
             context = new Context();
         }
-        //[EnableCors("*","*","*")]
-        
-        // GET: CalendarApi
-
+        [Route("Periods")]
+        [HttpGet]
+        public IHttpActionResult GetAllSemEvents()
+        {
+            SemesterPeriodRepo sRepo;
+            IList<SemesterPeriod> allPeriods;
+            using (context)
+            {
+                sRepo = new SemesterPeriodRepo(context);
+                allPeriods = sRepo.GetAllSemesterPeriods();
+            }
+            return Ok(allPeriods);
+        }
         [Route("{periodId}")]
         [HttpPost]
         public IHttpActionResult ChangePeriod(int periodId)

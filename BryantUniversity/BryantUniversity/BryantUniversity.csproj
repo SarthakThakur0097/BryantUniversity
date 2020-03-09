@@ -188,6 +188,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiControllers\BuildingApiController.cs" />
     <Compile Include="ApiControllers\CalendarApiController.cs" />
     <Compile Include="ApiControllers\CourseSectionApiController.cs" />
     <Compile Include="ApiControllers\UserApiController.cs" />
@@ -220,6 +221,7 @@
     <Compile Include="Models\SemesterPeriod.cs" />
     <Compile Include="Models\CalendarEvent.cs" />
     <Compile Include="Models\RoleType.cs" />
+    <Compile Include="Repo\BuildingRepo.cs" />
     <Compile Include="Repo\CalendarRepo.cs" />
     <Compile Include="Repo\CourseSectionRepo.cs" />
     <Compile Include="Repo\CoursesRepo.cs" />

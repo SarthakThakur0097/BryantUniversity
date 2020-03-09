@@ -26,6 +26,12 @@ namespace BryantUniversity.Repo
             return _context.Rooms.SingleOrDefault(c => c.Id == id);
         }
 
+        public IList<Room> GetByBuildingId(int buildingId)
+        {
+            return _context.Rooms
+                .Where(c => c.Building.Id == buildingId).ToList();
+        }
+
         public void Update(Room room)
         {
             _context.Rooms.Attach(room);
