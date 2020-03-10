@@ -91,15 +91,24 @@
 
     async function AssignToCourse(teacherId, courseID){
         try{
-            let courseSection = {CourseId:courseID, RoomId: chosenRoomId, UserId: teacherId, TimeSlot: timeString, SemesterPeriodId: chosenSemPeriodId }
-            //const response = await fetch ('http://localhost:51934/api/Coursesection/' + teacherID +'/course/' + courseID +'/room/' + roomID +'/time/'+ timeString + '/pattern/' + patternString,{
-            const response = await fetch ('http://localhost:51934/api/Coursesection/Assign/' + courseSection ,{
+                console.log("ASDASD" + chosenSemPeriodId)
+                let courseSection = {CourseId: courseID, RoomId: chosenRoomId, UserId: teacherId, SemesterPeriodId: chosenSemPeriodId}
+                const response = await fetch('http://localhost:51934/api/Coursesection/Assign', {
                 method: "POST",
-                credentials:"include",
-                header:{
-                    "Context-Type":"application/json"
-                }
-            });
+                credentials: "include",
+                headers: {
+                "Content-Type": "application/json"
+                },
+                body: JSON.stringify(courseSection)
+                });
+if (response.ok) {
+	const data = await response.json();
+	console.log(data);
+	console.log("JSON: " + JSON.stringify(data))
+	return data	
+} else {
+	// TODO handle errors returned from the server
+}
 
             const data = await response.json();
             console.log(data);
@@ -156,6 +165,8 @@
 
     async function GetAllRoomsByBuildingId(buildingId){
         try{
+            console.log("asdasdfsdf" +
+                 chosenSemPeriodId);
             // var courseSection = {CourseId:courseID,  }
             const response = await fetch ('http://localhost:51934/api/Buildings/' + buildingId + '/Rooms',{
                 method: "GET",
@@ -178,7 +189,6 @@
         let butt = event.target;
         let courseId = gebi("getCourseId").dataset.courseId;
         let teacherId = butt.dataset.teacherId;
-        console.log(teacherId)
       
         AssignToCourse(teacherId, courseId);
     }
@@ -235,8 +245,8 @@
     semPeriodDiv.onclick = function (){
         let semPeriodOptions = gebi("SemPeriodOptions");
         let chosenPeriod = event.target;
-        chosenSemPeriod = chosenPeriod.dataset.periodId;
-        console.log(chosenSemPeriod);
+        chosenSemPeriodId = chosenPeriod.dataset.periodId;
+        console.log(chosenSemPeriodId);
     }
 
     let buildingDiv = gebi("BuildingDiv");

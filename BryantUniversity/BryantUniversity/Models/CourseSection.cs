@@ -11,31 +11,29 @@ namespace BryantUniversity.Models
             Schedules = new List<Schedule>();
         }
 
-        public CourseSection(int courseId, int roomId, int professorId, DateTime timeSlot, int semesterPeriodId) : this()
+        public CourseSection(int courseId, int roomId, int professorId, int semesterPeriodId) : this()
         {
-            
             CourseId = courseId;
             RoomId = roomId;
             UserId = professorId;
-            TimeSlot = timeSlot;
+            //TimeSlot = timeSlot;
             SemesterPeriodId = semesterPeriodId;
             new DateTime();
         }
 
-        public CourseSection(DateTime timeSlot, Course course, Room room, User professor, SemesterPeriod semesterPeriod):this()
+        public CourseSection(/*DateTime timeSlot,*/ Course course, Room room, User professor, SemesterPeriod semesterPeriod):this()
         {
-            TimeSlot = timeSlot;
+            //TimeSlot = timeSlot;
             Course = course;
             Room = room;
             Professor = professor;
-            SemesterPeriod = semesterPeriod;
-            new DateTime();
+            SemesterPeriod = semesterPeriod;   
         }
 
         public int Id { get; set; }
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int SectionNumber { get; set; }
-        public DateTime TimeSlot { get; set; }
+        //public DateTime TimeSlot { get; set; }
         public int CourseId { get; set; }
         public Course Course { get; set; }
         public int RoomId { get; set; }

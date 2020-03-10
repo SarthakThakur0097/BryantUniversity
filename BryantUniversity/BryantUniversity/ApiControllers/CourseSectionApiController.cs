@@ -1,12 +1,6 @@
 ﻿using BryantUniversity.Data;
 using BryantUniversity.Models;
-using BryantUniversity.Models.Repo;
 using BryantUniversity.Repo;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Http;
 
 namespace BryantUniversity.ApiControllers
@@ -23,11 +17,10 @@ namespace BryantUniversity.ApiControllers
             context = new Context();
         }
 
-
         [Route("Assign")]
         [HttpPost]
         public IHttpActionResult AssignTeacherToCourse([FromBody]CourseSection courseSection)
-        {
+        { 
             bool test = ModelState.IsValid;
             CourseSectionRepo csRepo;
 

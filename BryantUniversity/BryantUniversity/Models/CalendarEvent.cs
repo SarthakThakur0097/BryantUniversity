@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace BryantUniversity.Models
 {
@@ -30,7 +29,5 @@ namespace BryantUniversity.Models
         public string EventDescription { get; set; }
         public int SemesterPeriodId { get; set; }
         public SemesterPeriod SemPeriod { get; set; }
-        public List<SemesterPeriod> SemesterDetails { get; set; }
-        public IList<SemesterPeriod> SemesterPeriods { get; set; }
     }
 }
