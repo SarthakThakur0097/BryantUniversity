@@ -17,7 +17,7 @@
         /* Modify the background color */
 
         .navbar-custom {
-            background-color: #1B1B1B;
+            background-color: #404040;
                 /*#552583;*/
             margin-top: 0;
         }
@@ -67,13 +67,9 @@
             font-size: 14px;
         }
 
-        a:hover {
+        li:hover, a:hover {
             color: #552583;
         }
-        /*#username::after{
-            content: url(../../Resources/KobePic2.png);
-        }*/
-
     </style>
 
 </head>
@@ -97,7 +93,7 @@
                     </li>
                 } else
                 {
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         @Html.ActionLink("Academic Calendar", "Index", "Calendar", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
                     <li class="nav-item">
@@ -163,7 +159,7 @@
                     <div class="col-md-3 mx-auto">
 
                         <!-- Content -->
-                        <img src="~/Resources/logo.png" style="width:inherit; height:inherit" />
+                        <img src="~/Resources/mambaheader.png" style="width:inherit; height:inherit" />
                         <p>
                             <br />Gigi Towers
                             <br />8-24 Mamba Drive
