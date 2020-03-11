@@ -18,10 +18,9 @@ namespace BryantUniversity.Models
         }
 
         public int Id { get; set; }
-        public int RoomCapacity { get; set; }
-       
         [Required]
         public string RoomType { get; set; }
+        public int RoomCapacity { get; set; }
         public int BuildingId { get; set; }
         public Building Building { get; set; }
     }
