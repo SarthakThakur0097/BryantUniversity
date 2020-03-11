@@ -64,9 +64,9 @@
         let headers = '<th scope="col">Name</th> <th scope="col">Email</th>'
 
         tableRow.innerHTML = headers;
-
+        
         for (let i=0; i < rows.length; i++){
-            var currUser = await toDisplay[i]
+            var currUser = toDisplay[i]
             tbody.innerHTML+= `<td>${currUser.Name}</td> <td>${currUser.Email}</td>`  
             }
         }
@@ -92,7 +92,7 @@
             roleId = 4
         }
 
-        updateList(changeUsers(roleId));
+        await updateList(changeUsers(roleId));
     };
 
 })();
