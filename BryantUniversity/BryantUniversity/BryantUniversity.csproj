@@ -188,7 +188,9 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiControllers\BuildingApiController.cs" />
     <Compile Include="ApiControllers\CalendarApiController.cs" />
+    <Compile Include="ApiControllers\CourseSectionApiController.cs" />
     <Compile Include="ApiControllers\UserApiController.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
@@ -196,6 +198,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CalendarController.cs" />
     <Compile Include="Controllers\CoursesController.cs" />
+    <Compile Include="Controllers\CourseSectionController.cs" />
     <Compile Include="Controllers\FacultyController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
@@ -207,6 +210,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Building.cs" />
+    <Compile Include="Models\ClassPattern.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\CourseSection.cs" />
     <Compile Include="Models\Department.cs" />
@@ -217,11 +221,13 @@
     <Compile Include="Models\SemesterPeriod.cs" />
     <Compile Include="Models\CalendarEvent.cs" />
     <Compile Include="Models\RoleType.cs" />
+    <Compile Include="Repo\BuildingRepo.cs" />
     <Compile Include="Repo\CalendarRepo.cs" />
     <Compile Include="Repo\CourseSectionRepo.cs" />
     <Compile Include="Repo\CoursesRepo.cs" />
     <Compile Include="Repo\DepartmentRepo.cs" />
     <Compile Include="Repo\RoleRepo.cs" />
+    <Compile Include="Repo\RoomRepo.cs" />
     <Compile Include="Repo\ScheduleRepo.cs" />
     <Compile Include="Repo\SemesterPeriodRepo.cs" />
     <Compile Include="Repo\UserRepo.cs" />

@@ -43,6 +43,8 @@ namespace BryantUniversity.Data
             var event14 = new DateTime(2020, 3, 23);
             var event15 = new DateTime(2020, 3, 25);
 
+            DateTime fall2020StartTime = new DateTime(2020, 08, 15);
+            DateTime fall2020EndTime = new DateTime(2021, 01, 21);
             SemesterPeriod Fall2020 = new SemesterPeriod(Period.Fall2020);
             SemesterPeriod Spring2020 = new SemesterPeriod(Period.Spring2020);
             SemesterPeriod Fall2019 = new SemesterPeriod(Period.Fall2019);
@@ -62,14 +64,13 @@ namespace BryantUniversity.Data
             CalendarEvent semEvent12 = new CalendarEvent(event12, "	Advising begins in department offices for Fall 2020 registration (By appointment)", Fall2020);
 
             Building mainCampus = new Building("Main Campus", 8100);
-            Room room1 = new Room(mainCampus.BuildingName, "Lecture", mainCampus);
+            Room room1 = new Room("Lecture", 50, mainCampus);
 
             Department compSci = new Department("Computer Science", "516-389-2930");
             Course introToProg = new Course(0, "Intro to Computer Science", "Basic programming with Java", 4, "Level 100", compSci);
 
             FacultyDepartment facultyDepartment = new FacultyDepartment(teacherUser, compSci);
-            CourseSection courseSection = new CourseSection(DateTime.Now, 5, introToProg, room1, teacherUser, Fall2020);
-            CourseSection courseSection2 = new CourseSection(DateTime.Now, 6, introToProg, room1, teacherUser2, Fall2019);
+           
 
             context.Users.Add(adminUser);
             context.Users.Add(adminUser2);
@@ -108,8 +109,7 @@ namespace BryantUniversity.Data
             context.Departments.Add(compSci);
 
             context.Courses.Add(introToProg);
-            context.CourseSections.Add(courseSection);
-            context.CourseSections.Add(courseSection2);
+            
             context.FacultyDepartments.Add(facultyDepartment);
 
             context.SaveChanges();

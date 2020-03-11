@@ -15,13 +15,14 @@ namespace BryantUniversity.ViewModels
         public string Name { get; set; }
         public string UrlSlug { get; set; }
         public IList<CalendarEvent> CalendarEvents { get; set; }
-
         public IList<SemesterPeriod> SemesterPeriods { get; set; }
-
+        public List<ClassPattern> PatternsToDisplay { get; set; }
+      
         public SemesterDetailsViewModel()
         {
 
         }
+
 
         public SelectList PeriodList
         {
@@ -31,11 +32,13 @@ namespace BryantUniversity.ViewModels
             }
         }
 
-        public void PopulateSelectList(Context context)
+        public void PopulateSelectList(IList<SemesterPeriod> populatedPeriods)
         {
-            SemesterPeriodRepo srRepo = new SemesterPeriodRepo(context);
+           
 
-            SemesterPeriods = srRepo.GetAllSemesterPeriods();
+            SemesterPeriods = populatedPeriods;
+
+          
         }
     }
 }
