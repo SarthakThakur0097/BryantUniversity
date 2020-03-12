@@ -66,11 +66,11 @@
         tableRow.innerHTML = headers;
         
         for (let i=0; i < rows.length; i++){
-            var currUser = toDisplay[i]
+            var currUser = await toDisplay[i]
             tbody.innerHTML+= `<td>${currUser.Name}</td> <td>${currUser.Email}</td>`  
             }
         }
-
+        
     let dropDownMenu = gebi("role-list")
     let dropDownOptions = gebi("dropDownOptions")
     let selectedRole = dropDownMenu.textContent
@@ -92,7 +92,7 @@
             roleId = 4
         }
 
-        await updateList(changeUsers(roleId));
+        updateList(changeUsers(roleId));
     };
 
 })();

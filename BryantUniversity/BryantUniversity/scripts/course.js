@@ -27,9 +27,7 @@
             console.log('ERROR: ' + error);
         }
     }
-    //let dropDownMenu = gebi("period-list")
-    //let dropDownOptions = gebi("dropDownOptions")
-    //let selectedYear = dropDownMenu.textContent
+
     function resetList(){
         let container = gebi("tableContainer");
         container.innerHTML =
@@ -50,7 +48,6 @@
 
     async function PopulateTable()
     {
-        //resetList();
         let table = gebi("TeachersTable");
         table.className = "table table-striped table-bordered table-sm";
        
@@ -67,19 +64,16 @@
         console.log("Body: ");
         console.log(childNodes);
         let tableHead = childNodes[1];
-        //tableHead.className = "thead-dark"
+
         let tbody = childNodes[3];
         console.log(tbody)
         let tableRow = childNodes[1].childNodes[1];
-        //let headers = '<th scope="col">Date</th> <th scope="col">Academic Event</th>'
 
-        //tableRow.innerHTML = headers;
         for (let i=0; i < toDisplay.length; i++){
            
             var teacher = toDisplay[i];
             console.log("Teacher: " )
             console.log(teacher)
-            //var items =  '<td>${data[0]}</td> <td>@Model.semesterDetails[i].EventDescription</td>'
             tbody.innerHTML+= `<td>${teacher.Id}</td> <td>${teacher.Name}</td> <td>${teacher.Email}</td> <td><div id="AssignButtons"><button type="button" data-teacher-id=${teacher.Id} class="btn btn-success" >Assign</button></div></td>`
         }
     }
@@ -109,7 +103,6 @@ if (response.ok) {
 } else {
 	// TODO handle errors returned from the server
 }
-
             const data = await response.json();
             console.log(data);
             console.log("JSON: " + JSON.stringify(data))
@@ -123,8 +116,7 @@ if (response.ok) {
     
     async function GetAllSemesterPeriods(){
         try{
-            // var courseSection = {CourseId:courseID,  }
-            const response = await fetch ('http://localhost:51934/api/Calendar/Periods',{
+                const response = await fetch ('http://localhost:51934/api/Calendar/Periods',{
                 method: "GET",
                 credentials:"include",
                 header:{
@@ -165,10 +157,7 @@ if (response.ok) {
 
     async function GetAllRoomsByBuildingId(buildingId){
         try{
-            console.log("asdasdfsdf" +
-                 chosenSemPeriodId);
-            // var courseSection = {CourseId:courseID,  }
-            const response = await fetch ('http://localhost:51934/api/Buildings/' + buildingId + '/Rooms',{
+                const response = await fetch ('http://localhost:51934/api/Buildings/' + buildingId + '/Rooms',{
                 method: "GET",
                 credentials:"include",
                 header:{
@@ -185,32 +174,25 @@ if (response.ok) {
             console.log('ERROR: ' + error);
         }
     }
+
     assignButton.onclick = function() {
         let butt = event.target;
         let courseId = gebi("getCourseId").dataset.courseId;
         let teacherId = butt.dataset.teacherId;
-      
-        AssignToCourse(teacherId, courseId);
+
+        if((chosenBuildingId != undefined || null) && (chosenRoomId != undefined || null) && (chosenSemPeriodId != undefined || null)){
+            AssignToCourse(teacherId, courseId);
+        }
+        else{
+            window.alert("Please chose an option from all the drop down menu's");
+        }
     }
 
-    let choosePattern = gebi("PatternDiv");
-    choosePattern.onclick = function (){
-        let patternButton = event.target;
-        patternString = patternButton.text
-        
-    }
-    let chooseTime = gebi("TimeDiv");
-    chooseTime.onclick = function (){
-        let timeButton = event.target;
-        timeString = timeButton.text
-    }
-
+  
     async function setUpSemPeriodDropDown(){
         let buildingOptions = gebi("SemPeriodOptions")
         let toDisplay = await GetAllSemesterPeriods();
-        console.log("To Display: ")
-        console.log(toDisplay)
-        console.log(toDisplay);
+
         for(let i = 0; i<toDisplay.length; i++)
         {
             let semPeriod = toDisplay[i]
@@ -230,10 +212,12 @@ if (response.ok) {
     }
 
     async function setUpRoomDropDown(){
-        let buildingOptions = gebi("RoomOptions")
+
+        resetList("RoomDiv","Rooms", "RoomOptions", "dropdownRoom");
+
+        let buildingOptions = gebi("RoomOptions");
         let toDisplay = await GetAllRoomsByBuildingId(chosenBuildingId);
 
-        console.log(toDisplay);
         for(let i = 0; i<toDisplay.length; i++)
         {
             let room = toDisplay[0]
@@ -241,28 +225,81 @@ if (response.ok) {
         }
     }
 
+    async function resetList(divId, dropDownTitle, dropDownId, labelledby){
+
+        let options = gebi(divId);
+        options.innerHTML = `<button class="btn btn-secondary dropdown-toggle" type="button" id="dropDownRoomButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                ${dropDownTitle}
+                            </button>
+                            <div class="dropdown-menu" id="${dropDownId}" aria-labelledby="${labelledby}">
+
+                            </div>`
+    }
+
     let semPeriodDiv = gebi("SemPeriodDiv");
     semPeriodDiv.onclick = function (){
-        let semPeriodOptions = gebi("SemPeriodOptions");
+
         let chosenPeriod = event.target;
+        let dropDownDisplay = gebi("semPeriodButton");
+      
+        if(chosenPeriod.text != dropDownDisplay && chosenPeriod.text != undefined)
+        {
+            dropDownDisplay.innerText = chosenPeriod.text;
+        }
         chosenSemPeriodId = chosenPeriod.dataset.periodId;
-        console.log(chosenSemPeriodId);
     }
+
+    let choosePattern = gebi("PatternDiv");
+    choosePattern.onclick = function (){
+        let patternButton = event.target;
+        patternString = patternButton.text
+        let dropDownDisplay = gebi("dropdownPatternButton");
+
+        if(patternButton.text != dropDownDisplay && patternButton.text != undefined)
+        {
+            dropDownDisplay.innerText = patternButton.text;
+        }  
+    }
+    let chooseTime = gebi("TimeDiv");
+    chooseTime.onclick = function (){
+
+        let timeButton = event.target;
+        timeString = timeButton.text
+        let dropDownDisplay = gebi("dropDownTimeButton");
+
+        if(timeButton.text != dropDownDisplay && timeButton.text != undefined)
+        {
+            dropDownDisplay.innerText = timeButton.text;
+        }
+        
+    }
+
 
     let buildingDiv = gebi("BuildingDiv");
     buildingDiv.onclick = function (){ 
-        console.log("Click")
-        let buildingOptions = gebi("BuildingOptions");
+
         let chosenBuilding = event.target;
+        let dropDownDisplay = gebi("dropdownBuildingButton");
+
+        if(chosenBuilding.text != dropDownDisplay && chosenBuilding.text != undefined)
+        {
+            dropDownDisplay.innerText = chosenBuilding.text;
+        }
+       
         chosenBuildingId = chosenBuilding.dataset.buildingId;
-        console.log(chosenBuildingId);
+        console.log("Right before setupRoom()")
         setUpRoomDropDown();
     }
 
     let roomDiv = gebi("RoomDiv");
     roomDiv.onclick = function (){
-        let roomOptions = gebi("RoomOptions");
         let chosenRoom = event.target;
+        let dropDownDisplay = gebi("dropDownRoomButton");
+
+        if(chosenRoom.text != dropDownDisplay && chosenRoom.text != undefined)
+        {
+            dropDownDisplay.innerText = chosenRoom.text;
+        }
         chosenRoomId =  chosenRoom.dataset.roomId;
     }
 
