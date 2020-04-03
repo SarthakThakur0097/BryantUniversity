@@ -1,5 +1,7 @@
 ﻿using BryantUniversity.Data;
+using BryantUniversity.Models;
 using BryantUniversity.Repo;
+using BryantUniversity.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,22 +19,26 @@ namespace BryantUniversity.Controllers
             context = new Context();
         }
 
-        //[HttpGet]
-        //public ActionResult Index()
-        //{
-        //    CourseSectionRepo csRepo;
-        //    CourseViewModel viewModel;
-        //    IList<Course> courses;
-        //    using (context)
-        //    {
-        //        courseRepo = new CoursesRepo(context);
-        //        viewModel = new CourseViewModel();
-        //        courses = courseRepo.GetAllCourses();
-        //    }
+        [HttpGet]
+        public ActionResult IndexCourse()
+        {
+            return View();
+        }
 
-        //    viewModel.Courses = courses;
+        [HttpGet]
+        public ActionResult Index()
+        {
+            CourseSectionRepo csRepo;
+            CourseSectionViewModel viewModel;
+            
+            using (context)
+            {
+                csRepo = new CourseSectionRepo(context);
+                viewModel = new CourseSectionViewModel();
+                IList<CourseSection> courseSections = csRepo.GetAllCourseSections();
+            }
 
-        //    return View("Index", viewModel);
-        //}
+            return View("Index", viewModel);
+        }
     }
 }

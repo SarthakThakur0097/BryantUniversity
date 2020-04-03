@@ -25,9 +25,10 @@
                 <td>@course.Department.Name</td>
                 <td>@course.Credits</td>
                 <td>
-                    @Html.ActionLink("See Sections", "Details", new {id = course.Id })
+                    @Html.ActionLink("See Sections", "IndexCourse", "CourseSection", new {id = course.Id })
                 </td>
             </tr>
         }
+
     </tbody>
 </table>

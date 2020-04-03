@@ -15,6 +15,18 @@ namespace BryantUniversity.Repo
             _context = context;
         }
 
+        public IList<CourseSection> GetAllCourseSections()
+        {
+            return _context.CourseSections
+                .Include(c => c.Course)
+                .Include(c => c.Pattern)
+                .Include(c => c.Professor)
+                .Include(c => c.Room)
+                .Include(c => c.Schedules)
+                .Include(c => c.SemesterPeriod)
+                .ToList();
+        }
+
         public CourseSection GetCourseSectionById (int courseSectionId, int userId)
         {
             return _context.CourseSections
