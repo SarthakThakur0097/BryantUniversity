@@ -279,7 +279,7 @@
     <Content Include="Views\Registration\Index.cshtml" />
     <Content Include="Views\Registration\Details.cshtml" />
     <Content Include="Views\Schedule\Index.cshtml" />
-    <Content Include="Views\CourseSection\IndexCourse.cshtml" />
+    <Content Include="Views\CourseSection\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

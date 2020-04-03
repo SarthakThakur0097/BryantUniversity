@@ -20,25 +20,18 @@ namespace BryantUniversity.Controllers
         }
 
         [HttpGet]
-        public ActionResult IndexCourse()
-        {
-            return View();
-        }
-
-        [HttpGet]
         public ActionResult Index()
         {
             CourseSectionRepo csRepo;
-            CourseSectionViewModel viewModel;
-            
+            IList<CourseSection> courseSections; 
             using (context)
             {
                 csRepo = new CourseSectionRepo(context);
-                viewModel = new CourseSectionViewModel();
-                IList<CourseSection> courseSections = csRepo.GetAllCourseSections();
+
+                courseSections = csRepo.GetAllCourseSections();
             }
 
-            return View("Index", viewModel);
+            return View("Index", courseSections);
         }
     }
 }

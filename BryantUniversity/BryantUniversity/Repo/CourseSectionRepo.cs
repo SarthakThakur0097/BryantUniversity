@@ -19,7 +19,6 @@ namespace BryantUniversity.Repo
         {
             return _context.CourseSections
                 .Include(c => c.Course)
-                .Include(c => c.Pattern)
                 .Include(c => c.Professor)
                 .Include(c => c.Room)
                 .Include(c => c.Schedules)
