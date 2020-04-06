@@ -4,7 +4,7 @@ using System;
 
 namespace BryantUniversity.Data
 {
-    public class DatabaseIntializer : DropCreateDatabaseAlways<Context>
+    public class DatabaseIntializer : DropCreateDatabaseIfModelChanges<Context>
     {
         public object Response { get; private set; }
 
