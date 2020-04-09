@@ -43,10 +43,7 @@ namespace BryantUniversity.Controllers
                 Schedule userCourseSection = new Schedule(CustomUser.User.Id, toAdd.Id);
                 sRepo.Insert(userCourseSection);
             }
-
-
             return View("Index");
-
         }
         // GET: Schedule
         [HttpGet]

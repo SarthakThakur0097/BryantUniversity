@@ -52,6 +52,18 @@ namespace BryantUniversity.Repo
                             .SingleOrDefault();
         }
 
+        public IList<CourseSection> GetCourseSectionByUserId(int userId)
+        {
+            return _context.CourseSections
+                            .Include(cR => cR.Course)
+                            .Include(cR => cR.Professor)
+                            .Include(cR => cR.Room)
+                            .Include(cR => cR.SemesterPeriod)
+                            .Include(cR => cR.Course.Department)
+                            //.Include(cR => cR.Schedules.Select(s => s.CourseSectionId == courseSectionId && s.UserId == userId))
+                            .Where(cR => cR.Professor.Id == userId)
+                            .ToList();
+        }
         public IList<CourseSection> GetCourseSectionsByCourseId(int courseId)
         {
             return _context.CourseSections
