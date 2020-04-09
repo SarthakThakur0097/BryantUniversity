@@ -1,7 +1,10 @@
 ﻿using BryantUniversity.Data;
 using BryantUniversity.Models;
 using BryantUniversity.Models.Repo;
+using BryantUniversity.Repo;
+using BryantUniversity.Security;
 using BryantUniversity.ViewModels;
+using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace BryantUniversity.Controllers
@@ -9,6 +12,14 @@ namespace BryantUniversity.Controllers
     public class FacultyController : Controller
     {
         private Context context;
+
+        public CustomPrincipal CustomUser
+        {
+            get
+            {
+                return (CustomPrincipal)User;
+            }
+        }
 
         public FacultyController()
         {
@@ -82,6 +93,34 @@ namespace BryantUniversity.Controllers
             }
 
             return View(userViewModel);
+        }
+
+        public ActionResult Teaching()
+        {
+            CourseSectionRepo csRepo;
+            IList<CourseSection> classesTaught;
+            using (context)
+            {
+                csRepo = new CourseSectionRepo(context);
+                classesTaught = csRepo.GetCourseSectionByUserId(CustomUser.User.Id);
+            }
+
+            return View(classesTaught);
+        }
+
+        [HttpGet]
+        public ActionResult Students(int Id)
+        {
+            ScheduleRepo sRepo;
+            IList<Schedule> students;
+
+            using (context)
+            {
+                sRepo = new ScheduleRepo(context);
+
+                students = sRepo.GetScheduleByCourseSectionId(Id);
+            }
+                return View(students);
         }
     }
 }

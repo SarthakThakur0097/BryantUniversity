@@ -6,6 +6,11 @@ namespace BryantUniversity.Models
     {
         public Schedule() { }
 
+        public Schedule(int userId, int courseSectionId)
+        {
+            UserId = userId;
+            CourseSectionId = courseSectionId;
+        }
         public Schedule(User user, CourseSection courseSection)
         {
             User = user;

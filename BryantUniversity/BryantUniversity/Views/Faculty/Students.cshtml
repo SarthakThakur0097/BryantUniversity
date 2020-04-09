@@ -1,0 +1,27 @@
+﻿@model IList<BryantUniversity.Models.Schedule>
+@{
+    ViewBag.Title = "Students";
+}
+
+<h2>Students</h2>
+
+<table class="pure-table pure-table-horizontal">
+    <thead>
+        <tr lass="bench-row">
+            <th>Name</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var student in Model)
+            {
+            <tr>
+                <td>@student.User.Name</td>
+
+                <td>
+                    @Html.ActionLink("View Enrolled Students", "Students")
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

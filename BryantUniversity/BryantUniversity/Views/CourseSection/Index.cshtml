@@ -1,0 +1,39 @@
+﻿@model IList<BryantUniversity.Models.CourseSection>
+@{
+    ViewBag.Title = "IndexCourse";
+}
+
+<h2>Index Course</h2>
+
+
+<table class="pure-table pure-table-horizontal">
+    <thead>
+        <tr lass="bench-row">
+            <th>Course Title</th>
+            <th>Description</th>
+            <th>Credits</th>
+            <th>Pattern</th>
+            <th>Level</th>
+            <th>Professor</th>
+            <th>Room Number</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var courseSection in Model)
+            {
+            <tr>
+                <td>@courseSection.Course.CourseTitle</td>
+                <td>@courseSection.Course.Description</td>
+                <td>@courseSection.Course.Credits</td>
+                <td>@courseSection.Pattern</td>
+                <td>@courseSection.Course.Level</td>
+                <td>@courseSection.Professor.Name</td>
+                <td>@courseSection.Room.Id</td>
+                <td>
+                    @Html.ActionLink("Schedule", "Add", "Schedule", new { id = courseSection.Id }, null)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -41,7 +41,7 @@ namespace BryantUniversity.Controllers
             using (context)
             {
                 User currUser = new UserRepo(context).GetByEmail(User.Identity.Name);
-                CourseSection courseSection = new CourseSectionRepo(context).GetCourseSectionById(id, currUser.Id);
+                CourseSection courseSection = new CourseSectionRepo(context).GetCourseSectionByIdAndUser(id, currUser.Id);
                 Schedule schedule = new Schedule(currUser, courseSection);
                 new ScheduleRepo(context).Insert(schedule);
                 return RedirectToAction("Index");

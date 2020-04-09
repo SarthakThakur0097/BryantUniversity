@@ -15,7 +15,18 @@ namespace BryantUniversity.Repo
             _context = context;
         }
 
-        public CourseSection GetCourseSectionById (int courseSectionId, int userId)
+        public IList<CourseSection> GetAllCourseSections()
+        {
+            return _context.CourseSections
+                .Include(c => c.Course)
+                .Include(c => c.Professor)
+                .Include(c => c.Room)
+                .Include(c => c.Schedules)
+                .Include(c => c.SemesterPeriod)
+                .ToList();
+        }
+
+        public CourseSection GetCourseSectionById(int courseSectionId)
         {
             return _context.CourseSections
                             .Include(cR => cR.Course)
@@ -28,6 +39,31 @@ namespace BryantUniversity.Repo
                             .SingleOrDefault();
         }
 
+        public CourseSection GetCourseSectionByIdAndUser (int courseSectionId, int userId)
+        {
+            return _context.CourseSections
+                            .Include(cR => cR.Course)
+                            .Include(cR => cR.Professor)
+                            .Include(cR => cR.Room)
+                            .Include(cR => cR.SemesterPeriod)
+                            .Include(cR => cR.Course.Department)
+                            //.Include(cR => cR.Schedules.Select(s => s.CourseSectionId == courseSectionId && s.UserId == userId))
+                            .Where(cR => cR.Id == courseSectionId)
+                            .SingleOrDefault();
+        }
+
+        public IList<CourseSection> GetCourseSectionByUserId(int userId)
+        {
+            return _context.CourseSections
+                            .Include(cR => cR.Course)
+                            .Include(cR => cR.Professor)
+                            .Include(cR => cR.Room)
+                            .Include(cR => cR.SemesterPeriod)
+                            .Include(cR => cR.Course.Department)
+                            //.Include(cR => cR.Schedules.Select(s => s.CourseSectionId == courseSectionId && s.UserId == userId))
+                            .Where(cR => cR.Professor.Id == userId)
+                            .ToList();
+        }
         public IList<CourseSection> GetCourseSectionsByCourseId(int courseId)
         {
             return _context.CourseSections
