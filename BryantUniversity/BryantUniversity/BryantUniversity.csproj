@@ -168,6 +168,7 @@
     <Content Include="Global.asax" />
     <Content Include="Resources\BryantLogo.png" />
     <Content Include="Resources\BryantLogoBlack.png" />
+    <Content Include="Resources\Gold.png" />
     <Content Include="Resources\img1.jpg" />
     <Content Include="Resources\img2.jpg" />
     <Content Include="Resources\img3.jpg" />
@@ -175,13 +176,18 @@
     <Content Include="Resources\KobeLogoTransparent.png" />
     <Content Include="Resources\KobePic.png" />
     <Content Include="Resources\KobePic2.png" />
+    <Content Include="Resources\login.png" />
+    <Content Include="Resources\logo.png" />
     <Content Include="Resources\mambacad.png" />
     <Content Include="Resources\mambaheader.png" />
+    <Content Include="Resources\MUgold.png" />
+    <Content Include="Resources\MUwhite.png" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="ClassDiagram1.cd" />
+    <None Include="Properties\PublishProfiles\BryantUniversity.pubxml" />
     <None Include="scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="scripts\calendar.js" />
     <Content Include="scripts\course.js" />
