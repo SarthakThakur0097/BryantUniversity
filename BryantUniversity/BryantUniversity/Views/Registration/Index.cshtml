@@ -17,6 +17,11 @@
         </div>
     </div>
     <div class="row">
+        <div class="col-md-5">
+            <input id="myInput" class="form-control" type="text" placeholder="Search..">
+        </div>
+    </div>
+    <div class="row">
         <div class="col-sm">
             <table class="table">
                 <thead class="thead-dark">
@@ -28,7 +33,7 @@
                         <th>Credits</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="myTable">
                     @foreach (var course in Model)
                     {
                         <tr>
@@ -49,3 +54,13 @@
     </div>
 </div>
 
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
