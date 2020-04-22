@@ -53,6 +53,11 @@
                         @Html.ValidationMessageFor(model => model.Level, "", new { @class = "pure-form-message-inline" })
                     </div>
                     <div class="pure-controls">
+                        @Html.LabelFor(model => model.DepartmentId)
+                        @Html.EditorFor(model => model.DepartmentId, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.DepartmentId, "", new { @class = "pure-form-message-inline" })
+                    </div>
+                    <div class="pure-controls">
                         @Html.ActionLink("Cancel", "Index", new { }, new { @class = "btn btn-danger" })
                         <button type="submit" class="btn btn-success">Submit</button>
                     </div>

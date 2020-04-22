@@ -94,12 +94,14 @@ namespace BryantUniversity.Controllers
                 viewModel.Description = course.Description;
                 viewModel.Credits = course.Credits;
                 viewModel.Level = course.Level;
+                viewModel.DepartmentId = course.DepartmentId;
+                
             }
             return View("Edit", viewModel);
         }
 
         [HttpPost]
-        public ActionResult Edit(int id, Course course)
+        public ActionResult Edit(int id, CourseViewModel course)
         {
             CoursesRepo courseRepo;
             Course newCourse;
@@ -109,14 +111,16 @@ namespace BryantUniversity.Controllers
                 courseRepo = new CoursesRepo(context);
                 try
                 {
-                    newCourse = new Course(id, course.CourseTitle, course.Description, course.Credits, course.Level);
+                    newCourse = new Course(course.Id, course.CourseTitle, course.Description, course.Credits, course.Level, course.DepartmentId);
+
                     viewModel.Id = id;
                     viewModel.CourseTitle = course.CourseTitle;
                     viewModel.Description = course.Description;
                     viewModel.Credits = course.Credits;
                     viewModel.Level = course.Level;
+                    viewModel.DepartmentId = course.DepartmentId;
                     viewModel.PopulateSelectList();
-                   
+
                     courseRepo.Update(newCourse);
                     return RedirectToAction("Index");
                 }
