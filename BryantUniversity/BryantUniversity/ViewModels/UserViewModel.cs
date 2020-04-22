@@ -4,6 +4,7 @@ using System.Linq;
 using System.ComponentModel.DataAnnotations;
 using BryantUniversity.Models;
 using System.Web.Mvc;
+using System.ComponentModel;
 
 namespace BryantUniversity.ViewModels
 {
@@ -17,6 +18,7 @@ namespace BryantUniversity.ViewModels
         [Required]
         public string Name { get; set; }
         public IList<User> Users { get; set; }
+        [Display(Name = "Role Type")]
         public RoleType RoleType { get; set; }
 
         public SelectList RoleTypeList

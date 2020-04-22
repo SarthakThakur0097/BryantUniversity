@@ -79,7 +79,7 @@
             <ul class="navbar-nav mr-auto">
                 @if (Request.IsAuthenticated && ((BryantUniversity.Security.CustomPrincipal)User).IsInRole("1"))
                 {
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         @Html.ActionLink("Users", "Index", "Faculty", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
                     <li class="nav-item">
@@ -88,9 +88,9 @@
                     <li class="nav-item">
                         @Html.ActionLink("Manage Holds", "Create", "Courses", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
-                    <li class="nav-item">
+                    @*<li class="nav-item">
                         @Html.ActionLink("Students", "Index", "Courses", new { area = "" }, new { @class = "navbar-brand" })
-                    </li>
+                    </li>*@
                 } else
                 {
                     <li class="nav-item">

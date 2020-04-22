@@ -4,30 +4,48 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
 
-<table>
-    <tr>
-        <th>Level</th>
-        <th>Course Name</th>
-        <th>Description</th>
-        <th>Department Name</th>
-        <th>Credits</th>
-    </tr>
+        </div>
+        <div class="col-sm">
+            <h2>All Courses</h2>
+        </div>
+        <div class="col-md-5">
 
-    <tbody>
-        @foreach (var course in Model)
-        {
-            <tr>
-                <td>@course.Level</td>
-                <td>@course.CourseTitle</td>
-                <td>@course.Description</td>
-                <td>@course.Department.Name</td>
-                <td>@course.Credits</td>
-                <td>
-                    @Html.ActionLink("See Sections", "Index", "CourseSection")
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Level</th>
+                        <th>Course Name</th>
+                        <th>Description</th>
+                        <th>Department Name</th>
+                        <th>Credits</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var course in Model)
+                    {
+                        <tr>
+                            <td>@course.Level</td>
+                            <td>@course.CourseTitle</td>
+                            <td>@course.Description</td>
+                            <td>@course.Department.Name</td>
+                            <td>@course.Credits</td>
+                            <td>
+                                @Html.ActionLink("See Sections", "Index", "CourseSection", new { @class = "btn btn-info" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+

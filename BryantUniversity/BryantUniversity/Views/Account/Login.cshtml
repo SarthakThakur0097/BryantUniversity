@@ -10,19 +10,19 @@
     @Html.ValidationSummary()
     <div id="container">
         <div id="form">
-            <h2 style="font-family: Roboto; font-weight: 800">Sign In</h2>
+            <h2 style="color: black; font-family: Roboto; font-weight: 800">Sign In</h2>
             <div id="label">
-                @Html.LabelFor(m => m.Email)
-                @Html.TextBoxFor(m => m.Email, new { id = "email" })
+                @Html.LabelFor(m => m.Email, new { Style = "color:black;" })
+                @Html.TextBoxFor(m => m.Email, new { id = "email"})
             </div>
 
             <div id="label">
-                @Html.LabelFor(m => m.Password)
+                @Html.LabelFor(m => m.Password, new { Style = "color:black;" })
                 @Html.PasswordFor(m => m.Password, new { id = "password" })
             </div>
 
             <div>
-                <button type="submit" id="submit" class="pure-button">Login</button>
+                <button type="submit" id="submit" class="btn btn-success btn-lg">Login</button>
             </div>
         </div>
     </div>

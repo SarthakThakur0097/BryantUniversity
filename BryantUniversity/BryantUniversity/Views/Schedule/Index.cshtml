@@ -4,37 +4,51 @@
     ViewBag.Title = "Index";
 }
 
-<h2>My Schedule</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            
+        </div>
+        <div class="col-sm">
+            <h2>My Schedule</h2>
+        </div>
+        <div class="col-md-5">
+            
+        </div>
+    </div>
+    <div class="row">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Level</th>
+                    <th>Course Name</th>
+                    <th>Description</th>
+                    <th>Department Name</th>
+                    <th>Professor</th>
+                    <th>Room</th>
+                    <th>Building</th>
+                    <th>Time</th>
+                    <th>Semester</th>
+                    <th>Credits</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var schedule in Model)
+                {
+                    <tr>
+                        <td>@schedule.CourseSection.Course.Level</td>
+                        <td>@schedule.CourseSection.Course.CourseTitle</td>
+                        <td>@schedule.CourseSection.Course.Description</td>
+                        <td>@schedule.CourseSection.Course.Department.Name</td>
+                        <td>@schedule.CourseSection.Professor.Name</td>
+                        <td>@schedule.CourseSection.Room.RoomType</td>
 
-<table>
-    <tr>
-        <th>Level</th>
-        <th>Course Name</th>
-        <th>Description</th>
-        <th>Department Name</th>
-        <th>Professor</th>
-        <th>Room</th>
-        <th>Building</th>
-        <th>Time</th>
-        <th>Semester</th>
-        <th>Credits</th>
-    </tr>
-
-    <tbody>
-        @foreach (var schedule in Model)
-        {
-            <tr>
-                <td>@schedule.CourseSection.Course.Level</td>
-                <td>@schedule.CourseSection.Course.CourseTitle</td>
-                <td>@schedule.CourseSection.Course.Description</td>
-                <td>@schedule.CourseSection.Course.Department.Name</td>
-                <td>@schedule.CourseSection.Professor.Name</td>
-                <td>@schedule.CourseSection.Room.RoomType</td>
-
-                <td>@schedule.CourseSection.Pattern</td>
-                <td>@schedule.CourseSection.SemesterPeriod.Period.Value</td>
-                <td>@schedule.CourseSection.Course.Credits</td>
-            </tr>
-        }
-    </tbody>
-</table>
+                        <td>@schedule.CourseSection.Pattern</td>
+                        <td>@schedule.CourseSection.SemesterPeriod.Period.Value</td>
+                        <td>@schedule.CourseSection.Course.Credits</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

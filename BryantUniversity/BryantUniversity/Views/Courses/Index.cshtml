@@ -3,38 +3,55 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Courses</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
 
-<p>
-    @Html.ActionLink("Create a course", "Create", new { }, new { @class = "pure-button pure-button-primary" })
-</p>
+        </div>
+        <div class="col-sm">
+            <h2>All Courses</h2>
+        </div>
+        <div class="col-md-5">
 
-<table class="pure-table pure-table-horizontal">
-    <thead>
-        <tr lass="bench-row">
-            <th>Course ID</th>
-            <th>Course Title</th>
-            <th>Description</th>
-            <th>Credits</th>
-            <th>Level</th>
-        </tr>
-    </thead>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <p>
+                @Html.ActionLink("create a course", "Create", new { }, new { @class = "btn btn-success" })
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr lass="bench-row">
+                        <th>Course ID</th>
+                        <th>Course Title</th>
+                        <th>Description</th>
+                        <th>Credits</th>
+                        <th>Level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var course in Model.Courses)
+                    {
+                        <tr>
+                            <td>@course.Id</td>
+                            <td>@course.CourseTitle</td>
+                            <td>@course.Description</td>
+                            <td>@course.Credits</td>
+                            <td>@course.Level</td>
 
-    <tbody>
-        @foreach (var course in Model.Courses)
-            {
-            <tr>
-                <td>@course.Id</td>
-                <td>@course.CourseTitle</td>
-                <td>@course.Description</td>
-                <td>@course.Credits</td>
-                <td>@course.Level</td>
+                            <td>
+                                @Html.ActionLink("create course section", "Edit", new { id = course.Id }, new { @class = "btn btn-info" })
+                            </td>
 
-                <td>
-                    @Html.ActionLink("Create Coursesection", "Edit", new { id = course.Id })
-                </td>
-
-            </tr>
-        }
-    </tbody>
-</table>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

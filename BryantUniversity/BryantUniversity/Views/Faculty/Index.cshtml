@@ -4,49 +4,71 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
+        </div>
+        <div class="col-sm">
+            <h2>All Users</h2>
+        </div>
+        <div class="col-md-5">
 
-
-    <p>
-        @Html.ActionLink("Create a user", "Create", new { }, new { @class = "pure-button pure-button-primary" })
-    </p>
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.RoleType, htmlAttributes: new { @class = "control-label col-md-2" })
-        @Html.DropDownListFor(model => model.RoleType, Model.RoleTypeList, "", new { @class = "form-control", id = "role-list" })
-        @Html.ValidationMessageFor(model => model.RoleTypeList, "", new { @class = "text-danger" })
+        </div>
     </div>
-}
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Email</th>
-        <th>Role</th>
-    </tr>
+    <div class="row">
+        <div class="col-sm">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
 
-    <tbody>
-        @foreach (var user in Model.Users)
-        {
-            <tr>
-                <td>@user.Name</td>
-                <td>@user.Email</td>
-                <td>@user.UserRoles[0].RoleId</td>
-            </tr>
-        }
-    </tbody>
-</table>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.RoleType, htmlAttributes: new { @class = "control-label col-md-2" })
+                    @Html.DropDownListFor(model => model.RoleType, Model.RoleTypeList, "", new { @class = "form-control", id = "role-list" })
+                    @Html.ValidationMessageFor(model => model.RoleTypeList, "", new { @class = "text-danger" })
+                </div>
 
-<div id="tableContainer">
-    <table id="list" class="pure-table pure-table-horizontal">
-        <thead>
-            <tr></tr>
-        </thead>
-        <tbody></tbody>
-    </table>
+            }
+        </div>
+        <div class="col-md-8">
+        
+        </div>
+        <div class="col-sm">
+            <p>
+                @Html.ActionLink("create a user", "Create", new { }, new { @class = "btn btn-success" })
+            </p>
+        </div>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var user in Model.Users)
+                    {
+                        <tr>
+                            <td>@user.Name</td>
+                            <td>@user.Email</td>
+                            <td>@user.UserRoles[0].RoleId</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <div id="tableContainer">
+                <table id="list" class="pure-table pure-table-horizontal">
+                    <thead>
+                        <tr></tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+    </div>
+
 </div>
+
 
 <script src="~/scripts/user.js"></script>
