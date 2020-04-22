@@ -18,7 +18,10 @@
     </div>
     <div class="row">
         <div class="col-sm">
-            @using (Html.BeginForm())
+            <div class="md-form mt-0">
+                <input id="myInput" class="form-control" type="text" placeholder="Search..">
+            </div>
+            @*@using (Html.BeginForm())
             {
                 @Html.AntiForgeryToken()
 
@@ -28,7 +31,7 @@
                     @Html.ValidationMessageFor(model => model.RoleTypeList, "", new { @class = "text-danger" })
                 </div>
 
-            }
+            }*@
         </div>
         <div class="col-md-8">
         
@@ -46,7 +49,7 @@
                         <th>Role</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody id="myTable">
                     @foreach (var user in Model.Users)
                     {
                         <tr>
@@ -70,5 +73,14 @@
 
 </div>
 
-
 <script src="~/scripts/user.js"></script>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>

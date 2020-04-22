@@ -27,6 +27,11 @@ namespace BryantUniversity.Repo
             return _context.Courses.SingleOrDefault(c => c.Id == id);
         }
 
+        //public Course GetByTitle(string title)
+        //{
+        //    return _context.Courses.SingleOrDefault(c => c.Id == id);
+        //}
+
         public void Insert(Course course)
         {
             _context.Courses.Add(course);

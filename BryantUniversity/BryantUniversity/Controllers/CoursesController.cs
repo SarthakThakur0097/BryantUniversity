@@ -40,6 +40,12 @@ namespace BryantUniversity.Controllers
             return View("Index", viewModel);
         }
 
+        [HttpPost]
+        public ActionResult Index(CourseViewModel viewModel)
+        {
+
+            return View();
+        }
         public ActionResult Create()
         {
             var viewModel = new CourseViewModel();
@@ -58,7 +64,7 @@ namespace BryantUniversity.Controllers
 
                 try
                 {
-                    var course = new Course(0,formModel.CourseTitle, formModel.Description, formModel.Credits, formModel.Level);
+                    var course = new Course(0,formModel.CourseTitle, formModel.Description, formModel.Credits, formModel.Level, 1);
                     courseRepo.Insert(course);
 
                     return RedirectToAction("Index");

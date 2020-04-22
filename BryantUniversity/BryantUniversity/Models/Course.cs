@@ -15,6 +15,16 @@ namespace BryantUniversity.Models
             Level = level;
         }
 
+        public Course(int id, string courseTitle, string description, int credits, string level, int departmentId)
+        {
+            Id = id;
+            CourseTitle = courseTitle;
+            Description = description;
+            Credits = credits;
+            Level = level;
+            DepartmentId = departmentId;
+        }
+
         public Course(int id, string courseTitle, string description, int credits, string level, Department department)
         {
             Id = id;
@@ -24,6 +34,7 @@ namespace BryantUniversity.Models
             Level = level;
             Department = department;
         }
+
 
         public int Id { get; set; }
         [Required]
