@@ -1,0 +1,124 @@
+﻿@model BryantUniversity.Models.Course
+
+@{
+    ViewBag.Title = "Assign";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            
+        </div>
+        <div class="col-sm">
+            <h2>Assign Course To</h2>
+        </div>
+        <div class="col-md">
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <div id="getCourseId" data-course-id="@Model.Id">
+
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="card">
+                <div class="card-header">
+                    @Model.CourseTitle
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Description</h5>
+                    <p class="card-text">@Model.Description</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <div id="tableContainer" class="col-sm">
+                <table id="TeachersTable" class="table table-striped table-bordered table-sm " cellspacing="0"
+                       width="100">
+                    <thead>
+                        <tr>
+                            <th class="th-sm">ID</th>
+                            <th class="th-sm">Name</th>
+                            <th class="th-sm">E-mail</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr></tr>
+                        <tr></tr>
+                        <tr></tr>
+                        <tr></tr>
+                        <tr></tr>
+                        <tr></tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+        <div class="col-sm">
+            <div class="col-sm">
+                <div class="dropdown" id="SemPeriodDiv">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="semPeriodButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Semester Period
+                    </button>
+                    <div class="dropdown-menu" id="SemPeriodOptions" aria-labelledby="dropdownMenuButton">
+                    </div>
+                </div>
+                <div class="dropdown" id="PatternDiv">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownPatternButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Class Pattern
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">MonWed</a>
+                        <a class="dropdown-item" href="#">TueThurs</a>
+
+                    </div>
+                </div>
+                <div class="dropdown" id="TimeDiv">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropDownTimeButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Time
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">9:40AM-11:10AM</a>
+                        <a class="dropdown-item" href="#">11:20AM-12:50PM</a>
+                        <a class="dropdown-item" href="#">1:00PM-:2:00PM</a>
+                        <a class="dropdown-item" href="#">3:50PM-:5:20PM</a>
+                        <a class="dropdown-item" href="#">5:30PM-6:50PM</a>
+                        <a class="dropdown-item" href="#">7:10PM-:8:30PM</a>
+
+                    </div>
+                </div>
+                <div class="dropdown" id="BuildingDiv">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownBuildingButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Building
+                    </button>
+                    <div class="dropdown-menu" id="BuildingOptions" aria-labelledby="dropdownMenuButton">
+
+                    </div>
+                </div>
+
+                <div class="dropdown" id="RoomDiv">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropDownRoomButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Room
+                    </button>
+                    <div class="dropdown-menu" id="RoomOptions" aria-labelledby="dropdownRoom">
+
+                    </div>
+                </div>
+                @*<label for="appt">Choose a time for the Class: </label>
+
+            <input type="time" id="appt" name="appt"
+                   min="09:00" max="18:00" required>*@
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="~/scripts/course.js"></script>

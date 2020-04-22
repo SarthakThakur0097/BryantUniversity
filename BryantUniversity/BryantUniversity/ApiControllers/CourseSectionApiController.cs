@@ -23,12 +23,13 @@ namespace BryantUniversity.ApiControllers
         { 
             bool test = ModelState.IsValid;
             CourseSectionRepo csRepo;
-
+            CourseSection toInsert;
             using (context)
             {
                 csRepo = new CourseSectionRepo(context);
-               
-                csRepo.Insert(courseSection);
+
+                toInsert = new CourseSection(0, courseSection.CourseId, courseSection.RoomId, courseSection.UserId, courseSection.SemesterPeriodId);
+                csRepo.Insert(toInsert);
             }
             return Json(new { redirectUrl = "/checkout/thank-you" });
         }

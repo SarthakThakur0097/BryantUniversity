@@ -23,6 +23,7 @@ namespace BryantUniversity.ViewModels
         public IList<Course> Courses { get; set; }
         public IList<SemesterPeriod> SemesterPeriods { get; set; }
         public int ChosenPattern { get; set; }
+        public int DepartmentId { get; set; }
 
         public List<ClassPattern> PatternsToDisplay { get; set; }
 
