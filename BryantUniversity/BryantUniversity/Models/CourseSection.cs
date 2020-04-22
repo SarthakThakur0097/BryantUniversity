@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BryantUniversity.Models
@@ -21,6 +22,18 @@ namespace BryantUniversity.Models
             new DateTime();
         }
 
+        public CourseSection(int id, int courseId, int roomId, int professorId, int semesterPeriodId) : this()
+        {
+            Id = id;
+            CourseId = courseId;
+            RoomId = roomId;
+            UserId = professorId;
+            //TimeSlot = timeSlot;
+            SemesterPeriodId = semesterPeriodId;
+            new DateTime();
+        }
+
+
         public CourseSection(/*DateTime timeSlot,*/ Course course, Room room, User professor, SemesterPeriod semesterPeriod):this()
         {
             //TimeSlot = timeSlot;
@@ -30,8 +43,9 @@ namespace BryantUniversity.Models
             SemesterPeriod = semesterPeriod;   
         }
 
+        [Key]
         public int Id { get; set; }
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int SectionNumber { get; set; }
         //public DateTime TimeSlot { get; set; }
         public int CourseId { get; set; }

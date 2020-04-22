@@ -147,6 +147,7 @@ namespace BryantUniversity.Controllers
                 return View(viewModel);
         }
 
+
         private void HandleDbUpdateException(DbUpdateException ex)
         {
             if (ex.InnerException != null && ex.InnerException.InnerException != null)
