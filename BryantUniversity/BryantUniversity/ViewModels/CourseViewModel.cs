@@ -1,6 +1,7 @@
 ﻿using BryantUniversity.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -12,7 +13,10 @@ namespace BryantUniversity.ViewModels
         public CourseViewModel() { }
 
         public int Id { get; set; }
+
+        [Display(Name = "Course Title")]
         public string CourseTitle { get; set; }
+
         public string Description { get; set; }
         public int Credits { get; set; }
         public string Level { get; set; }
