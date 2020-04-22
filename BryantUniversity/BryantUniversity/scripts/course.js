@@ -52,9 +52,6 @@
         table.className = "table table-striped table-bordered table-sm";
        
         let toDisplay = await GetAllFaculty(2);
-
-        console.log("Display List")
-        console.log(toDisplay)
        
         var teachers = toDisplay;
         let rows = table.getElementsByTagName("tr");
@@ -72,8 +69,7 @@
         for (let i=0; i < toDisplay.length; i++){
            
             var teacher = toDisplay[i];
-            console.log("Teacher: " )
-            console.log(teacher)
+
             tbody.innerHTML+= `<td>${teacher.Id}</td> <td>${teacher.Name}</td> <td>${teacher.Email}</td> <td><div id="AssignButtons"><button type="button" data-teacher-id=${teacher.Id} class="btn btn-success" >Assign</button></div></td>`
         }
     }
@@ -145,9 +141,11 @@ if (response.ok) {
                 }
             });
 
+          
             const data = await response.json();
+            console.log("Returned Data from GetAllBuildings is: ")
             console.log(data);
-            console.log("JSON: " + JSON.stringify(data))
+            //console.log("JSON: " + JSON.stringify(data))
             return data
         }
         catch(error){
@@ -156,6 +154,7 @@ if (response.ok) {
     }
 
     async function GetAllRoomsByBuildingId(buildingId){
+        
         try{
                 const response = await fetch ('http://localhost:51934/api/Buildings/' + buildingId + '/Rooms',{
                 method: "GET",
@@ -201,18 +200,25 @@ if (response.ok) {
     }
 
     async function setUpBuildingDropDown(){
-        let buildingOptions = gebi("BuildingOptions")
-        let toDisplay = await GetAllBuildings(2);
 
+        console.log("Start of building method")
+        let buildingOptions = gebi("BuildingOptions")
+
+        let toDisplay = await GetAllBuildings();
+
+        console.log("Buildings list: ")
+        console.log(toDisplay)
         for(let i = 0; i<toDisplay.length; i++)
         {
-            let building = toDisplay[0]
+            let building = toDisplay[i]
+            console.log("Building Id is: ")
+            console.log(building.Id)
             buildingOptions.innerHTML+= ` <a class="dropdown-item" data-building-id=${building.Id} href="#">${building.BuildingName}</a>`
         }
     }
 
     async function setUpRoomDropDown(){
-
+        debugger;
         resetList("RoomDiv","Rooms", "RoomOptions", "dropdownRoom");
 
         let buildingOptions = gebi("RoomOptions");
@@ -220,7 +226,7 @@ if (response.ok) {
 
         for(let i = 0; i<toDisplay.length; i++)
         {
-            let room = toDisplay[0]
+            let room = toDisplay[i]
             buildingOptions.innerHTML+= ` <a class="dropdown-item" data-room-id=${room.Id} href="#">${room.Id}</a>`
         }
     }
@@ -278,6 +284,8 @@ if (response.ok) {
     let buildingDiv = gebi("BuildingDiv");
     buildingDiv.onclick = function (){ 
 
+        console.log("Event Target is: ")
+        console.log(event.target)
         let chosenBuilding = event.target;
         let dropDownDisplay = gebi("dropdownBuildingButton");
 
@@ -302,7 +310,6 @@ if (response.ok) {
         }
         chosenRoomId =  chosenRoom.dataset.roomId;
     }
-
 
     setUpSemPeriodDropDown()
     setUpBuildingDropDown();

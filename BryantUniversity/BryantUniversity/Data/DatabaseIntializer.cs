@@ -64,7 +64,7 @@ namespace BryantUniversity.Data
             CalendarEvent semEvent12 = new CalendarEvent(event12, "	Advising begins in department offices for Fall 2020 registration (By appointment)", Fall2020);
 
             Building mainCampus = new Building("Main Campus", 8100);
-            Room room1 = new Room("Lecture", 50, mainCampus);
+            //Room room1 = new Room("Lecture", 50, mainCampus);
 
             Department compSci = new Department("Computer Science", "516-389-2930");
             Course introToProg = new Course(0, "Intro to Computer Science", "Basic programming with Java", 4, "Level 100", compSci);
@@ -104,8 +104,8 @@ namespace BryantUniversity.Data
             context.CalendarEvents.Add(semEvent11);
             context.CalendarEvents.Add(semEvent12);
 
-            context.Buildings.Add(mainCampus);
-            context.Rooms.Add(room1);
+            //context.Buildings.Add(mainCampus);
+            //context.Rooms.Add(room1);
             context.Departments.Add(compSci);
 
             context.Courses.Add(introToProg);
