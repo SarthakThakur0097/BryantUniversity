@@ -56,7 +56,10 @@
                             <td>@course.Level</td>
 
                             <td>
-                                @Html.ActionLink("create course section", "Edit", new { id = course.Id }, new { @class = "btn btn-info" })
+                                @Html.ActionLink("edit", "Edit", new { id = course.Id }, new { @class = "btn btn-info" })
+                            </td>
+                            <td>
+                                @Html.ActionLink("assign", "Assign", new { id = course.Id }, new { @class = "btn btn-info" })
                             </td>
 
                         </tr>

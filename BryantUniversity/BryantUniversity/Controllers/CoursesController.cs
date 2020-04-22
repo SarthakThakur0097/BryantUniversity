@@ -129,6 +129,20 @@ namespace BryantUniversity.Controllers
             return View("Edit", viewModel);
         }
 
+        [HttpGet]
+        public ActionResult Assign(int id)
+        {
+            CoursesRepo cRepo;
+            Course viewModel;
+
+            using (context)
+            {
+                cRepo = new CoursesRepo(context);
+                viewModel = cRepo.GetById(id);
+            }
+                return View(viewModel);
+        }
+
         private void HandleDbUpdateException(DbUpdateException ex)
         {
             if (ex.InnerException != null && ex.InnerException.InnerException != null)
