@@ -119,7 +119,7 @@ namespace BryantUniversity.Controllers
                     viewModel.Credits = course.Credits;
                     viewModel.Level = course.Level;
                     viewModel.DepartmentId = course.DepartmentId;
-                    viewModel.PopulateSelectList();
+                    //viewModel.PopulateSelectList();
 
                     courseRepo.Update(newCourse);
                     return RedirectToAction("Index");
