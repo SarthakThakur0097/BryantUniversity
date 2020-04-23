@@ -31,7 +31,7 @@
                 <td>@courseSection.Professor.Name</td>
                 <td>@courseSection.Room.Id</td>
                 <td>
-                    @Html.ActionLink("Schedule", "Add", "Schedule", new { id = courseSection.Id }, null)
+                    @Html.ActionLink("Register", "Add", "Schedule", new { id = courseSection.Id }, new { @class = "btn btn-success" })
                 </td>
             </tr>
         }
