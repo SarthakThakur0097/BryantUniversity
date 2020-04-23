@@ -291,6 +291,7 @@
     <Content Include="Views\Faculty\Teaching.cshtml" />
     <Content Include="Views\Faculty\Students.cshtml" />
     <Content Include="Views\Courses\Assign.cshtml" />
+    <Content Include="Views\Courses\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

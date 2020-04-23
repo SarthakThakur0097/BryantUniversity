@@ -5,11 +5,14 @@
 }
 
 <h2>Adding New User</h2>
+@using (Html.BeginForm())
+{
 
-@using (Html.BeginForm()) 
+}
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal speaker-form">
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })

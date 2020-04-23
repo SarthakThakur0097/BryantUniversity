@@ -44,6 +44,9 @@
                         <th>Credits</th>
                         <th>Level</th>
                         <th>Department Id</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody id="myTable">
@@ -62,7 +65,9 @@
                             <td>
                                 @Html.ActionLink("assign", "Assign", new { id = course.Id }, new { @class = "btn btn-info" })
                             </td>
-
+                            <td>
+                                @Html.ActionLink("delete", "Delete", new { id = course.Id }, new { @class = "btn btn-danger" })
+                            </td>
                         </tr>
                     }
                 </tbody>

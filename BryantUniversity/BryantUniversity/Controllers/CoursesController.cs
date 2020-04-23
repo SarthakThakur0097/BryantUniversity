@@ -147,6 +147,46 @@ namespace BryantUniversity.Controllers
                 return View(viewModel);
         }
 
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            CoursesRepo cRepo;
+            Course confirmDelete;
+
+            using(context)
+            {
+                cRepo = new CoursesRepo(context);
+                confirmDelete = cRepo.GetById(id);
+            }
+
+            return View(confirmDelete);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(int id, Course course)
+        {
+            CoursesRepo cRepo;
+            Course toDelete;
+
+            using (context)
+            {
+                try
+                {
+                    cRepo = new CoursesRepo(context);
+                    toDelete = cRepo.GetById(id);
+                    cRepo.Delete(toDelete);
+
+                    return RedirectToAction("Index");
+                }
+                catch (DbUpdateException ex)
+                {
+                    HandleDbUpdateException(ex);
+                    return RedirectToAction("Index");
+                    //return View();
+                }
+            }
+        }
+
 
         private void HandleDbUpdateException(DbUpdateException ex)
         {
