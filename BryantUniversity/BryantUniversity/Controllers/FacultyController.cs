@@ -32,8 +32,14 @@ namespace BryantUniversity.Controllers
         {
             using(context)
             {
-                var viewModel = new UserListViewModel();
-                var userRepository = new UserRepo(context);
+                UserListViewModel viewModel;
+                UserRepo userRepository;
+                using (context)
+                {
+                    viewModel = new UserListViewModel();
+                    userRepository = new UserRepo(context);
+                }
+
 
                 viewModel.Users = userRepository.GetAllUsers();
 

@@ -3,36 +3,54 @@
     ViewBag.Title = "Teaching";
 }
 
-<h2>Teaching</h2>
 
-<table class="pure-table pure-table-horizontal">
-    <thead>
-        <tr lass="bench-row">
-            <th>Course Title</th>
-            <th>Description</th>
-            <th>Credits</th>
-            <th>Pattern</th>
-            <th>Level</th>
-            <th>Professor</th>
-            <th>Room Number</th>
-        </tr>
-    </thead>
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            
+        </div>
+        <div class="col-sm">
+            <h2>Classes being taught by you</h2>
+        </div>
+        <div class="col-sm">
+            
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr lass="bench-row">
+                        <th>Course Title</th>
+                        <th>Description</th>
+                        <th>Credits</th>
+                        <th>Pattern</th>
+                        <th>Level</th>
+                        <th>Professor</th>
+                        <th>Room Number</th>
+                    </tr>
+                </thead>
 
-    <tbody>
-        @foreach (var courseSection in Model)
+                <tbody>
+                    @foreach (var courseSection in Model)
             {
-            <tr>
-                <td>@courseSection.Course.CourseTitle</td>
-                <td>@courseSection.Course.Description</td>
-                <td>@courseSection.Course.Credits</td>
-                <td>@courseSection.Pattern</td>
-                <td>@courseSection.Course.Level</td>
-                <td>@courseSection.Professor.Name</td>
-                <td>@courseSection.Room.Id</td>
-                <td>
-                    @Html.ActionLink("View Enrolled Students", "Students", "Faculty", new { id = courseSection.Id }, new { @class = "btn btn-primary" })
-                </td>
-            </tr>
-        }
-    </tbody>
-</table>
+                        <tr>
+                            <td>@courseSection.Course.CourseTitle</td>
+                            <td>@courseSection.Course.Description</td>
+                            <td>@courseSection.Course.Credits</td>
+                            <td>@courseSection.Pattern</td>
+                            <td>@courseSection.Course.Level</td>
+                            <td>@courseSection.Professor.Name</td>
+                            <td>@courseSection.Room.Id</td>
+                            <td>
+                                @Html.ActionLink("View Enrolled Students", "Students", "Faculty", new { id = courseSection.Id }, new { @class = "btn btn-primary" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
