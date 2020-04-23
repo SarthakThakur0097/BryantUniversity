@@ -50,9 +50,9 @@ namespace BryantUniversity.Security
                     if (userRoles[i].RoleId.ToString().Equals(role))
                     {
                         return true;
-                    }
-                }
-            //}
+                     }
+                //}
+            }
 
             return false;
         }

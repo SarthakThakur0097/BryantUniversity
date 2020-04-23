@@ -38,10 +38,8 @@ namespace BryantUniversity.Controllers
                 {
                     viewModel = new UserListViewModel();
                     userRepository = new UserRepo(context);
+                    viewModel.Users = userRepository.GetAllUsers();
                 }
-
-
-                viewModel.Users = userRepository.GetAllUsers();
 
                 return View(viewModel);
             }
