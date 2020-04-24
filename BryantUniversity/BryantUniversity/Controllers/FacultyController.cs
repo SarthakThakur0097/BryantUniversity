@@ -30,8 +30,6 @@ namespace BryantUniversity.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            using(context)
-            {
                 UserListViewModel viewModel;
                 UserRepo userRepository;
                 using (context)
@@ -39,10 +37,9 @@ namespace BryantUniversity.Controllers
                     viewModel = new UserListViewModel();
                     userRepository = new UserRepo(context);
                     viewModel.Users = userRepository.GetAllUsers();
+                    
+                    return View(viewModel);
                 }
-
-                return View(viewModel);
-            }
         }
 
         [HttpGet]
