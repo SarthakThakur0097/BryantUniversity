@@ -40,8 +40,8 @@ namespace BryantUniversity.Security
         {
             int userId = User.Id;
             UserRoleRepo userRoleRepo;
-            //using (context)
-            //{
+            using (context)
+            {
                 userRoleRepo = new UserRoleRepo(context);
                 IList<UserRole> userRoles = userRoleRepo.GetAllUserRolesById(userId);
 
@@ -51,7 +51,7 @@ namespace BryantUniversity.Security
                     {
                         return true;
                      }
-                //}
+                }
             }
 
             return false;

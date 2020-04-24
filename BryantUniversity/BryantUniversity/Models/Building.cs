@@ -17,6 +17,14 @@ namespace BryantUniversity.Models
             Rooms = new List<Room>();
         }
 
+        public Building(int id, string buildingName, int capacity)
+        {
+            Id = id;
+            BuildingName = buildingName;
+            Capacity = capacity;
+            Rooms = new List<Room>();
+        }
+
         public int Id { get; set; }
         [Required]
         public string BuildingName { get; set; }

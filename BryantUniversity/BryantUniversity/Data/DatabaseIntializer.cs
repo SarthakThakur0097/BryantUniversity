@@ -10,6 +10,13 @@ namespace BryantUniversity.Data
 
         protected override void Seed(Context context)
         {
+            //context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('Room', RESEED, 1000);");
+            //context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('Course', RESEED, 50000);");
+            ////context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('CourseSection', RESEED, 100000);");
+            //context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('User', RESEED, 700000);");
+            //context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('UserRole', RESEED, 500000);");
+
+
             User adminUser = new User("Admin@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Admin 1");
             User adminUser2 = new User("Admin2@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Admin 2");
             User teacherUser = new User("Teacher@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Teacher 1");
@@ -63,14 +70,16 @@ namespace BryantUniversity.Data
             CalendarEvent semEvent11 = new CalendarEvent(event11, "Applications for graduation (Registrar’s office) due from candidates who expect to complete requirements by May 2020", Fall2020);
             CalendarEvent semEvent12 = new CalendarEvent(event12, "	Advising begins in department offices for Fall 2020 registration (By appointment)", Fall2020);
 
-            Building mainCampus = new Building("Main Campus", 8100);
-            //Room room1 = new Room("Lecture", 50, mainCampus);
+
+            Building building = new Building("Kobe and Shaq", 8100);
+            Room room = new Room("Lecture", 30, 1);
 
             Department compSci = new Department("Computer Science", "516-389-2930");
-            Course introToProg = new Course(0, "Intro to Computer Science", "Basic programming with Java", 4, "Level 100", compSci);
+            Course introToProg = new Course(0,"Intro to Computer Science", "Basic programming with Java", 4, "Level 100", compSci);
 
             FacultyDepartment facultyDepartment = new FacultyDepartment(teacherUser, compSci);
-           
+            CourseSection courseSection = new CourseSection(0, 1, 1, 1, 1);
+            //toInsert = new CourseSection(0, 10000, courseSection.CourseId, courseSection.RoomId, courseSection.UserId, courseSection.SemesterPeriodId);
 
             context.Users.Add(adminUser);
             context.Users.Add(adminUser2);
@@ -111,7 +120,9 @@ namespace BryantUniversity.Data
             context.Courses.Add(introToProg);
             
             context.FacultyDepartments.Add(facultyDepartment);
-
+            context.Buildings.Add(building);
+            context.Rooms.Add(room);
+            //context.CourseSections.Add(courseSection);
             context.SaveChanges();
         }
     }

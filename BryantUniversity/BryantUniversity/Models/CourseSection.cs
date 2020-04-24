@@ -22,9 +22,21 @@ namespace BryantUniversity.Models
             new DateTime();
         }
 
+        //public CourseSection(int id, int courseId, int roomId, int professorId, int semesterPeriodId) : this()
+        //{
+        //    Id = id;
+        //    CourseId = courseId;
+        //    RoomId = roomId;
+        //    UserId = professorId;
+        //    //TimeSlot = timeSlot;
+        //    SemesterPeriodId = semesterPeriodId;
+        //    new DateTime();
+        //}
+
         public CourseSection(int id, int courseId, int roomId, int professorId, int semesterPeriodId) : this()
         {
             Id = id;
+            //SectionNumber = sectionNumber;
             CourseId = courseId;
             RoomId = roomId;
             UserId = professorId;
@@ -32,6 +44,18 @@ namespace BryantUniversity.Models
             SemesterPeriodId = semesterPeriodId;
             new DateTime();
         }
+
+        //public CourseSection(int id, int sectionNumber, int courseId, int roomId, int professorId, int semesterPeriodId) : this()
+        //{
+        //    Id = id;
+        //    SectionNumber = sectionNumber;
+        //    CourseId = courseId;
+        //    RoomId = roomId;
+        //    UserId = professorId;
+        //    //TimeSlot = timeSlot;
+        //    SemesterPeriodId = semesterPeriodId;
+        //    new DateTime();
+        //}
 
 
         public CourseSection(/*DateTime timeSlot,*/ Course course, Room room, User professor, SemesterPeriod semesterPeriod):this()
@@ -43,10 +67,10 @@ namespace BryantUniversity.Models
             SemesterPeriod = semesterPeriod;   
         }
 
-        [Key]
+            
         public int Id { get; set; }
-        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int SectionNumber { get; set; }
+        //[Index("IX_FirstAndSecond", 2, IsUnique = true)]
+        //public int SectionNumber { get; set; }
         //public DateTime TimeSlot { get; set; }
         public int CourseId { get; set; }
         public Course Course { get; set; }
@@ -56,7 +80,7 @@ namespace BryantUniversity.Models
         public User Professor { get; set; }
         public int SemesterPeriodId { get; set; }
         public SemesterPeriod SemesterPeriod { get; set; }
-        public ClassPattern Pattern { get; set; }
+        //public ClassPattern Pattern { get; set; }
         public List<Schedule> Schedules { get; set; }
     }
 }
