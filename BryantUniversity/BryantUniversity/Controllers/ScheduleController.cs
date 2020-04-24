@@ -28,34 +28,8 @@ namespace BryantUniversity.Controllers
             context = new Context();
         }
 
-        [HttpGet]
-        public ActionResult Add(int id)
-        {
-            CourseSectionRepo csRepo;
-            ScheduleRepo sRepo;
-            CourseSection toAdd;
-            using (context)
-            {
-                csRepo = new CourseSectionRepo(context);
-                sRepo = new ScheduleRepo(context);
 
-                toAdd = csRepo.GetCourseSectionById(id);
-                Schedule userCourseSection = new Schedule(CustomUser.User.Id, toAdd.Id);
-                sRepo.Insert(userCourseSection);
-            }
-            return View("Index");
-        }
         // GET: Schedule
-        [HttpGet]
-        public ActionResult Index()
-        {
-            using (context)
-            {
-                User currUser = new UserRepo(context).GetByEmail(User.Identity.Name);
-                IList<Schedule> schedules = new ScheduleRepo(context).GetScheduleByUserId(currUser.Id);
-                return View(schedules);
-            }
-         
-        }
+
     }
 }

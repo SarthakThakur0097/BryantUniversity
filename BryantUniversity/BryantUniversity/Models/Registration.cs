@@ -2,16 +2,16 @@
 
 namespace BryantUniversity.Models
 {
-    public class Schedule
+    public class Registration
     {
-        public Schedule() { }
+        public Registration() { }
 
-        public Schedule(int userId, int courseSectionId)
+        public Registration(int userId, int courseSectionId)
         {
             UserId = userId;
             CourseSectionId = courseSectionId;
         }
-        public Schedule(User user, CourseSection courseSection)
+        public Registration(User user, CourseSection courseSection)
         {
             User = user;
             CourseSection = courseSection;

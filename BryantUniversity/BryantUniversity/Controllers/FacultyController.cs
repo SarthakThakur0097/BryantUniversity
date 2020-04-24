@@ -112,12 +112,12 @@ namespace BryantUniversity.Controllers
         [HttpGet]
         public ActionResult Students(int Id)
         {
-            ScheduleRepo sRepo;
-            IList<Schedule> students;
+            RegistrationRepo sRepo;
+            IList<Registration> students;
 
             using (context)
             {
-                sRepo = new ScheduleRepo(context);
+                sRepo = new RegistrationRepo(context);
 
                 students = sRepo.GetScheduleByCourseSectionId(Id);
             }

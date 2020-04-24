@@ -2,6 +2,7 @@
 using BryantUniversity.Models;
 using BryantUniversity.Models.Repo;
 using BryantUniversity.Repo;
+using BryantUniversity.Security;
 using System.Collections.Generic;
 using System.Web.Mvc;
 
@@ -11,6 +12,13 @@ namespace BryantUniversity.Controllers
     {
         private Context context;
 
+        public CustomPrincipal CustomUser
+        {
+            get
+            {
+                return (CustomPrincipal)User;
+            }
+        }
         public RegistrationController()
         {
             context = new Context();
@@ -21,8 +29,9 @@ namespace BryantUniversity.Controllers
         {
             using (context)
             {
-                IList<Course> courses = new CoursesRepo(context).GetAllCourses();
-                return View(courses);
+                User currUser = new UserRepo(context).GetByEmail(User.Identity.Name);
+                IList<Registration> schedules = new RegistrationRepo(context).GetScheduleByUserId(currUser.Id);
+                return View(schedules);
             }
         }
 
@@ -38,14 +47,19 @@ namespace BryantUniversity.Controllers
         [HttpGet]
         public ActionResult Add(int id)
         {
+            CourseSectionRepo csRepo;
+            RegistrationRepo sRepo;
+            CourseSection toAdd;
             using (context)
             {
-                User currUser = new UserRepo(context).GetByEmail(User.Identity.Name);
-                CourseSection courseSection = new CourseSectionRepo(context).GetCourseSectionByIdAndUser(id, currUser.Id);
-                Schedule schedule = new Schedule(currUser, courseSection);
-                new ScheduleRepo(context).Insert(schedule);
-                return RedirectToAction("Index");
+                csRepo = new CourseSectionRepo(context);
+                sRepo = new RegistrationRepo(context);
+
+                toAdd = csRepo.GetCourseSectionById(id);
+                Registration userCourseSection = new Registration(CustomUser.User.Id, toAdd.Id);
+                sRepo.Insert(userCourseSection);
             }
+            return View("Index");
         }
     }
 }

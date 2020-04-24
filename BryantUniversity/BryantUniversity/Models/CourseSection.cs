@@ -9,7 +9,7 @@ namespace BryantUniversity.Models
     {
         public CourseSection()
         {
-            Schedules = new List<Schedule>();
+            Schedules = new List<Registration>();
         }
 
         public CourseSection(int courseId, int roomId, int professorId, int semesterPeriodId) : this()
@@ -81,6 +81,6 @@ namespace BryantUniversity.Models
         public int SemesterPeriodId { get; set; }
         public SemesterPeriod SemesterPeriod { get; set; }
         //public ClassPattern Pattern { get; set; }
-        public List<Schedule> Schedules { get; set; }
+        public List<Registration> Schedules { get; set; }
     }
 }

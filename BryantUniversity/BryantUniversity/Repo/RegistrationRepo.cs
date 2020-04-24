@@ -6,16 +6,16 @@ using System.Linq;
 
 namespace BryantUniversity.Repo
 {
-    public class ScheduleRepo
+    public class RegistrationRepo
     {
         private Context _context;
 
-        public ScheduleRepo(Context context)
+        public RegistrationRepo(Context context)
         {
             _context = context;
         }
 
-        public IList<Schedule> GetScheduleByUserId(int id)
+        public IList<Registration> GetScheduleByUserId(int id)
         {
             return _context.Schedules
                 .Include(s => s.User)
@@ -29,7 +29,7 @@ namespace BryantUniversity.Repo
                 ToList();
         }
 
-        public IList<Schedule> GetScheduleByCourseSectionId(int id)
+        public IList<Registration> GetScheduleByCourseSectionId(int id)
         {
             return _context.Schedules
                 .Include(s => s.User)
@@ -53,7 +53,7 @@ namespace BryantUniversity.Repo
         //        .SingleOrDefault();   
         //}
 
-        public void Insert(Schedule schedule)
+        public void Insert(Registration schedule)
         {
             _context.Schedules.Add(schedule);
             _context.SaveChanges();

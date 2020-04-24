@@ -19,6 +19,6 @@ namespace BryantUniversity.ViewModels
         public int SemesterPeriodId { get; set; }
         public SemesterPeriod SemesterPeriod { get; set; }
         public ClassPattern Pattern { get; set; }
-        public List<Schedule> Schedules { get; set; }
+        public List<Registration> Schedules { get; set; }
     }
 }
