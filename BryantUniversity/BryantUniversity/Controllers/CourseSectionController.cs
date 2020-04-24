@@ -20,7 +20,7 @@ namespace BryantUniversity.Controllers
         }
 
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Index(int Id)
         {
             CourseSectionRepo csRepo;
             IList<CourseSection> courseSections; 
@@ -28,7 +28,7 @@ namespace BryantUniversity.Controllers
             {
                 csRepo = new CourseSectionRepo(context);
 
-                courseSections = csRepo.GetAllCourseSections();
+                courseSections = csRepo.GetCourseSectionsByCourseId(Id);
             }
 
             return View("Index", courseSections);

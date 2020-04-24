@@ -38,19 +38,18 @@
             <table class="table">
                 <thead class="thead-dark">
                     <tr lass="bench-row">
-                        <th>Course ID</th>
                         <th>Course Title</th>
                         <th>Description</th>
                         <th>Credits</th>
                         <th>Level</th>
                         <th>Department Id</th>
+
                     </tr>
                 </thead>
                 <tbody id="myTable">
                     @foreach (var course in Model.Courses)
                     {
                         <tr>
-                            <td>@course.Id</td>
                             <td>@course.CourseTitle</td>
                             <td>@course.Description</td>
                             <td>@course.Credits</td>
@@ -62,7 +61,9 @@
                             <td>
                                 @Html.ActionLink("assign", "Assign", new { id = course.Id }, new { @class = "btn btn-info" })
                             </td>
-
+                            <td>
+                                @Html.ActionLink("delete", "Delete", new { id = course.Id }, new { @class = "btn btn-danger" })
+                            </td>
                         </tr>
                     }
                 </tbody>

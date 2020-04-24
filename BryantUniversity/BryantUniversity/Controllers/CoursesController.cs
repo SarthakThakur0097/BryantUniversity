@@ -119,7 +119,7 @@ namespace BryantUniversity.Controllers
                     viewModel.Credits = course.Credits;
                     viewModel.Level = course.Level;
                     viewModel.DepartmentId = course.DepartmentId;
-                    viewModel.PopulateSelectList();
+                    //viewModel.PopulateSelectList();
 
                     courseRepo.Update(newCourse);
                     return RedirectToAction("Index");
@@ -145,6 +145,46 @@ namespace BryantUniversity.Controllers
                 viewModel = cRepo.GetById(id);
             }
                 return View(viewModel);
+        }
+
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            CoursesRepo cRepo;
+            Course confirmDelete;
+
+            using(context)
+            {
+                cRepo = new CoursesRepo(context);
+                confirmDelete = cRepo.GetById(id);
+            }
+
+            return View(confirmDelete);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(int id, Course course)
+        {
+            CoursesRepo cRepo;
+            Course toDelete;
+
+            using (context)
+            {
+                try
+                {
+                    cRepo = new CoursesRepo(context);
+                    toDelete = cRepo.GetById(id);
+                    cRepo.Delete(toDelete);
+
+                    return RedirectToAction("Index");
+                }
+                catch (DbUpdateException ex)
+                {
+                    HandleDbUpdateException(ex);
+                    return RedirectToAction("Index");
+                    //return View();
+                }
+            }
         }
 
 

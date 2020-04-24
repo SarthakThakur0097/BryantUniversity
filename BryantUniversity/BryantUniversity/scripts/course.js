@@ -93,14 +93,15 @@
                 });
 if (response.ok) {
 	const data = await response.json();
-	console.log(data);
+	window.location.href = data.redirectUrl
+    
 	console.log("JSON: " + JSON.stringify(data))
 	return data	
 } else {
 	// TODO handle errors returned from the server
 }
             const data = await response.json();
-            console.log(data);
+            console.log(data.redirectUrl);
             console.log("JSON: " + JSON.stringify(data))
             return data
         }

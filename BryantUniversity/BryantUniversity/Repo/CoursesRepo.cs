@@ -44,5 +44,12 @@ namespace BryantUniversity.Repo
             _context.Entry(course).State = EntityState.Modified;
             _context.SaveChanges();
         }
+
+        public void Delete(Course course)
+        {
+            _context.Courses.Attach(course);
+            _context.Courses.Remove(course);
+            _context.SaveChanges();
+        }
     }
 }

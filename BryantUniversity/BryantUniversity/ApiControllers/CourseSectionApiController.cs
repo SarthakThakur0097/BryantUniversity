@@ -31,7 +31,7 @@ namespace BryantUniversity.ApiControllers
                 toInsert = new CourseSection(0, courseSection.CourseId, courseSection.RoomId, courseSection.UserId, courseSection.SemesterPeriodId);
                 csRepo.Insert(toInsert);
             }
-            return Json(new { redirectUrl = "/checkout/thank-you" });
+            return Json(new { redirectUrl = "/Courses/Index" });
         }
         //[Route("Assign/{courseSection}")]
         //[HttpPost]

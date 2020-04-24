@@ -9,8 +9,8 @@
 <table class="pure-table pure-table-horizontal">
     <thead>
         <tr lass="bench-row">
+            <th>Course Section</th>
             <th>Course Title</th>
-            <th>Description</th>
             <th>Credits</th>
             <th>Pattern</th>
             <th>Level</th>
@@ -23,15 +23,16 @@
         @foreach (var courseSection in Model)
             {
             <tr>
+                <td>@courseSection.Id</td>
                 <td>@courseSection.Course.CourseTitle</td>
-                <td>@courseSection.Course.Description</td>
                 <td>@courseSection.Course.Credits</td>
                 <td>@courseSection.Pattern</td>
                 <td>@courseSection.Course.Level</td>
                 <td>@courseSection.Professor.Name</td>
+                <td>@courseSection</td>
                 <td>@courseSection.Room.Id</td>
                 <td>
-                    @Html.ActionLink("Schedule", "Add", "Schedule", new { id = courseSection.Id }, null)
+                    @Html.ActionLink("Register", "Add", "Schedule", new { id = courseSection.Id }, new { @class = "btn btn-success" })
                 </td>
             </tr>
         }

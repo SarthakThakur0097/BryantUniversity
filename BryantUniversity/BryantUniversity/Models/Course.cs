@@ -35,7 +35,7 @@ namespace BryantUniversity.Models
             Department = department;
         }
 
-
+        [Key]
         public int Id { get; set; }
         [Required]
         public string CourseTitle { get; set; }

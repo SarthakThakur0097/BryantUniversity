@@ -1,0 +1,49 @@
+﻿@model BryantUniversity.Models.Course
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            
+        </div>
+        <div class="col-sm">
+            <h2>Are you sure you want to delete</h2>
+        </div>
+        <div class="col-md-5">
+            
+        </div>
+    </div>
+    @using (Html.BeginForm())
+    {
+
+
+    <div class="row">
+        <div class="col-md-5">
+            
+        </div>
+        <div class="col-sm">
+            <div class="card">
+                <div class="card-header">
+                    @Model.CourseTitle
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Description</h5>
+                    <p class="card-text">@Model.Description</p>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Yes" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+        <div class="col-md-5">
+            
+        </div>
+    </div>
+    }
+</div>

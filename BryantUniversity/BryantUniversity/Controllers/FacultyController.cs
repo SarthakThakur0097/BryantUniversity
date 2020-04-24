@@ -30,15 +30,16 @@ namespace BryantUniversity.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            using(context)
-            {
-                var viewModel = new UserListViewModel();
-                var userRepository = new UserRepo(context);
-
-                viewModel.Users = userRepository.GetAllUsers();
-
-                return View(viewModel);
-            }
+                UserListViewModel viewModel;
+                UserRepo userRepository;
+                using (context)
+                {
+                    viewModel = new UserListViewModel();
+                    userRepository = new UserRepo(context);
+                    viewModel.Users = userRepository.GetAllUsers();
+                    
+                    return View(viewModel);
+                }
         }
 
         [HttpGet]

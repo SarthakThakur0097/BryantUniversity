@@ -80,6 +80,10 @@
                 @if (Request.IsAuthenticated && ((BryantUniversity.Security.CustomPrincipal)User).IsInRole("1"))
                 {
                     <li class="nav-item">
+                        @Html.ActionLink("Academic Calendar", "Index", "Calendar", new { area = "" }, new { @class = "navbar-brand" })
+                    </li>
+
+                    <li class="nav-item">
                         @Html.ActionLink("Users", "Index", "Faculty", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
                     <li class="nav-item">
@@ -91,7 +95,19 @@
                     @*<li class="nav-item">
                         @Html.ActionLink("Students", "Index", "Courses", new { area = "" }, new { @class = "navbar-brand" })
                     </li>*@
-                } else
+                } else if(Request.IsAuthenticated && ((BryantUniversity.Security.CustomPrincipal)User).IsInRole("2"))
+                {
+                    <li class="nav-item">
+                        @Html.ActionLink("Academic Calendar", "Index", "Calendar", new { area = "" }, new { @class = "navbar-brand" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Teaching", "Teaching", "Faculty", new { area = "" }, new { @class = "navbar-brand" })
+                    </li>
+                    <li class="nav-item">
+                        @Html.ActionLink("Current Schedule", "Index", "Schedule", new { area = "" }, new { @class = "navbar-brand" })
+                    </li>
+                }
+                else
                 {
                     <li class="nav-item">
                         @Html.ActionLink("Academic Calendar", "Index", "Calendar", new { area = "" }, new { @class = "navbar-brand" })

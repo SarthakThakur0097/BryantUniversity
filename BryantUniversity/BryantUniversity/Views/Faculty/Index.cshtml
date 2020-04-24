@@ -55,7 +55,21 @@
                         <tr>
                             <td>@user.Name</td>
                             <td>@user.Email</td>
-                            <td>@user.UserRoles[0].RoleId</td>
+                            @if(user.UserRoles[0].RoleId==1)
+                            {
+                                <td>Admin</td>
+                            } else if(user.UserRoles[0].RoleId==2)
+                            {
+                                <td>Faculty</td>
+                            } else if(user.UserRoles[0].RoleId==3)
+                            {
+                                <td>Researcher</td>
+                            } else if(user.UserRoles[0].RoleId==4)
+                            {
+                                <td>Student</td>
+                            }
+
+                            
                         </tr>
                     }
                 </tbody>
