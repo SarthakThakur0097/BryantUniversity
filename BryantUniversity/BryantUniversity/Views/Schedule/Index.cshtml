@@ -1,5 +1,4 @@
-﻿@model IList<BryantUniversity.Models.Schedule>
-
+﻿@model BryantUniversity.ViewModels.SemesterDetailsViewModel
 @{
     ViewBag.Title = "Index";
 }
@@ -7,79 +6,58 @@
 <div class="container">
     <div class="row">
         <div class="col-md-5">
-            
+
         </div>
         <div class="col-sm">
-            <h2>My Schedule</h2>
+            <h2>Select Term</h2>
         </div>
         <div class="col-md-5">
-            <input id="myInput" class="form-control" type="text" placeholder="Search..">
+
         </div>
     </div>
-    <div class="row">
-        <table class="table">
-            <thead class="thead-dark">
-                <tr>
-                    <th>Level</th>
-                    <th>Course Name</th>
-                    <th>Description</th>
-                    <th>Department Name</th>
-                    <th>Professor</th>
-                    <th>Room</th>
-                    <th>Building</th>
-                    <th>Time</th>
-                    <th>Semester</th>
-                    <th>Credits</th>
-                </tr>
-            </thead>
-            <tbody id="myTable">
-                <tr>
-                    <td>John</td>
-                    <td>Doe</td>
-                    <td>john@example.com</td>
-                </tr>
-                <tr>
-                    <td>Mary</td>
-                    <td>Moe</td>
-                    <td>mary@mail.com</td>
-                </tr>
-                <tr>
-                    <td>July</td>
-                    <td>Dooley</td>
-                    <td>july@greatstuff.com</td>
-                </tr>
-                <tr>
-                    <td>Anja</td>
-                    <td>Ravendale</td>
-                    <td>a_r@test.com</td>
-                </tr>
-                @*@foreach (var schedule in Model)
-                {
-                    <tr>
-                        <td>@schedule.CourseSection.Course.Level</td>
-                        <td>@schedule.CourseSection.Course.CourseTitle</td>
-                        <td>@schedule.CourseSection.Course.Description</td>
-                        <td>@schedule.CourseSection.Course.Department.Name</td>
-                        <td>@schedule.CourseSection.Professor.Name</td>
-                        <td>@schedule.CourseSection.Room.RoomType</td>
+    @if (!Model.DisplayCourses)
+    {
+        <div class="row">
+            @using (Html.BeginForm("Index", "Schedule", FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
+            {
+                <div>
+                    <div class="col-sm">
+                        @Html.AntiForgeryToken()
+                        <div>
 
-                        <td>@schedule.CourseSection.Pattern</td>
-                        <td>@schedule.CourseSection.SemesterPeriod.Period.Value</td>
-                        <td>@schedule.CourseSection.Course.Credits</td>
-                    </tr>
-                }*@
-            </tbody>
-        </table>
-    </div>
+                            @Html.LabelFor(model => model.PeriodId, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.DropDownListFor(model => model.PeriodId, Model.PeriodList, "Period", new { @class = "form-control required", id = "period-list" })
+                            @Html.ValidationMessageFor(model => model.PeriodId)
+                        </div>
+                    </div>
+                    <div class="col-sm">
+                        <div>
+                            @Html.LabelFor(model => model.DepartmentId, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.DropDownListFor(model => model.DepartmentId, Model.DepartmentList, "Department", new { @class = "form-control required", id = "department-list" })
+                            @Html.ValidationMessageFor(model => model.DepartmentId)
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+            }
+        </div>
+    }
+    else if(Model.DisplayCourses)
+    {
+        <div class="row">
+            <div class="col-md-5">
+                <h1>Test</h1>
+            </div>
+        </div>
+    }
+
+
+
+
+
 </div>
 
-<script>
-$(document).ready(function(){
-  $("#myInput").on("keyup", function() {
-    var value = $(this).val().toLowerCase();
-    $("#myTable tr").filter(function() {
-      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-    });
-  });
-});
-</script>
+
+
+<script src="~/scripts/Schedule.js"></script>
+
