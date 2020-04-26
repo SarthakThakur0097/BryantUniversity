@@ -7,6 +7,7 @@ namespace BryantUniversity.ViewModels
 {
     public class RegistrationViewModel
     {
-        public bool Conflict { get; set; }
+        public bool SameClassConflict { get; set; }
+        public bool TimeConflict { get; set; }
     }
 }

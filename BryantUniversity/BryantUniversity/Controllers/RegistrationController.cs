@@ -67,13 +67,16 @@ namespace BryantUniversity.Controllers
                 foreach(Registration registration in registrations)
                 {
                     
-                    if(registration.CourseSectionId == id || registration.CourseSection.SemesterPeriod == toAddPeriod)
+                    if(registration.CourseSectionId == id)
                     {
-                        viewModel.Conflict = true;
+                        viewModel.SameClassConflict = true;
+                        return View(viewModel);
+                    } 
+                    else if (registration.CourseSection.SemesterPeriod == toAddPeriod)
+                    {
+                        viewModel.TimeConflict = true;
                         return View(viewModel);
                     }
-                    //registeredCourseSections.Add(registration.CourseSection);
-
                 }
 
                 Registration userCourseSection = new Registration(CustomUser.User.Id, toAdd.Id);

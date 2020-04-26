@@ -4,10 +4,15 @@
     ViewBag.Title = "Add";
 }
 
-@if(Model.Conflict)
+@if(Model.SameClassConflict)
 {
-    <h1> Error </h1>
-} else
+    <h1> Same class error </h1>
+}
+else if(Model.TimeConflict)
+{
+    <h1>Time conflict error</h1>
+}
+else
 {
     <h1>Succesfully Registered</h1>
 }
