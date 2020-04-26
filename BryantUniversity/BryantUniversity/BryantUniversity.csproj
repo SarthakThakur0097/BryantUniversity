@@ -195,6 +195,7 @@
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
+    <Content Include="scripts\Schedule.js" />
     <Content Include="styles\scrollablemenu.css" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -229,7 +230,7 @@
     <Compile Include="Models\FacultyDepartment.cs" />
     <Compile Include="Models\Period.cs" />
     <Compile Include="Models\Room.cs" />
-    <Compile Include="Models\Schedule.cs" />
+    <Compile Include="Models\Registration.cs" />
     <Compile Include="Models\SemesterPeriod.cs" />
     <Compile Include="Models\CalendarEvent.cs" />
     <Compile Include="Models\RoleType.cs" />
@@ -240,7 +241,7 @@
     <Compile Include="Repo\DepartmentRepo.cs" />
     <Compile Include="Repo\RoleRepo.cs" />
     <Compile Include="Repo\RoomRepo.cs" />
-    <Compile Include="Repo\ScheduleRepo.cs" />
+    <Compile Include="Repo\RegistrationRepo.cs" />
     <Compile Include="Repo\SemesterPeriodRepo.cs" />
     <Compile Include="Repo\UserRepo.cs" />
     <Compile Include="Repo\UserRoleRepo.cs" />
@@ -252,6 +253,9 @@
     <Compile Include="Security\CustomPrincipal.cs" />
     <Compile Include="ViewModels\CourseSectionViewModel.cs" />
     <Compile Include="ViewModels\CourseViewModel.cs" />
+    <Compile Include="ViewModels\RegistrationViewModel.cs" />
+    <Compile Include="ViewModels\ScheduleViewModel.cs" />
+    <Compile Include="ViewModels\SemesterCoursesViewModel.cs" />
     <Compile Include="ViewModels\SemesterDetailsViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\UserDetailsViewModel.cs" />
@@ -292,6 +296,7 @@
     <Content Include="Views\Faculty\Students.cshtml" />
     <Content Include="Views\Courses\Assign.cshtml" />
     <Content Include="Views\Courses\Delete.cshtml" />
+    <Content Include="Views\Registration\Add.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

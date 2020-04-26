@@ -1,0 +1,19 @@
+﻿@model BryantUniversity.ViewModels.RegistrationViewModel
+
+@{
+    ViewBag.Title = "Add";
+}
+
+@if(Model.SameClassConflict)
+{
+    <h1> Same class error </h1>
+}
+else if(Model.TimeConflict)
+{
+    <h1>Time conflict error</h1>
+}
+else
+{
+    <h1>Succesfully Registered</h1>
+}
+

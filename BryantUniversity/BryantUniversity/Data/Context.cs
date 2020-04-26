@@ -17,7 +17,7 @@ namespace BryantUniversity.Data
         public DbSet<Building> Buildings { get; set; }
         public DbSet<CourseSection> CourseSections { get; set; }
         public DbSet<Room> Rooms { get; set; }
-        public DbSet<Schedule> Schedules { get; set; }
+        public DbSet<Registration> Registrations { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

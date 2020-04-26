@@ -29,10 +29,9 @@
                 <td>@courseSection.Pattern</td>
                 <td>@courseSection.Course.Level</td>
                 <td>@courseSection.Professor.Name</td>
-                <td>@courseSection</td>
                 <td>@courseSection.Room.Id</td>
                 <td>
-                    @Html.ActionLink("Register", "Add", "Schedule", new { id = courseSection.Id }, new { @class = "btn btn-success" })
+                    @Html.ActionLink("Register", "Add", "Registration", new { id = courseSection.Id }, new { @class = "btn btn-success" })
                 </td>
             </tr>
         }
