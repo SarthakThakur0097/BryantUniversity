@@ -8,7 +8,7 @@ namespace BryantUniversity.Models
         {
             var appConfig = ConfigurationManager.AppSettings;
 
-            string dbname = appConfig["aa1qmji1iokqgsr"];
+            string dbname = appConfig["RDS_DB_NAME"];
 
             if (string.IsNullOrEmpty(dbname)) return null;
 
