@@ -253,6 +253,7 @@
     <Compile Include="Security\CustomPrincipal.cs" />
     <Compile Include="ViewModels\CourseSectionViewModel.cs" />
     <Compile Include="ViewModels\CourseViewModel.cs" />
+    <Compile Include="ViewModels\RegistrationViewModel.cs" />
     <Compile Include="ViewModels\ScheduleViewModel.cs" />
     <Compile Include="ViewModels\SemesterCoursesViewModel.cs" />
     <Compile Include="ViewModels\SemesterDetailsViewModel.cs" />
@@ -295,6 +296,7 @@
     <Content Include="Views\Faculty\Students.cshtml" />
     <Content Include="Views\Courses\Assign.cshtml" />
     <Content Include="Views\Courses\Delete.cshtml" />
+    <Content Include="Views\Registration\Add.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -17,7 +17,7 @@ namespace BryantUniversity.Repo
 
         public IList<Registration> GetScheduleByUserId(int id)
         {
-            return _context.Schedules
+            return _context.Registrations
                 .Include(s => s.User)
                 .Include(s => s.CourseSection)
                 .Include(s => s.CourseSection.Course)
@@ -29,9 +29,17 @@ namespace BryantUniversity.Repo
                 ToList();
         }
 
-        public IList<Registration> GetScheduleByCourseSectionId(int id)
+        public IList<Registration> GetRegistrationByUserAndCourseSection(int userId, int courseSectoinId)
         {
-            return _context.Schedules
+            return _context.Registrations
+                .Include(u => u.User).Where(u => u.UserId == userId)
+                .Include(c => c.CourseSection).Where(c => c.CourseSectionId == courseSectoinId)
+                .ToList();
+        }
+
+        public IList<Registration> GetRegistrationByCourseSectionId(int id)
+        {
+            return _context.Registrations
                 .Include(s => s.User)
                 .Include(s => s.CourseSection)
                 .Include(s => s.CourseSection.Course)
@@ -55,7 +63,7 @@ namespace BryantUniversity.Repo
 
         public void Insert(Registration schedule)
         {
-            _context.Schedules.Add(schedule);
+            _context.Registrations.Add(schedule);
             _context.SaveChanges();
         }
 

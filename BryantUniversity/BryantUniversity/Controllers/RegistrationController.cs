@@ -3,6 +3,7 @@ using BryantUniversity.Models;
 using BryantUniversity.Models.Repo;
 using BryantUniversity.Repo;
 using BryantUniversity.Security;
+using BryantUniversity.ViewModels;
 using System.Collections.Generic;
 using System.Web.Mvc;
 
@@ -48,18 +49,37 @@ namespace BryantUniversity.Controllers
         public ActionResult Add(int id)
         {
             CourseSectionRepo csRepo;
-            RegistrationRepo sRepo;
+            RegistrationRepo rRepo;
             CourseSection toAdd;
             using (context)
             {
                 csRepo = new CourseSectionRepo(context);
-                sRepo = new RegistrationRepo(context);
-
+                rRepo = new RegistrationRepo(context);
                 toAdd = csRepo.GetCourseSectionById(id);
+
+                RegistrationViewModel viewModel = new RegistrationViewModel();
+
+                SemesterPeriod toAddPeriod = toAdd.SemesterPeriod;
+
+                IList<Registration> registrations = rRepo.GetRegistrationByUserAndCourseSection(CustomUser.User.Id, id);
+                IList<CourseSection> registeredCourseSections = new List<CourseSection>();
+
+                foreach(Registration registration in registrations)
+                {
+                    
+                    if(registration.CourseSectionId == id || registration.CourseSection.SemesterPeriod == toAddPeriod)
+                    {
+                        viewModel.Conflict = true;
+                        return View(viewModel);
+                    }
+                    //registeredCourseSections.Add(registration.CourseSection);
+
+                }
+
                 Registration userCourseSection = new Registration(CustomUser.User.Id, toAdd.Id);
-                sRepo.Insert(userCourseSection);
+                rRepo.Insert(userCourseSection);
             }
-            return View("Index");
+            return RedirectToAction("Index", "Schedule");
         }
     }
 }

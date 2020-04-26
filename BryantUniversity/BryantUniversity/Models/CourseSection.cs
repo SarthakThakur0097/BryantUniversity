@@ -80,7 +80,7 @@ namespace BryantUniversity.Models
         public User Professor { get; set; }
         public int SemesterPeriodId { get; set; }
         public SemesterPeriod SemesterPeriod { get; set; }
-        //public ClassPattern Pattern { get; set; }
+        public ClassPattern Pattern { get; set; }
         public List<Registration> Schedules { get; set; }
     }
 }

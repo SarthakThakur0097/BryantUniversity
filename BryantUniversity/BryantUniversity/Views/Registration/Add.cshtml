@@ -1,0 +1,14 @@
+﻿@model BryantUniversity.ViewModels.RegistrationViewModel
+
+@{
+    ViewBag.Title = "Add";
+}
+
+@if(Model.Conflict)
+{
+    <h1> Error </h1>
+} else
+{
+    <h1>Succesfully Registered</h1>
+}
+

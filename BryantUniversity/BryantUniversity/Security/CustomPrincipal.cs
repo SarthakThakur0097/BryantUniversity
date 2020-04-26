@@ -38,10 +38,10 @@ namespace BryantUniversity.Security
 
         public bool IsInRole(string role)
         {
-            int userId = User.Id;
-            UserRoleRepo userRoleRepo;
-            using (context)
-            {
+
+                int userId = User.Id;
+                UserRoleRepo userRoleRepo;
+
                 userRoleRepo = new UserRoleRepo(context);
                 IList<UserRole> userRoles = userRoleRepo.GetAllUserRolesById(userId);
 
@@ -50,9 +50,8 @@ namespace BryantUniversity.Security
                     if (userRoles[i].RoleId.ToString().Equals(role))
                     {
                         return true;
-                     }
+                    }
                 }
-            }
 
             return false;
         }
