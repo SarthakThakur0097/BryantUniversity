@@ -54,36 +54,37 @@ namespace BryantUniversity.Controllers
         [HttpPost]
         public ActionResult Index(SemesterDetailsViewModel viewModel)
         {
-            if ((viewModel.DepartmentId < 1 || viewModel.PeriodId < 1))
-            {
-
-                DepartmentRepo deRepo;
-                SemesterPeriodRepo spRepo;
-                viewModel.DisplayCourses = false;
-                using (context)
-                {
-                   
-                    spRepo = new SemesterPeriodRepo(context);
-                    deRepo = new DepartmentRepo(context);
-
-                    viewModel.PopulateSelectList(spRepo.GetAllSemesterPeriods());
-                    viewModel.PopulateDepermentSelectList(deRepo.GetAllDepartments());
-
-                }
-                return RedirectToAction("Index", viewModel);
-            }
-
-            CoursesRepo cRepo;
-            DepartmentRepo dRepo;
-            viewModel.DisplayCourses = true;
             using (context)
             {
-                cRepo = new CoursesRepo(context);
-                dRepo = new DepartmentRepo(context);
+                IList<SemesterPeriod> semesterPeriods;
+                IList<Department> departments;
+                DepartmentRepo deRepo;
+                SemesterPeriodRepo spRepo;
 
-                viewModel.Courses = cRepo.GetByDepartment(viewModel.DepartmentId);
+                spRepo = new SemesterPeriodRepo(context);
+                deRepo = new DepartmentRepo(context);
+
+                semesterPeriods = spRepo.GetAllSemesterPeriods();
+                departments = deRepo.GetAllDepartments();
+
+                viewModel.PopulateSelectList(semesterPeriods);
+                viewModel.PopulateDepermentSelectList(departments);
+
+                if ((viewModel.DepartmentId < 1 || viewModel.PeriodId < 1))
+                {
+                    viewModel.DisplayCourses = false;
+                    return RedirectToAction("Index", viewModel);
+                }
+                else
+                {
+                    CoursesRepo cRepo = new CoursesRepo(context);
+
+                    viewModel.Courses = cRepo.GetByDepartment(viewModel.DepartmentId);
+                    viewModel.DisplayCourses = true;
+
+                    return View(viewModel);
+                }
             }
-            return RedirectToAction("Index", viewModel);
         }
 
         //[HttpGet]
