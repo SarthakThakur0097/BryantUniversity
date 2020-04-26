@@ -219,6 +219,7 @@
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Data\Context.cs" />
     <Compile Include="Data\DatabaseIntializer.cs" />
+    <Compile Include="Data\RDSContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -228,6 +229,7 @@
     <Compile Include="Models\CourseSection.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\FacultyDepartment.cs" />
+    <Compile Include="Models\Helpers.cs" />
     <Compile Include="Models\Period.cs" />
     <Compile Include="Models\Room.cs" />
     <Compile Include="Models\Registration.cs" />
