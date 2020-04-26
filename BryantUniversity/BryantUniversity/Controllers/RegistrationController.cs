@@ -78,7 +78,7 @@ namespace BryantUniversity.Controllers
                         return View(viewModel);
                     }
                 }
-
+        
                 Registration userCourseSection = new Registration(CustomUser.User.Id, toAdd.Id);
                 rRepo.Insert(userCourseSection);
             }

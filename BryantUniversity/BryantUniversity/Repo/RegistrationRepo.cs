@@ -61,9 +61,9 @@ namespace BryantUniversity.Repo
         //        .SingleOrDefault();   
         //}
 
-        public void Insert(Registration schedule)
+        public void Insert(Registration registration)
         {
-            _context.Registrations.Add(schedule);
+            _context.Registrations.Add(registration);
             _context.SaveChanges();
         }
 
