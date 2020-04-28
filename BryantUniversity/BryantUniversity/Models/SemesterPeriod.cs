@@ -14,6 +14,12 @@ namespace BryantUniversity.Models
             Period = period;
         }
 
+        public SemesterPeriod(Period period, DateTime startDate, DateTime endDate)
+        {
+            Period = period;
+            StartDate = startDate;
+            EndDate = endDate; 
+        }
         //public SemesterPeriod(Period period, DateTime startDate, DateTime endDate)
         //{
         //    Period = period;
@@ -23,8 +29,8 @@ namespace BryantUniversity.Models
 
         public int Id { get; set; }
         public Period Period { get; set; }
-        //public DateTime StartDate { get; set; }
-        //public DateTime EndDate { get; set; }
+        public DateTime StartDate { get; set; }
+        public DateTime EndDate { get; set; }
 
         public List<CalendarEvent> SemesterDetails { get; set; }
     }

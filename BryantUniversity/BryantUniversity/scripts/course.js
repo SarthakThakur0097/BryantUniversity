@@ -92,17 +92,25 @@
                 body: JSON.stringify(courseSection)
                 });
 if (response.ok) {
-	const data = await response.json();
-	window.location.href = data.redirectUrl
+    const data = await response.json();
+    if(data.error.length == 0){
+        window.location.href = data.redirectUrl
+        return data
+    }
+
+    else{
+        window.alert("ERROR: A course this teacher is currently conficts with the course they are trying to be assigned to!")
+    }
     
 	console.log("JSON: " + JSON.stringify(data))
-	return data	
+	
 } else {
 	// TODO handle errors returned from the server
 }
             const data = await response.json();
             console.log(data.redirectUrl);
             console.log("JSON: " + JSON.stringify(data))
+           
             return data
         }
         catch(error){

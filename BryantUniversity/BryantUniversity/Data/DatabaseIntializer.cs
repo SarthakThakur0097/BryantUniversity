@@ -50,11 +50,21 @@ namespace BryantUniversity.Data
             var event14 = new DateTime(2020, 3, 23);
             var event15 = new DateTime(2020, 3, 25);
 
-            DateTime fall2020StartTime = new DateTime(2020, 08, 15);
-            DateTime fall2020EndTime = new DateTime(2021, 01, 21);
-            SemesterPeriod Fall2020 = new SemesterPeriod(Period.Fall2020);
-            SemesterPeriod Spring2020 = new SemesterPeriod(Period.Spring2020);
-            SemesterPeriod Fall2019 = new SemesterPeriod(Period.Fall2019);
+            DateTime fall2020StartTime = new DateTime(2020, 08, 27);
+            DateTime fall2020EndTime = new DateTime(2021, 01, 22);
+
+            DateTime spring2020StartTime = new DateTime(2020, 01, 2);
+            DateTime spring2020EndTime = new DateTime(2020, 05, 17);
+
+            DateTime fall2019StartTime = new DateTime(2019, 08, 25);
+            DateTime fall2019EndTime = new DateTime(2020, 01, 17);
+
+            DateTime spring2019StartTime = new DateTime(2019, 01, 5);
+            DateTime spring2019EndTime = new DateTime(2019, 05, 23);
+
+            SemesterPeriod Fall2020 = new SemesterPeriod(Period.Fall2020, fall2020StartTime, fall2020EndTime);
+            SemesterPeriod Spring2020 = new SemesterPeriod(Period.Spring2020, spring2020StartTime, spring2020EndTime);
+            SemesterPeriod Fall2019 = new SemesterPeriod(Period.Fall2019, fall2019StartTime, fall2019EndTime);
             SemesterPeriod Spring2019 = new SemesterPeriod(Period.Spring2019);
 
             CalendarEvent semEvent1 = new CalendarEvent(event1, "Continual registration for Spring 2020 for all students on the Web", Fall2020);
