@@ -1,6 +1,7 @@
 ﻿using BryantUniversity.Data;
 using BryantUniversity.Models;
 using BryantUniversity.Repo;
+using System.Collections.Generic;
 using System.Web.Http;
 
 namespace BryantUniversity.ApiControllers
@@ -28,7 +29,11 @@ namespace BryantUniversity.ApiControllers
             {
                 csRepo = new CourseSectionRepo(context);
 
+                IList<CourseSection> currentlyTeaching = csRepo.GetCourseSectionByUserId(courseSection.Id);
+
+
                 toInsert = new CourseSection(0, courseSection.CourseId, courseSection.RoomId, courseSection.UserId, courseSection.SemesterPeriodId);
+
                 csRepo.Insert(toInsert);
             }
             return Json(new { redirectUrl = "/Courses/Index" });
