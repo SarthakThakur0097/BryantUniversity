@@ -28,15 +28,19 @@ namespace BryantUniversity.ApiControllers
             using (context)
             {
                 csRepo = new CourseSectionRepo(context);
+                IList<CourseSection> currentlyTeaching = csRepo.GetCourseSectionByUserId(courseSection.UserId);
 
-                IList<CourseSection> currentlyTeaching = csRepo.GetCourseSectionByUserId(courseSection.Id);
-
-
+                foreach(CourseSection teaching in currentlyTeaching)
+                {
+                    if(teaching.Pattern == courseSection.Pattern && teaching.Id == courseSection.UserId && teaching.SemesterPeriodId == courseSection.SemesterPeriodId)
+                    {
+                        return Json(new { redirectUrl ="Home/Index", error = "This teacher is already teaching another course which would conflict with this one" });
+                    }
+                }
                 toInsert = new CourseSection(0, courseSection.CourseId, courseSection.RoomId, courseSection.UserId, courseSection.SemesterPeriodId);
-
                 csRepo.Insert(toInsert);
             }
-            return Json(new { redirectUrl = "/Courses/Index" });
+            return Json(new { redirectUrl = "/Courses/Index", error = "" });
         }
         //[Route("Assign/{courseSection}")]
         //[HttpPost]
