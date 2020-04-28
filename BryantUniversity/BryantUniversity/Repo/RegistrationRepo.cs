@@ -15,18 +15,18 @@ namespace BryantUniversity.Repo
             _context = context;
         }
 
-        public IList<Registration> GetScheduleByUserId(int id)
+        public IList<Registration> GetRegistrationByUserId(int id)
         {
             return _context.Registrations
                 .Include(s => s.User)
-                .Include(s => s.CourseSection)
-                .Include(s => s.CourseSection.Course)
-                .Include(s => s.CourseSection.Course.Department)
-                .Include(s => s.CourseSection.Professor)
-                .Include(s => s.CourseSection.SemesterPeriod)
-                .Include(s => s.CourseSection.Room)
+                .Include(c => c.CourseSection)
                 .Where(s => s.UserId == id).
                 ToList();
+        }
+
+        public Registration GetById(int id)
+        {
+            return _context.Registrations.SingleOrDefault(r => r.Id == id);
         }
 
         public IList<Registration> GetRegistrationByUserAndCourseSection(int userId, int courseSectoinId)

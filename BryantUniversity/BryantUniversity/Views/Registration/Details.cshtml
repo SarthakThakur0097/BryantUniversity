@@ -23,11 +23,9 @@
         @foreach (var courseSection in Model)
         {
             <tr>
-                <td>@courseSection.SectionNumber</td>
+
                 <td>@courseSection.SemesterPeriod.Period.Value</td>
-                <td>@courseSection.TimeSlot</td>
                 <td>@courseSection.Professor.Name</td>
-                <td>@courseSection.Room.BuildingName</td>
                 <td>@courseSection.Room.RoomType</td>
                 <td>@courseSection.Course.Credits</td>
                 <td>

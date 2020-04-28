@@ -1,4 +1,4 @@
-﻿@model IList<BryantUniversity.Models.Schedule>
+﻿@model IList<BryantUniversity.Models.Registration>
 @{
     ViewBag.Title = "Students";
 }
@@ -9,6 +9,7 @@
     <thead>
         <tr lass="bench-row">
             <th>Name</th>
+            <th>Email</th>
         </tr>
     </thead>
 
@@ -17,9 +18,9 @@
             {
             <tr>
                 <td>@student.User.Name</td>
-
+                <td>@student.User.Email</td>
                 <td>
-                    @Html.ActionLink("View Enrolled Students", "Students")
+                    @Html.ActionLink("assign grade", "Assign", "Grades", new { id = student.User.Id, rId = student.CourseSectionId }, new { @class = "btn btn-primary" })
                 </td>
             </tr>
         }

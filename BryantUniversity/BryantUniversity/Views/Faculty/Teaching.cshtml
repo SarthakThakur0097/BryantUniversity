@@ -21,6 +21,7 @@
             <table class="table">
                 <thead class="thead-dark">
                     <tr lass="bench-row">
+                        <th>CRN</th>
                         <th>Course Title</th>
                         <th>Description</th>
                         <th>Credits</th>
@@ -28,13 +29,14 @@
                         <th>Level</th>
                         <th>Professor</th>
                         <th>Room Number</th>
+                        <th></th>
                     </tr>
                 </thead>
-
                 <tbody>
                     @foreach (var courseSection in Model)
-            {
+                    {
                         <tr>
+                            <td>@courseSection.Course.Id</td>
                             <td>@courseSection.Course.CourseTitle</td>
                             <td>@courseSection.Course.Description</td>
                             <td>@courseSection.Course.Credits</td>

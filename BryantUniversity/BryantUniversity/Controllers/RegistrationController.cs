@@ -31,8 +31,8 @@ namespace BryantUniversity.Controllers
             using (context)
             {
                 User currUser = new UserRepo(context).GetByEmail(User.Identity.Name);
-                IList<Registration> schedules = new RegistrationRepo(context).GetScheduleByUserId(currUser.Id);
-                return View(schedules);
+                IList<Registration> registration = new RegistrationRepo(context).GetRegistrationByUserId(currUser.Id);
+                return View(registration);
             }
         }
 

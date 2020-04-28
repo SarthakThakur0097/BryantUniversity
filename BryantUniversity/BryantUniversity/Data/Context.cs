@@ -18,6 +18,7 @@ namespace BryantUniversity.Data
         public DbSet<CourseSection> CourseSections { get; set; }
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Registration> Registrations { get; set; }
+        public DbSet<Grade> Grades { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
