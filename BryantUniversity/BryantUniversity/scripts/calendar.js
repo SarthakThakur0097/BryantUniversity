@@ -84,6 +84,8 @@
     console.log(dropDownMenu)
     dropDownMenu.onclick = function () {
         let chosenPeriod = event.target
+        console.log("Event target is")
+        console.log(chosenPeriod)
         let periodId = chosenPeriod.options[chosenPeriod.selectedIndex].value
 
         updateList(changePeriod(periodId));

@@ -2,6 +2,8 @@
 using BryantUniversity.Models;
 using BryantUniversity.Models.Repo;
 using BryantUniversity.Repo;
+using BryantUniversity.Security;
+using BryantUniversity.ViewModels;
 using System.Collections.Generic;
 using System.Web.Mvc;
 
@@ -11,6 +13,13 @@ namespace BryantUniversity.Controllers
     {
         private Context context;
 
+        public CustomPrincipal CustomUser
+        {
+            get
+            {
+                return (CustomPrincipal)User;
+            }
+        }
         public RegistrationController()
         {
             context = new Context();
@@ -21,8 +30,9 @@ namespace BryantUniversity.Controllers
         {
             using (context)
             {
-                IList<Course> courses = new CoursesRepo(context).GetAllCourses();
-                return View(courses);
+                User currUser = new UserRepo(context).GetByEmail(User.Identity.Name);
+                IList<Registration> schedules = new RegistrationRepo(context).GetScheduleByUserId(currUser.Id);
+                return View(schedules);
             }
         }
 
@@ -38,14 +48,41 @@ namespace BryantUniversity.Controllers
         [HttpGet]
         public ActionResult Add(int id)
         {
+            CourseSectionRepo csRepo;
+            RegistrationRepo rRepo;
+            CourseSection toAdd;
             using (context)
             {
-                User currUser = new UserRepo(context).GetByEmail(User.Identity.Name);
-                CourseSection courseSection = new CourseSectionRepo(context).GetCourseSectionByIdAndUser(id, currUser.Id);
-                Schedule schedule = new Schedule(currUser, courseSection);
-                new ScheduleRepo(context).Insert(schedule);
-                return RedirectToAction("Index");
+                csRepo = new CourseSectionRepo(context);
+                rRepo = new RegistrationRepo(context);
+                toAdd = csRepo.GetCourseSectionById(id);
+
+                RegistrationViewModel viewModel = new RegistrationViewModel();
+
+                SemesterPeriod toAddPeriod = toAdd.SemesterPeriod;
+
+                IList<Registration> registrations = rRepo.GetRegistrationByUserAndCourseSection(CustomUser.User.Id, id);
+                IList<CourseSection> registeredCourseSections = new List<CourseSection>();
+
+                foreach(Registration registration in registrations)
+                {
+                    
+                    if(registration.CourseSectionId == id)
+                    {
+                        viewModel.SameClassConflict = true;
+                        return View(viewModel);
+                    } 
+                    else if (registration.CourseSection.SemesterPeriod == toAddPeriod)
+                    {
+                        viewModel.TimeConflict = true;
+                        return View(viewModel);
+                    }
+                }
+        
+                Registration userCourseSection = new Registration(CustomUser.User.Id, toAdd.Id);
+                rRepo.Insert(userCourseSection);
             }
+            return RedirectToAction("Index", "Schedule");
         }
     }
 }

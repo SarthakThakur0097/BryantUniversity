@@ -3,6 +3,7 @@ using BryantUniversity.Models;
 using BryantUniversity.Models.Repo;
 using BryantUniversity.Repo;
 using BryantUniversity.Security;
+using BryantUniversity.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,33 +30,69 @@ namespace BryantUniversity.Controllers
         }
 
         [HttpGet]
-        public ActionResult Add(int id)
-        {
-            CourseSectionRepo csRepo;
-            ScheduleRepo sRepo;
-            CourseSection toAdd;
-            using (context)
-            {
-                csRepo = new CourseSectionRepo(context);
-                sRepo = new ScheduleRepo(context);
-
-                toAdd = csRepo.GetCourseSectionById(id);
-                Schedule userCourseSection = new Schedule(CustomUser.User.Id, toAdd.Id);
-                sRepo.Insert(userCourseSection);
-            }
-            return View("Index");
-        }
-        // GET: Schedule
-        [HttpGet]
         public ActionResult Index()
         {
+            var viewModel = new SemesterDetailsViewModel();
+
+            CalendarRepo cRepo;
+            DepartmentRepo dRepo;
+            SemesterPeriodRepo spRepo;
+
             using (context)
             {
-                User currUser = new UserRepo(context).GetByEmail(User.Identity.Name);
-                IList<Schedule> schedules = new ScheduleRepo(context).GetScheduleByUserId(currUser.Id);
-                return View(schedules);
+                cRepo = new CalendarRepo(context);
+                spRepo = new SemesterPeriodRepo(context);
+                dRepo = new DepartmentRepo(context);
+
+                viewModel.PopulateSelectList(spRepo.GetAllSemesterPeriods());
+                viewModel.PopulateDepermentSelectList(dRepo.GetAllDepartments());
+  
             }
-         
+            return View(viewModel);
         }
+
+        [HttpPost]
+        public ActionResult Index(SemesterDetailsViewModel viewModel)
+        {
+            using (context)
+            {
+                IList<SemesterPeriod> semesterPeriods;
+                IList<Department> departments;
+                DepartmentRepo deRepo;
+                SemesterPeriodRepo spRepo;
+
+                spRepo = new SemesterPeriodRepo(context);
+                deRepo = new DepartmentRepo(context);
+
+                semesterPeriods = spRepo.GetAllSemesterPeriods();
+                departments = deRepo.GetAllDepartments();
+
+                viewModel.PopulateSelectList(semesterPeriods);
+                viewModel.PopulateDepermentSelectList(departments);
+
+                if ((viewModel.DepartmentId < 1 || viewModel.PeriodId < 1))
+                {
+                    viewModel.DisplayCourses = false;
+                    return RedirectToAction("Index", viewModel);
+                }
+                else
+                {
+                    CoursesRepo cRepo = new CoursesRepo(context);
+
+                    viewModel.Courses = cRepo.GetByDepartment(viewModel.DepartmentId);
+                    viewModel.DisplayCourses = true;
+
+                    return View(viewModel);
+                }
+            }
+        }
+
+        //[HttpGet]
+        //public ActionResult Courses(int departmentId, )
+        //
+
+        //    return View(cViewModel);
+        //}
+        // GET: Schedule
     }
 }
