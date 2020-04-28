@@ -1,0 +1,46 @@
+﻿@model BryantUniversity.ViewModels.UserDetailsViewModel
+
+@{
+    ViewBag.Title = "Assign";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+
+        </div>
+        <div class="col-sm">
+            Assign final grade
+        </div>
+        <div class="col-sm">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+
+        </div>
+        <div class="col-sm">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary()
+                <div id="container">
+                    <div id="form">
+                        <h2 style="color: black; font-family: Roboto; font-weight: 800">Sign In</h2>
+                        <div id="label">
+                            @Html.LabelFor(m => m.Grade, new { Style = "color:black;" })
+                            @Html.TextBoxFor(m => m.Grade, new { id = "email" })
+                        </div>
+                        <div>
+                            <button type="submit" id="submit" class="btn btn-success btn-lg">Login</button>
+                        </div>
+                    </div>
+                </div>
+            }
+            </div>
+            <div class="col-sm">
+
+            </div>
+        </div>
+    </div>

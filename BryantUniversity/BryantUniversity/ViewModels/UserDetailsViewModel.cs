@@ -7,6 +7,7 @@ namespace BryantUniversity.ViewModels
     {
         public string Email { get; set; }
         public string Name { get; set; }
+        public int Grade { get; set; }
         public List<Role> Roles { get; set; }
 
         public string RolesString
