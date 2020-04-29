@@ -24,36 +24,49 @@ namespace BryantUniversity.Controllers
             }
         }
         // GET: Transcript
+        [HttpGet]
         public ActionResult Index()
+        {
+            TranscriptViewModel viewModel = new TranscriptViewModel();
+            SemesterPeriodRepo spRepo;
+            using (context)
+            {
+                spRepo = new SemesterPeriodRepo(context);
+                viewModel.PopulateSelectList(spRepo.GetAllSemesterPeriods());
+            }
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Index(TranscriptViewModel pViewModel)
         {
             GradesRepo gRepo;
             SemesterPeriodRepo spRepo;
-            RegistrationRepo rRepo;
-            UserRepo uRepo;
 
             TranscriptViewModel viewModel = new TranscriptViewModel();
             IList<Grade> userGrades;
             using (context)
             {
                 gRepo = new GradesRepo(context);
+                spRepo = new SemesterPeriodRepo(context);
+                viewModel.PopulateSelectList(spRepo.GetAllSemesterPeriods());
 
-
-                userGrades = gRepo.GetGradesByUserId(CustomUser.User.Id, 1);
+                userGrades = gRepo.GetGradesByUserId(CustomUser.User.Id, pViewModel.PeriodId);
 
                 if (userGrades.Count >= 1)
                 {
                     float gpa = 0.0f;
-                    foreach(Grade grade in userGrades)
+                    foreach (Grade grade in userGrades)
                     {
-                        gpa += grade.FinalGrade;
-                        if(gpa>=95)
-                        {
-                            viewModel.FinalGPA = 4.0f;
+                        viewModel.AllClasses.Add(grade.Registration);
 
+                        gpa += grade.FinalGrade;
+                        if (gpa >= 95)
+                        {
+                            viewModel.TermGpa = 4.0f;
                             return View(viewModel);
                         }
                     }
-     
                     //SemesterPeriod semesterPeriod = registration.CourseSection.SemesterPeriod;
                 }
                 else
