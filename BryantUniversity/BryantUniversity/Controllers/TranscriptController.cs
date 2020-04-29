@@ -31,24 +31,30 @@ namespace BryantUniversity.Controllers
             RegistrationRepo rRepo;
             UserRepo uRepo;
 
-            TranscriptVieModel viewModel = new TranscriptVieModel();
+            TranscriptViewModel viewModel = new TranscriptViewModel();
             IList<Grade> userGrades;
             using (context)
             {
                 gRepo = new GradesRepo(context);
-                uRepo = new UserRepo(context);
-                spRepo = new SemesterPeriodRepo(context);
-                rRepo = new RegistrationRepo(context);
 
-                userGrades = gRepo.GetGradeByUserId(CustomUser.User.Id);
+
+                userGrades = gRepo.GetGradesByUserId(CustomUser.User.Id, 1);
 
                 if (userGrades.Count >= 1)
                 {
-            
+                    float gpa = 0.0f;
+                    foreach(Grade grade in userGrades)
+                    {
+                        gpa += grade.FinalGrade;
+                        if(gpa>=95)
+                        {
+                            viewModel.FinalGPA = 4.0f;
+
+                            return View(viewModel);
+                        }
+                    }
      
                     //SemesterPeriod semesterPeriod = registration.CourseSection.SemesterPeriod;
-
-                    viewModel.PopulateSelectList(spRepo.GetAllSemesterPeriods());
                 }
                 else
                 {

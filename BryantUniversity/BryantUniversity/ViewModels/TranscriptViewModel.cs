@@ -7,9 +7,9 @@ using System.Web.Mvc;
 
 namespace BryantUniversity.ViewModels
 {
-    public class TranscriptVieModel
+    public class TranscriptViewModel
     {
-        public IList<Grade> Grades { get; set; }
+        public float FinalGPA { get; set; }
         public SemesterPeriod GradeSemesterPeriod { get; set; }
         public IList<SemesterPeriod> SemesterPeriods { get; set; }
         public SelectList PeriodList
