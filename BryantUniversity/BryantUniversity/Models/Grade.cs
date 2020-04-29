@@ -9,11 +9,11 @@ namespace BryantUniversity.Models
     {
         public Grade() { }
          
-        public Grade(int id, int finalGrade, int registrationId)
+        public Grade(int id, int finalGrade, int userId)
         {
             Id = id;
             FinalGrade = finalGrade;
-            RegistrationId = registrationId;
+            StudentId = userId;
         }
 
         public int Id { get; set; }
