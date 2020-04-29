@@ -64,9 +64,10 @@ namespace BryantUniversity.Controllers
                         if (gpa >= 95)
                         {
                             viewModel.TermGpa = 4.0f;
-                            return View(viewModel);
+
                         }
                     }
+                    return View(viewModel);
                     //SemesterPeriod semesterPeriod = registration.CourseSection.SemesterPeriod;
                 }
                 else

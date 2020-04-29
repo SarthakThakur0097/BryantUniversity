@@ -45,3 +45,36 @@
         <tr>Term GPA: @Model.TermGpa</tr>
     </tbody>
 </table>
+
+<h1>SCHEDULE</h1>
+<table class="pure-table pure-table-horizontal">
+    <thead>
+        <tr lass="bench-row">
+            <th>CRN</th>
+            <th>Course Title</th>
+            <th>Course Time</th>
+            <th>Days</th>
+            <th>Professor</th>
+            <th>Building</th>
+            <th>Room Number</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (Model.AllClasses != null)
+        {
+            foreach (var classes in Model.AllClasses)
+            {
+            <tr>
+                <td>@classes.CourseSection.Course.Id</td>
+                <td>@classes.CourseSection.Course.CourseTitle</td>
+                <td></td>
+                <td>@classes.CourseSection.Professor.Name</td>
+                <td>@classes.CourseSection.Room.Building.BuildingName</td>
+                <td>@classes.CourseSection.Room.Id</td>
+            </tr>
+            }
+        }
+        <tr>Term GPA: @Model.TermGpa</tr> 
+    </tbody>
+</table>

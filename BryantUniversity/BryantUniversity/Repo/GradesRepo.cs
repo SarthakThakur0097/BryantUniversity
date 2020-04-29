@@ -42,6 +42,8 @@ namespace BryantUniversity.Repo
         {
             return _context.Grades
                 .Include(u => u.Registration.CourseSection.Course).Where(s => s.Registration.CourseSection.SemesterPeriod.Id == spId)
+                .Include(u => u.Registration.CourseSection.Professor).Where(s => s.Registration.CourseSection.SemesterPeriod.Id == spId)
+                .Include(u => u.Registration.CourseSection.Room.Building).Where(s => s.Registration.CourseSection.SemesterPeriod.Id == spId)
                 .Where(c => c.Registration.UserId == userId)
                 .ToList();
         }
