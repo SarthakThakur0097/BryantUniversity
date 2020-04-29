@@ -26,7 +26,18 @@
                 @Html.ValidationMessageFor(model => model.PeriodId)
 
             </div>
+            <div class="col-sm">
+
+                @Html.LabelFor(model => model.DepartmentId, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.DropDownListFor(model => model.DepartmentId, Model.DepartmentList, "Department", new { @class = "form-control required", id = "department-list" })
+                @Html.ValidationMessageFor(model => model.DepartmentId)
+
+            </div>
             <button type="submit" class="btn btn-success">Submit</button>
+
+            <div class="col-md-5">
+                <input id="myInput" class="form-control" type="text" placeholder="Search..">
+            </div>
         </div>
     }
     @if (Model.DisplayCourses)
