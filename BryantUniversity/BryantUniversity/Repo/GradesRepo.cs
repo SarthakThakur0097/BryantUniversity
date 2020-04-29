@@ -19,7 +19,7 @@ namespace BryantUniversity.Repo
         public IList<Grade> GetAllGrades()
         {
             return _context.Grades
-                .Include(b => b.Registrations)
+                .Include(u => u.StudentUser)
                 .ToList();
 
         }
@@ -38,12 +38,13 @@ namespace BryantUniversity.Repo
         }
 
 
-        public Grade GetGradeById(int gradeId)
+        public IList<Grade> GetGradeByUserId(int userId)
         {
+
             return _context.Grades
-                .Include(r => r.Registrations)
-                .Where(r => r.Id == gradeId)
-                .SingleOrDefault();
+                .Include(u => u.StudentUser)
+                .Where(c => c.StudentUser.Id == userId)
+                .ToList();
         }
 
         public void Insert(Grade grade)

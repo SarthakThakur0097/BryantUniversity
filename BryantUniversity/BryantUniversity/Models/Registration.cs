@@ -22,6 +22,5 @@ namespace BryantUniversity.Models
         public User User { get; set; }
         public int CourseSectionId { get; set; }
         public CourseSection CourseSection { get; set; }
-        public Grade Grades { get; set; }
     }
 }

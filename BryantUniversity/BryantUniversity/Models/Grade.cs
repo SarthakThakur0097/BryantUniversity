@@ -8,7 +8,7 @@ namespace BryantUniversity.Models
     public class Grade
     {
         public Grade() { }
-
+         
         public Grade(int id, int finalGrade, int registrationId)
         {
             Id = id;
@@ -19,6 +19,7 @@ namespace BryantUniversity.Models
         public int Id { get; set; }
         public int FinalGrade { get; set; }
         public int RegistrationId { get; set; }
-        public List<Registration> Registrations { get; set; }
+        public int StudentId { get; set; }
+        public User StudentUser { get; set; }
     }
 }
