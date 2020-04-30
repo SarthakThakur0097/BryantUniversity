@@ -1,7 +1,6 @@
 ﻿using BryantUniversity.Data;
 using BryantUniversity.Models;
 using BryantUniversity.Repo;
-using System.Collections.Generic;
 using System.Web.Http;
 
 namespace BryantUniversity.ApiControllers

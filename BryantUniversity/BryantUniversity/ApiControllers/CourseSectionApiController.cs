@@ -33,20 +33,22 @@ namespace BryantUniversity.ApiControllers
                 IList<CourseSection> currentlyTeaching = csRepo.GetCourseSectionByUserId(courseSection.UserId);
                 IList<CourseSection> allCourseSections = csRepo.GetAllCourseSections();
 
-                
-                foreach(CourseSection teaching in allCourseSections)
+                if (allCourseSections.Count >= 1)
                 {
-                    if(teaching.Room.Id == courseSection.RoomId && teaching.Pattern == courseSection.Pattern && teaching.SemesterPeriodId == courseSection.SemesterPeriodId)
+                    foreach (CourseSection teaching in allCourseSections)
                     {
-                        return Json(new { redirectUrl = "Home/Index", error = "This room is already assigned during this time period" });
+                        if (teaching.Room.Id == courseSection.RoomId && teaching.ClassDays == courseSection.ClassDays && teaching.SemesterPeriodId == courseSection.SemesterPeriodId)
+                        {
+                            return Json(new { redirectUrl = "Home/Index", error = "This room is already assigned during this time period" });
 
-                    }
-                    if (teaching.Pattern == courseSection.Pattern && teaching.Id == courseSection.UserId && teaching.SemesterPeriodId == courseSection.SemesterPeriodId)
-                    {
-                        return Json(new { redirectUrl ="Home/Index", error = "This teacher is already teaching another course which would conflict with this one" });
+                        }
+                        if (teaching.ClassDays == courseSection.ClassDays && teaching.Id == courseSection.UserId && teaching.SemesterPeriodId == courseSection.SemesterPeriodId)
+                        {
+                            return Json(new { redirectUrl = "Home/Index", error = "This teacher is already teaching another course which would conflict with this one" });
+                        }
                     }
                 }
-                toInsert = new CourseSection(0, courseSection.CourseId, courseSection.RoomId, courseSection.UserId, courseSection.StartTime, courseSection.EndTime, courseSection.Pattern, courseSection.SemesterPeriodId);
+                toInsert = new CourseSection(courseSection.CourseId, courseSection.RoomId, courseSection.UserId, courseSection.ClassDaysId, courseSection.ClassDurationId, courseSection.SemesterPeriodId);
                 csRepo.Insert(toInsert);
             }
             return Json(new { redirectUrl = "/Courses/Index", error = "" });

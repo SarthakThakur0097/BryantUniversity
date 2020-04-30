@@ -80,7 +80,6 @@ namespace BryantUniversity.Repo
         {
             _context.CourseSections.Add(courseSection);
             _context.SaveChanges();
-           
         }
 
         public void Update(CourseSection courseSection)

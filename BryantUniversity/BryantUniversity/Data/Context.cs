@@ -10,6 +10,7 @@ namespace BryantUniversity.Data
         public DbSet<Role> Roles { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
         public DbSet<CalendarEvent> CalendarEvents { get; set; }
+        public DbSet<Days> ClassDays { get; set; }
         public DbSet<ClassDuration> ClassTimes { get; set; }
         public DbSet<SemesterPeriod> SemesterPeriods { get; set; }
         public DbSet<Course> Courses { get; set; }

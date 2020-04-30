@@ -17,83 +17,51 @@ namespace BryantUniversity.Models
             CourseId = courseId;
             RoomId = roomId;
             UserId = professorId;
-            //TimeSlot = timeSlot;
             SemesterPeriodId = semesterPeriodId;
             new DateTime();
         }
 
-        //public CourseSection(int id, int courseId, int roomId, int professorId, int semesterPeriodId) : this()
-        //{
-        //    Id = id;
-        //    CourseId = courseId;
-        //    RoomId = roomId;
-        //    UserId = professorId;
-        //    //TimeSlot = timeSlot;
-        //    SemesterPeriodId = semesterPeriodId;
-        //    new DateTime();
-        //}
 
         public CourseSection(int id, int courseId, int roomId, int professorId, int semesterPeriodId) : this()
         {
             Id = id;
-            //SectionNumber = sectionNumber;
             CourseId = courseId;
             RoomId = roomId;
             UserId = professorId;
-            //TimeSlot = timeSlot;
             SemesterPeriodId = semesterPeriodId;
             new DateTime();
         }
 
-        public CourseSection(int id, int courseId, int roomId, int professorId, int classDurationId, int semesterPeriodId) : this()
+        public CourseSection(int courseId, int roomId, int professorId, int classDaysId, int classDurationId, int semesterPeriodId) : this()
         {
-            Id = id;
-            //SectionNumber = sectionNumber;
             CourseId = courseId;
             RoomId = roomId;
             UserId = professorId;
+
+            ClassDaysId = classDaysId;
             ClassDurationId = classDurationId;
             SemesterPeriodId = semesterPeriodId;
             new DateTime();
         }
 
-        //public CourseSection(int id, int sectionNumber, int courseId, int roomId, int professorId, int semesterPeriodId) : this()
-        //{
-        //    Id = id;
-        //    SectionNumber = sectionNumber;
-        //    CourseId = courseId;
-        //    RoomId = roomId;
-        //    UserId = professorId;
-        //    //TimeSlot = timeSlot;
-        //    SemesterPeriodId = semesterPeriodId;
-        //    new DateTime();
-        //}
-
-
-        public CourseSection(/*DateTime timeSlot,*/ Course course, Room room, User professor, SemesterPeriod semesterPeriod) : this()
-        {
-            //TimeSlot = timeSlot;
-            Course = course;
-            Room = room;
-            Professor = professor;
-            SemesterPeriod = semesterPeriod;
-        }
-
         public int Id { get; set; }
-        //[Index("IX_FirstAndSecond", 2, IsUnique = true)]
-        //public int SectionNumber { get; set; }
-        //public DateTime TimeSlot { get; set; }
+
         public int CourseId { get; set; }
         public Course Course { get; set; }
         public int RoomId { get; set; }
         public Room Room { get; set; }
         public int UserId { get; set; }
         public User Professor { get; set; }
+
+        public int ClassDaysId { get; set; }
+        public Days ClassDays { get; set; }
+
         public int ClassDurationId { get; set; }
         public ClassDuration ClassDuration { get; set; }
+
         public int SemesterPeriodId { get; set; }
         public SemesterPeriod SemesterPeriod { get; set; }
-        public ClassPattern Pattern { get; set; }
+
         public List<Registration> Schedules { get; set; }
     }
 }
