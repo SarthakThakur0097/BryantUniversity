@@ -204,6 +204,7 @@
     <Compile Include="ApiControllers\CalendarApiController.cs" />
     <Compile Include="ApiControllers\CourseApiController.cs" />
     <Compile Include="ApiControllers\CourseSectionApiController.cs" />
+    <Compile Include="ApiControllers\SemesterPeriodApiController.cs" />
     <Compile Include="ApiControllers\UserApiController.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
@@ -313,6 +314,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Views\CourseAPi\" />
+    <Folder Include="Views\SemesterPeriodApi\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
