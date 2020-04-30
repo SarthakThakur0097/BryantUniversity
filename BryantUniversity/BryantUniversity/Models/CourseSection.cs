@@ -45,6 +45,18 @@ namespace BryantUniversity.Models
             new DateTime();
         }
 
+        public CourseSection(int id, int courseId, int roomId, int professorId, ClassPattern pattern, int semesterPeriodId) : this()
+        {
+            Id = id;
+            //SectionNumber = sectionNumber;
+            CourseId = courseId;
+            RoomId = roomId;
+            UserId = professorId;
+            //TimeSlot = timeSlot;
+            SemesterPeriodId = semesterPeriodId;
+            new DateTime();
+        }
+
         //public CourseSection(int id, int sectionNumber, int courseId, int roomId, int professorId, int semesterPeriodId) : this()
         //{
         //    Id = id;

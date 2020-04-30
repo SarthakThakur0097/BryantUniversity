@@ -130,8 +130,8 @@ namespace BryantUniversity.Data
             context.Courses.Add(introToProg);
             
             context.FacultyDepartments.Add(facultyDepartment);
-            context.Buildings.Add(building);
-            context.Rooms.Add(room);
+            //context.Buildings.Add(building);
+            //context.Rooms.Add(room);
             //context.CourseSections.Add(courseSection);
             context.SaveChanges();
         }
