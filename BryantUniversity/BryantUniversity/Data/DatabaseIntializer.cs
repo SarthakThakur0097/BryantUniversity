@@ -34,6 +34,10 @@ namespace BryantUniversity.Data
             Role researcher = new Role("Researcher");
             Role student = new Role("Student");
 
+            Hold financial = new Hold("Financial");
+            Hold academic = new Hold("Academic");
+            Hold disciplinary = new Hold("Disciplinary");
+
             var event1 = new DateTime(2020, 1, 2);
             var event2 = new DateTime(2020, 1, 16);
             var event3 = new DateTime(2020, 1, 17);
@@ -121,7 +125,10 @@ namespace BryantUniversity.Data
             context.UserRoles.Add(teacher2Role);
             context.UserRoles.Add(studentRole);
 
-           
+            context.Holds.Add(financial);
+            context.Holds.Add(academic);
+            context.Holds.Add(disciplinary);
+
             context.CalendarEvents.Add(semEvent1);
             context.CalendarEvents.Add(semEvent2);
             context.CalendarEvents.Add(semEvent3);
