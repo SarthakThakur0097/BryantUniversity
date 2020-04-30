@@ -45,14 +45,14 @@ namespace BryantUniversity.Models
             new DateTime();
         }
 
-        public CourseSection(int id, int courseId, int roomId, int professorId, ClassPattern pattern, int semesterPeriodId) : this()
+        public CourseSection(int id, int courseId, int roomId, int professorId, int classDurationId, int semesterPeriodId) : this()
         {
             Id = id;
             //SectionNumber = sectionNumber;
             CourseId = courseId;
             RoomId = roomId;
             UserId = professorId;
-            //TimeSlot = timeSlot;
+            ClassDurationId = classDurationId;
             SemesterPeriodId = semesterPeriodId;
             new DateTime();
         }
@@ -70,16 +70,15 @@ namespace BryantUniversity.Models
         //}
 
 
-        public CourseSection(/*DateTime timeSlot,*/ Course course, Room room, User professor, SemesterPeriod semesterPeriod):this()
+        public CourseSection(/*DateTime timeSlot,*/ Course course, Room room, User professor, SemesterPeriod semesterPeriod) : this()
         {
             //TimeSlot = timeSlot;
             Course = course;
             Room = room;
             Professor = professor;
-            SemesterPeriod = semesterPeriod;   
+            SemesterPeriod = semesterPeriod;
         }
 
-            
         public int Id { get; set; }
         //[Index("IX_FirstAndSecond", 2, IsUnique = true)]
         //public int SectionNumber { get; set; }
@@ -90,6 +89,8 @@ namespace BryantUniversity.Models
         public Room Room { get; set; }
         public int UserId { get; set; }
         public User Professor { get; set; }
+        public int ClassDurationId { get; set; }
+        public ClassDuration ClassDuration { get; set; }
         public int SemesterPeriodId { get; set; }
         public SemesterPeriod SemesterPeriod { get; set; }
         public ClassPattern Pattern { get; set; }

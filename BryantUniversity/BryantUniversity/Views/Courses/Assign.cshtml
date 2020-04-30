@@ -60,7 +60,7 @@
             </div>
 
         </div>
-        <div class="col-sm">
+
             <div class="col-sm">
                 <div class="dropdown" id="SemPeriodDiv">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="semPeriodButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -73,13 +73,20 @@
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownPatternButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Class Pattern
                     </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <div class="dropdown-menu"  id="" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item" href="#">MonWed</a>
                         <a class="dropdown-item" href="#">TueThurs</a>
 
                     </div>
                 </div>
-                <div  id="TimeDiv">
+                <div class="dropdown" id="TimeChooseDiv">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropDownTimeButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Time
+                    </button>
+                    <div class="dropdown-menu" id="TimeOptions" aria-labelledby="dropdownMenuButton">
+                    </div>
+                </div>
+                @*<div  id="TimeDiv">
                     <div id="timeStart">
                         <label for="startTime">Start Time: <input type="time" id="startTime" name="Start Time" /></label>
                     </div>
@@ -89,7 +96,7 @@
                     <button class="btn btn-secondary" type="button" id="TimeButton">
                         Time
                     </button>
-                </div>
+                </div>*@
                 <div class="dropdown" id="BuildingDiv">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownBuildingButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Building
@@ -111,8 +118,6 @@
 
             <input type="time" id="appt" name="appt"
                    min="09:00" max="18:00" required>*@
-            </div>
-        </div>
     </div>
 </div>
 

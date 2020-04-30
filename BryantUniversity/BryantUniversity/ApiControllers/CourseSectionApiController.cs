@@ -45,10 +45,8 @@ namespace BryantUniversity.ApiControllers
                     {
                         return Json(new { redirectUrl ="Home/Index", error = "This teacher is already teaching another course which would conflict with this one" });
                     }
-
-
                 }
-                toInsert = new CourseSection(0, courseSection.CourseId, courseSection.RoomId, courseSection.UserId, courseSection.SemesterPeriodId);
+                toInsert = new CourseSection(0, courseSection.CourseId, courseSection.RoomId, courseSection.UserId, courseSection.StartTime, courseSection.EndTime, courseSection.Pattern, courseSection.SemesterPeriodId);
                 csRepo.Insert(toInsert);
             }
             return Json(new { redirectUrl = "/Courses/Index", error = "" });
