@@ -37,7 +37,7 @@ namespace BryantUniversity.ApiControllers
                 {
                     foreach (CourseSection teaching in allCourseSections)
                     {
-                        if (teaching.Room.Id == courseSection.RoomId && teaching.ClassDays == courseSection.ClassDays && teaching.SemesterPeriodId == courseSection.SemesterPeriodId)
+                        if (teaching.Room.Id == courseSection.RoomId && teaching.ClassDaysId == courseSection.ClassDaysId && teaching.SemesterPeriodId == courseSection.SemesterPeriodId)
                         {
                             return Json(new { redirectUrl = "Home/Index", error = "This room is already assigned during this time period" });
 

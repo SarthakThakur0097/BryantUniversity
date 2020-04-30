@@ -162,7 +162,7 @@ if (response.ok) {
     }
 
     else{
-        window.alert("ERROR: A course this teacher is currently conficts with the course they are trying to be assigned to!")
+        window.alert(data.error)
     }
     
 	console.log("JSON: " + JSON.stringify(data))
