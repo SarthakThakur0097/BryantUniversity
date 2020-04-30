@@ -37,6 +37,10 @@
         <span class="dot" onclick="currentSlide(2)"></span>
         <span class="dot" onclick="currentSlide(3)"></span>
     </div>
+@if (Request.IsAuthenticated && ((BryantUniversity.Security.CustomPrincipal)User).IsInRole("4"))
+{
+    
+}
     @*<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="color:purple; float:left">
         <ol class="carousel-indicators">
             <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>

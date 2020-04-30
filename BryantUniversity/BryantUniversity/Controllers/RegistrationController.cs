@@ -20,6 +20,7 @@ namespace BryantUniversity.Controllers
                 return (CustomPrincipal)User;
             }
         }
+
         public RegistrationController()
         {
             context = new Context();
@@ -56,17 +57,15 @@ namespace BryantUniversity.Controllers
                 csRepo = new CourseSectionRepo(context);
                 rRepo = new RegistrationRepo(context);
                 toAdd = csRepo.GetCourseSectionById(id);
-
+                
                 RegistrationViewModel viewModel = new RegistrationViewModel();
-
                 SemesterPeriod toAddPeriod = toAdd.SemesterPeriod;
-
+                
                 IList<Registration> registrations = rRepo.GetRegistrationByUserAndCourseSection(CustomUser.User.Id, id);
                 IList<CourseSection> registeredCourseSections = new List<CourseSection>();
 
                 foreach(Registration registration in registrations)
                 {
-                    
                     if(registration.CourseSectionId == id)
                     {
                         viewModel.SameClassConflict = true;

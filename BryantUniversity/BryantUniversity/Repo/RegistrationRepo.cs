@@ -51,6 +51,20 @@ namespace BryantUniversity.Repo
                 ToList();
         }
 
+        public IList<Registration> GetRegistrationByUserId(User student)
+        {
+            return _context.Registrations
+                .Include(s => s.User)
+                .Include(s => s.CourseSection)
+                .Include(s => s.CourseSection.Course)
+                .Include(s => s.CourseSection.Course.Department)
+                .Include(s => s.CourseSection.Professor)
+                .Include(s => s.CourseSection.SemesterPeriod)
+                .Include(s => s.CourseSection.Room)
+                .Where(s => s.UserId == student.Id).
+                ToList();
+        }
+
         //public Schedule GetScheduleByUserAndCourseSectionId(int studentId, int courseSectionId)
         //{
         //    return _context.Schedules

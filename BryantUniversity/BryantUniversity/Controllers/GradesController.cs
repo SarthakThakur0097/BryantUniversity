@@ -53,9 +53,9 @@ namespace BryantUniversity.Controllers
 
                 foreach(Registration registration in usersRegistration)
                 {
-                    if(registration.UserId == id && registration.CourseSectionId == rId)
+                    if((registration.UserId == id && registration.CourseSectionId == rId))
                     {
-                        Grade grade = new Grade(0, viewModel.Grade, rId);
+                        Grade grade = new Grade(0, viewModel.Grade, registration.Id);
                         gRepo.Insert(grade);
                     }
                 }

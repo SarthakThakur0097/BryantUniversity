@@ -1,5 +1,10 @@
 ﻿using BryantUniversity.Data;
+using BryantUniversity.Models;
+using BryantUniversity.Repo;
+using BryantUniversity.Security;
 using BryantUniversity.ViewModels;
+using System.Collections;
+using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace BryantUniversity.Controllers
@@ -7,7 +12,7 @@ namespace BryantUniversity.Controllers
     [AllowAnonymous]
     public class HomeController : Controller
     {
-        private Context context = new Context();
+
 
         [HttpPost]
         public ActionResult Calendar(SemesterDetailsViewModel viewModel)
@@ -17,6 +22,7 @@ namespace BryantUniversity.Controllers
 
         public ActionResult Index()
         {
+
             return View();
         }
 

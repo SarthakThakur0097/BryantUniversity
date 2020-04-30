@@ -218,6 +218,7 @@
     <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Controllers\ScheduleController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Controllers\TranscriptController.cs" />
     <Compile Include="Data\Context.cs" />
     <Compile Include="Data\DatabaseIntializer.cs" />
     <Compile Include="Global.asax.cs">
@@ -261,6 +262,7 @@
     <Compile Include="ViewModels\SemesterCoursesViewModel.cs" />
     <Compile Include="ViewModels\SemesterDetailsViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\TranscriptViewModel.cs" />
     <Compile Include="ViewModels\UserDetailsViewModel.cs" />
     <Compile Include="ViewModels\UserListViewModel.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
@@ -301,6 +303,7 @@
     <Content Include="Views\Courses\Delete.cshtml" />
     <Content Include="Views\Registration\Add.cshtml" />
     <Content Include="Views\Grades\Assign.cshtml" />
+    <Content Include="Views\Transcript\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
