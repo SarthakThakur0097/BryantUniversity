@@ -67,6 +67,17 @@ namespace BryantUniversity.Data
             SemesterPeriod Fall2019 = new SemesterPeriod(Period.Fall2019, fall2019StartTime, fall2019EndTime);
             SemesterPeriod Spring2019 = new SemesterPeriod(Period.Spring2019);
 
+            ClassDuration NineToElvenAm = new ClassDuration(ClassTime.NineToElvenAm);
+            ClassDuration ElvenAmToTwelvePm = new ClassDuration(ClassTime.ElvenAmToTwelvePm);
+            ClassDuration OneToTwoPM = new ClassDuration(ClassTime.OneToTwoPM);
+            ClassDuration ThreeFiftyToFiveTwentyPm = new ClassDuration(ClassTime.ThreeFiftyToFiveTwentyPm);
+            ClassDuration FiveThirtyToSixFiftyPm = new ClassDuration(ClassTime.FiveThirtyToSixFiftyPm);
+            ClassDuration SevenTenToEightThirtyPm = new ClassDuration(ClassTime.SevenTenToEightThirtyPm);
+
+            Days MW = new Days(ClassPattern.Mw);
+            Days TTR = new Days(ClassPattern.Ttr);
+            Days F = new Days(ClassPattern.F);
+
             CalendarEvent semEvent1 = new CalendarEvent(event1, "Continual registration for Spring 2020 for all students on the Web", Fall2020);
             CalendarEvent semEvent2 = new CalendarEvent(event2, "Advising for All students 10am – 6pm", Spring2020);
             CalendarEvent semEvent3 = new CalendarEvent(event3, "Advising for all students 10 A.M. – 4 P.M.", Fall2019);
@@ -110,6 +121,7 @@ namespace BryantUniversity.Data
             context.UserRoles.Add(teacher2Role);
             context.UserRoles.Add(studentRole);
 
+           
             context.CalendarEvents.Add(semEvent1);
             context.CalendarEvents.Add(semEvent2);
             context.CalendarEvents.Add(semEvent3);
@@ -123,6 +135,17 @@ namespace BryantUniversity.Data
             context.CalendarEvents.Add(semEvent11);
             context.CalendarEvents.Add(semEvent12);
 
+            context.ClassTimes.Add(NineToElvenAm);
+            context.ClassTimes.Add(ElvenAmToTwelvePm);
+            context.ClassTimes.Add(OneToTwoPM);
+            context.ClassTimes.Add(ThreeFiftyToFiveTwentyPm);
+            context.ClassTimes.Add(FiveThirtyToSixFiftyPm);
+            context.ClassTimes.Add(SevenTenToEightThirtyPm);
+
+            context.ClassDays.Add(MW);
+            context.ClassDays.Add(TTR);
+            context.ClassDays.Add(F);
+
             //context.Buildings.Add(mainCampus);
             //context.Rooms.Add(room1);
             context.Departments.Add(compSci);
@@ -130,8 +153,8 @@ namespace BryantUniversity.Data
             context.Courses.Add(introToProg);
             
             context.FacultyDepartments.Add(facultyDepartment);
-            context.Buildings.Add(building);
-            context.Rooms.Add(room);
+            //context.Buildings.Add(building);
+            //context.Rooms.Add(room);
             //context.CourseSections.Add(courseSection);
             context.SaveChanges();
         }

@@ -202,8 +202,11 @@
   <ItemGroup>
     <Compile Include="ApiControllers\BuildingApiController.cs" />
     <Compile Include="ApiControllers\CalendarApiController.cs" />
+    <Compile Include="ApiControllers\ClassDurationApiController.cs" />
     <Compile Include="ApiControllers\CourseApiController.cs" />
     <Compile Include="ApiControllers\CourseSectionApiController.cs" />
+    <Compile Include="ApiControllers\DaysApiController.cs" />
+    <Compile Include="ApiControllers\SemesterPeriodApiController.cs" />
     <Compile Include="ApiControllers\UserApiController.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
@@ -225,9 +228,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Building.cs" />
+    <Compile Include="Models\ClassDuration.cs" />
     <Compile Include="Models\ClassPattern.cs" />
+    <Compile Include="Models\ClassTime.cs" />
     <Compile Include="Models\Course.cs" />
     <Compile Include="Models\CourseSection.cs" />
+    <Compile Include="Models\Days.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\FacultyDepartment.cs" />
     <Compile Include="Models\Grade.cs" />
@@ -239,8 +245,10 @@
     <Compile Include="Models\RoleType.cs" />
     <Compile Include="Repo\BuildingRepo.cs" />
     <Compile Include="Repo\CalendarRepo.cs" />
+    <Compile Include="Repo\ClassDurationRepo.cs" />
     <Compile Include="Repo\CourseSectionRepo.cs" />
     <Compile Include="Repo\CoursesRepo.cs" />
+    <Compile Include="Repo\DaysRepo.cs" />
     <Compile Include="Repo\DepartmentRepo.cs" />
     <Compile Include="Repo\GradesRepo.cs" />
     <Compile Include="Repo\RoleRepo.cs" />
@@ -312,7 +320,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Views\ClassDurationApi\" />
     <Folder Include="Views\CourseAPi\" />
+    <Folder Include="Views\SemesterPeriodApi\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

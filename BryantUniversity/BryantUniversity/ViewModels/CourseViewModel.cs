@@ -37,10 +37,10 @@ namespace BryantUniversity.ViewModels
         //}
 
 
-        public void PopulateSelectList()
-        {
-            PatternsToDisplay.Add(ClassPattern.MonWed);
-            PatternsToDisplay.Add(ClassPattern.TueThurs);
-        }
+        //public void PopulateSelectList()
+        //{
+        //    PatternsToDisplay.Add(ClassPattern.MW);
+        //    PatternsToDisplay.Add(ClassPattern.TueThurs);
+        //}
     }
 }
