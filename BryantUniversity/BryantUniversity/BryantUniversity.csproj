@@ -206,6 +206,7 @@
     <Compile Include="ApiControllers\CourseApiController.cs" />
     <Compile Include="ApiControllers\CourseSectionApiController.cs" />
     <Compile Include="ApiControllers\DaysApiController.cs" />
+    <Compile Include="Controllers\HoldsController.cs" />
     <Compile Include="ApiControllers\SemesterPeriodApiController.cs" />
     <Compile Include="ApiControllers\UserApiController.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -270,11 +271,13 @@
     <Compile Include="Security\CustomPrincipal.cs" />
     <Compile Include="ViewModels\CourseSectionViewModel.cs" />
     <Compile Include="ViewModels\CourseViewModel.cs" />
+    <Compile Include="ViewModels\HoldViewModel.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
     <Compile Include="ViewModels\ScheduleViewModel.cs" />
     <Compile Include="ViewModels\SemesterCoursesViewModel.cs" />
     <Compile Include="ViewModels\SemesterDetailsViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\StudentHoldViewModel.cs" />
     <Compile Include="ViewModels\TranscriptViewModel.cs" />
     <Compile Include="ViewModels\UserDetailsViewModel.cs" />
     <Compile Include="ViewModels\UserListViewModel.cs" />
@@ -317,6 +320,9 @@
     <Content Include="Views\Registration\Add.cshtml" />
     <Content Include="Views\Grades\Assign.cshtml" />
     <Content Include="Views\Transcript\Index.cshtml" />
+    <Content Include="Views\Holds\Index.cshtml" />
+    <Content Include="Views\Holds\Manage.cshtml" />
+    <Content Include="Views\Holds\Add.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

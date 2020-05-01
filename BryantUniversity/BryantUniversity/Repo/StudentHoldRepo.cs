@@ -16,9 +16,19 @@ namespace BryantUniversity.Repo
             _context = context;
         }
 
-        public IList<StudentHold> GetAllStudentHOldsById(int id)
+        public IList<StudentHold> GetAllStudentHolds()
         {
-            return _context.StudentHolds.Where(c => c.Id == id).ToList();
+            return _context.StudentHolds
+                            .Include(s => s.User)
+                            .ToList();
+        }
+
+        public IList<StudentHold> GetAllStudentHoldsById(int id)
+        {
+            return _context.StudentHolds
+                            .Include(s => s.User)
+                            .Include(h => h.Hold)
+                            .Where(c => c.UserId == id).ToList();
         }
 
         public StudentHold GetById(int id)

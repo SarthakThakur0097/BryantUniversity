@@ -1,0 +1,48 @@
+﻿@model BryantUniversity.ViewModels.StudentHoldViewModel
+
+@{
+    ViewBag.Title = "Manage";
+}
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Holds</th>
+            <th>Add Hold</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody id="myTable">
+
+            <tr>
+                <td>@Model.ToDisplay.Name</td>
+                <td>@Model.ToDisplay.Email</td>
+                @if (Model.UserHolds.Count > 0)
+                {
+                    foreach (var hold in Model.UserHolds)
+                    {
+                        <td>
+                            @hold.Hold.HoldName
+                        </td>
+
+                        <td>
+                            @Html.ActionLink("remove", "Delete", new { id = hold.Id }, new { @class = "btn btn-danger" })
+                        </td>
+                    }
+                }
+                else
+                {
+                    <td>No Holds</td>
+                }
+                <td>
+                    @Html.ActionLink("Add Hold", "Add", new { id = Model.ToDisplay.Id }, new { @class = "btn btn-danger" })
+                </td>
+            </tr>
+    </tbody>
+</table>
+@*@Html.ActionLink("Manage Holds", "Manage", new { id = user.Id }, new { @class = "btn btn-info" })*@
+
+
+

@@ -1,0 +1,24 @@
+﻿@model BryantUniversity.ViewModels.HoldViewModel
+
+@{
+    ViewBag.Title = "Add";
+}
+
+@using (Html.BeginForm("Add", "Holds", FormMethod.Post, new { @class = "pure-form pure-form-aligned", id = "" }))
+{
+    @Html.AntiForgeryToken()
+
+    <h1>MY GRADES</h1>
+    <div class="form-horizontal">
+        <div class="form-group">
+            @Html.LabelFor(model => model.HoldsList, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.DropDownListFor(model => model.HoldId, Model.HoldsList, "Hold Type", new { @class = "form-control", id = "period-list" })
+            @Html.ValidationMessageFor(model => model.HoldId, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+            </div>
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+}
