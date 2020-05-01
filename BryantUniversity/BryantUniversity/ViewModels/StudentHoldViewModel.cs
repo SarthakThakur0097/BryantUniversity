@@ -9,6 +9,7 @@ namespace BryantUniversity.ViewModels
     public class StudentHoldViewModel
     {
         public User ToDisplay { get; set; }
+        public StudentHold HoldToDelete { get; set; }
         public IList<User> Users { get; set; }
         public IList<StudentHold> UserHolds { get; set; }
 

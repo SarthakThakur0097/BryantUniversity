@@ -194,6 +194,7 @@
     <Content Include="scripts\CourseSearch.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
+    <Content Include="scripts\MangeHold.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
     <Content Include="scripts\Schedule.js" />
     <Content Include="styles\scrollablemenu.css" />
@@ -206,6 +207,7 @@
     <Compile Include="ApiControllers\CourseApiController.cs" />
     <Compile Include="ApiControllers\CourseSectionApiController.cs" />
     <Compile Include="ApiControllers\DaysApiController.cs" />
+    <Compile Include="ApiControllers\StudentHoldsApiController.cs" />
     <Compile Include="Controllers\HoldsController.cs" />
     <Compile Include="ApiControllers\SemesterPeriodApiController.cs" />
     <Compile Include="ApiControllers\UserApiController.cs" />
@@ -323,6 +325,7 @@
     <Content Include="Views\Holds\Index.cshtml" />
     <Content Include="Views\Holds\Manage.cshtml" />
     <Content Include="Views\Holds\Add.cshtml" />
+    <Content Include="Views\Holds\Delete.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -334,6 +337,7 @@
     <Folder Include="Views\ClassDurationApi\" />
     <Folder Include="Views\CourseAPi\" />
     <Folder Include="Views\SemesterPeriodApi\" />
+    <Folder Include="Views\StudentHoldsApi\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -3,19 +3,20 @@
 @{
     ViewBag.Title = "Manage";
 }
+<div id="tableContainer" class="col-sm">
 
-<table class="table">
-    <thead class="thead-dark">
-        <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Holds</th>
-            <th>Add Hold</th>
-            <th></th>
-        </tr>
-    </thead>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Holds</th>
+                <th>Add Hold</th>
+                <th></th>
+            </tr>
+        </thead>
 
-    <tbody id="myTable">
+        <tbody id="myTable">
 
             <tr>
                 <td>@Model.ToDisplay.Name</td>
@@ -29,7 +30,9 @@
                         </td>
 
                         <td>
-                            @Html.ActionLink("remove", "Delete", new { id = hold.Id }, new { @class = "btn btn-danger" })
+                            <div id="removeContainer">
+                                <button type="button" data-student-hold-id="@hold.Id"class="btn btn-danger">remove</button>
+                            </div>
                         </td>
                     }
                 }
@@ -41,9 +44,10 @@
                     @Html.ActionLink("Add Hold", "Add", new { id = Model.ToDisplay.Id }, new { @class = "btn btn-danger" })
                 </td>
             </tr>
-    </tbody>
-</table>
-@*@Html.ActionLink("Manage Holds", "Manage", new { id = user.Id }, new { @class = "btn btn-info" })*@
+        </tbody>
+    </table>
+</div>
+    @*@Html.ActionLink("Manage Holds", "Manage", new { id = user.Id }, new { @class = "btn btn-info" })*@
 
 
-
+    <script src="~/scripts/MangeHold.js"></script>

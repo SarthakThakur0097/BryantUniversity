@@ -51,5 +51,10 @@ namespace BryantUniversity.Repo
             _context.Entry(hold).State = EntityState.Modified;
             _context.SaveChanges();
         }
+
+        public void Delete(int id)
+        {
+            
+        }
     }
 }

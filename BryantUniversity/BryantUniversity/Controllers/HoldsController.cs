@@ -95,10 +95,32 @@ namespace BryantUniversity.ApiControllers
             return RedirectToAction("Index", "Holds");
         }
 
-        [HttpPost]
+        [HttpGet]
         public ActionResult Delete(int id)
         {
-            return View();
+            StudentHoldRepo sRepo;
+            StudentHoldViewModel viewModel = new StudentHoldViewModel();
+
+            using (context)
+            {
+                sRepo = new StudentHoldRepo(context);
+                viewModel.HoldToDelete = sRepo.GetUserByStudentHoldId(id);
+            }
+
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Delete(StudentHoldViewModel viewModel)
+        {
+            StudentHoldRepo hRepo;
+
+            using (context)
+            {
+                hRepo = new StudentHoldRepo(context);
+                hRepo.Delete(viewModel.HoldToDelete.UserId);
+            }
+                return View();
         }
     }
 }
