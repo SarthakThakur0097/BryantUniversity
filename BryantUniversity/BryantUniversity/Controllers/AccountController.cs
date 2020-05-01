@@ -51,11 +51,7 @@ namespace BryantUniversity.Controllers
                 var userRepo = new UserRepo(context);
 
                 User user = userRepo.GetByEmail(viewModel.Email);
-                if (user == null)
-                {
-                    ModelState.AddModelError("", "Login failed.");
-                }
-                else if(!BCrypt.Net.BCrypt.Verify(viewModel.Password, user.HashedPassword))
+                if (user == null || !BCrypt.Net.BCrypt.Verify(viewModel.Password, user.HashedPassword))
                 {
                     ModelState.AddModelError("", "Login failed.");
                 }
