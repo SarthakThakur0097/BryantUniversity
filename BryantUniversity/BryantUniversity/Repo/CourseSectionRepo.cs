@@ -70,6 +70,8 @@ namespace BryantUniversity.Repo
                 .Include(cR => cR.Course)
                 .Include(cR => cR.Professor)
                 .Include(cR => cR.Room)
+                .Include(p => p.ClassDays)
+                .Include(c => c.ClassDuration)
                 .Include(cR => cR.SemesterPeriod)
                 .Include(cR => cR.Course.Department)
                 .Where(cR => cR.Course.Id == courseId)

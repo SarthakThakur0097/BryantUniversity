@@ -51,14 +51,26 @@ namespace BryantUniversity.Controllers
         {
             CourseSectionRepo csRepo;
             RegistrationRepo rRepo;
+            StudentHoldRepo hRepo;
             CourseSection toAdd;
+
+            IList<StudentHold> studentHolds = new List<StudentHold>();
             using (context)
             {
                 csRepo = new CourseSectionRepo(context);
                 rRepo = new RegistrationRepo(context);
+                hRepo = new StudentHoldRepo(context);
+
                 toAdd = csRepo.GetCourseSectionById(id);
-                
+                studentHolds = hRepo.GetAllStudentHoldsById(CustomUser.User.Id);
                 RegistrationViewModel viewModel = new RegistrationViewModel();
+
+                if (studentHolds.Count>0)
+                {
+                    viewModel.HasHold = true;
+
+                    return View(viewModel);
+                }
                 SemesterPeriod toAddPeriod = toAdd.SemesterPeriod;
                 
                 IList<Registration> registrations = rRepo.GetRegistrationByUserAndCourseSection(CustomUser.User.Id, id);

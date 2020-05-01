@@ -46,7 +46,6 @@ namespace BryantUniversity.Controllers
 
                 viewModel.PopulateSelectList(spRepo.GetAllSemesterPeriods());
                 viewModel.PopulateDepermentSelectList(dRepo.GetAllDepartments());
-  
             }
             return View(viewModel);
         }

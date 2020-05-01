@@ -94,5 +94,11 @@ namespace BryantUniversity.ApiControllers
 
             return RedirectToAction("Index", "Holds");
         }
+
+        [HttpPost]
+        public ActionResult Delete(int id)
+        {
+            return View();
+        }
     }
 }
