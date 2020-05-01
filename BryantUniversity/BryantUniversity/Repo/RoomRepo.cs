@@ -18,7 +18,6 @@ namespace BryantUniversity.Repo
         public IList<Room> GetAllRooms()
         {
             return _context.Rooms.ToList();
-
         }
 
         public Room GetById(int id)
