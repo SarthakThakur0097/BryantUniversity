@@ -113,9 +113,6 @@
                     <li class="nav-item">
                         @Html.ActionLink("Teaching", "Teaching", "Faculty", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
-                    <li class="nav-item">
-                        @Html.ActionLink("Current Schedule", "Index", "Schedule", new { area = "" }, new { @class = "navbar-brand" })
-                    </li>
                 }
                 else
                 {
@@ -128,10 +125,7 @@
                     </li>
 
                     <li class="nav-item">
-                        @Html.ActionLink("Registration", "Index", "Registration", new { area = "" }, new { @class = "navbar-brand" })
-                    </li>
-                    <li class="nav-item">
-                        @Html.ActionLink("Current Schedule", "Index", "Schedule", new { area = "" }, new { @class = "navbar-brand" })
+                        @Html.ActionLink("Academics", "Index", "Transcript", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
                 }
 

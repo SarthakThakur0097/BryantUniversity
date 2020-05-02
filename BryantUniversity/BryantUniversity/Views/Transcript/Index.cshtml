@@ -4,77 +4,110 @@
     ViewBag.Title = "Index";
 }
 
-@using (Html.BeginForm("Index", "Transcript", FormMethod.Post, new { @class = "pure-form pure-form-aligned", id = "" }))
-{
-    @Html.AntiForgeryToken()
-
-    <h1>MY GRADES</h1>
-    <div class="form-horizontal">
-        <div class="form-group">
-            @Html.LabelFor(model => model.PeriodId, htmlAttributes: new { @class = "control-label col-md-2" })
-            @Html.DropDownListFor(model => model.PeriodId, Model.PeriodList, "Period", new { @class = "form-control", id = "period-list" })
-            @Html.ValidationMessageFor(model => model.PeriodId, "", new { @class = "text-danger" })
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <h1>MY GRADES</h1>
         </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-            </div>
+        <div class="col-sm">
+            
         </div>
-        <button type="submit" class="btn btn-success">Submit</button>
+        <div class="col-sm">
+            
+        </div>
     </div>
-}
+    <div class="row">
+        <div class="col-md-5">
 
-<table class="pure-table pure-table-horizontal">
-    <thead>
-        <tr lass="bench-row">
-            <th>Course Title</th>
-            <th>CRN</th>
-        </tr>
-    </thead>
-
-    <tbody>
-        @if (Model.AllClasses != null)
-        {
-            foreach (var classes in Model.AllClasses)
+        </div>
+        <div class="col-sm">
+            @using (Html.BeginForm("Index", "Transcript", FormMethod.Post, new { @class = "pure-form pure-form-aligned", id = "" }))
             {
-            <tr>
-                <td>@classes.CourseSection.Course.CourseTitle</td>
-                <td>@classes.CourseSection.Course.Id</td>
-            </tr>
-            }
-        }
-        <tr>Term GPA: @Model.TermGpa</tr>
-    </tbody>
-</table>
+                @Html.AntiForgeryToken()
 
-<h1>SCHEDULE</h1>
-<table class="pure-table pure-table-horizontal">
-    <thead>
-        <tr lass="bench-row">
-            <th>CRN</th>
-            <th>Course Title</th>
-            <th>Course Time</th>
-            <th>Days</th>
-            <th>Professor</th>
-            <th>Building</th>
-            <th>Room Number</th>
-        </tr>
-    </thead>
 
-    <tbody>
-        @if (Model.AllClasses != null)
-        {
-            foreach (var classes in Model.AllClasses)
-            {
-            <tr>
-                <td>@classes.CourseSection.Course.Id</td>
-                <td>@classes.CourseSection.Course.CourseTitle</td>
-                <td></td>
-                <td>@classes.CourseSection.Professor.Name</td>
-                <td>@classes.CourseSection.Room.Building.BuildingName</td>
-                <td>@classes.CourseSection.Room.Id</td>
-            </tr>
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PeriodId, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.DropDownListFor(model => model.PeriodId, Model.PeriodList, "Period", new { @class = "form-control", id = "period-list" })
+                        @Html.ValidationMessageFor(model => model.PeriodId, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
             }
-        }
-        <tr>Term GPA: @Model.TermGpa</tr> 
-    </tbody>
-</table>
+
+        </div>
+        <div class="col-md-5">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <table class="pure-table pure-table-horizontal">
+                <thead>
+                    <tr lass="bench-row">
+                        <th>Course Title</th>
+                        <th>CRN</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @if (Model.AllGradesClasses != null)
+                    {
+                        foreach (var classes in Model.AllGradesClasses)
+                        {
+                            <tr>
+                                <td>@classes.CourseSection.Course.CourseTitle</td>
+                                <td>@classes.CourseSection.Course.Id</td>
+                            </tr>
+                        }
+                    }
+                    <tr>Term GPA: @Model.TermGpa</tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-5">
+
+        </div>
+        <div class="col-sm">
+
+            <h1>SCHEDULE</h1>
+            <table class="pure-table pure-table-horizontal">
+                <thead>
+                    <tr lass="bench-row">
+                        <th>CRN</th>
+                        <th>Course Title</th>
+                        <th>Course Time</th>
+                        <th>Days</th>
+                        <th>Professor</th>
+                        <th>Building</th>
+                        <th>Room Number</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @if (Model.AllGradesClasses != null)
+                    {
+                        foreach (var classes in Model.AllGradesClasses)
+                        {
+                            <tr>
+                                <td>@classes.CourseSection.Course.Id</td>
+                                <td>@classes.CourseSection.Course.CourseTitle</td>
+                                <td></td>
+                                <td>@classes.CourseSection.Professor.Name</td>
+                                <td>@classes.CourseSection.Room.Building.BuildingName</td>
+                                <td>@classes.CourseSection.Room.Id</td>
+                            </tr>
+                        }
+                    }
+                    <tr>Term GPA: @Model.TermGpa</tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
