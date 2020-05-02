@@ -14,7 +14,7 @@ namespace BryantUniversity.Controllers
     {
 
 
-        [httpsPost]
+        [HttpPost]
         public ActionResult Calendar(SemesterDetailsViewModel viewModel)
         {
             return View();

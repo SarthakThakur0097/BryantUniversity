@@ -2,7 +2,7 @@
 using BryantUniversity.Models;
 using BryantUniversity.Repo;
 using System.Collections.Generic;
-using System.Web.https;
+using System.Web.Http;
 
 namespace BryantUniversity.ApiControllers
 {
@@ -19,8 +19,8 @@ namespace BryantUniversity.ApiControllers
         }
 
         [Route("{studentHoldId}")]
-        [httpsPost]
-        public IhttpsActionResult DeleteStudentHold(int studentHoldId)
+        [HttpPost]
+        public IHttpActionResult DeleteStudentHold(int studentHoldId)
         {
             bool test = ModelState.IsValid;
 

@@ -30,7 +30,7 @@ namespace BryantUniversity.Controllers
             return View(viewModel);
         }
 
-        [httpsGet]
+        [HttpGet]
         public ActionResult Edit(int id)
         {
             UserRepo userRepo;
@@ -56,7 +56,7 @@ namespace BryantUniversity.Controllers
             return View(viewModel);
         }
 
-        [httpsPost]
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(UserViewModel formModel)
         {
@@ -80,7 +80,7 @@ namespace BryantUniversity.Controllers
             return View();
         }
 
-        [httpsPost]
+        [HttpPost]
         public ActionResult Edit(int id, User student)
         {
             UserRepo userRepo;

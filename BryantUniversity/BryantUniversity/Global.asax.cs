@@ -3,7 +3,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
-using System.Web.https;
+using System.Web.Http;
 using System.Data.Entity;
 using BryantUniversity.Data;
 using System.Security.Principal;
@@ -14,7 +14,7 @@ using System.Threading;
 
 namespace BryantUniversity
 {
-    public class Global : httpsApplication
+    public class Global : HttpApplication
     {
         void Application_Start(object sender, EventArgs e)
         {
@@ -28,7 +28,7 @@ namespace BryantUniversity
 
         protected void Application_PostAuthenticateRequest()
         {
-            IPrincipal user = httpsContext.Current.User;
+            IPrincipal user = HttpContext.Current.User;
             if (user.Identity.IsAuthenticated && user.Identity.AuthenticationType == "Forms")
             {
                 FormsIdentity formsIdentity = (FormsIdentity)user.Identity;
@@ -43,7 +43,7 @@ namespace BryantUniversity
                     User currentUser = repository.GetByEmail(currentUserEmailAddress);
 
                     CustomPrincipal customPrincipal = new CustomPrincipal(customIdentity, currentUser);
-                    httpsContext.Current.User = customPrincipal;
+                    HttpContext.Current.User = customPrincipal;
                     Thread.CurrentPrincipal = customPrincipal;
                 }
             }

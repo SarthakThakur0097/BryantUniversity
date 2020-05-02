@@ -17,7 +17,7 @@
     async function RemoveHold(id){
 
         try{
-            const response = await fetch('httpss://localhost:51934/api/StudentHolds/' + id, {
+            const response = await fetch('https://localhost:51934/api/StudentHolds/' + id, {
                 method: "POST",
                 credentials: "include",
                 headers: {

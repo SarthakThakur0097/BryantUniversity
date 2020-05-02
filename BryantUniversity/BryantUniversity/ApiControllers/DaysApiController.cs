@@ -2,7 +2,7 @@
 using BryantUniversity.Models;
 using BryantUniversity.Repo;
 using System.Collections.Generic;
-using System.Web.https;
+using System.Web.Http;
 
 namespace BryantUniversity.ApiControllers
 {
@@ -18,8 +18,8 @@ namespace BryantUniversity.ApiControllers
         }
 
         [Route("all")]
-        [httpsGet]
-        public IhttpsActionResult GetAllDays()
+        [HttpGet]
+        public IHttpActionResult GetAllDays()
         {
             DaysRepo dRepo;
             IList<Days> allDays = null;

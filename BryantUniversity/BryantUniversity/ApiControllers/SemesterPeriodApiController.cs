@@ -1,7 +1,7 @@
 ﻿using BryantUniversity.Data;
 using BryantUniversity.Models;
 using BryantUniversity.Repo;
-using System.Web.https;
+using System.Web.Http;
 
 namespace BryantUniversity.ApiControllers
 {
@@ -17,8 +17,8 @@ namespace BryantUniversity.ApiControllers
         }
 
         [Route("{semesterPeriodId}")]
-        [httpsGet]
-        public IhttpsActionResult GetSemesterPeriodDetails(int semesterPeriodId)
+        [HttpGet]
+        public IHttpActionResult GetSemesterPeriodDetails(int semesterPeriodId)
         {
             using (context)
             {

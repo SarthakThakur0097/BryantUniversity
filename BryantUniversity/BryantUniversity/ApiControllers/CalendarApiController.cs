@@ -3,7 +3,7 @@ using BryantUniversity.Models;
 using BryantUniversity.Models.Repo;
 using BryantUniversity.Repo;
 using System.Collections.Generic;
-using System.Web.https;
+using System.Web.Http;
 
 
 namespace BryantUniversity.ApiControllers
@@ -19,8 +19,8 @@ namespace BryantUniversity.ApiControllers
             context = new Context();
         }
         [Route("Periods")]
-        [httpsGet]
-        public IhttpsActionResult GetAllSemEvents()
+        [HttpGet]
+        public IHttpActionResult GetAllSemEvents()
         {
             SemesterPeriodRepo sRepo;
             IList<SemesterPeriod> allPeriods;
@@ -32,8 +32,8 @@ namespace BryantUniversity.ApiControllers
             return Ok(allPeriods);
         }
         [Route("{periodId}")]
-        [httpsPost]
-        public IhttpsActionResult ChangePeriod(int periodId)
+        [HttpPost]
+        public IHttpActionResult ChangePeriod(int periodId)
         {
             CalendarRepo cRepo;
             IList<CalendarEvent> allEvents;

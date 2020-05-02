@@ -43,7 +43,7 @@ namespace BryantUniversity.ApiControllers
             }
         }
 
-        [httpsGet]
+        [HttpGet]
         public ActionResult Manage(int id)
         {
             StudentHoldViewModel viewModel = new StudentHoldViewModel();
@@ -61,7 +61,7 @@ namespace BryantUniversity.ApiControllers
             }
         }
 
-        [httpsGet]
+        [HttpGet]
         public ActionResult Add(int id)
         {
             HoldRepo hRepo;
@@ -76,7 +76,7 @@ namespace BryantUniversity.ApiControllers
             return View(viewModel);
         }
 
-        [httpsPost]
+        [HttpPost]
         public ActionResult Add(int id, HoldViewModel viewModel)
         {
             HoldRepo hRepo;
@@ -95,7 +95,7 @@ namespace BryantUniversity.ApiControllers
             return RedirectToAction("Index", "Holds");
         }
 
-        [httpsGet]
+        [HttpGet]
         public ActionResult Delete(int id)
         {
             StudentHoldRepo sRepo;
@@ -110,7 +110,7 @@ namespace BryantUniversity.ApiControllers
             return View(viewModel);
         }
 
-        [httpsPost]
+        [HttpPost]
         public ActionResult Delete(StudentHoldViewModel viewModel)
         {
             StudentHoldRepo hRepo;

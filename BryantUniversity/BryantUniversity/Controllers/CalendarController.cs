@@ -16,7 +16,7 @@ namespace BryantUniversity.Controllers
         private Context context = new Context();
 
         // GET: Calendar
-        [httpsGet]
+        [HttpGet]
         public ActionResult Index()
         {
             var viewModel = new SemesterDetailsViewModel();

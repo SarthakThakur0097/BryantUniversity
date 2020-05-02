@@ -29,7 +29,7 @@ namespace BryantUniversity.Controllers
             context = new Context();
         }
 
-        [httpsGet]
+        [HttpGet]
         public ActionResult Index()
         {
             var viewModel = new SemesterDetailsViewModel();
@@ -50,7 +50,7 @@ namespace BryantUniversity.Controllers
             return View(viewModel);
         }
 
-        [httpsPost]
+        [HttpPost]
         public ActionResult Index(SemesterDetailsViewModel viewModel)
         {
             using (context)
@@ -86,7 +86,7 @@ namespace BryantUniversity.Controllers
             }
         }
 
-        //[httpsGet]
+        //[HttpGet]
         //public ActionResult Courses(int departmentId, )
         //
 

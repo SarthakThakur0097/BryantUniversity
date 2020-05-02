@@ -22,7 +22,7 @@ namespace BryantUniversity.Controllers
             context = new Context();
         }
 
-        [httpsGet]
+        [HttpGet]
         public ActionResult Index()
         {
             CoursesRepo courseRepo;
@@ -40,7 +40,7 @@ namespace BryantUniversity.Controllers
             return View("Index", viewModel);
         }
 
-        [httpsPost]
+        [HttpPost]
         public ActionResult Index(CourseViewModel viewModel)
         {
 
@@ -53,7 +53,7 @@ namespace BryantUniversity.Controllers
         }
 
 
-        [httpsPost]
+        [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(CourseViewModel formModel)
         {
@@ -77,7 +77,7 @@ namespace BryantUniversity.Controllers
             return View();
         }
 
-        [httpsGet]
+        [HttpGet]
         public ActionResult Edit(int id)
         {
             CoursesRepo courseRepo;
@@ -100,7 +100,7 @@ namespace BryantUniversity.Controllers
             return View("Edit", viewModel);
         }
 
-        [httpsPost]
+        [HttpPost]
         public ActionResult Edit(int id, CourseViewModel course)
         {
             CoursesRepo courseRepo;
@@ -133,7 +133,7 @@ namespace BryantUniversity.Controllers
             return View("Edit", viewModel);
         }
 
-        [httpsGet]
+        [HttpGet]
         public ActionResult Assign(int id)
         {
             CoursesRepo cRepo;
@@ -147,7 +147,7 @@ namespace BryantUniversity.Controllers
                 return View(viewModel);
         }
 
-        [httpsGet]
+        [HttpGet]
         public ActionResult Delete(int id)
         {
             CoursesRepo cRepo;
@@ -162,7 +162,7 @@ namespace BryantUniversity.Controllers
             return View(confirmDelete);
         }
 
-        [httpsPost]
+        [HttpPost]
         public ActionResult Delete(int id, Course course)
         {
             CoursesRepo cRepo;

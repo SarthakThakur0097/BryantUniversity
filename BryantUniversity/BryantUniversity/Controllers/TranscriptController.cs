@@ -24,7 +24,7 @@ namespace BryantUniversity.Controllers
             }
         }
         // GET: Transcript
-        [httpsGet]
+        [HttpGet]
         public ActionResult Index()
         {
             TranscriptViewModel viewModel = new TranscriptViewModel();
@@ -37,7 +37,7 @@ namespace BryantUniversity.Controllers
             return View(viewModel);
         }
 
-        [httpsPost]
+        [HttpPost]
         public ActionResult Index(TranscriptViewModel pViewModel)
         {
             GradesRepo gRepo;

@@ -2,7 +2,7 @@
 using BryantUniversity.Models;
 using BryantUniversity.Repo;
 using System.Collections.Generic;
-using System.Web.https;
+using System.Web.Http;
 
 namespace BryantUniversity.ApiControllers
 {
@@ -19,8 +19,8 @@ namespace BryantUniversity.ApiControllers
         }
 
         [Route("Assign")]
-        [httpsPost]
-        public IhttpsActionResult AssignTeacherToCourse([FromBody]CourseSection courseSection)
+        [HttpPost]
+        public IHttpActionResult AssignTeacherToCourse([FromBody]CourseSection courseSection)
         { 
             bool test = ModelState.IsValid;
             CourseSectionRepo csRepo;
@@ -54,8 +54,8 @@ namespace BryantUniversity.ApiControllers
             return Json(new { redirectUrl = "/Courses/Index", error = "" });
         }
         //[Route("Assign/{courseSection}")]
-        //[httpsPost]
-        //public IhttpsActionResult AssignTeacherToCourse([FromBody]JObject courseSection)
+        //[HttpPost]
+        //public IHttpActionResult AssignTeacherToCourse([FromBody]JObject courseSection)
         //{
         //    CourseSectionRepo csRepo;
         //    //UserRepo userRepo;

@@ -41,7 +41,7 @@ namespace BryantUniversity.Controllers
             return View(viewModel);
         }
 
-        [httpsPost]
+        [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public ActionResult Login(LoginViewModel viewModel)
@@ -65,7 +65,7 @@ namespace BryantUniversity.Controllers
             return View(viewModel);
         }
 
-        [httpsPost]
+        [HttpPost]
         public ActionResult Logout()
         {
             FormsAuthentication.SignOut();
@@ -79,7 +79,7 @@ namespace BryantUniversity.Controllers
             return View(viewModel);
         }
 
-        [httpsPost]
+        [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public ActionResult Register(UserViewModel viewModel)
