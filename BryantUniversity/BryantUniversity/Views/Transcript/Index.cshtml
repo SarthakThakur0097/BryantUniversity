@@ -56,9 +56,9 @@
                 </thead>
 
                 <tbody>
-                    @if (Model.AllClasses != null)
+                    @if (Model.AllGradesClasses != null)
                     {
-                        foreach (var classes in Model.AllClasses)
+                        foreach (var classes in Model.AllGradesClasses)
                         {
                             <tr>
                                 <td>@classes.CourseSection.Course.CourseTitle</td>
@@ -90,9 +90,9 @@
                 </thead>
 
                 <tbody>
-                    @if (Model.AllClasses != null)
+                    @if (Model.AllGradesClasses != null)
                     {
-                        foreach (var classes in Model.AllClasses)
+                        foreach (var classes in Model.AllGradesClasses)
                         {
                             <tr>
                                 <td>@classes.CourseSection.Course.Id</td>

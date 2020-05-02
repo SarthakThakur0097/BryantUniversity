@@ -9,15 +9,17 @@ namespace BryantUniversity.ViewModels
     {
         public TranscriptViewModel()
         {
-            AllClasses = new List<Registration>();
+            AllGradesClasses = new List<Registration>();
+            AllNonGradedClasses = new List<Registration>();
         }
         public float TermGpa { get; set; }
         public float CumulativeGpa { get; set; }
         public int PeriodId { get; set; }
-        public IList<Registration> AllClasses { get; set; }
+        public IList<Registration> AllGradesClasses { get; set; }
+        public IList<Registration> AllNonGradedClasses { get; set; }
         public SemesterPeriod GradeSemesterPeriod { get; set; }
         public IList<SemesterPeriod> SemesterPeriods { get; set; }
-
+        public bool HasClasses { get; set; }
         public SelectList PeriodList
         {
             get

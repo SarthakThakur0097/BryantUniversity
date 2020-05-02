@@ -24,6 +24,15 @@ namespace BryantUniversity.Repo
                 ToList();
         }
 
+        public IList<Registration> GetRegistrationByUserIdAndPeriodId(int studentId, int periodId)
+        {
+            return _context.Registrations
+                .Include(s => s.User)
+                .Include(c => c.CourseSection).Where(p => p.CourseSection.SemesterPeriodId == periodId)
+                .Where(s => s.UserId == studentId).
+                ToList();
+        }
+
         public Registration GetById(int id)
         {
             return _context.Registrations.SingleOrDefault(r => r.Id == id);
