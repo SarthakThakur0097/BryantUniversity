@@ -4,7 +4,7 @@
 
     async function getCourseByTitle(title) {
         try{
-            const response = await fetch ('https://localhost:51934/api/User/' + RoleId,{
+            const response = await fetch ('https://bryantweb.azurewebsites.net/api/User/' + RoleId,{
                 method: "GET",
                 credentials:"include",
                 header:{
