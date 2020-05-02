@@ -6,6 +6,13 @@ namespace BryantUniversity.Data
 {
     public class Context : DbContext
     {
+        //public Context()
+        //  : base(Helpers.GetRDSConnectionString()){}
+
+        public static Context Create()
+        {
+            return new Context();
+        }
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<UserRole> UserRoles { get; set; }
