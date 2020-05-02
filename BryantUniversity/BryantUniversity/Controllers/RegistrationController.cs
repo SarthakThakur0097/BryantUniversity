@@ -26,7 +26,7 @@ namespace BryantUniversity.Controllers
             context = new Context();
         }
 
-        [HttpGet]
+        [httpsGet]
         public ActionResult Index()
         {
             using (context)
@@ -37,7 +37,7 @@ namespace BryantUniversity.Controllers
             }
         }
 
-        [HttpGet]
+        [httpsGet]
         public ActionResult Details(int id)
         {
             using (context) {
@@ -46,7 +46,7 @@ namespace BryantUniversity.Controllers
             }
         }
 
-        [HttpGet]
+        [httpsGet]
         public ActionResult Add(int id)
         {
             CourseSectionRepo csRepo;

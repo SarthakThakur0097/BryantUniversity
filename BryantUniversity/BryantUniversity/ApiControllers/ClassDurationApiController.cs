@@ -3,7 +3,7 @@ using BryantUniversity.Models;
 using BryantUniversity.Models.Repo;
 using BryantUniversity.Repo;
 using System.Collections.Generic;
-using System.Web.Http;
+using System.Web.https;
 
 namespace BryantUniversity.ApiControllers
 {
@@ -20,8 +20,8 @@ namespace BryantUniversity.ApiControllers
         }
 
         [Route("Times")]
-        [HttpGet]
-        public IHttpActionResult GetAllClassTimes()
+        [httpsGet]
+        public IhttpsActionResult GetAllClassTimes()
         {
             ClassDurationRepo cRepo;
             IList<ClassDuration> allTimes = null;

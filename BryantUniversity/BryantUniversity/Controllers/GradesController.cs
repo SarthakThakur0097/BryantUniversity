@@ -17,7 +17,7 @@ namespace BryantUniversity.Controllers
             context = new Context();
         }
         // GET: Grades
-        [HttpGet]
+        [httpsGet]
         public ActionResult Assign(int id, int rId)
         {
             UserDetailsViewModel student = new UserDetailsViewModel();
@@ -35,7 +35,7 @@ namespace BryantUniversity.Controllers
             return View(student);
         }
 
-        [HttpPost]
+        [httpsPost]
         public ActionResult Assign(int id, int rId, UserDetailsViewModel viewModel)
         {
             UserRepo uRepo;

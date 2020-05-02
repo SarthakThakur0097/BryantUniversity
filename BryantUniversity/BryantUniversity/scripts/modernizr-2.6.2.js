@@ -11,13 +11,13 @@
  * under the terms set out in this paragraph. All notices and licenses
  * below are for informational purposes only.
  *
- * Copyright (c) Faruk Ates, Paul Irish, Alex Sexton; http://www.modernizr.com/license/
+ * Copyright (c) Faruk Ates, Paul Irish, Alex Sexton; https://www.modernizr.com/license/
  *
- * Includes matchMedia polyfill; Copyright (c) 2010 Filament Group, Inc; http://opensource.org/licenses/MIT
+ * Includes matchMedia polyfill; Copyright (c) 2010 Filament Group, Inc; https://opensource.org/licenses/MIT
  *
- * Includes material adapted from ES5-shim https://github.com/kriskowal/es5-shim/blob/master/es5-shim.js; Copyright 2009-2012 by contributors; http://opensource.org/licenses/MIT
+ * Includes material adapted from ES5-shim httpss://github.com/kriskowal/es5-shim/blob/master/es5-shim.js; Copyright 2009-2012 by contributors; https://opensource.org/licenses/MIT
  *
- * Includes material from css-support; Copyright (c) 2005-2012 Diego Perini; https://github.com/dperini/css-support/blob/master/LICENSE
+ * Includes material from css-support; Copyright (c) 2005-2012 Diego Perini; httpss://github.com/dperini/css-support/blob/master/LICENSE
  *
  * NUGET: END LICENSE TEXT */
 
@@ -101,7 +101,7 @@ window.Modernizr = (function( window, document, undefined ) {
     /*>>domprefixes*/
 
     /*>>ns*/
-    ns = {'svg': 'http://www.w3.org/2000/svg'},
+    ns = {'svg': 'https://www.w3.org/2000/svg'},
     /*>>ns*/
 
     tests = {},
@@ -261,7 +261,7 @@ window.Modernizr = (function( window, document, undefined ) {
       };
     }
 
-    // Adapted from ES5-shim https://github.com/kriskowal/es5-shim/blob/master/es5-shim.js
+    // Adapted from ES5-shim httpss://github.com/kriskowal/es5-shim/blob/master/es5-shim.js
     // es5.github.com/#x15.3.4.5
 
     if (!Function.prototype.bind) {
@@ -572,7 +572,7 @@ window.Modernizr = (function( window, document, undefined ) {
         //  and then querying the style.background property value for the number of
         //  occurrences of "url(" is a reliable method for detecting ACTUAL support for this!
 
-        setCss('background:url(https://),url(https://),red url(https://)');
+        setCss('background:url(httpss://),url(httpss://),red url(httpss://)');
 
         // If the UA supports multiple backgrounds, there should be three occurrences
         //   of the string "url(" in the return value for elemStyle.background
@@ -708,7 +708,7 @@ window.Modernizr = (function( window, document, undefined ) {
     tests['fontface'] = function() {
         var bool;
 
-        injectElementWithStyles('@font-face {font-family:"font";src:url("https://")}', function( node, rule ) {
+        injectElementWithStyles('@font-face {font-family:"font";src:url("httpss://")}', function( node, rule ) {
           var style = document.getElementById('smodernizr'),
               sheet = style.sheet || style.styleSheet,
               cssText = sheet ? (sheet.cssRules && sheet.cssRules[0] ? sheet.cssRules[0].cssText : sheet.cssText || '') : '';

@@ -677,15 +677,15 @@ var Microsoft;
             };
             AjaxMonitor.prototype.supportsMonitoring = function () {
                 var result = false;
-                if (!ApplicationInsights.extensions.IsNullOrUndefined(XMLHttpRequest)) {
+                if (!ApplicationInsights.extensions.IsNullOrUndefined(XMLhttpsRequest)) {
                     result = true;
                 }
                 return result;
             };
             AjaxMonitor.prototype.instrumentOpen = function () {
-                var originalOpen = XMLHttpRequest.prototype.open;
+                var originalOpen = XMLhttpsRequest.prototype.open;
                 var ajaxMonitorInstance = this;
-                XMLHttpRequest.prototype.open = function (method, url, async) {
+                XMLhttpsRequest.prototype.open = function (method, url, async) {
                     try {
                         if (ajaxMonitorInstance.isMonitoredInstance(this, true) &&
                             (!this.ajaxData ||
@@ -694,7 +694,7 @@ var Microsoft;
                         }
                     }
                     catch (e) {
-                        ApplicationInsights._InternalLogging.throwInternalNonUserActionable(ApplicationInsights.LoggingSeverity.CRITICAL, new ApplicationInsights._InternalLogMessage(ApplicationInsights._InternalMessageId.NONUSRACT_FailedMonitorAjaxOpen, "Failed to monitor XMLHttpRequest.open, monitoring data for this ajax call may be incorrect.", {
+                        ApplicationInsights._InternalLogging.throwInternalNonUserActionable(ApplicationInsights.LoggingSeverity.CRITICAL, new ApplicationInsights._InternalLogMessage(ApplicationInsights._InternalMessageId.NONUSRACT_FailedMonitorAjaxOpen, "Failed to monitor XMLhttpsRequest.open, monitoring data for this ajax call may be incorrect.", {
                             ajaxDiagnosticsMessage: AjaxMonitor.getFailedAjaxDiagnosticsMessage(this),
                             exception: Microsoft.ApplicationInsights.Util.dump(e)
                         }));
@@ -723,16 +723,16 @@ var Microsoft;
                 return result;
             };
             AjaxMonitor.prototype.instrumentSend = function () {
-                var originalSend = XMLHttpRequest.prototype.send;
+                var originalSend = XMLhttpsRequest.prototype.send;
                 var ajaxMonitorInstance = this;
-                XMLHttpRequest.prototype.send = function (content) {
+                XMLhttpsRequest.prototype.send = function (content) {
                     try {
                         if (ajaxMonitorInstance.isMonitoredInstance(this) && !this.ajaxData.xhrMonitoringState.sendDone) {
                             ajaxMonitorInstance.sendHandler(this, content);
                         }
                     }
                     catch (e) {
-                        ApplicationInsights._InternalLogging.throwInternalNonUserActionable(ApplicationInsights.LoggingSeverity.CRITICAL, new ApplicationInsights._InternalLogMessage(ApplicationInsights._InternalMessageId.NONUSRACT_FailedMonitorAjaxSend, "Failed to monitor XMLHttpRequest, monitoring data for this ajax call may be incorrect.", {
+                        ApplicationInsights._InternalLogging.throwInternalNonUserActionable(ApplicationInsights.LoggingSeverity.CRITICAL, new ApplicationInsights._InternalLogMessage(ApplicationInsights._InternalMessageId.NONUSRACT_FailedMonitorAjaxSend, "Failed to monitor XMLhttpsRequest, monitoring data for this ajax call may be incorrect.", {
                             ajaxDiagnosticsMessage: AjaxMonitor.getFailedAjaxDiagnosticsMessage(this),
                             exception: Microsoft.ApplicationInsights.Util.dump(e)
                         }));
@@ -748,9 +748,9 @@ var Microsoft;
                 xhr.ajaxData.xhrMonitoringState.sendDone = true;
             };
             AjaxMonitor.prototype.instrumentAbort = function () {
-                var originalAbort = XMLHttpRequest.prototype.abort;
+                var originalAbort = XMLhttpsRequest.prototype.abort;
                 var ajaxMonitorInstance = this;
-                XMLHttpRequest.prototype.abort = function () {
+                XMLhttpsRequest.prototype.abort = function () {
                     try {
                         if (ajaxMonitorInstance.isMonitoredInstance(this) && !this.ajaxData.xhrMonitoringState.abortDone) {
                             this.ajaxData.aborted = 1;
@@ -758,7 +758,7 @@ var Microsoft;
                         }
                     }
                     catch (e) {
-                        ApplicationInsights._InternalLogging.throwInternalNonUserActionable(ApplicationInsights.LoggingSeverity.CRITICAL, new ApplicationInsights._InternalLogMessage(ApplicationInsights._InternalMessageId.NONUSRACT_FailedMonitorAjaxAbort, "Failed to monitor XMLHttpRequest.abort, monitoring data for this ajax call may be incorrect.", {
+                        ApplicationInsights._InternalLogging.throwInternalNonUserActionable(ApplicationInsights.LoggingSeverity.CRITICAL, new ApplicationInsights._InternalLogMessage(ApplicationInsights._InternalMessageId.NONUSRACT_FailedMonitorAjaxAbort, "Failed to monitor XMLhttpsRequest.abort, monitoring data for this ajax call may be incorrect.", {
                             ajaxDiagnosticsMessage: AjaxMonitor.getFailedAjaxDiagnosticsMessage(this),
                             exception: Microsoft.ApplicationInsights.Util.dump(e)
                         }));
@@ -779,7 +779,7 @@ var Microsoft;
                     catch (e) {
                         var exceptionText = Microsoft.ApplicationInsights.Util.dump(e);
                         if (!exceptionText || exceptionText.toLowerCase().indexOf("c00c023f") == -1) {
-                            ApplicationInsights._InternalLogging.throwInternalNonUserActionable(ApplicationInsights.LoggingSeverity.CRITICAL, new ApplicationInsights._InternalLogMessage(ApplicationInsights._InternalMessageId.NONUSRACT_FailedMonitorAjaxRSC, "Failed to monitor XMLHttpRequest 'readystatechange' event handler, monitoring data for this ajax call may be incorrect.", {
+                            ApplicationInsights._InternalLogging.throwInternalNonUserActionable(ApplicationInsights.LoggingSeverity.CRITICAL, new ApplicationInsights._InternalLogMessage(ApplicationInsights._InternalMessageId.NONUSRACT_FailedMonitorAjaxRSC, "Failed to monitor XMLhttpsRequest 'readystatechange' event handler, monitoring data for this ajax call may be incorrect.", {
                                 ajaxDiagnosticsMessage: AjaxMonitor.getFailedAjaxDiagnosticsMessage(xhr),
                                 exception: Microsoft.ApplicationInsights.Util.dump(e)
                             }));
@@ -1646,8 +1646,8 @@ var Microsoft;
                 this._lastSend = 0;
                 this._config = config;
                 this._sender = null;
-                if (typeof XMLHttpRequest != "undefined") {
-                    var testXhr = new XMLHttpRequest();
+                if (typeof XMLhttpsRequest != "undefined") {
+                    var testXhr = new XMLhttpsRequest();
                     if ("withCredentials" in testXhr) {
                         this._sender = this._xhrSender;
                     }
@@ -1725,7 +1725,7 @@ var Microsoft;
                 }
             };
             Sender.prototype._xhrSender = function (payload, isAsync, countOfItemsInPayload) {
-                var xhr = new XMLHttpRequest();
+                var xhr = new XMLhttpsRequest();
                 xhr[ApplicationInsights.AjaxMonitor.DisabledPropertyName] = true;
                 xhr.open("POST", this._config.endpointUrl(), isAsync);
                 xhr.setRequestHeader("Content-type", "application/json");
@@ -2937,7 +2937,7 @@ var AI;
     "use strict";
     (function (DependencyKind) {
         DependencyKind[DependencyKind["SQL"] = 0] = "SQL";
-        DependencyKind[DependencyKind["Http"] = 1] = "Http";
+        DependencyKind[DependencyKind["https"] = 1] = "https";
         DependencyKind[DependencyKind["Other"] = 2] = "Other";
     })(AI.DependencyKind || (AI.DependencyKind = {}));
     var DependencyKind = AI.DependencyKind;
@@ -3013,7 +3013,7 @@ var Microsoft;
                     this.value = value;
                     this.success = success;
                     this.resultCode = resultCode + "";
-                    this.dependencyKind = AI.DependencyKind.Http;
+                    this.dependencyKind = AI.DependencyKind.https;
                     this.dependencyTypeName = "Ajax";
                 }
                 RemoteDependencyData.envelopeType = "Microsoft.ApplicationInsights.{0}.RemoteDependency";
@@ -3255,7 +3255,7 @@ var Microsoft;
                 }
             };
             AppInsights.prototype.SendCORSException = function (properties) {
-                var exceptionData = Microsoft.ApplicationInsights.Telemetry.Exception.CreateSimpleException("Script error.", "Error", "unknown", "unknown", "The browser’s same-origin policy prevents us from getting the details of this exception.The exception occurred in a script loaded from an origin different than the web page.For cross- domain error reporting you can use crossorigin attribute together with appropriate CORS HTTP headers.For more information please see http://www.w3.org/TR/cors/.", 0, null);
+                var exceptionData = Microsoft.ApplicationInsights.Telemetry.Exception.CreateSimpleException("Script error.", "Error", "unknown", "unknown", "The browser’s same-origin policy prevents us from getting the details of this exception.The exception occurred in a script loaded from an origin different than the web page.For cross- domain error reporting you can use crossorigin attribute together with appropriate CORS https headers.For more information please see https://www.w3.org/TR/cors/.", 0, null);
                 exceptionData.properties = properties;
                 var data = new ApplicationInsights.Telemetry.Common.Data(ApplicationInsights.Telemetry.Exception.dataType, exceptionData);
                 var envelope = new ApplicationInsights.Telemetry.Common.Envelope(data, ApplicationInsights.Telemetry.Exception.envelopeType);

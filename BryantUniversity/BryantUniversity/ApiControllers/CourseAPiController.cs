@@ -2,7 +2,7 @@
 using BryantUniversity.Models;
 using BryantUniversity.Repo;
 using System.Collections.Generic;
-using System.Web.Http;
+using System.Web.https;
 
 namespace BryantUniversity.ApiControllers
 {
@@ -19,8 +19,8 @@ namespace BryantUniversity.ApiControllers
         }
 
         [Route("Courses")]
-        [HttpGet]
-        public IHttpActionResult GetAllSemEvents()
+        [httpsGet]
+        public IhttpsActionResult GetAllSemEvents()
         {
             CoursesRepo cRepo;
             IList<Course> allCourses = null;

@@ -2,7 +2,7 @@
 using BryantUniversity.Models;
 using BryantUniversity.Models.Repo;
 using System.Collections.Generic;
-using System.Web.Http;
+using System.Web.https;
 namespace BryantUniversity.ApiControllers
 {
     [RoutePrefix("api/User")]
@@ -18,8 +18,8 @@ namespace BryantUniversity.ApiControllers
         // GET: CalendarApi
 
         [Route("{roleId}")]
-        [HttpGet]
-        public IHttpActionResult ChangeUser(int roleId)
+        [httpsGet]
+        public IhttpsActionResult ChangeUser(int roleId)
         {
             using (context)
             {
@@ -31,8 +31,8 @@ namespace BryantUniversity.ApiControllers
         }
 
         [Route("AllFaculty")]
-        [HttpGet]
-        public IHttpActionResult GetAllFaculty()
+        [httpsGet]
+        public IhttpsActionResult GetAllFaculty()
         {
             UserRepo uRepo;
             IList<User> allFaculty;

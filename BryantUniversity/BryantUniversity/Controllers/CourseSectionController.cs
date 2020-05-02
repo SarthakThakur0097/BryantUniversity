@@ -19,7 +19,7 @@ namespace BryantUniversity.Controllers
             context = new Context();
         }
 
-        [HttpGet]
+        [httpsGet]
         public ActionResult Index(int Id)
         {
             CourseSectionRepo csRepo;

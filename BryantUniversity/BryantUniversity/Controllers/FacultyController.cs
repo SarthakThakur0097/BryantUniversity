@@ -27,7 +27,7 @@ namespace BryantUniversity.Controllers
         }
 
         // GET: Faculty
-        [HttpGet]
+        [httpsGet]
         public ActionResult Index()
         {
                 UserListViewModel viewModel;
@@ -42,7 +42,7 @@ namespace BryantUniversity.Controllers
                 }
         }
 
-        [HttpGet]
+        [httpsGet]
         public ActionResult Create()
         {
             var userViewModel = new UserViewModel();
@@ -50,7 +50,7 @@ namespace BryantUniversity.Controllers
         }
 
         [ValidateAntiForgeryToken]
-        [HttpPost]
+        [httpsPost]
         public ActionResult Create(UserViewModel userViewModel)
         {
             if (ModelState.IsValid)
@@ -109,7 +109,7 @@ namespace BryantUniversity.Controllers
             return View(classesTaught);
         }
 
-        [HttpGet]
+        [httpsGet]
         public ActionResult Students(int Id)
         {
             RegistrationRepo sRepo;

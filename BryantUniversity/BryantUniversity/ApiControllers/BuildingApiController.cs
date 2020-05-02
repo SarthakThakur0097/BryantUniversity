@@ -6,7 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Web.Http;
+using System.Web.https;
 
 
 namespace BryantUniversity.ApiControllers
@@ -23,8 +23,8 @@ namespace BryantUniversity.ApiControllers
         }
 
         [Route("All")]
-        [HttpGet]
-        public IHttpActionResult GetAllBuildings()
+        [httpsGet]
+        public IhttpsActionResult GetAllBuildings()
         {
             BuildingRepo bRepo;
             IList<Building> allBuildings;
@@ -37,8 +37,8 @@ namespace BryantUniversity.ApiControllers
         }
 
         [Route("{BuildingID}/Rooms")]
-        [HttpGet]
-        public IHttpActionResult GetAllRooms(int buildingId)
+        [httpsGet]
+        public IhttpsActionResult GetAllRooms(int buildingId)
         {
             RoomRepo rRepo;
             IList<Room> allRooms;
