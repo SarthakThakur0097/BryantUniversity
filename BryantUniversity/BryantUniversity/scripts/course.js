@@ -11,7 +11,7 @@
 
     async function GetAllSemesterPeriods(){
         try{
-            const response = await fetch ('https://localhost:51934/api/Calendar/Periods',{
+            const response = await fetch ('https://bryantweb.azurewebsites.net/api/Calendar/Periods',{
                 method: "GET",
                 credentials:"include",
                 header:{
@@ -30,7 +30,7 @@
     }
     async function GetAllDays(){
         try{
-            const response = await fetch ('https://localhost:51934/api/days/all',{
+            const response = await fetch ('https://bryantweb.azurewebsites.net/api/days/all',{
                 method: "GET",
                 credentials:"include",
                 header:{
@@ -71,7 +71,7 @@
     async function GetSemesterPeriod(semesterPeriodId)
     {
         try{
-            const response = await fetch ('https://localhost:51934/api/SemesterPeriod/' + semesterPeriodId,{
+            const response = await fetch ('https://bryantweb.azurewebsites.net/api/SemesterPeriod/' + semesterPeriodId,{
                 method: "GET",
                 credentials:"include",
                 header:{
@@ -146,7 +146,7 @@
         try{
                 console.log("ASDASD" + chosenSemPeriodId)
                 let courseSection = {CourseId: courseID, RoomId: chosenRoomId, UserId: teacherId, ClassDaysId: chosenPatternId, ClassDurationId: chosenTimeId, SemesterPeriodId: chosenSemPeriodId}
-                const response = await fetch('https://localhost:51934/api/Coursesection/Assign', {
+                const response = await fetch('https://bryantweb.azurewebsites.net/api/Coursesection/Assign', {
                 method: "POST",
                 credentials: "include",
                 headers: {
@@ -183,7 +183,7 @@ if (response.ok) {
 
     async function GetAllClassDurations(){
         try{
-            const response = await fetch ('https://localhost:51934/api/ClassDuration/Times',{
+            const response = await fetch ('https://bryantweb.azurewebsites.net/api/ClassDuration/Times',{
                 method: "GET",
                 credentials:"include",
                 header:{
@@ -204,7 +204,7 @@ if (response.ok) {
     async function GetAllBuildings(){
         try{
             // var courseSection = {CourseId:courseID,  }
-            const response = await fetch ('https://localhost:51934/api/Buildings/All',{
+            const response = await fetch ('https://bryantweb.azurewebsites.net/api/Buildings/All',{
                 method: "GET",
                 credentials:"include",
                 header:{
@@ -227,7 +227,7 @@ if (response.ok) {
     async function GetAllRoomsByBuildingId(buildingId){
         
         try{
-            const response = await fetch ('https://localhost:51934/api/Buildings/' + buildingId + '/Rooms',{
+            const response = await fetch ('https://bryantweb.azurewebsites.net/api/Buildings/' + buildingId + '/Rooms',{
                 method: "GET",
                 credentials:"include",
                 header:{
