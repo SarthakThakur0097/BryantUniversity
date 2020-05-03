@@ -1,13 +1,9 @@
 ﻿using BryantUniversity.Data;
 using BryantUniversity.Models;
-using BryantUniversity.Models.Repo;
 using BryantUniversity.Repo;
 using BryantUniversity.Security;
 using BryantUniversity.ViewModels;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace BryantUniversity.Controllers
@@ -54,7 +50,7 @@ namespace BryantUniversity.Controllers
 
                 viewModel.PopulateSelectList(spRepo.GetAllSemesterPeriods());
                 //GetRegistrationByUserIdAndPeriodId
-                userGrades = gRepo.GetGradesByUserId(CustomUser.User.Id, pViewModel.PeriodId);
+                userGrades = gRepo.GetGradesByUserAndSemesterPeriodId(CustomUser.User.Id, pViewModel.PeriodId);
 
                 if (userGrades.Count >= 1)
                 {

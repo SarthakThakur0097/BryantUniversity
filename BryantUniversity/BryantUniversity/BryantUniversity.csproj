@@ -243,6 +243,7 @@
     <Compile Include="Models\Hold.cs" />
     <Compile Include="Models\HoldType.cs" />
     <Compile Include="Models\Major.cs" />
+    <Compile Include="Models\MajorPreRequisites.cs" />
     <Compile Include="Models\MajorRequirements.cs" />
     <Compile Include="Models\Period.cs" />
     <Compile Include="Models\Room.cs" />
@@ -260,6 +261,7 @@
     <Compile Include="Repo\DepartmentRepo.cs" />
     <Compile Include="Repo\GradesRepo.cs" />
     <Compile Include="Repo\HoldRepo.cs" />
+    <Compile Include="Repo\MajorPreRequisitesRepo.cs" />
     <Compile Include="Repo\MajorRepo.cs" />
     <Compile Include="Repo\MajorRequirementsRepo.cs" />
     <Compile Include="Repo\RoleRepo.cs" />
