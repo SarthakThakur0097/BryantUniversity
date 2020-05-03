@@ -37,7 +37,7 @@ namespace BryantUniversity.Repo
         }
 
 
-        public IList<Grade> GetGradesByUserId(int userId, int spId)
+        public IList<Grade> GetGradesByUserAndSemesterPeriodId(int userId, int spId)
         {
             return _context.Grades
                 .Include(u => u.Registration.CourseSection.Course).Where(s => s.Registration.CourseSection.SemesterPeriod.Id == spId)
@@ -46,6 +46,17 @@ namespace BryantUniversity.Repo
                 .Where(c => c.Registration.UserId == userId)
                 .ToList();
         }
+
+        public IList<Grade> GetAllGradesByUserId(int userId)
+        {
+            return _context.Grades
+                .Include(u => u.Registration.CourseSection.Course)
+                .Include(u => u.Registration.CourseSection.Professor)
+                .Include(u => u.Registration.CourseSection.Room.Building)
+                .Where(c => c.Registration.UserId == userId)
+                .ToList();
+        }
+
 
         public void Insert(Grade grade)
         {

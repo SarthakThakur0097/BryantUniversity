@@ -50,7 +50,7 @@ namespace BryantUniversity.Controllers
 
                 viewModel.PopulateSelectList(spRepo.GetAllSemesterPeriods());
                 //GetRegistrationByUserIdAndPeriodId
-                userGrades = gRepo.GetGradesByUserId(CustomUser.User.Id, pViewModel.PeriodId);
+                userGrades = gRepo.GetGradesByUserAndSemesterPeriodId(CustomUser.User.Id, pViewModel.PeriodId);
 
                 if (userGrades.Count >= 1)
                 {

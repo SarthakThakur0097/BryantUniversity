@@ -1,4 +1,6 @@
-﻿namespace BryantUniversity.Models
+﻿using System.Collections.Generic;
+
+namespace BryantUniversity.Models
 {
     public class MajorRequirements
     {
@@ -15,5 +17,6 @@
         public Major Major { get; set; }
         public int CourseId { get; set; }
         public Course Course{ get; set; }
+        public IList<MajorPreRequisites> MajorPreRequisites;
     }
 }
