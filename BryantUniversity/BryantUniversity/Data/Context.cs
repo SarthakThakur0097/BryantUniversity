@@ -23,6 +23,8 @@ namespace BryantUniversity.Data
         public DbSet<Room> Rooms { get; set; }
         public DbSet<Registration> Registrations { get; set; }
         public DbSet<Grade> Grades { get; set; }
+        public DbSet<Major> Majors { get; set; }
+        public DbSet<MajorRequirements> MajorRequirements { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
