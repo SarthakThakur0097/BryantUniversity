@@ -71,7 +71,8 @@ namespace BryantUniversity.Controllers
                 IList<MajorPreRequisites> allReqs = mprRepo.GetAllMajorPrequisitesByCourse(toAdd.Course.Id);
                 IList<Grade> allTakenCourses = gRepo.GetAllGradesByUserId(CustomUser.User.Id);
                 
-                if(allReqs.Count >= 0 && allTakenCourses.Count == 0)
+                //Fixed bug
+                if(allReqs.Count > 0 && allTakenCourses.Count == 0)
                 {
                     viewModel.NotTakenPreReqConflict = true;
 
