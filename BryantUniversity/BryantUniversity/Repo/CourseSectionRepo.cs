@@ -60,6 +60,8 @@ namespace BryantUniversity.Repo
                             .Include(cR => cR.Room)
                             .Include(cR => cR.SemesterPeriod)
                             .Include(cR => cR.Course.Department)
+                            .Include(cR => cR.ClassDays)
+                            .Include(cR => cR.ClassDuration)
                             //.Include(cR => cR.Schedules.Select(s => s.CourseSectionId == courseSectionId && s.UserId == userId))
                             .Where(cR => cR.Professor.Id == userId)
                             .ToList();
