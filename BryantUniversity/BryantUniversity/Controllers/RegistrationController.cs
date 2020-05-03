@@ -49,22 +49,49 @@ namespace BryantUniversity.Controllers
         [HttpGet]
         public ActionResult Add(int id)
         {
+            MajorPreRequisitesRepo mprRepo;
             CourseSectionRepo csRepo;
             RegistrationRepo rRepo;
             StudentHoldRepo hRepo;
             CourseSection toAdd;
-
+            GradesRepo gRepo;
             IList<StudentHold> studentHolds = new List<StudentHold>();
+            RegistrationViewModel viewModel = new RegistrationViewModel();
+
             using (context)
             {
                 csRepo = new CourseSectionRepo(context);
                 rRepo = new RegistrationRepo(context);
                 hRepo = new StudentHoldRepo(context);
+                mprRepo = new MajorPreRequisitesRepo(context);
+                gRepo = new GradesRepo(context);
 
                 toAdd = csRepo.GetCourseSectionById(id);
-                studentHolds = hRepo.GetAllStudentHoldsById(CustomUser.User.Id);
-                RegistrationViewModel viewModel = new RegistrationViewModel();
 
+                IList<MajorPreRequisites> allReqs = mprRepo.GetAllMajorPrequisitesByCourse(toAdd.Course.Id);
+                IList<Grade> allTakenCourses = gRepo.GetAllGradesByUserId(CustomUser.User.Id);
+                
+                if(allReqs.Count >= 0 && allTakenCourses.Count == 0)
+                {
+                    viewModel.NotTakenPreReqConflict = true;
+
+                    return View(viewModel);
+                }
+                foreach (var req in allReqs)
+                {
+                    foreach (var takenCourse in allTakenCourses)
+                    {
+
+                        if (takenCourse.Registration.CourseSection.CourseId != req.CourseId)
+                        {
+                            viewModel.NotTakenPreReqConflict = true;
+                            return View(viewModel);
+                        }
+                    }
+                }
+
+                studentHolds = hRepo.GetAllStudentHoldsById(CustomUser.User.Id);
+               
                 if (studentHolds.Count>0)
                 {
                     viewModel.HasHold = true;

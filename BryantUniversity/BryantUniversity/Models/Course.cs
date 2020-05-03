@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace BryantUniversity.Models
 {
@@ -46,5 +47,6 @@ namespace BryantUniversity.Models
         public string Level { get; set; }
         public int DepartmentId { get; set; }
         public Department Department { get; set; }
+        public IList<MajorPreRequisites> MajorPreRequisites;
     }
 }
