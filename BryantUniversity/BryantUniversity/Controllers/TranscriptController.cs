@@ -79,7 +79,7 @@ namespace BryantUniversity.Controllers
                 }
 
             }
-            return View();
+            return View(viewModel);
         }
     }
 }
