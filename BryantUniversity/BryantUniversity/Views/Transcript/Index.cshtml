@@ -1,5 +1,5 @@
 ﻿@model BryantUniversity.ViewModels.TranscriptViewModel
-    
+       
 @{
     ViewBag.Title = "Index";
 }
@@ -13,7 +13,7 @@
             
         </div>
         <div class="col-sm">
-            
+
         </div>
     </div>
     <div class="row">
@@ -24,7 +24,6 @@
             @using (Html.BeginForm("Index", "Transcript", FormMethod.Post, new { @class = "pure-form pure-form-aligned", id = "" }))
             {
                 @Html.AntiForgeryToken()
-
 
                 <div class="form-horizontal">
                     <div class="form-group">
@@ -39,7 +38,6 @@
                     <button type="submit" class="btn btn-success">Submit</button>
                 </div>
             }
-
         </div>
         <div class="col-md-5">
 
@@ -54,7 +52,6 @@
                         <th>CRN</th>
                     </tr>
                 </thead>
-
                 <tbody>
                     @if (Model.AllGradesClasses != null)
                     {
@@ -110,4 +107,3 @@
         </div>
     </div>
 </div>
-

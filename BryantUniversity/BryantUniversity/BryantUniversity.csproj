@@ -243,6 +243,7 @@
     <Compile Include="Models\Hold.cs" />
     <Compile Include="Models\HoldType.cs" />
     <Compile Include="Models\Major.cs" />
+    <Compile Include="Models\MajorPerequisites.cs" />
     <Compile Include="Models\MajorRequirements.cs" />
     <Compile Include="Models\Period.cs" />
     <Compile Include="Models\Room.cs" />
