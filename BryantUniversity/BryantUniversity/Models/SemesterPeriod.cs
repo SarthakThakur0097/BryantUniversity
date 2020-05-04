@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace BryantUniversity.Models
 {
@@ -20,6 +18,15 @@ namespace BryantUniversity.Models
             StartDate = startDate;
             EndDate = endDate; 
         }
+
+        public SemesterPeriod(Period period, DateTime startDate, DateTime endDate, DateTime startEnrollmentDate, DateTime endEnrollmentDate)
+        {
+            Period = period;
+            StartDate = startDate;
+            EndDate = endDate;
+            StartEnrollmentDate = startEnrollmentDate;
+            EndEnrollmentDate = EndEnrollmentDate;
+        }
         //public SemesterPeriod(Period period, DateTime startDate, DateTime endDate)
         //{
         //    Period = period;
@@ -31,7 +38,8 @@ namespace BryantUniversity.Models
         public Period Period { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-
+        public DateTime? StartEnrollmentDate { get; set; }
+        public DateTime? EndEnrollmentDate { get; set; }
         public List<CalendarEvent> SemesterDetails { get; set; }
     }
 }
