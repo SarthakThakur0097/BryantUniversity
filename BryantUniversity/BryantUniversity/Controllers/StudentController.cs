@@ -108,6 +108,11 @@ namespace BryantUniversity.Controllers
             return View("Edit", viewModel);
         }
 
+        //public ActionResult AssignAdvisor()
+        //{
+
+        //}
+
         private void HandleDbUpdateException(DbUpdateException ex)
         {
             if (ex.InnerException != null && ex.InnerException.InnerException != null)

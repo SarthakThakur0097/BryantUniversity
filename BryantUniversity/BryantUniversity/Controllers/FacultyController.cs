@@ -30,16 +30,30 @@ namespace BryantUniversity.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-                UserListViewModel viewModel;
-                UserRepo userRepository;
-                using (context)
-                {
-                    viewModel = new UserListViewModel();
-                    userRepository = new UserRepo(context);
-                    viewModel.Users = userRepository.GetAllUsers();
+            UserListViewModel viewModel;
+            UserRepo userRepository;
+            using (context)
+            {
+                viewModel = new UserListViewModel();
+                userRepository = new UserRepo(context);
+                viewModel.Users = userRepository.GetAllUsers();
                     
-                    return View(viewModel);
-                }
+                return View(viewModel);
+            }
+        }
+
+        public ActionResult Advisor(int id)
+        {
+            UserListViewModel viewModel;
+            UserRepo userRepository;
+            using (context)
+            {
+                viewModel = new UserListViewModel();
+                userRepository = new UserRepo(context);
+                viewModel.Users = userRepository.GetUsersByRole(2);
+
+                return View(viewModel);
+            }
         }
 
         [HttpGet]
@@ -122,6 +136,25 @@ namespace BryantUniversity.Controllers
                 students = sRepo.GetRegistrationByCourseSectionId(Id);
             }
                 return View(students);
+        }
+
+        public ActionResult Assign(int id, int facultyId)
+        {
+            
+            Advisor advisor;
+
+            using (context)
+            {
+                User student = new UserRepo(context).GetById(id);
+                User faculty = new UserRepo(context).GetById(facultyId);
+
+                advisor = new Advisor(faculty, student);
+
+                RegistrationRepo repository = new RegistrationRepo(context);
+                repository.Insert(advisor);
+
+                return RedirectToAction("Index", "Faculty");
+            }
         }
     }
 }
