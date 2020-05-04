@@ -63,11 +63,20 @@ namespace BryantUniversity.Controllers
                         viewModel.AllNonGradedClasses = registered;
 
                         gpa += grade.FinalGrade;
-                        if (gpa >= 95)
-                        {
-                            viewModel.TermGpa = 4.0f;
 
-                        }
+                        if (gpa >= 94) { viewModel.TermGpa = 4.0f; }
+                        else if(gpa == 93) { viewModel.TermGpa = 3.9f ; }
+                        else if(gpa == 92) { viewModel.TermGpa = 3.8f; }
+                        else if(gpa == 91) { viewModel.TermGpa = 3.7f; }
+                        else if(gpa == 90) { viewModel.TermGpa = 3.6f; }
+                        else if (gpa == 89) { viewModel.TermGpa = 3.5f; }
+                        else if (gpa == 88) { viewModel.TermGpa = 3.4f; }
+                        else if (gpa == 87) { viewModel.TermGpa = 3.3f; }
+                        else if (gpa == 86) { viewModel.TermGpa = 3.2f; }
+                        else if (gpa == 85) { viewModel.TermGpa = 3.1f; }
+                        else if (gpa == 84) { viewModel.TermGpa = 3.0f; }
+                        else if (gpa == 83) { viewModel.TermGpa = 2.9f; }
+                        else if (gpa == 82) { viewModel.TermGpa = 2.8f; }
                     }
                     return View(viewModel);
                     //SemesterPeriod semesterPeriod = registration.CourseSection.SemesterPeriod;
