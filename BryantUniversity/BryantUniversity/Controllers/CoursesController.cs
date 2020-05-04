@@ -184,6 +184,11 @@ namespace BryantUniversity.Controllers
             }
         }
 
+        [HttpGet]
+        public ActionResult Catalog()
+        {
+            return View();
+        }
 
         private void HandleDbUpdateException(DbUpdateException ex)
         {

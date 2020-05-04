@@ -334,6 +334,7 @@
     <Content Include="Views\Holds\Manage.cshtml" />
     <Content Include="Views\Holds\Add.cshtml" />
     <Content Include="Views\Holds\Delete.cshtml" />
+    <Content Include="Views\Courses\Catalog.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
