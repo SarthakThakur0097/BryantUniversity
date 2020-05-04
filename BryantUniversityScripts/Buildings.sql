@@ -1,10 +1,6 @@
-
-
 INSERT INTO [BryantDB].[dbo].Building VALUES('Kobe and Shaq', 500 )
 INSERT INTO [BryantDB].[dbo].Building VALUES('Mamba Mode', 810)
 INSERT INTO [BryantDB].[dbo].Building VALUES('Kobe’s Campus', 1500)
-
-
 
 INSERT INTO [BryantDB].[dbo].[Room] VALUES ('Lecture', 30  , 1 )
 INSERT INTO [BryantDB].[dbo].[Room] VALUES ('Lecture' , 30  , 1 )
