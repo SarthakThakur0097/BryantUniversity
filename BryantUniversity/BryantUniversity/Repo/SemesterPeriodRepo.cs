@@ -18,17 +18,24 @@ namespace BryantUniversity.Repo
 
         public IList<SemesterPeriod> GetAllSemesterPeriods()
         {
-            return _context.SemesterPeriods.ToList();
+            return _context
+                        .SemesterPeriods
+                        .ToList();
         }
 
         public SemesterPeriod GetById(int id)
         {
-            return _context.SemesterPeriods.SingleOrDefault(c => c.Id == id);
+            return _context
+                        .SemesterPeriods
+                        .SingleOrDefault(c => c.Id == id);
         }
 
         public void Insert(SemesterPeriod semesterPeriod)
         {
-            _context.SemesterPeriods.Add(semesterPeriod);
+            _context
+                .SemesterPeriods
+                .Add(semesterPeriod);
+
             _context.SaveChanges();
         }
 

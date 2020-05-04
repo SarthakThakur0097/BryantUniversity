@@ -17,11 +17,19 @@ namespace BryantUniversity.Repo
 
         public IList<Registration> GetRegistrationByUserId(int id)
         {
-            return _context.Registrations
-                .Include(s => s.User)
-                .Include(c => c.CourseSection)
-                .Where(s => s.UserId == id).
-                ToList();
+            return _context
+                        .Registrations
+                        .Include(s => s.User)
+                        .Include(c => c.CourseSection)
+                        .Include(c => c.CourseSection.Course)
+                        .Include(c => c.CourseSection.ClassDays)
+                        .Include(c => c.CourseSection.ClassDuration)
+                        .Include(c => c.CourseSection.Professor)
+                        .Include(c => c.CourseSection.Room.Building)
+                        .Include(c => c.CourseSection.Room)
+                        .Include(c => c.CourseSection.SemesterPeriod)
+                        .Where(s => s.UserId == id)
+                        .ToList();
         }
 
         public IList<Registration> GetRegistrationByUserIdAndPeriodId(int studentId, int periodId)

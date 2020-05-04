@@ -33,6 +33,7 @@ namespace BryantUniversity.Models.Repo
                 .Include(u => u.UserRoles)
                 .Where(u => u.UserRoles.Any(r => r.RoleId == roleId))
                 .ToList();
+
             _context.SaveChanges();
 
             return students;
