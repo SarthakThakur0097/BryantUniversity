@@ -255,6 +255,8 @@
     <Compile Include="Models\CalendarEvent.cs" />
     <Compile Include="Models\RoleType.cs" />
     <Compile Include="Models\StudentHolds.cs" />
+    <Compile Include="Models\StudentLevel.cs" />
+    <Compile Include="Models\StudentMajor.cs" />
     <Compile Include="Repo\BuildingRepo.cs" />
     <Compile Include="Repo\CalendarRepo.cs" />
     <Compile Include="Repo\ClassDurationRepo.cs" />

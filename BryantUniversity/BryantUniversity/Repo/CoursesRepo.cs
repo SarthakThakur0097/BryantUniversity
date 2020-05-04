@@ -30,6 +30,7 @@ namespace BryantUniversity.Repo
         public IList<Course> GetByDepartment(int id)
         {
             return _context.Courses
+                .Include(c => c.CourseLevel)
                 .Include(c => c.Department)
                 .Where(c => c.DepartmentId == id)
                 .ToList();

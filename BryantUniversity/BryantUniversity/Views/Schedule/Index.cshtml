@@ -47,9 +47,10 @@
                 <table class="table">
                     <thead class="thead-dark">
                         <tr>
-                            <th>Level</th>
+                            <th>Course Id</th>
                             <th>Course Name</th>
                             <th>Description</th>
+                            <th>Course Level</th>
                             <th>Department Name</th>
                             <th>Credits</th>
                         </tr>
@@ -58,9 +59,10 @@
                         @foreach (var course in Model.Courses)
                         {
                             <tr>
-                                <td>@course.Level</td>
+                                <td>@course.CourseTitleId</td>
                                 <td>@course.CourseTitle</td>
                                 <td>@course.Description</td>
+                                <td>@course.CourseLevel.Level.Value</td>
                                 <td>@course.Department.Name</td>
                                 <td>@course.Credits</td>
                                 <td>
