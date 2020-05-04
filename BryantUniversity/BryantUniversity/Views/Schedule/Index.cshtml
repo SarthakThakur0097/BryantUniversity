@@ -64,7 +64,7 @@
                                 <td>@course.Department.Name</td>
                                 <td>@course.Credits</td>
                                 <td>
-                                    @Html.ActionLink("See Sections", "Index", "CourseSection", new { id = course.Id }, new { @class = "btn btn-info" })
+                                    @Html.ActionLink("See Sections", "Index", "CourseSection", new { id = course.Id, semesterPeriodId = Model.PeriodId }, new { @class = "btn btn-info" })
                                 </td>
                             </tr>
                         }
