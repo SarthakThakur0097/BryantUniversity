@@ -61,7 +61,7 @@ namespace BryantUniversity.Controllers
 
                 try
                 {
-                    var course = new Course(0,formModel.CourseTitle, formModel.Description, formModel.Credits, formModel.Level, 1);
+                    var course = new Course(formModel.CourseTitleId,formModel.CourseTitle, formModel.Description, formModel.Credits, formModel.CourseLevel.Id, 1);
                     courseRepo.Insert(course);
 
                     return RedirectToAction("Index");
@@ -90,7 +90,7 @@ namespace BryantUniversity.Controllers
                 viewModel.CourseTitle = course.CourseTitle;
                 viewModel.Description = course.Description;
                 viewModel.Credits = course.Credits;
-                viewModel.Level = course.Level;
+                viewModel.CourseLevel = course.CourseLevel;
                 viewModel.DepartmentId = course.DepartmentId;
                 
             }
@@ -108,13 +108,13 @@ namespace BryantUniversity.Controllers
                 courseRepo = new CoursesRepo(context);
                 try
                 {
-                    newCourse = new Course(course.Id, course.CourseTitle, course.Description, course.Credits, course.Level, course.DepartmentId);
+                    newCourse = new Course(course.CourseTitleId, course.CourseTitle, course.Description, course.Credits, course.CourseLevel.Id, course.DepartmentId);
 
                     viewModel.Id = id;
                     viewModel.CourseTitle = course.CourseTitle;
                     viewModel.Description = course.Description;
                     viewModel.Credits = course.Credits;
-                    viewModel.Level = course.Level;
+                    viewModel.CourseLevel = course.CourseLevel;
                     viewModel.DepartmentId = course.DepartmentId;
                     //viewModel.PopulateSelectList();
 

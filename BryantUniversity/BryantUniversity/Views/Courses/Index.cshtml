@@ -53,7 +53,7 @@
                             <td>@course.CourseTitle</td>
                             <td>@course.Description</td>
                             <td>@course.Credits</td>
-                            <td>@course.Level</td>
+                            <td>@course.CourseLevel.Level.Value</td>
                             <td>@course.DepartmentId</td>
                             <td>
                                 @Html.ActionLink("edit", "Edit", new { id = course.Id }, new { @class = "btn btn-info" })

@@ -15,6 +15,7 @@ namespace BryantUniversity.Data
         public DbSet<Days> ClassDays { get; set; }
         public DbSet<ClassDuration> ClassTimes { get; set; }
         public DbSet<SemesterPeriod> SemesterPeriods { get; set; }
+        public DbSet<CourseLevel> CourseLevels { get; set; }
         public DbSet<Course> Courses { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<FacultyDepartment> FacultyDepartments {get; set;}

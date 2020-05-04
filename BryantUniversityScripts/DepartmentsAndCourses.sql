@@ -1,3 +1,19 @@
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Computer Programming I' , ' Introduction to program design and analysis.' , 4,201,1)
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Computer Programming II' , ' Basic data structures and algorithms, data abstractions, and object-oriented programming.' , 4,202,1)
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Computer Architecture I' , ' Basic computer architecture.' , 4,203,1)
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Data Structures & Algorithms' , ' Abstract data structures and their implementations.' , 4,204,1)
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Java and Object-Oriented Programming' , ' Object-oriented programming.' , 4,205,1)
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'C++in Object Oriented Design' , ' Object-oriented programming.' , 4,206,1)
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Technical Communications' , ' Emphasis on technical writing and public speaking skills. ' , 4,207,1)
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Software Engineering' , ' Introducing discipline into the development of small programs.' , 4,208,1)
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Database Management Systems' , ' Basic concepts: data, information systems, data independence.' , 4,209,1)
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Internet & Web Tech' , ' Survey of Internet technologies and a comprehensive introduction to the programming tools' , 4,210,1)
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Systems Design & Implement' , ' Designing and implementing a significant software project.' , 4,211,1)
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Operating System', 'An intro level to computer hardware and software', 4, 212, 1)
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Artificial Intelligence' , ' Introduction to the programming languages LISP and PROLOG.' , 4,213,1)
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Advanced Java Programming and Application' , ' Advanced OOP of  Java .' , 4,214,1)
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Data Mining' , ' Introduction to the large databases .' , 4,215,1)
+
 
 INSERT INTO [BryantDB].[dbo].[Department] VALUES( 'American Studies' , '516-289-2391')
 INSERT INTO [BryantDB].[dbo].[Department] VALUES( 'Biological Sciences' , '516-289-2392')
@@ -41,23 +57,6 @@ INSERT INTO [BryantDB].[dbo].[Course] VALUES  ( ' Introduction to Clinical Psych
 INSERT INTO [BryantDB].[dbo].[Course] VALUES  ( ' The Science of Everyday Thinking ' , ' Learn how to think better, argue better, and choose better. ' , 4  , 812 , 8 ) 
 INSERT INTO [BryantDB].[dbo].[Course] VALUES  ( ' Psychology of Personal Growth ' , ' Learn to understand personal growth from a comparative perspective. ' , 4  , 813 , 8 ) 
 INSERT INTO [BryantDB].[dbo].[Course] VALUES  ( ' Introduction to Social Psychology ' , ' Learn why people think and behave the way they do in social settings. ' , 4  , 814 , 8 ) 
-
-INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Computer Programming I' , ' Introduction to program design and analysis.' , 4,201,1)
-INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Computer Programming II' , ' Basic data structures and algorithms, data abstractions, and object-oriented programming.' , 4,202,1)
-INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Computer Architecture I' , ' Basic computer architecture.' , 4,203,1)
-INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Data Structures & Algorithms' , ' Abstract data structures and their implementations.' , 4,204,1)
-INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Java and Object-Oriented Programming' , ' Object-oriented programming.' , 4,205,1)
-INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'C++in Object Oriented Design' , ' Object-oriented programming.' , 4,206,1)
-INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Technical Communications' , ' Emphasis on technical writing and public speaking skills. ' , 4,207,1)
-INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Software Engineering' , ' Introducing discipline into the development of small programs.' , 4,208,1)
-INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Database Management Systems' , ' Basic concepts: data, information systems, data independence.' , 4,209,1)
-INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Internet & Web Tech' , ' Survey of Internet technologies and a comprehensive introduction to the programming tools' , 4,210,1)
-INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Systems Design & Implement' , ' Designing and implementing a significant software project.' , 4,211,1)
-INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Operating System', 'An intro level to computer hardware and software', 4, 212, 1)
-INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Artificial Intelligence' , ' Introduction to the programming languages LISP and PROLOG.' , 4,213,1)
-INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Advanced Java Programming and Application' , ' Advanced OOP of  Java .' , 4,214,1)
-INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Data Mining' , ' Introduction to the large databases .' , 4,215,1)
-
 
 
 INSERT INTO [BryantDB].[dbo].[Course] VALUES ( ' Themes in U.S. History' , 'Introduction to the basic themes and majors in the history of the US' , 4 , 301 , 2 )

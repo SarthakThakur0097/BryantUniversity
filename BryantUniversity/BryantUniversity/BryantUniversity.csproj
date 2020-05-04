@@ -235,6 +235,7 @@
     <Compile Include="Models\ClassPattern.cs" />
     <Compile Include="Models\ClassTime.cs" />
     <Compile Include="Models\Course.cs" />
+    <Compile Include="Models\CourseLevel.cs" />
     <Compile Include="Models\CourseSection.cs" />
     <Compile Include="Models\Days.cs" />
     <Compile Include="Models\Department.cs" />
@@ -242,6 +243,7 @@
     <Compile Include="Models\Grade.cs" />
     <Compile Include="Models\Hold.cs" />
     <Compile Include="Models\HoldType.cs" />
+    <Compile Include="Models\Level.cs" />
     <Compile Include="Models\Major.cs" />
     <Compile Include="Models\MajorPreRequisites.cs" />
     <Compile Include="Models\MajorRequirements.cs" />
@@ -256,6 +258,7 @@
     <Compile Include="Repo\BuildingRepo.cs" />
     <Compile Include="Repo\CalendarRepo.cs" />
     <Compile Include="Repo\ClassDurationRepo.cs" />
+    <Compile Include="Repo\CourseLevelRepo.cs" />
     <Compile Include="Repo\CourseSectionRepo.cs" />
     <Compile Include="Repo\CoursesRepo.cs" />
     <Compile Include="Repo\DaysRepo.cs" />
