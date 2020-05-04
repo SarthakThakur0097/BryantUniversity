@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+
 namespace BryantUniversity.Models
 {
     public class Registration

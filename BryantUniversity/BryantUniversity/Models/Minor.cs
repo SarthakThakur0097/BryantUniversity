@@ -1,8 +1,14 @@
 ﻿namespace BryantUniversity.Models
 {
-    public class Major
+    public class Minor
     {
-        public Major() { }
+        public Minor(){ }
+
+        public Minor(string title, int departmentId)
+        {
+            Title = title;
+            DepartmentId = departmentId;
+        }
 
         public int Id { get; set; }
         public string Title { get; set; }

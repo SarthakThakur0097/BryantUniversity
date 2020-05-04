@@ -3,6 +3,7 @@ using BryantUniversity.Models;
 using BryantUniversity.Models.Repo;
 using System.Collections.Generic;
 using System.Web.Http;
+
 namespace BryantUniversity.ApiControllers
 {
     [RoutePrefix("api/User")]
