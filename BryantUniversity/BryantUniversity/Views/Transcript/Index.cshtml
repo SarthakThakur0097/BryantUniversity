@@ -7,7 +7,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm">
-            <h1>MY GRADES</h1>
+
         </div>
         <div class="col-sm">
             
@@ -40,13 +40,14 @@
             }
         </div>
         <div class="col-md-5">
-
+            
         </div>
     </div>
     <div class="row">
         <div class="col-sm">
-            <table class="pure-table pure-table-horizontal">
-                <thead>
+            <h1>MY GRADES</h1>
+            <table class="table">
+                <thead class="thead-dark">
                     <tr lass="bench-row">
                         <th>Course Title</th>
                         <th>CRN</th>
@@ -63,6 +64,13 @@
                             </tr>
                         }
                     }
+
+                    else if(Model.AllNonGradedClasses.Count >= 1 && Model.AllGradesClasses.Count >= 1)
+                    {
+                        <tr>
+                            <td>Grades haven't submitted for this semester yet</td>
+                        </tr>
+                    }
                     <tr>Term GPA: @Model.TermGpa</tr>
                 </tbody>
             </table>
@@ -73,8 +81,8 @@
         <div class="col-sm">
 
             <h1>SCHEDULE</h1>
-            <table class="pure-table pure-table-horizontal">
-                <thead>
+            <table class="table">
+                <thead class="thead-dark">
                     <tr lass="bench-row">
                         <th>CRN</th>
                         <th>Course Title</th>
@@ -87,21 +95,21 @@
                 </thead>
 
                 <tbody>
-                    @if (Model.AllGradesClasses != null)
+                    @if (Model.AllNonGradedClasses != null)
                     {
-                        foreach (var classes in Model.AllGradesClasses)
+                        foreach (var classes in Model.AllNonGradedClasses)
                         {
                             <tr>
                                 <td>@classes.CourseSection.Course.Id</td>
                                 <td>@classes.CourseSection.Course.CourseTitle</td>
-                                <td></td>
+                                <td>@classes.CourseSection.ClassDuration</td>
+                                <td>@classes.CourseSection.ClassDays.Pattern.Value</td>
                                 <td>@classes.CourseSection.Professor.Name</td>
                                 <td>@classes.CourseSection.Room.Building.BuildingName</td>
                                 <td>@classes.CourseSection.Room.Id</td>
                             </tr>
                         }
                     }
-                    <tr>Term GPA: @Model.TermGpa</tr>
                 </tbody>
             </table>
         </div>

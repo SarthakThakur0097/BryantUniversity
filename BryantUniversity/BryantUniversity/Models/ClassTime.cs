@@ -1,5 +1,4 @@
-﻿
-namespace BryantUniversity.Models
+﻿namespace BryantUniversity.Models
 {
     public class ClassTime
     {

@@ -1,10 +1,9 @@
 ﻿using BryantUniversity.Data;
-using System;
+using BryantUniversity.Models;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 
-namespace BryantUniversity.Models.Repo
+namespace BryantUniversity.Repo
 {
     public class RoleRepo
     {

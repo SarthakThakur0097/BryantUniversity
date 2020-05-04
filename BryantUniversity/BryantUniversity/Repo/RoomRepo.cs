@@ -22,19 +22,24 @@ namespace BryantUniversity.Repo
 
         public Room GetById(int id)
         {
-            return _context.Rooms.SingleOrDefault(c => c.Id == id);
+            return _context
+                        .Rooms
+                        .SingleOrDefault(c => c.Id == id);
         }
 
         public IList<Room> GetByBuildingId(int buildingId)
         {
-            return _context.Rooms
-                .Where(c => c.Building.Id == buildingId).ToList();
+            return _context
+                        .Rooms
+                        .Include(r => r.Building)
+                        .Where(c => c.Building.Id == buildingId)
+                        .ToList();
         }
 
         public void Update(Room room)
         {
             _context.Rooms.Attach(room);
-            _context.Entry(room).State = System.Data.Entity.EntityState.Modified;
+            _context.Entry(room).State = EntityState.Modified;
             _context.SaveChanges();
         }
 
