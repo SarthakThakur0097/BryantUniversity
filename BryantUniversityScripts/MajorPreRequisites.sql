@@ -13,4 +13,3 @@ INSERT INTO [BryantDB].[dbo].[MajorPreRequisites] VALUES  (12,4)
 INSERT INTO [BryantDB].[dbo].[MajorPreRequisites] VALUES  (13,4) 
 INSERT INTO [BryantDB].[dbo].[MajorPreRequisites] VALUES  (14,4) 
 INSERT INTO [BryantDB].[dbo].[MajorPreRequisites] VALUES  (14,9) 
-

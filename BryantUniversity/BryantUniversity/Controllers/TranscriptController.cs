@@ -42,6 +42,7 @@ namespace BryantUniversity.Controllers
 
             TranscriptViewModel viewModel = new TranscriptViewModel();
             IList<Grade> userGrades;
+            IList<Registration> registered;
             using (context)
             {
                 rRepo = new RegistrationRepo(context);
@@ -51,13 +52,15 @@ namespace BryantUniversity.Controllers
                 viewModel.PopulateSelectList(spRepo.GetAllSemesterPeriods());
                 //GetRegistrationByUserIdAndPeriodId
                 userGrades = gRepo.GetGradesByUserAndSemesterPeriodId(CustomUser.User.Id, pViewModel.PeriodId);
+                registered = rRepo.GetRegistrationByUserId(CustomUser.User.Id);
 
-                if (userGrades.Count >= 1)
+                if (userGrades.Count >= 1 && registered.Count >= 1)
                 {
                     float gpa = 0.0f;
                     foreach (Grade grade in userGrades)
                     {
                         viewModel.AllGradesClasses.Add(grade.Registration);
+                        viewModel.AllNonGradedClasses = registered;
 
                         gpa += grade.FinalGrade;
                         if (gpa >= 95)
@@ -69,11 +72,6 @@ namespace BryantUniversity.Controllers
                     return View(viewModel);
                     //SemesterPeriod semesterPeriod = registration.CourseSection.SemesterPeriod;
                 }
-                else
-                {
-                    viewModel.HasClasses = false;
-                }
-
             }
             return View(viewModel);
         }

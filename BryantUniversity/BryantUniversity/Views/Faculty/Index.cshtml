@@ -57,8 +57,12 @@
                             {
                                 <td>Student</td>
                             }
+                            else if (user.UserRoles.Count == 0)
+                            {
+                                <td>Does not have a User Rule</td>
+                            }
 
-                            
+
                         </tr>
                     }
                 </tbody>

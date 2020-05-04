@@ -1,4 +1,4 @@
-INSERT INTO [BryantDB].[dbo].[Department] VALUES( 'ComputerScience' , '516-289-2390')
+
 INSERT INTO [BryantDB].[dbo].[Department] VALUES( 'American Studies' , '516-289-2391')
 INSERT INTO [BryantDB].[dbo].[Department] VALUES( 'Biological Sciences' , '516-289-2392')
 INSERT INTO [BryantDB].[dbo].[Department] VALUES( 'Criminology' , '516-289-2393')
@@ -10,8 +10,6 @@ INSERT INTO [BryantDB].[dbo].[Department] VALUES( 'School of Business' , '516-28
 INSERT INTO [BryantDB].[dbo].[Department] VALUES( 'Sociology' , '516-289-2399')
 INSERT INTO [BryantDB].[dbo].[Department] VALUES( 'Visual Studies' , '516-289-240')
 INSERT INTO [BryantDB].[dbo].[Department] VALUES( 'English' , '516-289-2401')
-
-
 
 
 
@@ -29,8 +27,6 @@ INSERT INTO [BryantDB].[dbo].[Course] VALUES  ( ' Portuguese ' ,  ' Provides stu
 INSERT INTO [BryantDB].[dbo].[Course] VALUES  ( ' Greek ' ,  ' Provides students for acquisition of the communication skills in Greek. ' , 4  , 712 , 7 ) 
 
 
-
-
 INSERT INTO [BryantDB].[dbo].[Course] VALUES  ( ' Intro to Psychology ' , ' Course investigates basic principles of behavior ' , 4  , 801 , 8 ) 
 INSERT INTO [BryantDB].[dbo].[Course] VALUES  ( ' Psychology of Prejudice ' , ' Course explores the psychological dynamics and social implications of sexism, racism and classism ' , 4  , 802 , 8 ) 
 INSERT INTO [BryantDB].[dbo].[Course] VALUES  ( ' Research,Design, & Analysis I ' , ' Course is designed to introduce you to the foundations of the scientific research methods ' , 4  , 803 , 8 ) 
@@ -46,11 +42,6 @@ INSERT INTO [BryantDB].[dbo].[Course] VALUES  ( ' The Science of Everyday Thinki
 INSERT INTO [BryantDB].[dbo].[Course] VALUES  ( ' Psychology of Personal Growth ' , ' Learn to understand personal growth from a comparative perspective. ' , 4  , 813 , 8 ) 
 INSERT INTO [BryantDB].[dbo].[Course] VALUES  ( ' Introduction to Social Psychology ' , ' Learn why people think and behave the way they do in social settings. ' , 4  , 814 , 8 ) 
 
-
-
-
-
-
 INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Computer Programming I' , ' Introduction to program design and analysis.' , 4,201,1)
 INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Computer Programming II' , ' Basic data structures and algorithms, data abstractions, and object-oriented programming.' , 4,202,1)
 INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Computer Architecture I' , ' Basic computer architecture.' , 4,203,1)
@@ -62,7 +53,7 @@ INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Software Engineering' , ' Introd
 INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Database Management Systems' , ' Basic concepts: data, information systems, data independence.' , 4,209,1)
 INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Internet & Web Tech' , ' Survey of Internet technologies and a comprehensive introduction to the programming tools' , 4,210,1)
 INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Systems Design & Implement' , ' Designing and implementing a significant software project.' , 4,211,1)
-INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Operating System”, “An intro level to computer hardware and software', 4, 212, 1)
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Operating System', 'An intro level to computer hardware and software', 4, 212, 1)
 INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Artificial Intelligence' , ' Introduction to the programming languages LISP and PROLOG.' , 4,213,1)
 INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Advanced Java Programming and Application' , ' Advanced OOP of  Java .' , 4,214,1)
 INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Data Mining' , ' Introduction to the large databases .' , 4,215,1)
@@ -122,6 +113,156 @@ INSERT INTO [BryantDB].[dbo].[Course] VALUES ( ' Comparative Genomics Lecture' ,
  INSERT INTO [BryantDB].[dbo].[Course] VALUES ( ' Cancer Cell Biology' , 'Course will explore the cellular and molecular mechanisms' , 4 , 413 , 3)
 
  INSERT INTO [BryantDB].[dbo].[Course] VALUES ( ' Advanced Research' , 'Research project carried out under the supervision of a faculty member' , 4 , 414 , 3)
+
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( ' Intro to Criminology' , 'Introduction to the social scientific study of crime' ,  4 , 501 , 4)
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( ' Juvenile Delinquency' , 'Introduction to theories and research findings' , 4 , 502 , 4)
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( ' Victimology' , 'Introduction to theory and research about individuals and specific populations.' , 4 , 503 , 4) 
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES (  'Drugs and Society' , ' Course investigates how drug use varies by class race and sex ', 4 , 504 , 4)
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Crime  Media and Culture' , 'Emphasis will be on crime news  and popular representations of crime.' , 4 , 505, 4)
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( ' Gender, Crime and Justice' , 'Role of gender in the criminal legal system' , 4 , 506 , 4)
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( ' Punishment & Corrections' , 'Students are introduced to the sociology of punishment and corrections' , 4 , 507 , 4)
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( ' Sociology of Violence' , 'Course provides a sociological inquiry into the various manifestations' , 4 , 508 , 4) 
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Theories of Crime' , 'Students will read a variety of theoretical writings from the literature' , 4 , 509 , 4)
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( ' Neighborhood Dynamics of Crime' , 'Concerned with neighbour relationships' , 4 , 510 , 4) 
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( ' Wrongful Convictions' , 'Presenting the history of wrongful convictions' , 4 , 511 , 4)
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( ' Law and Criminal Justice' , 'Course dealing with Law and Justice of US' , 4 , 512 , 4)
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( ' American Death Penalty in Theory and Practice ' , 'Course will explore death penalty ' , 4 , 513 , 4)
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( ' Criminal Justice Data and Analytics ' ,' Course will explore criminal statistics ', 4 , 514 , 4)
+
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'World Religions- West' , ' Course provides an introduction to the major religions' ,  4 , 601 , 5 ) 
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'World Religions - East' , ' evolution of each of these religions' ,  4 , 602 , 5 )
+
+ INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'World History I: Non-Western' , ' Course surveys the history and culture of five major regions of the world' ,  4 , 603 , 5 ) 
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'World History II: Western Civ' , ' course will explore the origins, dynamics and development of Western Civilization' ,  4 , 604 , 5 ) 
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Intro to Europe Hist:1350-Pres' , ' course provides the student with the story of the origins' ,  4 , 605 , 5 )
+
+ INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Intro to Philosophy' , ' Serves as an introduction to the role of philosophy in human life' ,  4 , 606 , 5 )
+
+ INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Europe in the Middle Ages' , ' Course explores the cultural products of that synthesis in art and  literature.' ,   4 , 607 , 5 ) 
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'African Cultures' , ' Exploration of African civilization.' ,  4 , 608 , 5 ) INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Latin American Culture' , ' History of the Latin American countries' ,  4 , 609 , 5 )
+
+ INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Contemporary Religious Experiences' , ' course introduces students to the major forms of religious worship' ,  4 , 610 , 5 )
+
+ INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'History Modern Middle East' , ' Course will focus on the major intellectual political and cultural issues' ,  4 , 611 , 5 )
+
+ INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Modern Global Environments' , ' Course aims to familiarize students with the fundamentals of studying history' ,  4 , 612 , 5 )
+
+ INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'History of India' , ' Course explores the vibrant diversity of Indias pas' ,  4 , 613 , 5 ) 
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Chinese Civilization' , ' Course will provide students with general knowledge of 5,000 years of Chinese history' ,  4 , 613 , 5 ) 
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( 'Modern Global Environments' , ' Course aims to familiarize students with the fundamentals of studying history' ,  4 , 613 , 5 )
+
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( ' College Algebra' , 'Topics include functions and factoring polynomials' , 4 , 701 , 6) 
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( ' Applied Statistics' , 'Emphasis is on organizing and summarizing data' , 4 , 702 , 6)
+
+ INSERT INTO [BryantDB].[dbo].[Course] VALUES ( ' Foundations of Mathematics I' , 'Course designed primarily for students majoring in elementary education' , 4 , 703 , 6)
+
+ INSERT INTO [BryantDB].[dbo].[Course] VALUES ( ' Quantitative Decision Making' , 'Course was designed for general education' , 4 , 704 , 6)
+
+ INSERT INTO [BryantDB].[dbo].[Course] VALUES ( ' Precalc/Business & Economics' , 'Study of linear quadratic exponential and logarithmic functions and their graphs' , 4 , 705 , 6)
+
+ INSERT INTO [BryantDB].[dbo].[Course] VALUES ( ' Precalculus' , 'Study of algebraic  logarithmic exponential and trigonometric functions' , 4 , 706 , 6) 
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( ' Calc/Business & Economics' , 'Limits, differentiation, and integration' , 4 , 707 , 6)
+
+ INSERT INTO [BryantDB].[dbo].[Course] VALUES ( ' Calc & Analytic Geometry I' , 'Topics include functions and their graphs limits and continuity' , 4 , 708 , 6)
+
+ INSERT INTO [BryantDB].[dbo].[Course] VALUES ( ' Discrete Mathematic' , 'Introduction to discrete mathematical structures' , 4 , 709 , 6)
+
+ INSERT INTO [BryantDB].[dbo].[Course] VALUES ( ' Linear Algebra' , 'Introduction to linear algebra beginning with two and three dimensional spaces' , 4 , 710 , 6)
+
+ INSERT INTO [BryantDB].[dbo].[Course] VALUES ( ' Intro to Prob & Statistics' , 'Topics include discrete and continuous distributions' , 4 , 711 , 6) 
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( ' Transition to Advanced Math' , 'Introduction to concepts commonly used in advanced mathematics' , 4 , 712 , 6) 
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( ' Number Theory' , 'Study of the utilization of concrete examples to introduce concepts of modern algebra' , 4 , 713 , 6)
+
+ INSERT INTO [BryantDB].[dbo].[Course] VALUES ( ' Abstract Algebra I' , 'Groups rings integral domains  ideals and fields together with their homomorphisms' , 4 , 714 , 6) 
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ( ' Advanced Calculus I' , 'An analytical study of the theory underlying calculus' , 4 , 715 , 6)
+
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ('Info Systems for Managers','Introduction to the concept of information systems as strategic assets of the enterprise utilized to achieve strategic advantage.',4,901,9)
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ('Principles of Accounting I','Introduction to financial accounting with focus on how financial statements are structured and used.',4,902,9)
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ('Principles of Accounting II','Emphasis shifts accounting theory to giving students experience in preparation of financial statements.',4,903,9)
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ('Marketing:Principles & Concepts','A comprehensive introduction to marketing principles with emphasis on the marketing concept as means of distributing 
+goods and services.',4,904,9)
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ('Business Communications','This course is an introduction to the fundamentals of business communications.',4,905,9)
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ('Global Business','The goal of this course is to provide an introduction to international business environment and operations.',4,906,9)
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ('Cost Accounting','Cost analysis and reports for planning and control.',4,907,9)
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ('Financial Markets & Investments','This course focuses on the importance of the financial system in providing liquidity, risk diversification.',4,908,9)
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ('Marketing Research','Research methods and their application to business and marketing problems.',4,909,9)
+
+INSERT INTO [BryantDB].[dbo].[Course] VALUES ('Operations Management','Introduction to the theoretical and practical applications of OM.',4,910,9)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -62,104 +62,6 @@ INSERT INTO [BryantDB].[dbo].[User] VALUES ( ' YassinSimmonds@mamba.edu ' , '$2a
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 INSERT INTO [BryantDB].[dbo].[User] VALUES ( 'DarrenEllis@mamba.edu' , '$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq ' , 'Darren Ellis' )
 INSERT INTO [BryantDB].[dbo].[User] VALUES ( 'MikeHarrison@mamba.edu' , '$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq ' , 'Mike Harrison' )
 INSERT INTO [BryantDB].[dbo].[User] VALUES ( 'ClaytonCarter@mamba.edu' , '$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq ' , 'Clayton Carter' )
@@ -1007,7 +909,14 @@ INSERT INTO [BryantDB].[dbo].[User] VALUES ( 'KurtisDabney@mamba.edu' , ' $2a$12
 INSERT INTO [BryantDB].[dbo].[User] VALUES ( 'BuenaPolanco@mamba.edu' , ' $2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq ' , ' Buena Polanco  ' )
 INSERT INTO [BryantDB].[dbo].[User] VALUES ( 'HeathAvila@mamba.edu' , ' $2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq ' , ' Heath Avila  ' )
 INSERT INTO [BryantDB].[dbo].[User] VALUES ( 'WesleyDelong@mamba.edu' , ' $2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq ' , ' Wesley Delong  ' )
-
+INSERT INTO [BryantDB].[dbo].[User] VALUES (
+  'SamSmith@mamba.edu' , '
+  $2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq ' , ' Sam Smith
+  ' )
+INSERT
+  INTO [BryantDB].[dbo].[User] VALUES ( 'RitaArora@mamba.edu' , '
+  $2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq ' , ' Rita
+  Arora  ' )
 
 INSERT INTO [BryantDB].[dbo].[UserRole] VALUES  ( 6 , 4)
 INSERT INTO [BryantDB].[dbo].[UserRole] VALUES  ( 7 , 4)
@@ -2068,7 +1977,6 @@ INSERT INTO [BryantDB].[dbo].[UserRole] VALUES ( 960 , 2 )
 INSERT INTO [BryantDB].[dbo].[UserRole] VALUES ( 961 , 2 ) 
 INSERT INTO [BryantDB].[dbo].[UserRole] VALUES ( 962 , 2 ) 
 INSERT INTO [BryantDB].[dbo].[UserRole] VALUES ( 963 , 2 ) 
-
 
 
 
