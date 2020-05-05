@@ -42,12 +42,12 @@ namespace BryantUniversity.Repo
 
         public IList<Course> GetAllCoursesAndPreReqsByDepartment(int id)
         {
-            return _context
-                        .Courses
-                        .Include(c => c.CourseLevel)
-                        .Include(c => c.Department)
-                        .Where(c => c.DepartmentId == id)
-                        .ToList();
+            return _context.Courses
+                            .Include(c => c.MajorPreRequisites.Select(y => y.Course))
+                            .Include(c => c.CourseLevel)
+                            .Include(c => c.Department)
+                            .Where(c => c.DepartmentId == id)
+                            .ToList();
         }
 
         public void Insert(Course course)

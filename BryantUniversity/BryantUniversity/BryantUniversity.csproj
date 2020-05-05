@@ -245,7 +245,7 @@
     <Compile Include="Models\HoldType.cs" />
     <Compile Include="Models\Level.cs" />
     <Compile Include="Models\Major.cs" />
-    <Compile Include="Models\MajorPreRequisites.cs" />
+    <Compile Include="Models\MajorPreRequisite.cs" />
     <Compile Include="Models\MajorRequirements.cs" />
     <Compile Include="Models\Minor.cs" />
     <Compile Include="Models\Period.cs" />

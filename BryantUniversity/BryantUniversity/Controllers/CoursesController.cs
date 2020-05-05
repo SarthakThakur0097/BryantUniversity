@@ -200,16 +200,18 @@ namespace BryantUniversity.Controllers
         [HttpPost]
         public ActionResult Catalog(CoursePreReqViewModel viewModel)
         {
-            CoursesRepo cRepo;
-            IList<Course> courses;
+            DepartmentRepo dRepo;
+            MajorPreRequisitesRepo reqRepo;
 
             using (context)
             {
-                cRepo = new CoursesRepo(context);
-                courses = cRepo.GetAllCoursesAndPreReqsByDepartment(viewModel.DepartmentId);
+                dRepo = new DepartmentRepo(context);
+                viewModel.PopulateDepermentSelectList(dRepo.GetAllDepartments());
+                reqRepo = new MajorPreRequisitesRepo(context);
+                viewModel.CoursesAndPreReqs = reqRepo.GetAllMajorPrequisitesByDepartment(viewModel.DepartmentId);
             }
 
-            return View(courses);
+            return View(viewModel);
         }
 
         private void HandleDbUpdateException(DbUpdateException ex)

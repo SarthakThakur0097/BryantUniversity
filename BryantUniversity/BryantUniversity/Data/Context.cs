@@ -26,7 +26,7 @@ namespace BryantUniversity.Data
         public DbSet<Grade> Grades { get; set; }
         public DbSet<Major> Majors { get; set; }
         public DbSet<MajorRequirements> MajorRequirements { get; set; }
-        public DbSet<MajorPreRequisites> MajorPreRequisites { get; set; }
+        public DbSet<MajorPreRequisite> MajorPreRequisites { get; set; }
         public DbSet<Minor> Minors { get; set; }
         public DbSet<StudentLevel> StudentLevels { get; set; }
         public DbSet<StudentMajor> StudentMajors { get; set; }
@@ -36,6 +36,7 @@ namespace BryantUniversity.Data
             modelBuilder.Conventions
                 .Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
         }
     }
 }

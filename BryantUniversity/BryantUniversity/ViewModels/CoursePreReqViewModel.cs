@@ -10,9 +10,11 @@ namespace BryantUniversity.ViewModels
     public class CoursePreReqViewModel
     {
         [Required]
-        [Range(1, Int32.MaxValue, ErrorMessage = "Must Select A Value")]
+        [Display(Name = "Department: ")]
         public int DepartmentId { get; set; }
         public IList<Course> Courses { get; set; }
+        public IList<MajorPreRequisite> CoursesAndPreReqs { get; set; }
+        [Display(Name = "Department: ")]
         public IList<Department> Departments { get; set; }
 
         public CoursePreReqViewModel() { }
