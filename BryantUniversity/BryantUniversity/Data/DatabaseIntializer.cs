@@ -79,6 +79,9 @@ namespace BryantUniversity.Data
             SemesterPeriod Fall2019 = new SemesterPeriod(Period.Fall2019, fall2019StartTime, fall2019EndTime, fall2019StartEnrollTime, fall2019EndEnrollTime);
             SemesterPeriod Spring2019 = new SemesterPeriod(Period.Spring2019, spring2019StartTime, spring2019EndTime, spring2019StartEnrollTime, spring2019EndEnrollTime);
 
+            CourseLevel Undergraduate = new CourseLevel(Level.Undergraduate);
+            CourseLevel Graduate = new CourseLevel(Level.Graduate);
+
             ClassDuration NineToElvenAm = new ClassDuration(ClassTime.NineToElvenAm);
             ClassDuration ElvenAmToTwelvePm = new ClassDuration(ClassTime.ElvenAmToTwelvePm);
             ClassDuration OneToTwoPM = new ClassDuration(ClassTime.OneToTwoPM);
@@ -108,7 +111,7 @@ namespace BryantUniversity.Data
             Room room = new Room("Lecture", 30, 1);
 
             Department compSci = new Department("Computer Science", "516-389-2930");
-            Course introToProg = new Course(0,"Intro to Computer Science", "Basic programming with Java", 4, "Level 100", compSci);
+            //Course introToProg = new Course(0,"Intro to Computer Science", "Basic programming with Java", 4, "Level 100", compSci);
 
             FacultyDepartment facultyDepartment = new FacultyDepartment(teacherUser, compSci);
             CourseSection courseSection = new CourseSection(0, 1, 1, 1, 1);
@@ -161,11 +164,13 @@ namespace BryantUniversity.Data
             context.ClassDays.Add(TTR);
             context.ClassDays.Add(F);
 
+            context.CourseLevels.Add(Undergraduate);
+            context.CourseLevels.Add(Graduate);
             //context.Buildings.Add(mainCampus);
             //context.Rooms.Add(room1);
             context.Departments.Add(compSci);
 
-            context.Courses.Add(introToProg);
+            //context.Courses.Add(introToProg);
             
             context.FacultyDepartments.Add(facultyDepartment);
             //context.Buildings.Add(building);
