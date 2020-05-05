@@ -59,6 +59,7 @@ namespace BryantUniversity.Models
         public CourseLevel CourseLevel { get; set; }
         public int DepartmentId { get; set; }
         public Department Department { get; set; }
+
         public IList<MajorPreRequisites> MajorPreRequisites;
     }
 }
