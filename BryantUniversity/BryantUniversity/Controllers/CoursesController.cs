@@ -11,7 +11,6 @@ namespace BryantUniversity.Controllers
 {
     public class CoursesController : Controller
     {
-        // GET: Courses
         private Context context;
 
         public CoursesController()
@@ -46,6 +45,7 @@ namespace BryantUniversity.Controllers
         public ActionResult Create()
         {
             var viewModel = new CourseViewModel();
+
             return View(viewModel);
         }
 
@@ -55,10 +55,10 @@ namespace BryantUniversity.Controllers
         public ActionResult Create(CourseViewModel formModel)
         {
             CoursesRepo courseRepo;
+
             using (context)
             {
                 courseRepo = new CoursesRepo(context);
-
                 try
                 {
                     var course = new Course(formModel.CourseTitleId,formModel.CourseTitle, formModel.Description, formModel.Credits, formModel.CourseLevel.Id, 1);
@@ -85,14 +85,12 @@ namespace BryantUniversity.Controllers
                 courseRepo = new CoursesRepo(context);
                 course = courseRepo.GetById(id);
 
-                
                 viewModel.Id = course.Id;
                 viewModel.CourseTitle = course.CourseTitle;
                 viewModel.Description = course.Description;
                 viewModel.Credits = course.Credits;
                 viewModel.CourseLevel = course.CourseLevel;
                 viewModel.DepartmentId = course.DepartmentId;
-                
             }
             return View("Edit", viewModel);
         }
@@ -116,9 +114,8 @@ namespace BryantUniversity.Controllers
                     viewModel.Credits = course.Credits;
                     viewModel.CourseLevel = course.CourseLevel;
                     viewModel.DepartmentId = course.DepartmentId;
-                    //viewModel.PopulateSelectList();
-
                     courseRepo.Update(newCourse);
+
                     return RedirectToAction("Index");
                 }
                 catch (DbUpdateException ex)
@@ -178,8 +175,8 @@ namespace BryantUniversity.Controllers
                 catch (DbUpdateException ex)
                 {
                     HandleDbUpdateException(ex);
+
                     return RedirectToAction("Index");
-                    //return View();
                 }
             }
         }
@@ -227,5 +224,4 @@ namespace BryantUniversity.Controllers
             }
         }
     }
-
 }
