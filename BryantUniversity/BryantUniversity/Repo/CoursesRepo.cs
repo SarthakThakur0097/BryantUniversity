@@ -41,6 +41,16 @@ namespace BryantUniversity.Repo
                         .ToList();
         }
 
+        public Course GetCourseByCourseTitleId(string id)
+        {
+            return _context
+                        .Courses
+                        .Include(c => c.Department)
+                        .Include(c => c.CourseLevel)
+                        .Where(c => c.CourseTitleId == id)
+                        .SingleOrDefault();
+        }
+
         public IList<Course> GetAllCoursesAndPreReqsByDepartment(int id)
         {
             return _context.Courses

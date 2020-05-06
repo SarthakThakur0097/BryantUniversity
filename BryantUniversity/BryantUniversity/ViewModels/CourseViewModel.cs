@@ -14,6 +14,7 @@ namespace BryantUniversity.ViewModels
 
         public int Id { get; set; }
 
+        [Display(Name = "Course Id")]
         public string CourseTitleId { get; set; }
         [Display(Name = "Course Title")]
         public string CourseTitle { get; set; }
@@ -24,24 +25,40 @@ namespace BryantUniversity.ViewModels
         public IList<Course> Courses { get; set; }
         public IList<SemesterPeriod> SemesterPeriods { get; set; }
         public int ChosenPattern { get; set; }
+
+        [Display(Name = "Department: ")]
         public int DepartmentId { get; set; }
+
+        public IList<Department> Departments { get; set; }
+        public int CourseLevelId { get; set; }
+        public IList<CourseLevel> CourseLevels { get; set; }
 
         public List<ClassPattern> PatternsToDisplay { get; set; }
 
+        public SelectList DepartmentList
+        {
+            get
+            {
+                return new SelectList(Departments, "Id", "Name");
+            }
+        }
 
-        //public SelectList PatternList
-        //{
-        //    get
-        //    {
-        //        return new SelectList(PatternsToDisplay, "ClassPattern", "");
-        //    }
-        //}
+        public void PopulateDepermentSelectList(IList<Department> populatedDepartments)
+        {
+            Departments = populatedDepartments;
+        }
 
+        public SelectList CourseLevelList
+        {
+            get
+            {
+                return new SelectList(CourseLevels, "Id", "Level.Value");
+            }
+        }
 
-        //public void PopulateSelectList()
-        //{
-        //    PatternsToDisplay.Add(ClassPattern.MW);
-        //    PatternsToDisplay.Add(ClassPattern.TueThurs);
-        //}
+        public void PopulateLevelsSelectList(IList<CourseLevel> populatedCourseLevels)
+        {
+            CourseLevels = populatedCourseLevels;
+        }
     }
 }

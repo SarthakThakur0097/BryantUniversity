@@ -20,11 +20,19 @@
 
         </div>
         <div class="col-sm">
+
+
             @using (Html.BeginForm("Create", "Courses", FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
             {
                 @Html.AntiForgeryToken()
 
                 <fieldset>
+                    <div class="pure-controls">
+                        @Html.LabelFor(model => model.CourseTitleId)
+                        @Html.EditorFor(model => model.CourseTitleId, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.CourseTitleId, "", new { @class = "pure-form-message-inline" })
+                    </div>
+
                     <div class="pure-controls">
                         @Html.LabelFor(model => model.CourseTitle)
                         @Html.EditorFor(model => model.CourseTitle, new { htmlAttributes = new { @class = "form-control" } })
@@ -44,9 +52,15 @@
                     </div>
 
                     <div class="pure-controls">
-                        @Html.LabelFor(model => model.Level)
-                        @Html.EditorFor(model => model.Level, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Level, "", new { @class = "pure-form-message-inline" })
+                        @Html.LabelFor(model => model.CourseLevelId, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.DropDownListFor(model => model.CourseLevelId, Model.CourseLevelList, "Course Level", new { @class = "form-control required", id = "period-list" })
+                        @Html.ValidationMessageFor(model => model.CourseLevelId)
+                    </div>
+                    <div class="pure-controls">
+
+                        @Html.LabelFor(model => model.DepartmentId, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.DropDownListFor(model => model.DepartmentId, Model.DepartmentList, "Period", new { @class = "form-control required", id = "period-list" })
+                        @Html.ValidationMessageFor(model => model.DepartmentId)
                     </div>
                     <div class="pure-controls">
                         @Html.ActionLink("Cancel", "Index", new { }, new { @class = "btn btn-danger" })

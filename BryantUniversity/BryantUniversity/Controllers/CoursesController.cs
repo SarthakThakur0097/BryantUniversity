@@ -46,6 +46,18 @@ namespace BryantUniversity.Controllers
         public ActionResult Create()
         {
             var viewModel = new CourseViewModel();
+            DepartmentRepo dRepo;
+            CourseLevelRepo clRepo;
+
+            using (context)
+            {
+                dRepo = new DepartmentRepo(context);
+                clRepo = new CourseLevelRepo(context);
+
+                viewModel.PopulateDepermentSelectList(dRepo.GetAllDepartments());
+                viewModel.PopulateLevelsSelectList(clRepo.GetAllCourseLevels());
+
+            }
 
             return View(viewModel);
         }
@@ -55,15 +67,26 @@ namespace BryantUniversity.Controllers
         public ActionResult Create(CourseViewModel formModel)
         {
             CoursesRepo courseRepo;
-
+            DepartmentRepo dRepo;
+            CourseLevelRepo clRepo;
+            MajorPreRequisitesRepo mPRepo;
             using (context)
             {
                 courseRepo = new CoursesRepo(context);
+                dRepo = new DepartmentRepo(context);
+                clRepo = new CourseLevelRepo(context);
+                mPRepo = new MajorPreRequisitesRepo(context);
+
+                formModel.PopulateDepermentSelectList(dRepo.GetAllDepartments());
+                formModel.PopulateLevelsSelectList(clRepo.GetAllCourseLevels());
                 try
                 {
-                    var course = new Course(formModel.CourseTitleId,formModel.CourseTitle, formModel.Description, formModel.Credits, formModel.CourseLevel.Id, 1);
+                    var course = new Course(formModel.CourseTitleId,formModel.CourseTitle, formModel.Description, formModel.Credits, formModel.CourseLevelId, formModel.DepartmentId);
                     courseRepo.Insert(course);
 
+                    Course cId = courseRepo.GetCourseByCourseTitleId(formModel.CourseTitleId);
+                    var preReq = new MajorPreRequisite(null, cId.Id);
+                    mPRepo.Insert(preReq);
                     return RedirectToAction("Index");
                 }
                 catch (DbUpdateException ex)
