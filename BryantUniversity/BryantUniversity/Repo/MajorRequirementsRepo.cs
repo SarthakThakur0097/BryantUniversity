@@ -18,6 +18,7 @@ namespace BryantUniversity.Repo
         public MajorRequirements GetById(int id)
         {
             return _context.MajorRequirements
+                .Include(m => m.Course)
                 .SingleOrDefault(c => c.Id == id);
         }
 

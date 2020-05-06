@@ -57,6 +57,25 @@ namespace BryantUniversity.Controllers
         }
 
         [HttpGet]
+        public ActionResult Transcript()
+        {
+            TranscriptViewModel viewModel = new TranscriptViewModel();
+            StudentMajorRepo sRepo;
+            MajorRequirmentsRepo mRepo;
+
+            using (context)
+            {
+                sRepo = new StudentMajorRepo(context);
+                mRepo = new MajorRequirmentsRepo(context);
+                viewModel.StudentMajor = sRepo.GetByStudentId(CustomUser.User.Id);
+                viewModel.MajorRequirements = mRepo.GetAllMajorRequirementsByMajor(viewModel.StudentMajor.MajorId);
+            }
+
+
+            return View(viewModel);
+        }
+
+        [HttpGet]
         public ActionResult Grades()
         {
             SemesterPeriodRepo spRepo;
