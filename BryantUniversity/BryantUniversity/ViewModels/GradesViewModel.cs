@@ -4,19 +4,18 @@ using System.Web.Mvc;
 
 namespace BryantUniversity.ViewModels
 {
-	public class ScheduleViewModel
-	{
-        public ScheduleViewModel()
+    public class GradesViewModel
+    {
+        public GradesViewModel()
         {
-            RegisteredClasses = new List<Registration>();
+            Grades = new List<Grade>();
         }
 
-        public IList<Registration> RegisteredClasses { get; set; }
+        public IList<Grade> Grades { get; set; }
         public SemesterPeriod GradeSemesterPeriod { get; set; }
         public int PeriodId { get; set; }
         public IList<SemesterPeriod> SemesterPeriods { get; set; }
-        public bool HasClasses { get; set; }
-
+        public double Gpa { get; set; }
         public SelectList PeriodList
         {
             get
