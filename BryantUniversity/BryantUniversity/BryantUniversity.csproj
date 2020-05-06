@@ -231,11 +231,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Advisor.cs" />
     <Compile Include="Models\Building.cs" />
     <Compile Include="Models\ClassDuration.cs" />
     <Compile Include="Models\ClassPattern.cs" />
     <Compile Include="Models\ClassTime.cs" />
     <Compile Include="Models\Course.cs" />
+    <Compile Include="Models\CourseLevel.cs" />
     <Compile Include="Models\CourseSection.cs" />
     <Compile Include="Models\Days.cs" />
     <Compile Include="Models\Department.cs" />
@@ -244,8 +246,9 @@
     <Compile Include="Models\Hold.cs" />
     <Compile Include="Models\HoldType.cs" />
     <Compile Include="Models\Helpers.cs" />
+    <Compile Include="Models\Level.cs" />
     <Compile Include="Models\Major.cs" />
-    <Compile Include="Models\MajorPreRequisites.cs" />
+    <Compile Include="Models\MajorPreRequisite.cs" />
     <Compile Include="Models\MajorRequirements.cs" />
     <Compile Include="Models\Minor.cs" />
     <Compile Include="Models\Period.cs" />
@@ -255,9 +258,12 @@
     <Compile Include="Models\CalendarEvent.cs" />
     <Compile Include="Models\RoleType.cs" />
     <Compile Include="Models\StudentHolds.cs" />
+    <Compile Include="Models\StudentLevel.cs" />
+    <Compile Include="Models\StudentMajor.cs" />
     <Compile Include="Repo\BuildingRepo.cs" />
     <Compile Include="Repo\CalendarRepo.cs" />
     <Compile Include="Repo\ClassDurationRepo.cs" />
+    <Compile Include="Repo\CourseLevelRepo.cs" />
     <Compile Include="Repo\CourseSectionRepo.cs" />
     <Compile Include="Repo\CoursesRepo.cs" />
     <Compile Include="Repo\DaysRepo.cs" />
@@ -281,8 +287,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\CustomIdentity.cs" />
     <Compile Include="Security\CustomPrincipal.cs" />
+    <Compile Include="ViewModels\CoursePreReqViewModel.cs" />
     <Compile Include="ViewModels\CourseSectionViewModel.cs" />
     <Compile Include="ViewModels\CourseViewModel.cs" />
+    <Compile Include="ViewModels\GradesViewModel.cs" />
     <Compile Include="ViewModels\HoldViewModel.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
     <Compile Include="ViewModels\ScheduleViewModel.cs" />
@@ -317,8 +325,7 @@
     <Content Include="Views\Courses\Index.cshtml" />
     <Content Include="Views\Courses\Create.cshtml" />
     <Content Include="Views\Courses\Edit.cshtml" />
-    <Content Include="Views\Student\Index.cshtml" />
-    <Content Include="Views\Student\Edit.cshtml" />
+    <Content Include="Views\Student\Schedule.cshtml" />
     <Content Include="Views\Faculty\Edit.cshtml" />
     <Content Include="Views\Faculty\Index.cshtml" />
     <Content Include="Views\Registration\Index.cshtml" />
@@ -336,6 +343,9 @@
     <Content Include="Views\Holds\Manage.cshtml" />
     <Content Include="Views\Holds\Add.cshtml" />
     <Content Include="Views\Holds\Delete.cshtml" />
+    <Content Include="Views\Faculty\Advisor.cshtml" />
+    <Content Include="Views\Courses\Catalog.cshtml" />
+    <Content Include="Views\Student\Grades.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -346,8 +356,6 @@
   <ItemGroup>
     <Folder Include="Views\ClassDurationApi\" />
     <Folder Include="Views\CourseAPi\" />
-    <Folder Include="Views\SemesterPeriodApi\" />
-    <Folder Include="Views\StudentHoldsApi\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

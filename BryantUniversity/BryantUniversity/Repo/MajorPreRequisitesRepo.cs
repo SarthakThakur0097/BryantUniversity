@@ -15,45 +15,66 @@ namespace BryantUniversity.Repo
             _context = context;
         }
 
-        public MajorPreRequisites GetById(int id)
+        public MajorPreRequisite GetById(int id)
         {
-            return _context.MajorPreRequisites
-                .SingleOrDefault(c => c.Id == id);
+            return _context
+                        .MajorPreRequisites
+                        .SingleOrDefault(c => c.Id == id);
         }
 
-        public IList<Models.MajorPreRequisites> GetAllMajorPrequisites()
+        public IList<MajorPreRequisite> GetAllMajorPrequisites()
         {
-            return _context.MajorPreRequisites
-                .Include(m => m.MajorRequirements)
-                .Include(m => m.Course)
-                .ToList();
+            return _context
+                        .MajorPreRequisites
+                        .Include(m => m.PreReq)
+                        .Include(m => m.Course)
+                        .ToList();
         }
 
-        public IList<MajorPreRequisites> GetAllMajorPrequisitesByMajorRequirement(int id)
+        public IList<MajorPreRequisite> GetAllMajorPrequisitesByMajorRequirement(int id)
         {
-            return _context.MajorPreRequisites
-                .Include(m => m.MajorRequirements)
-                .Include(m => m.Course)
-                .Where(m => m.MajorRequirementsId == id)
-                .ToList();
+            return _context
+                        .MajorPreRequisites
+                        .Include(m => m.PreReq)
+                        .Include(m => m.Course)
+                        .Where(m => m.CourseId == id)
+                        .ToList();
         }
 
-        public IList<MajorPreRequisites> GetAllMajorPrequisitesByCourse(int id)
+        public IList<MajorPreRequisite> GetAllMajorPrequisitesByCourse(int id)
         {
-            return _context.MajorPreRequisites
-                .Include(m => m.MajorRequirements).Where(m => m.MajorRequirements.CourseId == id)
-                .Include(m => m.Course)
-                .ToList();
+            return _context
+                        .MajorPreRequisites
+                        .Include(m => m.PreReq)
+                        .Include(m => m.Course)
+                        .ToList();
         }
-        public void Insert(MajorPreRequisites majorPrequisites)
+
+        public IList<MajorPreRequisite> GetAllMajorPrequisitesByDepartment(int id)
         {
-            _context.MajorPreRequisites.Add(majorPrequisites);
+            return _context
+                        .MajorPreRequisites
+                        .Include(m => m.PreReq)
+                        .Include(m => m.Course)
+                        .Include(m => m.Course.CourseLevel)
+                        .Where(m => m.Course.DepartmentId == id)
+                        .ToList();
+        }
+
+
+        public void Insert(MajorPreRequisite majorPrequisites)
+        {
+            _context
+                .MajorPreRequisites
+                .Add(majorPrequisites);
             _context.SaveChanges();
         }
 
-        public void Update(MajorPreRequisites majorPrequisites)
+        public void Update(MajorPreRequisite majorPrequisites)
         {
-            _context.MajorPreRequisites.Attach(majorPrequisites);
+            _context
+                .MajorPreRequisites
+                .Attach(majorPrequisites);
             _context.Entry(majorPrequisites).State = EntityState.Modified;
             _context.SaveChanges();
         }

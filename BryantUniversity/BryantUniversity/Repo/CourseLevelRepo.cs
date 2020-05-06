@@ -5,42 +5,42 @@ using System.Linq;
 
 namespace BryantUniversity.Repo
 {
-    public class SemesterPeriodRepo
+    public class CourseLevelRepo
     {
         private Context _context;
 
-        public SemesterPeriodRepo(Context context)
+        public CourseLevelRepo(Context context)
         {
             _context = context;
         }
 
-        public IList<SemesterPeriod> GetAllSemesterPeriods()
+        public IList<CourseLevel> GetAllCourseLevels()
         {
             return _context
-                        .SemesterPeriods
+                        .CourseLevels
                         .ToList();
         }
 
-        public SemesterPeriod GetById(int id)
+        public CourseLevel GetById(int id)
         {
             return _context
-                        .SemesterPeriods
+                        .CourseLevels
                         .SingleOrDefault(c => c.Id == id);
         }
 
-        public void Insert(SemesterPeriod semesterPeriod)
+        public void Insert(CourseLevel courselevel)
         {
             _context
-                .SemesterPeriods
-                .Add(semesterPeriod);
+                .CourseLevels
+                .Add(courselevel);
 
             _context.SaveChanges();
         }
 
-        public void Update(Role role)
+        public void Update(CourseLevel courselevel)
         {
-            _context.Roles.Attach(role);
-            _context.Entry(role).State = System.Data.Entity.EntityState.Modified;
+            _context.CourseLevels.Attach(courselevel);
+            _context.Entry(courselevel).State = System.Data.Entity.EntityState.Modified;
             _context.SaveChanges();
         }
     }

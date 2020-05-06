@@ -66,6 +66,7 @@ namespace BryantUniversity.Repo
                             .Where(cR => cR.Professor.Id == userId)
                             .ToList();
         }
+
         public IList<CourseSection> GetCourseSectionsByCourseId(int courseId)
         {
             return _context.CourseSections
@@ -77,6 +78,21 @@ namespace BryantUniversity.Repo
                 .Include(cR => cR.SemesterPeriod)
                 .Include(cR => cR.Course.Department)
                 .Where(cR => cR.Course.Id == courseId)
+                .ToList();
+        }
+
+        public IList<CourseSection> GetCourseSectionsByCourseIdAndSemesterPeriodId(int courseId, int semesterPeriodId)
+        {
+            return _context.CourseSections
+                .Include(cR => cR.Course)
+                .Include(cR => cR.Professor)
+                .Include(cR => cR.Room)
+                .Include(cR => cR.Course.CourseLevel)
+                .Include(p => p.ClassDays)
+                .Include(c => c.ClassDuration)
+                .Include(cR => cR.SemesterPeriod)
+                .Include(cR => cR.Course.Department)
+                .Where(cR => cR.Course.Id == courseId && cR.SemesterPeriodId == semesterPeriodId)
                 .ToList();
         }
 

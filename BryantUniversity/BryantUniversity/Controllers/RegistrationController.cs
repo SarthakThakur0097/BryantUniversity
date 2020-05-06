@@ -68,7 +68,7 @@ namespace BryantUniversity.Controllers
 
                 toAdd = csRepo.GetCourseSectionById(id);
 
-                IList<MajorPreRequisites> allReqs = mprRepo.GetAllMajorPrequisitesByCourse(toAdd.Course.Id);
+                IList<MajorPreRequisite> allReqs = mprRepo.GetAllMajorPrequisitesByCourse(toAdd.Course.Id);
                 IList<Grade> allTakenCourses = gRepo.GetAllGradesByUserId(CustomUser.User.Id);
                 
                 //Fixed bug

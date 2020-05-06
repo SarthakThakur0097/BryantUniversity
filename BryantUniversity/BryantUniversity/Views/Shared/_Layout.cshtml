@@ -125,7 +125,11 @@
                     </li>
 
                     <li class="nav-item">
-                        @Html.ActionLink("Academics", "Index", "Transcript", new { area = "" }, new { @class = "navbar-brand" })
+                        @Html.ActionLink("Schedule", "Schedule", "Student", new { area = "" }, new { @class = "navbar-brand" })
+                    </li>
+
+                    <li class="nav-item">
+                        @Html.ActionLink("Academics", "Grades", "Student", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
                 }
 

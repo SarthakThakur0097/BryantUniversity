@@ -56,20 +56,31 @@ namespace BryantUniversity.Data
 
             DateTime fall2020StartTime = new DateTime(2020, 08, 27);
             DateTime fall2020EndTime = new DateTime(2021, 01, 22);
+            DateTime fall2020StartEnrollTime = new DateTime(2020, 07, 01);
+            DateTime fall2020EndEnrollTime = new DateTime(2020, 09, 03);
 
-            DateTime spring2020StartTime = new DateTime(2020, 01, 2);
+            DateTime spring2020StartTime = new DateTime(2020, 01, 22);
             DateTime spring2020EndTime = new DateTime(2020, 05, 17);
+            DateTime spring2020StartEnrollTime = new DateTime(2019, 11, 20);
+            DateTime spring2020EndEnrollTime = new DateTime(2020, 01, 29);
 
             DateTime fall2019StartTime = new DateTime(2019, 08, 25);
             DateTime fall2019EndTime = new DateTime(2020, 01, 17);
+            DateTime fall2019StartEnrollTime = new DateTime(2019, 06, 20);
+            DateTime fall2019EndEnrollTime = new DateTime(2020, 01, 24);
 
             DateTime spring2019StartTime = new DateTime(2019, 01, 5);
             DateTime spring2019EndTime = new DateTime(2019, 05, 23);
+            DateTime spring2019StartEnrollTime = new DateTime(2019, 11, 1);
+            DateTime spring2019EndEnrollTime = new DateTime(2019, 05, 30);
 
-            SemesterPeriod Fall2020 = new SemesterPeriod(Period.Fall2020, fall2020StartTime, fall2020EndTime);
-            SemesterPeriod Spring2020 = new SemesterPeriod(Period.Spring2020, spring2020StartTime, spring2020EndTime);
-            SemesterPeriod Fall2019 = new SemesterPeriod(Period.Fall2019, fall2019StartTime, fall2019EndTime);
-            SemesterPeriod Spring2019 = new SemesterPeriod(Period.Spring2019);
+            SemesterPeriod Fall2020 = new SemesterPeriod(Period.Fall2020, fall2020StartTime, fall2020EndTime, fall2020StartEnrollTime, fall2020EndEnrollTime);
+            SemesterPeriod Spring2020 = new SemesterPeriod(Period.Spring2020, spring2020StartTime, spring2020EndTime, spring2020StartEnrollTime, spring2020EndEnrollTime);
+            SemesterPeriod Fall2019 = new SemesterPeriod(Period.Fall2019, fall2019StartTime, fall2019EndTime, fall2019StartEnrollTime, fall2019EndEnrollTime);
+            SemesterPeriod Spring2019 = new SemesterPeriod(Period.Spring2019, spring2019StartTime, spring2019EndTime, spring2019StartEnrollTime, spring2019EndEnrollTime);
+
+            CourseLevel Undergraduate = new CourseLevel(Level.Undergraduate);
+            CourseLevel Graduate = new CourseLevel(Level.Graduate);
 
             ClassDuration NineToElvenAm = new ClassDuration(ClassTime.NineToElvenAm);
             ClassDuration ElvenAmToTwelvePm = new ClassDuration(ClassTime.ElvenAmToTwelvePm);
@@ -100,7 +111,7 @@ namespace BryantUniversity.Data
             Room room = new Room("Lecture", 30, 1);
 
             Department compSci = new Department("Computer Science", "516-389-2930");
-            Course introToProg = new Course(0,"Intro to Computer Science", "Basic programming with Java", 4, "Level 100", compSci);
+            //Course introToProg = new Course(0,"Intro to Computer Science", "Basic programming with Java", 4, "Level 100", compSci);
 
             FacultyDepartment facultyDepartment = new FacultyDepartment(teacherUser, compSci);
             CourseSection courseSection = new CourseSection(0, 1, 1, 1, 1);
@@ -153,11 +164,13 @@ namespace BryantUniversity.Data
             context.ClassDays.Add(TTR);
             context.ClassDays.Add(F);
 
+            context.CourseLevels.Add(Undergraduate);
+            context.CourseLevels.Add(Graduate);
             //context.Buildings.Add(mainCampus);
             //context.Rooms.Add(room1);
             context.Departments.Add(compSci);
 
-            context.Courses.Add(introToProg);
+            //context.Courses.Add(introToProg);
             
             context.FacultyDepartments.Add(facultyDepartment);
             //context.Buildings.Add(building);
