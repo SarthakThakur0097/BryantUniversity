@@ -321,8 +321,7 @@
     <Content Include="Views\Courses\Index.cshtml" />
     <Content Include="Views\Courses\Create.cshtml" />
     <Content Include="Views\Courses\Edit.cshtml" />
-    <Content Include="Views\Student\Index.cshtml" />
-    <Content Include="Views\Student\Edit.cshtml" />
+    <Content Include="Views\Student\Schedule.cshtml" />
     <Content Include="Views\Faculty\Edit.cshtml" />
     <Content Include="Views\Faculty\Index.cshtml" />
     <Content Include="Views\Registration\Index.cshtml" />
@@ -341,6 +340,7 @@
     <Content Include="Views\Holds\Add.cshtml" />
     <Content Include="Views\Holds\Delete.cshtml" />
     <Content Include="Views\Courses\Catalog.cshtml" />
+    <Content Include="Views\Student\Grades.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
