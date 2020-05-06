@@ -8,13 +8,13 @@
 <h2>Index Course</h2>
 
 
-@if(Model[0].SemesterPeriod.StartEnrollmentDate > DateTime.Now)
+@*@if(Model[0].SemesterPeriod.StartEnrollmentDate > DateTime.Now)
 {
     <h2>Enrollment date has not opened</h2>
 } else if (Model[0].SemesterPeriod.EndEnrollmentDate < DateTime.Now)
 {
     <h2>Enrollment date has closed</h2>
-}
+}*@
 
 
 <table class="pure-table pure-table-horizontal">
@@ -41,16 +41,16 @@
                 <td>@courseSection.Course.CourseLevel.Level.Value</td>
                 <td>@courseSection.Professor.Name</td>
                 <td>@courseSection.Room.Id</td>
-                @if(courseSection.SemesterPeriod.StartEnrollmentDate > DateTime.Now || courseSection.SemesterPeriod.EndDate < DateTime.Now)
+                @*@if(courseSection.SemesterPeriod.StartEnrollmentDate > DateTime.Now || courseSection.SemesterPeriod.EndDate < DateTime.Now)
                 {
                     <td>
                         @Html.ActionLink("Register", "Add", "Registration", new { id = courseSection.Id }, new { @class = "btn btn-success disabled" })
                     </td>
-                } else {
+                } else {*@
                     <td>
                         @Html.ActionLink("Register", "Add", "Registration", new { id = courseSection.Id }, new { @class = "btn btn-success" })
                     </td>
-                }
+                @*}*@
             </tr>
         }
     </tbody>

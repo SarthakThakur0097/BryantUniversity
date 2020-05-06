@@ -38,20 +38,27 @@ namespace BryantUniversity.Security
 
         public bool IsInRole(string role)
         {
+            int userId;
+            if (User != null)
+            {
+                userId = User.Id;
+            }
+            else
+            {
+                return false;
+            }
+            UserRoleRepo userRoleRepo;
 
-                int userId = User.Id;
-                UserRoleRepo userRoleRepo;
+            userRoleRepo = new UserRoleRepo(context);
+            IList<UserRole> userRoles = userRoleRepo.GetAllUserRolesById(userId);
 
-                userRoleRepo = new UserRoleRepo(context);
-                IList<UserRole> userRoles = userRoleRepo.GetAllUserRolesById(userId);
-
-                for (int i = 0; i < userRoles.Count; i++)
+            for (int i = 0; i < userRoles.Count; i++)
+            {
+                if (userRoles[i].RoleId.ToString().Equals(role))
                 {
-                    if (userRoles[i].RoleId.ToString().Equals(role))
-                    {
-                        return true;
-                    }
+                    return true;
                 }
+            }
 
             return false;
         }

@@ -42,13 +42,13 @@ namespace BryantUniversity.Controllers
 
             return View();
         }
+
         public ActionResult Create()
         {
             var viewModel = new CourseViewModel();
 
             return View(viewModel);
         }
-
 
         [HttpPost]
         [ValidateAntiForgeryToken]

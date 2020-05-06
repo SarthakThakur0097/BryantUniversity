@@ -20,6 +20,7 @@ namespace BryantUniversity.Repo
             return _context
                         .Courses
                         .Include(c => c.Department)
+                        .Include(c => c.CourseLevel)
                         .ToList();
         }
 

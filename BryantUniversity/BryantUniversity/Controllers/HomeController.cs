@@ -12,8 +12,6 @@ namespace BryantUniversity.Controllers
     [AllowAnonymous]
     public class HomeController : Controller
     {
-
-
         [HttpPost]
         public ActionResult Calendar(SemesterDetailsViewModel viewModel)
         {
