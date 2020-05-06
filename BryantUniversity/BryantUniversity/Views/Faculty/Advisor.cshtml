@@ -1,0 +1,36 @@
+﻿@model BryantUniversity.ViewModels.UserListViewModel
+
+@{
+    ViewBag.Title = "Advisor";
+}
+
+<h2>Assign an Advisor</h2>
+
+<div class="row">
+    <div class="col">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="myTable">
+                @foreach (var user in Model.Users)
+                {
+                    <tr>
+                        <td>@user.Name</td>
+                        <td>@user.Email</td>
+                        <td>
+                            @Html.ActionLink("Assign", "Assign", "Faculty", new { id= Url.RequestContext.RouteData.Values["id"], facultyId = user.Id}, new { @class = "btn btn-info" })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+

@@ -70,6 +70,14 @@ namespace BryantUniversity.Controllers
                 return View(viewModel);
         }
 
+
+        //public ActionResult AssignAdvisor()
+        //{
+
+        //}
+
+        private void HandleDbUpdateException(DbUpdateException ex)
+
         [HttpPost]
         public ActionResult Grades(GradesViewModel viewModel)
         {

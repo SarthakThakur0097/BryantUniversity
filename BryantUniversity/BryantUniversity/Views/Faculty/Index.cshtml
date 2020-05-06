@@ -27,7 +27,7 @@
         </div>
         <div class="col-sm">
             <p>
-                @Html.ActionLink("create a user", "Create", new { }, new { @class = "btn btn-success" })
+                @Html.ActionLink("Create User", "Create", new { }, new { @class = "btn btn-success" })
             </p>
         </div>
             <table class="table">
@@ -36,6 +36,7 @@
                         <th>Name</th>
                         <th>Email</th>
                         <th>Role</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody id="myTable">
@@ -47,22 +48,24 @@
                             @if(user.UserRoles[0].RoleId==1)
                             {
                                 <td>Admin</td>
+                                <td></td>
                             } else if(user.UserRoles[0].RoleId==2)
                             {
                                 <td>Faculty</td>
+                                <td></td>
                             } else if(user.UserRoles[0].RoleId==3)
                             {
                                 <td>Researcher</td>
+                                <td></td>
                             } else if(user.UserRoles[0].RoleId==4)
                             {
                                 <td>Student</td>
+                                <td>@Html.ActionLink("Assign Advisor", "Advisor", "Faculty", new { id = user.Id }, new { @class = "btn btn-primary" })</td>
                             }
                             else if (user.UserRoles.Count == 0)
                             {
                                 <td>Does not have a User Rule</td>
                             }
-
-
                         </tr>
                     }
                 </tbody>

@@ -105,5 +105,10 @@ namespace BryantUniversity.Repo
             _context.SaveChanges();
         }
 
+        public void Insert(Advisor advisor)
+        {
+            _context.Advisors.Add(advisor);
+            _context.SaveChanges();
+        }
     }
 }
