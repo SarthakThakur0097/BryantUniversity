@@ -15,6 +15,7 @@ namespace BryantUniversity.Data
         public DbSet<Days> ClassDays { get; set; }
         public DbSet<ClassDuration> ClassTimes { get; set; }
         public DbSet<SemesterPeriod> SemesterPeriods { get; set; }
+        public DbSet<CourseLevel> CourseLevels { get; set; }
         public DbSet<Course> Courses { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<FacultyDepartment> FacultyDepartments {get; set;}
@@ -25,15 +26,17 @@ namespace BryantUniversity.Data
         public DbSet<Grade> Grades { get; set; }
         public DbSet<Major> Majors { get; set; }
         public DbSet<MajorRequirements> MajorRequirements { get; set; }
-        public DbSet<MajorPreRequisites> MajorPreRequisites { get; set; }
+        public DbSet<MajorPreRequisite> MajorPreRequisites { get; set; }
         public DbSet<Minor> Minors { get; set; }
         public DbSet<Advisor> Advisors { get; set; }
-
+        public DbSet<StudentLevel> StudentLevels { get; set; }
+        public DbSet<StudentMajor> StudentMajors { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions
                 .Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+
         }
     }
 }
