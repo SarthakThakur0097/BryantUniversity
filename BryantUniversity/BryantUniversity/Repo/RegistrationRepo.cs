@@ -15,6 +15,18 @@ namespace BryantUniversity.Repo
             _context = context;
         }
 
+        public void Insert(Registration registration)
+        {
+            _context.Registrations.Add(registration);
+            _context.SaveChanges();
+        }
+
+        public void Insert(Advisor advisor)
+        {
+            _context.Advisors.Add(advisor);
+            _context.SaveChanges();
+        }
+
         public IList<Registration> GetRegistrationByUserId(int id)
         {
             return _context
@@ -61,7 +73,20 @@ namespace BryantUniversity.Repo
                 .ToList();
         }
 
-        public IList<Registration> GetRegistrationByCourseSectionId(int id)
+        public Registration GetRegistrationByCourseSectionId(int id)
+        {
+            return _context.Registrations
+                .Include(s => s.User)
+                .Include(s => s.CourseSection)
+                .Include(s => s.CourseSection.Course)
+                .Include(s => s.CourseSection.Course.Department)
+                .Include(s => s.CourseSection.Professor)
+                .Include(s => s.CourseSection.SemesterPeriod)
+                .Include(s => s.CourseSection.Room)
+                .FirstOrDefault(s => s.CourseSectionId == id);
+        }
+
+        public IList<Registration> GetRegistrationsByCourseSectionId(int id)
         {
             return _context.Registrations
                 .Include(s => s.User)
@@ -89,25 +114,10 @@ namespace BryantUniversity.Repo
                 ToList();
         }
 
-        //public Schedule GetScheduleByUserAndCourseSectionId(int studentId, int courseSectionId)
-        //{
-        //    return _context.Schedules
-        //        .Include(s => s.User)
-        //        .Include(s => s.CourseSection)
-        //        .Include(s => s.CourseSection.Course)
-        //        .Where(s => s.UserId == studentId && s.CourseSectionId == courseSectionId)
-        //        .SingleOrDefault();   
-        //}
-
-        public void Insert(Registration registration)
+        public void Delete(int id)
         {
-            _context.Registrations.Add(registration);
-            _context.SaveChanges();
-        }
-
-        public void Insert(Advisor advisor)
-        {
-            _context.Advisors.Add(advisor);
+            Registration toRemove = GetRegistrationByCourseSectionId(id);
+            _context.Registrations.Remove(toRemove);
             _context.SaveChanges();
         }
     }

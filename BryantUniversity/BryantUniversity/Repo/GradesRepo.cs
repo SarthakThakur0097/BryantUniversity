@@ -28,7 +28,11 @@ namespace BryantUniversity.Repo
             return _context.Grades.SingleOrDefault(c => c.Id == gradeId);
         }
 
-
+        public bool ContainsRegistration(int id)
+        {
+            return _context.Grades
+                    .Any(e => e.RegistrationId == id);
+        }
         public void Update(Grade grade)
         {
             _context.Grades.Attach(grade);

@@ -1,4 +1,4 @@
-﻿@model BryantUniversity.ViewModels.ScheduleViewModel
+﻿@model BryantUniversity.ViewModels.DropViewModel
 
 @{
     ViewBag.Title = "Schedule";
@@ -9,23 +9,7 @@
         <div class="col-sm">
         </div>
         <div class="col-sm">
-            @using (Html.BeginForm("Drop", "Student", FormMethod.Post, new { @class = "pure-form pure-form-aligned", id = "" }))
-            {
-                @Html.AntiForgeryToken()
-
-                <div class="form-horizontal">
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.PeriodId, htmlAttributes: new { @class = "control-label col-md-2" })
-                        @Html.DropDownListFor(model => model.PeriodId, Model.PeriodList, "Period", new { id = "period-list" })
-                        @Html.ValidationMessageFor(model => model.PeriodId, "", new { @class = "text-danger" })
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-success">Submit</button>
-                </div>
-            }
+            
         </div>
         <div class="col-sm">
 
@@ -46,10 +30,7 @@
         <div class="col-sm">
         </div>
         <div class="col-md-5">
-            @if (Model.RegisteredClasses.Count == 0)
-            {
-                <h1>Please select the semester you would like to drop a course for</h1>
-            }
+
             <h1>SCHEDULE</h1>
             <table class="table">
                 <thead class="thead-dark">
@@ -65,9 +46,9 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @if (Model.RegisteredClasses != null)
+                    @if (Model.NonGraded != null)
                     {
-                        foreach (var reigstered in Model.RegisteredClasses)
+                        foreach (var reigstered in Model.NonGraded)
                         {
                             <tr>
                                 <td>C.Course.Id</td>
@@ -93,3 +74,5 @@
         </div>
     </div>
 </div>
+
+<script src="~/scripts/DropSection.js"></script>

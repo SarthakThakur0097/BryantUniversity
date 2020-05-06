@@ -192,6 +192,7 @@
     <Content Include="scripts\calendar.js" />
     <Content Include="scripts\course.js" />
     <Content Include="scripts\CourseSearch.js" />
+    <Content Include="scripts\DropSection.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
     <Content Include="scripts\MangeHold.js" />
@@ -289,6 +290,7 @@
     <Compile Include="ViewModels\CoursePreReqViewModel.cs" />
     <Compile Include="ViewModels\CourseSectionViewModel.cs" />
     <Compile Include="ViewModels\CourseViewModel.cs" />
+    <Compile Include="ViewModels\DropViewModel.cs" />
     <Compile Include="ViewModels\GradesViewModel.cs" />
     <Compile Include="ViewModels\HoldViewModel.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />

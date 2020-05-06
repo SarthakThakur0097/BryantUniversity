@@ -133,7 +133,7 @@ namespace BryantUniversity.Controllers
             {
                 sRepo = new RegistrationRepo(context);
 
-                students = sRepo.GetRegistrationByCourseSectionId(Id);
+                students = sRepo.GetRegistrationsByCourseSectionId(Id);
             }
                 return View(students);
         }

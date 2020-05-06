@@ -4,7 +4,8 @@ using BryantUniversity.Models.Repo;
 using BryantUniversity.Repo;
 using BryantUniversity.Security;
 using BryantUniversity.ViewModels;
-
+using System.Collections;
+using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace BryantUniversity.Controllers
@@ -59,16 +60,29 @@ namespace BryantUniversity.Controllers
         [HttpGet]
         public ActionResult Drop()
         {
-            ScheduleViewModel viewModel = new ScheduleViewModel();
+            DropViewModel viewModel = new DropViewModel();
             SemesterPeriodRepo sRepo;
+            GradesRepo gRepo;
             RegistrationRepo rRepo;
+            IList<Registration> allRegisterations = new List<Registration>();
+            List<Registration> nonGraded = new List<Registration>();
+
             using (context)
             {
                 sRepo = new SemesterPeriodRepo(context);
                 rRepo = new RegistrationRepo(context);
-                viewModel.PopulateSelectList(sRepo.GetAllSemesterPeriods());
+                gRepo = new GradesRepo(context);
 
-                viewModel.RegisteredClasses = rRepo.GetRegistrationByUserIdAndPeriodId(CustomUser.User.Id, viewModel.PeriodId);
+                allRegisterations = rRepo.GetRegistrationByUserIdAndPeriodId(CustomUser.User.Id, 1);
+
+                foreach(var grade in allRegisterations)
+                {
+                    if(!gRepo.ContainsRegistration(grade.Id))
+                    {
+                        nonGraded.Add(grade);
+                    }
+                }
+                viewModel.NonGraded = nonGraded;
             }
             return View(viewModel);
         }
