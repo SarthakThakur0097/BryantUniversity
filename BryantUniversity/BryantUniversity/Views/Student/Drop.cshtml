@@ -7,10 +7,9 @@
 <div class="container">
     <div class="row">
         <div class="col-sm">
-            @Html.ActionLink("Drop a course", "Drop", "Student", new { }, new { @class = "btn btn-primary" })
         </div>
         <div class="col-sm">
-            @using (Html.BeginForm("Schedule", "Student", FormMethod.Post, new { @class = "pure-form pure-form-aligned", id = "" }))
+            @using (Html.BeginForm("Drop", "Student", FormMethod.Post, new { @class = "pure-form pure-form-aligned", id = "" }))
             {
                 @Html.AntiForgeryToken()
 
@@ -49,7 +48,7 @@
         <div class="col-md-5">
             @if (Model.RegisteredClasses.Count == 0)
             {
-                <h1>You have no classes registered for this semester</h1>
+                <h1>Please select the semester you would like to drop a course for</h1>
             }
             <h1>SCHEDULE</h1>
             <table class="table">
@@ -62,6 +61,7 @@
                         <th>Professor</th>
                         <th>Building</th>
                         <th>Room Number</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -70,13 +70,18 @@
                         foreach (var reigstered in Model.RegisteredClasses)
                         {
                             <tr>
-                                <td>@reigstered.CourseSection.Course.Id</td>
+                                <td>C.Course.Id</td>
                                 <td>@reigstered.CourseSection.Course.CourseTitle</td>
                                 <td>@reigstered.CourseSection.ClassDuration.TimeForClass.Value</td>
                                 <td>@reigstered.CourseSection.ClassDays.Pattern.Value</td>
                                 <td>@reigstered.CourseSection.Professor.Name</td>
                                 <td>@reigstered.CourseSection.Room.Building.BuildingName</td>
                                 <td>@reigstered.CourseSection.Room.Id</td>
+                                <td>
+                                    <div id="removeContainer">
+                                        <button type="button" data-course-section-id="@reigstered.CourseSection.Id" class="btn btn-danger">Drop</button>
+                                    </div>
+                                </td>
                             </tr>
                         }
                     }

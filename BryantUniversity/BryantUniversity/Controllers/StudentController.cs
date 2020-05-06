@@ -57,6 +57,38 @@ namespace BryantUniversity.Controllers
         }
 
         [HttpGet]
+        public ActionResult Drop()
+        {
+            ScheduleViewModel viewModel = new ScheduleViewModel();
+            SemesterPeriodRepo sRepo;
+            RegistrationRepo rRepo;
+            using (context)
+            {
+                sRepo = new SemesterPeriodRepo(context);
+                rRepo = new RegistrationRepo(context);
+                viewModel.PopulateSelectList(sRepo.GetAllSemesterPeriods());
+
+                viewModel.RegisteredClasses = rRepo.GetRegistrationByUserIdAndPeriodId(CustomUser.User.Id, viewModel.PeriodId);
+            }
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Drop(ScheduleViewModel viewModel)
+        {
+            SemesterPeriodRepo sRepo;
+            RegistrationRepo rRepo;
+            using (context)
+            {
+                sRepo = new SemesterPeriodRepo(context);
+                rRepo = new RegistrationRepo(context);
+                viewModel.PopulateSelectList(sRepo.GetAllSemesterPeriods());
+                viewModel.RegisteredClasses = rRepo.GetRegistrationByUserIdAndPeriodId(CustomUser.User.Id, viewModel.PeriodId);
+            }
+            return View(viewModel);
+        }
+
+        [HttpGet]
         public ActionResult Transcript()
         {
             TranscriptViewModel viewModel = new TranscriptViewModel();
@@ -70,7 +102,6 @@ namespace BryantUniversity.Controllers
                 viewModel.StudentMajor = sRepo.GetByStudentId(CustomUser.User.Id);
                 viewModel.MajorRequirements = mRepo.GetAllMajorRequirementsByMajor(viewModel.StudentMajor.MajorId);
             }
-
 
             return View(viewModel);
         }
