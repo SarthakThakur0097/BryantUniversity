@@ -76,7 +76,6 @@ namespace BryantUniversity.Controllers
 
         //}
 
-        private void HandleDbUpdateException(DbUpdateException ex)
 
         [HttpPost]
         public ActionResult Grades(GradesViewModel viewModel)
@@ -112,65 +111,105 @@ namespace BryantUniversity.Controllers
                     {
                         viewModel.Gpa = 3.9;
                     }
-                    if (calculatedGrade < 94 && calculatedGrade >= 93)
+                    else if (calculatedGrade < 94 && calculatedGrade >= 93)
                     {
                         viewModel.Gpa = 3.8;
                     }
-                    if (calculatedGrade < 93 && calculatedGrade >= 92)
+                    else if(calculatedGrade < 93 && calculatedGrade >= 92)
                     {
                         viewModel.Gpa = 3.7;
                     }
-                    if (calculatedGrade < 92 && calculatedGrade >= 91)
+                    else if (calculatedGrade < 92 && calculatedGrade >= 91)
                     {
                         viewModel.Gpa = 3.6;
                     }
-                    if (calculatedGrade < 91 && calculatedGrade >= 90)
+                    else if (calculatedGrade < 91 && calculatedGrade >= 90)
                     {
                         viewModel.Gpa = 3.5;
                     }
-                    if (calculatedGrade < 90 && calculatedGrade >= 89)
+                    else if (calculatedGrade < 90 && calculatedGrade >= 89)
                     {
                         viewModel.Gpa = 3.4;
                     }
-                    if (calculatedGrade < 89 && calculatedGrade >= 88)
+                    else if (calculatedGrade < 89 && calculatedGrade >= 88)
                     {
                         viewModel.Gpa = 3.3;
                     }
-                    if (calculatedGrade < 88 && calculatedGrade >= 87)
+                    else if (calculatedGrade < 88 && calculatedGrade >= 87)
                     {
                         viewModel.Gpa = 3.2;
                     }
-                    if (calculatedGrade < 87 && calculatedGrade >= 86)
+                    else if (calculatedGrade < 87 && calculatedGrade >= 86)
                     {
                         viewModel.Gpa = 3.1;
                     }
-                    if (calculatedGrade < 86 && calculatedGrade >= 85)
+                    else if (calculatedGrade < 86 && calculatedGrade >= 85)
                     {
                         viewModel.Gpa = 3.0;
                     }
-                    if (calculatedGrade < 85 && calculatedGrade >= 84)
+                    else if (calculatedGrade < 85 && calculatedGrade >= 84)
                     {
                         viewModel.Gpa = 2.9;
                     }
-                    if (calculatedGrade < 84 && calculatedGrade >= 83)
+                    else if (calculatedGrade < 84 && calculatedGrade >= 83)
                     {
                         viewModel.Gpa = 2.8;
                     }
-                    if (calculatedGrade < 83 && calculatedGrade >= 82)
+                    else if (calculatedGrade < 83 && calculatedGrade >= 82)
                     {
                         viewModel.Gpa = 2.7;
                     }
-                    if (calculatedGrade < 82 && calculatedGrade >= 81)
+                    else if (calculatedGrade < 82 && calculatedGrade >= 81)
                     {
                         viewModel.Gpa = 2.6;
                     }
-                    if (calculatedGrade < 81 && calculatedGrade >= 80)
+                    else if (calculatedGrade < 81 && calculatedGrade >= 80)
                     {
                         viewModel.Gpa = 2.7;
                     }
-                    else
+                    else if (calculatedGrade < 80 && calculatedGrade >= 79)
+                    {
+                        viewModel.Gpa = 2.5;
+                    }
+                    else if (calculatedGrade < 79 && calculatedGrade >= 78)
+                    {
+                        viewModel.Gpa = 2.6;
+                    }
+                    else if (calculatedGrade < 77 && calculatedGrade >= 76)
+                    {
+                        viewModel.Gpa = 2.5;
+                    }
+                    else if (calculatedGrade < 75 && calculatedGrade >= 74)
+                    {
+                        viewModel.Gpa = 2.4;
+                    }
+                    else if (calculatedGrade < 74 && calculatedGrade >= 73)
+                    {
+                        viewModel.Gpa = 2.3;
+                    }
+                    else if (calculatedGrade < 72 && calculatedGrade >= 71)
+                    {
+                        viewModel.Gpa = 2.2;
+                    }
+                    else if (calculatedGrade < 70 && calculatedGrade >= 69)
+                    {
+                        viewModel.Gpa = 2.1;
+                    }
+                    else if (calculatedGrade < 68 && calculatedGrade >= 67)
                     {
                         viewModel.Gpa = 2.0;
+                    }
+                    else if (calculatedGrade < 66 && calculatedGrade >= 65)
+                    {
+                        viewModel.Gpa = 1.9;
+                    }
+                    else if (calculatedGrade < 64 && calculatedGrade >= 63)
+                    {
+                        viewModel.Gpa = 1.8;
+                    }
+                    else
+                    {
+                        viewModel.Gpa = 1.5;
                     }
                 }
             }
