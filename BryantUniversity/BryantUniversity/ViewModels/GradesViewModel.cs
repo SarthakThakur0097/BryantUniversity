@@ -15,7 +15,7 @@ namespace BryantUniversity.ViewModels
         public SemesterPeriod GradeSemesterPeriod { get; set; }
         public int PeriodId { get; set; }
         public IList<SemesterPeriod> SemesterPeriods { get; set; }
-
+        public double Gpa { get; set; }
         public SelectList PeriodList
         {
             get

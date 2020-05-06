@@ -56,10 +56,118 @@ namespace BryantUniversity.Controllers
             return View(viewModel);
         }
 
-        [HttpPost]
+        [HttpGet]
         public ActionResult Grades()
         {
-            return View();
+            SemesterPeriodRepo spRepo;
+            GradesViewModel viewModel = new GradesViewModel();
+
+            using (context)
+            {
+                spRepo = new SemesterPeriodRepo(context);
+                viewModel.PopulateSelectList(spRepo.GetAllSemesterPeriods());
+            }
+                return View(viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Grades(GradesViewModel viewModel)
+        {
+            SemesterPeriodRepo spRepo;
+            GradesRepo gRepo;
+
+            using (context)
+            {
+                spRepo = new SemesterPeriodRepo(context);
+                gRepo = new GradesRepo(context);
+
+                viewModel.PopulateSelectList(spRepo.GetAllSemesterPeriods());
+                viewModel.Grades = gRepo.GetGradesByUserAndSemesterPeriodId(CustomUser.User.Id, viewModel.PeriodId);
+                double calculatedGrade = 0.0;
+
+                foreach(var toCalc in viewModel.Grades)
+                {
+                    if(viewModel.Grades.Count>1)
+                    {
+                        calculatedGrade += toCalc.FinalGrade / viewModel.Grades.Count;
+
+                    }
+                    else
+                    {
+                        calculatedGrade = toCalc.FinalGrade;
+                    }
+                    if (calculatedGrade>=95)
+                    {
+                        viewModel.Gpa = 4.0;
+                    }
+                    else if (calculatedGrade < 95 && calculatedGrade >= 94)
+                    {
+                        viewModel.Gpa = 3.9;
+                    }
+                    if (calculatedGrade < 94 && calculatedGrade >= 93)
+                    {
+                        viewModel.Gpa = 3.8;
+                    }
+                    if (calculatedGrade < 93 && calculatedGrade >= 92)
+                    {
+                        viewModel.Gpa = 3.7;
+                    }
+                    if (calculatedGrade < 92 && calculatedGrade >= 91)
+                    {
+                        viewModel.Gpa = 3.6;
+                    }
+                    if (calculatedGrade < 91 && calculatedGrade >= 90)
+                    {
+                        viewModel.Gpa = 3.5;
+                    }
+                    if (calculatedGrade < 90 && calculatedGrade >= 89)
+                    {
+                        viewModel.Gpa = 3.4;
+                    }
+                    if (calculatedGrade < 89 && calculatedGrade >= 88)
+                    {
+                        viewModel.Gpa = 3.3;
+                    }
+                    if (calculatedGrade < 88 && calculatedGrade >= 87)
+                    {
+                        viewModel.Gpa = 3.2;
+                    }
+                    if (calculatedGrade < 87 && calculatedGrade >= 86)
+                    {
+                        viewModel.Gpa = 3.1;
+                    }
+                    if (calculatedGrade < 86 && calculatedGrade >= 85)
+                    {
+                        viewModel.Gpa = 3.0;
+                    }
+                    if (calculatedGrade < 85 && calculatedGrade >= 84)
+                    {
+                        viewModel.Gpa = 2.9;
+                    }
+                    if (calculatedGrade < 84 && calculatedGrade >= 83)
+                    {
+                        viewModel.Gpa = 2.8;
+                    }
+                    if (calculatedGrade < 83 && calculatedGrade >= 82)
+                    {
+                        viewModel.Gpa = 2.7;
+                    }
+                    if (calculatedGrade < 82 && calculatedGrade >= 81)
+                    {
+                        viewModel.Gpa = 2.6;
+                    }
+                    if (calculatedGrade < 81 && calculatedGrade >= 80)
+                    {
+                        viewModel.Gpa = 2.7;
+                    }
+                    else
+                    {
+                        viewModel.Gpa = 2.0;
+                    }
+                }
+            }
+
+            return View(viewModel);
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿@model BryantUniversity.ViewModels.TranscriptViewModel
+﻿@model BryantUniversity.ViewModels.GradesViewModel
 
 @{
     ViewBag.Title = "Grades";
@@ -23,7 +23,7 @@
 
         </div>
         <div class="col-sm">
-            @using (Html.BeginForm("Index", "Transcript", FormMethod.Post, new { @class = "pure-form pure-form-aligned", id = "" }))
+            @using (Html.BeginForm("Grades", "Student", FormMethod.Post, new { @class = "pure-form pure-form-aligned", id = "" }))
             {
                 @Html.AntiForgeryToken()
 
@@ -56,24 +56,24 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @if (Model.AllGradesClasses != null)
+                    @if (Model.Grades != null)
                     {
-                        foreach (var classes in Model.AllGradesClasses)
+                        foreach (var course in Model.Grades)
                         {
                             <tr>
-                                <td>@classes.CourseSection.Course.CourseTitle</td>
-                                <td>@classes.CourseSection.Course.Id</td>
+                                <td>@course.Registration.CourseSection.Course.CourseTitle</td>
+                                <td>@course.FinalGrade</td>
                             </tr>
                         }
                     }
 
-                    else if (Model.AllNonGradedClasses.Count >= 1 && Model.AllGradesClasses.Count >= 1)
+                    else if (Model.Grades.Count >= 1 && Model.Grades.Count >= 1)
                     {
                         <tr>
                             <td>Grades haven't submitted for this semester yet</td>
                         </tr>
                     }
-                    <tr>Term GPA: @Model.TermGpa</tr>
+                    <tr>Term GPA: @Model.Gpa</tr>
                 </tbody>
             </table>
         </div>
