@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace BryantUniversity.Controllers
 {
-    [Authorize(Roles = "2")]
+    [Authorize(Roles = "2,1")]
     public class FacultyController : Controller
     {
 
