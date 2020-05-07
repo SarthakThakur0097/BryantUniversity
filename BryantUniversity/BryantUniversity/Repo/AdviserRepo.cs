@@ -21,7 +21,7 @@ namespace BryantUniversity.Repo
             return _context.Advisors
                 .Include(b => b.Faculty)
                 .Include(b => b.Student)
-                .Where(b => b.StudentId == id)
+                .Where(b => b.FacultyId == id)
                 .ToList();
         }
 

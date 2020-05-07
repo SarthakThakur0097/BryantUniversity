@@ -146,15 +146,26 @@ namespace BryantUniversity.Controllers
         public ActionResult Grades(GradesViewModel viewModel)
         {
             SemesterPeriodRepo spRepo;
+            RegistrationRepo rRepo;
             GradesRepo gRepo;
 
             using (context)
             {
                 spRepo = new SemesterPeriodRepo(context);
                 gRepo = new GradesRepo(context);
+                rRepo = new RegistrationRepo(context);
 
                 viewModel.PopulateSelectList(spRepo.GetAllSemesterPeriods());
                 viewModel.Grades = gRepo.GetGradesByUserAndSemesterPeriodId(CustomUser.User.Id, viewModel.PeriodId);
+
+                if(viewModel.Grades.Count == 0)
+                {
+                    viewModel.RegisteredClasses = rRepo.GetRegistrationByUserIdAndPeriodId(CustomUser.User.Id, viewModel.PeriodId);
+                }
+                if(viewModel.RegisteredClasses.Count > 0)
+                {
+                    return View(viewModel);
+                }
                 double calculatedGrade = 0.0;
 
                 foreach(var toCalc in viewModel.Grades)

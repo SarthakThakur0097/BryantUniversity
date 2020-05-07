@@ -231,181 +231,191 @@ INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 5 , 15)
 --African American Studies
 
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 6 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 6 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 6 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 6 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 6 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 6 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 6 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 6 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 6 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 6 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 6 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 6 , 12 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 6 , 16 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 6 , 17 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 6 , 18 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 6 , 19 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 6 , 20 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 6 , 21 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 6 , 22) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 6 , 23 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 6 , 24 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 6 , 25) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 6 , 26 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 6 , 27 ) 
 
 
 
---Amerincan Indian Studies
+--American Indian Studies
 
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 7 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 7 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 7 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 7 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 7 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 7 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 7 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 7 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 7 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 7 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 7 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 8 , 12 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 7 , 16 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 7 , 17 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 7 , 18 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 7 , 19 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 7 , 20 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 7 , 21 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 7 , 22 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 7 , 23 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 7 , 24 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 7 , 25 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 7 , 26 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 7 , 27 ) 
 
 --Asian American Studies
 
-
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 8 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 8 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 8 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 8 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 8 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 8 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 8 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 8 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 8 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 8 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 8 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 8 , 12 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 8 , 16 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 8 , 17 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 8 , 18 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 8 , 19 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 8 , 20 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 8 , 21 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 8 , 22 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 8 , 23 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 8 , 24 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 8 , 25 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 8 , 26 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 8 , 27 ) 
 
 
 --History
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 9 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 9 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 9 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 9 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 9 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 9 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 9 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 9 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 9 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 9 , 10) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 9 , 11) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 9 , 12 )
-
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 9 , 16 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 9 , 17 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 9 , 18 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 9 , 19 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 9 , 20 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 9 , 21 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 9 , 22 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 9 , 23 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 9 , 24 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 9 , 25 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 9 , 26 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 9 , 27 ) 
 
 
 --Ethic Studies
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 10 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 10 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 10 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 10 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 10 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 10 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 10 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 10 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 10 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 10 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 10 , 11) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 10 , 12) 
+
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 10 , 16 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 10 , 17 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 10 , 18 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 10 , 19 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 10 , 20 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 10 , 21 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 10 , 22 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 10 , 23 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 10 , 24 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 10 , 25 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 10 , 26 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 10 , 27 ) 
+
+
+
+
+
 
 
 
 /*Biological Science ---> 11-15 */
 
 
+
+
 --BioChemistry
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 11 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 11 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 11 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 11 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 11 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 11 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 11 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 11 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 11 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 11 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 11 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 11 , 12 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 11 , 13 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 11 , 14) 
+
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 11 , 28) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 11 , 29 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 11 , 30 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 11 , 31 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 11 , 32 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 11 , 33 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 11 , 34 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 11 , 35 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 11 , 36) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 11 , 37 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 11 , 38 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 11 , 39 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 11 , 40 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 11 , 41) 
+
 
 
 --Biochem & BiopHy
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 12 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 12 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 12 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 12 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 12 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 12 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 12 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 12 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 12 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 12 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 12 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 12 , 12 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 12 , 13 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 12 , 14) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 12 , 28) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 12 , 29 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 12 , 30 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 12 , 31 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 12 , 32 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 12 , 33 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 12 , 34 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 12 , 35 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 12 , 36) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 12 , 37 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 12 , 38 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 12 , 39 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 12 , 40 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 12 , 41) 
 
 
 
 --BioChem & Molecular Biology
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 13 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 13 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 13 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 13 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 13 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 13 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 13 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 13 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 13 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 13 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 13 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 13 , 12 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 13 , 13 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 13 , 14) 
 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 13 , 28) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 13 , 29 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 13 , 30 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 13 , 31 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 13 , 32 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 13 , 33 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 13 , 34 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 13 , 35 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 13 , 36) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 13 , 37 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 13 , 38 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 13 , 39 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 13 , 40 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 13 , 41) 
 
 
 
 --Molecular BioChem
 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 14 , 28) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 14 , 29 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 14 , 30 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 14 , 31 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 14 , 32 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 14 , 33 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 14 , 34 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 14 , 35 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 14 , 36) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 14 , 37 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 14 , 38 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 14 , 39 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 14 , 40 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 14 , 41) 
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 14 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 14 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 14 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 14 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 14 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 14 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 14 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 14 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 14 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 14 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 14 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 14 , 12 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 14 , 13 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 14 , 14) 
+
+
 
 
 --Molecular bio
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 15 , 28) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 15 , 29 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 15 , 30 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 15 , 31 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 15 , 32 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 15 , 33 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 15 , 34 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 15 , 35 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 15 , 36) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 15 , 37 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 15 , 38 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 15 , 39 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 15 , 40 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 15 , 41) 
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 15 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 15 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 15 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 15 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 15 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 15 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 15 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 15 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 15 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 15 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 15 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 15 , 12 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 15 , 13 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 15 , 14) 
 
 
 
@@ -417,197 +427,225 @@ INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 15 , 14)
 
 --Criminal Justice
 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 16 , 42) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 16 , 43 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 16 , 44 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 16 , 45 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 16 , 46 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 16 , 47 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 16 , 48 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 16 , 49 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 16 , 50 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 16 , 51 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 16 , 52 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 16 , 53 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 16 , 54 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 16 , 55) 
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 16 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 16 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 16 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 16 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 16 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 16 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 16 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 16 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 16 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 16 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 16 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 16 , 12 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 16 , 13 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 16 , 14 ) 
 
 
 
 --Emergency Man& Homeland Sec
 
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 17 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 17 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 17 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 17 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 17 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 17 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 17 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 17 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 17 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 17 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 17 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 17 , 12 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 17 , 13 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 17 , 14 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 17 , 42) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 17 , 43 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 17 , 44 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 17 , 45 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 17 , 46 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 17 , 47 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 17 , 48 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 17 , 49 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 17 , 50 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 17 , 51 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 17 , 52 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 17 , 53 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 17 , 54 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 17 , 55) 
+
+
+
+
 
 
 --Police Science
 
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 18 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 18 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 18 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 18 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 18 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 18 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 18 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 18 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 18 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 18 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 18 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 18 , 12 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 18 , 13 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 18 , 14 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 18 , 42) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 18 , 43 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 18 , 44 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 18 , 45 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 18 , 46 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 18 , 47 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 18 , 48 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 18 , 49 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 18 , 50 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 18 , 51 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 18 , 52 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 18 , 53 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 18 , 54 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 18 , 55) 
+
+
 
 
 --PreLaw Studies
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 19 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 19 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 19 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 19 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 19 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 19 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 19 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 19 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 19 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 19 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 19 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 19 , 12 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 19 , 13 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 19 , 14 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 19 , 42) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 19 , 43 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 19 , 44 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 19 , 45 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 19 , 46 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 19 , 47 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 19 , 48 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 19 , 49 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 19 , 50 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 19 , 51 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 19 , 52 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 19 , 53 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 19 , 54 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 19 , 55) 
+
+
 
 
 --Sociology
 
-
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 20 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 20 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 20 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 20 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 20 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 20 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 20 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 20 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 20 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 20 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 20 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 20 , 12 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 20 , 13 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 20 , 14 ) 
-
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 20 , 42) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 20 , 43 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 20 , 44 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 20 , 45 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 20 , 46 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 20 , 47 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 20 , 48 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 20 , 49 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 20 , 50 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 20 , 51 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 20 , 52 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 20 , 53 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 20 , 54 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES      ( 20 , 55) 
 
 
 
-/*History 8 philosphy  ---> 21-25*/
+
+
+/*History 8 philosophy  ---> 21-25*/
+
+
+
+
 
 --American History
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 21 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 21 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 21 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 21 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 21 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 21 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 21 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 21 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 21 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 21 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 21 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 21 , 12 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 21 , 13 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 21 , 14 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 21 , 15 ) 
+
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 21 , 56 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 21 , 57 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 21 , 58 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 21 , 59 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 21 , 60 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 21 , 61 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 21 , 62 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 21 , 63 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 21 , 64 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 21 , 65 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 21 , 66 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 21 , 67 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 21 , 68) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 21 , 69 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 21 , 70 ) 
+
+
 
 
 --Bio & American His
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 22 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 22 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 22 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 22 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 22 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 22 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 22 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 22 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 22 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 22 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 22 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 22 , 12 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 22 , 13 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 22 , 14 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 22 , 15 ) 
+
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 22 , 56 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 22 , 57 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 22 , 58 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 22 , 59 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 22 , 60 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 22 , 61 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 22 , 62 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 22 , 63 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 22 , 64 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 22 , 65 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 22 , 66 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 22 , 67 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 22 , 68) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 22 , 69 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 22 , 70 ) 
 
 
---Non- Westen His
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 23 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 23 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 23 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 23 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 23 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 23 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 23 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 23 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 23 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 23 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 23 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 23 , 12 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 23 , 13 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 23 , 14 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 23 , 15 ) 
+
+
+
+
+
+--Bio & American His
+
+
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 23 , 56 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 23 , 57 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 23 , 58 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 23 , 59 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 23 , 60 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 23 , 61 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 23 , 62 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 23 , 63 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 23 , 64 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 23 , 65 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 23 , 66 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 23 , 67 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 23 , 68) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 23 , 69 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 23 , 70 ) 
+
+
 
 
 
 --European History
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 24 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 24 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 24 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 24 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 24 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 24 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 24 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 24 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 24 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 24 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 24 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 24 , 12 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 24 , 13 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 24 , 14 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 24 , 15 ) 
+
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 24 , 56 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 24 , 57 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 24 , 58 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 24 , 59 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 24 , 60 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 24 , 61 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 24 , 62 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 24 , 63 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 24 , 64 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 24 , 65 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 24 , 66 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 24 , 67 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 24 , 68) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 24 , 69 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 24 , 70 ) 
 
 
 --American Civil War
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 25 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 25 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 25 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 25 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 25 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 25 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 25 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 25 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 25 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 25 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 25 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 25 , 12 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 25 , 13 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 25 , 14 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 25 , 15 ) 
+
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 25 , 56 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 25 , 57 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 25 , 58 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 25 , 59 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 25 , 60 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 25 , 61 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 25 , 62 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 25 , 63 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 25 , 64 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 25 , 65 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 25 , 66 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 25 , 67 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 25 , 68) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 25 , 69 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 25 , 70 ) 
+
 
 
 
@@ -615,104 +653,115 @@ INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES       ( 25 , 15 )
 /*Mathematics --> 26-30  */
 
 
+
+
 --Accounting
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 26 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 26 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 26 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 26 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 26 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 26 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 26 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 26 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 26 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 26 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 26 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 26 , 12 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 26 , 13 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 26 , 14 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 26 , 15 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 26 , 71 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 26 , 72 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 26 , 73 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 26 , 74 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 26 , 75 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 26 , 76 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 26 , 77) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 26 , 78 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 26 , 79 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 26 , 80 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 26 , 81 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 26 , 82 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 26 , 83 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 26 , 84 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 26 , 85 ) 
 
 
 
 --Applied Math
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 27 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 27 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 27 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 27 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 27 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 27 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 27 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 27 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 27 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 27 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 27 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 27 , 12 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 27 , 13 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 27 , 14 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 27 , 15 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 27 , 71 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 27 , 72 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 27 , 73 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 27 , 74 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 27 , 75 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 27 , 76 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 27 , 77) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 27 , 78 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 27 , 79 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 27 , 80 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 27 , 81 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 27 , 82 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 27 , 83 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 27 , 84 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 27 , 85 ) 
 
 
 
----Acruarial Science
+---Actuarial Scienc
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 28 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 28 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 28 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 28 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 28 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 28 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 28 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 28 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 28 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 28 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 28 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 28 , 12 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 28 , 13 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 28 , 14 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 28 , 15 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 28 , 71 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 28 , 72 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 28 , 73 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 28 , 74 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 28 , 75 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 28 , 76 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 28 , 77) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 28 , 78 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 28 , 79 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 28 , 80 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 28 , 81 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 28 , 82 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 28 , 83 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 28 , 84 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 28 , 85 ) 
 
 
 
 ---Managment Science
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 29 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 29 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 29 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 29 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 29 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 29 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 29 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 29 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 29 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 29 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 29 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 29 , 12 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 29 , 13 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 29 , 14 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 29 , 15 ) 
+
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 29 , 71 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 29 , 72 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 29 , 73 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 29 , 74 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 29 , 75 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 29 , 76 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 29 , 77) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 29 , 78 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 29 , 79 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 29 , 80 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 29 , 81 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 29 , 82 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 29 , 83 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 29 , 84 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 29 , 85 ) 
 
 
 
 ---Statistics
 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 30 , 71 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 30 , 72 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 30 , 73 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 30 , 74 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 30 , 75 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 30 , 76 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 30 , 77) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 30 , 78 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 30 , 79 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 30 , 80 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 30 , 81 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 30 , 82 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 30 , 83 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 30 , 84 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 30 , 85 ) 
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 30 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 30 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 30 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 30 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 30 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 30 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 30 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 30 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 30 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 30 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 30 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 30 , 12 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 30 , 13 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 30 , 14 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 30 , 15 ) 
+
+
+
+
+
+
+
+
 
 
 
@@ -721,270 +770,303 @@ INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES        ( 30 , 15 )
 /*Modern Lang --> 31-35 */
 
 
+
+
 --Arabic
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 31 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 31 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 31 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 31 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 31 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 31 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 31 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 31 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 31 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 31 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 31 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 31 , 12 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 31 , 86 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 31 , 87 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 31 , 88 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 31 , 89 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 31 , 90 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 31 , 91 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 31 , 92 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 31 , 93 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 31 , 94 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 31 , 95) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 31 , 96 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 31 , 97 ) 
 
 
 
 --Asian
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 32 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 32 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 32 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 32 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 32 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 32 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 32 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 32 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 32 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 32 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 32 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 32 , 12 ) 
+
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 32 , 86 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 32 , 87 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 32 , 88 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 32 , 89 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 32 , 90 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 32 , 91 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 32 , 92 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 32 , 93 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 32 , 94 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 32 , 95) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 32 , 96 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 32 , 97 ) 
 
 
 
 --Chinese
 
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 33 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 33 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 33 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 33 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 33 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 33 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 33 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 33 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 33 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 33 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 33 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 33 , 12 ) 
+
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 33 , 86 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 33 , 87 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 33 , 88 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 33 , 89 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 33 , 90 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 33 , 91 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 33 , 92 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 33 , 93 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 33 , 94 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 33 , 95) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 33 , 96 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 33 , 97 ) 
+
+
 
 
 
 --Italian
 
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 34 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 34 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 34 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 34 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 34 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 34 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 34 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 34 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 34 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 34 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 34 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 34 , 12 ) 
+
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 34 , 86 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 34 , 87 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 34 , 88 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 34 , 89 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 34 , 90 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 34 , 91 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 34 , 92 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 34 , 93 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 34 , 94 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 34 , 95) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 34 , 96 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 34 , 97 ) 
 
 
 
 --Japanese
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 35 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 35 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 35 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 35 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 35 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 35 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 35 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 35 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 35 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 35 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 35 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 35 , 12 ) 
+
+
+
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 35 , 86 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 35 , 87 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 35 , 88 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 35 , 89 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 35 , 90 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 35 , 91 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 35 , 92 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 35 , 93 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 35 , 94 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 35 , 95) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 35 , 96 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES         ( 35 , 97 ) 
+
 
 
 
 /* Psychology*/
 
+
+
+
 ---Behavioral Sciences
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 36 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 36 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 36 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 36 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 36 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 36 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 36 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 36 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 36 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 36 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 36 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 36 , 12 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 36 , 13 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 36 , 14 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 36 , 98 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 36 , 99 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 36 , 100 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 36 , 101) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 36 , 102 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 36 , 103 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 36 , 104 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 36 , 105 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 36 , 106) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 36 , 107 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 36 , 108 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 36 , 109 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 36 , 110 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 36 , 111 ) 
+
 
 
 --Clinical Psychology
 
-
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 37 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 37 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 37 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 37 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 37 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 37 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 37 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 37 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 37 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 37 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 37 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 37 , 12 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 37 , 13 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 37 , 14 ) 
-
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 37 , 98 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 37 , 99 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 37 , 100 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 37 , 101) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 37 , 102 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 37 , 103 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 37 , 104 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 37 , 105 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 37 , 106) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 37 , 107 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 37 , 108 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 37 , 109 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 37 , 110 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 37 , 111 ) 
 
 
 --Counseling Psychology
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 38 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 38 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 38 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 38 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 38 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 38 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 38 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 38 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 38 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 38 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 38 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 38 , 12 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 38 , 13 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 38 , 14 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 38 , 98 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 38 , 99 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 38 , 100 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 38 , 101) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 38 , 102 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 38 , 103 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 38 , 104 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 38 , 105 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 38 , 106) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 38 , 107 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 38 , 108 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 38 , 109 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 38 , 110 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 38 , 111 ) 
 
 
 
 
 -- Social Psychology
 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 39 , 98 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 39 , 99 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 39 , 100 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 39 , 101) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 39 , 102 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 39 , 103 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 39 , 104 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 39 , 105 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 39 , 106) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 39 , 107 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 39 , 108 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 39 , 109 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 39 , 110 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 39 , 111 ) 
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 39 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 39 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 39 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 39 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 39 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 39 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 39 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 39 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 39 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 39 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 39 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 39 , 12 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 39 , 13 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 39 , 14 ) 
 
 
 --Developmental/Child Psychology
 
-
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 40 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 40 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 40 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 40 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 40 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 40 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 40 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 40 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 40 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 40 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 40 , 11 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 40 , 12 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 40 , 13 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 40 , 14 ) 
-
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 40 , 98 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 40 , 99 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 40 , 100 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 40 , 101) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 40 , 102 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 40 , 103 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 40 , 104 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 40 , 105 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 40 , 106) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 40 , 107 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 40 , 108 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 40 , 109 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 40 , 110 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES          ( 40 , 111 ) 
 
 
 
 
 
 
-/*School fo Busniess 41-45 */
+
+
+
+
+
+
+
+
+
+
+
+
+/*School of Business- --->  41-45 */
+
+
+
 
 
 ----Business Admin
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 41 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 41 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 41 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 41 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 41 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 41 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 41 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 41 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 41 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 41 , 10 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 41 , 112) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 41 , 113 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 41 , 114 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 41 , 115 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 41 , 116) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 41 , 117) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 41 , 118 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 41 , 119 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 41 , 120 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 41 , 121 ) 
+
 
 
 
 --Marketing
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 42 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 42 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 42 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 42 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 42 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 42 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 42 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 42 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 42 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 42 , 10) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 42 , 112) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 42 , 113 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 42 , 114 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 42 , 115 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 42 , 116) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 42 , 117) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 42 , 118 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 42 , 119 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 42 , 120 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 42 , 121 ) 
 
 
 
 -- International Business.
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 43 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 43 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 43 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 43 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 43 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 43 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 43 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 43 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 43 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 43 , 10) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 43 , 112) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 43 , 113 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 43 , 114 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 43 , 115 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 43 , 116) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 43 , 117) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 43 , 118 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 43 , 119 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 43 , 120 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 43 , 121 ) 
+
 
 
 -- Business Communications
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 44 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 44 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 44 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 44 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 44 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 44 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 44 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 44 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 44 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 44 , 10) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 44 , 112) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 44 , 113 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 44 , 114 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 44 , 115 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 44 , 116) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 44 , 117) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 44 , 118 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 44 , 119 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 44 , 120 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 44 , 121 ) 
+
 
 
 -- Real Estate
 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 45 , 112) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 45 , 113 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 45 , 114 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 45 , 115 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 45 , 116) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 45 , 117) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 45 , 118 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 45 , 119 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 45 , 120 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 45 , 121) 
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 45 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 45 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 45 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 45 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 45 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 45 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 45 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 45 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 45 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 45 , 10) 
+
+
+
+
 
 
 
@@ -992,135 +1074,133 @@ INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES           ( 45 , 10)
 /*Sociology -->46-50*/
 
 
+
 --Anthropology
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 46 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 46 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 46 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 46 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 46 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 46 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 46 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 46 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 46 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 46 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 46 , 11 ) 
-
-
-
-
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 46 , 122) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 46 , 123 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 46 , 124 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 46 , 125 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 46 , 126 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 46 , 127 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 46 , 128 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 46 , 129 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 46 , 130 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 46 , 131) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 46 , 132 ) 
 
 
 
 --Community Organization and Advocacy
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 47 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 47 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 47 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 47 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 47 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 47 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 47 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 47 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 47 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 47 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 47 , 11 ) 
 
-
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 47 , 122) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 47 , 123 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 47 , 124 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 47 , 125 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 47 , 126 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 47 , 127 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 47 , 128 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 47 , 129 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 47 , 130 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 47 , 131) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 47 , 132 ) 
 
 
 
 
 --Human Development and Family Studies
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES             ( 48 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES             ( 48 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES             ( 48 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES             ( 48 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES             ( 48 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES             ( 48 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES             ( 48 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES             ( 48 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES             ( 48 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES             ( 48 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES             ( 48 , 11 ) 
-
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 48 , 122) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 48 , 123 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 48 , 124 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 48 , 125 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 48 , 126 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 48 , 127 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 48 , 128 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 48 , 129 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 48 , 130 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 48 , 131) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 48 , 132 ) 
 
 
 
 
 --Public Administration
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 49 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 49 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 49 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 49 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 49 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 49 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 49 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 49 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 49 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 49 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 49 , 11 ) 
+
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 49 , 122) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 49 , 123 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 49 , 124 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 49 , 125 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 49 , 126 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 49 , 127 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 49 , 128 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 49 , 129 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 49 , 130 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 49 , 131) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 49 , 132 ) 
+
 
 
 
 
 --Public Relations
 
-
-
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 50 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 50 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 50 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 50 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 50 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 50 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 50 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 50 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 50 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 50 , 10 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 50 , 11 ) 
-
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 50 , 122) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 50 , 123 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 50 , 124 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 50 , 125 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 50 , 126 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 50 , 127 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 50 , 128 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 50 , 129 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 50 , 130 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 50 , 131) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 50 , 132 ) 
 
 
 
-/*Visul Studies -->51-55 */
+
+
+
+/*Visual Studies -->51-55 */
+
+
+
+
 
 
 --Art and Culture of Seeing
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 51 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 51 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 51 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 51 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 51 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 51 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 51 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 51 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 51 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 51 , 10 ) 
 
-
-
-
-
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 51 , 133 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 51 , 134 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 51 , 135 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 51 , 136 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 51 , 137 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 51 , 138 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 51 , 139) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 51 , 140 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 51 , 141 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 51 , 142 ) 
 
 
 
 
 --Visual Arts 
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 52, 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 52, 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 52, 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 52, 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 52, 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 52, 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 52, 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 52, 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 52, 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 52, 10 ) 
+
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 52 , 133 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 52 , 134 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 52 , 135 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 52 , 136 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 52 , 137 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 52 , 138 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 52 , 139) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 52 , 140 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 52 , 141 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 52 , 142 ) 
 
 
 
@@ -1132,35 +1212,34 @@ INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 52, 10 )
 --Integrated Visual Studies
 
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 53 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 53 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 53 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 53 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 53 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 53 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 53 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 53 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 53 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 53 , 10 ) 
-
-
-
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 53 , 133 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 53 , 134 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 53 , 135 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 53 , 136 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 53 , 137 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 53 , 138 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 53 , 139) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 53 , 140 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 53 , 141 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 53 , 142 ) 
 
 
 
 
 --Theatre
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 54 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 54 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 54 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 54 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 54 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 54 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 54 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 54 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 54 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 54 , 10 ) 
+
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 54 , 133 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 54 , 134 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 54 , 135 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 54 , 136 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 54 , 137 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 54 , 138 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 54 , 139) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 54 , 140 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 54 , 141 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 54 , 142 ) 
+
 
 
 
@@ -1170,36 +1249,37 @@ INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 54 , 10 )
 --Creativity in Writing
 
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 55 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 55 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 55 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 55 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 55 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 55 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 55 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 55 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 55 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 55 , 10 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 55 , 133 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 55 , 134 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 55 , 135 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 55 , 136 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 55 , 137 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 55 , 138 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 55 , 139) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 55 , 140 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 55 , 141 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 55 , 142 ) 
 
 
 
-/*English Literatue -- > 55-60*/
+
+/*English Literature -- > 56-60*/
+
+
+
 
 
 
 --Literature
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 56 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 56 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 56 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 56 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 56 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 56 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 56 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 56 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 56 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 56 , 10 ) 
-
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 56 , 143 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 56 , 144 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 56 , 145 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 56 , 146) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 56 , 147 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 56 , 148 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 56 , 149 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 56 , 150) 
 
 
 
@@ -1207,17 +1287,16 @@ INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 56 , 10 )
 
 --Journalism
 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 57 , 143 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 57 , 144 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 57 , 145 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 57 , 146) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 57 , 147 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 57 , 148 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 57 , 149 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 57 , 150) 
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 57 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 57 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 57 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 57 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 57 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 57 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 57 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 57 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 57 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 57 , 10 ) 
+
 
 
 
@@ -1227,17 +1306,14 @@ INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 57 , 10 )
 --Economics
 
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 58 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 58 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 58 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 58 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 58 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 58 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 58 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 58 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 58 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 58 , 10 ) 
-
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 58 , 143 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 58 , 144 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 58 , 145 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 58 , 146) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 58 , 147 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 58 , 148 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 58 , 149 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 58 , 150) 
 
 
 
@@ -1245,16 +1321,15 @@ INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 58 , 10 )
 
 --Law
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 59 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 59 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 59 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 59 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 59 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 59 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 59 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 59 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 59 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 59 , 10 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 59 , 143 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 59 , 144 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 59 , 145 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 59 , 146) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 59 , 147 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 59 , 148 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 59 , 149 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 59 , 150) 
+
 
 
 
@@ -1264,18 +1339,31 @@ INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 59 , 10 )
 
 --Philosophy
 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 60 , 1 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 60 , 2 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 60 , 3 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 60 , 4 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 60 , 5 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 60 , 6 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 60 , 7 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 60 , 8 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 60 , 9 ) 
-INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 60 , 10 ) 
 
---Major Pre-Requirments
+
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 60 , 143 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 60 , 144 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 60 , 145 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 60 , 146) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 60 , 147 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 60 , 148 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 60 , 149 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES            ( 60 , 150)
+
+
+
+
+
+
+
+
+
+
+
+-----Major Pre-Requirements
+
+
+----Computer Science
 
 INSERT INTO [BryantDB].[dbo].[MajorPreRequisite] VALUES  (1,NULL)
 INSERT INTO [BryantDB].[dbo].[MajorPreRequisite] VALUES  (2,1)

@@ -58,21 +58,34 @@
                 <tbody>
                     @if (Model.Grades != null)
                     {
-                        foreach (var course in Model.Grades)
+                        if (Model.Grades.Count > 0)
                         {
+                            foreach (var course in Model.Grades)
+                            {
                             <tr>
                                 <td>@course.Registration.CourseSection.Course.CourseTitle</td>
                                 <td>@course.FinalGrade</td>
                             </tr>
+                            }
                         }
                     }
-
-                    else if (Model.Grades.Count >= 1 && Model.Grades.Count >= 1)
+                    @if (Model.RegisteredClasses != null)
                     {
-                        <tr>
-                            <td>Grades haven't submitted for this semester yet</td>
-                        </tr>
+                        if (Model.RegisteredClasses.Count > 0 && Model.Grades.Count == 0)
+                        {
+                            foreach (var course in Model.RegisteredClasses)
+                            {
+                            <tr>
+                                <td>@course.CourseSection.Course.CourseTitle</td>
+                                <td>Pending</td>
+
+                            </tr>
+                            }
+                            @Html.ActionLink("Drop a course", "Drop", "Student", new {}, new { @class = "btn btn-info" })
+
+                        }
                     }
+                    
                     <tr>Term GPA: @Model.Gpa</tr>
                 </tbody>
             </table>
