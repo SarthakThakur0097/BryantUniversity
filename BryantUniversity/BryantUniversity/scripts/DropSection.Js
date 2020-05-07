@@ -17,7 +17,7 @@
     async function DropClass(id){
 
         try{
-            const response = await fetch('http://localhost:51934/api/CourseSection/' + id, {
+            const response = await fetch('https://bryantweb.azurewebsites.net/api/CourseSection/' + id, {
                 method: "POST",
                 credentials: "include",
                 headers: {
