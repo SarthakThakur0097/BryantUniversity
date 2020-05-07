@@ -12,6 +12,7 @@ using System.Web.Mvc;
 
 namespace BryantUniversity.Controllers
 {
+    [AllowAnonymous]
     public class ScheduleController : Controller
     {
         private Context context;

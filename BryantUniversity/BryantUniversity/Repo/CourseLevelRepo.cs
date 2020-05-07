@@ -25,7 +25,7 @@ namespace BryantUniversity.Repo
         {
             return _context
                         .CourseLevels
-                        .SingleOrDefault(c => c.Id == id);
+                        .FirstOrDefault(c => c.Id == id);
         }
 
         public void Insert(CourseLevel courselevel)

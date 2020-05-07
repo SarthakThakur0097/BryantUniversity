@@ -21,7 +21,7 @@ namespace BryantUniversity.Repo
 
         public Role GetById(int id)
         {
-            return _context.Roles.SingleOrDefault(c => c.Id == id);
+            return _context.Roles.FirstOrDefault(c => c.Id == id);
         }
 
         public void Insert(Role role)

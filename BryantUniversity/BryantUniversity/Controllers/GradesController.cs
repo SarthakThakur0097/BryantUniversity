@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace BryantUniversity.Controllers
 {
+    [Authorize(Roles = "2,1")]
     public class GradesController : Controller
     {
         private Context context;
@@ -61,7 +62,6 @@ namespace BryantUniversity.Controllers
                 }
 
             }
-
             return View();
         }
     }

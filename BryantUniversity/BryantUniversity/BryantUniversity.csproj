@@ -192,6 +192,7 @@
     <Content Include="scripts\calendar.js" />
     <Content Include="scripts\course.js" />
     <Content Include="scripts\CourseSearch.js" />
+    <Content Include="scripts\DropSection.js" />
     <Content Include="scripts\jquery-1.10.2.js" />
     <Content Include="scripts\jquery-1.10.2.min.js" />
     <Content Include="scripts\MangeHold.js" />
@@ -260,6 +261,7 @@
     <Compile Include="Models\StudentHolds.cs" />
     <Compile Include="Models\StudentLevel.cs" />
     <Compile Include="Models\StudentMajor.cs" />
+    <Compile Include="Repo\AdviserRepo.cs" />
     <Compile Include="Repo\BuildingRepo.cs" />
     <Compile Include="Repo\CalendarRepo.cs" />
     <Compile Include="Repo\ClassDurationRepo.cs" />
@@ -279,6 +281,7 @@
     <Compile Include="Repo\RegistrationRepo.cs" />
     <Compile Include="Repo\SemesterPeriodRepo.cs" />
     <Compile Include="Repo\StudentHoldRepo.cs" />
+    <Compile Include="Repo\StudentMajorRepo.cs" />
     <Compile Include="Repo\UserRepo.cs" />
     <Compile Include="Repo\UserRoleRepo.cs" />
     <Compile Include="Models\Role.cs" />
@@ -287,9 +290,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\CustomIdentity.cs" />
     <Compile Include="Security\CustomPrincipal.cs" />
+    <Compile Include="ViewModels\AdvisingViewModel.cs" />
     <Compile Include="ViewModels\CoursePreReqViewModel.cs" />
     <Compile Include="ViewModels\CourseSectionViewModel.cs" />
     <Compile Include="ViewModels\CourseViewModel.cs" />
+    <Compile Include="ViewModels\DropViewModel.cs" />
     <Compile Include="ViewModels\GradesViewModel.cs" />
     <Compile Include="ViewModels\HoldViewModel.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
@@ -346,6 +351,9 @@
     <Content Include="Views\Faculty\Advisor.cshtml" />
     <Content Include="Views\Courses\Catalog.cshtml" />
     <Content Include="Views\Student\Grades.cshtml" />
+    <Content Include="Views\Student\Transcript.cshtml" />
+    <Content Include="Views\Student\Drop.cshtml" />
+    <Content Include="Views\Faculty\Advising.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

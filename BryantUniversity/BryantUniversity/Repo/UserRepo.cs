@@ -24,7 +24,7 @@ namespace BryantUniversity.Models.Repo
         public User GetById(int id)
         {
             return _context.Users
-                .SingleOrDefault(c => c.Id == id);
+                .FirstOrDefault(c => c.Id == id);
         }
 
         public IList<User> GetUsersByRole(int roleId)
@@ -54,7 +54,7 @@ namespace BryantUniversity.Models.Repo
         public User GetByEmail(string email)
         {
             return _context.Users
-                .SingleOrDefault(c => c.Email == email);
+                .FirstOrDefault(c => c.Email == email);
         }
 
         public void Insert(User user)

@@ -12,6 +12,7 @@ namespace BryantUniversity.ViewModels
         }
 
         public IList<Grade> Grades { get; set; }
+        public IList<Registration> RegisteredClasses { get; set; }
         public SemesterPeriod GradeSemesterPeriod { get; set; }
         public int PeriodId { get; set; }
         public IList<SemesterPeriod> SemesterPeriods { get; set; }

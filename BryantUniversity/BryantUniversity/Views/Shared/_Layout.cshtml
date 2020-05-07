@@ -127,10 +127,6 @@
                     <li class="nav-item">
                         @Html.ActionLink("Schedule", "Schedule", "Student", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
-
-                    <li class="nav-item">
-                        @Html.ActionLink("Academics", "Grades", "Student", new { area = "" }, new { @class = "navbar-brand" })
-                    </li>
                 }
 
             </ul>
@@ -143,11 +139,27 @@
         </div>
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <ul class="navbar-nav ml-auto">
+            @if (Request.IsAuthenticated && ((BryantUniversity.Security.CustomPrincipal)User).IsInRole("4"))
+            {
+                <li class="nav-item">
+                    @Html.ActionLink("Academics", "Grades", "Student", new { area = "" }, new { @class = "navbar-brand" })
+                </li>
 
+                <li class="nav-item">
+                    @Html.ActionLink("Transcript", "Transcript", "Student", new { area = "" }, new { @class = "navbar-brand" })
+                </li>
+            }
+            else if (Request.IsAuthenticated && ((BryantUniversity.Security.CustomPrincipal)User).IsInRole("2"))
+            {
+                <li class="nav-item">
+                    @Html.ActionLink("Advising", "Advising", "Faculty", new { area = "" }, new { @class = "navbar-brand" })
+                </li>
+            }
             <li class="nav-item">
                 <div>
                     @if (Request.IsAuthenticated)
                     {
+
                         <div class="navbar-text navbar-right" id="username">
                             <span>Welcome @(((BryantUniversity.Security.CustomPrincipal)User).User.Name)! </span>
                         </div>
@@ -155,9 +167,10 @@
                 </div>
                 </li>
                 <li class="nav-item">
-                    <div class="col">
+                    
                         @if (Request.IsAuthenticated)
                         {
+
                             using (Html.BeginForm("Logout", "Account", FormMethod.Post))
                             {
                                 <button class="btn navbar-brand cen" type="submit">Log Out</button>
@@ -165,9 +178,9 @@
                         }
                         else
                         {
-                            @Html.ActionLink("Log In", "Login", "Account", new { area = "" }, new { @class = "navbar-brand" })
+                            @Html.ActionLink("Log In", "Login", "Account", new { area = "" }, new { @class = "btn btn-outline-success" })
                         }
-                    </div>
+                    
                 </li>
             </ul>
         </div>

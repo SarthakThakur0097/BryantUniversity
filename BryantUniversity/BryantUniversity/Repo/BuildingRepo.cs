@@ -26,7 +26,7 @@ namespace BryantUniversity.Repo
 
         public Building GetById(int buildingId)
         {
-            return _context.Buildings.SingleOrDefault(c => c.Id == buildingId);
+            return _context.Buildings.FirstOrDefault(c => c.Id == buildingId);
         }
 
 

@@ -24,7 +24,7 @@ namespace BryantUniversity.Repo
         {
             return _context.ClassTimes
                 .Where(c => c.Id == timeId).ToList();
-            //SingleOrDefault(c => c.Id == id);
+            //FirstOrDefault(c => c.Id == id);
         }
 
 

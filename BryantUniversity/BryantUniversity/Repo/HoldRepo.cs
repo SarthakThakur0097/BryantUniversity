@@ -25,7 +25,7 @@ namespace BryantUniversity.Repo
         public Hold GetById(int id)
         {
             return _context.Holds
-                .SingleOrDefault(c => c.Id == id);
+                .FirstOrDefault(c => c.Id == id);
         }
 
         public IList<Hold> GetUsersByRole(int holdId)

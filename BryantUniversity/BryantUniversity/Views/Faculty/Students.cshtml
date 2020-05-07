@@ -5,11 +5,12 @@
 
 <h2>Students</h2>
 
-<table class="pure-table pure-table-horizontal">
-    <thead>
+<table class="table">
+    <thead class="thead-dark">
         <tr lass="bench-row">
             <th>Name</th>
             <th>Email</th>
+            <th></th>
         </tr>
     </thead>
 
@@ -20,7 +21,7 @@
                 <td>@student.User.Name</td>
                 <td>@student.User.Email</td>
                 <td>
-                    @Html.ActionLink("assign grade", "Assign", "Grades", new { id = student.User.Id, rId = student.CourseSectionId }, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("assign grade", "Assign", "Grades", new { id = student.User.Id, rId = student.CourseSectionId }, new { @class = "btn btn-success" })
                 </td>
             </tr>
         }

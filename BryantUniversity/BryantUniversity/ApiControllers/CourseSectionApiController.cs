@@ -18,6 +18,23 @@ namespace BryantUniversity.ApiControllers
             context = new Context();
         }
 
+        [Route("{coursectionId}")]
+        [HttpPost]
+        public IHttpActionResult DropStudentCourse(int coursectionId)
+        {
+            bool test = ModelState.IsValid;
+
+            RegistrationRepo rRepo;
+
+            using (context)
+            {
+                rRepo = new RegistrationRepo(context);
+                rRepo.Delete(coursectionId);
+
+                return Json(new { redirectUrl = "/Student/Schedule", error = "" });
+            }
+        }
+
         [Route("Assign")]
         [HttpPost]
         public IHttpActionResult AssignTeacherToCourse([FromBody]CourseSection courseSection)

@@ -18,7 +18,8 @@ namespace BryantUniversity.Repo
         public MajorRequirements GetById(int id)
         {
             return _context.MajorRequirements
-                .SingleOrDefault(c => c.Id == id);
+                .Include(m => m.Course)
+                .FirstOrDefault(c => c.Id == id);
         }
 
         public IList<MajorRequirements> GetAllMajorRequirments()
