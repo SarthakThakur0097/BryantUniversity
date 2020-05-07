@@ -3,8 +3,11 @@
 @{
     ViewBag.Title = "Add";
 }
-
-@if(Model.SameClassConflict)
+@if (Model.PreviousSemesterConflict)
+{
+    <h1> You can no longer register for this semester </h1>
+}
+else if (Model.SameClassConflict)
 {
     <h1> Same class error </h1>
 }
