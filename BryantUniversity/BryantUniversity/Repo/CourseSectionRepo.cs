@@ -30,6 +30,7 @@ namespace BryantUniversity.Repo
         {
             return _context.CourseSections
                             .Include(cR => cR.Course)
+                            .Include(cR => cR.Course.CourseLevel)
                             .Include(cR => cR.Professor)
                             .Include(cR => cR.Room)
                             .Include(cR => cR.SemesterPeriod)
@@ -56,6 +57,7 @@ namespace BryantUniversity.Repo
         {
             return _context.CourseSections
                             .Include(cR => cR.Course)
+                            .Include(cR => cR.Course.CourseLevel)
                             .Include(cR => cR.Professor)
                             .Include(cR => cR.Room)
                             .Include(cR => cR.Room.Building)
