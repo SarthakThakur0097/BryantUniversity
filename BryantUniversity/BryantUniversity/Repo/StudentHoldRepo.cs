@@ -36,12 +36,12 @@ namespace BryantUniversity.Repo
             return _context.StudentHolds
                             .Include(s => s.User)
                             .Where(u => u.Id == id)
-                            .SingleOrDefault(c => c.Id == id);
+                            .FirstOrDefault(c => c.Id == id);
         }
 
         public StudentHold GetById(int id)
         {
-            return _context.StudentHolds.SingleOrDefault(c => c.Id == id);
+            return _context.StudentHolds.FirstOrDefault(c => c.Id == id);
         }
 
         public StudentHold GetByHoldId(int id)
@@ -49,7 +49,7 @@ namespace BryantUniversity.Repo
             return _context.StudentHolds
                             .Include(h => h.Hold)
                             .Where(h => h.HoldId == id)
-                            .SingleOrDefault(c => c.Id == id);
+                            .FirstOrDefault(c => c.Id == id);
         }
 
         public void Insert(StudentHold studenthold)

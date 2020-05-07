@@ -25,7 +25,7 @@ namespace BryantUniversity.Repo
 
         public Grade GetById(int gradeId)
         {
-            return _context.Grades.SingleOrDefault(c => c.Id == gradeId);
+            return _context.Grades.FirstOrDefault(c => c.Id == gradeId);
         }
 
         public bool ContainsRegistration(int id)

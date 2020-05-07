@@ -28,7 +28,7 @@ namespace BryantUniversity.Repo
         {
             return _context
                         .Courses
-                        .SingleOrDefault(c => c.Id == id);
+                        .FirstOrDefault(c => c.Id == id);
         }
 
         public IList<Course> GetByDepartment(int id)
@@ -48,7 +48,7 @@ namespace BryantUniversity.Repo
                         .Include(c => c.Department)
                         .Include(c => c.CourseLevel)
                         .Where(c => c.CourseTitleId == id)
-                        .SingleOrDefault();
+                        .FirstOrDefault();
         }
 
         public IList<Course> GetAllCoursesAndPreReqsByDepartment(int id)

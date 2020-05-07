@@ -62,7 +62,7 @@ namespace BryantUniversity.Repo
 
         public Registration GetById(int id)
         {
-            return _context.Registrations.SingleOrDefault(r => r.Id == id);
+            return _context.Registrations.FirstOrDefault(r => r.Id == id);
         }
 
         public IList<Registration> GetRegistrationByUserAndCourseSection(int userId, int courseSectoinId)

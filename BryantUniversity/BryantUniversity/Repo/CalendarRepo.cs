@@ -23,7 +23,7 @@ namespace BryantUniversity.Models.Repo
         {
             return _context.CalendarEvents
                 .Where(c => c.SemPeriod.Id == periodId).ToList();
-                //SingleOrDefault(c => c.Id == id);
+                //FirstOrDefault(c => c.Id == id);
         }
 
 

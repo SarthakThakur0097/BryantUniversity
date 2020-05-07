@@ -18,7 +18,7 @@ namespace BryantUniversity.Repo
         public Major GetById(int id)
         {
             return _context.Majors
-                .SingleOrDefault(c => c.Id == id);
+                .FirstOrDefault(c => c.Id == id);
         }
 
         public IList<Major> GetAllMajors()

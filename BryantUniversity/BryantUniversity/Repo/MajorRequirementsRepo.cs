@@ -19,7 +19,7 @@ namespace BryantUniversity.Repo
         {
             return _context.MajorRequirements
                 .Include(m => m.Course)
-                .SingleOrDefault(c => c.Id == id);
+                .FirstOrDefault(c => c.Id == id);
         }
 
         public IList<MajorRequirements> GetAllMajorRequirments()

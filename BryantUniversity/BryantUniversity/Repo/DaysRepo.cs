@@ -22,7 +22,7 @@ namespace BryantUniversity.Repo
 
         public Days GetById(int id)
         {
-            return _context.ClassDays.SingleOrDefault(c => c.Id == id);
+            return _context.ClassDays.FirstOrDefault(c => c.Id == id);
         }
 
         public void Insert(Days day)

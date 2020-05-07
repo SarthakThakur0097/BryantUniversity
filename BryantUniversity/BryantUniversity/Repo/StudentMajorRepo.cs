@@ -18,7 +18,7 @@ namespace BryantUniversity.Repo
         public StudentMajor GetById(int id)
         {
             return _context.StudentMajors
-                .SingleOrDefault(c => c.Id == id);
+                .FirstOrDefault(c => c.Id == id);
         }
 
         public StudentMajor GetByStudentId(int id)
@@ -28,7 +28,7 @@ namespace BryantUniversity.Repo
                         .Include(s => s.Major)
                         .Include(s => s.User)
                         .Where(s => s.UserId == id)
-                        .SingleOrDefault();
+                        .FirstOrDefault();
         }
         public IList<StudentMajor> GetAllStudentMajors()
         {

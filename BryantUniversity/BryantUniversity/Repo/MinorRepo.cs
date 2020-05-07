@@ -19,7 +19,7 @@ namespace BryantUniversity.Repo
         {
             return _context
                         .Minors
-                        .SingleOrDefault(c => c.Id == id);
+                        .FirstOrDefault(c => c.Id == id);
         }
 
         public IList<Minor> GetAllMinors()
