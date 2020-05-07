@@ -162,9 +162,12 @@ namespace BryantUniversity.Controllers
                 {
                     viewModel.RegisteredClasses = rRepo.GetRegistrationByUserIdAndPeriodId(CustomUser.User.Id, viewModel.PeriodId);
                 }
-                if(viewModel.RegisteredClasses.Count > 0)
+                if (viewModel.RegisteredClasses != null)
                 {
-                    return View(viewModel);
+                    if (viewModel.RegisteredClasses.Count > 0)
+                    {
+                        return View(viewModel);
+                    }
                 }
                 double calculatedGrade = 0.0;
 
