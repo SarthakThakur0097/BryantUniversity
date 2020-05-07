@@ -101,19 +101,27 @@ namespace BryantUniversity.Controllers
         [HttpGet]
         public ActionResult Edit(int id)
         {
+            DepartmentRepo dRepo;
+            CourseLevelRepo clRepo;
             CoursesRepo courseRepo;
             CourseViewModel viewModel = new CourseViewModel();
             Course course;
+
             using (context)
             {
                 courseRepo = new CoursesRepo(context);
+                dRepo = new DepartmentRepo(context);
+                clRepo = new CourseLevelRepo(context);
+                viewModel.PopulateDepermentSelectList(dRepo.GetAllDepartments());
+                viewModel.PopulateLevelsSelectList(clRepo.GetAllCourseLevels());
                 course = courseRepo.GetById(id);
 
                 viewModel.Id = course.Id;
+                viewModel.CourseTitleId = course.CourseTitleId;
                 viewModel.CourseTitle = course.CourseTitle;
                 viewModel.Description = course.Description;
                 viewModel.Credits = course.Credits;
-                viewModel.CourseLevel = course.CourseLevel;
+                viewModel.CourseLevelId = course.CourseLevelId;
                 viewModel.DepartmentId = course.DepartmentId;
             }
             return View("Edit", viewModel);
@@ -122,6 +130,8 @@ namespace BryantUniversity.Controllers
         [HttpPost]
         public ActionResult Edit(int id, CourseViewModel course)
         {
+            DepartmentRepo dRepo;
+            CourseLevelRepo clRepo;
             CoursesRepo courseRepo;
             Course newCourse;
             CourseViewModel viewModel = new CourseViewModel();
@@ -130,8 +140,11 @@ namespace BryantUniversity.Controllers
                 courseRepo = new CoursesRepo(context);
                 try
                 {
-                    newCourse = new Course(course.CourseTitleId, course.CourseTitle, course.Description, course.Credits, course.CourseLevel.Id, course.DepartmentId);
-
+                    dRepo = new DepartmentRepo(context);
+                    clRepo = new CourseLevelRepo(context);
+                    newCourse = new Course(course.CourseTitleId, course.CourseTitle, course.Description, course.Credits, course.CourseLevelId, course.DepartmentId);
+                    viewModel.PopulateDepermentSelectList(dRepo.GetAllDepartments());
+                    viewModel.PopulateLevelsSelectList(clRepo.GetAllCourseLevels());
                     viewModel.Id = id;
                     viewModel.CourseTitle = course.CourseTitle;
                     viewModel.Description = course.Description;
@@ -191,7 +204,8 @@ namespace BryantUniversity.Controllers
                 try
                 {
                     cRepo = new CoursesRepo(context);
-                    toDelete = cRepo.GetById(id);
+                    toDelete = new Course { Id = id };
+
                     cRepo.Delete(toDelete);
 
                     return RedirectToAction("Index");
