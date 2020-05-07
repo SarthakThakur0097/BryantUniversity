@@ -28,7 +28,7 @@ namespace BryantUniversity.Repo
         {
             return _context
                         .Courses
-                        .SingleOrDefault(c => c.Id == id);
+                        .FirstOrDefault(c => c.Id == id);
         }
 
         public IList<Course> GetByDepartment(int id)
@@ -39,6 +39,16 @@ namespace BryantUniversity.Repo
                         .Include(c => c.Department)
                         .Where(c => c.DepartmentId == id)
                         .ToList();
+        }
+
+        public Course GetCourseByCourseTitleId(string id)
+        {
+            return _context
+                        .Courses
+                        .Include(c => c.Department)
+                        .Include(c => c.CourseLevel)
+                        .Where(c => c.CourseTitleId == id)
+                        .FirstOrDefault();
         }
 
         public IList<Course> GetAllCoursesAndPreReqsByDepartment(int id)

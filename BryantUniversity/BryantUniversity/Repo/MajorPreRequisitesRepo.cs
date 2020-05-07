@@ -19,7 +19,7 @@ namespace BryantUniversity.Repo
         {
             return _context
                         .MajorPreRequisites
-                        .SingleOrDefault(c => c.Id == id);
+                        .FirstOrDefault(c => c.Id == id);
         }
 
         public IList<MajorPreRequisite> GetAllMajorPrequisites()

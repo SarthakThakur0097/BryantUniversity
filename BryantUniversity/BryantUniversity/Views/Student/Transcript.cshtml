@@ -1,0 +1,46 @@
+﻿@model BryantUniversity.ViewModels.TranscriptViewModel
+@{
+    ViewBag.Title = "Transcript";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            
+        </div>
+        <div class="col-sm">
+            <h1>Transcript</h1>
+        </div>
+        <div class="col-sm">
+            
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm">
+            <h1>Major: @Model.StudentMajor.Major.Title</h1>
+        </div>
+        <div class="col-sm">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Major Requirements</th>
+
+                    </tr>
+                </thead>
+                <tbody id="myTable">
+                    @foreach (var requirments in Model.MajorRequirements)
+                    {
+                        <tr>
+                            <td>@requirments.Course.CourseTitle</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+        <div class="col-sm">
+
+        </div>
+    </div>
+</div>

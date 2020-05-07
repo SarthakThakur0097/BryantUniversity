@@ -1,4 +1,4 @@
-﻿@model BryantUniversity.ViewModels.ScheduleViewModel
+﻿@model BryantUniversity.ViewModels.DropViewModel
 
 @{
     ViewBag.Title = "Schedule";
@@ -7,26 +7,9 @@
 <div class="container">
     <div class="row">
         <div class="col-sm">
-            @Html.ActionLink("Drop a course", "Drop", "Student", new { }, new { @class = "btn btn-primary" })
         </div>
         <div class="col-sm">
-            @using (Html.BeginForm("Schedule", "Student", FormMethod.Post, new { @class = "pure-form pure-form-aligned", id = "" }))
-            {
-                @Html.AntiForgeryToken()
-
-                <div class="form-horizontal">
-                    <div class="form-group">
-                        @Html.LabelFor(model => model.PeriodId, htmlAttributes: new { @class = "control-label col-md-2" })
-                        @Html.DropDownListFor(model => model.PeriodId, Model.PeriodList, "Period", new { id = "period-list" })
-                        @Html.ValidationMessageFor(model => model.PeriodId, "", new { @class = "text-danger" })
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-2 col-md-10">
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-success">Submit</button>
-                </div>
-            }
+            
         </div>
         <div class="col-sm">
 
@@ -47,10 +30,7 @@
         <div class="col-sm">
         </div>
         <div class="col-md-5">
-            @if (Model.RegisteredClasses.Count == 0)
-            {
-                <h1>You have no classes registered for this semester</h1>
-            }
+
             <h1>SCHEDULE</h1>
             <table class="table">
                 <thead class="thead-dark">
@@ -62,21 +42,27 @@
                         <th>Professor</th>
                         <th>Building</th>
                         <th>Room Number</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
-                    @if (Model.RegisteredClasses != null)
+                    @if (Model.NonGraded != null)
                     {
-                        foreach (var reigstered in Model.RegisteredClasses)
+                        foreach (var reigstered in Model.NonGraded)
                         {
                             <tr>
-                                <td>@reigstered.CourseSection.Course.Id</td>
+                                <td>C.Course.Id</td>
                                 <td>@reigstered.CourseSection.Course.CourseTitle</td>
                                 <td>@reigstered.CourseSection.ClassDuration.TimeForClass.Value</td>
                                 <td>@reigstered.CourseSection.ClassDays.Pattern.Value</td>
                                 <td>@reigstered.CourseSection.Professor.Name</td>
                                 <td>@reigstered.CourseSection.Room.Building.BuildingName</td>
                                 <td>@reigstered.CourseSection.Room.Id</td>
+                                <td>
+                                    <div id="removeContainer">
+                                        <button type="button" data-course-section-id="@reigstered.CourseSection.Id" class="btn btn-danger">Drop</button>
+                                    </div>
+                                </td>
                             </tr>
                         }
                     }
@@ -88,3 +74,5 @@
         </div>
     </div>
 </div>
+
+<script src="~/scripts/DropSection.js"></script>

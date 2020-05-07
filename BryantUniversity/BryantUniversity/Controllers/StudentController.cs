@@ -4,11 +4,13 @@ using BryantUniversity.Models.Repo;
 using BryantUniversity.Repo;
 using BryantUniversity.Security;
 using BryantUniversity.ViewModels;
-
+using System.Collections;
+using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace BryantUniversity.Controllers
 {
+    [Authorize(Roles = "4")]
     public class StudentController : Controller
     {
         Context context;
@@ -57,6 +59,69 @@ namespace BryantUniversity.Controllers
         }
 
         [HttpGet]
+        public ActionResult Drop()
+        {
+            DropViewModel viewModel = new DropViewModel();
+            SemesterPeriodRepo sRepo;
+            GradesRepo gRepo;
+            RegistrationRepo rRepo;
+            IList<Registration> allRegisterations = new List<Registration>();
+            List<Registration> nonGraded = new List<Registration>();
+
+            using (context)
+            {
+                sRepo = new SemesterPeriodRepo(context);
+                rRepo = new RegistrationRepo(context);
+                gRepo = new GradesRepo(context);
+
+                allRegisterations = rRepo.GetRegistrationByUserIdAndPeriodId(CustomUser.User.Id, 1);
+
+                foreach(var grade in allRegisterations)
+                {
+                    if(!gRepo.ContainsRegistration(grade.Id))
+                    {
+                        nonGraded.Add(grade);
+                    }
+                }
+                viewModel.NonGraded = nonGraded;
+            }
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Drop(ScheduleViewModel viewModel)
+        {
+            SemesterPeriodRepo sRepo;
+            RegistrationRepo rRepo;
+            using (context)
+            {
+                sRepo = new SemesterPeriodRepo(context);
+                rRepo = new RegistrationRepo(context);
+                viewModel.PopulateSelectList(sRepo.GetAllSemesterPeriods());
+                viewModel.RegisteredClasses = rRepo.GetRegistrationByUserIdAndPeriodId(CustomUser.User.Id, viewModel.PeriodId);
+            }
+            return View(viewModel);
+        }
+
+        [HttpGet]
+        public ActionResult Transcript()
+        {
+            TranscriptViewModel viewModel = new TranscriptViewModel();
+            StudentMajorRepo sRepo;
+            MajorRequirmentsRepo mRepo;
+
+            using (context)
+            {
+                sRepo = new StudentMajorRepo(context);
+                mRepo = new MajorRequirmentsRepo(context);
+                viewModel.StudentMajor = sRepo.GetByStudentId(CustomUser.User.Id);
+                viewModel.MajorRequirements = mRepo.GetAllMajorRequirementsByMajor(viewModel.StudentMajor.MajorId);
+            }
+
+            return View(viewModel);
+        }
+
+        [HttpGet]
         public ActionResult Grades()
         {
             SemesterPeriodRepo spRepo;
@@ -81,15 +146,26 @@ namespace BryantUniversity.Controllers
         public ActionResult Grades(GradesViewModel viewModel)
         {
             SemesterPeriodRepo spRepo;
+            RegistrationRepo rRepo;
             GradesRepo gRepo;
 
             using (context)
             {
                 spRepo = new SemesterPeriodRepo(context);
                 gRepo = new GradesRepo(context);
+                rRepo = new RegistrationRepo(context);
 
                 viewModel.PopulateSelectList(spRepo.GetAllSemesterPeriods());
                 viewModel.Grades = gRepo.GetGradesByUserAndSemesterPeriodId(CustomUser.User.Id, viewModel.PeriodId);
+
+                if(viewModel.Grades.Count == 0)
+                {
+                    viewModel.RegisteredClasses = rRepo.GetRegistrationByUserIdAndPeriodId(CustomUser.User.Id, viewModel.PeriodId);
+                }
+                if(viewModel.RegisteredClasses.Count > 0)
+                {
+                    return View(viewModel);
+                }
                 double calculatedGrade = 0.0;
 
                 foreach(var toCalc in viewModel.Grades)

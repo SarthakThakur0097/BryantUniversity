@@ -23,7 +23,7 @@ namespace BryantUniversity.Repo
 
         public Department GetById(int id)
         {
-            return _context.Departments.SingleOrDefault(d => d.Id == id);
+            return _context.Departments.FirstOrDefault(d => d.Id == id);
         }
 
         public void Insert(Department department)

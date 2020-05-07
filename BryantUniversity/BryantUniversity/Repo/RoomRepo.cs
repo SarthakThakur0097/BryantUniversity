@@ -24,7 +24,7 @@ namespace BryantUniversity.Repo
         {
             return _context
                         .Rooms
-                        .SingleOrDefault(c => c.Id == id);
+                        .FirstOrDefault(c => c.Id == id);
         }
 
         public IList<Room> GetByBuildingId(int buildingId)

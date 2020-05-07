@@ -25,7 +25,7 @@ namespace BryantUniversity.Models.Repo
         {
             return _context
                     .UserRoles
-                    .SingleOrDefault(c => c.Id == id);
+                    .FirstOrDefault(c => c.Id == id);
         }
 
        

@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace BryantUniversity.ApiControllers
 {
+    [Authorize(Roles = "1")]
     public class HoldsController : Controller
     {
         private Context context;

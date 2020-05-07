@@ -30,13 +30,14 @@ namespace BryantUniversity.Repo
         {
             return _context.CourseSections
                             .Include(cR => cR.Course)
+                            .Include(cR => cR.Course.CourseLevel)
                             .Include(cR => cR.Professor)
                             .Include(cR => cR.Room)
                             .Include(cR => cR.SemesterPeriod)
                             .Include(cR => cR.Course.Department)
                             //.Include(cR => cR.Schedules.Select(s => s.CourseSectionId == courseSectionId && s.UserId == userId))
                             .Where(cR => cR.Id == courseSectionId)
-                            .SingleOrDefault();
+                            .FirstOrDefault();
         }
 
         public CourseSection GetCourseSectionByIdAndUser (int courseSectionId, int userId)
@@ -49,13 +50,14 @@ namespace BryantUniversity.Repo
                             .Include(cR => cR.Course.Department)
                             //.Include(cR => cR.Schedules.Select(s => s.CourseSectionId == courseSectionId && s.UserId == userId))
                             .Where(cR => cR.Id == courseSectionId)
-                            .SingleOrDefault();
+                            .FirstOrDefault();
         }
 
         public IList<CourseSection> GetCourseSectionByUserId(int userId)
         {
             return _context.CourseSections
                             .Include(cR => cR.Course)
+                            .Include(cR => cR.Course.CourseLevel)
                             .Include(cR => cR.Professor)
                             .Include(cR => cR.Room)
                             .Include(cR => cR.Room.Building)

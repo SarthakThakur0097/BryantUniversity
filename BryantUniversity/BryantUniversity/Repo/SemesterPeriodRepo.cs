@@ -25,7 +25,7 @@ namespace BryantUniversity.Repo
         {
             return _context
                         .SemesterPeriods
-                        .SingleOrDefault(c => c.Id == id);
+                        .FirstOrDefault(c => c.Id == id);
         }
 
         public void Insert(SemesterPeriod semesterPeriod)

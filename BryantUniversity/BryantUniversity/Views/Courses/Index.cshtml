@@ -43,7 +43,9 @@
                         <th>Credits</th>
                         <th>Level</th>
                         <th>Department Id</th>
-
+                        <th></th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody id="myTable">
@@ -56,7 +58,7 @@
                             <td>@course.CourseLevel.Level.Value</td>
                             <td>@course.DepartmentId</td>
                             <td>
-                                @Html.ActionLink("edit", "Edit", new { id = course.Id }, new { @class = "btn btn-info" })
+                                @Html.ActionLink("edit", "Edit", new { id = course.Id }, new { @class = "btn btn-primary" })
                             </td>
                             <td>
                                 @Html.ActionLink("assign", "Assign", new { id = course.Id }, new { @class = "btn btn-info" })
