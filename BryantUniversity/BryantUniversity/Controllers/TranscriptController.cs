@@ -8,6 +8,7 @@ using System.Web.Mvc;
 
 namespace BryantUniversity.Controllers
 {
+    [Authorize(Roles = "4,2")]
     public class TranscriptController : Controller
     {
         private Context context = new Context();

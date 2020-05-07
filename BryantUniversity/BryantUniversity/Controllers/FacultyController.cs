@@ -9,8 +9,10 @@ using System.Web.Mvc;
 
 namespace BryantUniversity.Controllers
 {
+    [Authorize(Roles = "2")]
     public class FacultyController : Controller
     {
+
         private Context context;
 
         public CustomPrincipal CustomUser

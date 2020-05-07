@@ -10,6 +10,7 @@ using System.Web.Mvc;
 
 namespace BryantUniversity.Controllers
 {
+    [Authorize(Roles = "4")]
     public class StudentController : Controller
     {
         Context context;

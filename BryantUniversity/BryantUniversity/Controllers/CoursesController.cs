@@ -9,6 +9,7 @@ using System.Web.Mvc;
 
 namespace BryantUniversity.Controllers
 {
+    [AllowAnonymous]
     public class CoursesController : Controller
     {
         private Context context;
