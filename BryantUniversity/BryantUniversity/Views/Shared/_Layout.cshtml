@@ -125,7 +125,7 @@
                     </li>
 
                     <li class="nav-item">
-                        @Html.ActionLink("Schedule", "Schedule", "Student", new { area = "" }, new { @class = "navbar-brand" })
+                        @Html.ActionLink("Catalog", "Catalog", "Courses", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
                 }
 
@@ -141,6 +141,10 @@
             <ul class="navbar-nav ml-auto">
             @if (Request.IsAuthenticated && ((BryantUniversity.Security.CustomPrincipal)User).IsInRole("4"))
             {
+                <li class="nav-item">
+                    @Html.ActionLink("Schedule", "Schedule", "Student", new { area = "" }, new { @class = "navbar-brand" })
+                </li>
+
                 <li class="nav-item">
                     @Html.ActionLink("Academics", "Grades", "Student", new { area = "" }, new { @class = "navbar-brand" })
                 </li>
