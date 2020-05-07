@@ -1,0 +1,45 @@
+﻿@model BryantUniversity.ViewModels.AdvisingViewModel
+@{
+    ViewBag.Title = "Teaching";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+
+        </div>
+        <div class="col-sm">
+            <h2>students you are advising</h2>
+        </div>
+        <div class="col-sm">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr lass="bench-row">
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var advised in Model.AllAdvisedStudent)
+                    {
+                        <tr>
+                            <td>@advised.Student.Name</td>
+                            <td>@advised.Student.Email</td>
+                            <td>
+                                @Html.ActionLink("View Enrolled Students", "Students", "Faculty", new { id = advised.Student.Id }, new { @class = "btn btn-primary" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

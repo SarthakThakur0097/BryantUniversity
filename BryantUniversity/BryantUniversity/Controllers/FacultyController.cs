@@ -124,6 +124,34 @@ namespace BryantUniversity.Controllers
         }
 
         [HttpGet]
+        public ActionResult Advising()
+        {
+            AdvisingViewModel viewModel = new AdvisingViewModel();
+            AdviserRepo aRepo;
+
+            using (context)
+            {
+                aRepo = new AdviserRepo(context);
+                viewModel.AllAdvisedStudent = aRepo.GetAllAdvisedStudentsByAdviserId(CustomUser.User.Id);
+            }
+          
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Advising(AdvisingViewModel viewModel)
+        {
+            SemesterPeriodRepo sRepo;
+            RegistrationRepo rRepo;
+            ScheduleViewModel scheduleViewModel = new ScheduleViewModel();
+            using (context)
+            {
+
+            }
+            return View(viewModel);
+        }
+
+        [HttpGet]
         public ActionResult Students(int Id)
         {
             RegistrationRepo sRepo;
