@@ -155,6 +155,21 @@ namespace BryantUniversity.Controllers
                 return View(students);
         }
 
+
+        public ActionResult Advisor(int id)
+        {
+            UserListViewModel viewModel;
+            UserRepo userRepository;
+            using (context)
+            {
+                viewModel = new UserListViewModel();
+                userRepository = new UserRepo(context);
+                viewModel.Users = userRepository.GetUsersByRole(2);
+
+                return View(viewModel);
+            }
+        }
+
         public ActionResult Assign(int id, int facultyId)
         {
             
