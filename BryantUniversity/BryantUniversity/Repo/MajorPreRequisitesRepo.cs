@@ -47,6 +47,7 @@ namespace BryantUniversity.Repo
                         .MajorPreRequisites
                         .Include(m => m.PreReq)
                         .Include(m => m.Course)
+                        .Where(m => m.CourseId == id && m.PreReqId != null)
                         .ToList();
         }
 
