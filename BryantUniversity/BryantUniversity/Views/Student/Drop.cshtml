@@ -35,7 +35,6 @@
             <table class="table">
                 <thead class="thead-dark">
                     <tr lass="bench-row">
-                        <th>CRN</th>
                         <th>Course Title</th>
                         <th>Course Time</th>
                         <th>Days</th>
@@ -51,7 +50,6 @@
                         foreach (var reigstered in Model.NonGraded)
                         {
                             <tr>
-                                <td>C.Course.Id</td>
                                 <td>@reigstered.CourseSection.Course.CourseTitle</td>
                                 <td>@reigstered.CourseSection.ClassDuration.TimeForClass.Value</td>
                                 <td>@reigstered.CourseSection.ClassDays.Pattern.Value</td>
