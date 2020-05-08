@@ -39,15 +39,16 @@ namespace BryantUniversity.Models
         public string HashedPassword { get; set; }
         [Required]
         public string Name { get; set; }
-
-        public int StreetNumber { get; set; }
         [Required]
-        public string StreetName { get; set; }
+        public string Address { get; set; }
+
         [Required]
         public string City { get; set; }
         [Required]
         public string State { get; set; }
         public int ZipCode { get; set; }
+        [Required]
+        public string PhoneNumber { get; set; }
 
         public List<UserRole> UserRoles { get; set; }
     }
