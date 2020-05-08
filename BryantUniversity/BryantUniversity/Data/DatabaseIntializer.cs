@@ -74,10 +74,48 @@ namespace BryantUniversity.Data
             DateTime spring2019StartEnrollTime = new DateTime(2019, 11, 1);
             DateTime spring2019EndEnrollTime = new DateTime(2019, 05, 30);
 
+            DateTime fall2018StartTime = new DateTime(2019, 01, 5);
+            DateTime fall2018EndTime = new DateTime(2019, 05, 23);
+            DateTime fall2018StartEnrollTime = new DateTime(2019, 11, 1);
+            DateTime fall2018EndEnrollTime = new DateTime(2019, 05, 30);
+
+
+            DateTime spring2018StartTime = new DateTime(2019, 01, 5);
+            DateTime spring2018EndTime = new DateTime(2019, 05, 23);
+            DateTime spring2018StartEnrollTime = new DateTime(2019, 11, 1);
+            DateTime spring2018EndEnrollTime = new DateTime(2019, 05, 30);
+
+
+            DateTime fall2017StartTime = new DateTime(2019, 01, 5);
+            DateTime fall2017EndTime = new DateTime(2019, 05, 23);
+            DateTime fall2017StartEnrollTime = new DateTime(2019, 11, 1);
+            DateTime fall2017EndEnrollTime = new DateTime(2019, 05, 30);
+
+
+            DateTime spring2017StartTime = new DateTime(2019, 01, 5);
+            DateTime spring2017EndTime = new DateTime(2019, 05, 23);
+            DateTime spring2017StartEnrollTime = new DateTime(2019, 11, 1);
+            DateTime spring2017EndEnrollTime = new DateTime(2019, 05, 30);
+
+
+            DateTime fall2016StartTime = new DateTime(2019, 01, 5);
+            DateTime fall2016EndTime = new DateTime(2019, 05, 23);
+            DateTime fall2016StartEnrollTime = new DateTime(2019, 11, 1);
+            DateTime fall2016EndEnrollTime = new DateTime(2019, 05, 30);
+
             SemesterPeriod Fall2020 = new SemesterPeriod(Period.Fall2020, fall2020StartTime, fall2020EndTime, fall2020StartEnrollTime, fall2020EndEnrollTime);
             SemesterPeriod Spring2020 = new SemesterPeriod(Period.Spring2020, spring2020StartTime, spring2020EndTime, spring2020StartEnrollTime, spring2020EndEnrollTime);
             SemesterPeriod Fall2019 = new SemesterPeriod(Period.Fall2019, fall2019StartTime, fall2019EndTime, fall2019StartEnrollTime, fall2019EndEnrollTime);
             SemesterPeriod Spring2019 = new SemesterPeriod(Period.Spring2019, spring2019StartTime, spring2019EndTime, spring2019StartEnrollTime, spring2019EndEnrollTime);
+
+            SemesterPeriod Fall2018 = new SemesterPeriod(Period.Fall2018, fall2018StartTime, fall2018EndTime, fall2018StartEnrollTime, fall2018EndEnrollTime);
+            SemesterPeriod Spring2018 = new SemesterPeriod(Period.Spring2018, spring2018StartTime, spring2018EndTime, spring2018StartEnrollTime, spring2018EndEnrollTime);
+            SemesterPeriod Fall2017 = new SemesterPeriod(Period.Fall2017, fall2017StartTime, fall2017EndTime, fall2017StartEnrollTime, fall2017EndEnrollTime);
+            SemesterPeriod Spring2017 = new SemesterPeriod(Period.Spring2017, spring2017StartTime, spring2017EndTime, spring2017StartEnrollTime, spring2017EndEnrollTime);
+            SemesterPeriod Fall2016 = new SemesterPeriod(Period.Fall2016, fall2016StartTime, fall2016EndTime, fall2016StartEnrollTime, fall2016EndEnrollTime);
+
+
+
 
             CourseLevel Undergraduate = new CourseLevel(Level.Undergraduate);
             CourseLevel Graduate = new CourseLevel(Level.Graduate);
@@ -152,7 +190,13 @@ namespace BryantUniversity.Data
             context.CalendarEvents.Add(semEvent10);
             context.CalendarEvents.Add(semEvent11);
             context.CalendarEvents.Add(semEvent12);
-
+            context.SemesterPeriods.Add(Spring2019);
+     
+            context.SemesterPeriods.Add(Fall2018);
+            context.SemesterPeriods.Add(Spring2018);
+            context.SemesterPeriods.Add(Fall2017);
+            context.SemesterPeriods.Add(Spring2017);
+            context.SemesterPeriods.Add(Fall2016);
             context.ClassTimes.Add(NineToElvenAm);
             context.ClassTimes.Add(ElvenAmToTwelvePm);
             context.ClassTimes.Add(OneToTwoPM);
