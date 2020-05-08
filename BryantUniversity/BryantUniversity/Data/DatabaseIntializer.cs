@@ -17,13 +17,13 @@ namespace BryantUniversity.Data
             //context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('UserRole', RESEED, 500000);");
 
 
-            User adminUser = new User("Admin@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Admin 1");
-            User adminUser2 = new User("Admin2@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Admin 2");
-            User teacherUser = new User("Teacher@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Teacher 1");
-            User teacherUser2 = new User("Teacher2@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Teacher 2");
-            User studentUser = new User("Student@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Student 1");
+            User adminUser = new User("Admin@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Admin 1", "Address","City", "state", "ZipCode", "PhoneNumber");
+            //User adminUser2 = new User("Admin2@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Admin 2");
+            //User teacherUser = new User("Teacher@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Teacher 1");
+            //User teacherUser2 = new User("Teacher2@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Teacher 2");
+            //User studentUser = new User("Student@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Student 1");
 
-            UserRole adminRole = new UserRole(1, 2);
+            UserRole adminRole = new UserRole(1, 1);
             UserRole teacherRole = new UserRole(2, 1);
             UserRole admin2Role = new UserRole(3, 1);
             UserRole teacher2Role = new UserRole(4, 2);
@@ -149,13 +149,13 @@ namespace BryantUniversity.Data
             Room room = new Room("Lecture", 30, 1);
 
             Department compSci = new Department("Computer Science", "516-389-2930");
-            //Course introToProg = new Course(0,"Intro to Computer Science", "Basic programming with Java", 4, "Level 100", compSci);
+            //Course introToProg = new Course(0, "Intro to Computer Science", "Basic programming with Java", 4, "Level 100", compSci);
 
-            FacultyDepartment facultyDepartment = new FacultyDepartment(teacherUser, compSci);
+            //FacultyDepartment facultyDepartment = new FacultyDepartment(teacherUser, compSci);
             CourseSection courseSection = new CourseSection(0, 1, 1, 1, 1);
             //toInsert = new CourseSection(0, 10000, courseSection.CourseId, courseSection.RoomId, courseSection.UserId, courseSection.SemesterPeriodId);
 
-            //context.Users.Add(adminUser);
+            context.Users.Add(adminUser);
             //context.Users.Add(adminUser2);
 
             //context.Users.Add(teacherUser);
@@ -168,7 +168,7 @@ namespace BryantUniversity.Data
             context.Roles.Add(researcher);
             context.Roles.Add(student);
 
-            //context.UserRoles.Add(adminRole);
+            context.UserRoles.Add(adminRole);
             //context.UserRoles.Add(teacherRole);
             //context.UserRoles.Add(admin2Role);
             //context.UserRoles.Add(teacher2Role);

@@ -32,6 +32,21 @@ namespace BryantUniversity.Models
             UserRoles = new List<UserRole>();
         }
 
+        public User(string email, string passWord, string name, string address, string city, string state, string zipcode, string phoneNumber) : base()
+        {
+
+            Email = email;
+            HashedPassword = passWord;
+            Name = name;
+            Address = address;
+            City = city;
+            State = state;
+            ZipCode = zipcode;
+            PhoneNumber = phoneNumber;
+            UserRoles = new List<UserRole>();
+        }
+
+
         public int Id { get; set; }
         [Required]
         public string Email { get; set; }
@@ -46,7 +61,7 @@ namespace BryantUniversity.Models
         public string City { get; set; }
         [Required]
         public string State { get; set; }
-        public int ZipCode { get; set; }
+        public string ZipCode { get; set; }
         [Required]
         public string PhoneNumber { get; set; }
         public List<UserRole> UserRoles { get; set; }
