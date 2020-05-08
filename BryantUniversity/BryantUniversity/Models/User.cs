@@ -48,7 +48,8 @@ namespace BryantUniversity.Models
         [Required]
         public string State { get; set; }
         public int ZipCode { get; set; }
-
+        [Required]
+        public string PhoneNumber { get; set; }
         public List<UserRole> UserRoles { get; set; }
     }
 }
