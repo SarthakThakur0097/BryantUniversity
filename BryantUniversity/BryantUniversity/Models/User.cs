@@ -40,6 +40,15 @@ namespace BryantUniversity.Models
         [Required]
         public string Name { get; set; }
 
+        public int StreetNumber { get; set; }
+        [Required]
+        public string StreetName { get; set; }
+        [Required]
+        public string City { get; set; }
+        [Required]
+        public string State { get; set; }
+        public int ZipCode { get; set; }
+
         public List<UserRole> UserRoles { get; set; }
     }
 }

@@ -1,9 +1,7 @@
 ﻿@model BryantUniversity.ViewModels.CourseViewModel
-
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Create";
 }
-<link rel="stylesheet" type="text/css" href="~/styles/scrollablemenu.css" />
 
 <div class="container">
     <div class="row">
@@ -11,8 +9,7 @@
 
         </div>
         <div class="col-sm">
-
-            <h1>Edit course</h1>
+            <h1>Add a course</h1>
         </div>
         <div class="col-md-5">
 
@@ -23,20 +20,26 @@
 
         </div>
         <div class="col-sm">
+
+
             @using (Html.BeginForm("Edit", "Courses", FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
             {
                 @Html.AntiForgeryToken()
-                @Html.ValidationSummary()
+
                 <fieldset>
-                    <div id="getCourseId" data-course-id="@Model.Id">
+                    <div class="pure-controls">
+                        @Html.LabelFor(model => model.CourseTitleId)
+                        @Html.EditorFor(model => model.CourseTitleId, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.CourseTitleId, "", new { @class = "pure-form-message-inline" })
                     </div>
-                    <div class="pure-control-group">
+
+                    <div class="pure-controls">
                         @Html.LabelFor(model => model.CourseTitle)
                         @Html.EditorFor(model => model.CourseTitle, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.CourseTitle, "", new { @class = "pure-form-message-inline" })
                     </div>
 
-                    <div class="pure-control-group">
+                    <div class="pure-controls">
                         @Html.LabelFor(model => model.Description)
                         @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.Description, "", new { @class = "pure-form-message-inline" })
@@ -47,15 +50,17 @@
                         @Html.EditorFor(model => model.Credits, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.Credits, "", new { @class = "pure-form-message-inline" })
                     </div>
+
                     <div class="pure-controls">
-                        @Html.LabelFor(model => model.Level)
-                        @Html.EditorFor(model => model.Level, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.Level, "", new { @class = "pure-form-message-inline" })
+                        @Html.LabelFor(model => model.CourseLevelId, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.DropDownListFor(model => model.CourseLevelId, Model.CourseLevelList, "Course Level", new { @class = "form-control required", id = "period-list" })
+                        @Html.ValidationMessageFor(model => model.CourseLevelId)
                     </div>
                     <div class="pure-controls">
-                        @Html.LabelFor(model => model.DepartmentId)
-                        @Html.EditorFor(model => model.DepartmentId, new { htmlAttributes = new { @class = "form-control" } })
-                        @Html.ValidationMessageFor(model => model.DepartmentId, "", new { @class = "pure-form-message-inline" })
+
+                        @Html.LabelFor(model => model.DepartmentId, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.DropDownListFor(model => model.DepartmentId, Model.DepartmentList, "Period", new { @class = "form-control required", id = "period-list" })
+                        @Html.ValidationMessageFor(model => model.DepartmentId)
                     </div>
                     <div class="pure-controls">
                         @Html.ActionLink("Cancel", "Index", new { }, new { @class = "btn btn-danger" })
@@ -69,6 +74,3 @@
         </div>
     </div>
 </div>
-
-
-@*<script src="~/scripts/course.js"></script>*@
