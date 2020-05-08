@@ -155,24 +155,24 @@ namespace BryantUniversity.Data
             CourseSection courseSection = new CourseSection(0, 1, 1, 1, 1);
             //toInsert = new CourseSection(0, 10000, courseSection.CourseId, courseSection.RoomId, courseSection.UserId, courseSection.SemesterPeriodId);
 
-            context.Users.Add(adminUser);
-            context.Users.Add(adminUser2);
-      
-            context.Users.Add(teacherUser);
-            context.Users.Add(teacherUser2);
+            //context.Users.Add(adminUser);
+            //context.Users.Add(adminUser2);
 
-            context.Users.Add(studentUser);
+            //context.Users.Add(teacherUser);
+            //context.Users.Add(teacherUser2);
+
+            //context.Users.Add(studentUser);
 
             context.Roles.Add(admin);
             context.Roles.Add(faculty);
             context.Roles.Add(researcher);
             context.Roles.Add(student);
 
-            context.UserRoles.Add(adminRole);
-            context.UserRoles.Add(teacherRole);
-            context.UserRoles.Add(admin2Role);
-            context.UserRoles.Add(teacher2Role);
-            context.UserRoles.Add(studentRole);
+            //context.UserRoles.Add(adminRole);
+            //context.UserRoles.Add(teacherRole);
+            //context.UserRoles.Add(admin2Role);
+            //context.UserRoles.Add(teacher2Role);
+            //context.UserRoles.Add(studentRole);
 
             context.Holds.Add(financial);
             context.Holds.Add(academic);
@@ -212,11 +212,11 @@ namespace BryantUniversity.Data
             context.CourseLevels.Add(Graduate);
             //context.Buildings.Add(mainCampus);
             //context.Rooms.Add(room1);
-            context.Departments.Add(compSci);
+            //context.Departments.Add(compSci);
 
-            //context.Courses.Add(introToProg);
+            ////context.Courses.Add(introToProg);
             
-            context.FacultyDepartments.Add(facultyDepartment);
+            //context.FacultyDepartments.Add(facultyDepartment);
             //context.Buildings.Add(building);
             //context.Rooms.Add(room);
             //context.CourseSections.Add(courseSection);
