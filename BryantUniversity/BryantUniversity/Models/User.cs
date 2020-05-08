@@ -40,9 +40,8 @@ namespace BryantUniversity.Models
         [Required]
         public string Name { get; set; }
 
-        public int StreetNumber { get; set; }
         [Required]
-        public string StreetName { get; set; }
+        public string Address { get; set; }
         [Required]
         public string City { get; set; }
         [Required]
