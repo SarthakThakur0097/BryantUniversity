@@ -109,11 +109,32 @@ namespace BryantUniversity.Controllers
             TranscriptViewModel viewModel = new TranscriptViewModel();
             StudentMajorRepo sRepo;
             MajorRequirmentsRepo mRepo;
+            GradesRepo gRepo;
+            RegistrationRepo rRepo;
+            IList<Grade> Graded = new List<Grade>();
+            IList<Registration> AllRegistrations = new List<Registration>();
+            IList<Registration> PendingGrades = new List<Registration>();
 
             using (context)
             {
                 sRepo = new StudentMajorRepo(context);
                 mRepo = new MajorRequirmentsRepo(context);
+                gRepo = new GradesRepo(context);
+                rRepo = new RegistrationRepo(context);
+
+                AllRegistrations = rRepo.GetRegistrationByUserId(CustomUser.User.Id);
+
+                foreach(var registration in AllRegistrations)
+                {
+                    if(!gRepo.ContainsRegistration(registration.Id))
+                    {
+                        PendingGrades.Add(registration);
+                    }
+                    else if(gRepo.ContainsRegistration(registration.Id))
+                    {
+                        Graded.Add(gRepo.GetGradeByRegistrationId(registration.Id));
+                    }
+                }
                 viewModel.StudentMajor = sRepo.GetByStudentId(CustomUser.User.Id);
                 viewModel.MajorRequirements = mRepo.GetAllMajorRequirementsByMajor(viewModel.StudentMajor.MajorId);
             }
@@ -133,7 +154,6 @@ namespace BryantUniversity.Controllers
                 viewModel.Advisors = aRepo.GetAllAdvisorsStudentId(CustomUser.User.Id);
 
             }
-
             return View(viewModel);
         }
 
@@ -185,7 +205,7 @@ namespace BryantUniversity.Controllers
                         return View(viewModel);
                     }
                 }
-                double calculatedGrade = 0.0;
+                double? calculatedGrade = 0.0;
 
                 foreach(var toCalc in viewModel.Grades)
                 {
