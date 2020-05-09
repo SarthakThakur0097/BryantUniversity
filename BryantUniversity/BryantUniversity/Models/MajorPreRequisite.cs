@@ -9,8 +9,9 @@ namespace BryantUniversity.Models
 
         public MajorPreRequisite(int? preReqId, int courseId)
         {
-            PreReqId = preReqId;
             CourseId = courseId;
+            PreReqId = preReqId;
+
         }
 
         [Key]

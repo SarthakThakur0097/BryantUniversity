@@ -104,18 +104,52 @@ namespace BryantUniversity.Controllers
         }
 
         [HttpGet]
+        public ActionResult DegreeAudit()
+        {
+            DegreeAuditViewModel viewModel = new DegreeAuditViewModel();
+
+            GradesRepo gRepo;
+            StudentMajorRepo sMRepo;
+            MajorRepo mRepo;
+            MajorRequirmentsRepo mrRepo;
+
+            using (context)
+            {
+                gRepo = new GradesRepo(context);
+                sMRepo = new StudentMajorRepo(context);
+                mrRepo = new MajorRequirmentsRepo(context);
+
+                mRepo = new MajorRepo(context);
+                viewModel.AllCourses = gRepo.GetAllGradesByUserId(CustomUser.User.Id);
+                viewModel.StudentMajor = sMRepo.GetByStudentId(CustomUser.User.Id);
+                viewModel.MajorRequirements = mrRepo.GetAllMajorRequirementsByMajor(viewModel.StudentMajor.MajorId); 
+            }
+            return View(viewModel);
+        }
+
+        [HttpGet]
         public ActionResult Transcript()
         {
             TranscriptViewModel viewModel = new TranscriptViewModel();
             StudentMajorRepo sRepo;
             MajorRequirmentsRepo mRepo;
+            GradesRepo gRepo;
+            RegistrationRepo rRepo;
+            IList<Grade> AllClasses = new List<Grade>();
+            IList<Registration> AllRegistrations = new List<Registration>();
+            IList<Registration> PendingGrades = new List<Registration>();
 
             using (context)
             {
                 sRepo = new StudentMajorRepo(context);
                 mRepo = new MajorRequirmentsRepo(context);
+                gRepo = new GradesRepo(context);
+                rRepo = new RegistrationRepo(context);
+
+                viewModel.AllGradesClasses = gRepo.GetAllGradesByUserId(CustomUser.User.Id);
+
                 viewModel.StudentMajor = sRepo.GetByStudentId(CustomUser.User.Id);
-                viewModel.MajorRequirements = mRepo.GetAllMajorRequirementsByMajor(viewModel.StudentMajor.MajorId);
+                
             }
 
             return View(viewModel);
@@ -133,7 +167,6 @@ namespace BryantUniversity.Controllers
                 viewModel.Advisors = aRepo.GetAllAdvisorsStudentId(CustomUser.User.Id);
 
             }
-
             return View(viewModel);
         }
 
@@ -185,7 +218,7 @@ namespace BryantUniversity.Controllers
                         return View(viewModel);
                     }
                 }
-                double calculatedGrade = 0.0;
+                double? calculatedGrade = 0.0;
 
                 foreach(var toCalc in viewModel.Grades)
                 {
