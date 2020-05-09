@@ -183,6 +183,22 @@ namespace BryantUniversity.Controllers
             return View(viewModel);
         }
 
+        [HttpGet]
+        public ActionResult StudentDetails(int id)
+        {
+            StudentDetailsViewModel viewModel = new StudentDetailsViewModel();
+            UserRepo uRepo;
+            GradesRepo gRepo;
+            using (context)
+            {
+                gRepo = new GradesRepo(context);
+                uRepo = new UserRepo(context);
+                viewModel.Student = uRepo.GetById(id);
+                viewModel.AllGradesClasses = gRepo.GetAllGradesByUserId(id);
+            }
+            return View(viewModel);
+        }
+
         [HttpPost]
         public ActionResult Advising(AdvisingViewModel viewModel)
         {

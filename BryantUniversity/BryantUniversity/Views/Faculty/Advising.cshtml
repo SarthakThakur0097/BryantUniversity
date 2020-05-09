@@ -33,7 +33,7 @@
                             <td>@advised.Student.Name</td>
                             <td>@advised.Student.Email</td>
                             <td>
-                                @Html.ActionLink("View Details", "Students", "Faculty", new { id = advised.Student.Id }, new { @class = "btn btn-success" })
+                                @Html.ActionLink("View Details", "StudentDetails", "Faculty", new { id = advised.Student.Id }, new { @class = "btn btn-success" })
                             </td>
                         </tr>
                     }

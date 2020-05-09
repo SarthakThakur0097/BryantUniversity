@@ -124,6 +124,11 @@
                         @Html.ActionLink("Look up classes", "Index", "Schedule", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
 
+
+                    <li class="nav-item">
+                        @Html.ActionLink("Catalog", "Catalog", "Courses", new { area = "" }, new { @class = "navbar-brand" })
+                    </li>
+
                     <li class="nav-item">
                         @Html.ActionLink("Schedule", "Schedule", "Student", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
@@ -148,6 +153,10 @@
 
                 <li class="nav-item">
                     @Html.ActionLink("Academics", "Grades", "Student", new { area = "" }, new { @class = "navbar-brand" })
+                </li>
+
+                <li class="nav-item">
+                    @Html.ActionLink("Degree Audit", "DegreeAudit", "Student", new { area = "" }, new { @class = "navbar-brand" })
                 </li>
 
                 <li class="nav-item">

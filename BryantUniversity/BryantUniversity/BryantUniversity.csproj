@@ -303,6 +303,7 @@
     <Compile Include="ViewModels\SemesterCoursesViewModel.cs" />
     <Compile Include="ViewModels\SemesterDetailsViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\StudentDetailsViewModel.cs" />
     <Compile Include="ViewModels\StudentHoldViewModel.cs" />
     <Compile Include="ViewModels\TranscriptViewModel.cs" />
     <Compile Include="ViewModels\UserDetailsViewModel.cs" />
@@ -357,6 +358,8 @@
     <Content Include="Views\Faculty\Advising.cshtml" />
     <Content Include="Views\Faculty\Details.cshtml" />
     <Content Include="Views\Student\Advisors.cshtml" />
+    <Content Include="Views\Student\DegreeAudit.cshtml" />
+    <Content Include="Views\Faculty\StudentDetails.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
