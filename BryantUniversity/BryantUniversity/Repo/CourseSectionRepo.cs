@@ -110,5 +110,12 @@ namespace BryantUniversity.Repo
             _context.Entry(courseSection).State = EntityState.Modified;
             _context.SaveChanges();
         }
+
+        public void Delete(CourseSection courseSection)
+        {
+            _context.CourseSections.Attach(courseSection);
+            _context.CourseSections.Remove(courseSection);
+            _context.SaveChanges();
+        }
     }
 }
