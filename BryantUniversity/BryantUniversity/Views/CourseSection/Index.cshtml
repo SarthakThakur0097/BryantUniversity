@@ -23,6 +23,7 @@
             <th>Course Section</th>
             <th>Course Title</th>
             <th>Credits</th>
+            <th>Duration</th>
             <th>Days</th>
             <th>Level</th>
             <th>Professor</th>
@@ -37,6 +38,7 @@
                 <td>@courseSection.Id</td>
                 <td>@courseSection.Course.CourseTitle</td>
                 <td>@courseSection.Course.Credits</td>
+                <td>@courseSection.ClassDuration.TimeForClass.Value</td>
                 <td>@courseSection.ClassDays.Pattern.Value</td>
                 <td>@courseSection.Course.CourseLevel.Level.Value</td>
                 <td>@courseSection.Professor.Name</td>

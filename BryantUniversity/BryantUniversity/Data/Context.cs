@@ -62,6 +62,45 @@ namespace BryantUniversity.Data
             .WithOptional(x => x.Registration)
             .WillCascadeOnDelete(true);
 
+            modelBuilder.Entity<MajorPreRequisite>()
+            .HasRequired<Course>(s => s.Course)
+            .WithMany(g => g.CourseMajorPreRequisites)
+            .HasForeignKey<int>(s => s.CourseId);
+
+            modelBuilder.Entity<MajorPreRequisite>()
+            .HasRequired<Course>(s => s.PreReq)
+            .WithMany(g => g.MajorPreRequisitesCourses)
+            .HasForeignKey<int>(s => s.CourseId);
+
+            //.HasMany<Course>(c => c.PreReq)
+
+
+
+
+            //modelBuilder.Entity<Course>()
+            //.HasMany(c => c.MajorPreRequisitesCourses)
+            //.WithMany(m => m.PreReq)
+            //.Map(m => {
+            //    m.ToTable("MajorPreRequisite");
+            //    m.MapLeftKey("CourseId");
+            //    m.MapRightKey("PreReqId");
+            //    })
+            //    .WillCascadeOnDelete(false);
+
+            //modelBuilder.Entity<Course>()
+            //.HasMany(c => c.MajorPreRequisitesCourses)
+            //.WithMany(m => m.Course)
+            //    .Map(m => {
+            //     m.ToTable("MajorPreRequisite");
+            //        m.MapLeftKey("PreReqId");
+            //        m.MapRightKey("CourseId");
+            //        })
+            //.WillCascadeOnDelete(false);
+
+            //modelBuilder.Entity<Course>()
+            //.HasMany<MajorPreRequisite>(c => c.)
+            //.WithOptional(x => x.Course)
+            //.WillCascadeOnDelete(true);
 
             //modelBuilder.Entity<MajorPreRequisite>().HasRequired(m => m.Course)
             //  .WithMany(m => m.).HasForeignKey(m => m.CourseId);
