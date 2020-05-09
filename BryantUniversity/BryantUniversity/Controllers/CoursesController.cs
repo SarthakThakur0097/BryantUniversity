@@ -142,7 +142,7 @@ namespace BryantUniversity.Controllers
                 {
                     dRepo = new DepartmentRepo(context);
                     clRepo = new CourseLevelRepo(context);
-                    newCourse = new Course(course.CourseTitleId, course.CourseTitle, course.Description, course.Credits, course.CourseLevelId, course.DepartmentId);
+                    newCourse = new Course(id, course.CourseTitleId, course.CourseTitle, course.Description, course.Credits, course.CourseLevelId, course.DepartmentId);
                     viewModel.PopulateDepermentSelectList(dRepo.GetAllDepartments());
                     viewModel.PopulateLevelsSelectList(clRepo.GetAllCourseLevels());
                     viewModel.Id = id;

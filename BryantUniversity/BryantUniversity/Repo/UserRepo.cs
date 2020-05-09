@@ -24,7 +24,7 @@ namespace BryantUniversity.Models.Repo
         public User GetById(int id)
         {
             return _context.Users
-                .FirstOrDefault(c => c.Id == id);
+                .AsNoTracking().FirstOrDefault(c => c.Id == id);
         }
 
         public IList<User> GetUsersByRole(int roleId)
@@ -66,6 +66,13 @@ namespace BryantUniversity.Models.Repo
         public void Update(User user)
         {
             _context.Users.Attach(user);
+            _context.Entry(user).State = EntityState.Modified;
+            _context.SaveChanges();
+        }
+
+        public void UpdateById(User user)
+        {
+            //_context.Users.Attach(user);
             _context.Entry(user).State = EntityState.Modified;
             _context.SaveChanges();
         }

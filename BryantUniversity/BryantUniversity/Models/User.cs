@@ -47,6 +47,21 @@ namespace BryantUniversity.Models
         }
 
 
+        public User(int id, string passWord, string email,  string name, string address, string city, string state, string zipcode, string phoneNumber)
+        {
+            Id = id;
+            Email = email;
+            HashedPassword = passWord;
+            Name = name;
+            Address = address;
+            City = city;
+            State = state;
+            ZipCode = zipcode;
+            PhoneNumber = phoneNumber;
+            UserRoles = new List<UserRole>();
+        }
+
+
         public int Id { get; set; }
         [Required]
         public string Email { get; set; }

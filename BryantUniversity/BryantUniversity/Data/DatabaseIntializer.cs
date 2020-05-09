@@ -114,9 +114,6 @@ namespace BryantUniversity.Data
             SemesterPeriod Spring2017 = new SemesterPeriod(Period.Spring2017, spring2017StartTime, spring2017EndTime, spring2017StartEnrollTime, spring2017EndEnrollTime);
             SemesterPeriod Fall2016 = new SemesterPeriod(Period.Fall2016, fall2016StartTime, fall2016EndTime, fall2016StartEnrollTime, fall2016EndEnrollTime);
 
-
-
-
             CourseLevel Undergraduate = new CourseLevel(Level.Undergraduate);
             CourseLevel Graduate = new CourseLevel(Level.Graduate);
 

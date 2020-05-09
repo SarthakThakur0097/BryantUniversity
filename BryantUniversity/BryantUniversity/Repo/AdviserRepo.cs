@@ -25,6 +25,14 @@ namespace BryantUniversity.Repo
                 .ToList();
         }
 
+        public IList<Advisor> GetAllAdvisorsStudentId(int id)
+        {
+            return _context.Advisors
+                .Include(b => b.Faculty)
+                .Include(b => b.Student)
+                .Where(b => b.StudentId == id)
+                .ToList();
+        }
 
         public IList<Advisor> GetAllAdvisors()
         {

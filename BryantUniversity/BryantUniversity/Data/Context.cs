@@ -37,6 +37,82 @@ namespace BryantUniversity.Data
                 .Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
+            modelBuilder.Entity<CourseSection>()
+            .Property(p => p.CourseId).IsOptional();
+
+            modelBuilder.Entity<Registration>()
+            .Property(p => p.CourseSectionId).IsOptional();
+
+            modelBuilder.Entity<Grade>()
+            .Property(p => p.RegistrationId).IsOptional();
+
+            modelBuilder.Entity<Course>()
+            .HasMany<CourseSection>(c => c.CourseCourseSections)
+            .WithOptional(x => x.Course)
+            .WillCascadeOnDelete(true);
+
+            modelBuilder.Entity<CourseSection>()
+            .HasMany<Registration>(c => c.Schedules)
+            .WithOptional(x => x.CourseSection)
+            .WillCascadeOnDelete(true);
+
+
+            modelBuilder.Entity<Registration>()
+            .HasMany<Grade>(c => c.Grades)
+            .WithOptional(x => x.Registration)
+            .WillCascadeOnDelete(true);
+
+
+            //modelBuilder.Entity<MajorPreRequisite>().HasRequired(m => m.Course)
+            //  .WithMany(m => m.).HasForeignKey(m => m.CourseId);
+            //modelBuilder.Entity<MajorPreRequisite>().HasRequired(m => m.Course)
+            //          .WithMany(m => m.CourseMajorPreRequisites).HasForeignKey(m => m.PreReqId);
+            //modelBuilder.Entity<Advisor>()
+            //    .HasRequired(c => c.Student)
+            //    .WithMany()
+            //    .WillCascadeOnDelete(false);
+
+            //modelBuilder.Entity<Registration>()
+            //    .HasRequired(c => c.CourseSection)
+            //    .WithMany()
+            //    .WillCascadeOnDelete(false);
+
+            //modelBuilder.Entity<Registration>()
+            //    .HasRequired(c => c.User)
+            //    .WithMany()
+            //    .WillCascadeOnDelete(false);
+
+            //modelBuilder.Entity<Major>()
+            //    .HasRequired(c => c.Department)
+            //    .WithMany()
+            //    .WillCascadeOnDelete(false);
+
+            //modelBuilder.Entity<Course>()
+            //    .HasRequired(c => c.Department)
+            //    .WithMany()
+            //    .WillCascadeOnDelete(false);
+
+            //modelBuilder.Entity<MajorPreRequisite>()
+            //    .HasRequired(c => c.Course)
+            //    .WithMany()
+            //    .WillCascadeOnDelete(false);
+
+            //modelBuilder.Entity<MajorRequirements>()
+            //    .HasRequired(c => c.Course)
+            //    .WithMany()
+            //    .WillCascadeOnDelete(true);
+
+            //modelBuilder.Entity<MajorRequirements>()
+            //   .HasRequired(c => c.Major)
+            //   .WithMany()
+            //   .WillCascadeOnDelete(false);
+
+            //modelBuilder.Entity<CourseSection>()
+            //  .HasRequired(c => c.Professor)
+            //  .WithMany()
+            //  .WillCascadeOnDelete(false);
+
+
         }
     }
 }
