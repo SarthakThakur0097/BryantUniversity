@@ -122,6 +122,22 @@ namespace BryantUniversity.Controllers
         }
 
         [HttpGet]
+        public ActionResult Advisors()
+        {
+            AdvisorsViewModel viewModel = new AdvisorsViewModel();
+            AdviserRepo aRepo;
+
+            using (context)
+            {
+                aRepo = new AdviserRepo(context);
+                viewModel.Advisors = aRepo.GetAllAdvisorsStudentId(CustomUser.User.Id);
+
+            }
+
+            return View(viewModel);
+        }
+
+        [HttpGet]
         public ActionResult Grades()
         {
             SemesterPeriodRepo spRepo;

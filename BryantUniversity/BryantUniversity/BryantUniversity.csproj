@@ -289,6 +289,7 @@
     <Compile Include="Security\CustomIdentity.cs" />
     <Compile Include="Security\CustomPrincipal.cs" />
     <Compile Include="ViewModels\AdvisingViewModel.cs" />
+    <Compile Include="ViewModels\AdvisorsViewModel.cs" />
     <Compile Include="ViewModels\CoursePreReqViewModel.cs" />
     <Compile Include="ViewModels\CourseSectionViewModel.cs" />
     <Compile Include="ViewModels\CourseViewModel.cs" />
@@ -354,6 +355,7 @@
     <Content Include="Views\Student\Drop.cshtml" />
     <Content Include="Views\Faculty\Advising.cshtml" />
     <Content Include="Views\Faculty\Details.cshtml" />
+    <Content Include="Views\Student\Advisors.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
