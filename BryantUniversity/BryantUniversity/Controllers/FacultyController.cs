@@ -99,7 +99,19 @@ namespace BryantUniversity.Controllers
             return View(userViewModel);
         }
 
+        [HttpGet]
+        public ActionResult All()
+        {
+            UserRepo uRepo;
 
+            using (context)
+            {
+                uRepo = new UserRepo(context);
+
+                uRepo.GetUsersByRole(2);
+            }
+                return View();
+        }
         [HttpGet]
         public ActionResult Edit(int id)
         {
@@ -231,6 +243,21 @@ namespace BryantUniversity.Controllers
 
                 return RedirectToAction("Index", "Faculty");
             }
+        }
+
+        [HttpGet]
+        public ActionResult Details(int id)
+        {
+            FacultyViewModel viewModel = new FacultyViewModel();
+            CourseSectionRepo uRepo;
+
+            using (context)
+            {
+                uRepo = new CourseSectionRepo(context);
+                viewModel.Teaching = uRepo.GetCourseSectionByUserId(id);
+            }
+
+            return View(viewModel);
         }
     }
 }

@@ -36,7 +36,7 @@
                         <th>Name</th>
                         <th>Email</th>
                         <th>Role</th>
-                        <th>Assign Advisor</th>
+                        <th></th>
                         <th>Edit User</th>
                     </tr>
                 </thead>
@@ -53,8 +53,9 @@
                             } else if(user.UserRoles[0].RoleId==2)
                             {
                                 <td>Faculty</td>
-                                <td></td>
-                            } else if(user.UserRoles[0].RoleId==3)
+                                <td>@Html.ActionLink("View Schedule", "Details", "Faculty", new { id = user.Id }, new { @class = "btn btn-primary" })</td>
+                            }
+                            else if (user.UserRoles[0].RoleId == 3)
                             {
                                 <td>Researcher</td>
                                 <td></td>
