@@ -61,6 +61,12 @@ namespace BryantUniversity.Data
             .HasMany<Grade>(c => c.Grades)
             .WithOptional(x => x.Registration)
             .WillCascadeOnDelete(true);
+
+
+            //modelBuilder.Entity<MajorPreRequisite>().HasRequired(m => m.Course)
+            //  .WithMany(m => m.).HasForeignKey(m => m.CourseId);
+            //modelBuilder.Entity<MajorPreRequisite>().HasRequired(m => m.Course)
+            //          .WithMany(m => m.CourseMajorPreRequisites).HasForeignKey(m => m.PreReqId);
             //modelBuilder.Entity<Advisor>()
             //    .HasRequired(c => c.Student)
             //    .WithMany()
