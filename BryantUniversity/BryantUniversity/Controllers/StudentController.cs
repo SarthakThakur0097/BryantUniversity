@@ -104,6 +104,30 @@ namespace BryantUniversity.Controllers
         }
 
         [HttpGet]
+        public ActionResult DegreeAudit()
+        {
+            DegreeAuditViewModel viewModel = new DegreeAuditViewModel();
+
+            GradesRepo gRepo;
+            StudentMajorRepo sMRepo;
+            MajorRepo mRepo;
+            MajorRequirmentsRepo mrRepo;
+
+            using (context)
+            {
+                gRepo = new GradesRepo(context);
+                sMRepo = new StudentMajorRepo(context);
+                mrRepo = new MajorRequirmentsRepo(context);
+
+                mRepo = new MajorRepo(context);
+                viewModel.AllCourses = gRepo.GetAllGradesByUserId(CustomUser.User.Id);
+                viewModel.StudentMajor = sMRepo.GetByStudentId(CustomUser.User.Id);
+                viewModel.MajorRequirements = mrRepo.GetAllMajorRequirementsByMajor(viewModel.StudentMajor.MajorId); 
+            }
+            return View(viewModel);
+        }
+
+        [HttpGet]
         public ActionResult Transcript()
         {
             TranscriptViewModel viewModel = new TranscriptViewModel();
@@ -111,7 +135,7 @@ namespace BryantUniversity.Controllers
             MajorRequirmentsRepo mRepo;
             GradesRepo gRepo;
             RegistrationRepo rRepo;
-            IList<Grade> Graded = new List<Grade>();
+            IList<Grade> AllClasses = new List<Grade>();
             IList<Registration> AllRegistrations = new List<Registration>();
             IList<Registration> PendingGrades = new List<Registration>();
 
@@ -122,21 +146,10 @@ namespace BryantUniversity.Controllers
                 gRepo = new GradesRepo(context);
                 rRepo = new RegistrationRepo(context);
 
-                AllRegistrations = rRepo.GetRegistrationByUserId(CustomUser.User.Id);
+                viewModel.AllGradesClasses = gRepo.GetAllGradesByUserId(CustomUser.User.Id);
 
-                foreach(var registration in AllRegistrations)
-                {
-                    if(!gRepo.ContainsRegistration(registration.Id))
-                    {
-                        PendingGrades.Add(registration);
-                    }
-                    else if(gRepo.ContainsRegistration(registration.Id))
-                    {
-                        Graded.Add(gRepo.GetGradeByRegistrationId(registration.Id));
-                    }
-                }
                 viewModel.StudentMajor = sRepo.GetByStudentId(CustomUser.User.Id);
-                viewModel.MajorRequirements = mRepo.GetAllMajorRequirementsByMajor(viewModel.StudentMajor.MajorId);
+                
             }
 
             return View(viewModel);
