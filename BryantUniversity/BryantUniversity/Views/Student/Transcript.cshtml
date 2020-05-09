@@ -24,15 +24,33 @@
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
-                        <th>Major Requirements</th>
-
+                        <th>Course Id</th>
+                        <th>Title</th>
+                        <th>Credits</th>
+                        <th>Grade</th>
+                        <th>Semester</th>
                     </tr>
                 </thead>
                 <tbody id="myTable">
-                    @foreach (var requirments in Model.MajorRequirements)
+                    @foreach (var gradeRegistration in Model.AllGradesClasses)
                     {
                         <tr>
-                            <td>@requirments.Course.CourseTitle</td>
+                            <td>@gradeRegistration.Registration.CourseSection.Course.CourseTitleId</td>
+                            <td>@gradeRegistration.Registration.CourseSection.Course.CourseTitle</td>
+                            <td>@gradeRegistration.Registration.CourseSection.Course.Credits</td>
+                            @if (gradeRegistration.FinalGrade == null)
+                            {
+                                <td>
+                                    Pending
+                                </td>
+                            }
+                            else
+                            {
+                                <td>
+                                    @gradeRegistration.FinalGrade
+                                </td>
+                            }
+                            <td>@gradeRegistration.Registration.CourseSection.SemesterPeriod.Period.Value</td>
                         </tr>
                     }
                 </tbody>

@@ -1,3 +1,4 @@
+INSERT INTO [BryantDB].[dbo].[Department] VALUES( 'Computer Science' , '516-289-6454')
 INSERT INTO [BryantDB].[dbo].[Department] VALUES( 'American Studies' , '516-289-2391')
 INSERT INTO [BryantDB].[dbo].[Department] VALUES( 'Biological Sciences' , '516-289-2392')
 INSERT INTO [BryantDB].[dbo].[Department] VALUES( 'Criminology' , '516-289-2393')

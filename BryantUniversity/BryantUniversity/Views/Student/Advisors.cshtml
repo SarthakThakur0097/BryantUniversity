@@ -1,4 +1,4 @@
-﻿@model BryantUniversity.ViewModels.AdvisingViewModel
+﻿@model BryantUniversity.ViewModels.AdvisorsViewModel
 @{
     ViewBag.Title = "Teaching";
 }
@@ -9,7 +9,7 @@
 
         </div>
         <div class="col-sm">
-            <h2>students you are advising</h2>
+            <h2>Your Advisor</h2>
         </div>
         <div class="col-sm">
 
@@ -27,14 +27,11 @@
                 </thead>
 
                 <tbody>
-                    @foreach (var advised in Model.AllAdvisedStudent)
+                    @foreach (var advisor in Model.Advisors)
                     {
                         <tr>
-                            <td>@advised.Student.Name</td>
-                            <td>@advised.Student.Email</td>
-                            <td>
-                                @Html.ActionLink("View Details", "StudentDetails", "Faculty", new { id = advised.Student.Id }, new { @class = "btn btn-success" })
-                            </td>
+                            <td>@advisor.Faculty.Name</td>
+                            <td>@advisor.Faculty.Email</td>
                         </tr>
                     }
                 </tbody>

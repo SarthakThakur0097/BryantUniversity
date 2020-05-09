@@ -17,13 +17,13 @@ namespace BryantUniversity.Data
             //context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('UserRole', RESEED, 500000);");
 
 
-            User adminUser = new User("Admin@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Admin 1");
-            User adminUser2 = new User("Admin2@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Admin 2");
-            User teacherUser = new User("Teacher@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Teacher 1");
-            User teacherUser2 = new User("Teacher2@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Teacher 2");
-            User studentUser = new User("Student@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Student 1");
+            User adminUser = new User("Admin@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Admin 1", "Address","City", "state", "ZipCode", "PhoneNumber");
+            //User adminUser2 = new User("Admin2@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Admin 2");
+            //User teacherUser = new User("Teacher@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Teacher 1");
+            //User teacherUser2 = new User("Teacher2@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Teacher 2");
+            //User studentUser = new User("Student@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Student 1");
 
-            UserRole adminRole = new UserRole(1, 2);
+            UserRole adminRole = new UserRole(1, 1);
             UserRole teacherRole = new UserRole(2, 1);
             UserRole admin2Role = new UserRole(3, 1);
             UserRole teacher2Role = new UserRole(4, 2);
@@ -74,10 +74,45 @@ namespace BryantUniversity.Data
             DateTime spring2019StartEnrollTime = new DateTime(2019, 11, 1);
             DateTime spring2019EndEnrollTime = new DateTime(2019, 05, 30);
 
+            DateTime fall2018StartTime = new DateTime(2019, 01, 5);
+            DateTime fall2018EndTime = new DateTime(2019, 05, 23);
+            DateTime fall2018StartEnrollTime = new DateTime(2019, 11, 1);
+            DateTime fall2018EndEnrollTime = new DateTime(2019, 05, 30);
+
+
+            DateTime spring2018StartTime = new DateTime(2019, 01, 5);
+            DateTime spring2018EndTime = new DateTime(2019, 05, 23);
+            DateTime spring2018StartEnrollTime = new DateTime(2019, 11, 1);
+            DateTime spring2018EndEnrollTime = new DateTime(2019, 05, 30);
+
+
+            DateTime fall2017StartTime = new DateTime(2019, 01, 5);
+            DateTime fall2017EndTime = new DateTime(2019, 05, 23);
+            DateTime fall2017StartEnrollTime = new DateTime(2019, 11, 1);
+            DateTime fall2017EndEnrollTime = new DateTime(2019, 05, 30);
+
+
+            DateTime spring2017StartTime = new DateTime(2019, 01, 5);
+            DateTime spring2017EndTime = new DateTime(2019, 05, 23);
+            DateTime spring2017StartEnrollTime = new DateTime(2019, 11, 1);
+            DateTime spring2017EndEnrollTime = new DateTime(2019, 05, 30);
+
+
+            DateTime fall2016StartTime = new DateTime(2019, 01, 5);
+            DateTime fall2016EndTime = new DateTime(2019, 05, 23);
+            DateTime fall2016StartEnrollTime = new DateTime(2019, 11, 1);
+            DateTime fall2016EndEnrollTime = new DateTime(2019, 05, 30);
+
             SemesterPeriod Fall2020 = new SemesterPeriod(Period.Fall2020, fall2020StartTime, fall2020EndTime, fall2020StartEnrollTime, fall2020EndEnrollTime);
             SemesterPeriod Spring2020 = new SemesterPeriod(Period.Spring2020, spring2020StartTime, spring2020EndTime, spring2020StartEnrollTime, spring2020EndEnrollTime);
             SemesterPeriod Fall2019 = new SemesterPeriod(Period.Fall2019, fall2019StartTime, fall2019EndTime, fall2019StartEnrollTime, fall2019EndEnrollTime);
             SemesterPeriod Spring2019 = new SemesterPeriod(Period.Spring2019, spring2019StartTime, spring2019EndTime, spring2019StartEnrollTime, spring2019EndEnrollTime);
+
+            SemesterPeriod Fall2018 = new SemesterPeriod(Period.Fall2018, fall2018StartTime, fall2018EndTime, fall2018StartEnrollTime, fall2018EndEnrollTime);
+            SemesterPeriod Spring2018 = new SemesterPeriod(Period.Spring2018, spring2018StartTime, spring2018EndTime, spring2018StartEnrollTime, spring2018EndEnrollTime);
+            SemesterPeriod Fall2017 = new SemesterPeriod(Period.Fall2017, fall2017StartTime, fall2017EndTime, fall2017StartEnrollTime, fall2017EndEnrollTime);
+            SemesterPeriod Spring2017 = new SemesterPeriod(Period.Spring2017, spring2017StartTime, spring2017EndTime, spring2017StartEnrollTime, spring2017EndEnrollTime);
+            SemesterPeriod Fall2016 = new SemesterPeriod(Period.Fall2016, fall2016StartTime, fall2016EndTime, fall2016StartEnrollTime, fall2016EndEnrollTime);
 
             CourseLevel Undergraduate = new CourseLevel(Level.Undergraduate);
             CourseLevel Graduate = new CourseLevel(Level.Graduate);
@@ -111,19 +146,19 @@ namespace BryantUniversity.Data
             Room room = new Room("Lecture", 30, 1);
 
             Department compSci = new Department("Computer Science", "516-389-2930");
-            //Course introToProg = new Course(0,"Intro to Computer Science", "Basic programming with Java", 4, "Level 100", compSci);
+            //Course introToProg = new Course(0, "Intro to Computer Science", "Basic programming with Java", 4, "Level 100", compSci);
 
-            FacultyDepartment facultyDepartment = new FacultyDepartment(teacherUser, compSci);
+            //FacultyDepartment facultyDepartment = new FacultyDepartment(teacherUser, compSci);
             CourseSection courseSection = new CourseSection(0, 1, 1, 1, 1);
             //toInsert = new CourseSection(0, 10000, courseSection.CourseId, courseSection.RoomId, courseSection.UserId, courseSection.SemesterPeriodId);
 
             context.Users.Add(adminUser);
-            context.Users.Add(adminUser2);
-      
-            context.Users.Add(teacherUser);
-            context.Users.Add(teacherUser2);
+            //context.Users.Add(adminUser2);
 
-            context.Users.Add(studentUser);
+            //context.Users.Add(teacherUser);
+            //context.Users.Add(teacherUser2);
+
+            //context.Users.Add(studentUser);
 
             context.Roles.Add(admin);
             context.Roles.Add(faculty);
@@ -131,10 +166,10 @@ namespace BryantUniversity.Data
             context.Roles.Add(student);
 
             context.UserRoles.Add(adminRole);
-            context.UserRoles.Add(teacherRole);
-            context.UserRoles.Add(admin2Role);
-            context.UserRoles.Add(teacher2Role);
-            context.UserRoles.Add(studentRole);
+            //context.UserRoles.Add(teacherRole);
+            //context.UserRoles.Add(admin2Role);
+            //context.UserRoles.Add(teacher2Role);
+            //context.UserRoles.Add(studentRole);
 
             context.Holds.Add(financial);
             context.Holds.Add(academic);
@@ -152,7 +187,13 @@ namespace BryantUniversity.Data
             context.CalendarEvents.Add(semEvent10);
             context.CalendarEvents.Add(semEvent11);
             context.CalendarEvents.Add(semEvent12);
-
+            context.SemesterPeriods.Add(Spring2019);
+     
+            context.SemesterPeriods.Add(Fall2018);
+            context.SemesterPeriods.Add(Spring2018);
+            context.SemesterPeriods.Add(Fall2017);
+            context.SemesterPeriods.Add(Spring2017);
+            context.SemesterPeriods.Add(Fall2016);
             context.ClassTimes.Add(NineToElvenAm);
             context.ClassTimes.Add(ElvenAmToTwelvePm);
             context.ClassTimes.Add(OneToTwoPM);
@@ -168,11 +209,11 @@ namespace BryantUniversity.Data
             context.CourseLevels.Add(Graduate);
             //context.Buildings.Add(mainCampus);
             //context.Rooms.Add(room1);
-            context.Departments.Add(compSci);
+            //context.Departments.Add(compSci);
 
-            //context.Courses.Add(introToProg);
+            ////context.Courses.Add(introToProg);
             
-            context.FacultyDepartments.Add(facultyDepartment);
+            //context.FacultyDepartments.Add(facultyDepartment);
             //context.Buildings.Add(building);
             //context.Rooms.Add(room);
             //context.CourseSections.Add(courseSection);

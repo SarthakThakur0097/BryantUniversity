@@ -28,6 +28,15 @@ namespace BryantUniversity.Repo
             return _context.Grades.FirstOrDefault(c => c.Id == gradeId);
         }
 
+        public Grade GetGradeByRegistrationId(int rId)
+        {
+            return _context.Grades
+                .Include(u => u.Registration.CourseSection.Course)
+                .Include(u => u.Registration.CourseSection.Professor)
+                .Include(u => u.Registration.CourseSection.Room.Building)
+                .Where(c => c.Registration.Id == rId)
+                .FirstOrDefault();
+        }
         public bool ContainsRegistration(int id)
         {
             return _context.Grades
@@ -55,7 +64,11 @@ namespace BryantUniversity.Repo
         {
             return _context.Grades
                 .Include(u => u.Registration.CourseSection.Course)
+                .Include(u => u.Registration.CourseSection.Course.CourseLevel)
+                .Include(u => u.Registration.CourseSection.ClassDuration)
                 .Include(u => u.Registration.CourseSection.Professor)
+                .Include(u => u.Registration.CourseSection.ClassDays)
+                .Include(u => u.Registration.CourseSection.SemesterPeriod)
                 .Include(u => u.Registration.CourseSection.Room.Building)
                 .Where(c => c.Registration.UserId == userId)
                 .ToList();

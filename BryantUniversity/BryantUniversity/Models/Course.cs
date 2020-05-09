@@ -17,6 +17,17 @@ namespace BryantUniversity.Models
             DepartmentId = departmentId;
         }
 
+        public Course(int id, string courseTitleId, string courseTitle, string description, int credits, int courseLevelId, int departmentId)
+        {
+            Id = id;
+            CourseTitleId = courseTitleId;
+            CourseTitle = courseTitle;
+            Description = description;
+            Credits = credits;
+            CourseLevelId = courseLevelId;
+            DepartmentId = departmentId;
+        }
+
         [Key]
         public int Id { get; set; }
         [Required]
@@ -31,6 +42,9 @@ namespace BryantUniversity.Models
         public int DepartmentId { get; set; }
         public Department Department { get; set; }
 
-        public IList<MajorPreRequisite> MajorPreRequisites;
+        public List<CourseSection> CourseCourseSections { get; set; }
+        public List<MajorRequirements> CourseMajorRequirements { get; set; }
+        public List<MajorPreRequisite> CourseMajorPreRequisites { get; set; }
+        public List<MajorPreRequisite> MajorPreRequisitesCourses { get; set; }
     }
 }

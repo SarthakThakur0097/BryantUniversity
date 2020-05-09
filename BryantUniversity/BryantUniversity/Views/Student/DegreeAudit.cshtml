@@ -1,0 +1,107 @@
+﻿@model BryantUniversity.ViewModels.DegreeAuditViewModel
+@{
+    ViewBag.Title = "Transcript";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+
+        </div>
+        <div class="col-sm">
+
+        </div>
+        <div class="col-sm">
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm">
+            <h1>Major: @Model.StudentMajor.Major.Title</h1>
+        </div>
+        <div class="col-sm">
+            <h1>cumulative: </h1>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Course Id</th>
+                        <th>Title</th>
+                        <th>Credits</th>
+                        <th>Grade</th>
+                        <th>Semester</th>
+                    </tr>
+                </thead>
+                <tbody id="myTable">
+                    @foreach (var courses in Model.AllCourses)
+                    {
+                        <tr>
+                            <td>@courses.Registration.CourseSection.Course.CourseTitleId</td>
+                            <td>@courses.Registration.CourseSection.Course.CourseTitle</td>
+                            <td>@courses.Registration.CourseSection.Course.Credits</td>
+                            @if (courses.FinalGrade == null)
+                            {
+                                <td>
+                                    Pending
+                                </td>
+                            }
+                            else
+                            {
+                                <td>
+                                    @courses.FinalGrade
+                                </td>
+                            }
+                            <td>@courses.Registration.CourseSection.SemesterPeriod.Period.Value</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+        <div class="col-sm">
+
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-sm">
+            <h1>Major Requirments: @Model.StudentMajor.Major.Title</h1>
+        </div>
+        <div class="col-sm">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Course Id</th>
+                        <th>Title</th>
+                        <th>Credits</th>
+                        <th>Prerequiste</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="myTable">
+                    @foreach (var majorRequirements in Model.MajorRequirements)
+                    {
+                        <tr>
+                            <td>@majorRequirements.Course.CourseTitleId</td>
+                            <td>@majorRequirements.Course.CourseTitle</td>
+                            <td>@majorRequirements.Course.Credits</td>
+
+                            @if (majorRequirements.Course.MajorPreRequisitesCourses != null)
+                            {
+                                foreach (var prereq in majorRequirements.Course.MajorPreRequisitesCourses)
+                                {
+                                    <td>@prereq.Course.CourseTitleId 03</td>
+                                }
+                            }
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+        <div class="col-sm">
+
+        </div>
+    </div>
+</div>

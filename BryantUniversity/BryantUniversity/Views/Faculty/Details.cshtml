@@ -1,0 +1,66 @@
+﻿@model BryantUniversity.ViewModels.FacultyViewModel
+
+@{
+    ViewBag.Title = "Schedule";
+}
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-sm">
+
+        </div>
+        <div class="col-sm">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+
+        </div>
+        <div class="col-sm">
+
+        </div>
+        <div class="col-md-5">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+        </div>
+        <div class="col-md-5">
+
+            <h1>@Model.Teaching[0].Professor.Name is teaching: </h1>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr lass="bench-row">
+            
+                        <th>Course Title</th>
+                        <th>Course Time</th>
+                        <th>Days</th>
+                        <th>Building</th>
+                        <th>Room Number</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Teaching != null)
+                    {
+                        foreach (var teaching in Model.Teaching)
+                        {
+                            <tr>
+                                <td>@teaching.Course.CourseTitleId</td>
+                                <td>@teaching.ClassDuration.TimeForClass.Value</td>
+                                <td>@teaching.ClassDays.Pattern.Value</td>
+                                <td>@teaching.Room.Building.BuildingName</td>
+                                <td>@teaching.Room.Id</td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm">
+
+        </div>
+    </div>
+</div>
