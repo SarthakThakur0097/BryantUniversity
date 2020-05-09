@@ -99,6 +99,50 @@ namespace BryantUniversity.Controllers
             return View(userViewModel);
         }
 
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            var userViewModel = new UserViewModel();
+            UserRepo uRepo;
+
+            using (context)
+            {
+                uRepo = new UserRepo(context);
+                User user = uRepo.GetById(id);
+
+                userViewModel.Id = user.Id;
+                userViewModel.Password = user.HashedPassword;
+                userViewModel.Name = user.Name;
+                userViewModel.Email = user.Email;
+                userViewModel.City = user.City;
+                userViewModel.Address = user.Address;
+                userViewModel.State = user.State;
+                userViewModel.ZipCode = user.ZipCode;
+                userViewModel.PhoneNumber = user.PhoneNumber;
+            }
+
+            return View(userViewModel);
+        }
+
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public ActionResult Edit(int id, UserViewModel userViewModel)
+        {
+
+                UserRepo repository;
+
+                using (context)
+                {
+                    repository = new UserRepo(context);
+                    User userId = repository.GetById(id);
+                    User user = new User(userViewModel.Id, userId.HashedPassword, userViewModel.Email, userViewModel.Name, userViewModel.Address, userViewModel.City, userViewModel.State, userViewModel.ZipCode, userViewModel.PhoneNumber);
+
+                    repository.Update(user);
+                }
+
+            return RedirectToAction("Index", "Faculty");
+        }
         public ActionResult Teaching()
         {
             CourseSectionRepo csRepo;

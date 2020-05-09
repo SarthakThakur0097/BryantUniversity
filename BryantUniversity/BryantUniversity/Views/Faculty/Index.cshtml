@@ -36,7 +36,8 @@
                         <th>Name</th>
                         <th>Email</th>
                         <th>Role</th>
-                        <th></th>
+                        <th>Assign Advisor</th>
+                        <th>Edit User</th>
                     </tr>
                 </thead>
                 <tbody id="myTable">
@@ -66,6 +67,7 @@
                             {
                                 <td>Does not have a User Rule</td>
                             }
+                            <td>@Html.ActionLink("Edit", "Edit", "Faculty", new { id = user.Id }, new { @class = "btn btn-primary" })</td>
                         </tr>
                     }
                 </tbody>
