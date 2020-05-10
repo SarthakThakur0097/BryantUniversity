@@ -242,6 +242,9 @@
     <Compile Include="Models\Days.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\FacultyDepartment.cs" />
+    <Compile Include="Models\FacultyHistory.cs" />
+    <Compile Include="Models\FacultyType.cs" />
+    <Compile Include="Models\FacultyTypeModel.cs" />
     <Compile Include="Models\Grade.cs" />
     <Compile Include="Models\Hold.cs" />
     <Compile Include="Models\HoldType.cs" />
@@ -259,6 +262,8 @@
     <Compile Include="Models\StudentHolds.cs" />
     <Compile Include="Models\StudentLevel.cs" />
     <Compile Include="Models\StudentMajor.cs" />
+    <Compile Include="Models\StudentType.cs" />
+    <Compile Include="Models\StudentTypeModel.cs" />
     <Compile Include="Repo\AdviserRepo.cs" />
     <Compile Include="Repo\BuildingRepo.cs" />
     <Compile Include="Repo\CalendarRepo.cs" />
@@ -268,6 +273,7 @@
     <Compile Include="Repo\CoursesRepo.cs" />
     <Compile Include="Repo\DaysRepo.cs" />
     <Compile Include="Repo\DepartmentRepo.cs" />
+    <Compile Include="Repo\FacultyTypesRepo.cs" />
     <Compile Include="Repo\GradesRepo.cs" />
     <Compile Include="Repo\HoldRepo.cs" />
     <Compile Include="Repo\MajorPreRequisitesRepo.cs" />
@@ -280,6 +286,7 @@
     <Compile Include="Repo\SemesterPeriodRepo.cs" />
     <Compile Include="Repo\StudentHoldRepo.cs" />
     <Compile Include="Repo\StudentMajorRepo.cs" />
+    <Compile Include="Repo\StudentTypesRepo.cs" />
     <Compile Include="Repo\UserRepo.cs" />
     <Compile Include="Repo\UserRoleRepo.cs" />
     <Compile Include="Models\Role.cs" />
