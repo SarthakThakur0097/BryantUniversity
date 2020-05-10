@@ -13,12 +13,12 @@
             <h2 style="color: black; font-family: Roboto; font-weight: 800">Sign In</h2>
             <div id="label">
                 @Html.LabelFor(m => m.Email, new { Style = "color:black;" })
-                @Html.TextBoxFor(m => m.Email, new { id = "email"})
+                @Html.TextBoxFor(m => m.Email, new { Style = "color:black;", id = "email"})
             </div>
 
             <div id="label">
                 @Html.LabelFor(m => m.Password, new { Style = "color:black;" })
-                @Html.PasswordFor(m => m.Password, new { id = "password" })
+                @Html.PasswordFor(m => m.Password, new { Style = "color:black;", id = "password" })
             </div>
 
             <div>
