@@ -281,6 +281,7 @@
     <Compile Include="Repo\DepartmentRepo.cs" />
     <Compile Include="Repo\GradesRepo.cs" />
     <Compile Include="Repo\HoldRepo.cs" />
+    <Compile Include="Repo\LetterGradesRepo.cs" />
     <Compile Include="Repo\MajorPreRequisitesRepo.cs" />
     <Compile Include="Repo\MajorRepo.cs" />
     <Compile Include="Repo\MajorRequirementsRepo.cs" />
