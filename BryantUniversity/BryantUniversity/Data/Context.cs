@@ -16,8 +16,7 @@ namespace BryantUniversity.Data
         public DbSet<ClassDuration> ClassTimes { get; set; }
         public DbSet<SemesterPeriod> SemesterPeriods { get; set; }
         public DbSet<CourseLevel> CourseLevels { get; set; }
-        public DbSet<StudentTypeModel> StudentTypes { get; set; }
-        public DbSet<FacultyTypeModel> FacultyTypes { get; set; }
+        public DbSet<TimeTypes> TimeTypes { get; set; }
         public DbSet<Course> Courses { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<FacultyDepartment> FacultyDepartments {get; set;}
@@ -32,6 +31,8 @@ namespace BryantUniversity.Data
         public DbSet<Minor> Minors { get; set; }
         public DbSet<Advisor> Advisors { get; set; }
         public DbSet<StudentLevel> StudentLevels { get; set; }
+        public DbSet<StudentTimeType> StudentsTimeType { get; set; }
+        public DbSet<FacultyTimeType> FacultyTimeType { get; set; }
         public DbSet<StudentMajor> StudentMajors { get; set; }
         public DbSet<FacultyHistory> FacultyHistory { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
