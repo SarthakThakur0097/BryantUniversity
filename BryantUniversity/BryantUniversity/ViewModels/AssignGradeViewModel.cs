@@ -11,6 +11,6 @@ namespace BryantUniversity.ViewModels
     {
         public User Student { get; set; }
         [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Use letters only please")]
-        string TextBoxData { get; set; }
+        public string TextBoxData { get; set; }
     }
 }

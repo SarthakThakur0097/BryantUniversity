@@ -250,6 +250,8 @@
     <Compile Include="Models\Grade.cs" />
     <Compile Include="Models\Hold.cs" />
     <Compile Include="Models\HoldType.cs" />
+    <Compile Include="Models\GradeVal.cs" />
+    <Compile Include="Models\LetterGrade.cs" />
     <Compile Include="Models\Level.cs" />
     <Compile Include="Models\Major.cs" />
     <Compile Include="Models\MajorPreRequisite.cs" />

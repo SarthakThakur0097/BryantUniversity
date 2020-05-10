@@ -1,4 +1,4 @@
-﻿@model BryantUniversity.ViewModels.UserDetailsViewModel
+﻿@model BryantUniversity.ViewModels.AssignGradeViewModel
 
 @{
     ViewBag.Title = "Assign";
@@ -27,10 +27,10 @@
                 @Html.ValidationSummary()
                 <div id="container">
                     <div id="form">
-                        <h2 style="color: black; font-family: Roboto; font-weight: 800">Sign In</h2>
                         <div id="label">
-                            @*@Html.LabelFor(m => m., new { Style = "color:black;" })
-                            @Html.TextBoxFor(m => m.Grade, new { id = "grade" })*@
+                            @Html.LabelFor(m => m.TextBoxData, new { Style = "color:black;" })
+                            @Html.EditorFor(model => model.TextBoxData, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.TextBoxData, "", new { @class = "pure-form-message-inline" })
                         </div>
                         <div>
                             <button type="submit" id="submit" class="btn btn-success btn-lg">Assign</button>

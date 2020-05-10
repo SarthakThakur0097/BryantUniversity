@@ -119,6 +119,30 @@ namespace BryantUniversity.Data
             CourseLevel Undergraduate = new CourseLevel(Level.Undergraduate);
             CourseLevel Graduate = new CourseLevel(Level.Graduate);
 
+            LetterGrade A = new LetterGrade(GradeVal.A);
+            LetterGrade Aminus = new LetterGrade(GradeVal.Aminus);
+            LetterGrade Bplus = new LetterGrade(GradeVal.Bplus);
+            LetterGrade B = new LetterGrade(GradeVal.B);
+            LetterGrade Bminus = new LetterGrade(GradeVal.Bminus);
+            LetterGrade Cplus = new LetterGrade(GradeVal.Cplus);
+            LetterGrade C = new LetterGrade(GradeVal.C);
+            LetterGrade Cminus = new LetterGrade(GradeVal.Cminus);
+            LetterGrade Dplus = new LetterGrade(GradeVal.Dplus);
+            LetterGrade D = new LetterGrade(GradeVal.D);
+            LetterGrade Dminus = new LetterGrade(GradeVal.Dminus);
+            LetterGrade Fgrade = new LetterGrade(GradeVal.F);
+
+            context.LetterGrades.Add(A);
+            context.LetterGrades.Add(Aminus);
+            context.LetterGrades.Add(Bplus);
+            context.LetterGrades.Add(B);
+            context.LetterGrades.Add(Bminus);
+            context.LetterGrades.Add(Cplus);
+            context.LetterGrades.Add(C);
+            context.LetterGrades.Add(Cminus);
+            context.LetterGrades.Add(Dplus);
+            context.LetterGrades.Add(D);
+            context.LetterGrades.Add(Dminus);
             TimeTypes PartTime = new TimeTypes(TimeType.FullTime);
             TimeTypes FullTime = new TimeTypes(TimeType.PartTime);
 
