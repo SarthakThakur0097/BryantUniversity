@@ -143,6 +143,7 @@ namespace BryantUniversity.Data
             context.LetterGrades.Add(Dplus);
             context.LetterGrades.Add(D);
             context.LetterGrades.Add(Dminus);
+            context.LetterGrades.Add(Fgrade);
             TimeTypes PartTime = new TimeTypes(TimeType.FullTime);
             TimeTypes FullTime = new TimeTypes(TimeType.PartTime);
 
