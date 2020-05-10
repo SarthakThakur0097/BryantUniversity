@@ -232,6 +232,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Advisor.cs" />
+    <Compile Include="Models\Attendance.cs" />
     <Compile Include="Models\Building.cs" />
     <Compile Include="Models\ClassDuration.cs" />
     <Compile Include="Models\ClassPattern.cs" />
