@@ -12,7 +12,7 @@ namespace BryantUniversity.Models
         public Attendance(int userId, int courseId, DateTime dateOfClass, bool isPresent)
         {
             UserId = userId;
-            CourseId = courseId;
+            CourseSectionId = courseId;
             DateOfClass = dateOfClass;
             IsPresent = isPresent;
         }
@@ -20,8 +20,8 @@ namespace BryantUniversity.Models
         public int Id { get; set; }
         public int UserId { get; set; }
         public User User { get; set; }
-        public int CourseId { get; set; }
-        public Course Course { get; set; }
+        public int CourseSectionId { get; set; }
+        public CourseSection Course { get; set; }
         public DateTime DateOfClass { get; set; }
         public bool IsPresent { get; set; }
     }

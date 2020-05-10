@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace BryantUniversity.Controllers
 {
-    [Authorize(Roles = "4")]
+
     public class StudentController : Controller
     {
         Context context;
@@ -41,7 +41,26 @@ namespace BryantUniversity.Controllers
 
             return View(viewModel);
         }
-        
+
+        [Authorize(Roles = "2")]
+        [HttpGet]
+        public ActionResult Attendance(int id, int CourseSectionId)
+        {
+            StudentAttendanceViewModel viewModel = new StudentAttendanceViewModel();
+
+            CourseSectionRepo cRepo;
+            UserRepo uRepo;
+
+            using (context)
+            {
+                uRepo = new UserRepo(context);
+                cRepo = new CourseSectionRepo(context);
+
+                viewModel.Student = uRepo.GetById(id);
+                viewModel.CourseSection = cRepo.GetCourseSectionById(CourseSectionId);
+            }
+            return View(viewModel);
+        }
         [HttpPost]
         public ActionResult Schedule(ScheduleViewModel viewModel)
         {

@@ -184,6 +184,7 @@
     <Content Include="Resources\MUwhite.png" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="scripts\Attendance.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="ClassDiagram1.cd" />
@@ -202,6 +203,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiControllers\AttendanceApiController.cs" />
     <Compile Include="ApiControllers\BuildingApiController.cs" />
     <Compile Include="ApiControllers\CalendarApiController.cs" />
     <Compile Include="ApiControllers\ClassDurationApiController.cs" />
@@ -266,6 +268,7 @@
     <Compile Include="Models\StudentTimeType.cs" />
     <Compile Include="Models\TimeTypes.cs" />
     <Compile Include="Repo\AdviserRepo.cs" />
+    <Compile Include="Repo\AttendanceRepo.cs" />
     <Compile Include="Repo\BuildingRepo.cs" />
     <Compile Include="Repo\CalendarRepo.cs" />
     <Compile Include="Repo\ClassDurationRepo.cs" />
@@ -296,6 +299,8 @@
     <Compile Include="Security\CustomPrincipal.cs" />
     <Compile Include="ViewModels\AdvisingViewModel.cs" />
     <Compile Include="ViewModels\AdvisorsViewModel.cs" />
+    <Compile Include="ViewModels\AssignGradeViewModel.cs" />
+    <Compile Include="ViewModels\AttendanceViewModel.cs" />
     <Compile Include="ViewModels\CoursePreReqViewModel.cs" />
     <Compile Include="ViewModels\CourseSectionViewModel.cs" />
     <Compile Include="ViewModels\CourseViewModel.cs" />
@@ -309,6 +314,7 @@
     <Compile Include="ViewModels\SemesterCoursesViewModel.cs" />
     <Compile Include="ViewModels\SemesterDetailsViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\StudentAttendanceViewModel.cs" />
     <Compile Include="ViewModels\StudentDetailsViewModel.cs" />
     <Compile Include="ViewModels\StudentHoldViewModel.cs" />
     <Compile Include="ViewModels\TranscriptViewModel.cs" />
@@ -366,6 +372,7 @@
     <Content Include="Views\Student\Advisors.cshtml" />
     <Content Include="Views\Student\DegreeAudit.cshtml" />
     <Content Include="Views\Faculty\StudentDetails.cshtml" />
+    <Content Include="Views\Student\Attendance.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -374,6 +381,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Views\AttendanceApi\" />
     <Folder Include="Views\ClassDurationApi\" />
     <Folder Include="Views\CourseAPi\" />
   </ItemGroup>

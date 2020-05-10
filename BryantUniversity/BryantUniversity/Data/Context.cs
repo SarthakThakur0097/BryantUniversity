@@ -35,6 +35,8 @@ namespace BryantUniversity.Data
         public DbSet<FacultyTimeType> FacultyTimeType { get; set; }
         public DbSet<StudentMajor> StudentMajors { get; set; }
         public DbSet<FacultyHistory> FacultyHistory { get; set; }
+        public DbSet<Attendance> Attendances { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions
@@ -74,7 +76,7 @@ namespace BryantUniversity.Data
             modelBuilder.Entity<MajorPreRequisite>()
             .HasRequired<Course>(s => s.PreReq)
             .WithMany(g => g.MajorPreRequisitesCourses)
-            .HasForeignKey<int>(s => s.CourseId);
+            .HasForeignKey<int?>(s => s.PreReqId);
 
             //.HasMany<Course>(c => c.PreReq)
 

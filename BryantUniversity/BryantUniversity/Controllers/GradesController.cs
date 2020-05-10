@@ -21,19 +21,18 @@ namespace BryantUniversity.Controllers
         [HttpGet]
         public ActionResult Assign(int id, int rId)
         {
-            UserDetailsViewModel student = new UserDetailsViewModel();
+            AssignGradeViewModel viewModel = new AssignGradeViewModel();
             UserRepo uRepo;
 
             using (context)
             {
                 uRepo = new UserRepo(context);
                 User toAssign = uRepo.GetById(id);
-                
-                student.Name = toAssign.Name;
-                student.Email = toAssign.Email;
+
+                viewModel.Student = toAssign;
             }
 
-            return View(student);
+            return View(viewModel);
         }
 
         [HttpPost]
