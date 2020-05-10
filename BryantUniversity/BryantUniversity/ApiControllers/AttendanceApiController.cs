@@ -23,13 +23,17 @@ namespace BryantUniversity.ApiControllers
         [HttpPost]
         public IHttpActionResult AddAttendance(int month, int day, int year, int sectionId, int studentId, bool present)
         {
+            AttendanceRepo aRepo;
             Attendance studentAttendance;
-
-            DateTime attended = new DateTime(year,month,day);
+            DateTime date = new DateTime(year,month,day);
             
             using (context)
             {
-                return Json(new { redirectUrl = "/Student/Schedule", error = "" });
+                aRepo = new AttendanceRepo(context);
+                studentAttendance = new Attendance(studentId, sectionId, date, present);
+
+                aRepo.Insert(studentAttendance);
+                return Json(new { redirectUrl = "", error = "" });
             }
         }
 
