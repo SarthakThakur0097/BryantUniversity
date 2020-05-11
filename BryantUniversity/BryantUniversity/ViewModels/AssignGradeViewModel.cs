@@ -11,15 +11,15 @@ namespace BryantUniversity.ViewModels
     public class AssignGradeViewModel
     {
         public User Student { get; set; }
-        [RegularExpression(@"^[a-zA-Z]+$", ErrorMessage = "Use letters only please")]
-        public string TextBoxData { get; set; }
+        public CourseSection Section { get; set; }
+        public int LetterGradeId { get; set; }
         public IList<LetterGrade> LetterGrades { get; set; }
 
         public SelectList GradeList
         {
             get
             {
-                return new SelectList(LetterGrades, "Id", "GradVal.Value");
+                return new SelectList(LetterGrades, "Id", "GradeVal.Value");
             }
         }
 

@@ -23,12 +23,18 @@ namespace BryantUniversity.Controllers
         {
             AssignGradeViewModel viewModel = new AssignGradeViewModel();
             UserRepo uRepo;
+            LetterGradesRepo lgRepo;
+            CourseSectionRepo csRepo;
 
             using (context)
             {
+                csRepo = new CourseSectionRepo(context);
+                lgRepo = new LetterGradesRepo(context);
                 uRepo = new UserRepo(context);
                 User toAssign = uRepo.GetById(id);
-
+                csRepo.GetCourseSectionById(rId);
+                viewModel.Section = csRepo.GetCourseSectionById(rId);
+                viewModel.PopulateSelectList(lgRepo.GetAllLetterGrades());
                 viewModel.Student = toAssign;
             }
 
@@ -36,8 +42,9 @@ namespace BryantUniversity.Controllers
         }
 
         [HttpPost]
-        public ActionResult Assign(int id, int rId, UserDetailsViewModel viewModel)
+        public ActionResult Assign(int rId, AssignGradeViewModel viewModel)
         {
+
             UserRepo uRepo;
             RegistrationRepo rRepo;
             GradesRepo gRepo;
@@ -49,17 +56,9 @@ namespace BryantUniversity.Controllers
 
                 rRepo = new RegistrationRepo(context);
 
-                IList<Registration> usersRegistration = rRepo.GetRegistrationByUserId(id);
-
-                foreach(Registration registration in usersRegistration)
-                {
-                    if((registration.UserId == id && registration.CourseSectionId == rId))
-                    {
-                        Grade grade = new Grade(0, viewModel.Grade, registration.Id);
-                        gRepo.Insert(grade);
-                    }
-                }
-
+                Registration toAssignGrade = rRepo.GetByStudentAndSectionId(viewModel.Student.Id, viewModel.Section.Id);
+                Grade assigned = new Grade(viewModel.LetterGradeId, toAssignGrade.Id);
+                gRepo.Insert(assigned);
             }
             return View();
         }

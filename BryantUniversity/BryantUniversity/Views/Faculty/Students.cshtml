@@ -22,10 +22,10 @@
                 <td>@student.User.Name</td>
                 <td>@student.User.Email</td>
                 <td>
-                    @Html.ActionLink("assign grade", "Assign", "Grades", new { id = student.User.Id, rId = student.CourseSectionId }, new { @class = "btn btn-success" })
+                    @Html.ActionLink("assign grade", "Assign", "Grades", new { id = student.User.Id, rId = student.CourseSectionId}, new { @class = "btn btn-success" })
                 </td>
                 <td>
-                    @Html.ActionLink("attendance", "Attendance", "Student", new { id = student.User.Id, courseSectionId = Model.CourseSectionId}, new { @class = "btn btn-primary" })
+                    @Html.ActionLink("attendance", "Attendance", "Student", new { id = student.User.Id, cid = student.CourseSectionId}, new { @class = "btn btn-primary" })
                 </td>
             </tr>
         }

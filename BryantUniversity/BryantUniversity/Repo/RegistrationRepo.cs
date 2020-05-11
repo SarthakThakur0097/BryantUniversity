@@ -27,6 +27,15 @@ namespace BryantUniversity.Repo
             _context.SaveChanges();
         }
 
+        public Registration GetByStudentAndSectionId(int studentId, int sectionId)
+        {
+            return _context.Registrations
+                .Include(r => r.CourseSection)
+                .Include(r => r.User)
+                .FirstOrDefault(r => r.UserId == studentId && r.CourseSectionId == sectionId);
+        }
+
+
         public IList<Registration> GetRegistrationByUserId(int id)
         {
             return _context
