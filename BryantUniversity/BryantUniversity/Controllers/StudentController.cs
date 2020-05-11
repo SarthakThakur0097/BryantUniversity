@@ -147,6 +147,19 @@ namespace BryantUniversity.Controllers
         }
 
         [HttpGet]
+        public ActionResult Details(int id)
+        {
+            UserRepo uRepo;
+            StudentDetailsViewModel viewModel = new StudentDetailsViewModel();
+
+            using (context)
+            {
+                uRepo = new UserRepo(context);
+                viewModel.Student = uRepo.GetById(id);
+            }
+            return View(viewModel);
+        }
+        [HttpGet]
         public ActionResult Transcript()
         {
             TranscriptViewModel viewModel = new TranscriptViewModel();

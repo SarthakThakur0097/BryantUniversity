@@ -38,7 +38,7 @@
                             <td>@gradeRegistration.Registration.CourseSection.Course.CourseTitleId</td>
                             <td>@gradeRegistration.Registration.CourseSection.Course.CourseTitle</td>
                             <td>@gradeRegistration.Registration.CourseSection.Course.Credits</td>
-                            @if (gradeRegistration.FinalGrade == null)
+                            @if (gradeRegistration.LetterGrade.GradeVal == null)
                             {
                                 <td>
                                     Pending
@@ -47,7 +47,7 @@
                             else
                             {
                                 <td>
-                                    @gradeRegistration.FinalGrade
+                                    @gradeRegistration.LetterGrade.GradeVal.Value
                                 </td>
                             }
                             <td>@gradeRegistration.Registration.CourseSection.SemesterPeriod.Period.Value</td>

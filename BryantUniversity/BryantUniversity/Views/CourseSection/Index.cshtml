@@ -48,10 +48,13 @@
                 <td>@courseSection.Section.Room.Id</td>
                 <td>@courseSection.SeatsRemaining</td>
                 <td>@courseSection.Section.Room.RoomCapacity</td>
+                @if ((User).IsInRole("4"))
+                {
 
                     <td>
                         @Html.ActionLink("Register", "Add", "Registration", new { id = courseSection.Section.Id }, new { @class = "btn btn-success" })
                     </td>
+                }
                 @*}*@
             </tr>
         }

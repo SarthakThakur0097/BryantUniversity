@@ -1,0 +1,40 @@
+﻿@model BryantUniversity.ViewModels.StudentDetailsViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+<h2>Index Course</h2>
+
+
+@*@if(Model[0].SemesterPeriod.StartEnrollmentDate > DateTime.Now)
+    {
+        <h2>Enrollment date has not opened</h2>
+    } else if (Model[0].SemesterPeriod.EndEnrollmentDate < DateTime.Now)
+    {
+        <h2>Enrollment date has closed</h2>
+    }*@
+
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr lass="bench-row">
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+            <tr>
+                <td>@Model.Student.Name</td>
+                <td>@Model.Student.Email</td>
+                <td>@Model.Student.PhoneNumber</td>
+                <td></td>
+            </tr>
+        
+    </tbody>
+</table>

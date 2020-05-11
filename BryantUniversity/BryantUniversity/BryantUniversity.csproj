@@ -377,6 +377,7 @@
     <Content Include="Views\Student\DegreeAudit.cshtml" />
     <Content Include="Views\Faculty\StudentDetails.cshtml" />
     <Content Include="Views\Student\Attendance.cshtml" />
+    <Content Include="Views\Student\Details.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
