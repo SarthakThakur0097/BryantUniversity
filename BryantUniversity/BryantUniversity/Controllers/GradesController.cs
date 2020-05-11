@@ -57,11 +57,11 @@ namespace BryantUniversity.Controllers
 
                 rRepo = new RegistrationRepo(context);
 
-                Registration toAssignGrade = rRepo.GetByStudentAndSectionId(viewModel.Student.Id, viewModel.Section.Id);
+                Registration toAssignGrade = rRepo.GetByStudentAndSectionId(id, cid);
                 Grade assigned = new Grade(viewModel.LetterGradeId, toAssignGrade.Id);
                 gRepo.Insert(assigned);
             }
-            return View();
+            return RedirectToAction("Teaching", "Faculty");
         }
     }
 }

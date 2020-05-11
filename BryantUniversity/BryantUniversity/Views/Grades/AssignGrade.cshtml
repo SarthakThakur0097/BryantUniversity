@@ -50,7 +50,7 @@
 
         </div>
         <div class="col-sm">
-            @using (Html.BeginForm("AssignGrade", "Grades", FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
+            @using (Html.BeginForm("AssignGrade", "Grades", new { id = Model.Student.Id, cid = Model.Section.Id}, FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
             {
                 <div class="row">
                     <div class="col-sm">
