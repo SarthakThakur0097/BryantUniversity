@@ -59,41 +59,52 @@ namespace BryantUniversity.Controllers
             if (ModelState.IsValid)
             {
                 string hashedPassword = BCrypt.Net.BCrypt.HashPassword(userViewModel.Password);
-                User user = new User(userViewModel.Email, hashedPassword, userViewModel.Name);
                 UserRepo repository;
 
                 using (context)
                 {
                     repository = new UserRepo(context);
-                    repository.Insert(user);
+                    User user = repository.GetByEmail(userViewModel.Email);
 
-                    var roleRepo = new UserRoleRepo(context);
-                    UserRole userRole;
-
-                    int userId = repository.GetById(user.Id).Id;
-
-                    switch (userViewModel.RoleType)
+                    if(user != null)
                     {
-                        case RoleType.Admin:
-                            userRole = new UserRole(userId, 1);
-                            break;
-                        case RoleType.Faculty:
-                            userRole = new UserRole(userId, 2);
-                            break;
-                        case RoleType.Researcher:
-                            userRole = new UserRole(userId, 3);
-                            break;
-                        case RoleType.Student:
-                            userRole = new UserRole(userId, 4);
-                            break;
-                        default:
-                            userRole = new UserRole();
-                            break;
-                    }
+                        ModelState.AddModelError("", "User already exists");
+                    } else
+                    {
+                        user = new User(userViewModel.Email, hashedPassword, userViewModel.Name,
+                           userViewModel.Address, userViewModel.City, userViewModel.State, userViewModel.ZipCode,
+                           userViewModel.PhoneNumber);
 
-                    roleRepo.Insert(userRole);
+                        repository.Insert(user);
+
+                        var roleRepo = new UserRoleRepo(context);
+                        UserRole userRole;
+
+                        int userId = repository.GetById(user.Id).Id;
+
+                        switch (userViewModel.RoleType)
+                        {
+                            case RoleType.Admin:
+                                userRole = new UserRole(userId, 1);
+                                break;
+                            case RoleType.Faculty:
+                                userRole = new UserRole(userId, 2);
+                                break;
+                            case RoleType.Researcher:
+                                userRole = new UserRole(userId, 3);
+                                break;
+                            case RoleType.Student:
+                                userRole = new UserRole(userId, 4);
+                                break;
+                            default:
+                                userRole = new UserRole();
+                                break;
+                        }
+
+                        roleRepo.Insert(userRole);
+                        return RedirectToAction("Index", "Faculty");
+                    }
                 }
-                return RedirectToAction("Create", "Faculty");
             }
 
             return View(userViewModel);
