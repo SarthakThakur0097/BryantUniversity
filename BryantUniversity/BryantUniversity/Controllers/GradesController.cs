@@ -19,7 +19,7 @@ namespace BryantUniversity.Controllers
         }
         // GET: Grades
         [HttpGet]
-        public ActionResult Assign(int id, int rId)
+        public ActionResult AssignGrade(int id, int cid)
         {
             AssignGradeViewModel viewModel = new AssignGradeViewModel();
             UserRepo uRepo;
@@ -32,8 +32,8 @@ namespace BryantUniversity.Controllers
                 lgRepo = new LetterGradesRepo(context);
                 uRepo = new UserRepo(context);
                 User toAssign = uRepo.GetById(id);
-                csRepo.GetCourseSectionById(rId);
-                viewModel.Section = csRepo.GetCourseSectionById(rId);
+                csRepo.GetCourseSectionById(cid);
+                viewModel.Section = csRepo.GetCourseSectionById(cid);
                 viewModel.PopulateSelectList(lgRepo.GetAllLetterGrades());
                 viewModel.Student = toAssign;
             }
@@ -43,7 +43,7 @@ namespace BryantUniversity.Controllers
 
         //I don't understand why rId is being populated in the GET action result but not for the post while the id is for both
         [HttpPost]
-        public ActionResult Assign(int id, int rId, AssignGradeViewModel viewModel)
+        public ActionResult AssignGrade(int id, int cid, AssignGradeViewModel viewModel)
         {
 
             UserRepo uRepo;

@@ -359,7 +359,7 @@
     <Content Include="Views\Courses\Assign.cshtml" />
     <Content Include="Views\Courses\Delete.cshtml" />
     <Content Include="Views\Registration\Add.cshtml" />
-    <Content Include="Views\Grades\Assign.cshtml" />
+    <Content Include="Views\Grades\AssignGrade.cshtml" />
     <Content Include="Views\Transcript\Index.cshtml" />
     <Content Include="Views\Holds\Index.cshtml" />
     <Content Include="Views\Holds\Manage.cshtml" />

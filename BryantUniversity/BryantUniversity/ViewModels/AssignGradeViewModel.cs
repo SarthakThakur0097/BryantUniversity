@@ -10,6 +10,7 @@ namespace BryantUniversity.ViewModels
 {
     public class AssignGradeViewModel
     {
+        public int sectionId { get; set; }
         public User Student { get; set; }
         public CourseSection Section { get; set; }
         public int LetterGradeId { get; set; }
