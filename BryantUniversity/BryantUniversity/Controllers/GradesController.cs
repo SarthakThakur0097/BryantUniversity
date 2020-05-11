@@ -41,8 +41,9 @@ namespace BryantUniversity.Controllers
             return View(viewModel);
         }
 
+        //I don't understand why rId is being populated in the GET action result but not for the post while the id is for both
         [HttpPost]
-        public ActionResult Assign(int rId, AssignGradeViewModel viewModel)
+        public ActionResult Assign(int id, int rId, AssignGradeViewModel viewModel)
         {
 
             UserRepo uRepo;
