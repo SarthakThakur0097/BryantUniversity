@@ -37,6 +37,19 @@ namespace BryantUniversity.Controllers
             return View("Index", viewModel);
         }
 
+        [HttpGet]
+        public ActionResult Prereq(int courseId)
+        {
+            CoursesRepo cRepo;
+            PrereqViewModel viewModel = new PrereqViewModel();
+            using (context)
+            {
+                cRepo = new CoursesRepo(context);
+                viewModel.Course = cRepo.GetById(courseId);
+            }
+            return View(viewModel);
+        }
+
         [HttpPost]
         public ActionResult Index(CourseViewModel viewModel)
         {

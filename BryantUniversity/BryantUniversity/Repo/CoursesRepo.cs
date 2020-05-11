@@ -30,6 +30,7 @@ namespace BryantUniversity.Repo
                         .Courses
                         .Include(c => c.Department)
                         .Include(c => c.CourseLevel)
+                        .Include(c => c.CourseMajorPreRequisites)
                         .FirstOrDefault(c => c.Id == id);
         }
 

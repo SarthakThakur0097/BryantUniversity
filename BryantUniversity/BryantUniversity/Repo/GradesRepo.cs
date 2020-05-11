@@ -53,6 +53,7 @@ namespace BryantUniversity.Repo
         public IList<Grade> GetGradesByUserAndSemesterPeriodId(int userId, int spId)
         {
             return _context.Grades
+                .Include(u => u.LetterGrade)
                 .Include(u => u.Registration.CourseSection.Course).Where(s => s.Registration.CourseSection.SemesterPeriod.Id == spId)
                 .Include(u => u.Registration.CourseSection.Professor).Where(s => s.Registration.CourseSection.SemesterPeriod.Id == spId)
                 .Include(u => u.Registration.CourseSection.Room.Building).Where(s => s.Registration.CourseSection.SemesterPeriod.Id == spId)

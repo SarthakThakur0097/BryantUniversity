@@ -11,6 +11,8 @@ namespace BryantUniversity.ViewModels
             Grades = new List<Grade>();
         }
 
+        public double? CumulativeGpa { get; set; }
+        public double? SemesterGpa { get; set; }
         public IList<Grade> Grades { get; set; }
         public IList<Registration> RegisteredClasses { get; set; }
         public SemesterPeriod GradeSemesterPeriod { get; set; }
