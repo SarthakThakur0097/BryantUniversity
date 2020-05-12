@@ -116,7 +116,7 @@ namespace BryantUniversity.Controllers
                 sRepo = new SemesterPeriodRepo(context);
                 rRepo = new RegistrationRepo(context);
                 viewModel.PopulateSelectList(sRepo.GetAllSemesterPeriods());
-               
+
                 viewModel.RegisteredClasses = rRepo.GetRegistrationByUserIdAndPeriodId(CustomUser.User.Id, viewModel.PeriodId);
             }
             return View(viewModel);
@@ -140,9 +140,9 @@ namespace BryantUniversity.Controllers
 
                 allRegisterations = rRepo.GetRegistrationByUserIdAndPeriodId(CustomUser.User.Id, 1);
 
-                foreach(var grade in allRegisterations)
+                foreach (var grade in allRegisterations)
                 {
-                    if(!gRepo.ContainsRegistration(grade.Id))
+                    if (!gRepo.ContainsRegistration(grade.Id))
                     {
                         nonGraded.Add(grade);
                     }
@@ -186,7 +186,7 @@ namespace BryantUniversity.Controllers
                 mRepo = new MajorRepo(context);
                 viewModel.AllCourses = gRepo.GetAllGradesByUserId(CustomUser.User.Id);
                 viewModel.StudentMajor = sMRepo.GetByStudentId(CustomUser.User.Id);
-                viewModel.MajorRequirements = mrRepo.GetAllMajorRequirementsByMajor(viewModel.StudentMajor.MajorId); 
+                viewModel.MajorRequirements = mrRepo.GetAllMajorRequirementsByMajor(viewModel.StudentMajor.MajorId);
             }
             return View(viewModel);
         }
@@ -278,7 +278,7 @@ namespace BryantUniversity.Controllers
                 viewModel.AllGradesClasses = gRepo.GetAllGradesByUserId(CustomUser.User.Id);
 
                 viewModel.StudentMajor = sRepo.GetByStudentId(CustomUser.User.Id);
-                
+
             }
 
             return View(viewModel);
@@ -310,7 +310,7 @@ namespace BryantUniversity.Controllers
                 spRepo = new SemesterPeriodRepo(context);
                 viewModel.PopulateSelectList(spRepo.GetAllSemesterPeriods());
             }
-                return View(viewModel);
+            return View(viewModel);
         }
 
 
@@ -340,15 +340,16 @@ namespace BryantUniversity.Controllers
         public ActionResult Gradebook(int id, int registrationId, GradebookViewModel viewModel)
         {
             GradesRepo gRepo;
-
+            int userId;
             using (context)
             {
                 gRepo = new GradesRepo(context);
                 Grade oldGrade = gRepo.GetGradeByRegistrationId(registrationId);
                 Grade newGrade = new Grade(oldGrade.Id, viewModel.LetterGradeId, registrationId);
+                userId = oldGrade.Registration.User.Id;
                 gRepo.Update(newGrade);
             }
-            return RedirectToAction("Gradebook");
+            return RedirectToAction("Gradebook", "Student", new { id = userId});
 
         }
 

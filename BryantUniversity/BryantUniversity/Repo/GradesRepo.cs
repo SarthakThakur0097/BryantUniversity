@@ -32,6 +32,7 @@ namespace BryantUniversity.Repo
         public Grade GetGradeByRegistrationId(int rId)
         {
             return _context.Grades
+                .Include(u => u.Registration.User)
                 .Include(u => u.Registration.CourseSection.Course)
                 .Include(u => u.Registration.CourseSection.Professor)
                 .Include(u => u.Registration.CourseSection.Room.Building)
