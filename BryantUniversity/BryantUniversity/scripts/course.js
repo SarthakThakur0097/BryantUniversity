@@ -293,7 +293,7 @@
     }
 
     async function setUpBuildingDropDown(){
-
+        debugger;
         let buildingOptions = gebi("BuildingOptions")
 
         let toDisplay = await GetAllBuildings();
