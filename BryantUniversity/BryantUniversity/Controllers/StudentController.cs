@@ -201,6 +201,32 @@ namespace BryantUniversity.Controllers
         }
 
         [HttpGet]
+        public ActionResult TranscriptAdmin(int id)
+        {
+            TranscriptViewModel viewModel = new TranscriptViewModel();
+            StudentMajorRepo sRepo;
+            MajorRequirmentsRepo mRepo;
+            GradesRepo gRepo;
+            RegistrationRepo rRepo;
+            IList<Grade> AllClasses = new List<Grade>();
+            IList<Registration> AllRegistrations = new List<Registration>();
+            IList<Registration> PendingGrades = new List<Registration>();
+
+            using (context)
+            {
+                sRepo = new StudentMajorRepo(context);
+                mRepo = new MajorRequirmentsRepo(context);
+                gRepo = new GradesRepo(context);
+                rRepo = new RegistrationRepo(context);
+
+                viewModel.AllGradesClasses = gRepo.GetAllGradesByUserId(id);
+                viewModel.StudentMajor = sRepo.GetByStudentId(id);
+
+            }
+            return View(viewModel);
+        }
+
+        [HttpGet]
         public ActionResult Transcript()
         {
             TranscriptViewModel viewModel = new TranscriptViewModel();
