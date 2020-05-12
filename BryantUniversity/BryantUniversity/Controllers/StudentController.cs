@@ -44,7 +44,7 @@ namespace BryantUniversity.Controllers
 
         [Authorize(Roles = "2")]
         [HttpGet]
-        public ActionResult Attendance(int id, int CourseSectionId)
+        public ActionResult Attendance(int id, int cid)
         {
             StudentAttendanceViewModel viewModel = new StudentAttendanceViewModel();
 
@@ -57,7 +57,7 @@ namespace BryantUniversity.Controllers
                 cRepo = new CourseSectionRepo(context);
 
                 viewModel.Student = uRepo.GetById(id);
-                viewModel.CourseSection = cRepo.GetCourseSectionById(CourseSectionId);
+                viewModel.CourseSection = cRepo.GetCourseSectionById(cid);
             }
             return View(viewModel);
         }
