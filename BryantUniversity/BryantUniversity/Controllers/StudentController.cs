@@ -42,6 +42,21 @@ namespace BryantUniversity.Controllers
         }
 
         [HttpGet]
+        public ActionResult ViewHold()
+        {
+            StudentHoldViewModel viewModel = new StudentHoldViewModel();
+            StudentHoldRepo shRepo;
+
+            using (context)
+            {
+                shRepo = new StudentHoldRepo(context);
+                viewModel.UserHolds = shRepo.GetAllStudentHoldsByUserId(CustomUser.User.Id);
+            }
+
+            return View(viewModel);
+        }
+
+        [HttpGet]
         public ActionResult Attendancebook(int id)
         {
             AttendanceRepo aRepo;
