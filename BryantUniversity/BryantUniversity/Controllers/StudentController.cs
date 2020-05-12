@@ -41,6 +41,21 @@ namespace BryantUniversity.Controllers
             return View(viewModel);
         }
 
+        [HttpGet]
+        public ActionResult Attendancebook(int id)
+        {
+            AttendanceRepo aRepo;
+            AttendancebookViewModel viewModel = new AttendancebookViewModel();
+
+            using (context)
+            {
+                aRepo = new AttendanceRepo(context);
+                viewModel.Students = aRepo.GetAllAttendanceByUserId(id);
+
+            }
+            return View(viewModel);
+        }
+
         [Authorize(Roles = "2")]
         [HttpGet]
         public ActionResult Attendance(int id, int cid)

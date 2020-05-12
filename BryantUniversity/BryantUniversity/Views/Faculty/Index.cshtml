@@ -33,6 +33,7 @@
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
+                        <th>ID</th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Role</th>
@@ -45,6 +46,7 @@
                     @foreach (var user in Model.Users)
                     {
                         <tr>
+                            <td>@user.Id</td>
                             <td>@user.Name</td>
                             <td>@user.Email</td>
                             @if(user.UserRoles[0].RoleId==1)

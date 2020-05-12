@@ -9,10 +9,8 @@
     let chosenTimeId;
     let chosenPatternId;
 
-    debugger;
     async function GetAllSemesterPeriods(){
         try{
-            debugger;
             const response = await fetch ('http://localhost:51934/api/Calendar/Periods',{
                 method: "GET",
                 credentials:"include",
@@ -105,7 +103,6 @@
                   <td>
                   </td>
               </tr>
-
       </tbody>
   </table>`
     }
@@ -146,32 +143,32 @@
     async function AssignToCourse(teacherId, courseID){
         debugger;
         try{
-                console.log("ASDASD" + chosenSemPeriodId)
-                let courseSection = {CourseId: courseID, RoomId: chosenRoomId, UserId: teacherId, ClassDaysId: chosenPatternId, ClassDurationId: chosenTimeId, SemesterPeriodId: chosenSemPeriodId}
-                const response = await fetch('http://localhost:51934/api/Coursesection/Assign', {
+            console.log("ASDASD" + chosenSemPeriodId)
+            let courseSection = {CourseId: courseID, RoomId: chosenRoomId, UserId: teacherId, ClassDaysId: chosenPatternId, ClassDurationId: chosenTimeId, SemesterPeriodId: chosenSemPeriodId}
+            const response = await fetch('http://localhost:51934/api/Coursesection/Assign', {
                 method: "POST",
                 credentials: "include",
                 headers: {
-                "Content-Type": "application/json"
+                    "Content-Type": "application/json"
                 },
                 body: JSON.stringify(courseSection)
-                });
-if (response.ok) {
-    const data = await response.json();
-    if(data.error.length == 0){
-        window.location.href = data.redirectUrl
-        return data
-    }
+            });
+            if (response.ok) {
+                const data = await response.json();
+                if(data.error.length == 0){
+                    window.location.href = data.redirectUrl
+                    return data
+                }
 
-    else{
-        window.alert(data.error)
-    }
+                else{
+                    window.alert(data.error)
+                }
     
-	console.log("JSON: " + JSON.stringify(data))
+                console.log("JSON: " + JSON.stringify(data))
 	
-} else {
-	// TODO handle errors returned from the server
-}
+            } else {
+                // TODO handle errors returned from the server
+            }
             const data = await response.json();
             console.log(data.redirectUrl);
             console.log("JSON: " + JSON.stringify(data))
@@ -225,10 +222,11 @@ if (response.ok) {
             console.log('ERROR: ' + error);
         }
     }
+
     async function GetAllRoomsByBuildingId(buildingId){
         
         try{
-                const response = await fetch ('http://localhost:51934/api/Buildings/' + buildingId + '/Rooms',{
+            const response = await fetch ('http://localhost:51934/api/Buildings/' + buildingId + '/Rooms',{
                 method: "GET",
                 credentials:"include",
                 header:{
@@ -261,7 +259,6 @@ if (response.ok) {
 
   
     async function setUpSemPeriodDropDown(){
-        debugger;
         let buildingOptions = gebi("SemPeriodOptions")
         let toDisplay = await GetAllSemesterPeriods();
 
@@ -299,17 +296,19 @@ if (response.ok) {
 
         let buildingOptions = gebi("BuildingOptions")
 
-        debugger;
         let toDisplay = await GetAllBuildings();
 
         for(let i = 0; i<toDisplay.length; i++)
         {
             let building = toDisplay[i]
+            console.log("Building Id is: ")
+            console.log(building.Id)
             buildingOptions.innerHTML+= ` <a class="dropdown-item" data-building-id=${building.Id} href="#">${building.BuildingName}</a>`
         }
     }
 
     async function setUpRoomDropDown(){
+        debugger;
         resetList("RoomDiv","Rooms", "RoomOptions", "dropdownRoom");
 
         let buildingOptions = gebi("RoomOptions");
@@ -329,7 +328,6 @@ if (response.ok) {
                                 ${dropDownTitle}
                             </button>
                             <div class="dropdown-menu" id="${dropDownId}" aria-labelledby="${labelledby}">
-
                             </div>`
     }
 
@@ -338,6 +336,7 @@ if (response.ok) {
     semPeriodDiv.onclick = function (){
 
         let chosenPeriod = event.target;
+        console.log(chosenPeriod);
         let dropDownDisplay = gebi("semPeriodButton");
       
         if(chosenPeriod.text != dropDownDisplay && chosenPeriod.text != undefined)
@@ -351,7 +350,7 @@ if (response.ok) {
     patternDiv.onclick = function() {
 
         let chosenPattern = event.target;
-
+        console.log(chosenPattern);
 
         let dropDownDisplay = gebi("patternButton");
       
@@ -360,6 +359,7 @@ if (response.ok) {
             dropDownDisplay.innerText = chosenPattern.text;
         }
         chosenPatternId = chosenPattern.dataset.patternId;
+        console.log(chosenPatternId);
     }
     let chooseTimeDiv = gebi("TimeChooseDiv");
     chooseTimeDiv.onclick = function (){

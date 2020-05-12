@@ -33,7 +33,7 @@ namespace BryantUniversity.ApiControllers
                 studentAttendance = new Attendance(studentId, sectionId, date, present);
 
                 aRepo.Insert(studentAttendance);
-                return Json(new { redirectUrl = "", error = "" });
+                return Json(new { redirectUrl = "/Home/Index", error = "" });
             }
         }
 
