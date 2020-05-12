@@ -4,27 +4,27 @@
     ViewBag.Title = "Grades";
 }
 
-<h2>Grades</h2>
-
 <div class="container">
     <div class="row">
         <div class="col-sm">
 
         </div>
-        <div class="col-sm">
-
+        <div class="col-md-5">
+            <h4>MY GRADES</h4>
         </div>
         <div class="col-sm">
 
         </div>
     </div>
+@using (Html.BeginForm("Grades", "Student", FormMethod.Post, new { @class = "pure-form pure-form-aligned", id = "" }))
+{
     <div class="row">
-        <div class="col-md-5">
+        <div class="col-sm">
 
         </div>
-        <div class="col-sm">
-            @using (Html.BeginForm("Grades", "Student", FormMethod.Post, new { @class = "pure-form pure-form-aligned", id = "" }))
-            {
+
+        <div class="col-md-6">
+
                 @Html.AntiForgeryToken()
 
                 <div class="form-horizontal">
@@ -37,18 +37,21 @@
                         <div class="col-md-offset-2 col-md-10">
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-success">Submit</button>
+                    
                 </div>
-            }
+            
         </div>
-        <div class="col-md-5">
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-success">Submit</button>
+        </div>
 
-        </div>
     </div>
+}
     <div class="row">
-        <h1>Cumulative GPA: @Model.CumulativeGpa</h1>
         <div class="col-sm">
-            <h1>MY GRADES</h1>
+            <h1>Cumulative GPA: @Model.CumulativeGpa</h1>
+        </div>
+        <div class="col-md-6">
             <table class="table">
                 <thead class="thead-dark">
                     <tr lass="bench-row">
@@ -61,17 +64,20 @@
                     {
                         if (Model.Grades.Count > 0)
                         {
-
-                                foreach (var course in Model.Grades)
-                                {
-                                    <tr>
-                                        <td>@course.Registration.CourseSection.Course.CourseTitle</td>
+                            foreach (var course in Model.Grades)
+                            {
+                                <tr>
+                                    <td>@course.Registration.CourseSection.Course.CourseTitle</td>
+                                    @if (course.LetterGrade != null)
+                                    {
                                         <td>@course.LetterGrade.GradeVal.Value</td>
-                                    </tr>
-                                }
-                                
-                            
-
+                                    }
+                                    else
+                                    {
+                                        <td>Pending</td>
+                                    }
+                                </tr>
+                            }
                         }
                     }
                     @if (Model.RegisteredClasses != null)
@@ -90,13 +96,11 @@
 
                         }
                     }
-                    
-                    <tr>Term GPA: @Model.SemesterGpa</tr>
+                    <tr>
+                         @if (Model.SemesterGpa == -1){<td>Term GPA:TBA</td>}else{<td>Term GPA:@Model.SemesterGpa</td>}
+                    </tr>
                 </tbody>
             </table>
-        </div>
-        <div class="col-md-5">
-
         </div>
         <div class="col-sm">
 

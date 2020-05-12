@@ -3,6 +3,7 @@ using BryantUniversity.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 
 namespace BryantUniversity.Repo
 {
@@ -44,11 +45,24 @@ namespace BryantUniversity.Repo
         }
         public void Update(Grade grade)
         {
-            _context.Grades.Attach(grade);
-            _context.Entry(grade).State = System.Data.Entity.EntityState.Modified;
-            _context.SaveChanges();
+            bool saveFailed;
+            do
+            {
+                saveFailed = false;
+                try
+                {
+                    _context.Grades.Attach(grade);
+                    _context.Entry(grade).State = EntityState.Modified;
+                    _context.SaveChanges();
+                }
+                catch (DbUpdateConcurrencyException ex)
+                {
+                    saveFailed = true;
+                    var entry = ex.Entries.Single();
+                    entry.OriginalValues.SetValues(entry.Property("LetterGradeId").CurrentValue);
+                }
+            } while (saveFailed);
         }
-
 
         public IList<Grade> GetGradesByUserAndSemesterPeriodId(int userId, int spId)
         {
@@ -64,6 +78,7 @@ namespace BryantUniversity.Repo
         public IList<Grade> GetAllGradesByUserId(int userId)
         {
             return _context.Grades
+                .Include(u => u.Registration.User)
                 .Include(u => u.Registration.CourseSection.Course)
                 .Include(u => u.Registration.CourseSection.Course.CourseLevel)
                 .Include(u => u.Registration.CourseSection.ClassDuration)
@@ -80,6 +95,7 @@ namespace BryantUniversity.Repo
         public void Insert(Grade grade)
         {
             _context.Grades.Add(grade);
+
             _context.SaveChanges();
         }
 

@@ -143,13 +143,13 @@
 
             </ul>
         </div>
-        <div class="mx-auto order-0">
-            <img class="navbar-brand mx-auto " src="~/Resources/mugold.png" style="width:140px; height:120px;" href="#" />
+        <div class="mx-auto" style="align-content:center">
+            <img class="navbar-brand" src="~/Resources/mugold.png" style="width:140px; height:120px;" href="#" />
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
-        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+        <div class="navbar navbar-expand-md navbar-dark navbar-custom" style="align-content:center">
             <ul class="navbar-nav ml-auto">
                 @if (Request.IsAuthenticated && ((BryantUniversity.Security.CustomPrincipal)User).IsInRole("4"))
                 {
