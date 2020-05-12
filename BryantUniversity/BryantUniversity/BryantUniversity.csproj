@@ -291,7 +291,9 @@
     <Compile Include="Repo\RegistrationRepo.cs" />
     <Compile Include="Repo\SemesterPeriodRepo.cs" />
     <Compile Include="Repo\StudentHoldRepo.cs" />
+    <Compile Include="Repo\StudentLevelRepo.cs" />
     <Compile Include="Repo\StudentMajorRepo.cs" />
+    <Compile Include="Repo\StudentTimeTypeRepo.cs" />
     <Compile Include="Repo\UserRepo.cs" />
     <Compile Include="Repo\UserRoleRepo.cs" />
     <Compile Include="Models\Role.cs" />

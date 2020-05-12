@@ -220,6 +220,7 @@ namespace BryantUniversity.Controllers
         public ActionResult Details(int id)
         {
             UserRepo uRepo;
+            
             StudentDetailsViewModel viewModel = new StudentDetailsViewModel();
 
             using (context)
