@@ -44,6 +44,21 @@ namespace BryantUniversity.Controllers
             }
         }
 
+        [HttpGet]
+        public ActionResult More(int id)
+        {
+            UserRepo uRepo;
+            FacultyMoreViewModel viewModel = new FacultyMoreViewModel();
+
+            using (context)
+            {
+                uRepo = new UserRepo(context);
+
+                viewModel.Faculty = uRepo.GetById(id);
+
+            }
+                return View(viewModel);
+        }
 
         [HttpGet]
         public ActionResult Create()
@@ -166,6 +181,7 @@ namespace BryantUniversity.Controllers
 
             return RedirectToAction("Index", "Faculty");
         }
+
         public ActionResult Teaching()
         {
             CourseSectionRepo csRepo;
@@ -179,6 +195,19 @@ namespace BryantUniversity.Controllers
             return View(classesTaught);
         }
 
+
+        public ActionResult TeachingAdmin(int facultyId)
+        {
+            CourseSectionRepo csRepo;
+            IList<CourseSection> classesTaught;
+            using (context)
+            {
+                csRepo = new CourseSectionRepo(context);
+                classesTaught = csRepo.GetCourseSectionByUserId(facultyId);
+            }
+
+            return View(classesTaught);
+        }
         [HttpGet]
         public ActionResult Advising()
         {
@@ -209,6 +238,7 @@ namespace BryantUniversity.Controllers
             }
             return View(viewModel);
         }
+
 
         [HttpPost]
         public ActionResult Advising(AdvisingViewModel viewModel)

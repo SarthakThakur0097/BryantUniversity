@@ -1,0 +1,44 @@
+﻿@model BryantUniversity.ViewModels.FacultyMoreViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+
+<h2>Index Course</h2>
+
+
+@*@if(Model[0].SemesterPeriod.StartEnrollmentDate > DateTime.Now)
+    {
+        <h2>Enrollment date has not opened</h2>
+    } else if (Model[0].SemesterPeriod.EndEnrollmentDate < DateTime.Now)
+    {
+        <h2>Enrollment date has closed</h2>
+    }*@
+
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr lass="bench-row">
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone Number</th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>@Model.Faculty.Name</td>
+            <td>@Model.Faculty.Email</td>
+            <td>@Model.Faculty.PhoneNumber</td>
+            <td>@Html.ActionLink("Schedule", "TeachingAdmin", "Faculty", new { facultyId = Model.Faculty.Id }, new { @class = "btn btn-primary" })</td>
+        </tr>
+    </tbody>
+</table>
