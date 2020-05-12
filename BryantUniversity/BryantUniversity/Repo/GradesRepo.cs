@@ -64,7 +64,6 @@ namespace BryantUniversity.Repo
             } while (saveFailed);
         }
 
-
         public IList<Grade> GetGradesByUserAndSemesterPeriodId(int userId, int spId)
         {
             return _context.Grades

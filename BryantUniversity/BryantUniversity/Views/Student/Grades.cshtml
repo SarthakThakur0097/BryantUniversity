@@ -68,7 +68,14 @@
                             {
                                 <tr>
                                     <td>@course.Registration.CourseSection.Course.CourseTitle</td>
-                                    <td>@course.LetterGrade.GradeVal.Value</td>
+                                    @if (course.LetterGrade != null)
+                                    {
+                                        <td>@course.LetterGrade.GradeVal.Value</td>
+                                    }
+                                    else
+                                    {
+                                        <td>Pending</td>
+                                    }
                                 </tr>
                             }
                         }
@@ -89,7 +96,9 @@
 
                         }
                     }
-                    <tr>Term GPA: @Model.SemesterGpa</tr>
+                    <tr>
+                         @if (Model.SemesterGpa == -1){<td>Term GPA:TBA</td>}else{<td>Term GPA:@Model.SemesterGpa</td>}
+                    </tr>
                 </tbody>
             </table>
         </div>

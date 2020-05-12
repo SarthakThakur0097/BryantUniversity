@@ -353,6 +353,7 @@ namespace BryantUniversity.Controllers
                 }
                 else if(viewModel.Grades.Count >= 1)
                 {
+              
                     viewModel.SemesterGpa = ConvertToFourPointScale(GetSemesterGpa(viewModel.Grades));
                     viewModel.CumulativeGpa = ConvertToFourPointScale(GetCumulativeGpa(gRepo.GetAllGradesByUserId(CustomUser.User.Id)));
                 }
@@ -363,97 +364,114 @@ namespace BryantUniversity.Controllers
 
         public double? GetSemesterGpa(IList<Grade> grades)
         {
+            int totalNonNullGrades = 0;
 
             double? cumlutiveTotal = 0.0;
             foreach (var toCalc in grades)
             {
-                switch (toCalc.LetterGrade.GradeVal.Value)
+                if (toCalc.LetterGrade != null)
                 {
-                    case "A":
-                        cumlutiveTotal += 95;
-                        break;
-                    case "A-":
-                        cumlutiveTotal += 91;
-                        break;
-                    case "B+":
-                        cumlutiveTotal += 88;
-                        break;
-                    case "B":
-                        cumlutiveTotal += 85;
-                        break;
-                    case "B-":
-                        cumlutiveTotal += 83;
-                        break;
-                    case "C+":
-                        cumlutiveTotal += 78;
-                        break;
-                    case "C":
-                        cumlutiveTotal += 75;
-                        break;
-                    case "C-":
-                        cumlutiveTotal += 71;
-                        break;
-                    case "D+":
-                        cumlutiveTotal += 68;
-                        break;
-                    case "F":
-                        cumlutiveTotal += 0.0;
-                        break;
+                    totalNonNullGrades++;
+                    switch (toCalc.LetterGrade.GradeVal.Value)
+                    {
+                        case "A":
+                            cumlutiveTotal += 95;
+                            break;
+                        case "A-":
+                            cumlutiveTotal += 91;
+                            break;
+                        case "B+":
+                            cumlutiveTotal += 88;
+                            break;
+                        case "B":
+                            cumlutiveTotal += 85;
+                            break;
+                        case "B-":
+                            cumlutiveTotal += 83;
+                            break;
+                        case "C+":
+                            cumlutiveTotal += 78;
+                            break;
+                        case "C":
+                            cumlutiveTotal += 75;
+                            break;
+                        case "C-":
+                            cumlutiveTotal += 71;
+                            break;
+                        case "D+":
+                            cumlutiveTotal += 68;
+                            break;
+                        case "F":
+                            cumlutiveTotal += 0.0;
+                            break;
+                    }
                 }
+                if(totalNonNullGrades == 0)
+                {
+                    return -1;
+                }
+               
             }
-            double? semesterGpa = cumlutiveTotal / grades.Count;
+            double? semesterGpa = cumlutiveTotal / totalNonNullGrades;
 
             return semesterGpa;
         }
 
         public double? GetCumulativeGpa(IList<Grade> grades)
         {
-
+            int totalNonNullGrades = 0;
             double? cumlutiveTotal = 0.0;
             foreach (var toCalc in grades)
             {
-                switch (toCalc.LetterGrade.GradeVal.Value)
+                if (toCalc.LetterGrade != null)
                 {
-                    case "A":
-                        cumlutiveTotal += 95;
-                        break;
-                    case "A-":
-                        cumlutiveTotal += 91;
-                        break;
-                    case "B+":
-                        cumlutiveTotal += 88;
-                        break;
-                    case "B":
-                        cumlutiveTotal += 85;
-                        break;
-                    case "B-":
-                        cumlutiveTotal += 83;
-                        break;
-                    case "C+":
-                        cumlutiveTotal += 78;
-                        break;
-                    case "C":
-                        cumlutiveTotal += 75;
-                        break;
-                    case "C-":
-                        cumlutiveTotal += 71;
-                        break;
-                    case "D+":
-                        cumlutiveTotal += 68;
-                        break;
-                    case "F":
-                        cumlutiveTotal += 0.0;
-                        break;
+                    totalNonNullGrades++;
+                    switch (toCalc.LetterGrade.GradeVal.Value)
+                    {
+                        case "A":
+                            cumlutiveTotal += 95;
+                            break;
+                        case "A-":
+                            cumlutiveTotal += 91;
+                            break;
+                        case "B+":
+                            cumlutiveTotal += 88;
+                            break;
+                        case "B":
+                            cumlutiveTotal += 85;
+                            break;
+                        case "B-":
+                            cumlutiveTotal += 83;
+                            break;
+                        case "C+":
+                            cumlutiveTotal += 78;
+                            break;
+                        case "C":
+                            cumlutiveTotal += 75;
+                            break;
+                        case "C-":
+                            cumlutiveTotal += 71;
+                            break;
+                        case "D+":
+                            cumlutiveTotal += 68;
+                            break;
+                        case "F":
+                            cumlutiveTotal += 0.0;
+                            break;
+                    }
+                }
+                if (totalNonNullGrades == 0)
+                {
+                    return -1;
                 }
             }
-            double? semesterGpa = cumlutiveTotal / grades.Count;
+            double? semesterGpa = cumlutiveTotal / totalNonNullGrades;
 
             return semesterGpa;
         }
 
         public double? ConvertToFourPointScale(double? numeric)
         {
-
             if (numeric <= 100 && numeric >= 97 || (numeric <= 96 && numeric >= 93))
             {
                 return 4.0;
@@ -506,9 +524,13 @@ namespace BryantUniversity.Controllers
             {
                 return 1.5;
             }
+            else if(numeric == -1)
+            {
+                return -1;
+            }
             else
             {
-                return 0.0;
+                return 1.0;
             }
         }
     }
