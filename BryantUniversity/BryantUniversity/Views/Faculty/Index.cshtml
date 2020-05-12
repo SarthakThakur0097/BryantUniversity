@@ -78,7 +78,12 @@
                             {
                                 <td>Does not have a User Rule</td>
                             }
-
+                            <td>@Html.ActionLink("Edit", "Edit", "Faculty", new { id = user.Id }, new { @class = "btn btn-primary" })</td>
+                            @if(user.UserRoles[0].RoleId==4)
+                            {
+                            <td>Student</td>
+                            <td>@Html.ActionLink("Assign Advisor", "Advisor", "Faculty", new { id = user.Id }, new { @class = "btn btn-primary" })</td>
+                            }
                         </tr>
                     }
                 </tbody>
