@@ -18,6 +18,7 @@ namespace BryantUniversity.ViewModels
 
         [Required]
         [Range(1, Int32.MaxValue, ErrorMessage = "Must Select A Value")]
+        [DisplayName("Department: ")]
         public int DepartmentId { get; set; }
         public string Name { get; set; }
         public string UrlSlug { get; set; }

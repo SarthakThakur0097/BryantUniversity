@@ -23,15 +23,32 @@ namespace BryantUniversity.Controllers
         public ActionResult Index(int Id, int semesterPeriodId)
         {
             CourseSectionRepo csRepo;
-            IList<CourseSection> courseSections; 
+            RegistrationRepo rRepo;
+            IList<CourseSection> courseSections;
+            IList<Registration> allRegisteredUsers;
+            IList<SectionRegistrationViewModel> AllSections = new List<SectionRegistrationViewModel>();
+
             using (context)
             {
+                rRepo = new RegistrationRepo(context);
                 csRepo = new CourseSectionRepo(context);
 
                 courseSections = csRepo.GetCourseSectionsByCourseIdAndSemesterPeriodId(Id, semesterPeriodId);
-            }
 
-            return View("Index", courseSections);
+                foreach(var section in courseSections)
+                {
+                    allRegisteredUsers = rRepo.GetRegistrationBySectionIdAndPeriodId(section.Id, semesterPeriodId);
+                    int roomsLeft = section.Room.RoomCapacity - allRegisteredUsers.Count;
+                    SectionRegistrationViewModel viewModel = new SectionRegistrationViewModel
+                    {
+                        Section = section,
+                        SeatsRemaining = roomsLeft
+                       
+                    };
+                    AllSections.Add(viewModel);
+                }
+            }
+            return View("Index", AllSections);
         }
     }
 }

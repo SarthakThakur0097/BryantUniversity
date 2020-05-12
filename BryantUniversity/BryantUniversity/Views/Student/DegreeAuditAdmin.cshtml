@@ -80,7 +80,6 @@
                     </tr>
                 </thead>
                 <tbody id="myTable">
-                    
                     @foreach (var majorRequirements in Model.MajorRequirements)
                     {
                         <tr>
@@ -88,24 +87,11 @@
                             <td>@majorRequirements.Course.CourseTitle</td>
                             <td>@majorRequirements.Course.Credits</td>
 
-                            @if (majorRequirements.Course.CourseMajorPreRequisites != null)
+                            @if (majorRequirements.Course.MajorPreRequisitesCourses != null)
                             {
-                                var prereqList = majorRequirements.Course.CourseMajorPreRequisites;
-
-                                for (int i = 0; i < prereqList.Count; i++)
+                                foreach (var prereq in majorRequirements.Course.MajorPreRequisitesCourses)
                                 {
-                                    if (prereqList[i] != null)
-                                    {
-                                        if (prereqList[i].Course != null)
-                                        {
-                                            <td>@prereqList[i].PreReq.CourseTitleId</td>
-                                        }
-                                        else
-                                        {
-                                            <td></td>
-
-                                        }
-                                    }
+                                    <td>@prereq.Course.CourseTitleId</td>
                                 }
                             }
                         </tr>

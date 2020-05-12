@@ -37,7 +37,7 @@
                     @foreach (var course in Model)
                     {
                         <tr>
-                            <td>@course.Level</td>
+                            <td>@course.CourseLevel.Level.Value</td>
                             <td>@course.CourseTitle</td>
                             <td>@course.Description</td>
                             <td>@course.Department.Name</td>

@@ -27,6 +27,15 @@ namespace BryantUniversity.Repo
             _context.SaveChanges();
         }
 
+        public Registration GetByStudentAndSectionId(int studentId, int sectionId)
+        {
+            return _context.Registrations
+                .Include(r => r.CourseSection)
+                .Include(r => r.User)
+                .FirstOrDefault(r => r.UserId == studentId && r.CourseSectionId == sectionId);
+        }
+
+
         public IList<Registration> GetRegistrationByUserId(int id)
         {
             return _context
@@ -58,6 +67,21 @@ namespace BryantUniversity.Repo
                 .Include(c => c.CourseSection).Where(p => p.CourseSection.SemesterPeriodId == periodId)
                 .Where(s => s.UserId == studentId).
                 ToList();
+        }
+
+        public IList<Registration> GetRegistrationBySectionIdAndPeriodId(int sectionId, int periodId)
+        {
+            return _context.Registrations
+                .Include(s => s.User)
+                .Include(s => s.CourseSection.Room)
+                .Include(s => s.CourseSection.Course)
+                .Include(s => s.CourseSection.ClassDays)
+                .Include(s => s.CourseSection.Professor)
+                .Include(s => s.CourseSection.ClassDuration)
+                .Include(s => s.CourseSection.Room.Building)
+                .Include(s => s.CourseSection.Course.CourseLevel)
+                .Include(c => c.CourseSection).Where(p => p.CourseSection.SemesterPeriodId == periodId && p.CourseSectionId == sectionId)
+                .ToList();
         }
 
         public Registration GetById(int id)

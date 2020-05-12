@@ -53,6 +53,7 @@ namespace BryantUniversity.Repo
         public IList<Grade> GetGradesByUserAndSemesterPeriodId(int userId, int spId)
         {
             return _context.Grades
+                .Include(u => u.LetterGrade)
                 .Include(u => u.Registration.CourseSection.Course).Where(s => s.Registration.CourseSection.SemesterPeriod.Id == spId)
                 .Include(u => u.Registration.CourseSection.Professor).Where(s => s.Registration.CourseSection.SemesterPeriod.Id == spId)
                 .Include(u => u.Registration.CourseSection.Room.Building).Where(s => s.Registration.CourseSection.SemesterPeriod.Id == spId)
@@ -67,6 +68,7 @@ namespace BryantUniversity.Repo
                 .Include(u => u.Registration.CourseSection.Course.CourseLevel)
                 .Include(u => u.Registration.CourseSection.ClassDuration)
                 .Include(u => u.Registration.CourseSection.Professor)
+                .Include(u => u.LetterGrade)
                 .Include(u => u.Registration.CourseSection.ClassDays)
                 .Include(u => u.Registration.CourseSection.SemesterPeriod)
                 .Include(u => u.Registration.CourseSection.Room.Building)

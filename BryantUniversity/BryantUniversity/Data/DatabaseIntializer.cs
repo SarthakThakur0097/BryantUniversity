@@ -103,6 +103,8 @@ namespace BryantUniversity.Data
             DateTime fall2016StartEnrollTime = new DateTime(2019, 11, 1);
             DateTime fall2016EndEnrollTime = new DateTime(2019, 05, 30);
 
+
+
             SemesterPeriod Fall2020 = new SemesterPeriod(Period.Fall2020, fall2020StartTime, fall2020EndTime, fall2020StartEnrollTime, fall2020EndEnrollTime);
             SemesterPeriod Spring2020 = new SemesterPeriod(Period.Spring2020, spring2020StartTime, spring2020EndTime, spring2020StartEnrollTime, spring2020EndEnrollTime);
             SemesterPeriod Fall2019 = new SemesterPeriod(Period.Fall2019, fall2019StartTime, fall2019EndTime, fall2019StartEnrollTime, fall2019EndEnrollTime);
@@ -117,6 +119,37 @@ namespace BryantUniversity.Data
             CourseLevel Undergraduate = new CourseLevel(Level.Undergraduate);
             CourseLevel Graduate = new CourseLevel(Level.Graduate);
 
+            LetterGrade A = new LetterGrade(GradeVal.A);
+            LetterGrade Aminus = new LetterGrade(GradeVal.Aminus);
+            LetterGrade Bplus = new LetterGrade(GradeVal.Bplus);
+            LetterGrade B = new LetterGrade(GradeVal.B);
+            LetterGrade Bminus = new LetterGrade(GradeVal.Bminus);
+            LetterGrade Cplus = new LetterGrade(GradeVal.Cplus);
+            LetterGrade C = new LetterGrade(GradeVal.C);
+            LetterGrade Cminus = new LetterGrade(GradeVal.Cminus);
+            LetterGrade Dplus = new LetterGrade(GradeVal.Dplus);
+            LetterGrade D = new LetterGrade(GradeVal.D);
+            LetterGrade Dminus = new LetterGrade(GradeVal.Dminus);
+            LetterGrade Fgrade = new LetterGrade(GradeVal.F);
+
+            context.LetterGrades.Add(A);
+            context.LetterGrades.Add(Aminus);
+            context.LetterGrades.Add(Bplus);
+            context.LetterGrades.Add(B);
+            context.LetterGrades.Add(Bminus);
+            context.LetterGrades.Add(Cplus);
+            context.LetterGrades.Add(C);
+            context.LetterGrades.Add(Cminus);
+            context.LetterGrades.Add(Dplus);
+            context.LetterGrades.Add(D);
+            context.LetterGrades.Add(Dminus);
+            context.LetterGrades.Add(Fgrade);
+            TimeTypes PartTime = new TimeTypes(TimeType.FullTime);
+            TimeTypes FullTime = new TimeTypes(TimeType.PartTime);
+
+
+            context.TimeTypes.Add(FullTime);
+            context.TimeTypes.Add(PartTime);
             ClassDuration NineToElvenAm = new ClassDuration(ClassTime.NineToElvenAm);
             ClassDuration ElvenAmToTwelvePm = new ClassDuration(ClassTime.ElvenAmToTwelvePm);
             ClassDuration OneToTwoPM = new ClassDuration(ClassTime.OneToTwoPM);
@@ -174,6 +207,8 @@ namespace BryantUniversity.Data
             context.Holds.Add(financial);
             context.Holds.Add(academic);
             context.Holds.Add(disciplinary);
+
+
 
             context.CalendarEvents.Add(semEvent1);
             context.CalendarEvents.Add(semEvent2);

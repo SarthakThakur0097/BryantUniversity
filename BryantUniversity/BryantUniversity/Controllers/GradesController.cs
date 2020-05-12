@@ -19,26 +19,33 @@ namespace BryantUniversity.Controllers
         }
         // GET: Grades
         [HttpGet]
-        public ActionResult Assign(int id, int rId)
+        public ActionResult AssignGrade(int id, int cid)
         {
-            UserDetailsViewModel student = new UserDetailsViewModel();
+            AssignGradeViewModel viewModel = new AssignGradeViewModel();
             UserRepo uRepo;
+            LetterGradesRepo lgRepo;
+            CourseSectionRepo csRepo;
 
             using (context)
             {
+                csRepo = new CourseSectionRepo(context);
+                lgRepo = new LetterGradesRepo(context);
                 uRepo = new UserRepo(context);
                 User toAssign = uRepo.GetById(id);
-                
-                student.Name = toAssign.Name;
-                student.Email = toAssign.Email;
+                csRepo.GetCourseSectionById(cid);
+                viewModel.Section = csRepo.GetCourseSectionById(cid);
+                viewModel.PopulateSelectList(lgRepo.GetAllLetterGrades());
+                viewModel.Student = toAssign;
             }
 
-            return View(student);
+            return View(viewModel);
         }
 
+        //I don't understand why rId is being populated in the GET action result but not for the post while the id is for both
         [HttpPost]
-        public ActionResult Assign(int id, int rId, UserDetailsViewModel viewModel)
+        public ActionResult AssignGrade(int id, int cid, AssignGradeViewModel viewModel)
         {
+
             UserRepo uRepo;
             RegistrationRepo rRepo;
             GradesRepo gRepo;
@@ -50,19 +57,11 @@ namespace BryantUniversity.Controllers
 
                 rRepo = new RegistrationRepo(context);
 
-                IList<Registration> usersRegistration = rRepo.GetRegistrationByUserId(id);
-
-                foreach(Registration registration in usersRegistration)
-                {
-                    if((registration.UserId == id && registration.CourseSectionId == rId))
-                    {
-                        Grade grade = new Grade(0, viewModel.Grade, registration.Id);
-                        gRepo.Insert(grade);
-                    }
-                }
-
+                Registration toAssignGrade = rRepo.GetByStudentAndSectionId(id, cid);
+                Grade assigned = new Grade(viewModel.LetterGradeId, toAssignGrade.Id);
+                gRepo.Insert(assigned);
             }
-            return View();
+            return RedirectToAction("Teaching", "Faculty");
         }
     }
 }

@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace BryantUniversity.Controllers
 {
-    [Authorize(Roles = "4")]
+
     public class StudentController : Controller
     {
         Context context;
@@ -41,7 +41,41 @@ namespace BryantUniversity.Controllers
 
             return View(viewModel);
         }
-        
+
+        [Authorize(Roles = "2")]
+        [HttpGet]
+        public ActionResult Attendance(int id, int CourseSectionId)
+        {
+            StudentAttendanceViewModel viewModel = new StudentAttendanceViewModel();
+
+            CourseSectionRepo cRepo;
+            UserRepo uRepo;
+
+            using (context)
+            {
+                uRepo = new UserRepo(context);
+                cRepo = new CourseSectionRepo(context);
+
+                viewModel.Student = uRepo.GetById(id);
+                viewModel.CourseSection = cRepo.GetCourseSectionById(CourseSectionId);
+            }
+            return View(viewModel);
+        }
+        [Authorize(Roles = "1")]
+        [HttpGet]
+        public ActionResult ScheduleAdmin(int studentId)
+        {
+            ScheduleViewModel viewModel = new ScheduleViewModel();
+            RegistrationRepo rRepo;
+            using (context)
+            {
+                rRepo = new RegistrationRepo(context);
+
+                viewModel.RegisteredClasses = rRepo.GetRegistrationByUserId(studentId);
+            }
+            return View(viewModel);
+        }
+
         [HttpPost]
         public ActionResult Schedule(ScheduleViewModel viewModel)
         {
@@ -127,6 +161,45 @@ namespace BryantUniversity.Controllers
             return View(viewModel);
         }
 
+
+        [HttpGet]
+        public ActionResult DegreeAuditAdmin(int studentId)
+        {
+            DegreeAuditViewModel viewModel = new DegreeAuditViewModel();
+
+            GradesRepo gRepo;
+            StudentMajorRepo sMRepo;
+            MajorRepo mRepo;
+            MajorRequirmentsRepo mrRepo;
+
+            using (context)
+            {
+                gRepo = new GradesRepo(context);
+                sMRepo = new StudentMajorRepo(context);
+                mrRepo = new MajorRequirmentsRepo(context);
+
+                mRepo = new MajorRepo(context);
+                viewModel.AllCourses = gRepo.GetAllGradesByUserId(studentId);
+                viewModel.StudentMajor = sMRepo.GetByStudentId(studentId);
+                viewModel.MajorRequirements = mrRepo.GetAllMajorRequirementsByMajor(viewModel.StudentMajor.MajorId);
+            }
+            return View(viewModel);
+        }
+
+        [HttpGet]
+        public ActionResult Details(int id)
+        {
+            UserRepo uRepo;
+            StudentDetailsViewModel viewModel = new StudentDetailsViewModel();
+
+            using (context)
+            {
+                uRepo = new UserRepo(context);
+                viewModel.Student = uRepo.GetById(id);
+            }
+            return View(viewModel);
+        }
+
         [HttpGet]
         public ActionResult Transcript()
         {
@@ -198,151 +271,188 @@ namespace BryantUniversity.Controllers
             RegistrationRepo rRepo;
             GradesRepo gRepo;
 
+            
             using (context)
             {
                 spRepo = new SemesterPeriodRepo(context);
                 gRepo = new GradesRepo(context);
                 rRepo = new RegistrationRepo(context);
 
+                
                 viewModel.PopulateSelectList(spRepo.GetAllSemesterPeriods());
                 viewModel.Grades = gRepo.GetGradesByUserAndSemesterPeriodId(CustomUser.User.Id, viewModel.PeriodId);
 
                 if(viewModel.Grades.Count == 0)
                 {
                     viewModel.RegisteredClasses = rRepo.GetRegistrationByUserIdAndPeriodId(CustomUser.User.Id, viewModel.PeriodId);
-                }
-                if (viewModel.RegisteredClasses != null)
-                {
-                    if (viewModel.RegisteredClasses.Count > 0)
-                    {
-                        return View(viewModel);
-                    }
-                }
-                double? calculatedGrade = 0.0;
 
-                foreach(var toCalc in viewModel.Grades)
+                    if (viewModel.RegisteredClasses != null)
+                    {
+                        if (viewModel.RegisteredClasses.Count > 0)
+                        {
+                            return View(viewModel);
+                        }
+                    }
+                }
+                else if(viewModel.Grades.Count >= 1)
                 {
-                    if(viewModel.Grades.Count>1)
-                    {
-                        calculatedGrade += toCalc.FinalGrade / viewModel.Grades.Count;
-
-                    }
-                    else
-                    {
-                        calculatedGrade = toCalc.FinalGrade;
-                    }
-                    if (calculatedGrade>=95)
-                    {
-                        viewModel.Gpa = 4.0;
-                    }
-                    else if (calculatedGrade < 95 && calculatedGrade >= 94)
-                    {
-                        viewModel.Gpa = 3.9;
-                    }
-                    else if (calculatedGrade < 94 && calculatedGrade >= 93)
-                    {
-                        viewModel.Gpa = 3.8;
-                    }
-                    else if(calculatedGrade < 93 && calculatedGrade >= 92)
-                    {
-                        viewModel.Gpa = 3.7;
-                    }
-                    else if (calculatedGrade < 92 && calculatedGrade >= 91)
-                    {
-                        viewModel.Gpa = 3.6;
-                    }
-                    else if (calculatedGrade < 91 && calculatedGrade >= 90)
-                    {
-                        viewModel.Gpa = 3.5;
-                    }
-                    else if (calculatedGrade < 90 && calculatedGrade >= 89)
-                    {
-                        viewModel.Gpa = 3.4;
-                    }
-                    else if (calculatedGrade < 89 && calculatedGrade >= 88)
-                    {
-                        viewModel.Gpa = 3.3;
-                    }
-                    else if (calculatedGrade < 88 && calculatedGrade >= 87)
-                    {
-                        viewModel.Gpa = 3.2;
-                    }
-                    else if (calculatedGrade < 87 && calculatedGrade >= 86)
-                    {
-                        viewModel.Gpa = 3.1;
-                    }
-                    else if (calculatedGrade < 86 && calculatedGrade >= 85)
-                    {
-                        viewModel.Gpa = 3.0;
-                    }
-                    else if (calculatedGrade < 85 && calculatedGrade >= 84)
-                    {
-                        viewModel.Gpa = 2.9;
-                    }
-                    else if (calculatedGrade < 84 && calculatedGrade >= 83)
-                    {
-                        viewModel.Gpa = 2.8;
-                    }
-                    else if (calculatedGrade < 83 && calculatedGrade >= 82)
-                    {
-                        viewModel.Gpa = 2.7;
-                    }
-                    else if (calculatedGrade < 82 && calculatedGrade >= 81)
-                    {
-                        viewModel.Gpa = 2.6;
-                    }
-                    else if (calculatedGrade < 81 && calculatedGrade >= 80)
-                    {
-                        viewModel.Gpa = 2.7;
-                    }
-                    else if (calculatedGrade < 80 && calculatedGrade >= 79)
-                    {
-                        viewModel.Gpa = 2.5;
-                    }
-                    else if (calculatedGrade < 79 && calculatedGrade >= 78)
-                    {
-                        viewModel.Gpa = 2.6;
-                    }
-                    else if (calculatedGrade < 77 && calculatedGrade >= 76)
-                    {
-                        viewModel.Gpa = 2.5;
-                    }
-                    else if (calculatedGrade < 75 && calculatedGrade >= 74)
-                    {
-                        viewModel.Gpa = 2.4;
-                    }
-                    else if (calculatedGrade < 74 && calculatedGrade >= 73)
-                    {
-                        viewModel.Gpa = 2.3;
-                    }
-                    else if (calculatedGrade < 72 && calculatedGrade >= 71)
-                    {
-                        viewModel.Gpa = 2.2;
-                    }
-                    else if (calculatedGrade < 70 && calculatedGrade >= 69)
-                    {
-                        viewModel.Gpa = 2.1;
-                    }
-                    else if (calculatedGrade < 68 && calculatedGrade >= 67)
-                    {
-                        viewModel.Gpa = 2.0;
-                    }
-                    else if (calculatedGrade < 66 && calculatedGrade >= 65)
-                    {
-                        viewModel.Gpa = 1.9;
-                    }
-                    else if (calculatedGrade < 64 && calculatedGrade >= 63)
-                    {
-                        viewModel.Gpa = 1.8;
-                    }
-                    else
-                    {
-                        viewModel.Gpa = 1.5;
-                    }
+                    viewModel.SemesterGpa = ConvertToFourPointScale(GetSemesterGpa(viewModel.Grades));
+                    viewModel.CumulativeGpa = ConvertToFourPointScale(GetCumulativeGpa(gRepo.GetAllGradesByUserId(CustomUser.User.Id)));
                 }
             }
 
             return View(viewModel);
+        }
+
+        public double? GetSemesterGpa(IList<Grade> grades)
+        {
+
+            double? cumlutiveTotal = 0.0;
+            foreach (var toCalc in grades)
+            {
+                switch (toCalc.LetterGrade.GradeVal.Value)
+                {
+                    case "A":
+                        cumlutiveTotal += 95;
+                        break;
+                    case "A-":
+                        cumlutiveTotal += 91;
+                        break;
+                    case "B+":
+                        cumlutiveTotal += 88;
+                        break;
+                    case "B":
+                        cumlutiveTotal += 85;
+                        break;
+                    case "B-":
+                        cumlutiveTotal += 83;
+                        break;
+                    case "C+":
+                        cumlutiveTotal += 78;
+                        break;
+                    case "C":
+                        cumlutiveTotal += 75;
+                        break;
+                    case "C-":
+                        cumlutiveTotal += 71;
+                        break;
+                    case "D+":
+                        cumlutiveTotal += 68;
+                        break;
+                    case "F":
+                        cumlutiveTotal += 0.0;
+                        break;
+                }
+            }
+            double? semesterGpa = cumlutiveTotal / grades.Count;
+
+            return semesterGpa;
+        }
+
+        public double? GetCumulativeGpa(IList<Grade> grades)
+        {
+
+            double? cumlutiveTotal = 0.0;
+            foreach (var toCalc in grades)
+            {
+                switch (toCalc.LetterGrade.GradeVal.Value)
+                {
+                    case "A":
+                        cumlutiveTotal += 95;
+                        break;
+                    case "A-":
+                        cumlutiveTotal += 91;
+                        break;
+                    case "B+":
+                        cumlutiveTotal += 88;
+                        break;
+                    case "B":
+                        cumlutiveTotal += 85;
+                        break;
+                    case "B-":
+                        cumlutiveTotal += 83;
+                        break;
+                    case "C+":
+                        cumlutiveTotal += 78;
+                        break;
+                    case "C":
+                        cumlutiveTotal += 75;
+                        break;
+                    case "C-":
+                        cumlutiveTotal += 71;
+                        break;
+                    case "D+":
+                        cumlutiveTotal += 68;
+                        break;
+                    case "F":
+                        cumlutiveTotal += 0.0;
+                        break;
+                }
+            }
+            double? semesterGpa = cumlutiveTotal / grades.Count;
+
+            return semesterGpa;
+        }
+
+        public double? ConvertToFourPointScale(double? numeric)
+        {
+
+            if (numeric <= 100 && numeric >= 97 || (numeric <= 96 && numeric >= 93))
+            {
+                return 4.0;
+            }
+            else if (numeric >= 92 && numeric >= 90)
+            {
+                return 3.7; 
+            }
+            else if (numeric >= 90 && numeric >= 89)
+            {
+                return 3.6;
+            }
+            else if (numeric >= 89 && numeric >= 87)
+            {
+                return 3.5;
+            }
+            else if (numeric >= 87 && numeric >= 85)
+            {
+                return 3.3;
+            }
+            else if (numeric >= 85 && numeric >= 83)
+            {
+                return 3.1;
+            }
+            else if (numeric >= 81 && numeric >= 79)
+            {
+                return 2.9;
+            }
+            else if (numeric >= 79 && numeric >= 77)
+            {
+                return 2.7;
+            }
+            else if (numeric >= 77 && numeric >= 75)
+            {
+                return 2.5;
+            }
+            else if (numeric >= 75 && numeric >= 73)
+            {
+                return 2.3;
+            }
+            else if (numeric >= 73 && numeric >= 71)
+            {
+                return 2.1;
+            }
+            else if (numeric >= 71 && numeric >= 69)
+            {
+                return 1.9;
+            }
+            else if (numeric >= 67 && numeric >= 65)
+            {
+                return 1.5;
+            }
+            else
+            {
+                return 0.0;
+            }
         }
     }
 }

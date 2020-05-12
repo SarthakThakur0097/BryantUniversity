@@ -216,15 +216,15 @@ namespace BryantUniversity.Controllers
         public ActionResult Students(int Id)
         {
             RegistrationRepo sRepo;
-            IList<Registration> students;
-
+            StudentAttendanceViewModel viewModel = new StudentAttendanceViewModel();
+            viewModel.CourseSectionId = Id;
             using (context)
             {
                 sRepo = new RegistrationRepo(context);
 
-                students = sRepo.GetRegistrationsByCourseSectionId(Id);
+                viewModel.students = sRepo.GetRegistrationsByCourseSectionId(Id);
             }
-                return View(students);
+                return View(viewModel);
         }
 
 
