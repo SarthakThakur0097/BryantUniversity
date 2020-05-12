@@ -290,12 +290,10 @@ namespace BryantUniversity.Controllers
 
             using (context)
             {
-                User student = new UserRepo(context).GetById(id);
-                User faculty = new UserRepo(context).GetById(facultyId);
 
-                advisor = new Advisor(faculty, student);
+                advisor = new Advisor(facultyId, id);
 
-                RegistrationRepo repository = new RegistrationRepo(context);
+                AdviserRepo repository = new AdviserRepo(context);
                 repository.Insert(advisor);
 
                 return RedirectToAction("Index", "Faculty");

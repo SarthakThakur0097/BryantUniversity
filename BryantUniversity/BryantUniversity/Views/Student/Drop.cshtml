@@ -35,6 +35,7 @@
             <table class="table">
                 <thead class="thead-dark">
                     <tr lass="bench-row">
+                        <th>Semester</th>
                         <th>Course Title</th>
                         <th>Course Time</th>
                         <th>Days</th>
@@ -47,18 +48,19 @@
                 <tbody>
                     @if (Model.NonGraded != null)
                     {
-                        foreach (var reigstered in Model.NonGraded)
+                        foreach (var registered in Model.NonGraded)
                         {
                             <tr>
-                                <td>@reigstered.CourseSection.Course.CourseTitle</td>
-                                <td>@reigstered.CourseSection.ClassDuration.TimeForClass.Value</td>
-                                <td>@reigstered.CourseSection.ClassDays.Pattern.Value</td>
-                                <td>@reigstered.CourseSection.Professor.Name</td>
-                                <td>@reigstered.CourseSection.Room.Building.BuildingName</td>
-                                <td>@reigstered.CourseSection.Room.Id</td>
+                                <td>@registered.CourseSection.SemesterPeriod.Period.Value</td>
+                                <td>@registered.CourseSection.Course.CourseTitle</td>
+                                <td>@registered.CourseSection.ClassDuration.TimeForClass.Value</td>
+                                <td>@registered.CourseSection.ClassDays.Pattern.Value</td>
+                                <td>@registered.CourseSection.Professor.Name</td>
+                                <td>@registered.CourseSection.Room.Building.BuildingName</td>
+                                <td>@registered.CourseSection.Room.Id</td>
                                 <td>
                                     <div id="removeContainer">
-                                        <button type="button" data-course-section-id="@reigstered.CourseSection.Id" class="btn btn-danger">Drop</button>
+                                        <button type="button" data-course-section-id="@registered.CourseSection.Id" class="btn btn-danger">Drop</button>
                                     </div>
                                 </td>
                             </tr>

@@ -30,7 +30,7 @@ namespace BryantUniversity.Repo
                         .Courses
                         .Include(c => c.Department)
                         .Include(c => c.CourseLevel)
-                        .Include(c => c.CourseMajorPreRequisites)
+                        .Include(c => c.MajorPreRequisitesCourses)
                         .FirstOrDefault(c => c.Id == id);
         }
 
@@ -42,6 +42,16 @@ namespace BryantUniversity.Repo
                         .Include(c => c.Department)
                         .Where(c => c.DepartmentId == id)
                         .ToList();
+        }
+
+        public Course GetAllPrereqs(int id)
+        {
+            return _context
+                        .Courses
+                        .Include(c => c.CourseLevel)
+                        .Include(c => c.MajorPreRequisitesCourses)
+                        .Include(c => c.Department)
+                        .FirstOrDefault(c => c.Id == id);
         }
 
         public Course GetCourseByCourseTitleId(string id)

@@ -19,6 +19,8 @@ namespace BryantUniversity.Repo
         {
             return _context
                         .MajorPreRequisites
+                        .Include(m => m.PreReq)
+                        .Include(m => m.Course)
                         .FirstOrDefault(c => c.Id == id);
         }
 

@@ -142,7 +142,7 @@ namespace BryantUniversity.Controllers
 
                 foreach (var grade in allRegisterations)
                 {
-                    if (!gRepo.ContainsRegistration(grade.Id))
+                    if (gRepo.GetGradeByRegistrationId(grade.Id).LetterGrade == null)
                     {
                         nonGraded.Add(grade);
                     }
