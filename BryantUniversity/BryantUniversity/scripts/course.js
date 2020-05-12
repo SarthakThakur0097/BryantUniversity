@@ -9,8 +9,10 @@
     let chosenTimeId;
     let chosenPatternId;
 
+    debugger;
     async function GetAllSemesterPeriods(){
         try{
+            debugger;
             const response = await fetch ('http://localhost:51934/api/Calendar/Periods',{
                 method: "GET",
                 credentials:"include",
@@ -223,7 +225,6 @@ if (response.ok) {
             console.log('ERROR: ' + error);
         }
     }
-
     async function GetAllRoomsByBuildingId(buildingId){
         
         try{
@@ -260,6 +261,7 @@ if (response.ok) {
 
   
     async function setUpSemPeriodDropDown(){
+        debugger;
         let buildingOptions = gebi("SemPeriodOptions")
         let toDisplay = await GetAllSemesterPeriods();
 
@@ -297,19 +299,17 @@ if (response.ok) {
 
         let buildingOptions = gebi("BuildingOptions")
 
+        debugger;
         let toDisplay = await GetAllBuildings();
 
         for(let i = 0; i<toDisplay.length; i++)
         {
             let building = toDisplay[i]
-            console.log("Building Id is: ")
-            console.log(building.Id)
             buildingOptions.innerHTML+= ` <a class="dropdown-item" data-building-id=${building.Id} href="#">${building.BuildingName}</a>`
         }
     }
 
     async function setUpRoomDropDown(){
-        debugger;
         resetList("RoomDiv","Rooms", "RoomOptions", "dropdownRoom");
 
         let buildingOptions = gebi("RoomOptions");
@@ -338,7 +338,6 @@ if (response.ok) {
     semPeriodDiv.onclick = function (){
 
         let chosenPeriod = event.target;
-        console.log(chosenPeriod);
         let dropDownDisplay = gebi("semPeriodButton");
       
         if(chosenPeriod.text != dropDownDisplay && chosenPeriod.text != undefined)
@@ -352,7 +351,7 @@ if (response.ok) {
     patternDiv.onclick = function() {
 
         let chosenPattern = event.target;
-        console.log(chosenPattern);
+
 
         let dropDownDisplay = gebi("patternButton");
       
@@ -361,7 +360,6 @@ if (response.ok) {
             dropDownDisplay.innerText = chosenPattern.text;
         }
         chosenPatternId = chosenPattern.dataset.patternId;
-        console.log(chosenPatternId);
     }
     let chooseTimeDiv = gebi("TimeChooseDiv");
     chooseTimeDiv.onclick = function (){
