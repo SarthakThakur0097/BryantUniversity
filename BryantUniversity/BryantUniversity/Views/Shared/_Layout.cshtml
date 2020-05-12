@@ -11,10 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <script src="~/Scripts/modernizr-2.6.2.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
-<<<<<<< HEAD
     <script src="https://code.jquery.com/ui/1.11.1/jquery-ui.min.js"></script>
-=======
->>>>>>> develop
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/momentjs/2.14.1/moment.min.js"></script>
@@ -155,7 +152,7 @@
         </div>
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <ul class="navbar-nav ml-auto">
-<<<<<<< HEAD
+
             @if (Request.IsAuthenticated && ((BryantUniversity.Security.CustomPrincipal)User).IsInRole("4"))
             {
                 <li class="nav-item">
@@ -166,13 +163,12 @@
                     @Html.ActionLink("Advisors", "Advisors", "Student", new { area = "" }, new { @class = "navbar-brand" })
                 </li>
 
-=======
+
                 @if (Request.IsAuthenticated && ((BryantUniversity.Security.CustomPrincipal)User).IsInRole("4"))
                 {
                     <li class="nav-item">
                         @Html.ActionLink("Advisors", "Advisors", "Student", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
->>>>>>> develop
 
 
                     <li class="nav-item">
