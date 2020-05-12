@@ -344,7 +344,8 @@ namespace BryantUniversity.Controllers
             using (context)
             {
                 gRepo = new GradesRepo(context);
-                Grade newGrade = new Grade(viewModel.LetterGradeId, registrationId);
+                Grade oldGrade = gRepo.GetGradeByRegistrationId(registrationId);
+                Grade newGrade = new Grade(oldGrade.Id, viewModel.LetterGradeId, registrationId);
                 gRepo.Update(newGrade);
             }
             return RedirectToAction("Gradebook");
