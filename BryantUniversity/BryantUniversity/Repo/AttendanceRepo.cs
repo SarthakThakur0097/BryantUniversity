@@ -21,7 +21,17 @@ namespace BryantUniversity.Repo
                 .Include(a => a.Course)
                 .Include(a => a.User)
                 .ToList();
+        }
 
+        public IList<Attendance> GetAllAttendanceByUserId(int id)
+        {
+            return _context.Attendances
+                .Include(a => a.Course)
+                .Include(a => a.User).Where(a => a.UserId == id)
+                .Include(a => a.Course)
+                .Include(a => a.Course.Course)
+                .Include(a => a.Course.Professor)
+                .ToList();
         }
 
         public void Insert(Attendance attendance)

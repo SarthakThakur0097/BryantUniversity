@@ -103,7 +103,6 @@
                   <td>
                   </td>
               </tr>
-
       </tbody>
   </table>`
     }
@@ -150,26 +149,26 @@
                 method: "POST",
                 credentials: "include",
                 headers: {
-                "Content-Type": "application/json"
+                    "Content-Type": "application/json"
                 },
                 body: JSON.stringify(courseSection)
-                });
-if (response.ok) {
-    const data = await response.json();
-    if(data.error.length == 0){
-        window.location.href = data.redirectUrl
-        return data
-    }
+            });
+            if (response.ok) {
+                const data = await response.json();
+                if(data.error.length == 0){
+                    window.location.href = data.redirectUrl
+                    return data
+                }
 
-    else{
-        window.alert(data.error)
-    }
+                else{
+                    window.alert(data.error)
+                }
     
-	console.log("JSON: " + JSON.stringify(data))
+                console.log("JSON: " + JSON.stringify(data))
 	
-} else {
-	// TODO handle errors returned from the server
-}
+            } else {
+                // TODO handle errors returned from the server
+            }
             const data = await response.json();
             console.log(data.redirectUrl);
             console.log("JSON: " + JSON.stringify(data))
@@ -294,7 +293,7 @@ if (response.ok) {
     }
 
     async function setUpBuildingDropDown(){
-
+        debugger;
         let buildingOptions = gebi("BuildingOptions")
 
         let toDisplay = await GetAllBuildings();
@@ -329,7 +328,6 @@ if (response.ok) {
                                 ${dropDownTitle}
                             </button>
                             <div class="dropdown-menu" id="${dropDownId}" aria-labelledby="${labelledby}">
-
                             </div>`
     }
 

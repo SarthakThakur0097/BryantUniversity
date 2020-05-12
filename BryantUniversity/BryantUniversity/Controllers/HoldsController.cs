@@ -55,7 +55,7 @@ namespace BryantUniversity.ApiControllers
                 studentHoldRepo = new StudentHoldRepo(context);
                 userRepo = new UserRepo(context);
 
-                viewModel.UserHolds = studentHoldRepo.GetAllStudentHoldsById(id);
+                viewModel.UserHolds = studentHoldRepo.GetAllStudentHoldsByUserId(id);
                 viewModel.ToDisplay = userRepo.GetById(id);
 
                 return View(viewModel);

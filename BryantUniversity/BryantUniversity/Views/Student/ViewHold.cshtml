@@ -10,7 +10,6 @@
 
         </div>
         <div class="col-sm">
-            <h2>All Students</h2>
         </div>
         <div class="col-md-5">
 
@@ -30,24 +29,27 @@
         <table class="table">
             <thead class="thead-dark">
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
+                    <th>Hold Type</th>
                     <th></th>
                 </tr>
             </thead>
             <tbody id="myTable">
-                @foreach (var user in Model.Users)
+                @if (Model.UserHolds.Count == 0)
                 {
                     <tr>
-                        <td>@user.Id</td>
-                        <td>@user.Name</td>
-                        <td>@user.Email</td>
-                        <td>
-                            @Html.ActionLink("Manage Holds", "Manage", new { id = user.Id }, new { @class = "btn btn-info" })
-                        </td>
+                        <td>No Holds</td>
                     </tr>
                 }
+                else
+                {
+                    foreach (var hold in Model.UserHolds)
+                {
+                        <tr>
+                            <td>@hold.Hold.HoldName</td>
+                        </tr>
+                    }
+                }
+
             </tbody>
         </table>
 

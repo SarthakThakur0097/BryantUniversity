@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -22,7 +23,7 @@ namespace BryantUniversity
             );
 
             var json = config.Formatters.JsonFormatter;
-            json.SerializerSettings.PreserveReferencesHandling = Newtonsoft.Json.PreserveReferencesHandling.Objects;
+            json.SerializerSettings.Re‌​ferenceLoopHandling = ReferenceLoopHandling.Ignore;
             config.Formatters.Remove(config.Formatters.XmlFormatter);
         }
     }
