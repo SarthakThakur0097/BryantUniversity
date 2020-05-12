@@ -393,6 +393,9 @@
     <Content Include="Views\Faculty\More.cshtml" />
     <Content Include="Views\Faculty\TeachingAdmin.cshtml" />
     <Content Include="Views\Student\ViewHold.cshtml" />
+    <Content Include="Views\Registration\AdminAdd.cshtml" />
+    <Content Include="Views\Schedule\IndexAdmin.cshtml" />
+    <Content Include="Views\CourseSection\IndexAdmin.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

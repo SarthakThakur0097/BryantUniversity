@@ -21,8 +21,9 @@
 <table class="table">
     <thead class="thead-dark">
         <tr lass="bench-row">
-            <td>Level</td>
-            <td>Type</td>
+
+            <th>Level</th>
+            <th>Type</th>
             <th>Name</th>
             <th>Email</th>
             <th>Phone Number</th>
@@ -49,7 +50,7 @@
                 <td>@Model.Student.Email</td>
                 <td>@Model.Student.PhoneNumber</td>
                 <td>@Html.ActionLink("Schedule", "ScheduleAdmin", "Student", new { studentId = Model.Student.Id }, new { @class = "btn btn-primary" })</td>
-                <td>@Html.ActionLink("Register a Course", "Schedule", "Student", new { id = Model.Student.Id }, new { @class = "btn btn-success" })</td>
+                <td>@Html.ActionLink("Register a Course", "IndexAdmin", "Schedule", new { studentId = Model.Student.Id }, new { @class = "btn btn-success" })</td>
                 <td>@Html.ActionLink("Degree Audit", "DegreeAuditAdmin", "Student", new { studentId = Model.Student.Id }, new { @class = "btn btn-warning" })</td>
                 <td>@Html.ActionLink("Transcript", "TranscriptAdmin", "Student", new { id = Model.Student.Id }, new { @class = "btn btn-primary" })</td>
                 <td>@Html.ActionLink("Grades", "Gradebook", "Student", new { id = Model.Student.Id }, new { @class = "btn btn-danger" })</td>
