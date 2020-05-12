@@ -29,8 +29,7 @@
         <table class="table">
             <thead class="thead-dark">
                 <tr>
-                    <th>Name</th>
-                    <th>Email</th>
+                    <th>Hold Type</th>
                     <th></th>
                 </tr>
             </thead>
@@ -43,11 +42,10 @@
                 }
                 else
                 {
-                    foreach (var user in Model.Users)
+                    foreach (var hold in Model.UserHolds)
                 {
                         <tr>
-                            <td>@user.Name</td>
-                            <td>@user.Email</td>
+                            <td>@hold.Hold.HoldName</td>
                         </tr>
                     }
                 }
