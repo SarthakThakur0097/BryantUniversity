@@ -68,18 +68,25 @@ namespace BryantUniversity.Controllers
                 gRepo = new GradesRepo(context);
 
                 toAdd = csRepo.GetCourseSectionById(id);
-
+                CourseSection roomCheck = csRepo.GetCourseSectionById(id);
+                IList<Registration> allRegistrationsforSection = rRepo.GetRegistrationsByCourseSectionId(id);
                 IList<MajorPreRequisite> allReqs = mprRepo.GetAllMajorPrequisitesByCourse(toAdd.Course.Id);
                 IList<Grade> allTakenCourses = gRepo.GetAllGradesByUserId(CustomUser.User.Id);
-                
+
                 if(toAdd.SemesterPeriodId != 1)
                 {
                     viewModel.PreviousSemesterConflict = true;
                     return View(viewModel);
                 }
-                if (allReqs.Count > 0 && allTakenCourses.Count == 0)
+                else if (allReqs.Count > 0 && allTakenCourses.Count == 0)
                 {
                     viewModel.NotTakenPreReqConflict = true;
+
+                    return View(viewModel);
+                }
+                else if(allRegistrationsforSection.Count >= roomCheck.Room.RoomCapacity)
+                {
+                    viewModel.isOverRoomCapacity = true;
 
                     return View(viewModel);
                 }

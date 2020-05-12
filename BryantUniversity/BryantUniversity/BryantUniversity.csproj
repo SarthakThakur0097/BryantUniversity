@@ -184,6 +184,7 @@
     <Content Include="Resources\MUwhite.png" />
     <Content Include="scripts\ai.0.22.9-build00167.js" />
     <Content Include="scripts\ai.0.22.9-build00167.min.js" />
+    <Content Include="scripts\Attendance.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
     <Content Include="ClassDiagram1.cd" />
@@ -202,6 +203,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApiControllers\AttendanceApiController.cs" />
     <Compile Include="ApiControllers\BuildingApiController.cs" />
     <Compile Include="ApiControllers\CalendarApiController.cs" />
     <Compile Include="ApiControllers\ClassDurationApiController.cs" />
@@ -233,6 +235,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Advisor.cs" />
+    <Compile Include="Models\Attendance.cs" />
     <Compile Include="Models\Building.cs" />
     <Compile Include="Models\ClassDuration.cs" />
     <Compile Include="Models\ClassPattern.cs" />
@@ -243,10 +246,14 @@
     <Compile Include="Models\Days.cs" />
     <Compile Include="Models\Department.cs" />
     <Compile Include="Models\FacultyDepartment.cs" />
+    <Compile Include="Models\FacultyHistory.cs" />
+    <Compile Include="Models\FacultyTimeType.cs" />
     <Compile Include="Models\Grade.cs" />
     <Compile Include="Models\Hold.cs" />
     <Compile Include="Models\HoldType.cs" />
     <Compile Include="Models\Helpers.cs" />
+    <Compile Include="Models\GradeVal.cs" />
+    <Compile Include="Models\LetterGrade.cs" />
     <Compile Include="Models\Level.cs" />
     <Compile Include="Models\Major.cs" />
     <Compile Include="Models\MajorPreRequisite.cs" />
@@ -261,7 +268,11 @@
     <Compile Include="Models\StudentHolds.cs" />
     <Compile Include="Models\StudentLevel.cs" />
     <Compile Include="Models\StudentMajor.cs" />
+    <Compile Include="Models\TimeType.cs" />
+    <Compile Include="Models\StudentTimeType.cs" />
+    <Compile Include="Models\TimeTypes.cs" />
     <Compile Include="Repo\AdviserRepo.cs" />
+    <Compile Include="Repo\AttendanceRepo.cs" />
     <Compile Include="Repo\BuildingRepo.cs" />
     <Compile Include="Repo\CalendarRepo.cs" />
     <Compile Include="Repo\ClassDurationRepo.cs" />
@@ -272,6 +283,7 @@
     <Compile Include="Repo\DepartmentRepo.cs" />
     <Compile Include="Repo\GradesRepo.cs" />
     <Compile Include="Repo\HoldRepo.cs" />
+    <Compile Include="Repo\LetterGradesRepo.cs" />
     <Compile Include="Repo\MajorPreRequisitesRepo.cs" />
     <Compile Include="Repo\MajorRepo.cs" />
     <Compile Include="Repo\MajorRequirementsRepo.cs" />
@@ -292,6 +304,8 @@
     <Compile Include="Security\CustomPrincipal.cs" />
     <Compile Include="ViewModels\AdvisingViewModel.cs" />
     <Compile Include="ViewModels\AdvisorsViewModel.cs" />
+    <Compile Include="ViewModels\AssignGradeViewModel.cs" />
+    <Compile Include="ViewModels\AttendanceViewModel.cs" />
     <Compile Include="ViewModels\CoursePreReqViewModel.cs" />
     <Compile Include="ViewModels\CourseSectionViewModel.cs" />
     <Compile Include="ViewModels\CourseViewModel.cs" />
@@ -300,11 +314,14 @@
     <Compile Include="ViewModels\FacultyViewModel.cs" />
     <Compile Include="ViewModels\GradesViewModel.cs" />
     <Compile Include="ViewModels\HoldViewModel.cs" />
+    <Compile Include="ViewModels\PrereqViewModel.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
     <Compile Include="ViewModels\ScheduleViewModel.cs" />
+    <Compile Include="ViewModels\SectionRegistrationViewModel.cs" />
     <Compile Include="ViewModels\SemesterCoursesViewModel.cs" />
     <Compile Include="ViewModels\SemesterDetailsViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\StudentAttendanceViewModel.cs" />
     <Compile Include="ViewModels\StudentDetailsViewModel.cs" />
     <Compile Include="ViewModels\StudentHoldViewModel.cs" />
     <Compile Include="ViewModels\TranscriptViewModel.cs" />
@@ -346,7 +363,7 @@
     <Content Include="Views\Courses\Assign.cshtml" />
     <Content Include="Views\Courses\Delete.cshtml" />
     <Content Include="Views\Registration\Add.cshtml" />
-    <Content Include="Views\Grades\Assign.cshtml" />
+    <Content Include="Views\Grades\AssignGrade.cshtml" />
     <Content Include="Views\Transcript\Index.cshtml" />
     <Content Include="Views\Holds\Index.cshtml" />
     <Content Include="Views\Holds\Manage.cshtml" />
@@ -362,6 +379,11 @@
     <Content Include="Views\Student\Advisors.cshtml" />
     <Content Include="Views\Student\DegreeAudit.cshtml" />
     <Content Include="Views\Faculty\StudentDetails.cshtml" />
+    <Content Include="Views\Student\Attendance.cshtml" />
+    <Content Include="Views\Student\Details.cshtml" />
+    <Content Include="Views\Student\ScheduleAdmin.cshtml" />
+    <Content Include="Views\Student\DegreeAuditAdmin.cshtml" />
+    <Content Include="Views\Courses\Prereq.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -370,6 +392,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Views\AttendanceApi\" />
     <Folder Include="Views\ClassDurationApi\" />
     <Folder Include="Views\CourseAPi\" />
   </ItemGroup>

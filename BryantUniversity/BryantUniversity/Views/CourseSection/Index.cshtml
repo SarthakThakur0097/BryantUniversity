@@ -1,4 +1,4 @@
-﻿@model IList<BryantUniversity.Models.CourseSection>
+﻿@model IList<BryantUniversity.ViewModels.SectionRegistrationViewModel>
 
 @{
     ViewBag.Title = "IndexCourse";
@@ -17,8 +17,8 @@
 }*@
 
 
-<table class="pure-table pure-table-horizontal">
-    <thead>
+<table class="table">
+    <thead class="thead-dark">
         <tr lass="bench-row">
             <th>Course Section</th>
             <th>Course Title</th>
@@ -28,6 +28,9 @@
             <th>Level</th>
             <th>Professor</th>
             <th>Room Number</th>
+            <th>Remaining Seats</th>
+            <th>Total Seats</th>
+            <th></th>
         </tr>
     </thead>
 
@@ -35,17 +38,23 @@
         @foreach (var courseSection in Model)
             {
             <tr>
-                <td>@courseSection.Id</td>
-                <td>@courseSection.Course.CourseTitle</td>
-                <td>@courseSection.Course.Credits</td>
-                <td>@courseSection.ClassDuration.TimeForClass.Value</td>
-                <td>@courseSection.ClassDays.Pattern.Value</td>
-                <td>@courseSection.Course.CourseLevel.Level.Value</td>
-                <td>@courseSection.Professor.Name</td>
-                <td>@courseSection.Room.Id</td>
+                <td>@courseSection.Section.Id</td>
+                <td>@courseSection.Section.Course.CourseTitle</td>
+                <td>@courseSection.Section.Course.Credits</td>
+                <td>@courseSection.Section.ClassDuration.TimeForClass.Value</td>
+                <td>@courseSection.Section.ClassDays.Pattern.Value</td>
+                <td>@courseSection.Section.Course.CourseLevel.Level.Value</td>
+                <td>@courseSection.Section.Professor.Name</td>
+                <td>@courseSection.Section.Room.Id</td>
+                <td>@courseSection.SeatsRemaining</td>
+                <td>@courseSection.Section.Room.RoomCapacity</td>
+                @if ((User).IsInRole("4"))
+                {
+
                     <td>
-                        @Html.ActionLink("Register", "Add", "Registration", new { id = courseSection.Id }, new { @class = "btn btn-success" })
+                        @Html.ActionLink("Register", "Add", "Registration", new { id = courseSection.Section.Id }, new { @class = "btn btn-success" })
                     </td>
+                }
                 @*}*@
             </tr>
         }

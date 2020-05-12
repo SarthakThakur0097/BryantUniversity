@@ -1,0 +1,89 @@
+﻿@model BryantUniversity.ViewModels.PrereqViewModel
+@{
+    ViewBag.Title = "Catalog";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+
+        </div>
+        <div class="col-sm">
+            <h2>Catalog</h2>
+        </div>
+        <div class="col-md-5">
+
+        </div>
+    </div>
+
+        <div class="row">
+            <div class="col-sm">
+
+            </div>
+            <div class="col-sm">
+
+            </div>
+
+            <div class="col-md-5">
+                <input id="myInput" class="form-control" type="text" placeholder="Search..">
+            </div>
+        </div>
+    
+
+    <div class="row">
+        <div class="col">
+            @if (Model.Course != null)
+            {
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Course Id</th>
+                            <th>Course Name</th>
+                            <th>Description</th>
+                            <th>Course Level</th>
+                            <th>Department Name</th>
+                            <th>Credits</th>
+                            <th>Prerequisite</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="myTable">
+
+                            <tr>
+                                <td>@Model.Course.CourseTitleId</td>
+                                <td>@Model.Course.CourseTitle</td>
+                                <td>@Model.Course.Description</td>
+                                <td>@Model.Course.CourseLevel.Level.Value</td>
+                                <td>@Model.Course.Department.Name</td>
+                                <td>@Model.Course.Credits</td>
+                                @foreach(var prereq in Model.Course.CourseMajorPreRequisites)
+                                {
+                                    if (prereq.PreReq == null)
+                                    {
+                                        <td></td>
+                                    }
+                                    else
+                                    {
+                                        <td>@prereq.PreReq.CourseTitleId</td>
+                                    }
+                                }
+                            </tr>
+                    </tbody>
+                </table>
+            }
+        </div>
+    </div>
+</div>
+
+<script src="~/scripts/Schedule.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>

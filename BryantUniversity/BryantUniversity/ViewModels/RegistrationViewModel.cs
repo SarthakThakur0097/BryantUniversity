@@ -12,5 +12,6 @@ namespace BryantUniversity.ViewModels
         public bool SameClassConflict { get; set; }
         public bool TimeConflict { get; set; }
         public bool HasHold { get; set; }
+        public bool isOverRoomCapacity { get; set; }
     }
 }

@@ -20,7 +20,5 @@
         public static Period Fall2017 { get { return new Period("Fall 2017"); } }
         public static Period Spring2017 { get { return new Period("Spring 2017"); } }
         public static Period Fall2016 { get { return new Period("Fall 2016"); } }
-
-
     }
 }

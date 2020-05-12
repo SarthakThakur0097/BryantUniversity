@@ -1,4 +1,4 @@
-﻿@model IList<BryantUniversity.Models.Registration>
+﻿@model  BryantUniversity.ViewModels.StudentAttendanceViewModel
 @{
     ViewBag.Title = "Students";
 }
@@ -11,17 +11,21 @@
             <th>Name</th>
             <th>Email</th>
             <th></th>
+            <th></th>
         </tr>
     </thead>
 
     <tbody>
-        @foreach (var student in Model)
+        @foreach (var student in Model.students)
             {
             <tr>
                 <td>@student.User.Name</td>
                 <td>@student.User.Email</td>
                 <td>
-                    @Html.ActionLink("assign grade", "Assign", "Grades", new { id = student.User.Id, rId = student.CourseSectionId }, new { @class = "btn btn-success" })
+                    @Html.ActionLink("assign grade", "AssignGrade", "Grades", new { id = student.User.Id, cid = student.CourseSectionId}, new { @class = "btn btn-success" })
+                </td>
+                <td>
+                    @Html.ActionLink("attendance", "Attendance", "Student", new { id = student.User.Id, cid = student.CourseSectionId}, new { @class = "btn btn-primary" })
                 </td>
             </tr>
         }

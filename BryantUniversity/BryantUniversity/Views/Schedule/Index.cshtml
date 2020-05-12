@@ -29,7 +29,7 @@
             <div class="col-sm">
 
                 @Html.LabelFor(model => model.DepartmentId, htmlAttributes: new { @class = "control-label col-md-2" })
-                @Html.DropDownListFor(model => model.DepartmentId, Model.DepartmentList, "Period", new { @class = "form-control required", id = "period-list" })
+                @Html.DropDownListFor(model => model.DepartmentId, Model.DepartmentList, "Department", new { @class = "form-control required", id = "period-list" })
                 @Html.ValidationMessageFor(model => model.DepartmentId)
             </div>
             <button type="submit" class="btn btn-success">Submit</button>
@@ -52,6 +52,7 @@
                             <th>Course Level</th>
                             <th>Department Name</th>
                             <th>Credits</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody id="myTable">
