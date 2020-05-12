@@ -38,11 +38,14 @@
             <table class="table">
                 <thead class="thead-dark">
                     <tr lass="bench-row">
+                        <th>CRN</th>
+                        <th>Course ID</th>
                         <th>Course Title</th>
                         <th>Description</th>
                         <th>Credits</th>
                         <th>Level</th>
-                        <th>Department Id</th>
+                        <th>Department</th>
+                        <th></th>
                         <th></th>
                         <th></th>
                         <th></th>
@@ -52,11 +55,13 @@
                     @foreach (var course in Model.Courses)
                     {
                         <tr>
+                            <td>@course.Id</td>
+                            <td>@course.CourseTitleId</td>
                             <td>@course.CourseTitle</td>
                             <td>@course.Description</td>
                             <td>@course.Credits</td>
                             <td>@course.CourseLevel.Level.Value</td>
-                            <td>@course.DepartmentId</td>
+                            <td>@course.Department.Name</td>
                             <td>
                                 @Html.ActionLink("edit", "Edit", new { id = course.Id }, new { @class = "btn btn-primary" })
                             </td>
@@ -67,7 +72,7 @@
                                 @Html.ActionLink("delete", "Delete", new { id = course.Id }, new { @class = "btn btn-danger" })
                             </td>
                             <td>
-                                @Html.ActionLink("Manage Prerequisites", "Prereq", new { courseId = course.Id }, new { @class = "btn btn-danger" })
+                                @Html.ActionLink("Manage Prerequisites", "Prereq", new { courseId = course.Id }, new { @class = "btn btn-warning" })
                             </td>
                         </tr>
                     }

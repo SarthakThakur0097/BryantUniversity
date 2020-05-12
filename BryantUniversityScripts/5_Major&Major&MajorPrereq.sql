@@ -34,6 +34,11 @@ INSERT INTO [BryantDB].[dbo].[Major] VALUES  ( ' B.S. Business Administration ' 
 INSERT INTO [BryantDB].[dbo].[Major] VALUES  ( ' B.S. Accounting ' , 8 ) 
 
 
+
+
+
+
+
 /*Major Requirements */
 
 --All CS Majors 1-2
@@ -438,6 +443,79 @@ INSERT INTO [BryantDB].[dbo].[MajorPreRequisite] VALUES  (80,79)
 
 
 
+--Grad Majors
+
+INSERT INTO [BryantDB].[dbo].[Major] VALUES  ( ' M.S .  Data Analytics ' , 1) 
+INSERT INTO [BryantDB].[dbo].[Major] VALUES  ( ' M.S. in Accounting ' , 8  )
+
+
+
+
+
+
+
+
+
+--MajorReq
+
+
+---DatAnlahtics
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES  ( 17 , 81) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES  ( 17 , 82 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES  ( 17, 83) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES  (  17, 84 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES  ( 17 , 85 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES  ( 17 , 86) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES  ( 17, 87) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES  ( 17 , 88 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES  ( 17 ,89 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES  ( 17 , 90) 
+
+
+---accounting
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES  ( 18 , 91) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES  ( 18 , 92 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES  ( 18, 93) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES  (  18, 94 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES  ( 18 , 95 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES  ( 18 , 96) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES  ( 18, 97) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES  ( 18 , 98 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES  ( 18 ,99 ) 
+INSERT INTO [BryantDB].[dbo].[MajorRequirements] VALUES  ( 18 , 100) 
+
+
+
+--MajorPre-Req
+
+----DataAnalytics
+INSERT INTO [BryantDB].[dbo].[MajorPreRequisite] VALUES  (81,NULL)
+INSERT INTO [BryantDB].[dbo].[MajorPreRequisite] VALUES  (82,NULL)
+INSERT INTO [BryantDB].[dbo].[MajorPreRequisite] VALUES  (83,82) 
+INSERT INTO [BryantDB].[dbo].[MajorPreRequisite] VALUES  (84,83) 
+INSERT INTO [BryantDB].[dbo].[MajorPreRequisite] VALUES  (85,84)
+INSERT INTO [BryantDB].[dbo].[MajorPreRequisite] VALUES  (86,85)
+INSERT INTO [BryantDB].[dbo].[MajorPreRequisite] VALUES  (87,86)
+INSERT INTO [BryantDB].[dbo].[MajorPreRequisite] VALUES  (88,87) 
+INSERT INTO [BryantDB].[dbo].[MajorPreRequisite] VALUES  (89,88) 
+INSERT INTO [BryantDB].[dbo].[MajorPreRequisite] VALUES  (90 ,89)
+
+
+
+
+
+--Accounting
+
+INSERT INTO [BryantDB].[dbo].[MajorPreRequisite] VALUES  (91,NULL)
+INSERT INTO [BryantDB].[dbo].[MajorPreRequisite] VALUES  (92,NULL)
+INSERT INTO [BryantDB].[dbo].[MajorPreRequisite] VALUES  (93,92) 
+INSERT INTO [BryantDB].[dbo].[MajorPreRequisite] VALUES  (94,93) 
+INSERT INTO [BryantDB].[dbo].[MajorPreRequisite] VALUES  (95,94)
+INSERT INTO [BryantDB].[dbo].[MajorPreRequisite] VALUES  (96,95)
+INSERT INTO [BryantDB].[dbo].[MajorPreRequisite] VALUES  (97,96)
+INSERT INTO [BryantDB].[dbo].[MajorPreRequisite] VALUES  (98,97) 
+INSERT INTO [BryantDB].[dbo].[MajorPreRequisite] VALUES  (99,98) 
+INSERT INTO [BryantDB].[dbo].[MajorPreRequisite] VALUES  (100 ,99)
 
 
 

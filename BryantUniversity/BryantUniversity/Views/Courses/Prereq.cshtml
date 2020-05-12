@@ -57,7 +57,7 @@
                                 <td>@Model.Course.CourseLevel.Level.Value</td>
                                 <td>@Model.Course.Department.Name</td>
                                 <td>@Model.Course.Credits</td>
-                                @foreach(var prereq in Model.Course.CourseMajorPreRequisites)
+                                @foreach(var prereq in Model.Course.MajorPreRequisitesCourses)
                                 {
                                     if (prereq.PreReq == null)
                                     {

@@ -45,7 +45,7 @@ namespace BryantUniversity.Controllers
             using (context)
             {
                 cRepo = new CoursesRepo(context);
-                viewModel.Course = cRepo.GetById(courseId);
+                viewModel.Course = cRepo.GetAllPrereqs(courseId);
             }
             return View(viewModel);
         }

@@ -6,6 +6,13 @@ namespace BryantUniversity.Models
     {
         public Advisor() {}
 
+
+        public Advisor(int facultyId, int studentId)
+        {
+            FacultyId = facultyId;
+            StudentId = studentId;
+        }
+
         public Advisor(User faculty, User student)
         {
             Faculty = faculty;
