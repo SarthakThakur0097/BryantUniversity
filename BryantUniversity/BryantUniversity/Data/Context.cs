@@ -60,7 +60,7 @@ namespace BryantUniversity.Data
 
             //modelBuilder.Entity<Course>()
             //.HasMany<MajorPreRequisite>(c => c.CourseMajorPreRequisites)
-            //.WithOptional(x => x.Course)
+            //.WithOptional(x => x.PreReq)
             //.WillCascadeOnDelete(false);
 
 
@@ -83,7 +83,7 @@ namespace BryantUniversity.Data
             modelBuilder.Entity<MajorPreRequisite>()
             .HasOptional<Course>(s => s.PreReq)
             .WithMany(g => g.MajorPreRequisitesCourses)
-            .HasForeignKey<int?>(s => s.PreReqId);
+            .HasForeignKey<int?>(s => s.PreReqId).WillCascadeOnDelete(true);
 
             //.HasMany<Course>(c => c.PreReq)
 
