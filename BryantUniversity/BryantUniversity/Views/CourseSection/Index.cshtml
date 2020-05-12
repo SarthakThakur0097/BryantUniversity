@@ -4,11 +4,19 @@
     ViewBag.Title = "IndexCourse";
 }
 
+
 <div class="container">
     <div class="row">
         <div class="col-sm">
         </div>
         <div class="col-md-6">
+            @if(Model[0].Section.SemesterPeriod.StartEnrollmentDate > DateTime.Now)
+            {
+                <h2>Enrollment has not yet opened</h2>
+            } else if (Model[0].Section.SemesterPeriod.EndEnrollmentDate < DateTime.Now)
+            {
+                <h2>Enrollment date has closed</h2>
+            }
         </div>
         <div class="col-sm">
         </div>

@@ -140,6 +140,8 @@ namespace BryantUniversity.Controllers
         public ActionResult Add(int id)
         {
             MajorPreRequisitesRepo mprRepo;
+            StudentLevelRepo sLRepo;
+            StudentTimeTypeRepo stRepo;
             CourseSectionRepo csRepo;
             RegistrationRepo rRepo;
             StudentHoldRepo hRepo;
@@ -150,22 +152,37 @@ namespace BryantUniversity.Controllers
 
             using (context)
             {
+                sLRepo = new StudentLevelRepo(context);
+                stRepo = new StudentTimeTypeRepo(context);
                 csRepo = new CourseSectionRepo(context);
                 rRepo = new RegistrationRepo(context);
                 hRepo = new StudentHoldRepo(context);
                 mprRepo = new MajorPreRequisitesRepo(context);
                 gRepo = new GradesRepo(context);
+                StudentLevel studentLevel = sLRepo.GetLevelByUserId(CustomUser.User.Id);
+                StudentTimeType studentTimeType = stRepo.GetStudentTimeTypeUserId(CustomUser.User.Id);
 
                 toAdd = csRepo.GetCourseSectionById(id);
                 CourseSection roomCheck = csRepo.GetCourseSectionById(id);
+                IList<Registration> allRegisteredSoFar = rRepo.GetRegistrationByUserAndCourseSection(CustomUser.User.Id, roomCheck.SemesterPeriodId);
                 IList<Registration> allRegistrationsforSection = rRepo.GetRegistrationsByCourseSectionId(id);
                 IList<MajorPreRequisite> allReqs = mprRepo.GetAllMajorPrequisitesByCourse(toAdd.Course.Id);
                 IList<Grade> allTakenCourses = gRepo.GetAllGradesByUserId(CustomUser.User.Id);
+
+
 
                 if(toAdd.SemesterPeriodId != 1)
                 {
                     viewModel.PreviousSemesterConflict = true;
                     return View(viewModel);
+                }
+                else if(studentTimeType.TimeTypes.TimeType != TimeType.FullTime)
+                {
+                    viewModel.IsFullTime = true;
+                }
+                else if(studentLevel.CourseLevel.Level != Level.Graduate)
+                {
+                    viewModel.IsGraduateStudent = false;
                 }
                 else if (allReqs.Count > 0 && allTakenCourses.Count == 0)
                 {

@@ -28,6 +28,14 @@ else if(Model.isOverRoomCapacity)
 
     <h1>There are no longer seats available</h1>
 }
+else if(!Model.IsFullTime)
+{
+    <h1>Part-Time students can only register for two classes at a time</h1>
+}
+else if(!Model.IsGraduateStudent)
+{
+    <h1>You need to be a Graduate level student in order to register for this class</h1>
+}
 else
 {
     <h1>Succesfully Registered</h1>
