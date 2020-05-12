@@ -26,16 +26,17 @@ namespace BryantUniversity.Repo
 
         public Grade GetById(int gradeId)
         {
-            return _context.Grades.FirstOrDefault(c => c.Id == gradeId);
+            return _context.Grades.AsNoTracking().FirstOrDefault(c => c.Id == gradeId);
         }
 
         public Grade GetGradeByRegistrationId(int rId)
         {
             return _context.Grades
+                .Include(u => u.Registration.User)
                 .Include(u => u.Registration.CourseSection.Course)
                 .Include(u => u.Registration.CourseSection.Professor)
                 .Include(u => u.Registration.CourseSection.Room.Building)
-                .Where(c => c.Registration.Id == rId)
+                .Where(c => c.Registration.Id == rId).AsNoTracking()
                 .FirstOrDefault();
         }
         public bool ContainsRegistration(int id)
@@ -45,23 +46,9 @@ namespace BryantUniversity.Repo
         }
         public void Update(Grade grade)
         {
-            bool saveFailed;
-            do
-            {
-                saveFailed = false;
-                try
-                {
-                    _context.Grades.Attach(grade);
-                    _context.Entry(grade).State = EntityState.Modified;
-                    _context.SaveChanges();
-                }
-                catch (DbUpdateConcurrencyException ex)
-                {
-                    saveFailed = true;
-                    var entry = ex.Entries.Single();
-                    entry.OriginalValues.SetValues(entry.Property("LetterGradeId").CurrentValue);
-                }
-            } while (saveFailed);
+            _context.Grades.Attach(grade);
+            _context.Entry(grade).State = EntityState.Modified;
+            _context.SaveChanges();
         }
 
         public IList<Grade> GetGradesByUserAndSemesterPeriodId(int userId, int spId)
@@ -71,7 +58,7 @@ namespace BryantUniversity.Repo
                 .Include(u => u.Registration.CourseSection.Course).Where(s => s.Registration.CourseSection.SemesterPeriod.Id == spId)
                 .Include(u => u.Registration.CourseSection.Professor).Where(s => s.Registration.CourseSection.SemesterPeriod.Id == spId)
                 .Include(u => u.Registration.CourseSection.Room.Building).Where(s => s.Registration.CourseSection.SemesterPeriod.Id == spId)
-                .Where(c => c.Registration.UserId == userId)
+                .Where(c => c.Registration.UserId == userId).AsNoTracking()
                 .ToList();
         }
 
@@ -87,7 +74,7 @@ namespace BryantUniversity.Repo
                 .Include(u => u.Registration.CourseSection.ClassDays)
                 .Include(u => u.Registration.CourseSection.SemesterPeriod)
                 .Include(u => u.Registration.CourseSection.Room.Building)
-                .Where(c => c.Registration.UserId == userId)
+                .Where(c => c.Registration.UserId == userId).AsNoTracking()
                 .ToList();
         }
 

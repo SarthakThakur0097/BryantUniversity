@@ -23,7 +23,7 @@ namespace BryantUniversity.Repo
                             .ToList();
         }
 
-        public IList<StudentHold> GetAllStudentHoldsById(int id)
+        public IList<StudentHold> GetAllStudentHoldsByUserId(int id)
         {
             return _context.StudentHolds
                             .Include(s => s.User)

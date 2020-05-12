@@ -103,7 +103,7 @@ namespace BryantUniversity.Controllers
                     }
                 }
 
-                studentHolds = hRepo.GetAllStudentHoldsById(CustomUser.User.Id);
+                studentHolds = hRepo.GetAllStudentHoldsByUserId(CustomUser.User.Id);
                
                 if (studentHolds.Count>0)
                 {

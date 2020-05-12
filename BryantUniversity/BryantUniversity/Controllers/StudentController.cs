@@ -41,6 +41,36 @@ namespace BryantUniversity.Controllers
             return View(viewModel);
         }
 
+        [HttpGet]
+        public ActionResult ViewHold()
+        {
+            StudentHoldViewModel viewModel = new StudentHoldViewModel();
+            StudentHoldRepo shRepo;
+
+            using (context)
+            {
+                shRepo = new StudentHoldRepo(context);
+                viewModel.UserHolds = shRepo.GetAllStudentHoldsByUserId(CustomUser.User.Id);
+            }
+
+            return View(viewModel);
+        }
+
+        [HttpGet]
+        public ActionResult Attendancebook(int id)
+        {
+            AttendanceRepo aRepo;
+            AttendancebookViewModel viewModel = new AttendancebookViewModel();
+
+            using (context)
+            {
+                aRepo = new AttendanceRepo(context);
+                viewModel.Students = aRepo.GetAllAttendanceByUserId(id);
+
+            }
+            return View(viewModel);
+        }
+
         [Authorize(Roles = "2")]
         [HttpGet]
         public ActionResult Attendance(int id, int cid)
@@ -86,7 +116,7 @@ namespace BryantUniversity.Controllers
                 sRepo = new SemesterPeriodRepo(context);
                 rRepo = new RegistrationRepo(context);
                 viewModel.PopulateSelectList(sRepo.GetAllSemesterPeriods());
-               
+
                 viewModel.RegisteredClasses = rRepo.GetRegistrationByUserIdAndPeriodId(CustomUser.User.Id, viewModel.PeriodId);
             }
             return View(viewModel);
@@ -110,9 +140,9 @@ namespace BryantUniversity.Controllers
 
                 allRegisterations = rRepo.GetRegistrationByUserIdAndPeriodId(CustomUser.User.Id, 1);
 
-                foreach(var grade in allRegisterations)
+                foreach (var grade in allRegisterations)
                 {
-                    if(!gRepo.ContainsRegistration(grade.Id))
+                    if (!gRepo.ContainsRegistration(grade.Id))
                     {
                         nonGraded.Add(grade);
                     }
@@ -156,7 +186,7 @@ namespace BryantUniversity.Controllers
                 mRepo = new MajorRepo(context);
                 viewModel.AllCourses = gRepo.GetAllGradesByUserId(CustomUser.User.Id);
                 viewModel.StudentMajor = sMRepo.GetByStudentId(CustomUser.User.Id);
-                viewModel.MajorRequirements = mrRepo.GetAllMajorRequirementsByMajor(viewModel.StudentMajor.MajorId); 
+                viewModel.MajorRequirements = mrRepo.GetAllMajorRequirementsByMajor(viewModel.StudentMajor.MajorId);
             }
             return View(viewModel);
         }
@@ -248,7 +278,7 @@ namespace BryantUniversity.Controllers
                 viewModel.AllGradesClasses = gRepo.GetAllGradesByUserId(CustomUser.User.Id);
 
                 viewModel.StudentMajor = sRepo.GetByStudentId(CustomUser.User.Id);
-                
+
             }
 
             return View(viewModel);
@@ -280,7 +310,7 @@ namespace BryantUniversity.Controllers
                 spRepo = new SemesterPeriodRepo(context);
                 viewModel.PopulateSelectList(spRepo.GetAllSemesterPeriods());
             }
-                return View(viewModel);
+            return View(viewModel);
         }
 
 
@@ -310,14 +340,16 @@ namespace BryantUniversity.Controllers
         public ActionResult Gradebook(int id, int registrationId, GradebookViewModel viewModel)
         {
             GradesRepo gRepo;
-
+            int userId;
             using (context)
             {
                 gRepo = new GradesRepo(context);
-                Grade newGrade = new Grade(viewModel.LetterGradeId, registrationId);
+                Grade oldGrade = gRepo.GetGradeByRegistrationId(registrationId);
+                Grade newGrade = new Grade(oldGrade.Id, viewModel.LetterGradeId, registrationId);
+                userId = oldGrade.Registration.User.Id;
                 gRepo.Update(newGrade);
             }
-            return RedirectToAction("Gradebook");
+            return RedirectToAction("Gradebook", "Student", new { id = userId});
 
         }
 

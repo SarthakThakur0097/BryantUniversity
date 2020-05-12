@@ -29,6 +29,7 @@
             <th></th>
             <th></th>
             <th></th>
+            <th></th>
         </tr>
     </thead>
 
@@ -38,10 +39,11 @@
                 <td>@Model.Student.Email</td>
                 <td>@Model.Student.PhoneNumber</td>
                 <td>@Html.ActionLink("Schedule", "ScheduleAdmin", "Student", new { studentId = Model.Student.Id }, new { @class = "btn btn-primary" })</td>
-                <td>@Html.ActionLink("Register a Course", "Schedule", "Student", new { id = Model.Student.Id }, new { @class = "btn btn-primary" })</td>
-                <td>@Html.ActionLink("Degree Audit", "DegreeAuditAdmin", "Student", new { studentId = Model.Student.Id }, new { @class = "btn btn-primary" })</td>
+                <td>@Html.ActionLink("Register a Course", "Schedule", "Student", new { id = Model.Student.Id }, new { @class = "btn btn-success" })</td>
+                <td>@Html.ActionLink("Degree Audit", "DegreeAuditAdmin", "Student", new { studentId = Model.Student.Id }, new { @class = "btn btn-warning" })</td>
                 <td>@Html.ActionLink("Transcript", "TranscriptAdmin", "Student", new { id = Model.Student.Id }, new { @class = "btn btn-primary" })</td>
-                <td>@Html.ActionLink("Grades", "Gradebook", "Student", new { id = Model.Student.Id }, new { @class = "btn btn-primary" })</td>
+                <td>@Html.ActionLink("Grades", "Gradebook", "Student", new { id = Model.Student.Id }, new { @class = "btn btn-danger" })</td>
+                <td>@Html.ActionLink("Attendance", "Attendancebook", "Student", new { id = Model.Student.Id }, new { @class = "btn btn-info" })</td>
             </tr>
     </tbody>
 </table>
