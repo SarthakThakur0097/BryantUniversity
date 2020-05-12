@@ -46,6 +46,7 @@
         </div>
     </div>
     <div class="row">
+        <h1>Cumulative GPA: @Model.CumulativeGpa</h1>
         <div class="col-sm">
             <h1>MY GRADES</h1>
             <table class="table">
@@ -60,13 +61,17 @@
                     {
                         if (Model.Grades.Count > 0)
                         {
-                            foreach (var course in Model.Grades)
-                            {
-                            <tr>
-                                <td>@course.Registration.CourseSection.Course.CourseTitle</td>
-                                <td>@course.LetterGrade.GradeVal.Value</td>
-                            </tr>
-                            }
+
+                                foreach (var course in Model.Grades)
+                                {
+                                    <tr>
+                                        <td>@course.Registration.CourseSection.Course.CourseTitle</td>
+                                        <td>@course.LetterGrade.GradeVal.Value</td>
+                                    </tr>
+                                }
+                                
+                            
+
                         }
                     }
                     @if (Model.RegisteredClasses != null)
@@ -86,7 +91,7 @@
                         }
                     }
                     
-                    <tr>Term GPA: @Model.Gpa</tr>
+                    <tr>Term GPA: @Model.SemesterGpa</tr>
                 </tbody>
             </table>
         </div>
