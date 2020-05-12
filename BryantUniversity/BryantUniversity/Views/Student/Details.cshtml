@@ -21,6 +21,8 @@
 <table class="table">
     <thead class="thead-dark">
         <tr lass="bench-row">
+            <td>Level</td>
+            <td>Type</td>
             <th>Name</th>
             <th>Email</th>
             <th>Phone Number</th>
@@ -35,6 +37,14 @@
 
     <tbody>
             <tr>
+                @if(Model.StudentLevel != null)
+                {
+                    <td>@Model.StudentLevel.CourseLevel.Level.Value</td>
+                }
+                @if(Model.StudentTimeType != null)
+                {
+                    <td>@Model.StudentTimeType.TimeTypes.TimeType.Value</td>
+                }
                 <td>@Model.Student.Name</td>
                 <td>@Model.Student.Email</td>
                 <td>@Model.Student.PhoneNumber</td>
