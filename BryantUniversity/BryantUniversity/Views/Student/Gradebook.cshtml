@@ -1,0 +1,98 @@
+﻿@model BryantUniversity.ViewModels.GradebookViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+
+        </div>
+        <div class="col-sm">
+            <h2>All Grades</h2>
+        </div>
+        <div class="col-md-5">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <div class="md-form mt-0">
+                <input id="myInput" class="form-control" type="text" placeholder="Search..">
+            </div>
+        </div>
+        <div class="col-sm">
+
+        </div>
+        <div class="col-md-3">
+
+        </div>
+        <div class="col-sm">
+           
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr lass="bench-row">
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Course</th>
+                        <th>Credits</th>
+                        <th>Level</th>
+                        <th>Professor</th>
+                        <th>Grade</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="myTable">
+                    @foreach (var grade in Model.AllGrades)
+                    {
+                        <tr>
+                            <td>@grade.Registration.User.Name</td>
+                            <td>@grade.Registration.User.Email</td>
+                            <td>@grade.Registration.CourseSection.Course.CourseTitle</td>
+                            <td>@grade.Registration.CourseSection.Course.Description</td>
+                            <td>@grade.Registration.CourseSection.Course.Credits</td>
+                            <td>@grade.Registration.CourseSection.Course.CourseLevel.Level.Value</td>
+                            <td>@grade.Registration.CourseSection.Professor.Name</td>
+                            <td>@grade.LetterGrade.GradeVal.Value</td>
+                            <td>
+                               @using (Html.BeginForm("Gradebook", "Student", new {id = grade.Id, registrationId = grade.Registration.Id}, FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
+                               {
+                                <div class="row">
+                                    <div class="col-sm">
+                                        @Html.LabelFor(model => model.LetterGradeId, htmlAttributes: new { @class = "control-label col-md-2" })
+                                        @Html.DropDownListFor(model => model.LetterGradeId, Model.GradeList, "Grade", new { @class = "form-control required", id = "grades-list" })
+                                        @Html.ValidationMessageFor(model => model.LetterGradeId)
+                                        <button type="submit" class="btn btn-success">Submit</button>
+                                    </div>
+                                    <div class="col-sm">
+                                    </div>
+
+                                    <div class="col-md-5">
+                                    </div>
+                                </div>
+                               }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>

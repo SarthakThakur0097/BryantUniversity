@@ -310,6 +310,7 @@
     <Compile Include="ViewModels\DegreeAuditViewModel.cs" />
     <Compile Include="ViewModels\DropViewModel.cs" />
     <Compile Include="ViewModels\FacultyViewModel.cs" />
+    <Compile Include="ViewModels\GradebookViewModel.cs" />
     <Compile Include="ViewModels\GradesViewModel.cs" />
     <Compile Include="ViewModels\HoldViewModel.cs" />
     <Compile Include="ViewModels\PrereqViewModel.cs" />
@@ -383,6 +384,7 @@
     <Content Include="Views\Student\DegreeAuditAdmin.cshtml" />
     <Content Include="Views\Courses\Prereq.cshtml" />
     <Content Include="Views\Student\TranscriptAdmin.cshtml" />
+    <Content Include="Views\Student\Gradebook.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

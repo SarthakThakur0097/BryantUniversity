@@ -41,6 +41,7 @@
                 <td>@Html.ActionLink("Register a Course", "Schedule", "Student", new { id = Model.Student.Id }, new { @class = "btn btn-primary" })</td>
                 <td>@Html.ActionLink("Degree Audit", "DegreeAuditAdmin", "Student", new { studentId = Model.Student.Id }, new { @class = "btn btn-primary" })</td>
                 <td>@Html.ActionLink("Transcript", "TranscriptAdmin", "Student", new { id = Model.Student.Id }, new { @class = "btn btn-primary" })</td>
+                <td>@Html.ActionLink("Grades", "Gradebook", "Student", new { id = Model.Student.Id }, new { @class = "btn btn-primary" })</td>
             </tr>
     </tbody>
 </table>

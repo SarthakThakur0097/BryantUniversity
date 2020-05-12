@@ -63,5 +63,19 @@ namespace BryantUniversity.Controllers
             }
             return RedirectToAction("Teaching", "Faculty");
         }
+
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            GradesRepo gRepo;
+
+            using (context)
+            {
+                gRepo = new GradesRepo(context);
+                Grade grade = gRepo.GetById(id); 
+
+            }
+            return View();
+        }
     }
 }

@@ -289,6 +289,37 @@ namespace BryantUniversity.Controllers
 
         //}
 
+        [HttpGet]
+        public ActionResult Gradebook(int id)
+        {
+            GradesRepo gRepo;
+            LetterGradesRepo rRepo;
+            GradebookViewModel viewModel = new GradebookViewModel();
+
+            using (context)
+            {
+                rRepo = new LetterGradesRepo(context);
+                gRepo = new GradesRepo(context);
+                viewModel.AllGrades = gRepo.GetAllGradesByUserId(id);
+                viewModel.PopulateSelectList(rRepo.GetAllLetterGrades());
+            }
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult Gradebook(int id, int registrationId, GradebookViewModel viewModel)
+        {
+            GradesRepo gRepo;
+
+            using (context)
+            {
+                gRepo = new GradesRepo(context);
+                Grade newGrade = new Grade(viewModel.LetterGradeId, registrationId);
+                gRepo.Update(newGrade);
+            }
+            return RedirectToAction("Gradebook");
+
+        }
 
         [HttpPost]
         public ActionResult Grades(GradesViewModel viewModel)
