@@ -6,10 +6,9 @@
 <div class="container">
     <div class="row">
         <div class="col-sm">
-
+            <h1>Major:</h1><h3>@Model.StudentMajor.Major.Title</h3>
         </div>
-        <div class="col-sm">
-
+        <div class="col-md-5">
         </div>
         <div class="col-sm">
 
@@ -18,10 +17,9 @@
 
     <div class="row">
         <div class="col-sm">
-            <h1>Major: @Model.StudentMajor.Major.Title</h1>
+
         </div>
-        <div class="col-sm">
-            <h1>cumulative: </h1>
+        <div class="col-md-10">
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
@@ -66,9 +64,17 @@
 
     <div class="row">
         <div class="col-sm">
-            <h1>Major Requirments: @Model.StudentMajor.Major.Title</h1>
+            <h1>Major Requirments:</h1><h3>@Model.StudentMajor.Major.Title</h3>
+        </div>
+        <div class="col-md-5">
         </div>
         <div class="col-sm">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm"></div>
+        <div class="col-md-10">
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
@@ -77,9 +83,13 @@
                         <th>Credits</th>
                         <th>Prerequiste</th>
                         <th></th>
+                        <th></th>
+                        <th></th>
+
                     </tr>
                 </thead>
                 <tbody id="myTable">
+
                     @foreach (var majorRequirements in Model.MajorRequirements)
                     {
                         <tr>
@@ -87,11 +97,24 @@
                             <td>@majorRequirements.Course.CourseTitle</td>
                             <td>@majorRequirements.Course.Credits</td>
 
-                            @if (majorRequirements.Course.MajorPreRequisitesCourses != null)
+                            @if (majorRequirements.Course.CourseMajorPreRequisites != null)
                             {
-                                foreach (var prereq in majorRequirements.Course.MajorPreRequisitesCourses)
+                                var prereqList = majorRequirements.Course.CourseMajorPreRequisites;
+
+                                for (int i = 0; i < prereqList.Count; i++)
                                 {
-                                    <td>@prereq.Course.CourseTitleId</td>
+                                    if (prereqList[i] != null)
+                                    {
+                                        if (prereqList[i].Course != null)
+                                        {
+                                            <td>@prereqList[i].PreReq.CourseTitleId</td>
+                                        }
+                                        else
+                                        {
+                                            <td></td>
+
+                                        }
+                                    }
                                 }
                             }
                         </tr>

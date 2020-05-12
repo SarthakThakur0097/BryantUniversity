@@ -4,7 +4,6 @@ using BryantUniversity.Models.Repo;
 using BryantUniversity.Repo;
 using BryantUniversity.Security;
 using BryantUniversity.ViewModels;
-using System.Collections;
 using System.Collections.Generic;
 using System.Web.Mvc;
 
@@ -61,6 +60,7 @@ namespace BryantUniversity.Controllers
             }
             return View(viewModel);
         }
+
         [Authorize(Roles = "1")]
         [HttpGet]
         public ActionResult ScheduleAdmin(int studentId)
