@@ -31,7 +31,7 @@ namespace BryantUniversity.ApiControllers
                 rRepo = new RegistrationRepo(context);
                 rRepo.Delete(coursectionId);
 
-                return Json(new { redirectUrl = "/Student/Schedule", error = "" });
+                return Json(new { redirectUrl = "/Student/drop", error = "" });
             }
         }
 
