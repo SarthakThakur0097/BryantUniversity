@@ -154,16 +154,7 @@ namespace BryantUniversity.Controllers
         [HttpPost]
         public ActionResult Drop(ScheduleViewModel viewModel)
         {
-            SemesterPeriodRepo sRepo;
-            RegistrationRepo rRepo;
-            using (context)
-            {
-                sRepo = new SemesterPeriodRepo(context);
-                rRepo = new RegistrationRepo(context);
-                viewModel.PopulateSelectList(sRepo.GetAllSemesterPeriods());
-                viewModel.RegisteredClasses = rRepo.GetRegistrationByUserIdAndPeriodId(CustomUser.User.Id, viewModel.PeriodId);
-            }
-            return View(viewModel);
+            return View();
         }
 
         [HttpGet]

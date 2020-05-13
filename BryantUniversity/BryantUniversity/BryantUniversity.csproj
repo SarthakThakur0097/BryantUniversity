@@ -405,6 +405,7 @@
     <Content Include="Views\Advisement\Index.cshtml" />
     <Content Include="Views\Courses\Majors.cshtml" />
     <Content Include="Views\Majors\Index.cshtml" />
+    <Content Include="Views\Courses\AddPreq.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

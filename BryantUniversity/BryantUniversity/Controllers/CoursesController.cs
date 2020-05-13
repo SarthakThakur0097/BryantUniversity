@@ -40,16 +40,33 @@ namespace BryantUniversity.Controllers
         [HttpGet]
         public ActionResult Prereq(int courseId)
         {
-            CoursesRepo cRepo;
-            PrereqViewModel viewModel = new PrereqViewModel();
+            DepartmentRepo dRepo;
+            MajorPreRequisitesRepo reqRepo;
+            CoursePreReqViewModel viewModel = new CoursePreReqViewModel();
             using (context)
             {
-                cRepo = new CoursesRepo(context);
-                viewModel.Course = cRepo.GetAllPrereqs(courseId);
+                dRepo = new DepartmentRepo(context);
+                viewModel.PopulateDepermentSelectList(dRepo.GetAllDepartments());
+                reqRepo = new MajorPreRequisitesRepo(context);
+                viewModel.CoursesAndPreReqs = reqRepo.GetAllMajorPrequisitesForCourse(courseId);
             }
+
             return View(viewModel);
         }
 
+        [HttpGet]
+        public ActionResult AddPreq(int departmentId)
+        {
+            CoursesRepo cRepo;
+            CourseViewModel viewModel = new CourseViewModel();
+            using (context)
+            {
+                cRepo = new CoursesRepo(context);
+
+                viewModel.Courses = cRepo.GetByDepartment(departmentId);
+            }
+                return View(viewModel);
+        }
         [HttpGet]
         public ActionResult Majors()
         {

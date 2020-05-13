@@ -64,6 +64,17 @@ namespace BryantUniversity.Repo
                         .ToList();
         }
 
+        public IList<MajorPreRequisite> GetAllMajorPrequisitesForCourse(int id)
+        {
+            return _context
+                        .MajorPreRequisites
+                        .Include(m => m.PreReq)
+                        .Include(m => m.Course)
+                        .Include(m => m.Course.CourseLevel)
+                        .Where(m => m.Course.Id == id)
+                        .ToList();
+        }
+
 
         public void Insert(MajorPreRequisite majorPrequisites)
         {

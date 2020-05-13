@@ -32,6 +32,7 @@
 
 
             <h1>SCHEDULE</h1>
+        <div id="removeContainer">
             <table class="table">
                 <thead class="thead-dark">
                     <tr lass="bench-row">
@@ -47,9 +48,9 @@
                 </thead>
                 <tbody>
                     @if (Model.NonGraded != null)
-                    {
-                        foreach (var registered in Model.NonGraded)
-                        {
+            {
+                foreach (var registered in Model.NonGraded)
+                {
                             <tr>
                                 <td>@registered.CourseSection.SemesterPeriod.Period.Value</td>
                                 <td>@registered.CourseSection.Course.CourseTitle</td>
@@ -58,16 +59,18 @@
                                 <td>@registered.CourseSection.Professor.Name</td>
                                 <td>@registered.CourseSection.Room.Building.BuildingName</td>
                                 <td>@registered.CourseSection.Room.Id</td>
+
                                 <td>
-                                    <div id="removeContainer">
-                                        <button type="button" data-registration-id="@registered.Id" class="btn btn-danger">Drop</button>
-                                    </div>
+                                    <button type="button" data-registration-id="@registered.Id" class="btn btn-danger">Drop</button>
                                 </td>
+
                             </tr>
                         }
                     }
                 </tbody>
             </table>
+        </div>
+
         <div class="col-sm">
 
         </div>

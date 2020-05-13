@@ -1,6 +1,6 @@
 ﻿(async() => {
     const gebi = (e) => document.getElementById(e);
-
+    console.log("test")
     let removeButtons = gebi("removeContainer");
 
     removeButtons.onclick = function(){
