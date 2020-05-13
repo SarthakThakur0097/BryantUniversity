@@ -9,7 +9,7 @@ using System.Web.Mvc;
 
 namespace BryantUniversity.Controllers
 {
-    [Authorize(Roles = "4")]
+    [Authorize(Roles = "1,4")]
     public class RegistrationController : Controller
     {
         private Context context;
@@ -48,7 +48,7 @@ namespace BryantUniversity.Controllers
         }
 
         [HttpGet]
-        public ActionResult Add(int id)
+        public ActionResult AdminAdd(int studentId, int coursectionId)
         {
             MajorPreRequisitesRepo mprRepo;
             CourseSectionRepo csRepo;
@@ -67,16 +67,122 @@ namespace BryantUniversity.Controllers
                 mprRepo = new MajorPreRequisitesRepo(context);
                 gRepo = new GradesRepo(context);
 
+                toAdd = csRepo.GetCourseSectionById(studentId);
+                CourseSection roomCheck = csRepo.GetCourseSectionById(studentId);
+                IList<Registration> allRegistrationsforSection = rRepo.GetRegistrationsByCourseSectionId(studentId);
+                IList<MajorPreRequisite> allReqs = mprRepo.GetAllMajorPrequisitesByCourse(toAdd.Course.Id);
+                IList<Grade> allTakenCourses = gRepo.GetAllGradesByUserId(CustomUser.User.Id);
+
+                if (toAdd.SemesterPeriodId != 1)
+                {
+                    viewModel.PreviousSemesterConflict = true;
+                    return View(viewModel);
+                }
+                else if (allReqs.Count > 0 && allTakenCourses.Count == 0)
+                {
+                    viewModel.NotTakenPreReqConflict = true;
+
+                    return View(viewModel);
+                }
+                else if (allRegistrationsforSection.Count >= roomCheck.Room.RoomCapacity)
+                {
+                    viewModel.isOverRoomCapacity = true;
+
+                    return View(viewModel);
+                }
+                foreach (var req in allReqs)
+                {
+                    foreach (var takenCourse in allTakenCourses)
+                    {
+
+                        if (takenCourse.Registration.CourseSection.CourseId != req.CourseId)
+                        {
+                            viewModel.NotTakenPreReqConflict = true;
+                            return View(viewModel);
+                        }
+                    }
+                }
+
+                studentHolds = hRepo.GetAllStudentHoldsByUserId(CustomUser.User.Id);
+
+                if (studentHolds.Count > 0)
+                {
+                    viewModel.HasHold = true;
+
+                    return View(viewModel);
+                }
+                SemesterPeriod toAddPeriod = toAdd.SemesterPeriod;
+
+                IList<Registration> registrations = rRepo.GetRegistrationByUserAndCourseSection(studentId, 0);
+                IList<CourseSection> registeredCourseSections = new List<CourseSection>();
+
+                foreach (Registration registration in registrations)
+                {
+                    //if (registration.CourseSectionId == id)
+                    //{
+                    //    viewModel.SameClassConflict = true;
+                    //    return View(viewModel);
+                    //}
+                    //else if (registration.CourseSection.SemesterPeriod == toAddPeriod)
+                    //{
+                    //    viewModel.TimeConflict = true;
+                    //    return View(viewModel);
+                    //}
+                }
+
+                Registration userCourseSection = new Registration(CustomUser.User.Id, toAdd.Id);
+                rRepo.Insert(userCourseSection);
+            }
+            return RedirectToAction("Index", "Schedule");
+        }
+
+        [HttpGet]
+        public ActionResult Add(int id)
+        {
+            MajorPreRequisitesRepo mprRepo;
+            StudentLevelRepo sLRepo;
+            StudentTimeTypeRepo stRepo;
+            CourseSectionRepo csRepo;
+            RegistrationRepo rRepo;
+            StudentHoldRepo hRepo;
+            CourseSection toAdd;
+            GradesRepo gRepo;
+            IList<StudentHold> studentHolds = new List<StudentHold>();
+            RegistrationViewModel viewModel = new RegistrationViewModel();
+
+            using (context)
+            {
+                sLRepo = new StudentLevelRepo(context);
+                stRepo = new StudentTimeTypeRepo(context);
+                csRepo = new CourseSectionRepo(context);
+                rRepo = new RegistrationRepo(context);
+                hRepo = new StudentHoldRepo(context);
+                mprRepo = new MajorPreRequisitesRepo(context);
+                gRepo = new GradesRepo(context);
+                StudentLevel studentLevel = sLRepo.GetLevelByUserId(CustomUser.User.Id);
+                StudentTimeType studentTimeType = stRepo.GetStudentTimeTypeUserId(CustomUser.User.Id);
+
                 toAdd = csRepo.GetCourseSectionById(id);
                 CourseSection roomCheck = csRepo.GetCourseSectionById(id);
+                IList<Registration> allRegisteredSoFar = rRepo.GetRegistrationByUserAndCourseSection(CustomUser.User.Id, roomCheck.SemesterPeriodId);
                 IList<Registration> allRegistrationsforSection = rRepo.GetRegistrationsByCourseSectionId(id);
                 IList<MajorPreRequisite> allReqs = mprRepo.GetAllMajorPrequisitesByCourse(toAdd.Course.Id);
                 IList<Grade> allTakenCourses = gRepo.GetAllGradesByUserId(CustomUser.User.Id);
+
+
 
                 if(toAdd.SemesterPeriodId != 1)
                 {
                     viewModel.PreviousSemesterConflict = true;
                     return View(viewModel);
+                }
+                else if(studentTimeType.TimeTypes.TimeType != TimeType.FullTime)
+                {
+                    viewModel.IsFullTime = true;
+                }
+                else if(studentLevel.CourseLevel.Level != Level.Graduate)
+                {
+                    viewModel.IsGraduateStudent = false;
                 }
                 else if (allReqs.Count > 0 && allTakenCourses.Count == 0)
                 {

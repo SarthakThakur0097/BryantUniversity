@@ -4,19 +4,11 @@
     ViewBag.Title = "IndexCourse";
 }
 
-
 <div class="container">
     <div class="row">
         <div class="col-sm">
         </div>
         <div class="col-md-6">
-            @if(Model[0].Section.SemesterPeriod.StartEnrollmentDate > DateTime.Now)
-            {
-                <h2>Enrollment has not yet opened</h2>
-            } else if (Model[0].Section.SemesterPeriod.EndEnrollmentDate < DateTime.Now)
-            {
-                <h2>Enrollment date has closed</h2>
-            }
         </div>
         <div class="col-sm">
         </div>
@@ -63,25 +55,11 @@
                         <td>@courseSection.Section.Room.Id</td>
                         <td>@courseSection.SeatsRemaining</td>
                         <td>@courseSection.Section.Room.RoomCapacity</td>
-                        @if ((User).IsInRole("4"))
-                        {
-                            if (Model[0].Section.SemesterPeriod.StartEnrollmentDate > DateTime.Now)
-                            {
-                                <td>
-                                    <button type="button" disabled class="btn btn-danger">Register</button>
-
-                                </td>
-                            }
-                            else
-                            {
-                                <td>
-                                    @Html.ActionLink("Register", "Add", "Registration", new { id = courseSection.Section.Id }, new { @class = "btn btn-success" })
-                                </td>
-                            }
-                            }
-                                @*}*@
-                            </tr>
-                        }
+                        <td>
+                            @Html.ActionLink("Register", "AdminAdd", "Registration", new { studentId = Model[0].StudentId, coursectionId = courseSection.Section.Id }, new { @class = "btn btn-success" })
+                        </td>
+                    </tr>
+                }
             </tbody>
         </table>
     </div>
