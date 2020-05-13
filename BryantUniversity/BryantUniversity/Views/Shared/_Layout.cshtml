@@ -114,9 +114,7 @@
                         @Html.ActionLink("Academic Calendar", "Index", "Calendar", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
 
-                    <li class="nav-item">
-                        @Html.ActionLink("Master Schedule", "Index", "Schedule", new { area = "" }, new { @class = "navbar-brand" })
-                    </li>
+
 
                     <li class="nav-item">
                         @Html.ActionLink("Teaching", "Teaching", "Faculty", new { area = "" }, new { @class = "navbar-brand" })
@@ -193,6 +191,12 @@
 
                     <li class="nav-item">
                         @Html.ActionLink("All Advisements", "Index", "Advisement", new { area = "" }, new { @class = "navbar-brand" })
+                    </li>
+                }
+                else
+                {
+                    <li class="nav-item">
+                        @Html.ActionLink("Master Schedule", "Index", "Schedule", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
                 }
                 <li class="nav-item">
