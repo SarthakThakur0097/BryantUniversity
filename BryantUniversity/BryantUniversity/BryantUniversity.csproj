@@ -210,6 +210,7 @@
     <Compile Include="ApiControllers\CourseApiController.cs" />
     <Compile Include="ApiControllers\CourseSectionApiController.cs" />
     <Compile Include="ApiControllers\DaysApiController.cs" />
+    <Compile Include="ApiControllers\RegistrationApiController.cs" />
     <Compile Include="ApiControllers\StudentHoldsApiController.cs" />
     <Compile Include="Controllers\AdvisementController.cs" />
     <Compile Include="Controllers\HoldsController.cs" />
@@ -415,6 +416,7 @@
     <Folder Include="Views\AttendanceApi\" />
     <Folder Include="Views\ClassDurationApi\" />
     <Folder Include="Views\CourseAPi\" />
+    <Folder Include="Views\RegistrationAPI\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

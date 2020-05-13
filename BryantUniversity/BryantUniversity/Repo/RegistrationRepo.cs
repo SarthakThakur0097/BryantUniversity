@@ -87,7 +87,11 @@ namespace BryantUniversity.Repo
 
         public Registration GetById(int id)
         {
-            return _context.Registrations.FirstOrDefault(r => r.Id == id);
+            return _context.Registrations
+                .Include(r => r.User)
+                .Include(r => r.CourseSection)
+                .Include(r => r.CourseSection.Course)            
+                .FirstOrDefault(r => r.Id == id);
         }
 
         public IList<Registration> GetRegistrationByUserAndCourseSection(int userId, int courseSectoinId)
@@ -141,7 +145,7 @@ namespace BryantUniversity.Repo
 
         public void Delete(int id)
         {
-            Registration toRemove = GetRegistrationByCourseSectionId(id);
+            Registration toRemove = GetById(id);
             _context.Registrations.Remove(toRemove);
             _context.SaveChanges();
         }

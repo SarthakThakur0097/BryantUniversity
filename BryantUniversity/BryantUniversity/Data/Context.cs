@@ -62,6 +62,10 @@ namespace BryantUniversity.Data
             .WithOptional(x => x.PreReq)
             .WillCascadeOnDelete(true);
 
+            modelBuilder.Entity<Registration>()
+                .HasMany<Attendance>(c => c.Attendances)
+                .WithOptional(x => x.Registration)
+                .WillCascadeOnDelete(true);
             //modelBuilder.Entity<Course>()
             //.HasMany<MajorPreRequisite>(c => c.CourseMajorPreRequisites)
             //.WithOptional(x => x.PreReq)

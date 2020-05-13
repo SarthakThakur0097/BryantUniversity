@@ -73,20 +73,19 @@ namespace BryantUniversity.Controllers
 
         [Authorize(Roles = "2")]
         [HttpGet]
-        public ActionResult Attendance(int id, int cid)
+        public ActionResult Attendance(int id, int registrationId)
         {
             StudentAttendanceViewModel viewModel = new StudentAttendanceViewModel();
 
-            CourseSectionRepo cRepo;
+            RegistrationRepo rRepo;
             UserRepo uRepo;
 
             using (context)
             {
                 uRepo = new UserRepo(context);
-                cRepo = new CourseSectionRepo(context);
+                rRepo = new RegistrationRepo(context);
 
-                viewModel.Student = uRepo.GetById(id);
-                viewModel.CourseSection = cRepo.GetCourseSectionById(cid);
+                viewModel.Registration = rRepo.GetById(registrationId);
             }
             return View(viewModel);
         }

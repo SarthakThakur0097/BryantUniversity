@@ -9,8 +9,7 @@ namespace BryantUniversity.ViewModels
     public class StudentAttendanceViewModel
     {
         public int CourseSectionId { get; set; }
-        public CourseSection CourseSection { get; set; }
-        public User Student { get; set; }
+        public Registration Registration { get; set; }
         public IList<Registration> students { get; set; }
     }
 }
