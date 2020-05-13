@@ -180,7 +180,6 @@
                 }
                 else if (Request.IsAuthenticated && ((BryantUniversity.Security.CustomPrincipal)User).IsInRole("2"))
                 {
-
                     <li class="nav-item">
                         @Html.ActionLink("Majors", "Majors", "Courses", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
@@ -191,7 +190,6 @@
                 }
                 else if (Request.IsAuthenticated && ((BryantUniversity.Security.CustomPrincipal)User).IsInRole("1"))
                 {
-
                     <li class="nav-item">
                         @Html.ActionLink("Majors", "Majors", "Courses", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
