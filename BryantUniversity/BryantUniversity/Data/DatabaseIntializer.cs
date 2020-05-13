@@ -72,52 +72,52 @@ namespace BryantUniversity.Data
             DateTime fall2019StartTime = new DateTime(2019, 09, 1);
             DateTime fall2019EndTime = new DateTime(2019, 12, 22);
             DateTime fall2019StartEnrollTime = new DateTime(2019, 09, 1);
-            DateTime fall2019EndEnrollTime = new DateTime(2020, 01, 24);
+            DateTime fall2019EndEnrollTime = new DateTime(2020, 12, 15);
             DateTime fall2019startGradeTime = new DateTime(2020, 09, 03);
-            DateTime fall2019endGradeTime = new DateTime(2020, 09, 03);
+            DateTime fall2019endGradeTime = new DateTime(2020, 12, 20);
 
             DateTime spring2019StartTime = new DateTime(2019, 01, 5);
-            DateTime spring2019EndTime = new DateTime(2019, 05, 23);
-            DateTime spring2019StartEnrollTime = new DateTime(2019, 11, 1);
-            DateTime spring2019EndEnrollTime = new DateTime(2019, 05, 30);
-            DateTime spring2019startGradeTime = new DateTime(2020, 09, 03);
-            DateTime spring2019endGradeTime = new DateTime(2020, 09, 03);
+            DateTime spring2019EndTime = new DateTime(2019, 05, 17);
+            DateTime spring2019StartEnrollTime = new DateTime(2018, 12, 1);
+            DateTime spring2019EndEnrollTime = new DateTime(2019, 01, 05);
+            DateTime spring2019startGradeTime = new DateTime(2019, 01, 07);
+            DateTime spring2019endGradeTime = new DateTime(2020, 05, 21);
 
-            DateTime fall2018StartTime = new DateTime(2019, 01, 5);
-            DateTime fall2018EndTime = new DateTime(2019, 05, 23);
-            DateTime fall2018StartEnrollTime = new DateTime(2019, 11, 1);
-            DateTime fall2018EndEnrollTime = new DateTime(2019, 05, 30);
-            DateTime fall2018startGradeTime = new DateTime(2020, 09, 03);
-            DateTime fall2018endGradeTime = new DateTime(2020, 09, 03);
+            DateTime fall2018StartTime = new DateTime(2018, 08, 5);
+            DateTime fall2018EndTime = new DateTime(2018, 12, 21);
+            DateTime fall2018StartEnrollTime = new DateTime(2018, 11, 1);
+            DateTime fall2018EndEnrollTime = new DateTime(2018, 05, 30);
+            DateTime fall2018startGradeTime = new DateTime(2018, 09, 03);
+            DateTime fall2018endGradeTime = new DateTime(2018, 09, 03);
 
 
-            DateTime spring2018StartTime = new DateTime(2019, 01, 5);
-            DateTime spring2018EndTime = new DateTime(2019, 05, 23);
-            DateTime spring2018StartEnrollTime = new DateTime(2019, 11, 1);
-            DateTime spring2018EndEnrollTime = new DateTime(2019, 05, 30);
-            DateTime spring2018startGradeTime = new DateTime(2020, 09, 03);
-            DateTime spring2018endGradeTime = new DateTime(2020, 09, 03);
+            DateTime spring2018StartTime = new DateTime(2018, 01, 5);
+            DateTime spring2018EndTime = new DateTime(2018, 05, 23);
+            DateTime spring2018StartEnrollTime = new DateTime(2018, 11, 1);
+            DateTime spring2018EndEnrollTime = new DateTime(2018, 05, 30);
+            DateTime spring2018startGradeTime = new DateTime(2018, 09, 03);
+            DateTime spring2018endGradeTime = new DateTime(2018, 09, 03);
 
-            DateTime fall2017StartTime = new DateTime(2019, 01, 5);
-            DateTime fall2017EndTime = new DateTime(2019, 05, 23);
-            DateTime fall2017StartEnrollTime = new DateTime(2019, 11, 1);
-            DateTime fall2017EndEnrollTime = new DateTime(2019, 05, 30);
-            DateTime fall2017startGradeTime = new DateTime(2020, 09, 03);
-            DateTime fall2017endGradeTime = new DateTime(2020, 09, 03);
+            DateTime fall2017StartTime = new DateTime(2017, 01, 5);
+            DateTime fall2017EndTime = new DateTime(2017, 05, 23);
+            DateTime fall2017StartEnrollTime = new DateTime(2017, 11, 1);
+            DateTime fall2017EndEnrollTime = new DateTime(2017, 05, 30);
+            DateTime fall2017startGradeTime = new DateTime(2017, 09, 03);
+            DateTime fall2017endGradeTime = new DateTime(2017, 09, 03);
 
-            DateTime spring2017StartTime = new DateTime(2019, 01, 5);
-            DateTime spring2017EndTime = new DateTime(2019, 05, 23);
-            DateTime spring2017StartEnrollTime = new DateTime(2019, 11, 1);
-            DateTime spring2017EndEnrollTime = new DateTime(2019, 05, 30);
-            DateTime spring2017startGradeTime = new DateTime(2020, 09, 03);
-            DateTime spring2017endGradeTime = new DateTime(2020, 09, 03);
+            DateTime spring2017StartTime = new DateTime(2017, 01, 5);
+            DateTime spring2017EndTime = new DateTime(2017, 05, 23);
+            DateTime spring2017StartEnrollTime = new DateTime(2017, 11, 1);
+            DateTime spring2017EndEnrollTime = new DateTime(2017, 05, 30);
+            DateTime spring2017startGradeTime = new DateTime(2017, 09, 03);
+            DateTime spring2017endGradeTime = new DateTime(2017, 09, 03);
 
-            DateTime fall2016StartTime = new DateTime(2019, 01, 5);
-            DateTime fall2016EndTime = new DateTime(2019, 05, 23);
-            DateTime fall2016StartEnrollTime = new DateTime(2019, 11, 1);
-            DateTime fall2016EndEnrollTime = new DateTime(2019, 05, 30);
-            DateTime fall2016startGradeTime = new DateTime(2020, 09, 03);
-            DateTime fall2016endGradeTime = new DateTime(2020, 09, 03);
+            DateTime fall2016StartTime = new DateTime(2016, 01, 5);
+            DateTime fall2016EndTime = new DateTime(2016, 05, 23);
+            DateTime fall2016StartEnrollTime = new DateTime(2016, 11, 1);
+            DateTime fall2016EndEnrollTime = new DateTime(2016, 05, 30);
+            DateTime fall2016startGradeTime = new DateTime(2016, 09, 03);
+            DateTime fall2016endGradeTime = new DateTime(2016, 09, 03);
 
 
             SemesterPeriod Fall2020 = new SemesterPeriod(Period.Fall2020, fall2020StartTime, fall2020EndTime, fall2020StartEnrollTime, fall2020EndEnrollTime, fall2020startGradeTime, fall2020endGradeTime);
