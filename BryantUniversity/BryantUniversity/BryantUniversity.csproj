@@ -211,6 +211,7 @@
     <Compile Include="ApiControllers\CourseSectionApiController.cs" />
     <Compile Include="ApiControllers\DaysApiController.cs" />
     <Compile Include="ApiControllers\StudentHoldsApiController.cs" />
+    <Compile Include="Controllers\AdvisementController.cs" />
     <Compile Include="Controllers\HoldsController.cs" />
     <Compile Include="ApiControllers\SemesterPeriodApiController.cs" />
     <Compile Include="ApiControllers\UserApiController.cs" />
@@ -224,6 +225,7 @@
     <Compile Include="Controllers\FacultyController.cs" />
     <Compile Include="Controllers\GradesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MajorsController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Controllers\ScheduleController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
@@ -293,7 +295,9 @@
     <Compile Include="Repo\RegistrationRepo.cs" />
     <Compile Include="Repo\SemesterPeriodRepo.cs" />
     <Compile Include="Repo\StudentHoldRepo.cs" />
+    <Compile Include="Repo\StudentLevelRepo.cs" />
     <Compile Include="Repo\StudentMajorRepo.cs" />
+    <Compile Include="Repo\StudentTimeTypeRepo.cs" />
     <Compile Include="Repo\UserRepo.cs" />
     <Compile Include="Repo\UserRoleRepo.cs" />
     <Compile Include="Models\Role.cs" />
@@ -304,6 +308,7 @@
     <Compile Include="Security\CustomPrincipal.cs" />
     <Compile Include="ViewModels\AdvisingViewModel.cs" />
     <Compile Include="ViewModels\AdvisorsViewModel.cs" />
+    <Compile Include="ViewModels\AdvisorViewModel.cs" />
     <Compile Include="ViewModels\AssignGradeViewModel.cs" />
     <Compile Include="ViewModels\AttendancebookViewModel.cs" />
     <Compile Include="ViewModels\AttendanceViewModel.cs" />
@@ -317,6 +322,8 @@
     <Compile Include="ViewModels\GradebookViewModel.cs" />
     <Compile Include="ViewModels\GradesViewModel.cs" />
     <Compile Include="ViewModels\HoldViewModel.cs" />
+    <Compile Include="ViewModels\MajorRequirementsViewModel.cs" />
+    <Compile Include="ViewModels\MajorViewModel.cs" />
     <Compile Include="ViewModels\PrereqViewModel.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
     <Compile Include="ViewModels\ScheduleViewModel.cs" />
@@ -393,6 +400,12 @@
     <Content Include="Views\Faculty\More.cshtml" />
     <Content Include="Views\Faculty\TeachingAdmin.cshtml" />
     <Content Include="Views\Student\ViewHold.cshtml" />
+    <Content Include="Views\Registration\AdminAdd.cshtml" />
+    <Content Include="Views\Schedule\IndexAdmin.cshtml" />
+    <Content Include="Views\CourseSection\IndexAdmin.cshtml" />
+    <Content Include="Views\Advisement\Index.cshtml" />
+    <Content Include="Views\Courses\Majors.cshtml" />
+    <Content Include="Views\Majors\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

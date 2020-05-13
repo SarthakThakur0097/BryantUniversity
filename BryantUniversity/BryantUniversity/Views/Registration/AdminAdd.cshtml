@@ -11,7 +11,7 @@ else if (Model.SameClassConflict)
 {
     <h1> Same class error </h1>
 }
-else if(Model.TimeConflict)
+else if (Model.TimeConflict)
 {
     <h1>Time conflict error</h1>
 }
@@ -19,22 +19,14 @@ else if (Model.HasHold)
 {
     <h1>Please contact Admin to remove Hold</h1>
 }
-else if(Model.NotTakenPreReqConflict)
+else if (Model.NotTakenPreReqConflict)
 {
     <h1>You have not taken the required PreRequistes</h1>
 }
-else if(Model.isOverRoomCapacity)
+else if (Model.isOverRoomCapacity)
 {
 
     <h1>There are no longer seats available</h1>
-}
-else if(!Model.IsFullTime)
-{
-    <h1>Part-Time students can only register for two classes at a time</h1>
-}
-else if(!Model.IsGraduateStudent)
-{
-    <h1>You need to be a Graduate level student in order to register for this class</h1>
 }
 else
 {

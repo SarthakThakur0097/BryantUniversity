@@ -220,11 +220,18 @@ namespace BryantUniversity.Controllers
         public ActionResult Details(int id)
         {
             UserRepo uRepo;
+            StudentLevelRepo slRepo;
+            StudentTimeTypeRepo stRepo;
             StudentDetailsViewModel viewModel = new StudentDetailsViewModel();
 
             using (context)
             {
                 uRepo = new UserRepo(context);
+                slRepo = new StudentLevelRepo(context);
+                stRepo = new StudentTimeTypeRepo(context);
+
+                viewModel.StudentLevel = slRepo.GetLevelByUserId(id);
+                viewModel.StudentTimeType = stRepo.GetStudentTimeTypeUserId(id);
                 viewModel.Student = uRepo.GetById(id);
             }
             return View(viewModel);

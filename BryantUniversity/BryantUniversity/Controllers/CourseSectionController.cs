@@ -20,6 +20,39 @@ namespace BryantUniversity.Controllers
         }
 
         [HttpGet]
+        public ActionResult IndexAdmin(int id, int studentId, int semesterPeriodId)
+        {
+            CourseSectionRepo csRepo;
+            RegistrationRepo rRepo;
+            IList<CourseSection> courseSections;
+            IList<Registration> allRegisteredUsers;
+            IList<SectionRegistrationViewModel> AllSections = new List<SectionRegistrationViewModel>();
+
+            using (context)
+            {
+                rRepo = new RegistrationRepo(context);
+                csRepo = new CourseSectionRepo(context);
+
+                courseSections = csRepo.GetCourseSectionsByCourseIdAndSemesterPeriodId(id, semesterPeriodId);
+
+                foreach (var section in courseSections)
+                {
+                    allRegisteredUsers = rRepo.GetRegistrationBySectionIdAndPeriodId(section.Id, semesterPeriodId);
+                    int roomsLeft = section.Room.RoomCapacity - allRegisteredUsers.Count;
+                    SectionRegistrationViewModel viewModel = new SectionRegistrationViewModel
+                    {
+                        StudentId = studentId,
+                        Section = section,
+                        SeatsRemaining = roomsLeft
+
+                    };
+                    AllSections.Add(viewModel);
+                }
+            }
+            return View("IndexAdmin", AllSections);
+        }
+
+        [HttpGet]
         public ActionResult Index(int Id, int semesterPeriodId)
         {
             CourseSectionRepo csRepo;

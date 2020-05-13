@@ -27,6 +27,7 @@ namespace BryantUniversity.ViewModels
         public IList<Department> Departments { get; set; }
         public List<ClassPattern> PatternsToDisplay { get; set; }
         public IList<Course> Courses { get; set; }
+        public int StudentId { get; set; }
         public bool DisplayCourses { get; set; }
         public SemesterDetailsViewModel(){}
 

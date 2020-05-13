@@ -13,5 +13,7 @@ namespace BryantUniversity.ViewModels
         public bool TimeConflict { get; set; }
         public bool HasHold { get; set; }
         public bool isOverRoomCapacity { get; set; }
+        public bool IsFullTime { get; set; }
+        public bool IsGraduateStudent { get; set; }
     }
 }

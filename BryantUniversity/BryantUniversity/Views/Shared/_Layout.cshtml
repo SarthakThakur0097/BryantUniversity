@@ -114,9 +114,7 @@
                         @Html.ActionLink("Academic Calendar", "Index", "Calendar", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
 
-                    <li class="nav-item">
-                        @Html.ActionLink("Master Schedule", "Index", "Schedule", new { area = "" }, new { @class = "navbar-brand" })
-                    </li>
+
 
                     <li class="nav-item">
                         @Html.ActionLink("Teaching", "Teaching", "Faculty", new { area = "" }, new { @class = "navbar-brand" })
@@ -129,9 +127,13 @@
                     </li>
 
                     <li class="nav-item">
-                        @Html.ActionLink("Look up classes", "Index", "Schedule", new { area = "" }, new { @class = "navbar-brand" })
+                        @Html.ActionLink("Register", "Index", "Schedule", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
 
+
+                    <li class="nav-item">
+                        @Html.ActionLink("Majors", "Majors", "Courses", new { area = "" }, new { @class = "navbar-brand" })
+                    </li>
 
                     <li class="nav-item">
                         @Html.ActionLink("Catalog", "Catalog", "Courses", new { area = "" }, new { @class = "navbar-brand" })
@@ -154,6 +156,7 @@
             <ul class="navbar-nav ml-auto">
                 @if (Request.IsAuthenticated && ((BryantUniversity.Security.CustomPrincipal)User).IsInRole("4"))
                 {
+
                     <li class="nav-item">
                         @Html.ActionLink("View Hold", "ViewHold", "Student", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
@@ -178,14 +181,52 @@
                 else if (Request.IsAuthenticated && ((BryantUniversity.Security.CustomPrincipal)User).IsInRole("2"))
                 {
                     <li class="nav-item">
+                        @Html.ActionLink("Majors", "Majors", "Courses", new { area = "" }, new { @class = "navbar-brand" })
+                    </li>
+
+                    <li class="nav-item">
                         @Html.ActionLink("Advising", "Advising", "Faculty", new { area = "" }, new { @class = "navbar-brand" })
+                    </li>
+                }
+                else if (Request.IsAuthenticated && ((BryantUniversity.Security.CustomPrincipal)User).IsInRole("1"))
+                {
+                    <li class="nav-item">
+                        @Html.ActionLink("Majors", "Majors", "Courses", new { area = "" }, new { @class = "navbar-brand" })
+                    </li>
+
+                    <li class="nav-item">
+                        @Html.ActionLink("Master Schedule", "Index", "Schedule", new { area = "" }, new { @class = "navbar-brand" })
+                    </li>
+
+                    <li class="nav-item">
+                        @Html.ActionLink("Catalog", "Catalog", "Courses", new { area = "" }, new { @class = "navbar-brand" })
+                    </li>
+
+                    <li class="nav-item">
+                        @Html.ActionLink("All Advisements", "Index", "Advisement", new { area = "" }, new { @class = "navbar-brand" })
+                    </li>
+                }
+                else if (Request.IsAuthenticated && ((BryantUniversity.Security.CustomPrincipal)User).IsInRole("1"))
+                {
+
+                    <li class="nav-item">
+                        @Html.ActionLink("Majors", "Majors", "Courses", new { area = "" }, new { @class = "navbar-brand" })
+                    </li>
+
+                    <li class="nav-item">
+                        @Html.ActionLink("Master Schedule", "Index", "Schedule", new { area = "" }, new { @class = "navbar-brand" })
+                    </li>
+                }
+                else
+                {
+                    <li class="nav-item">
+                        @Html.ActionLink("Master Schedule", "Index", "Schedule", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
                 }
                 <li class="nav-item">
                     <div>
                         @if (Request.IsAuthenticated)
                         {
-
                             <div class="navbar-text navbar-right" id="username">
                                 <span>Welcome @(((BryantUniversity.Security.CustomPrincipal)User).User.Name)! </span>
                             </div>
