@@ -21,7 +21,7 @@
         </div>
         
             <div class="col-sm">
-
+                <h4>Grading available till: @Model.Section.SemesterPeriod.EndGradeTime</h4>
             </div>
         </div>
     <div class="row"></div>
@@ -50,22 +50,29 @@
 
         </div>
         <div class="col-sm">
-            @using (Html.BeginForm("AssignGrade", "Grades", new { id = Model.Student.Id, cid = Model.Section.Id}, FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
-            {
-                <div class="row">
-                    <div class="col-sm">
-                        @Html.LabelFor(model => model.LetterGradeId, htmlAttributes: new { @class = "control-label col-md-2" })
-                        @Html.DropDownListFor(model => model.LetterGradeId, Model.GradeList, "Grade", new { @class = "form-control required", id = "grades-list" })
-                        @Html.ValidationMessageFor(model => model.LetterGradeId)
-                        <button type="submit" class="btn btn-success">Submit</button>
-                    </div>
-                    <div class="col-sm">
-                        @Html.HiddenFor(model => model.Section)
-                    </div>
+            @if(DateTime.Now< Model.Section.SemesterPeriod.EndGradeTime)
+            { 
+                using (Html.BeginForm("AssignGrade", "Grades", new { id = Model.Student.Id, cid = Model.Section.Id}, FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
+                {
+                    <div class="row">
+                        <div class="col-sm">
+                            @Html.LabelFor(model => model.LetterGradeId, htmlAttributes: new { @class = "control-label col-md-2" })
+                            @Html.DropDownListFor(model => model.LetterGradeId, Model.GradeList, "Grade", new { @class = "form-control required", id = "grades-list" })
+                            @Html.ValidationMessageFor(model => model.LetterGradeId)
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </div>
+                        <div class="col-sm">
+                            @Html.HiddenFor(model => model.Section)
+                        </div>
 
-                    <div class="col-md-5">
+                        <div class="col-md-5">
+                        </div>
                     </div>
-                </div>
+                }
+            }
+            else
+            {
+                <h4>Grading period has ended</h4>
             }
         </div>
         </div>

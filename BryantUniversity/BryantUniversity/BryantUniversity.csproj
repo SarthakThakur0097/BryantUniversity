@@ -225,6 +225,7 @@
     <Compile Include="Controllers\FacultyController.cs" />
     <Compile Include="Controllers\GradesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MajorsController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Controllers\ScheduleController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
@@ -319,6 +320,8 @@
     <Compile Include="ViewModels\GradebookViewModel.cs" />
     <Compile Include="ViewModels\GradesViewModel.cs" />
     <Compile Include="ViewModels\HoldViewModel.cs" />
+    <Compile Include="ViewModels\MajorRequirementsViewModel.cs" />
+    <Compile Include="ViewModels\MajorViewModel.cs" />
     <Compile Include="ViewModels\PrereqViewModel.cs" />
     <Compile Include="ViewModels\RegistrationViewModel.cs" />
     <Compile Include="ViewModels\ScheduleViewModel.cs" />
@@ -399,6 +402,8 @@
     <Content Include="Views\Schedule\IndexAdmin.cshtml" />
     <Content Include="Views\CourseSection\IndexAdmin.cshtml" />
     <Content Include="Views\Advisement\Index.cshtml" />
+    <Content Include="Views\Courses\Majors.cshtml" />
+    <Content Include="Views\Majors\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -50,6 +50,19 @@ namespace BryantUniversity.Controllers
             return View(viewModel);
         }
 
+        [HttpGet]
+        public ActionResult Majors()
+        {
+            MajorRepo mRepo;
+            MajorViewModel viewModel = new MajorViewModel();
+            using (context)
+            {
+                mRepo = new MajorRepo(context);
+
+                viewModel.Majors = mRepo.GetAllMajors();
+            }
+            return View(viewModel);
+        }
         [HttpPost]
         public ActionResult Index(CourseViewModel viewModel)
         {
