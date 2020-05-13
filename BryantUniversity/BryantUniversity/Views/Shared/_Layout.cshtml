@@ -193,6 +193,12 @@
                         @Html.ActionLink("All Advisements", "Index", "Advisement", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
                 }
+                else if (Request.IsAuthenticated && ((BryantUniversity.Security.CustomPrincipal)User).IsInRole("1"))
+                {
+                    <li class="nav-item">
+                        @Html.ActionLink("Master Schedule", "Index", "Schedule", new { area = "" }, new { @class = "navbar-brand" })
+                    </li>
+                }
                 else
                 {
                     <li class="nav-item">

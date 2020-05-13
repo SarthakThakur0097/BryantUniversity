@@ -12,6 +12,7 @@
             <th>Email</th>
             <th></th>
             <th></th>
+            <th></th>
         </tr>
     </thead>
 
@@ -26,6 +27,9 @@
                 </td>
                 <td>
                     @Html.ActionLink("attendance", "Attendance", "Student", new { id = student.User.Id, cid = student.CourseSectionId}, new { @class = "btn btn-primary" })
+                </td>
+                <td>
+                    @Html.ActionLink("view attendance", "Attendancebook", "Student", new { id = student.User.Id, cid = student.CourseSectionId }, new { @class = "btn btn-primary" })
                 </td>
             </tr>
         }
