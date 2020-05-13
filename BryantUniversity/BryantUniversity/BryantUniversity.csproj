@@ -211,6 +211,7 @@
     <Compile Include="ApiControllers\CourseSectionApiController.cs" />
     <Compile Include="ApiControllers\DaysApiController.cs" />
     <Compile Include="ApiControllers\StudentHoldsApiController.cs" />
+    <Compile Include="Controllers\AdvisementController.cs" />
     <Compile Include="Controllers\HoldsController.cs" />
     <Compile Include="ApiControllers\SemesterPeriodApiController.cs" />
     <Compile Include="ApiControllers\UserApiController.cs" />
@@ -304,6 +305,7 @@
     <Compile Include="Security\CustomPrincipal.cs" />
     <Compile Include="ViewModels\AdvisingViewModel.cs" />
     <Compile Include="ViewModels\AdvisorsViewModel.cs" />
+    <Compile Include="ViewModels\AdvisorViewModel.cs" />
     <Compile Include="ViewModels\AssignGradeViewModel.cs" />
     <Compile Include="ViewModels\AttendancebookViewModel.cs" />
     <Compile Include="ViewModels\AttendanceViewModel.cs" />
@@ -396,6 +398,7 @@
     <Content Include="Views\Registration\AdminAdd.cshtml" />
     <Content Include="Views\Schedule\IndexAdmin.cshtml" />
     <Content Include="Views\CourseSection\IndexAdmin.cshtml" />
+    <Content Include="Views\Advisement\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
