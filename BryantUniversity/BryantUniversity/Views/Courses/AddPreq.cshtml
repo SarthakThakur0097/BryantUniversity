@@ -61,16 +61,12 @@
                             <td>@course.CourseLevel.Level.Value</td>
                             <td>@course.Department.Name</td>
                             <td>
-                                @Html.ActionLink("edit", "Edit", new { id = course.Id }, new { @class = "btn btn-primary" })
-                            </td>
-                            <td>
-                                @Html.ActionLink("assign", "Assign", new { id = course.Id }, new { @class = "btn btn-info" })
-                            </td>
-                            <td>
-                                @Html.ActionLink("delete", "Delete", new { id = course.Id }, new { @class = "btn btn-danger" })
-                            </td>
-                            <td>
-                                @Html.ActionLink("Manage Prerequisites", "Prereq", new { courseId = course.Id }, new { @class = "btn btn-warning" })
+                                @using (Html.BeginForm("AddPreqPost", "courses", new {courseId = Model.CoursePrereqId, prereqId = course.Id}, FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
+                                {
+                                    <div class="col-sm">
+                                        <button type="submit" class="btn btn-success">Add</button>
+                                    </div>
+                                }
                             </td>
                         </tr>
                     }

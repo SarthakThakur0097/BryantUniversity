@@ -7,7 +7,7 @@ namespace BryantUniversity.Models
     {
         public MajorPreRequisite(){ }
 
-        public MajorPreRequisite(int? preReqId, int courseId)
+        public MajorPreRequisite(int? courseId, int? preReqId)
         {
             CourseId = courseId;
             PreReqId = preReqId;
@@ -17,7 +17,7 @@ namespace BryantUniversity.Models
         [Key]
         public int Id { get; set; }
 
-        public int CourseId { get; set; }
+        public int? CourseId { get; set; }
         [ForeignKey("CourseId")]
         public Course Course { get; set; }
 

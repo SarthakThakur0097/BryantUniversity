@@ -18,7 +18,7 @@ namespace BryantUniversity.ViewModels
         public string CourseTitleId { get; set; }
         [Display(Name = "Course Title")]
         public string CourseTitle { get; set; }
-
+        public int CoursePrereqId { get; set; }
         public string Description { get; set; }
         public int Credits { get; set; }
         public CourseLevel CourseLevel { get; set; }

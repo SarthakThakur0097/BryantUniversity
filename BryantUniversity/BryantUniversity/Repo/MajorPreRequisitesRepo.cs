@@ -24,6 +24,7 @@ namespace BryantUniversity.Repo
                         .FirstOrDefault(c => c.Id == id);
         }
 
+
         public IList<MajorPreRequisite> GetAllMajorPrequisites()
         {
             return _context

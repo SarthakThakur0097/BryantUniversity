@@ -23,7 +23,7 @@
         </div>
         <div class="col-sm">
             <p>
-                @Html.ActionLink("Add Prereq", "AddPreq", new {departmentId = Model.CoursesAndPreReqs[0].Course.DepartmentId }, new { @class = "btn btn-success" })
+                @Html.ActionLink("Add Prereq", "AddPreq", new {courseId = Model.CoursesAndPreReqs[0].CourseId, departmentId = Model.CoursesAndPreReqs[0].Course.DepartmentId }, new { @class = "btn btn-success" })
             </p>
         </div>
 
@@ -71,7 +71,7 @@
                                     <td>@course.PreReq.CourseTitleId</td>
                                     <td>@course.PreReq.CourseTitle</td>
                                     <td>
-                                        @Html.ActionLink("Delete", "Assign", new { id = course.Id }, new { @class = "btn btn-danger" })
+                                        @Html.ActionLink("Delete", "DeletePrereq", new { id = course.Id }, new { @class = "btn btn-danger" })
                                     </td>
                                 }
 
