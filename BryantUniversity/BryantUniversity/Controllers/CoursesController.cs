@@ -214,6 +214,7 @@ namespace BryantUniversity.Controllers
             {
                 cRepo = new CoursesRepo(context);
                 confirmDelete = cRepo.GetById(id);
+                cRepo.Delete(confirmDelete);
             }
 
             return View(confirmDelete);
