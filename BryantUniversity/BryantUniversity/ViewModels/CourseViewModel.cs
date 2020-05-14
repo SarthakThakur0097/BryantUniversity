@@ -20,7 +20,9 @@ namespace BryantUniversity.ViewModels
         public string CourseTitle { get; set; }
         public int CoursePrereqId { get; set; }
         public string Description { get; set; }
+        [Range(1, 4, ErrorMessage = "Value must be between 1 - 4")]
         public int Credits { get; set; }
+        [Display(Name = "Level")]
         public CourseLevel CourseLevel { get; set; }
         public IList<Course> Courses { get; set; }
         public IList<SemesterPeriod> SemesterPeriods { get; set; }
