@@ -73,15 +73,6 @@ namespace BryantUniversity.Data
             .WithOptional(x => x.Registration)
             .WillCascadeOnDelete(true);
 
-            //modelBuilder.Entity<Course>()
-            //.HasOptional<MajorPreRequisite>(c => c)
-            //.WithOptional(x => x.PreReq)
-            //.WillCascadeOnDelete(true);
-
-            //modelBuilder.Entity<Course>()
-            //.HasMany<MajorPreRequisite>(c => c.CourseMajorPreRequisites)
-            //.WithOptional(x => x.Course)
-            //.WillCascadeOnDelete(true);
 
 
             modelBuilder.Entity<MajorPreRequisite>()
@@ -90,98 +81,14 @@ namespace BryantUniversity.Data
             .HasForeignKey<int>(s => s.CourseId).WillCascadeOnDelete(false);
 
             modelBuilder.Entity<MajorPreRequisite>()
-                .HasRequired<Course>(s => s.PreReq)
+                .HasOptional<Course>(s => s.PreReq)
                 .WithMany(g => g.MajorPreRequisitesCourses)
-                .HasForeignKey<int>(s => s.PreReqId).WillCascadeOnDelete(false);
+                .HasForeignKey<int?>(s => s.PreReqId).WillCascadeOnDelete(false);
+            //Correct
             //modelBuilder.Entity<MajorPreRequisite>()
-            //.HasOptional<Course>(s => s.Course)
-            //.WithMany(g => g.CourseMajorPreRequisites)
-            //.HasForeignKey<int?>(s => s.CourseId).WillCascadeOnDelete(false);
-
-            //modelBuilder.Entity<MajorPreRequisite>()
-            //.HasOptional<Course>(s => s.PreReq)
-            //.WithMany(g => g.MajorPreRequisitesCourses)
-            //.HasForeignKey<int?>(s => s.PreReqId).WillCascadeOnDelete(true);
-
-            //.HasMany<Course>(c => c.PreReq)
-
-
-
-
-            //modelBuilder.Entity<Course>()
-            //.HasMany(c => c.MajorPreRequisitesCourses)
-            //.WithMany(m => m.PreReq)
-            //.Map(m => {
-            //    m.ToTable("MajorPreRequisite");
-            //    m.MapLeftKey("CourseId");
-            //    m.MapRightKey("PreReqId");
-            //    })
-            //    .WillCascadeOnDelete(false);
-
-            //modelBuilder.Entity<Course>()
-            //.HasMany(c => c.MajorPreRequisitesCourses)
-            //.WithMany(m => m.Course)
-            //    .Map(m => {
-            //     m.ToTable("MajorPreRequisite");
-            //        m.MapLeftKey("PreReqId");
-            //        m.MapRightKey("CourseId");
-            //        })
-            //.WillCascadeOnDelete(false);
-
-            //modelBuilder.Entity<Course>()
-            //.HasMany<MajorPreRequisite>(c => c.)
-            //.WithOptional(x => x.Course)
-            //.WillCascadeOnDelete(true);
-
-            //modelBuilder.Entity<MajorPreRequisite>().HasRequired(m => m.Course)
-            //  .WithMany(m => m.).HasForeignKey(m => m.CourseId);
-            //modelBuilder.Entity<MajorPreRequisite>().HasRequired(m => m.Course)
-            //          .WithMany(m => m.CourseMajorPreRequisites).HasForeignKey(m => m.PreReqId);
-            //modelBuilder.Entity<Advisor>()
-            //    .HasRequired(c => c.Student)
-            //    .WithMany()
-            //    .WillCascadeOnDelete(false);
-
-            //modelBuilder.Entity<Registration>()
-            //    .HasRequired(c => c.CourseSection)
-            //    .WithMany()
-            //    .WillCascadeOnDelete(false);
-
-            //modelBuilder.Entity<Registration>()
-            //    .HasRequired(c => c.User)
-            //    .WithMany()
-            //    .WillCascadeOnDelete(false);
-
-            //modelBuilder.Entity<Major>()
-            //    .HasRequired(c => c.Department)
-            //    .WithMany()
-            //    .WillCascadeOnDelete(false);
-
-            //modelBuilder.Entity<Course>()
-            //    .HasRequired(c => c.Department)
-            //    .WithMany()
-            //    .WillCascadeOnDelete(false);
-
-            //modelBuilder.Entity<MajorPreRequisite>()
-            //    .HasRequired(c => c.Course)
-            //    .WithMany()
-            //    .WillCascadeOnDelete(false);
-
-            //modelBuilder.Entity<MajorRequirements>()
-            //    .HasRequired(c => c.Course)
-            //    .WithMany()
-            //    .WillCascadeOnDelete(true);
-
-            //modelBuilder.Entity<MajorRequirements>()
-            //   .HasRequired(c => c.Major)
-            //   .WithMany()
-            //   .WillCascadeOnDelete(false);
-
-            //modelBuilder.Entity<CourseSection>()
-            //  .HasRequired(c => c.Professor)
-            //  .WithMany()
-            //  .WillCascadeOnDelete(false);
-
+            //    .HasRequired<Course>(s => s.PreReq)
+            //    .WithMany(g => g.MajorPreRequisitesCourses)
+            //    .HasForeignKey<int>(s => s.PreReqId).WillCascadeOnDelete(false);
 
         }
     }

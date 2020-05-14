@@ -16,7 +16,7 @@ namespace BryantUniversity.Models
         public int MajorId { get; set; }
         public Major Major { get; set; }
         public int CourseId { get; set; }
-        public Course Course{ get; set; }
+        public Course Course { get; set; }
         public IList<MajorPreRequisite> MajorPreRequisites;
     }
 }

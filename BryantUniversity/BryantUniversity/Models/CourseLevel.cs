@@ -10,6 +10,6 @@
         }
 
         public int Id { get; set; }
-        public Level Level { get; set; }
+        virtual public Level Level { get; set; }
     }
 }
