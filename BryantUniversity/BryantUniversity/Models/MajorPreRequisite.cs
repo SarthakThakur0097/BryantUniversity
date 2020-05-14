@@ -18,6 +18,6 @@ namespace BryantUniversity.Models
         public Course Course { get; set; }
         public int PreReqId { get; set; }
         [ForeignKey("PreReqId")]
-        public Course PreReq { get; set; }
+        public virtual Course PreReq { get; set; }
     }
 }

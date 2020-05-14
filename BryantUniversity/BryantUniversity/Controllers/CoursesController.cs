@@ -65,15 +65,15 @@ namespace BryantUniversity.Controllers
                 viewModel.CoursePrereqId = courseId;
                 viewModel.Courses = cRepo.GetByDepartment(departmentId);
             }
-                return View(viewModel);
+            return View(viewModel);
         }
 
 
         [HttpPost]
         public ActionResult AddPreqPost(int courseId, int prereqId)
         {
-            
-                if (courseId == prereqId)
+
+            if (courseId == prereqId)
             {
                 return View();
             }
@@ -181,7 +181,7 @@ namespace BryantUniversity.Controllers
                             HandleDbUpdateException(ex);
                         }
                     }
-                    
+
                 }
                 return RedirectToAction("Index");
             }
@@ -254,6 +254,18 @@ namespace BryantUniversity.Controllers
             return View("Edit", viewModel);
         }
 
+        [HttpPost]
+        public ActionResult DeletePreq(int courseId)
+        {
+            MajorPreRequisitesRepo mprRepo;
+
+            using (context)
+            {
+                mprRepo = new MajorPreRequisitesRepo(context);
+            }
+            return View();
+        }
+
         [HttpGet]
         public ActionResult Assign(int id)
         {
@@ -273,15 +285,32 @@ namespace BryantUniversity.Controllers
         {
             CoursesRepo cRepo;
             Course confirmDelete;
+            Course checkPrereqs;
+            MajorPreRequisitesRepo mprRepo = new MajorPreRequisitesRepo(context);
+            CourseDeleteViewModel viewModel = new CourseDeleteViewModel();
 
-            using(context)
+
+            cRepo = new CoursesRepo(context);
+
+            checkPrereqs = cRepo.GetAllPreReqsByCourseId(id);
+
+            if (checkPrereqs.CourseMajorPreRequisites.Count >= 1)
             {
-                cRepo = new CoursesRepo(context);
-                confirmDelete = cRepo.GetById(id);
-                cRepo.Delete(confirmDelete);
-            }
+                viewModel.Course = checkPrereqs;
 
-            return View(confirmDelete);
+                return View(viewModel);
+            }
+            else if(checkPrereqs.CourseMajorPreRequisites.Count == 0)
+            {
+                IList<MajorPreRequisite> preReqsToDelete = mprRepo.GetByPrereqId(checkPrereqs.Id);
+                if(preReqsToDelete.Count>1)
+                {
+                    //mprRepo.Delete(preReqToDelete);
+                }
+                cRepo.Delete(checkPrereqs);
+                TempData["Deleted"] = true;
+            }
+            return RedirectToAction("Index", "Courses");
         }
 
         [HttpPost]

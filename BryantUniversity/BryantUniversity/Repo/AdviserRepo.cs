@@ -47,6 +47,11 @@ namespace BryantUniversity.Repo
             return _context.Advisors.FirstOrDefault(c => c.Id == advisorId);
         }
 
+        public Advisor GetADvisorByUserAndFacultyId(int userId, int facultyId)
+        {
+            return _context.Advisors
+                .FirstOrDefault(c => c.Id == userId && c.Id == facultyId);
+        }
 
         public void Update(Advisor advisor)
         {
