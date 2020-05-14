@@ -3,8 +3,8 @@
     ViewBag.Title = "Attendance";
 }
 
-<div id="datacontainer" data-course-section-id="@Model.CourseSection.Id" data-student-id="@Model.Student.Id"></div>
-<h1>Attendance For: @Model.Student.Name</h1>
+<div id="datacontainer" data-registration-id="@Model.Registration.Id" data-student-id="@Model.Registration.UserId"></div>
+<h1>Attendance For: @Model.Registration.User.Name</h1>
 <table class="table">
     <thead class="thead-dark">
         <tr lass="bench-row">
@@ -15,9 +15,9 @@
     </thead>
     <tbody>
             <tr>
-                <td>@Model.Student.Name</td>
-                <td>@Model.CourseSection.Course.CourseTitleId</td>
-                <td>@Model.CourseSection.Course.CourseTitle</td>
+                <td>@Model.Registration.User.Name</td>
+                <td>@Model.Registration.CourseSection.Course.CourseTitleId</td>
+                <td>@Model.Registration.CourseSection.Course.CourseTitle</td>
 
             </tr>
     </tbody>

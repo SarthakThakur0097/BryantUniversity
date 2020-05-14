@@ -64,12 +64,10 @@ namespace BryantUniversity.Data
             .WithOptional(x => x.Course)
             .WillCascadeOnDelete(true);
 
-
-            //modelBuilder.Entity<Course>()
-            //.HasMany<MajorPreRequisite>(c => c.CourseMajorPreRequisites)
-            //.WithOptional(x => x.PreReq)
-            //.WillCascadeOnDelete(false);
-
+            modelBuilder.Entity<Registration>()
+            .HasMany<Attendance>(c => c.Attendances)
+            .WithRequired(x => x.Registration)
+            .WillCascadeOnDelete(true);
 
             modelBuilder.Entity<CourseSection>()
             .HasMany<Registration>(c => c.Schedules)
@@ -82,15 +80,35 @@ namespace BryantUniversity.Data
             .WithOptional(x => x.Registration)
             .WillCascadeOnDelete(true);
 
-            modelBuilder.Entity<MajorPreRequisite>()
-            .HasRequired<Course>(s => s.Course)
-            .WithMany(g => g.CourseMajorPreRequisites)
-            .HasForeignKey<int>(s => s.CourseId);
+            //modelBuilder.Entity<Course>()
+            //.HasOptional<MajorPreRequisite>(c => c)
+            //.WithOptional(x => x.PreReq)
+            //.WillCascadeOnDelete(true);
+
+            //modelBuilder.Entity<Course>()
+            //.HasMany<MajorPreRequisite>(c => c.CourseMajorPreRequisites)
+            //.WithOptional(x => x.Course)
+            //.WillCascadeOnDelete(true);
+
 
             modelBuilder.Entity<MajorPreRequisite>()
-            .HasOptional<Course>(s => s.PreReq)
-            .WithMany(g => g.MajorPreRequisitesCourses)
-            .HasForeignKey<int?>(s => s.PreReqId).WillCascadeOnDelete(true);
+             .HasRequired<Course>(s => s.Course)
+            .WithMany(g => g.CourseMajorPreRequisites)
+            .HasForeignKey<int>(s => s.CourseId).WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<MajorPreRequisite>()
+                .HasRequired<Course>(s => s.PreReq)
+                .WithMany(g => g.MajorPreRequisitesCourses)
+                .HasForeignKey<int>(s => s.PreReqId).WillCascadeOnDelete(false);
+            //modelBuilder.Entity<MajorPreRequisite>()
+            //.HasOptional<Course>(s => s.Course)
+            //.WithMany(g => g.CourseMajorPreRequisites)
+            //.HasForeignKey<int?>(s => s.CourseId).WillCascadeOnDelete(false);
+
+            //modelBuilder.Entity<MajorPreRequisite>()
+            //.HasOptional<Course>(s => s.PreReq)
+            //.WithMany(g => g.MajorPreRequisitesCourses)
+            //.HasForeignKey<int?>(s => s.PreReqId).WillCascadeOnDelete(true);
 
             //.HasMany<Course>(c => c.PreReq)
 

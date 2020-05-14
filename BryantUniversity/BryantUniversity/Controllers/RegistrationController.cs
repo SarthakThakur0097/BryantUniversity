@@ -47,98 +47,158 @@ namespace BryantUniversity.Controllers
             }
         }
 
-        [HttpGet]
-        public ActionResult AdminAdd(int studentId, int coursectionId)
+        //[HttpPost]
+        //public ActionResult AdminAdd(int studentId, int coursectionId)
+        //{
+
+        //    MajorPreRequisitesRepo mprRepo;
+        //    StudentLevelRepo sLRepo;
+        //    StudentTimeTypeRepo stRepo;
+        //    CourseSectionRepo csRepo;
+        //    RegistrationRepo rRepo;
+        //    StudentHoldRepo hRepo;
+        //    CourseSection toAdd;
+        //    GradesRepo gRepo;
+        //    IList<StudentHold> studentHolds = new List<StudentHold>();
+        //    RegistrationViewModel viewModel = new RegistrationViewModel();
+
+        //    using (context)
+        //    {
+        //        sLRepo = new StudentLevelRepo(context);
+        //        stRepo = new StudentTimeTypeRepo(context);
+        //        csRepo = new CourseSectionRepo(context);
+        //        rRepo = new RegistrationRepo(context);
+        //        hRepo = new StudentHoldRepo(context);
+        //        mprRepo = new MajorPreRequisitesRepo(context);
+        //        gRepo = new GradesRepo(context);
+        //        StudentLevel studentLevel = sLRepo.GetLevelByUserId(CustomUser.User.Id);
+        //        StudentTimeType studentTimeType = stRepo.GetStudentTimeTypeUserId(CustomUser.User.Id);
+
+        //        toAdd = csRepo.GetCourseSectionById(coursectionId);
+        //        CourseSection roomCheck = csRepo.GetCourseSectionById(coursectionId);
+        //        IList<Registration> allRegisteredSoFar = rRepo.GetRegistrationByUserAndCourseSection(CustomUser.User.Id, roomCheck.SemesterPeriodId);
+        //        IList<Registration> allRegistrationsforSection = rRepo.GetRegistrationsByCourseSectionId(coursectionId);
+        //        IList<MajorPreRequisite> allReqs = mprRepo.GetAllMajorPrequisitesByCourse(toAdd.Course.Id);
+        //        IList<Grade> allTakenCourses = gRepo.GetAllGradesByUserId(CustomUser.User.Id);
+
+        //        if (toAdd.SemesterPeriodId != 1)
+        //        {
+        //            TempData["IsPreviousSemesterConflict"] = true;
+
+        //            return RedirectToAction("Index", "CourseSection", new
+        //            {
+        //                id = CustomUser.User.Id,
+        //                semesterPeriodId = semesterPeriodId
+        //            });
+        //        }
+        //        else if (studentTimeType.TimeTypes.TimeType != TimeType.FullTime)
+        //        {
+        //            TempData["IsFullTime"] = true;
+
+        //            return RedirectToAction("Index", "CourseSection", new
+        //            {
+        //                id = CustomUser.User.Id,
+        //                semesterPeriodId = semesterPeriodId
+        //            });
+        //        }
+        //        else if (studentLevel.CourseLevel.Level == Level.Undergraduate && toAdd.Course.CourseLevel.Level == Level.Graduate)
+        //        {
+        //            TempData["UnderGradTryGrad"] = true;
+
+        //            return RedirectToAction("Index", "CourseSection", new
+        //            {
+        //                id = CustomUser.User.Id,
+        //                semesterPeriodId = semesterPeriodId
+        //            });
+        //        }
+        //        else if (allReqs.Count > 0 && allTakenCourses.Count == 0)
+        //        {
+
+        //            TempData["HasTakenPrereq"] = true;
+
+        //            return RedirectToAction("Index", "CourseSection", new
+        //            {
+        //                id = CustomUser.User.Id,
+        //                semesterPeriodId = semesterPeriodId
+        //            });
+        //        }
+        //        else if (allRegistrationsforSection.Count >= roomCheck.Room.RoomCapacity)
+        //        {
+        //            TempData["SpaceLeftInRoom"] = false;
+
+        //            return RedirectToAction("Index", "CourseSection", new
+        //            {
+        //                id = CustomUser.User.Id,
+        //                semesterPeriodId = semesterPeriodId
+        //            });
+        //        }
+        //        foreach (var req in allReqs)
+        //        {
+        //            foreach (var takenCourse in allTakenCourses)
+        //            {
+
+        //                if (takenCourse.Registration.CourseSection.CourseId != req.CourseId)
+        //                {
+        //                    TempData["SpaceLeftInRoom"] = false;
+
+        //                    return RedirectToAction("Index", "CourseSection", new
+        //                    {
+        //                        id = CustomUser.User.Id,
+        //                        semesterPeriodId = semesterPeriodId
+        //                    });
+        //                }
+        //            }
+        //        }
+
+        //        studentHolds = hRepo.GetAllStudentHoldsByUserId(CustomUser.User.Id);
+
+        //        if (studentHolds.Count > 0)
+        //        {
+        //            TempData["HasHold"] = false;
+
+        //            return RedirectToAction("Index", "CourseSection", new
+        //            {
+        //                id = CustomUser.User.Id,
+        //                semesterPeriodId = semesterPeriodId
+        //            });
+        //        }
+        //        SemesterPeriod toAddPeriod = toAdd.SemesterPeriod;
+
+        //        IList<Registration> registrations = rRepo.GetRegistrationByUserAndCourseSection(CustomUser.User.Id, id);
+        //        IList<CourseSection> registeredCourseSections = new List<CourseSection>();
+
+        //        foreach (Registration registration in registrations)
+        //        {
+        //            if (registration.CourseSectionId == id)
+        //            {
+        //                TempData["AlreadyTaking"] = false;
+        //                return RedirectToAction("Index", "CourseSection", new
+        //                {
+        //                    id = CustomUser.User.Id,
+        //                    semesterPeriodId = semesterPeriodId
+        //                });
+        //            }
+        //            else if (registration.CourseSection.SemesterPeriod == toAddPeriod)
+        //            {
+        //                TempData["AnotherClassConflict"] = false;
+        //                return RedirectToAction("Index", "CourseSection", new
+        //                {
+        //                    id = CustomUser.User.Id,
+        //                    semesterPeriodId = semesterPeriodId
+        //                });
+        //            }
+        //        }
+
+        //        Registration userCourseSection = new Registration(CustomUser.User.Id, toAdd.Id);
+        //        rRepo.Insert(userCourseSection);
+        //    }
+        //    return RedirectToAction("Index", "Schedule");
+        //}
+
+        [HttpPost]
+        public ActionResult Add(int id, int semesterPeriodId)
         {
-            MajorPreRequisitesRepo mprRepo;
-            CourseSectionRepo csRepo;
-            RegistrationRepo rRepo;
-            StudentHoldRepo hRepo;
-            CourseSection toAdd;
-            GradesRepo gRepo;
-            IList<StudentHold> studentHolds = new List<StudentHold>();
-            RegistrationViewModel viewModel = new RegistrationViewModel();
 
-            using (context)
-            {
-                csRepo = new CourseSectionRepo(context);
-                rRepo = new RegistrationRepo(context);
-                hRepo = new StudentHoldRepo(context);
-                mprRepo = new MajorPreRequisitesRepo(context);
-                gRepo = new GradesRepo(context);
-
-                toAdd = csRepo.GetCourseSectionById(studentId);
-                CourseSection roomCheck = csRepo.GetCourseSectionById(studentId);
-                IList<Registration> allRegistrationsforSection = rRepo.GetRegistrationsByCourseSectionId(studentId);
-                IList<MajorPreRequisite> allReqs = mprRepo.GetAllMajorPrequisitesByCourse(toAdd.Course.Id);
-                IList<Grade> allTakenCourses = gRepo.GetAllGradesByUserId(CustomUser.User.Id);
-
-                if (toAdd.SemesterPeriodId != 1)
-                {
-                    viewModel.PreviousSemesterConflict = true;
-                    return View(viewModel);
-                }
-                else if (allReqs.Count > 0 && allTakenCourses.Count == 0)
-                {
-                    viewModel.NotTakenPreReqConflict = true;
-
-                    return View(viewModel);
-                }
-                else if (allRegistrationsforSection.Count >= roomCheck.Room.RoomCapacity)
-                {
-                    viewModel.isOverRoomCapacity = true;
-
-                    return View(viewModel);
-                }
-                foreach (var req in allReqs)
-                {
-                    foreach (var takenCourse in allTakenCourses)
-                    {
-
-                        if (takenCourse.Registration.CourseSection.CourseId != req.CourseId)
-                        {
-                            viewModel.NotTakenPreReqConflict = true;
-                            return View(viewModel);
-                        }
-                    }
-                }
-
-                studentHolds = hRepo.GetAllStudentHoldsByUserId(CustomUser.User.Id);
-
-                if (studentHolds.Count > 0)
-                {
-                    viewModel.HasHold = true;
-
-                    return View(viewModel);
-                }
-                SemesterPeriod toAddPeriod = toAdd.SemesterPeriod;
-
-                IList<Registration> registrations = rRepo.GetRegistrationByUserAndCourseSection(studentId, 0);
-                IList<CourseSection> registeredCourseSections = new List<CourseSection>();
-
-                foreach (Registration registration in registrations)
-                {
-                    //if (registration.CourseSectionId == id)
-                    //{
-                    //    viewModel.SameClassConflict = true;
-                    //    return View(viewModel);
-                    //}
-                    //else if (registration.CourseSection.SemesterPeriod == toAddPeriod)
-                    //{
-                    //    viewModel.TimeConflict = true;
-                    //    return View(viewModel);
-                    //}
-                }
-
-                Registration userCourseSection = new Registration(CustomUser.User.Id, toAdd.Id);
-                rRepo.Insert(userCourseSection);
-            }
-            return RedirectToAction("Index", "Schedule");
-        }
-
-        [HttpGet]
-        public ActionResult Add(int id)
-        {
             MajorPreRequisitesRepo mprRepo;
             StudentLevelRepo sLRepo;
             StudentTimeTypeRepo stRepo;
@@ -169,32 +229,56 @@ namespace BryantUniversity.Controllers
                 IList<MajorPreRequisite> allReqs = mprRepo.GetAllMajorPrequisitesByCourse(toAdd.Course.Id);
                 IList<Grade> allTakenCourses = gRepo.GetAllGradesByUserId(CustomUser.User.Id);
 
-
-
-                if(toAdd.SemesterPeriodId != 1)
+                if (toAdd.SemesterPeriodId != 1)
                 {
-                    viewModel.PreviousSemesterConflict = true;
-                    return View(viewModel);
+                    TempData["IsPreviousSemesterConflict"] = true;
+
+                    return RedirectToAction("Index", "CourseSection", new
+                    {
+                        id = CustomUser.User.Id,
+                        semesterPeriodId = semesterPeriodId
+                    });
                 }
                 else if(studentTimeType.TimeTypes.TimeType != TimeType.FullTime)
                 {
-                    viewModel.IsFullTime = true;
+                    TempData["IsFullTime"] = true;
+
+                    return RedirectToAction("Index", "CourseSection", new
+                    {
+                        id = CustomUser.User.Id,
+                        semesterPeriodId = semesterPeriodId
+                    });
                 }
-                else if(studentLevel.CourseLevel.Level != Level.Graduate)
+                else if(studentLevel.CourseLevel.Level == Level.Undergraduate && toAdd.Course.CourseLevel.Level == Level.Graduate)
                 {
-                    viewModel.IsGraduateStudent = false;
+                    TempData["UnderGradTryGrad"] = true;
+
+                    return RedirectToAction("Index", "CourseSection", new
+                    {
+                        id = CustomUser.User.Id,
+                        semesterPeriodId = semesterPeriodId
+                    });
                 }
                 else if (allReqs.Count > 0 && allTakenCourses.Count == 0)
                 {
-                    viewModel.NotTakenPreReqConflict = true;
 
-                    return View(viewModel);
+                    TempData["HasTakenPrereq"] = true;
+
+                    return RedirectToAction("Index", "CourseSection", new
+                    {
+                        id = CustomUser.User.Id,
+                        semesterPeriodId = semesterPeriodId
+                    });
                 }
                 else if(allRegistrationsforSection.Count >= roomCheck.Room.RoomCapacity)
                 {
-                    viewModel.isOverRoomCapacity = true;
+                    TempData["SpaceLeftInRoom"] = false;
 
-                    return View(viewModel);
+                    return RedirectToAction("Index", "CourseSection", new
+                    {
+                        id = CustomUser.User.Id,
+                        semesterPeriodId = semesterPeriodId
+                    });
                 }
                 foreach (var req in allReqs)
                 {
@@ -203,8 +287,13 @@ namespace BryantUniversity.Controllers
 
                         if (takenCourse.Registration.CourseSection.CourseId != req.CourseId)
                         {
-                            viewModel.NotTakenPreReqConflict = true;
-                            return View(viewModel);
+                            TempData["HasTakenPrereq"] = false;
+
+                            return RedirectToAction("Index", "CourseSection", new
+                            {
+                                id = CustomUser.User.Id,
+                                semesterPeriodId = semesterPeriodId
+                            });
                         }
                     }
                 }
@@ -213,9 +302,13 @@ namespace BryantUniversity.Controllers
                
                 if (studentHolds.Count>0)
                 {
-                    viewModel.HasHold = true;
+                    TempData["HasHold"] = true;
 
-                    return View(viewModel);
+                    return RedirectToAction("Index", "CourseSection", new
+                    {
+                        id = CustomUser.User.Id,
+                        semesterPeriodId = semesterPeriodId
+                    });
                 }
                 SemesterPeriod toAddPeriod = toAdd.SemesterPeriod;
                 
@@ -226,13 +319,21 @@ namespace BryantUniversity.Controllers
                 {
                     if(registration.CourseSectionId == id)
                     {
-                        viewModel.SameClassConflict = true;
-                        return View(viewModel);
+                        TempData["SameClass"] = false;
+                        return RedirectToAction("Index", "CourseSection", new
+                        {
+                            id = CustomUser.User.Id,
+                            semesterPeriodId = semesterPeriodId
+                        });
                     } 
                     else if (registration.CourseSection.SemesterPeriod == toAddPeriod)
                     {
-                        viewModel.TimeConflict = true;
-                        return View(viewModel);
+                        TempData["TimeConflict"] = false;
+                        return RedirectToAction("Index", "CourseSection", new
+                        {
+                            id = CustomUser.User.Id,
+                            semesterPeriodId = semesterPeriodId
+                        });
                     }
                 }
         

@@ -50,7 +50,7 @@
 
     async function InsertAttendanceTime(month, day, year, present){
         
-        let sectionId = parseInt(gebi("datacontainer").dataset.courseSectionId);
+        let sectionId = parseInt(gebi("datacontainer").dataset.registrationId);
         let studentId = parseInt(gebi("datacontainer").dataset.studentId);
 
         try{

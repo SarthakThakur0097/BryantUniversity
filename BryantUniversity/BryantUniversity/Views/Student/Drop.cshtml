@@ -9,7 +9,7 @@
         <div class="col-sm">
         </div>
         <div class="col-sm">
-            
+            <h3>Currently Registered For</h3>
         </div>
         <div class="col-sm">
 
@@ -29,9 +29,7 @@
     <div class="row">
         <div class="col-sm">
         </div>
-        <div class="col-md-5">
-
-            <h1>SCHEDULE</h1>
+        <div id="removeContainer">
             <table class="table">
                 <thead class="thead-dark">
                     <tr lass="bench-row">
@@ -58,17 +56,18 @@
                                 <td>@registered.CourseSection.Professor.Name</td>
                                 <td>@registered.CourseSection.Room.Building.BuildingName</td>
                                 <td>@registered.CourseSection.Room.Id</td>
+
                                 <td>
-                                    <div id="removeContainer">
-                                        <button type="button" data-course-section-id="@registered.CourseSection.Id" class="btn btn-danger">Drop</button>
-                                    </div>
+                                    <button type="button" data-registration-id="@registered.Id" class="btn btn-danger">Drop</button>
                                 </td>
+
                             </tr>
                         }
                     }
                 </tbody>
             </table>
         </div>
+
         <div class="col-sm">
 
         </div>

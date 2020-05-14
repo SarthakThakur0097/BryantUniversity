@@ -18,19 +18,20 @@ namespace BryantUniversity.Repo
         public IList<Attendance> GetAllAttendances()
         {
             return _context.Attendances
-                .Include(a => a.Course)
-                .Include(a => a.User)
+                .Include(a => a.Registration.CourseSection.Course)
+                .Include(a => a.Registration.CourseSection.Professor)
+                .Include(a => a.Registration.CourseSection)
+                .Include(a => a.Registration.CourseSection.Course)
                 .ToList();
         }
 
         public IList<Attendance> GetAllAttendanceByUserId(int id)
         {
             return _context.Attendances
-                .Include(a => a.Course)
-                .Include(a => a.User).Where(a => a.UserId == id)
-                .Include(a => a.Course)
-                .Include(a => a.Course.Course)
-                .Include(a => a.Course.Professor)
+                .Include(a => a.Registration.User).Where(a => a.Registration.UserId == id)
+                .Include(a => a.Registration.CourseSection)
+                .Include(a => a.Registration.CourseSection.Course)
+                .Include(a => a.Registration.CourseSection.Professor)
                 .ToList();
         }
 

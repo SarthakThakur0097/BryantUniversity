@@ -1,15 +1,15 @@
 ﻿(async() => {
-
     const gebi = (e) => document.getElementById(e);
-
+    console.log("test")
     let removeButtons = gebi("removeContainer");
 
     removeButtons.onclick = function(){
+        debugger;
         let selected = event.target
         console.log(selected);
-        console.log(selected.dataset.courseSectionId);
+        console.log(selected.dataset.registrationId);
 
-        const classToRemove = selected.dataset.courseSectionId;
+        const classToRemove = selected.dataset.registrationId;
 
         DropClass(classToRemove);
     }

@@ -6,9 +6,8 @@ using System.Web;
 
 namespace BryantUniversity.ViewModels
 {
-    public class AdvisorViewModel
+    public class CourseDeleteViewModel
     {
-        public IList<User> AllFaculty { get; set; }
-        public IList<Advisor> AllAdvisees { get; set; }
+        public Course Course { get; set; }
     }
 }
