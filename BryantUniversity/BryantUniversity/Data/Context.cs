@@ -39,6 +39,32 @@ namespace BryantUniversity.Data
         public DbSet<LetterGrade> LetterGrades { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<SemesterPeriod>()
+            .Property(f => f.StartDate)
+            .HasColumnType("datetime2");
+
+
+            modelBuilder.Entity<SemesterPeriod>()
+            .Property(f => f.EndDate)
+            .HasColumnType("datetime2");
+
+            modelBuilder.Entity<SemesterPeriod>()
+            .Property(f => f.StartEnrollmentDate)
+            .HasColumnType("datetime2");
+
+            modelBuilder.Entity<SemesterPeriod>()
+            .Property(f => f.EndEnrollmentDate)
+            .HasColumnType("datetime2");
+
+            modelBuilder.Entity<SemesterPeriod>()
+            .Property(f => f.StartGradeTime)
+            .HasColumnType("datetime2");
+
+
+            modelBuilder.Entity<SemesterPeriod>()
+            .Property(f => f.EndGradeTime)
+            .HasColumnType("datetime2");
+
             modelBuilder.Conventions
                 .Remove<OneToManyCascadeDeleteConvention>();
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

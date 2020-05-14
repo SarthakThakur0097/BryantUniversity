@@ -12,20 +12,16 @@ namespace BryantUniversity.Models
             Period = period;
         }
 
-        public SemesterPeriod(Period period, DateTime startDate, DateTime endDate)
+        public SemesterPeriod(int id, Period period, DateTime startDate, DateTime endDate, DateTime startEnrollmentDate, DateTime endEnrollmentDate, DateTime startGradeTime, DateTime endGradeTime)
         {
-            Period = period;
-            StartDate = startDate;
-            EndDate = endDate; 
-        }
-
-        public SemesterPeriod(Period period, DateTime startDate, DateTime endDate, DateTime startEnrollmentDate, DateTime endEnrollmentDate)
-        {
+            Id = id;
             Period = period;
             StartDate = startDate;
             EndDate = endDate;
             StartEnrollmentDate = startEnrollmentDate;
             EndEnrollmentDate = EndEnrollmentDate;
+            StartGradeTime = startGradeTime;
+            EndGradeTime = endGradeTime;
         }
 
         public SemesterPeriod(Period period, DateTime startDate, DateTime endDate, DateTime startEnrollmentDate, DateTime endEnrollmentDate, DateTime startGradeTime, DateTime endGradeTime)
@@ -43,10 +39,10 @@ namespace BryantUniversity.Models
         public Period Period { get; set; }
         public DateTime StartDate { get; set; }
         public DateTime EndDate { get; set; }
-        public DateTime? StartEnrollmentDate { get; set; }
-        public DateTime? EndEnrollmentDate { get; set; }
-        public DateTime? StartGradeTime { get; set; }
-        public DateTime? EndGradeTime { get; set; }
+        public DateTime StartEnrollmentDate { get; set; }
+        public DateTime EndEnrollmentDate { get; set; }
+        public DateTime StartGradeTime { get; set; }
+        public DateTime EndGradeTime { get; set; }
         public List<CalendarEvent> SemesterDetails { get; set; }
     }
 }

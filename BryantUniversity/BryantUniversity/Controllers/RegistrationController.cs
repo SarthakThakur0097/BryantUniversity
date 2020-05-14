@@ -71,15 +71,17 @@ namespace BryantUniversity.Controllers
                 hRepo = new StudentHoldRepo(context);
                 mprRepo = new MajorPreRequisitesRepo(context);
                 gRepo = new GradesRepo(context);
-                StudentLevel studentLevel = sLRepo.GetLevelByUserId(CustomUser.User.Id);
-                StudentTimeType studentTimeType = stRepo.GetStudentTimeTypeUserId(CustomUser.User.Id);
+                StudentLevel studentLevel = sLRepo.GetLevelByUserId(studentId);
+                StudentTimeType studentTimeType = stRepo.GetStudentTimeTypeUserId(studentId);
 
                 toAdd = csRepo.GetCourseSectionById(coursectionId);
                 CourseSection roomCheck = csRepo.GetCourseSectionById(coursectionId);
-                IList<Registration> allRegisteredSoFar = rRepo.GetRegistrationByUserAndCourseSection(CustomUser.User.Id, roomCheck.SemesterPeriodId);
+                IList<Registration> allRegisteredSoFar = rRepo.GetRegistrationByUserAndCourseSection(studentId, roomCheck.SemesterPeriodId);
                 IList<Registration> allRegistrationsforSection = rRepo.GetRegistrationsByCourseSectionId(coursectionId);
                 IList<MajorPreRequisite> allReqs = mprRepo.GetAllMajorPrequisitesByCourse(toAdd.Course.Id);
                 IList<Grade> allTakenCourses = gRepo.GetAllGradesByUserId(CustomUser.User.Id);
+
+                //public ActionResult IndexAdmin(int id, int studentId, int semesterPeriodId)
 
                 if (toAdd.SemesterPeriodId != 1)
                 {
@@ -87,8 +89,9 @@ namespace BryantUniversity.Controllers
 
                     return RedirectToAction("Index", "CourseSection", new
                     {
-                        id = studentId
-
+                        id = roomCheck.Id,
+                        studentId = studentId,
+                        SemesterPeriodId = roomCheck.SemesterPeriodId
                     });
                 }
                 else if (studentTimeType.TimeTypes.TimeType != TimeType.FullTime)
@@ -97,7 +100,9 @@ namespace BryantUniversity.Controllers
 
                     return RedirectToAction("IndexAdmin", "CourseSection", new
                     {
-                        id = studentId
+                        id = roomCheck.Id,
+                        studentId = studentId,
+                        SemesterPeriodId = roomCheck.SemesterPeriodId
                     });
                 }
                 else if (studentLevel.CourseLevel.Level == Level.Undergraduate && toAdd.Course.CourseLevel.Level == Level.Graduate)
@@ -106,7 +111,9 @@ namespace BryantUniversity.Controllers
 
                     return RedirectToAction("Index", "CourseSection", new
                     {
-                        id = studentId
+                        id = roomCheck.Id,
+                        studentId = studentId,
+                        SemesterPeriodId = roomCheck.SemesterPeriodId
                     });
                 }
                 else if (allReqs.Count > 0 && allTakenCourses.Count == 0)
@@ -116,7 +123,9 @@ namespace BryantUniversity.Controllers
 
                     return RedirectToAction("Index", "CourseSection", new
                     {
-                        id = studentId
+                        id = roomCheck.Id,
+                        studentId = studentId,
+                        SemesterPeriodId = roomCheck.SemesterPeriodId
                     });
                 }
                 else if (allRegistrationsforSection.Count >= roomCheck.Room.RoomCapacity)
@@ -125,7 +134,9 @@ namespace BryantUniversity.Controllers
 
                     return RedirectToAction("Index", "CourseSection", new
                     {
-                        id = studentId
+                        id = roomCheck.Id,
+                        studentId = studentId,
+                        SemesterPeriodId = roomCheck.SemesterPeriodId
                     });
                 }
                 foreach (var req in allReqs)
@@ -139,7 +150,9 @@ namespace BryantUniversity.Controllers
 
                             return RedirectToAction("Index", "CourseSection", new
                             {
-                                id = studentId
+                                id = roomCheck.Id,
+                                studentId = studentId,
+                                SemesterPeriodId = roomCheck.SemesterPeriodId
                             });
                         }
                     }
@@ -153,7 +166,9 @@ namespace BryantUniversity.Controllers
 
                     return RedirectToAction("Index", "CourseSection", new
                     {
-                        id = studentId
+                        id = roomCheck.Id,
+                        studentId = studentId,
+                        SemesterPeriodId = roomCheck.SemesterPeriodId
                     });
                 }
                 SemesterPeriod toAddPeriod = toAdd.SemesterPeriod;
@@ -168,7 +183,9 @@ namespace BryantUniversity.Controllers
                         TempData["AlreadyTaking"] = false;
                         return RedirectToAction("Index", "CourseSection", new
                         {
-                            id = studentId
+                            id = roomCheck.Id,
+                            studentId = studentId,
+                            SemesterPeriodId = roomCheck.SemesterPeriodId
                         });
                     }
                     else if (registration.CourseSection.SemesterPeriod == toAddPeriod)
@@ -176,7 +193,9 @@ namespace BryantUniversity.Controllers
                         TempData["AnotherClassConflict"] = false;
                         return RedirectToAction("Index", "CourseSection", new
                         {
-                            id = studentId
+                            id = roomCheck.Id,
+                            studentId = studentId,
+                            SemesterPeriodId = roomCheck.SemesterPeriodId
                         });
                     }
                 }

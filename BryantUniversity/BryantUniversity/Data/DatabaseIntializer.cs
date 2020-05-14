@@ -121,15 +121,15 @@ namespace BryantUniversity.Data
 
 
             SemesterPeriod Fall2020 = new SemesterPeriod(Period.Fall2020, fall2020StartTime, fall2020EndTime, fall2020StartEnrollTime, fall2020EndEnrollTime, fall2020startGradeTime, fall2020endGradeTime);
-            SemesterPeriod Spring2020 = new SemesterPeriod(Period.Spring2020, spring2020StartTime, spring2020EndTime, spring2020StartEnrollTime, spring2020EndEnrollTime);
-            SemesterPeriod Fall2019 = new SemesterPeriod(Period.Fall2019, fall2019StartTime, fall2019EndTime, fall2019StartEnrollTime, fall2019EndEnrollTime);
-            SemesterPeriod Spring2019 = new SemesterPeriod(Period.Spring2019, spring2019StartTime, spring2019EndTime, spring2019StartEnrollTime, spring2019EndEnrollTime);
+            SemesterPeriod Spring2020 = new SemesterPeriod(Period.Spring2020, spring2020StartTime, spring2020EndTime, spring2020StartEnrollTime, spring2020EndEnrollTime, spring2020startGradeTime, spring2020endGradeTime);
+            SemesterPeriod Fall2019 = new SemesterPeriod(Period.Fall2019, fall2019StartTime, fall2019EndTime, fall2019StartEnrollTime, fall2019EndEnrollTime, fall2019startGradeTime, fall2019endGradeTime);
+            SemesterPeriod Spring2019 = new SemesterPeriod(Period.Spring2019, spring2019StartTime, spring2019EndTime, spring2019StartEnrollTime, spring2019EndEnrollTime, spring2019startGradeTime, spring2019endGradeTime);
 
-            SemesterPeriod Fall2018 = new SemesterPeriod(Period.Fall2018, fall2018StartTime, fall2018EndTime, fall2018StartEnrollTime, fall2018EndEnrollTime);
-            SemesterPeriod Spring2018 = new SemesterPeriod(Period.Spring2018, spring2018StartTime, spring2018EndTime, spring2018StartEnrollTime, spring2018EndEnrollTime);
-            SemesterPeriod Fall2017 = new SemesterPeriod(Period.Fall2017, fall2017StartTime, fall2017EndTime, fall2017StartEnrollTime, fall2017EndEnrollTime);
-            SemesterPeriod Spring2017 = new SemesterPeriod(Period.Spring2017, spring2017StartTime, spring2017EndTime, spring2017StartEnrollTime, spring2017EndEnrollTime);
-            SemesterPeriod Fall2016 = new SemesterPeriod(Period.Fall2016, fall2016StartTime, fall2016EndTime, fall2016StartEnrollTime, fall2016EndEnrollTime);
+            SemesterPeriod Fall2018 = new SemesterPeriod(Period.Fall2018, fall2018StartTime, fall2018EndTime, fall2018StartEnrollTime, fall2018EndEnrollTime, fall2018startGradeTime, fall2018endGradeTime);
+            SemesterPeriod Spring2018 = new SemesterPeriod(Period.Spring2018, spring2018StartTime, spring2018EndTime, spring2018StartEnrollTime, spring2018EndEnrollTime, spring2018startGradeTime, spring2018endGradeTime);
+            SemesterPeriod Fall2017 = new SemesterPeriod(Period.Fall2017, fall2017StartTime, fall2017EndTime, fall2017StartEnrollTime, fall2017EndEnrollTime, fall2017startGradeTime, fall2017endGradeTime);
+            SemesterPeriod Spring2017 = new SemesterPeriod(Period.Spring2017, spring2017StartTime, spring2017EndTime, spring2017StartEnrollTime, spring2017EndEnrollTime, spring2017startGradeTime, spring2017endGradeTime);
+            SemesterPeriod Fall2016 = new SemesterPeriod(Period.Fall2016, fall2016StartTime, fall2016EndTime, fall2016StartEnrollTime, fall2016EndEnrollTime, fall2016startGradeTime, fall2016endGradeTime);
 
             CourseLevel Undergraduate = new CourseLevel(Level.Undergraduate);
             CourseLevel Graduate = new CourseLevel(Level.Graduate);

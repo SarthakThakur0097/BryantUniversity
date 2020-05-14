@@ -109,15 +109,8 @@
                                 <td>
                                     @using (Html.BeginForm("Add", "Registration", new { id = courseSection.Section.Id, semesterPeriodId = courseSection.Section.SemesterPeriodId  }, FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
                                     {
-                                        <div class="row">
-                                            <div class="col-sm">
-                                                <button type="submit" class="btn btn-success">Submit</button>
-                                            </div>
-                                            <div class="col-sm">
-                                            </div>
-
-                                            <div class="col-md-5">
-                                            </div>
+                                        <div >
+                                            <button type="submit" class="btn btn-success">Submit</button>
                                         </div>
                                     }
                                 </td>
