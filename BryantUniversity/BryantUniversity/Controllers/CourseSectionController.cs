@@ -20,6 +20,21 @@ namespace BryantUniversity.Controllers
         }
 
         [HttpGet]
+        public ActionResult EditIndex()
+        {
+            CourseSectionRepo csRepo;
+            EditCourseSectionViewModel viewModel = new EditCourseSectionViewModel();
+            using (context)
+            {
+                csRepo = new CourseSectionRepo(context);
+                viewModel.CourseSections = csRepo.GetAllCourseSections();
+       
+            }
+            return View(viewModel);
+        }
+
+
+        [HttpGet]
         public ActionResult IndexAdmin(int id, int studentId, int semesterPeriodId)
         {
             CourseSectionRepo csRepo;
