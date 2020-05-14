@@ -101,6 +101,8 @@ namespace BryantUniversity.Controllers
             object HasHold = TempData["HasHold"];
             object SameClass = TempData["SameClass"];
             object TimeConflict = TempData["TimeConflict"];
+            object NotTakePreqs = TempData["NotTakePreqs"];
+            object HasNotTakenPrereq = TempData["HasNotTakenPrereq"];
             if (PreviousSemester != null)
             {
                 if ((bool)PreviousSemester)
@@ -162,6 +164,21 @@ namespace BryantUniversity.Controllers
                 if ((bool)Success)
                 {
                     viewModel.Success = true;
+                }
+            }
+
+            else if(NotTakePreqs != null)
+            {
+                if((bool)NotTakePreqs)
+                {
+                    viewModel.NotTakePreqs = true;
+                }
+            }
+            else if(HasNotTakenPrereq != null)
+            {
+                if((bool)HasNotTakenPrereq)
+                {
+                    viewModel.HasNotTakenPrereq = true;
                 }
             }
 

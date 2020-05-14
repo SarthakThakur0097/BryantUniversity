@@ -41,6 +41,7 @@ namespace BryantUniversity.ViewModels
         public bool TimeConflict { get; set; }
         public bool Success { get; set; }
         public bool FullTimeOverFlow { get; set; }
+        public bool NotTakePreqs { get; set; }
 
         public SelectList PeriodList
         {

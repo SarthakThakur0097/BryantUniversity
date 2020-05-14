@@ -247,11 +247,7 @@ namespace BryantUniversity.Controllers
                 {
                     TempData["IsPreviousSemesterConflict"] = true;
 
-                    return RedirectToAction("Index", "Schedule", new
-                    {
-                        id = roomCheck.CourseId,
-                        semesterPeriodId = semesterPeriodId
-                    });
+                    return RedirectToAction("Index", "Schedule");
                 }
                 //else if(studentTimeType.TimeTypes.TimeType == TimeType.PartTime && totRegisteredSoFar>=2)
                 //{
@@ -267,11 +263,7 @@ namespace BryantUniversity.Controllers
                 {
                     TempData["FullTimeOverFlow"] = true;
 
-                    return RedirectToAction("Index", "Schedule", new
-                    {
-                        id = roomCheck.CourseId,
-                        semesterPeriodId = semesterPeriodId
-                    });
+                    return RedirectToAction("Index", "Schedule");
                 }
                 //else if(studentLevel.CourseLevel.Level == Level.Undergraduate && toAdd.Course.CourseLevel.Level == Level.Graduate)
                 //{
@@ -288,21 +280,13 @@ namespace BryantUniversity.Controllers
 
                     TempData["HasNotTakenPrereq"] = true;
 
-                    return RedirectToAction("Index", "Schedule", new
-                    {
-                        id = roomCheck.CourseId,
-                        semesterPeriodId = semesterPeriodId
-                    });
+                    return RedirectToAction("Index", "Schedule");
                 }
                 else if(allRegistrationsforSection.Count >= roomCheck.Room.RoomCapacity)
                 {
                     TempData["SpaceLeftInRoom"] = false;
 
-                    return RedirectToAction("Index", "Schedule", new
-                    {
-                        id = roomCheck.CourseId,
-                        semesterPeriodId = semesterPeriodId
-                    });
+                    return RedirectToAction("Index", "Schedule");
                 }
 
 
@@ -312,11 +296,7 @@ namespace BryantUniversity.Controllers
                 {
                     TempData["HasHold"] = true;
 
-                    return RedirectToAction("Index", "Schedule", new
-                    {
-                        id = roomCheck.CourseId,
-                        semesterPeriodId = semesterPeriodId
-                    });
+                    return RedirectToAction("Index", "Schedule");
                 }
 
                 SemesterPeriod toAddPeriod = toAdd.SemesterPeriod;
@@ -329,20 +309,12 @@ namespace BryantUniversity.Controllers
                     if (registration.CourseSectionId == courseSectionId)
                     {
                         TempData["SameClass"] = false;
-                        return RedirectToAction("Index", "Schedule", new
-                        {
-                            id = roomCheck.CourseId,
-                            semesterPeriodId = semesterPeriodId
-                        });
+                        return RedirectToAction("Index", "Schedule");
                     }
                     else if (registration.CourseSection.SemesterPeriod == toAddPeriod)
                     {
                         TempData["TimeConflict"] = false;
-                        return RedirectToAction("Index", "Schedule", new
-                        {
-                            id = roomCheck.CourseId,
-                            semesterPeriodId = semesterPeriodId
-                        });
+                        return RedirectToAction("Index", "Schedule");
                     }
 
                     foreach (var req in allReqs)
@@ -356,20 +328,12 @@ namespace BryantUniversity.Controllers
 
                                 Registration userCourseSection = new Registration(CustomUser.User.Id, toAdd.Id);
                                 rRepo.Insert(userCourseSection);
-                                return RedirectToAction("Index", "Schedule", new
-                                {
-                                    id = roomCheck.CourseId,
-                                    semesterPeriodId = semesterPeriodId
-                                });
+                                return RedirectToAction("Index", "Schedule");
                             }
                             else
                             {
                                 TempData["NotTakePreqs"] = true;
-                                return RedirectToAction("Index", "Schedule", new
-                                {
-                                    id = roomCheck.CourseId,
-                                    semesterPeriodId = semesterPeriodId
-                                });
+                                return RedirectToAction("Index", "Schedule");
                             }
                         }
                     }
@@ -380,11 +344,7 @@ namespace BryantUniversity.Controllers
 
                     Registration userCourseSection = new Registration(CustomUser.User.Id, toAdd.Id);
                     rRepo.Insert(userCourseSection);
-                    return RedirectToAction("Index", "Schedule", new
-                    {
-                        id = roomCheck.CourseId,
-                        semesterPeriodId = semesterPeriodId
-                    });
+                    return RedirectToAction("Index", "Schedule");
                 }
 
             }
