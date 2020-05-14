@@ -28,6 +28,6 @@ namespace BryantUniversity.Models
         public DateTime Date { get; set; }
         public string EventDescription { get; set; }
         public int SemesterPeriodId { get; set; }
-        public SemesterPeriod SemPeriod { get; set; }
+        public virtual SemesterPeriod SemPeriod { get; set; }
     }
 }

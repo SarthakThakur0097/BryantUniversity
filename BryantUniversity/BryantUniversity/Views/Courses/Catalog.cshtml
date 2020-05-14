@@ -39,7 +39,7 @@
 
         <div class="row">
             <div class="col">
-                @if(Model.CoursesAndPreReqs != null)
+                @if(Model.Courses != null)
                 { 
                 <table class="table">
                     <thead class="thead-dark">
@@ -55,23 +55,26 @@
                         </tr>
                     </thead>
                     <tbody id="myTable">
-                        @foreach (var course in Model.CoursesAndPreReqs)
+                        @foreach (var course in Model.Courses)
                         {
                             <tr>
-                                <td>@course.Course.CourseTitleId</td>
-                                <td>@course.Course.CourseTitle</td>
-                                <td>@course.Course.Description</td>
-                                <td>@course.Course.CourseLevel.Level.Value</td>
-                                <td>@course.Course.Department.Name</td>
-                                <td>@course.Course.Credits</td>
-                                @if(course.PreReq == null)
+                                <td>@course.CourseTitleId</td>
+                                <td>@course.CourseTitle</td>
+                                <td>@course.Description</td>
+                                <td>@course.CourseLevel.Level.Value</td>
+                                <td>@course.Department.Name</td>
+                                <td>@course.Credits</td>
+                                @if(course.CourseMajorPreRequisites.Count > 0)
                                 {
-                                    <td></td>
+                                    foreach(var prereq in course.CourseMajorPreRequisites)
+                                    {
+                                        if(prereq.PreReq != null)
+                                        {
+                                            <td>@prereq.PreReq.CourseTitleId</td>
+                                        }
+                                    }
                                 }
-                                else
-                                {
-                                    <td>@course.PreReq.CourseTitleId</td>
-                                }
+                                <td></td>
                             </tr>
                         }
                     </tbody>

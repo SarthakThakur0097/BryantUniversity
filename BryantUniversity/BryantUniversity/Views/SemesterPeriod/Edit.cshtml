@@ -1,0 +1,72 @@
+﻿@model BryantUniversity.ViewModels.SemesterPeriodEditViewModel
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+
+        </div>
+        <div class="col-sm">
+            <h1>Add a course</h1>
+        </div>
+        <div class="col-md-5">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+
+        </div>
+        <div class="col-sm">
+            @using (Html.BeginForm("EditPeriod", "SemesterPeriod", new { id = Model.SemesterPeriodId}, FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <fieldset>
+                    <div class="pure-controls">
+                        @Html.LabelFor(model => model.StartDate)
+                        @Html.EditorFor(model => model.StartDate, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.StartDate, "", new { @class = "pure-form-message-inline" })
+                    </div>
+
+                    <div class="pure-controls">
+                        @Html.LabelFor(model => model.EndDate)
+                        @Html.EditorFor(model => model.EndDate, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.EndDate, "", new { @class = "pure-form-message-inline" })
+                    </div>
+
+                    <div class="pure-controls">
+                        @Html.LabelFor(model => model.StartEnrollmentDate)
+                        @Html.EditorFor(model => model.StartEnrollmentDate, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.StartEnrollmentDate, "", new { @class = "pure-form-message-inline" })
+                    </div>
+
+                    <div class="pure-controls">
+                        @Html.LabelFor(model => model.EndEnrollmentDate)
+                        @Html.EditorFor(model => model.EndEnrollmentDate, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.EndEnrollmentDate, "", new { @class = "pure-form-message-inline" })
+                    </div>
+
+                    <div class="pure-controls">
+                        @Html.LabelFor(model => model.StartGradeTime)
+                        @Html.EditorFor(model => model.StartGradeTime, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.StartGradeTime, "", new { @class = "pure-form-message-inline" })
+                    </div>
+                    <div class="pure-controls">
+                        @Html.LabelFor(model => model.EndGradeTime)
+                        @Html.EditorFor(model => model.EndGradeTime, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.EndGradeTime, "", new { @class = "pure-form-message-inline" })
+                    </div>
+                     <div>
+                        <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                </fieldset>
+            }
+        </div>
+        <div class="col-md-5">
+
+        </div>
+    </div>
+</div>

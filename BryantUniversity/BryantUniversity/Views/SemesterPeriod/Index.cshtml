@@ -1,0 +1,41 @@
+﻿@model BryantUniversity.ViewModels.SemesterPeriodIndexViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr lass="bench-row">
+            <th>Semester</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Start Enrollnment</th>
+            <th>End Enrollnment</th>
+            <th>Start Grading Period</th>
+            <th>End Grading Period</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (Model.SemesterPeriods != null)
+        {
+            foreach (var semesterPeriod in Model.SemesterPeriods)
+            {
+                <tr>
+                    <td>@semesterPeriod.Period.Value</td>
+                    <td>@semesterPeriod.StartDate.ToString("dd.M.yyyy")</td>
+                    <td>@semesterPeriod.EndDate.ToString("dd.M.yyyy")</td>
+                    <td>@semesterPeriod.StartEnrollmentDate</td>
+                    <td>@semesterPeriod.EndEnrollmentDate</td>
+                    <td>@semesterPeriod.StartGradeTime</td>
+                    <td>@semesterPeriod.EndGradeTime</td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", "SemesterPeriod", new { periodId = semesterPeriod.Id }, new { @class = "btn btn-info" })
+                    </td>
+
+                </tr>
+            }
+        }
+    </tbody>
+</table>

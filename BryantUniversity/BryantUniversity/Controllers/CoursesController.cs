@@ -150,6 +150,13 @@ namespace BryantUniversity.Controllers
 
                 if (ModelState.IsValid)
                 {
+                    if(formModel.Credits <0 || formModel.Credits >4)
+                    {
+                        ModelState.AddModelError("", "Credits must be a value from 1 - 4");
+                        formModel.PopulateDepermentSelectList(dRepo.GetAllDepartments());
+                        formModel.PopulateLevelsSelectList(clRepo.GetAllCourseLevels());
+                        return View(formModel);
+                    }
                     Course doesCoursebyTitleIdExist = courseRepo.GetCourseByCourseTitleId(formModel.CourseTitleId);
 
                     if (doesCoursebyTitleIdExist != null)
@@ -182,6 +189,13 @@ namespace BryantUniversity.Controllers
                         }
                     }
 
+                }
+                else
+                {
+                    ModelState.AddModelError("", "You must fill out all values");
+                    formModel.PopulateDepermentSelectList(dRepo.GetAllDepartments());
+                    formModel.PopulateLevelsSelectList(clRepo.GetAllCourseLevels());
+                    return View(formModel);
                 }
                 return RedirectToAction("Index");
             }
@@ -356,14 +370,16 @@ namespace BryantUniversity.Controllers
         public ActionResult Catalog(CoursePreReqViewModel viewModel)
         {
             DepartmentRepo dRepo;
+            CoursesRepo cRepo;
             MajorPreRequisitesRepo reqRepo;
 
             using (context)
             {
                 dRepo = new DepartmentRepo(context);
+                cRepo = new CoursesRepo(context);
                 viewModel.PopulateDepermentSelectList(dRepo.GetAllDepartments());
                 reqRepo = new MajorPreRequisitesRepo(context);
-                viewModel.CoursesAndPreReqs = reqRepo.GetAllMajorPrequisitesByDepartment(viewModel.DepartmentId);
+                viewModel.Courses = cRepo.GetAllCoursesAndPreReqsByDepartment(viewModel.DepartmentId);
             }
 
             return View(viewModel);

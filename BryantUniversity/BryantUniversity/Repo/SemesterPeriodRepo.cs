@@ -24,7 +24,7 @@ namespace BryantUniversity.Repo
         public SemesterPeriod GetById(int id)
         {
             return _context
-                        .SemesterPeriods
+                        .SemesterPeriods.AsNoTracking()
                         .FirstOrDefault(c => c.Id == id);
         }
 
@@ -37,10 +37,10 @@ namespace BryantUniversity.Repo
             _context.SaveChanges();
         }
 
-        public void Update(Role role)
+        public void Update(SemesterPeriod semesterPeriod)
         {
-            _context.Roles.Attach(role);
-            _context.Entry(role).State = System.Data.Entity.EntityState.Modified;
+            _context.SemesterPeriods.Attach(semesterPeriod);
+            _context.Entry(semesterPeriod).State = System.Data.Entity.EntityState.Modified;
             _context.SaveChanges();
         }
     }

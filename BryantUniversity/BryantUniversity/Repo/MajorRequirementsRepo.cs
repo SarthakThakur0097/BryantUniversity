@@ -36,6 +36,7 @@ namespace BryantUniversity.Repo
                 .Include(m => m.Major)
                 .Include(m => m.Course)
                 .Include(m => m.Course.MajorPreRequisitesCourses)
+                .Include(m => m.Course.CourseMajorPreRequisites)
                 .Where(m => m.MajorId == id)
                 .ToList();
         }
