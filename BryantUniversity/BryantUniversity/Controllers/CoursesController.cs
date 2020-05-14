@@ -356,14 +356,16 @@ namespace BryantUniversity.Controllers
         public ActionResult Catalog(CoursePreReqViewModel viewModel)
         {
             DepartmentRepo dRepo;
+            CoursesRepo cRepo;
             MajorPreRequisitesRepo reqRepo;
 
             using (context)
             {
                 dRepo = new DepartmentRepo(context);
+                cRepo = new CoursesRepo(context);
                 viewModel.PopulateDepermentSelectList(dRepo.GetAllDepartments());
                 reqRepo = new MajorPreRequisitesRepo(context);
-                viewModel.CoursesAndPreReqs = reqRepo.GetAllMajorPrequisitesByDepartment(viewModel.DepartmentId);
+                viewModel.Courses = cRepo.GetAllCoursesAndPreReqsByDepartment(viewModel.DepartmentId);
             }
 
             return View(viewModel);

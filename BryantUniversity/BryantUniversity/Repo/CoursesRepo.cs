@@ -69,6 +69,7 @@ namespace BryantUniversity.Repo
                             //.Include(c => c.MajorPreRequisites.Select(y => y.Course))
                             .Include(c => c.CourseLevel)
                             .Include(c => c.Department)
+                            .Include(c => c.CourseMajorPreRequisites)
                             .Where(c => c.DepartmentId == id)
                             .ToList();
         }
