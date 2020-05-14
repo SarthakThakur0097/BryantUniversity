@@ -92,6 +92,79 @@ namespace BryantUniversity.Controllers
         {
             var viewModel = new SemesterDetailsViewModel();
 
+            object PreviousSemester = TempData["IsPreviousSemesterConflict"];
+            object PartTimeTryFullTime = TempData["PartTimeTryFullTime"];
+            object UnderGradTryGrad = TempData["UnderGradTryGrad"];
+            object Success = TempData["Success"];
+            object FullTimeOverFlow = TempData["FullTimeOverFlow"];
+            object SpaceLeftInRoom = TempData["SpaceLeftInRoom"];
+            object HasHold = TempData["HasHold"];
+            object SameClass = TempData["SameClass"];
+            object TimeConflict = TempData["TimeConflict"];
+            if (PreviousSemester != null)
+            {
+                if ((bool)PreviousSemester)
+                {
+                    viewModel.IsPreviousSemesterConflict = true;
+                }
+            }
+            else if (PartTimeTryFullTime != null)
+            {
+                if ((bool)PartTimeTryFullTime)
+                {
+                    viewModel.PartTimeTryFullTime = true;
+                }
+            }
+            else if (UnderGradTryGrad != null)
+            {
+                if ((bool)UnderGradTryGrad)
+                {
+                    viewModel.UnderGradTryGrad = true;
+                }
+            }
+            else if (FullTimeOverFlow != null)
+            {
+                if ((bool)FullTimeOverFlow)
+                {
+                    viewModel.FullTimeOverFlow = true;
+                }
+            }
+            else if (SpaceLeftInRoom != null)
+            {
+                if (!(bool)SpaceLeftInRoom)
+                {
+                    viewModel.SpaceLeftInRoom = false;
+                }
+            }
+            else if (HasHold != null)
+            {
+                if ((bool)HasHold)
+                {
+                    viewModel.HasHold = true;
+                }
+            }
+            else if (SameClass != null)
+            {
+                if ((bool)SameClass)
+                {
+                    viewModel.SameClass = true;
+                }
+            }
+            else if (TimeConflict != null)
+            {
+                if ((bool)TimeConflict)
+                {
+                    viewModel.TimeConflict = true;
+                }
+            }
+            else if (Success != null)
+            {
+                if ((bool)Success)
+                {
+                    viewModel.Success = true;
+                }
+            }
+
             CalendarRepo cRepo;
             DepartmentRepo dRepo;
             SemesterPeriodRepo spRepo;

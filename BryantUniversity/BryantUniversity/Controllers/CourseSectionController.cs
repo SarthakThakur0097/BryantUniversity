@@ -41,9 +41,9 @@ namespace BryantUniversity.Controllers
             SectionRegistrationViewModel viewModel = new SectionRegistrationViewModel();
             int courseSectionId = id;
             object PreviousSemester = TempData["IsPreviousSemesterConflict"];
-            object IsFullTime = TempData["IsFullTime"];
+            object PartTimeTryFullTime = TempData["PartTimeTryFullTime"];
             object UnderGradTryGrad = TempData["UnderGradTryGrad"];
-            object HasTakenPrereq = TempData["HasTakenPrereq"];
+            object HasNotTakenPrereq = TempData["HasNotTakenPrereq"];
             object SpaceLeftInRoom = TempData["SpaceLeftInRoom"];
             object HasHold = TempData["HasHold"];
             object SameClass = TempData["SameClass"];
@@ -57,11 +57,11 @@ namespace BryantUniversity.Controllers
                     RedirectToAction("IndexAdmin", "CourseSection", new { Id = courseSectionId, semesterPeriodId = semesterPeriodId });
                 }
             }
-            else if (IsFullTime != null)
+            else if (PartTimeTryFullTime != null)
             {
-                if (!(bool)IsFullTime)
+                if (!(bool)PartTimeTryFullTime)
                 {
-                    viewModel.IsFullTime = true;
+                    viewModel.PartTimeTryFullTime = true;
                     RedirectToAction("IndexAdmin", "CourseSection", new { Id = courseSectionId, semesterPeriodId = semesterPeriodId });
                 }
             }
@@ -73,11 +73,11 @@ namespace BryantUniversity.Controllers
                     RedirectToAction("IndexAdmin", "CourseSection", new { Id = courseSectionId, semesterPeriodId = semesterPeriodId });
                 }
             }
-            else if (HasTakenPrereq != null)
+            else if (HasNotTakenPrereq != null)
             {
-                if (!(bool)HasTakenPrereq)
+                if (!(bool)HasNotTakenPrereq)
                 {
-                    viewModel.HasTakenPrereq = false;
+                    viewModel.HasNotTakenPrereq = false;
                     RedirectToAction("IndexAdmin", "CourseSection", new { Id = courseSectionId, semesterPeriodId = semesterPeriodId });
                 }
             }
@@ -142,82 +142,9 @@ namespace BryantUniversity.Controllers
 
 
         [HttpGet]
-        public ActionResult Index(int Id, int semesterPeriodId)
+        public ActionResult Index(int id, int semesterPeriodId)
         {
             SectionRegistrationViewModel viewModel = new SectionRegistrationViewModel();
-
-            object PreviousSemester = TempData["IsPreviousSemesterConflict"];
-            object IsFullTime = TempData["IsFullTime"];
-            object UnderGradTryGrad = TempData["UnderGradTryGrad"];
-            object HasTakenPrereq = TempData["HasTakenPrereq"];
-            object SpaceLeftInRoom = TempData["SpaceLeftInRoom"];
-            object HasHold = TempData["HasHold"];
-            object SameClass = TempData["SameClass"];
-            object TimeConflict = TempData["TimeConflict"];
-            if (PreviousSemester != null)
-            {
-                if ((bool)PreviousSemester == true)
-                {
-                    viewModel.IsPreviousSemesterConflict = true;
-                    RedirectToAction("Index", "CourseSection", new { Id = Id, semesterPeriodId = semesterPeriodId });
-                }
-            }
-            else if (IsFullTime != null)
-            {
-                if (!(bool)IsFullTime)
-                {
-                    viewModel.IsFullTime = true;
-                    RedirectToAction("Index", "CourseSection", new { Id = Id, semesterPeriodId = semesterPeriodId });
-                }
-            }
-            else if (UnderGradTryGrad != null)
-            {
-                if ((bool)UnderGradTryGrad)
-                {
-                    viewModel.UnderGradTryGrad = true;
-                    RedirectToAction("Index", "CourseSection", new { Id = Id, semesterPeriodId = semesterPeriodId });
-                }
-            }
-            else if (HasTakenPrereq != null)
-            {
-                if (!(bool)HasTakenPrereq)
-                {
-                    viewModel.HasTakenPrereq = false;
-                    RedirectToAction("Index", "CourseSection", new { Id = Id, semesterPeriodId = semesterPeriodId });
-                }
-            }
-            else if (SpaceLeftInRoom != null)
-            {
-                if (!(bool)SpaceLeftInRoom)
-                {
-                    viewModel.SpaceLeftInRoom = false;
-                    RedirectToAction("Index", "CourseSection", new { Id = Id, semesterPeriodId = semesterPeriodId });
-                }
-            }
-            else if (HasHold != null)
-            {
-                if ((bool)HasHold)
-                {
-                    viewModel.HasHold = true;
-                    RedirectToAction("Index", "CourseSection", new { Id = Id, semesterPeriodId = semesterPeriodId });
-                }
-            }
-            else if (SameClass != null)
-            {
-                if ((bool)SameClass)
-                {
-                    viewModel.SameClass = true;
-                    RedirectToAction("Index", "CourseSection", new { Id = Id, semesterPeriodId = semesterPeriodId });
-                }
-            }
-            else if (SameClass != null)
-            {
-                if ((bool)TimeConflict)
-                {
-                    viewModel.TimeConflict = true;
-                    RedirectToAction("Index", "CourseSection", new { Id = Id, semesterPeriodId = semesterPeriodId });
-                }
-            }
 
             using (context)
             {
@@ -230,7 +157,7 @@ namespace BryantUniversity.Controllers
                 rRepo = new RegistrationRepo(context);
                 csRepo = new CourseSectionRepo(context);
 
-                courseSections = csRepo.GetCourseSectionsByCourseIdAndSemesterPeriodId(Id, semesterPeriodId);
+                courseSections = csRepo.GetCourseSectionsByCourseIdAndSemesterPeriodId(id, semesterPeriodId);
 
                 foreach(var section in courseSections)
                 {
@@ -239,8 +166,6 @@ namespace BryantUniversity.Controllers
                     viewModel = new SectionRegistrationViewModel();
                     viewModel.Section = section;
                     viewModel.SeatsRemaining = roomsLeft;
-                       
-               
                     AllSections.Add(viewModel);
                 }
                 return View("Index", AllSections);

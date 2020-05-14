@@ -6,7 +6,46 @@
 <div class="container">
     <div class="row">
         <div class="col-md-5">
-
+            @if (Model.IsPreviousSemesterConflict)
+            {
+                <h5> You can no longer register for this semester </h5>
+            }
+            else if (Model.PartTimeTryFullTime)
+            {
+                <h5> Part-Time Students Can Only Take Up-To 2 Classes Per Semester</h5>
+            }
+            else if (Model.UnderGradTryGrad)
+            {
+                <h5>This is a Graduate Level Course</h5>
+            }
+            else if (Model.HasNotTakenPrereq)
+            {
+                <h5>You have not taken the Prerequisites</h5>
+            }
+            else if (Model.SpaceLeftInRoom)
+            {
+                <h5>There are no longer seats available</h5>
+            }
+            else if (Model.HasHold)
+            {
+                <h5>Please Contact Admin To Remove Hold</h5>
+            }
+            else if (Model.FullTimeOverFlow)
+            {
+                <h5>You Cannot Take More than 24 Credits</h5>
+            }
+            else if (Model.SameClass)
+            {
+                <h5> You Are Already Registered To This Course</h5>
+            }
+            else if (Model.TimeConflict)
+            {
+                <h5> You Are Registered TO Another Course At This Time</h5>
+            }
+            else if (Model.Success)
+            {
+                <h5> Successfully Registered!</h5>
+            }
         </div>
         <div class="col-sm">
             <h2>Select Term</h2>
