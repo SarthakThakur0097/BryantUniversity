@@ -30,28 +30,29 @@
         <table class="table">
             <thead class="thead-dark">
                 <tr>
-                    <th>Student ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Advised By</th>
                     <th>Faculty Id</th>
                     <th>Name</th>
                     <th>Email</th>
+                    <th>Advising</th>
+                    <th>Student ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+
                 </tr>
             </thead>
             <tbody id="myTable">
                 @foreach (var advisement in Model.AllAdvisements)
                 {
                     <tr>
-                        <td>@advisement.StudentId</td>
-                        <td>@advisement.Student.Name</td>
-                        <td>@advisement.Student.Email</td>
-                        <td></td>
+
+
                         <td>@advisement.FacultyId</td>
                         <td>@advisement.Faculty.Name</td>
                         <td>@advisement.Faculty.Email</td>
-
-                        
+                        <td></td>
+                        <td>@advisement.StudentId</td>
+                        <td>@advisement.Student.Name</td>
+                        <td>@advisement.Student.Email</td>
                     </tr>
                 }
             </tbody>

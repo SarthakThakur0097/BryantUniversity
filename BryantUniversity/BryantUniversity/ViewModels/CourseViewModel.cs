@@ -25,7 +25,7 @@ namespace BryantUniversity.ViewModels
         public IList<Course> Courses { get; set; }
         public IList<SemesterPeriod> SemesterPeriods { get; set; }
         public int ChosenPattern { get; set; }
-
+        public bool SameTitleId { get; set; }
         [Display(Name = "Department: ")]
         public int DepartmentId { get; set; }
 

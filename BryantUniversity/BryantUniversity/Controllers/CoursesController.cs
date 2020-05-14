@@ -72,9 +72,7 @@ namespace BryantUniversity.Controllers
         [HttpPost]
         public ActionResult AddPreqPost(int courseId, int prereqId)
         {
-            if (ModelState.IsValid)
-            {
-            }
+            
                 if (courseId == prereqId)
             {
                 return View();
@@ -117,6 +115,7 @@ namespace BryantUniversity.Controllers
 
         public ActionResult Create()
         {
+
             var viewModel = new CourseViewModel();
             DepartmentRepo dRepo;
             CourseLevelRepo clRepo;
@@ -138,35 +137,55 @@ namespace BryantUniversity.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(CourseViewModel formModel)
         {
-            CoursesRepo courseRepo;
-            DepartmentRepo dRepo;
-            CourseLevelRepo clRepo;
-            MajorPreRequisitesRepo mPRepo;
             using (context)
             {
-                courseRepo = new CoursesRepo(context);
+                CoursesRepo courseRepo = new CoursesRepo(context); ;
+                DepartmentRepo dRepo;
+                CourseLevelRepo clRepo;
+                MajorPreRequisitesRepo mPRepo;
+
                 dRepo = new DepartmentRepo(context);
                 clRepo = new CourseLevelRepo(context);
                 mPRepo = new MajorPreRequisitesRepo(context);
 
-                formModel.PopulateDepermentSelectList(dRepo.GetAllDepartments());
-                formModel.PopulateLevelsSelectList(clRepo.GetAllCourseLevels());
-                try
+                if (ModelState.IsValid)
                 {
-                    var course = new Course(formModel.CourseTitleId,formModel.CourseTitle, formModel.Description, formModel.Credits, formModel.CourseLevelId, formModel.DepartmentId);
-                    courseRepo.Insert(course);
+                    Course doesCoursebyTitleIdExist = courseRepo.GetCourseByCourseTitleId(formModel.CourseTitleId);
 
-                    Course cId = courseRepo.GetCourseByCourseTitleId(formModel.CourseTitleId);
-                    var preReq = new MajorPreRequisite(null, cId.Id);
-                    mPRepo.Insert(preReq);
-                    return RedirectToAction("Index");
+                    if (doesCoursebyTitleIdExist != null)
+                    {
+                        ModelState.AddModelError("", "Course already exists");
+                        formModel.PopulateDepermentSelectList(dRepo.GetAllDepartments());
+                        formModel.PopulateLevelsSelectList(clRepo.GetAllCourseLevels());
+                        formModel.SameTitleId = true;
+                        return View(formModel);
+                    }
+                    else
+                    {
+
+
+                        formModel.PopulateDepermentSelectList(dRepo.GetAllDepartments());
+                        formModel.PopulateLevelsSelectList(clRepo.GetAllCourseLevels());
+                        try
+                        {
+                            var course = new Course(formModel.CourseTitleId, formModel.CourseTitle, formModel.Description, formModel.Credits, formModel.CourseLevelId, formModel.DepartmentId);
+                            courseRepo.Insert(course);
+
+                            Course cId = courseRepo.GetCourseByCourseTitleId(formModel.CourseTitleId);
+                            //var preReq = new MajorPreRequisite(null, cId.Id);
+                            //mPRepo.Insert(preReq);
+                            return RedirectToAction("Index");
+                        }
+                        catch (DbUpdateException ex)
+                        {
+                            HandleDbUpdateException(ex);
+                        }
+                    }
+                    
                 }
-                catch (DbUpdateException ex)
-                {
-                    HandleDbUpdateException(ex);
-                }
+                return RedirectToAction("Index");
             }
-            return View();
+
         }
 
         [HttpGet]

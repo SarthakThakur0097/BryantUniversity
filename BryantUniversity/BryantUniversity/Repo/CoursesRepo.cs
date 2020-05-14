@@ -60,8 +60,7 @@ namespace BryantUniversity.Repo
                         .Courses
                         .Include(c => c.Department)
                         .Include(c => c.CourseLevel)
-                        .Where(c => c.CourseTitleId == id)
-                        .FirstOrDefault();
+                        .FirstOrDefault(c => c.CourseTitleId == id);
         }
 
         public IList<Course> GetAllCoursesAndPreReqsByDepartment(int id)
@@ -91,7 +90,11 @@ namespace BryantUniversity.Repo
 
         public void Delete(Course course)
         {
-            CourseSectionRepo cRepo;
+            MajorPreRequisitesRepo repo;
+
+            repo = new MajorPreRequisitesRepo(_context);
+
+
             _context.Courses.Attach(course);
             _context.Courses.Remove(course);
             _context.SaveChanges();

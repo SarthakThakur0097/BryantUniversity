@@ -36,14 +36,16 @@
             <table class="table">
                 <thead class="thead-dark">
                     <tr lass="bench-row">
+                        <th>Semester</th>
                         <th>Name</th>
                         <th>Email</th>
                         <th>Course</th>
+
                         <th>Credits</th>
                         <th>Level</th>
                         <th>Professor</th>
                         <th>Grade</th>
-                        <th>Attendance</th>
+                        <th>Change</th>
                         <th></th>
                         <th></th>
                         <th></th>
@@ -53,10 +55,10 @@
                     @foreach (var grade in Model.AllGrades)
                     {
                         <tr>
+                            <td>@grade.Registration.CourseSection.SemesterPeriod.Period.Value</td>
                             <td>@grade.Registration.User.Name</td>
                             <td>@grade.Registration.User.Email</td>
                             <td>@grade.Registration.CourseSection.Course.CourseTitle</td>
-                            <td>@grade.Registration.CourseSection.Course.Description</td>
                             <td>@grade.Registration.CourseSection.Course.Credits</td>
                             <td>@grade.Registration.CourseSection.Course.CourseLevel.Level.Value</td>
                             <td>@grade.Registration.CourseSection.Professor.Name</td>

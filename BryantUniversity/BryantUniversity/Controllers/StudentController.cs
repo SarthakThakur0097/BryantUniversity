@@ -271,11 +271,14 @@ namespace BryantUniversity.Controllers
                 mRepo = new MajorRequirmentsRepo(context);
                 gRepo = new GradesRepo(context);
                 rRepo = new RegistrationRepo(context);
-
+                int totalCredits = 0;
                 viewModel.AllGradesClasses = gRepo.GetAllGradesByUserId(CustomUser.User.Id);
-
+                foreach(var course in viewModel.AllGradesClasses)
+                {
+                    totalCredits += course.Registration.CourseSection.Course.Credits;
+                }
                 viewModel.StudentMajor = sRepo.GetByStudentId(CustomUser.User.Id);
-
+                viewModel.TotalCredits = totalCredits;
             }
 
             return View(viewModel);

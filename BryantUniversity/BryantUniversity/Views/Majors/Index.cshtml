@@ -38,9 +38,9 @@
                     <tr lass="bench-row">
                         <th>Course Id</th>
                         <th>Course Title</th>
-                        <th></th>
-                        <th></th>
-                        <th></th>
+                        <th>Description</th>
+                        <th>Credits</th>
+                        <th>Prerequisite</th>
                         <th></th>
                     </tr>
                 </thead>
@@ -50,7 +50,22 @@
                         <tr>
                             <td>@requirement.Course.CourseTitleId</td>
                             <td>@requirement.Course.CourseTitle</td>
-
+                            <td>@requirement.Course.Description</td>
+                            <td>@requirement.Course.Credits</td>
+                            @if(requirement.Course.CourseMajorPreRequisites != null)
+                            {
+                                foreach(var course in requirement.Course.CourseMajorPreRequisites)
+                                { 
+                                    if (course.PreReq == null)
+                                    {
+                                        <td></td>
+                                    }
+                                    else
+                                    {
+                                        <td>@course.PreReq.CourseTitleId </td>
+                                    }
+                                }
+                            }
                         </tr>
                     }
                 </tbody>
