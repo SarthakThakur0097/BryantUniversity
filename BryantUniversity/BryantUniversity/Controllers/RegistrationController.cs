@@ -90,38 +90,34 @@ namespace BryantUniversity.Controllers
 
                     return RedirectToAction("Index", "Schedule");
                 }
-                //else if(studentTimeType.TimeTypes.TimeType == TimeType.PartTime && totRegisteredSoFar>=2)
-                //{
-                //    TempData["PartTimeTryFullTime"] = true;
 
-                //    return RedirectToAction("Index", "Schedule", new
-                //    {
-                //        id = roomCheck.CourseId,
-                //        semesterPeriodId = semesterPeriodId
-                //    });
-                //}
                 else if (totRegisteredSoFar >= 4)
                 {
                     TempData["FullTimeOverFlow"] = true;
 
                     return RedirectToAction("Index", "Schedule");
                 }
-                //else if(studentLevel.CourseLevel.Level == Level.Undergraduate && toAdd.Course.CourseLevel.Level == Level.Graduate)
-                //{
-                //    TempData["UnderGradTryGrad"] = true;
 
-                //    return RedirectToAction("Index", "CourseSection", new
-                //    {
-                //        id = roomCheck.CourseId,
-                //        semesterPeriodId = semesterPeriodId
-                //    });
-                //}
                 else if (allReqs.Count > 0 && allTakenCourses.Count == 0)
                 {
 
                     TempData["HasNotTakenPrereq"] = true;
 
                     return RedirectToAction("Index", "Schedule");
+                }
+                else if(allReqs.Count > 0)
+                {
+                    foreach(var allRegistered in allRegisteredSoFar)
+                    {
+                        foreach(var preq in allReqs)
+                        {
+                            if(allRegistered.CourseSection.CourseId != preq.CourseId )
+                            {
+                                TempData["HasNotTakenPrereq"] = true;
+                                return RedirectToAction("Index", "Schedule");
+                            }
+                        }
+                    }
                 }
                 else if (allRegistrationsforSection.Count >= roomCheck.Room.RoomCapacity)
                 {
@@ -267,6 +263,13 @@ namespace BryantUniversity.Controllers
                     TempData["HasNotTakenPrereq"] = true;
 
                     return RedirectToAction("Index", "Schedule");
+                }
+                else if(allReqs.Count >0)
+                {
+                    foreach(var prereq in allReqs)
+                    {
+                        
+                    }
                 }
                 else if(allRegistrationsforSection.Count >= roomCheck.Room.RoomCapacity)
                 {
