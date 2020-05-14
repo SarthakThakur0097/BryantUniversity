@@ -42,9 +42,18 @@
                 {
                     <td>@Model.StudentLevel.CourseLevel.Level.Value</td>
                 }
+                else
+                {
+                    <td></td>
+                }
                 @if(Model.StudentTimeType != null)
                 {
                     <td>@Model.StudentTimeType.TimeTypes.TimeType.Value</td>
+                }
+                else
+                {
+                    <td></td>
+
                 }
                 <td>@Model.Student.Name</td>
                 <td>@Model.Student.Email</td>
