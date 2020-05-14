@@ -50,6 +50,10 @@
             {
                 <h2>Enrollment date has closed</h2>
             }
+            else if((DateTime.Now > Model[0].Section.SemesterPeriod.StartEnrollmentDate ))
+            {
+                <h2>Enrollment Open Until @Model[0].Section.SemesterPeriod.EndEnrollmentDate.ToString("dd.M.yyyy")</h2>
+            }
         </div>
         <div class="col-sm">
         </div>

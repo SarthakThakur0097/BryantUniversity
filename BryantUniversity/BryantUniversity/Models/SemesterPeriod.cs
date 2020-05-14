@@ -19,7 +19,7 @@ namespace BryantUniversity.Models
             StartDate = startDate;
             EndDate = endDate;
             StartEnrollmentDate = startEnrollmentDate;
-            EndEnrollmentDate = EndEnrollmentDate;
+            EndEnrollmentDate = endEnrollmentDate;
             StartGradeTime = startGradeTime;
             EndGradeTime = endGradeTime;
         }
@@ -30,7 +30,7 @@ namespace BryantUniversity.Models
             StartDate = startDate;
             EndDate = endDate;
             StartEnrollmentDate = startEnrollmentDate;
-            EndEnrollmentDate = EndEnrollmentDate;
+            EndEnrollmentDate = endEnrollmentDate;
             StartGradeTime = startGradeTime;
             EndGradeTime = endGradeTime;
         }

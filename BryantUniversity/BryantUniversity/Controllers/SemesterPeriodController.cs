@@ -57,6 +57,8 @@ namespace BryantUniversity.Controllers
             {
                 spRepo = new SemesterPeriodRepo(context);
                 SemesterPeriod current = spRepo.GetById(id);
+                        //public SemesterPeriod(int id, Period period, DateTime startDate, DateTime endDate, DateTime startEnrollmentDate, DateTime endEnrollmentDate, DateTime startGradeTime, DateTime endGradeTime)
+
                 SemesterPeriod toEdit = new SemesterPeriod(id, current.Period, viewModel.StartDate, viewModel.EndDate, viewModel.StartEnrollmentDate, viewModel.EndEnrollmentDate, viewModel.StartGradeTime, viewModel.EndGradeTime);
 
                 spRepo.Update(toEdit);
