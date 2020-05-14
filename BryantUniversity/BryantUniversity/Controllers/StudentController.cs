@@ -27,19 +27,7 @@ namespace BryantUniversity.Controllers
             }
         }
 
-        [HttpGet]
-        public ActionResult Schedule()
-        {
-            SemesterPeriodRepo sRepo;
-            ScheduleViewModel viewModel = new ScheduleViewModel();
-            using (context)
-            {
-                sRepo = new SemesterPeriodRepo(context);
-                viewModel.PopulateSelectList(sRepo.GetAllSemesterPeriods());
-            }
-
-            return View(viewModel);
-        }
+       
 
         [HttpGet]
         public ActionResult ViewHold()
@@ -87,6 +75,23 @@ namespace BryantUniversity.Controllers
 
                 viewModel.Registration = rRepo.GetById(registrationId);
             }
+            return View(viewModel);
+        }
+
+        [HttpGet]
+        public ActionResult Schedule()
+        {
+            SemesterPeriodRepo sRepo;
+            RegistrationRepo rRepo;
+            ScheduleViewModel viewModel = new ScheduleViewModel();
+            using (context)
+            {
+                rRepo = new RegistrationRepo(context);
+                sRepo = new SemesterPeriodRepo(context);
+                viewModel.PopulateSelectList(sRepo.GetAllSemesterPeriods());
+                viewModel.RegisteredClasses = rRepo.GetRegistrationByUserIdAndPeriodId(CustomUser.User.Id, 2);
+            }
+
             return View(viewModel);
         }
 
@@ -138,7 +143,6 @@ namespace BryantUniversity.Controllers
                 gRepo = new GradesRepo(context);
 
                 allRegisterations = rRepo.GetRegistrationByUserIdAndPeriodId(CustomUser.User.Id, 1);
-
                 foreach (var grade in allRegisterations)
                 {
                     if (gRepo.GetGradeByRegistrationId(grade.Id).LetterGrade == null)
@@ -147,8 +151,8 @@ namespace BryantUniversity.Controllers
                     }
                 }
                 viewModel.NonGraded = nonGraded;
+                return View(viewModel);
             }
-            return View(viewModel);
         }
 
         [HttpPost]
@@ -160,15 +164,16 @@ namespace BryantUniversity.Controllers
         [HttpGet]
         public ActionResult DegreeAudit()
         {
-            DegreeAuditViewModel viewModel = new DegreeAuditViewModel();
-
-            GradesRepo gRepo;
-            StudentMajorRepo sMRepo;
-            MajorRepo mRepo;
-            MajorRequirmentsRepo mrRepo;
-
             using (context)
             {
+                DegreeAuditViewModel viewModel = new DegreeAuditViewModel();
+
+                GradesRepo gRepo;
+                StudentMajorRepo sMRepo;
+                MajorRepo mRepo;
+                MajorRequirmentsRepo mrRepo;
+
+
                 gRepo = new GradesRepo(context);
                 sMRepo = new StudentMajorRepo(context);
                 mrRepo = new MajorRequirmentsRepo(context);
@@ -177,23 +182,23 @@ namespace BryantUniversity.Controllers
                 viewModel.AllCourses = gRepo.GetAllGradesByUserId(CustomUser.User.Id);
                 viewModel.StudentMajor = sMRepo.GetByStudentId(CustomUser.User.Id);
                 viewModel.MajorRequirements = mrRepo.GetAllMajorRequirementsByMajor(viewModel.StudentMajor.MajorId);
+                return View(viewModel);
             }
-            return View(viewModel);
         }
 
 
         [HttpGet]
         public ActionResult DegreeAuditAdmin(int studentId)
         {
-            DegreeAuditViewModel viewModel = new DegreeAuditViewModel();
-
-            GradesRepo gRepo;
-            StudentMajorRepo sMRepo;
-            MajorRepo mRepo;
-            MajorRequirmentsRepo mrRepo;
-
             using (context)
             {
+                DegreeAuditViewModel viewModel = new DegreeAuditViewModel();
+
+                GradesRepo gRepo;
+                StudentMajorRepo sMRepo;
+                MajorRepo mRepo;
+                MajorRequirmentsRepo mrRepo;
+
                 gRepo = new GradesRepo(context);
                 sMRepo = new StudentMajorRepo(context);
                 mrRepo = new MajorRequirmentsRepo(context);
@@ -202,8 +207,8 @@ namespace BryantUniversity.Controllers
                 viewModel.AllCourses = gRepo.GetAllGradesByUserId(studentId);
                 viewModel.StudentMajor = sMRepo.GetByStudentId(studentId);
                 viewModel.MajorRequirements = mrRepo.GetAllMajorRequirementsByMajor(viewModel.StudentMajor.MajorId);
+                return View(viewModel);
             }
-            return View(viewModel);
         }
 
         [HttpGet]
@@ -256,17 +261,17 @@ namespace BryantUniversity.Controllers
         [HttpGet]
         public ActionResult Transcript()
         {
-            TranscriptViewModel viewModel = new TranscriptViewModel();
-            StudentMajorRepo sRepo;
-            MajorRequirmentsRepo mRepo;
-            GradesRepo gRepo;
-            RegistrationRepo rRepo;
-            IList<Grade> AllClasses = new List<Grade>();
-            IList<Registration> AllRegistrations = new List<Registration>();
-            IList<Registration> PendingGrades = new List<Registration>();
-
             using (context)
             {
+                TranscriptViewModel viewModel = new TranscriptViewModel();
+                StudentMajorRepo sRepo;
+                MajorRequirmentsRepo mRepo;
+                GradesRepo gRepo;
+                RegistrationRepo rRepo;
+                IList<Grade> AllClasses = new List<Grade>();
+                IList<Registration> AllRegistrations = new List<Registration>();
+                IList<Registration> PendingGrades = new List<Registration>();
+
                 sRepo = new StudentMajorRepo(context);
                 mRepo = new MajorRequirmentsRepo(context);
                 gRepo = new GradesRepo(context);
@@ -279,9 +284,8 @@ namespace BryantUniversity.Controllers
                 }
                 viewModel.StudentMajor = sRepo.GetByStudentId(CustomUser.User.Id);
                 viewModel.TotalCredits = totalCredits;
+                return View(viewModel);
             }
-
-            return View(viewModel);
         }
 
         [HttpGet]

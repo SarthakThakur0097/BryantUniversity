@@ -17,19 +17,34 @@ namespace BryantUniversity.Controllers
             context = new Context();
         }
 
+        [HttpGet]
         public ActionResult Index()
         {
-            AdvisorViewModel viewModel = new AdvisorViewModel();
             AdviserRepo aRepo;
             using (context)
             {
+                UserRepo uRepo = new UserRepo(context);
+                AdvisorViewModel viewModel = new AdvisorViewModel();
                 aRepo = new AdviserRepo(context);
-                viewModel.AllAdvisements = aRepo.GetAllAdvisors();
-               
+                viewModel.AllFaculty = uRepo.GetUsersByRole(2);
+
                 return View(viewModel);
             }
         }
 
-        
+        [HttpPost]
+        public ActionResult Advisees(int id)
+        {
+            AdviserRepo aRepo;
+            using (context)
+            {
+                UserRepo uRepo = new UserRepo(context);
+                AdvisorViewModel viewModel = new AdvisorViewModel();
+                aRepo = new AdviserRepo(context);
+
+                viewModel.AllAdvisees = aRepo.GetAllAdviseesFromAdvisorId(id);
+                return View(viewModel);
+            }
+        }
     }
 }

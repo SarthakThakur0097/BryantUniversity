@@ -120,7 +120,7 @@
                         @Html.ActionLink("Teaching", "Teaching", "Faculty", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
                 }
-                else if((Request.IsAuthenticated && ((BryantUniversity.Security.CustomPrincipal)User).IsInRole("4")))
+                else if ((Request.IsAuthenticated && ((BryantUniversity.Security.CustomPrincipal)User).IsInRole("4")))
                 {
                     <li class="nav-item">
                         @Html.ActionLink("Academic Calendar", "Index", "Calendar", new { area = "" }, new { @class = "navbar-brand" })
@@ -166,10 +166,13 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
         </div>
-        <div class="navbar navbar-expand-md navbar-dark navbar-custom" style="align-content:center">
-            <ul class="navbar-nav ml-auto">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <ul class="navbar-nav mr-auto">
                 @if (Request.IsAuthenticated && ((BryantUniversity.Security.CustomPrincipal)User).IsInRole("4"))
                 {
+                    <li class="nav-item">
+                        @Html.ActionLink("Drop Course", "Drop", "Student", new { area = "" }, new { @class = "navbar-brand" })
+                    </li>
 
                     <li class="nav-item">
                         @Html.ActionLink("View Hold", "ViewHold", "Student", new { area = "" }, new { @class = "navbar-brand" })
@@ -208,9 +211,6 @@
                         @Html.ActionLink("Majors", "Majors", "Courses", new { area = "" }, new { @class = "navbar-brand" })
                     </li>
 
-                    <li class="nav-item">
-                        @Html.ActionLink("Master Schedule", "Index", "Schedule", new { area = "" }, new { @class = "navbar-brand" })
-                    </li>
 
                     <li class="nav-item">
                         @Html.ActionLink("Catalog", "Catalog", "Courses", new { area = "" }, new { @class = "navbar-brand" })
@@ -246,12 +246,7 @@
                     </li>
 
                 }
-                else
-                {
-                    <li class="nav-item">
-                        @Html.ActionLink("Master Schedule", "Index", "Schedule", new { area = "" }, new { @class = "navbar-brand" })
-                    </li>
-                }
+
                 <li class="nav-item">
                     <div>
                         @if (Request.IsAuthenticated)

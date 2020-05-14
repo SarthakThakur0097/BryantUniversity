@@ -73,18 +73,11 @@
                             <td>
                                @using (Html.BeginForm("Gradebook", "Student", new {id = grade.Id, registrationId = grade.Registration.Id}, FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
                                {
-                                <div class="row">
-                                    <div class="col-sm">
-                                        @Html.LabelFor(model => model.LetterGradeId, htmlAttributes: new { @class = "control-label col-md-2" })
-                                        @Html.DropDownListFor(model => model.LetterGradeId, Model.GradeList, "Grade", new { @class = "form-control required", id = "grades-list" })
-                                        @Html.ValidationMessageFor(model => model.LetterGradeId)
-                                        <button type="submit" class="btn btn-success">Submit</button>
-                                    </div>
-                                    <div class="col-sm">
-                                    </div>
-
-                                    <div class="col-md-5">
-                                    </div>
+                                <div>
+                                    @Html.LabelFor(model => model.LetterGradeId, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    @Html.DropDownListFor(model => model.LetterGradeId, Model.GradeList, "Grade", new { @class = "form-control required", id = "grades-list" })
+                                    @Html.ValidationMessageFor(model => model.LetterGradeId)
+                                    <button type="submit" class="btn btn-success">Submit</button>
                                 </div>
                                }
                             </td>

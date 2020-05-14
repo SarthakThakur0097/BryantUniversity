@@ -409,6 +409,7 @@
     <Content Include="Views\Majors\Index.cshtml" />
     <Content Include="Views\Courses\AddPreq.cshtml" />
     <Content Include="Views\Researcher\StudentStasitics.cshtml" />
+    <Content Include="Views\Advisement\Advisees.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

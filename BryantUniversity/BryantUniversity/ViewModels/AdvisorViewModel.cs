@@ -8,6 +8,7 @@ namespace BryantUniversity.ViewModels
 {
     public class AdvisorViewModel
     {
-        public IList<Advisor> AllAdvisements { get; set; }
+        public IList<User> AllFaculty { get; set; }
+        public IList<Advisor> AllAdvisees { get; set; }
     }
 }

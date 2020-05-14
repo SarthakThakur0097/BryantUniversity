@@ -7,9 +7,6 @@
 <div class="container">
     <div class="row">
         <div class="col-sm">
-            @Html.ActionLink("Drop a course", "Drop", "Student", new { }, new { @class = "btn btn-primary" })
-        </div>
-        <div class="col-sm">
             @using (Html.BeginForm("Schedule", "Student", FormMethod.Post, new { @class = "pure-form pure-form-aligned", id = "" }))
             {
                 @Html.AntiForgeryToken()
@@ -45,46 +42,51 @@
     </div>
     <div class="row">
         <div class="col-sm">
+            <h3>Schedule for @Model.RegisteredClasses[0].CourseSection.SemesterPeriod.Period.Value</h3>
         </div>
         <div class="col-md-5">
             @if (Model.RegisteredClasses.Count == 0)
             {
                 <h1>You have no classes registered for this semester</h1>
             }
-            <h1>SCHEDULE</h1>
-            <table class="table">
-                <thead class="thead-dark">
-                    <tr lass="bench-row">
-                        <th>CRN</th>
-                        <th>Course Title</th>
-                        <th>Course Time</th>
-                        <th>Days</th>
-                        <th>Professor</th>
-                        <th>Building</th>
-                        <th>Room Number</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @if (Model.RegisteredClasses != null)
-                    {
-                        foreach (var reigstered in Model.RegisteredClasses)
-                        {
-                            <tr>
-                                <td>@reigstered.CourseSection.Course.Id</td>
-                                <td>@reigstered.CourseSection.Course.CourseTitle</td>
-                                <td>@reigstered.CourseSection.ClassDuration.TimeForClass.Value</td>
-                                <td>@reigstered.CourseSection.ClassDays.Pattern.Value</td>
-                                <td>@reigstered.CourseSection.Professor.Name</td>
-                                <td>@reigstered.CourseSection.Room.Building.BuildingName</td>
-                                <td>@reigstered.CourseSection.Room.Id</td>
-                            </tr>
-                        }
-                    }
-                </tbody>
-            </table>
+            
+           
         </div>
         <div class="col-sm">
 
         </div>
+    </div>
+    <div class="row">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr lass="bench-row">
+                    <th>CRN</th>
+                    <th>Course Title</th>
+                    <th>Course Time</th>
+                    <th>Days</th>
+                    <th>Professor</th>
+                    <th>Building</th>
+                    <th>Room Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.RegisteredClasses != null)
+                {
+                    foreach (var reigstered in Model.RegisteredClasses)
+                    {
+                        <tr>
+                            <td>@reigstered.CourseSection.Course.Id</td>
+                            <td>@reigstered.CourseSection.Course.CourseTitle</td>
+                            <td>@reigstered.CourseSection.ClassDuration.TimeForClass.Value</td>
+                            <td>@reigstered.CourseSection.ClassDays.Pattern.Value</td>
+                            <td>@reigstered.CourseSection.Professor.Name</td>
+                            <td>@reigstered.CourseSection.Room.Building.BuildingName</td>
+                            <td>@reigstered.CourseSection.Room.Id</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+
     </div>
 </div>
