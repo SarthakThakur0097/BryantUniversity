@@ -84,11 +84,11 @@ namespace BryantUniversity.Data
             //    .HasOptional<Course>(s => s.PreReq)
             //    .WithMany(g => g.MajorPreRequisitesCourses)
             //    .HasForeignKey<int?>(s => s.PreReqId).WillCascadeOnDelete(false);
-            Correct
+            //Correct
             modelBuilder.Entity<MajorPreRequisite>()
                 .HasRequired<Course>(s => s.PreReq)
                 .WithMany(g => g.MajorPreRequisitesCourses)
-                .HasForeignKey<int>(s => s.PreReqId).WillCascadeOnDelete(false);
+                .HasForeignKey<int?>(s => s.PreReqId).WillCascadeOnDelete(false);
 
         }
     }
