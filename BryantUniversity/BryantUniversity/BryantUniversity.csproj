@@ -230,6 +230,7 @@
     <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Controllers\ResearcherController.cs" />
     <Compile Include="Controllers\ScheduleController.cs" />
+    <Compile Include="Controllers\SemesterPeriodController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\TranscriptController.cs" />
     <Compile Include="Data\Context.cs" />
@@ -318,6 +319,7 @@
     <Compile Include="ViewModels\CourseViewModel.cs" />
     <Compile Include="ViewModels\DegreeAuditViewModel.cs" />
     <Compile Include="ViewModels\DropViewModel.cs" />
+    <Compile Include="ViewModels\EditCourseSectionViewModel.cs" />
     <Compile Include="ViewModels\FacultyMoreViewModel.cs" />
     <Compile Include="ViewModels\FacultyViewModel.cs" />
     <Compile Include="ViewModels\GradebookViewModel.cs" />
@@ -332,6 +334,8 @@
     <Compile Include="ViewModels\SemesterCoursesViewModel.cs" />
     <Compile Include="ViewModels\SemesterDetailsViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\SemesterPeriodEditViewModel.cs" />
+    <Compile Include="ViewModels\SemesterPeriodIndexViewModel.cs" />
     <Compile Include="ViewModels\StudentAttendanceViewModel.cs" />
     <Compile Include="ViewModels\StudentDetailsViewModel.cs" />
     <Compile Include="ViewModels\StudentHoldViewModel.cs" />
@@ -375,7 +379,6 @@
     <Content Include="Views\Courses\Delete.cshtml" />
     <Content Include="Views\Registration\Add.cshtml" />
     <Content Include="Views\Grades\AssignGrade.cshtml" />
-    <Content Include="Views\Transcript\Index.cshtml" />
     <Content Include="Views\Holds\Index.cshtml" />
     <Content Include="Views\Holds\Manage.cshtml" />
     <Content Include="Views\Holds\Add.cshtml" />
@@ -410,6 +413,9 @@
     <Content Include="Views\Courses\AddPreq.cshtml" />
     <Content Include="Views\Researcher\StudentStasitics.cshtml" />
     <Content Include="Views\Advisement\Advisees.cshtml" />
+    <Content Include="Views\CourseSection\EditIndex.cshtml" />
+    <Content Include="Views\SemesterPeriod\Index.cshtml" />
+    <Content Include="Views\SemesterPeriod\Edit.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

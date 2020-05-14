@@ -13,13 +13,14 @@ namespace BryantUniversity.ViewModels
         public CourseSection Section { get; set; }
 
         public bool IsPreviousSemesterConflict { get; set; }
-        public bool IsFullTime { get; set; }
+        public bool PartTimeTryFullTime { get; set; }
         public bool UnderGradTryGrad { get; set; }
-        public bool HasTakenPrereq { get; set; }
+        public bool HasNotTakenPrereq { get; set; }
         public bool SpaceLeftInRoom { get; set; }
         public bool HasHold { get; set; }
         public bool SameClass { get; set; }
         public bool TimeConflict { get; set; }
-
+        public bool Success { get; set; }
+        public bool FullTimeOverFlow { get; set; }
     }
 }

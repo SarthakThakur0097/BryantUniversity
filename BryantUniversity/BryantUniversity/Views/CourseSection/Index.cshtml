@@ -7,43 +7,7 @@
 <div class="container">
     <div class="row">
         <div class="col-sm">
-            @if (Model[0].IsPreviousSemesterConflict)
-            {
-                <h5> You can no longer register for this semester </h5>
-            }
-            else if (Model[0].IsFullTime)
-            {
-                <h5> Same class error </h5>
-            }
-            else if (Model[0].UnderGradTryGrad)
-            {
-                <h5>Time conflict error</h5>
-            }
-            else if (Model[0].HasTakenPrereq)
-            {
-                <h5>Please contact Admin to remove Hold</h5>
-            }
-            else if (Model[0].SpaceLeftInRoom)
-            {
-                <h5>You have not taken the required PreRequistes</h5>
-            }
-            else if (Model[0].HasHold)
-            {
 
-                <h5>There are no longer seats available</h5>
-            }
-            else if (Model[0].SameClass)
-            {
-                <h5>Part-Time students can only register for two classes at a time</h5>
-            }
-            else if (Model[0].TimeConflict)
-            {
-                <h5>You need to be a Graduate level student in order to register for this class</h5>
-            }
-            else
-            {
-                <h5>Succesfully Registered</h5>
-            }
         </div>
         <div class="col-md-6">
             @if(Model[0].Section.SemesterPeriod.StartEnrollmentDate > DateTime.Now)
@@ -52,6 +16,10 @@
             } else if (Model[0].Section.SemesterPeriod.EndEnrollmentDate < DateTime.Now)
             {
                 <h2>Enrollment date has closed</h2>
+            }
+            else if((DateTime.Now > Model[0].Section.SemesterPeriod.StartEnrollmentDate ))
+            {
+                <h2>Enrollment Open Until @Model[0].Section.SemesterPeriod.EndEnrollmentDate.ToString("dd.M.yyyy")</h2>
             }
         </div>
         <div class="col-sm">
@@ -101,7 +69,7 @@
                         <td>@courseSection.Section.Room.RoomCapacity</td>
                         @if ((User).IsInRole("4"))
                         {
-                            if (false)
+                            if (Model[0].Section.SemesterPeriod.StartEnrollmentDate > DateTime.Now)
                             {
                                 <td>
                                     <button type="button" disabled class="btn btn-danger">Register</button>
@@ -110,17 +78,10 @@
                             else if (Model[0].Section.SemesterPeriod.StartEnrollmentDate < DateTime.Now)
                             {
                                 <td>
-                                    @using (Html.BeginForm("Add", "Registration", new { id = courseSection.Section.Id, semesterPeriodId = courseSection.Section.SemesterPeriodId  }, FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
+                                    @using (Html.BeginForm("Add", "Registration", new { courseSectionId = courseSection.Section.Id, semesterPeriodId = courseSection.Section.SemesterPeriodId  }, FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
                                     {
-                                        <div class="row">
-                                            <div class="col-sm">
-                                                <button type="submit" class="btn btn-success">Submit</button>
-                                            </div>
-                                            <div class="col-sm">
-                                            </div>
-
-                                            <div class="col-md-5">
-                                            </div>
+                                        <div >
+                                            <button type="submit" class="btn btn-success">Register</button>
                                         </div>
                                     }
                                 </td>
