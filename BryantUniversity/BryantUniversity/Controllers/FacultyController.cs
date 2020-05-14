@@ -285,19 +285,30 @@ namespace BryantUniversity.Controllers
 
         public ActionResult Assign(int id, int facultyId)
         {
-            
-            Advisor advisor;
+            if (ModelState.IsValid)
+            { 
+                using (context)
+                {
+                    AdviserRepo repository = new AdviserRepo(context);
+                    Advisor check = repository.GetADvisorByUserAndFacultyId(id, facultyId);
 
-            using (context)
-            {
+                    if(check != null)
+                    {
+                        
 
-                advisor = new Advisor(facultyId, id);
+                    }
+                    else
+                    {
+                        Advisor advisor;
+                        advisor = new Advisor(facultyId, id);
+                        repository.Insert(advisor);
+                    }
 
-                AdviserRepo repository = new AdviserRepo(context);
-                repository.Insert(advisor);
+                }
 
-                return RedirectToAction("Index", "Faculty");
             }
+            return RedirectToAction("Index", "Faculty");
+
         }
 
         [HttpGet]

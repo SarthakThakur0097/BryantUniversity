@@ -228,6 +228,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MajorsController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
+    <Compile Include="Controllers\ResearcherController.cs" />
     <Compile Include="Controllers\ScheduleController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\TranscriptController.cs" />
@@ -311,6 +312,7 @@
     <Compile Include="ViewModels\AssignGradeViewModel.cs" />
     <Compile Include="ViewModels\AttendancebookViewModel.cs" />
     <Compile Include="ViewModels\AttendanceViewModel.cs" />
+    <Compile Include="ViewModels\CourseDeleteViewModel.cs" />
     <Compile Include="ViewModels\CoursePreReqViewModel.cs" />
     <Compile Include="ViewModels\CourseSectionViewModel.cs" />
     <Compile Include="ViewModels\CourseViewModel.cs" />
@@ -405,6 +407,9 @@
     <Content Include="Views\Advisement\Index.cshtml" />
     <Content Include="Views\Courses\Majors.cshtml" />
     <Content Include="Views\Majors\Index.cshtml" />
+    <Content Include="Views\Courses\AddPreq.cshtml" />
+    <Content Include="Views\Researcher\StudentStasitics.cshtml" />
+    <Content Include="Views\Advisement\Advisees.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

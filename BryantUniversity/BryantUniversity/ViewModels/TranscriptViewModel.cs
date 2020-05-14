@@ -11,6 +11,7 @@ namespace BryantUniversity.ViewModels
             AllGradesClasses = new List<Grade>();
 
         }
+        public int TotalCredits { get; set; }
         public float TermGpa { get; set; }
         public float CumulativeGpa { get; set; }
         public int PeriodId { get; set; }

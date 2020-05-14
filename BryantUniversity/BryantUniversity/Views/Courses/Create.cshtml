@@ -28,6 +28,10 @@
 
                 <fieldset>
                     <div class="pure-controls">
+                        @if(Model.SameTitleId)
+                        {
+                            <h5>A course with this ID already exists</h5>
+                        }
                         @Html.LabelFor(model => model.CourseTitleId)
                         @Html.EditorFor(model => model.CourseTitleId, new { htmlAttributes = new { @class = "form-control" } })
                         @Html.ValidationMessageFor(model => model.CourseTitleId, "", new { @class = "pure-form-message-inline" })

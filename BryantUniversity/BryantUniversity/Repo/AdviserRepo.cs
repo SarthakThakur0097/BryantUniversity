@@ -34,6 +34,16 @@ namespace BryantUniversity.Repo
                 .ToList();
         }
 
+
+        public IList<Advisor> GetAllAdviseesFromAdvisorId(int id)
+        {
+            return _context.Advisors
+                .Include(b => b.Faculty)
+                .Include(b => b.Student)
+                .Where(b => b.FacultyId == id)
+                .ToList();
+        }
+
         public IList<Advisor> GetAllAdvisors()
         {
             return _context.Advisors
@@ -47,6 +57,11 @@ namespace BryantUniversity.Repo
             return _context.Advisors.FirstOrDefault(c => c.Id == advisorId);
         }
 
+        public Advisor GetADvisorByUserAndFacultyId(int userId, int facultyId)
+        {
+            return _context.Advisors
+                .FirstOrDefault(c => c.Id == userId && c.Id == facultyId);
+        }
 
         public void Update(Advisor advisor)
         {

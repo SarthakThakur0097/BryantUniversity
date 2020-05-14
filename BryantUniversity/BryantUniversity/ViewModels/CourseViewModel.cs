@@ -18,14 +18,14 @@ namespace BryantUniversity.ViewModels
         public string CourseTitleId { get; set; }
         [Display(Name = "Course Title")]
         public string CourseTitle { get; set; }
-
+        public int CoursePrereqId { get; set; }
         public string Description { get; set; }
         public int Credits { get; set; }
         public CourseLevel CourseLevel { get; set; }
         public IList<Course> Courses { get; set; }
         public IList<SemesterPeriod> SemesterPeriods { get; set; }
         public int ChosenPattern { get; set; }
-
+        public bool SameTitleId { get; set; }
         [Display(Name = "Department: ")]
         public int DepartmentId { get; set; }
 

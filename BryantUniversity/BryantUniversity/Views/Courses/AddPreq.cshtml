@@ -1,4 +1,4 @@
-﻿@model BryantUniversity.ViewModels.MajorRequirementsViewModel
+﻿@model BryantUniversity.ViewModels.CourseViewModel
 @{
     ViewBag.Title = "Index";
 }
@@ -9,7 +9,7 @@
 
         </div>
         <div class="col-sm">
-            <h2>Requirements for: @Model.Requirements[0].Major.Title</h2>
+            <h2>Add preq from courses in @Model.Courses[0].Department.Name</h2>
         </div>
         <div class="col-md-5">
 
@@ -36,36 +36,38 @@
             <table class="table">
                 <thead class="thead-dark">
                     <tr lass="bench-row">
-                        <th>Course Id</th>
+                        <th>CRN</th>
+                        <th>Course ID</th>
                         <th>Course Title</th>
                         <th>Description</th>
                         <th>Credits</th>
-                        <th>Prerequisite</th>
+                        <th>Level</th>
+                        <th>Department</th>
+                        <th></th>
+                        <th></th>
+                        <th></th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody id="myTable">
-                    @foreach (var requirement in Model.Requirements)
+                    @foreach (var course in Model.Courses)
                     {
                         <tr>
-                            <td>@requirement.Course.CourseTitleId</td>
-                            <td>@requirement.Course.CourseTitle</td>
-                            <td>@requirement.Course.Description</td>
-                            <td>@requirement.Course.Credits</td>
-                            @if(requirement.Course.CourseMajorPreRequisites != null)
-                            {
-                                foreach(var course in requirement.Course.CourseMajorPreRequisites)
-                                { 
-                                    if (course.PreReq == null)
-                                    {
-                                        <td></td>
-                                    }
-                                    else
-                                    {
-                                        <td>@course.PreReq.CourseTitleId </td>
-                                    }
+                            <td>@course.Id</td>
+                            <td>@course.CourseTitleId</td>
+                            <td>@course.CourseTitle</td>
+                            <td>@course.Description</td>
+                            <td>@course.Credits</td>
+                            <td>@course.CourseLevel.Level.Value</td>
+                            <td>@course.Department.Name</td>
+                            <td>
+                                @using (Html.BeginForm("AddPreqPost", "courses", new {courseId = Model.CoursePrereqId, prereqId = course.Id}, FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
+                                {
+                                    <div class="col-sm">
+                                        <button type="submit" class="btn btn-success">Add</button>
+                                    </div>
                                 }
-                            }
+                            </td>
                         </tr>
                     }
                 </tbody>

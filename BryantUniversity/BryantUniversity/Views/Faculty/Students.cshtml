@@ -13,6 +13,8 @@
             <th></th>
             <th></th>
             <th></th>
+            <th></th>
+            <th></th>
         </tr>
     </thead>
 
@@ -30,6 +32,23 @@
                 </td>
                 <td>
                     @Html.ActionLink("view attendance", "Attendancebook", "Student", new { id = student.User.Id, cid = student.CourseSectionId }, new { @class = "btn btn-primary" })
+                </td>
+                <td>
+                    @using (Html.BeginForm("Schedule", "Student", new { id = student.UserId }, FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
+                    {
+                            <div >
+                                <button type="submit" class="btn btn-success">Schedule</button>
+                            </div>
+
+                    }
+                </td>
+                <td>
+                    @using (Html.BeginForm("TranscriptAdmin", "Student", new { id = student.UserId }, FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
+                    {
+                            <div >
+                                <button type="submit" class="btn btn-success">Transcript</button>
+                            </div>
+                    }
                 </td>
             </tr>
         }

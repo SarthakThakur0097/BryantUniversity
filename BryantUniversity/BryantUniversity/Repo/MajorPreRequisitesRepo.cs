@@ -24,6 +24,16 @@ namespace BryantUniversity.Repo
                         .FirstOrDefault(c => c.Id == id);
         }
 
+        public IList<MajorPreRequisite> GetByPrereqId(int id)
+        {
+            return _context
+                        .MajorPreRequisites
+                        .Include(m => m.PreReq)
+                        .Include(m => m.Course)
+                        .Where(c => c.PreReqId == id)
+                        .ToList();
+        }
+
         public IList<MajorPreRequisite> GetAllMajorPrequisites()
         {
             return _context
@@ -64,6 +74,17 @@ namespace BryantUniversity.Repo
                         .ToList();
         }
 
+        public IList<MajorPreRequisite> GetAllMajorPrequisitesForCourse(int id)
+        {
+            return _context
+                        .MajorPreRequisites
+                        .Include(m => m.PreReq)
+                        .Include(m => m.Course)
+                        .Include(m => m.Course.CourseLevel)
+                        .Where(m => m.Course.Id == id)
+                        .ToList();
+        }
+
 
         public void Insert(MajorPreRequisite majorPrequisites)
         {
@@ -76,15 +97,21 @@ namespace BryantUniversity.Repo
         public void Update(MajorPreRequisite majorPrequisites)
         {
             _context
-                .MajorPreRequisites
-                .Attach(majorPrequisites);
+            .MajorPreRequisites
+            .Attach(majorPrequisites);
             _context.Entry(majorPrequisites).State = EntityState.Modified;
             _context.SaveChanges();
         }
 
-        public void Delete(int id)
+        public void Delete(MajorPreRequisite relationship)
         {
+            MajorPreRequisitesRepo repo;
 
+            repo = new MajorPreRequisitesRepo(_context);
+
+            _context.MajorPreRequisites.Attach(relationship);
+            _context.MajorPreRequisites.Remove(relationship);
+            _context.SaveChanges();
         }
     }
 }

@@ -10,7 +10,7 @@
 
         </div>
         <div class="col-sm">
-            <h2>All Advisements</h2>
+            <h2>All Advisees For @Model.AllAdvisees[0].Faculty.Name</h2>
         </div>
         <div class="col-md-5">
 
@@ -30,27 +30,18 @@
         <table class="table">
             <thead class="thead-dark">
                 <tr>
-                    <th>Faculty Id</th>
+                    <th>Student Id</th>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>View</th>
                 </tr>
             </thead>
             <tbody id="myTable">
-                @foreach (var faculty in Model.AllFaculty)
+                @foreach (var advisee in Model.AllAdvisees)
                 {
                     <tr>
-                        <td>@faculty.Id</td>
-                        <td>@faculty.Name</td>
-                        <td>@faculty.Email</td>
-                        <td>
-                            @using (Html.BeginForm("Advisees", "Advisement", new { id = faculty.Id }, FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
-                            {
-                                <div>
-                                    <button type="submit" class="btn btn-primary">Advisees</button>
-                                </div>
-                            }
-                        </td>
+                        <td>@advisee.StudentId</td>
+                        <td>@advisee.Student.Name</td>
+                        <td>@advisee.Student.Email</td>
                     </tr>
                 }
             </tbody>

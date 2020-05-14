@@ -49,10 +49,10 @@
                     @foreach (var attendance in Model.Students)
                     {
                         <tr>
-                            <td>@attendance.User.Name</td>
-                            <td>@attendance.User.Email</td>
-                            <td>@attendance.Course.Course.CourseTitleId</td>
-                            <td>@attendance.Course.Professor.Name</td>
+                            <td>@attendance.Registration.User.Name</td>
+                            <td>@attendance.Registration.User.Email</td>
+                            <td>@attendance.Registration.CourseSection.Course.CourseTitle</td>
+                            <td>@attendance.Registration.CourseSection.Professor.Name</td>
                             <td>@attendance.DateOfClass</td>
                                 
                             @if (attendance.IsPresent)
