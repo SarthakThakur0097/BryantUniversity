@@ -71,137 +71,123 @@ namespace BryantUniversity.Controllers
                 hRepo = new StudentHoldRepo(context);
                 mprRepo = new MajorPreRequisitesRepo(context);
                 gRepo = new GradesRepo(context);
-                StudentLevel studentLevel = sLRepo.GetLevelByUserId(studentId);
-                StudentTimeType studentTimeType = stRepo.GetStudentTimeTypeUserId(studentId);
-
+                StudentLevel studentLevel = sLRepo.GetLevelByUserId(CustomUser.User.Id);
+                int totRegisteredSoFar = 0;
+                StudentTimeType studentTimeType = stRepo.GetStudentTimeTypeUserId(CustomUser.User.Id);
+                IList<Registration> studentRegistered = rRepo.GetRegistrationByUserIdAndPeriodId(studentId, 1);
                 toAdd = csRepo.GetCourseSectionById(coursectionId);
                 CourseSection roomCheck = csRepo.GetCourseSectionById(coursectionId);
-                IList<Registration> allRegisteredSoFar = rRepo.GetRegistrationByUserAndCourseSection(studentId, roomCheck.SemesterPeriodId);
+                IList<Registration> allRegisteredSoFar = rRepo.GetRegistrationByUserAndCourseSection(CustomUser.User.Id, roomCheck.SemesterPeriodId);
+                totRegisteredSoFar = studentRegistered.Count;
                 IList<Registration> allRegistrationsforSection = rRepo.GetRegistrationsByCourseSectionId(coursectionId);
                 IList<MajorPreRequisite> allReqs = mprRepo.GetAllMajorPrequisitesByCourse(toAdd.Course.Id);
-                IList<Grade> allTakenCourses = gRepo.GetAllGradesByUserId(CustomUser.User.Id);
 
-                //public ActionResult IndexAdmin(int id, int studentId, int semesterPeriodId)
+                IList<Grade> allTakenCourses = gRepo.GetAllGradesByUserId(CustomUser.User.Id);
 
                 if (toAdd.SemesterPeriodId != 1)
                 {
                     TempData["IsPreviousSemesterConflict"] = true;
 
-                    return RedirectToAction("Index", "CourseSection", new
-                    {
-                        id = roomCheck.Id,
-                        studentId = studentId,
-                        SemesterPeriodId = roomCheck.SemesterPeriodId
-                    });
+                    return RedirectToAction("Index", "Schedule");
                 }
-                else if (studentTimeType.TimeTypes.TimeType != TimeType.FullTime)
-                {
-                    TempData["IsFullTime"] = true;
+                //else if(studentTimeType.TimeTypes.TimeType == TimeType.PartTime && totRegisteredSoFar>=2)
+                //{
+                //    TempData["PartTimeTryFullTime"] = true;
 
-                    return RedirectToAction("IndexAdmin", "CourseSection", new
-                    {
-                        id = roomCheck.Id,
-                        studentId = studentId,
-                        SemesterPeriodId = roomCheck.SemesterPeriodId
-                    });
-                }
-                else if (studentLevel.CourseLevel.Level == Level.Undergraduate && toAdd.Course.CourseLevel.Level == Level.Graduate)
+                //    return RedirectToAction("Index", "Schedule", new
+                //    {
+                //        id = roomCheck.CourseId,
+                //        semesterPeriodId = semesterPeriodId
+                //    });
+                //}
+                else if (totRegisteredSoFar >= 4)
                 {
-                    TempData["UnderGradTryGrad"] = true;
+                    TempData["FullTimeOverFlow"] = true;
 
-                    return RedirectToAction("Index", "CourseSection", new
-                    {
-                        id = roomCheck.Id,
-                        studentId = studentId,
-                        SemesterPeriodId = roomCheck.SemesterPeriodId
-                    });
+                    return RedirectToAction("Index", "Schedule");
                 }
+                //else if(studentLevel.CourseLevel.Level == Level.Undergraduate && toAdd.Course.CourseLevel.Level == Level.Graduate)
+                //{
+                //    TempData["UnderGradTryGrad"] = true;
+
+                //    return RedirectToAction("Index", "CourseSection", new
+                //    {
+                //        id = roomCheck.CourseId,
+                //        semesterPeriodId = semesterPeriodId
+                //    });
+                //}
                 else if (allReqs.Count > 0 && allTakenCourses.Count == 0)
                 {
 
-                    TempData["HasTakenPrereq"] = true;
+                    TempData["HasNotTakenPrereq"] = true;
 
-                    return RedirectToAction("Index", "CourseSection", new
-                    {
-                        id = roomCheck.Id,
-                        studentId = studentId,
-                        SemesterPeriodId = roomCheck.SemesterPeriodId
-                    });
+                    return RedirectToAction("Index", "Schedule");
                 }
                 else if (allRegistrationsforSection.Count >= roomCheck.Room.RoomCapacity)
                 {
                     TempData["SpaceLeftInRoom"] = false;
 
-                    return RedirectToAction("Index", "CourseSection", new
-                    {
-                        id = roomCheck.Id,
-                        studentId = studentId,
-                        SemesterPeriodId = roomCheck.SemesterPeriodId
-                    });
+                    return RedirectToAction("Index", "Schedule");
                 }
-                foreach (var req in allReqs)
-                {
-                    foreach (var takenCourse in allTakenCourses)
-                    {
 
-                        if (takenCourse.Registration.CourseSection.CourseId != req.CourseId)
-                        {
-                            TempData["SpaceLeftInRoom"] = false;
-
-                            return RedirectToAction("Index", "CourseSection", new
-                            {
-                                id = roomCheck.Id,
-                                studentId = studentId,
-                                SemesterPeriodId = roomCheck.SemesterPeriodId
-                            });
-                        }
-                    }
-                }
 
                 studentHolds = hRepo.GetAllStudentHoldsByUserId(CustomUser.User.Id);
 
                 if (studentHolds.Count > 0)
                 {
-                    TempData["HasHold"] = false;
+                    TempData["HasHold"] = true;
 
-                    return RedirectToAction("Index", "CourseSection", new
-                    {
-                        id = roomCheck.Id,
-                        studentId = studentId,
-                        SemesterPeriodId = roomCheck.SemesterPeriodId
-                    });
+                    return RedirectToAction("Index", "Schedule");
                 }
+
                 SemesterPeriod toAddPeriod = toAdd.SemesterPeriod;
 
-                IList<Registration> registrations = rRepo.GetRegistrationByUserAndCourseSection(studentId, roomCheck.Id);
+                IList<Registration> registrations = rRepo.GetRegistrationByUserAndCourseSection(CustomUser.User.Id, coursectionId);
                 IList<CourseSection> registeredCourseSections = new List<CourseSection>();
 
                 foreach (Registration registration in registrations)
                 {
-                    if (registration.CourseSectionId == roomCheck.Id)
+                    if (registration.CourseSectionId == coursectionId)
                     {
-                        TempData["AlreadyTaking"] = false;
-                        return RedirectToAction("Index", "CourseSection", new
-                        {
-                            id = roomCheck.Id,
-                            studentId = studentId,
-                            SemesterPeriodId = roomCheck.SemesterPeriodId
-                        });
+                        TempData["SameClass"] = false;
+                        return RedirectToAction("Index", "Schedule");
                     }
                     else if (registration.CourseSection.SemesterPeriod == toAddPeriod)
                     {
-                        TempData["AnotherClassConflict"] = false;
-                        return RedirectToAction("Index", "CourseSection", new
+                        TempData["TimeConflict"] = false;
+                        return RedirectToAction("Index", "Schedule");
+                    }
+
+                    foreach (var req in allReqs)
+                    {
+                        foreach (var takenCourse in allTakenCourses)
                         {
-                            id = roomCheck.Id,
-                            studentId = studentId,
-                            SemesterPeriodId = roomCheck.SemesterPeriodId
-                        });
+
+                            if (takenCourse.Registration.CourseSection.CourseId == req.CourseId)
+                            {
+                                TempData["Success"] = true;
+
+                                Registration userCourseSection = new Registration(CustomUser.User.Id, toAdd.Id);
+                                rRepo.Insert(userCourseSection);
+                                return RedirectToAction("Index", "Schedule");
+                            }
+                            else
+                            {
+                                TempData["NotTakePreqs"] = true;
+                                return RedirectToAction("Index", "Schedule");
+                            }
+                        }
                     }
                 }
+                if (registrations.Count == 0 && allReqs.Count == 0)
+                {
+                    TempData["Success"] = true;
 
-                Registration userCourseSection = new Registration(studentId, toAdd.Id);
-                rRepo.Insert(userCourseSection);
+                    Registration userCourseSection = new Registration(CustomUser.User.Id, toAdd.Id);
+                    rRepo.Insert(userCourseSection);
+                    return RedirectToAction("Index", "Schedule");
+                }
+
             }
             return RedirectToAction("Index", "Schedule");
         }

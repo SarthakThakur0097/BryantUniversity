@@ -145,9 +145,13 @@ namespace BryantUniversity.Controllers
                 allRegisterations = rRepo.GetRegistrationByUserIdAndPeriodId(CustomUser.User.Id, 1);
                 foreach (var grade in allRegisterations)
                 {
-                    if (gRepo.GetGradeByRegistrationId(grade.Id).LetterGrade == null)
+                    Grade checkGrade = gRepo.GetGradeByRegistrationId(grade.Id);
+                    if (checkGrade != null)
                     {
-                        nonGraded.Add(grade);
+                        if (checkGrade.LetterGrade == null)
+                        {
+                            nonGraded.Add(grade);
+                        }
                     }
                 }
                 viewModel.NonGraded = nonGraded;
