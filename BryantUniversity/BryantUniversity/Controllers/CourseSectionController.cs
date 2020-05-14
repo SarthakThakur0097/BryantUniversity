@@ -143,14 +143,15 @@ namespace BryantUniversity.Controllers
                     RedirectToAction("Index", "CourseSection", new { Id = Id, semesterPeriodId = semesterPeriodId });
                 }
             }
-            CourseSectionRepo csRepo;
-            RegistrationRepo rRepo;
-            IList<CourseSection> courseSections;
-            IList<Registration> allRegisteredUsers;
-            IList<SectionRegistrationViewModel> AllSections = new List<SectionRegistrationViewModel>();
 
             using (context)
             {
+                CourseSectionRepo csRepo;
+                RegistrationRepo rRepo;
+                IList<CourseSection> courseSections;
+                IList<Registration> allRegisteredUsers;
+                IList<SectionRegistrationViewModel> AllSections = new List<SectionRegistrationViewModel>();
+
                 rRepo = new RegistrationRepo(context);
                 csRepo = new CourseSectionRepo(context);
 
@@ -160,15 +161,15 @@ namespace BryantUniversity.Controllers
                 {
                     allRegisteredUsers = rRepo.GetRegistrationBySectionIdAndPeriodId(section.Id, semesterPeriodId);
                     int roomsLeft = section.Room.RoomCapacity - allRegisteredUsers.Count;
-
+                    viewModel = new SectionRegistrationViewModel();
                     viewModel.Section = section;
                     viewModel.SeatsRemaining = roomsLeft;
                        
                
                     AllSections.Add(viewModel);
                 }
+                return View("Index", AllSections);
             }
-            return View("Index", AllSections);
         }
     }
 }
