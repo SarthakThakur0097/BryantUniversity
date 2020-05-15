@@ -11,8 +11,6 @@
         let time = gebi("datetimepicker1")
         chosenTime = time.childNodes[1];
         console.log(time.childNodes[1].value)
-       
-
     }
 
     submitButton.onclick = function(){

@@ -15,6 +15,7 @@
             <th></th>
             <th></th>
             <th></th>
+            <th></th>
         </tr>
     </thead>
 
@@ -43,12 +44,10 @@
                     }
                 </td>
                 <td>
-                    @using (Html.BeginForm("TranscriptAdmin", "Student", new { id = student.UserId }, FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
-                    {
-                            <div >
-                                <button type="submit" class="btn btn-success">Transcript</button>
-                            </div>
-                    }
+                    @Html.ActionLink("Transcript", "TranscriptAdmin", "Student", new { id = student.User.Id }, new { @class = "btn btn-primary" })
+                </td>
+                <td>
+                    @Html.ActionLink("Degree Audit", "DegreeAuditAdmin", "Student", new { id = student.User.Id }, new { @class = "btn btn-primary" })
                 </td>
             </tr>
         }
