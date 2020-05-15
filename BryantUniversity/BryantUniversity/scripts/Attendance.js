@@ -54,7 +54,7 @@
         let studentId = parseInt(gebi("datacontainer").dataset.studentId);
 
         try{
-            const response = await fetch('http://localhost:51934/api/Attendance/' + month + '/day/' + day + '/year/' + year + '/section/' +sectionId + '/student/' + studentId + '/present/' + present, {
+            const response = await fetch('https://bryantweb.azurewebsites.net/api/Attendance/' + month + '/day/' + day + '/year/' + year + '/section/' +sectionId + '/student/' + studentId + '/present/' + present, {
                 method: "POST",
                 credentials: "include",
                 headers: {
