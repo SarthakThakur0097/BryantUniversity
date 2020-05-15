@@ -1,0 +1,97 @@
+﻿@model BryantUniversity.ViewModels.CoursePreReqViewModel
+@{
+    ViewBag.Title = "Catalog";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+
+        </div>
+        <div class="col-sm">
+            <h2>Catalog</h2>
+        </div>
+        <div class="col-md-5">
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm">
+
+        </div>
+        <div class="col-sm">
+            <p>
+                @Html.ActionLink("Add Prereq", "AddPreq", new {courseId = Model.CoursesAndPreReqs[0].CourseId, departmentId = Model.CoursesAndPreReqs[0].Course.DepartmentId }, new { @class = "btn btn-success" })
+            </p>
+        </div>
+
+        <div class="col-md-5">
+            <input id="myInput" class="form-control" type="text" placeholder="Search..">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            @if (Model.CoursesAndPreReqs != null)
+            {
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Course Id</th>
+                            <th>Course Name</th>
+                            <th>Description</th>
+                            <th>Course Level</th>
+                            <th>Department Name</th>
+                            <th>Credits</th>
+                            <th>Prerequisite</th>
+                            <th>Course Id</th>
+                            <th>Name</th>
+                            <th></th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="myTable">
+                        @foreach (var course in Model.CoursesAndPreReqs)
+                        {
+                            <tr>
+                                <td>@course.Course.CourseTitleId</td>
+                                <td>@course.Course.CourseTitle</td>
+                                <td>@course.Course.Description</td>
+                                <td>@course.Course.CourseLevel.Level.Value</td>
+                                <td>@course.Course.Department.Name</td>
+                                <td>@course.Course.Credits</td>
+                                <td></td>
+                                @if (course.PreReq == null)
+                                {
+                                    <td></td>
+                                }
+                                else
+                                {
+                                    <td>@course.PreReq.CourseTitleId</td>
+                                    <td>@course.PreReq.CourseTitle</td>
+                                    <td>
+                                        @Html.ActionLink("Delete", "DeletePrereq", new { id = course.Id }, new { @class = "btn btn-danger" })
+                                    </td>
+                                }
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+        </div>
+    </div>
+</div>
+
+<script src="~/scripts/Schedule.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>

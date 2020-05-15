@@ -1,0 +1,75 @@
+﻿@model BryantUniversity.ViewModels.StudentDetailsViewModel
+@{
+    ViewBag.Title = "StudentDetails";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+        </div>
+        <div class="col-sm">
+        </div>
+        <div class="col-sm">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+
+        </div>
+        <div class="col-sm">
+
+        </div>
+        <div class="col-md-5">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+        </div>
+        <div class="col-md-5">
+            @if (Model.AllGradesClasses.Count == 0)
+            {
+                <h1>Student has no classes registered for this semester</h1>
+            }
+            <h1>SCHEDULE for @Model.Student.Name</h1>
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr lass="bench-row">
+                        <th>CRN</th>
+                        <th>Course Title</th>
+                        <th>Course Time</th>
+                        <th>Days</th>
+                        <th>Professor</th>
+                        <th>Building</th>
+                        <th>Room Number</th>
+                        <th>Semester</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.AllGradesClasses != null)
+                    {
+                        foreach (var studentClass in Model.AllGradesClasses)
+                        {
+                            <tr>
+                                <td>@studentClass.Registration.CourseSection.Course.Id</td>
+                                <td>@studentClass.Registration.CourseSection.Course.CourseTitle</td>
+                                <td>@studentClass.Registration.CourseSection.ClassDuration.TimeForClass.Value</td>
+                                <td>@studentClass.Registration.CourseSection.ClassDays.Pattern.Value</td>
+                                <td>@studentClass.Registration.CourseSection.Professor.Name</td>
+                                <td>@studentClass.Registration.CourseSection.Room.Building.BuildingName</td>
+                                <td>@studentClass.Registration.CourseSection.Room.Id</td>
+                                <td>@studentClass.Registration.CourseSection.SemesterPeriod.Period.Value</td>
+
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm">
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,116 @@
+﻿@model BryantUniversity.ViewModels.GradesViewModel
+
+@{
+    ViewBag.Title = "Grades";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+
+        </div>
+        <div class="col-md-5">
+            <h4>MY GRADES</h4>
+        </div>
+        <div class="col-sm">
+
+        </div>
+    </div>
+@using (Html.BeginForm("Grades", "Student", FormMethod.Post, new { @class = "pure-form pure-form-aligned", id = "" }))
+{
+    <div class="row">
+        <div class="col-sm">
+
+        </div>
+
+        <div class="col-md-6">
+
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PeriodId, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.DropDownListFor(model => model.PeriodId, Model.PeriodList, "Period", new { @class = "form-control", id = "period-list" })
+                        @Html.ValidationMessageFor(model => model.PeriodId, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                        </div>
+                    </div>
+                    
+                </div>
+            
+        </div>
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+
+    </div>
+}
+    <div class="row">
+        <div class="col-sm">
+            @if (Model.CumulativeGpa == -1)
+            {
+               <h1>Cumulative GPA: No Graded Classes</h1>
+            }
+            else
+            {
+                <h1>Cumulative GPA: @Model.CumulativeGpa</h1>
+            }
+        </div>
+        <div class="col-md-6">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr lass="bench-row">
+                        <th>Course Title</th>
+                        <th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Grades != null)
+                    {
+                        if (Model.Grades.Count > 0)
+                        {
+                            foreach (var course in Model.Grades)
+                            {
+                                <tr>
+                                    <td>@course.Registration.CourseSection.Course.CourseTitle</td>
+                                    @if (course.LetterGrade != null)
+                                    {
+                                        <td>@course.LetterGrade.GradeVal.Value</td>
+                                    }
+                                    else
+                                    {
+                                        <td>Pending</td>
+                                    }
+                                </tr>
+                            }
+                        }
+                    }
+                    @if (Model.RegisteredClasses != null)
+                    {
+                        if (Model.RegisteredClasses.Count > 0 && Model.Grades.Count == 0)
+                        {
+                            foreach (var course in Model.RegisteredClasses)
+                            {
+                            <tr>
+                                <td>@course.CourseSection.Course.CourseTitle</td>
+                                <td>Pending</td>
+
+                            </tr>
+                            }
+                            @Html.ActionLink("Drop a course", "Drop", "Student", new {}, new { @class = "btn btn-info" })
+
+                        }
+                    }
+                    <tr>
+                         @if (Model.SemesterGpa == -1){<td>Term GPA:TBA</td>}else{<td>Term GPA:@Model.SemesterGpa</td>}
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-sm">
+
+        </div>
+    </div>
+</div>

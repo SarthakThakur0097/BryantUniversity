@@ -1,0 +1,38 @@
+﻿@model IList<BryantUniversity.Models.CourseSection>
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@Model[0].Course.Level : @Model[0].Course.CourseTitle</h2>
+<h3>@Model[0].Course.Description</h3>
+<h3>@Model[0].Course.Department.Name</h3>
+
+<table>
+    <tr>
+        <th>Section #</th>
+        <th>Period</th>
+        <th>Time</th>
+        <th>Professor</th>
+        <th>Building</th>
+        <th>Room</th>
+        <th>Credits</th>
+    </tr>
+
+    <tbody>
+        @foreach (var courseSection in Model)
+        {
+            <tr>
+
+                <td>@courseSection.SemesterPeriod.Period.Value</td>
+                <td>@courseSection.Professor.Name</td>
+                <td>@courseSection.Room.RoomType</td>
+                <td>@courseSection.Course.Credits</td>
+                <td>
+                    @Html.ActionLink("Enroll", "Add", new { id = courseSection.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

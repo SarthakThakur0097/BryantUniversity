@@ -1,0 +1,66 @@
+﻿@model IList<BryantUniversity.Models.Course>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+
+        </div>
+        <div class="col-sm">
+            <h2>All Courses</h2>
+        </div>
+        <div class="col-md-5">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+            <input id="myInput" class="form-control" type="text" placeholder="Search..">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>Level</th>
+                        <th>Course Name</th>
+                        <th>Description</th>
+                        <th>Department Name</th>
+                        <th>Credits</th>
+                    </tr>
+                </thead>
+                <tbody id="myTable">
+                    @foreach (var course in Model)
+                    {
+                        <tr>
+                            <td>@course.CourseLevel.Level.Value</td>
+                            <td>@course.CourseTitle</td>
+                            <td>@course.Description</td>
+                            <td>@course.Department.Name</td>
+                            <td>@course.Credits</td>
+                            <td>
+                                @Html.ActionLink("See Sections", "Index", "CourseSection", new { id = course.Id }, new { @class = "btn btn-info" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</div>
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>

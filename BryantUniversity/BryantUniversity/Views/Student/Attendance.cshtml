@@ -1,0 +1,49 @@
+﻿@model BryantUniversity.ViewModels.StudentAttendanceViewModel
+@{
+    ViewBag.Title = "Attendance";
+}
+
+<div id="datacontainer" data-registration-id="@Model.Registration.Id" data-student-id="@Model.Registration.UserId"></div>
+<h1>Attendance For: @Model.Registration.User.Name</h1>
+<table class="table">
+    <thead class="thead-dark">
+        <tr lass="bench-row">
+            <th>Student</th>
+            <th>CourseId</th>
+            <th>Course Title</th>
+        </tr>
+    </thead>
+    <tbody>
+            <tr>
+                <td>@Model.Registration.User.Name</td>
+                <td>@Model.Registration.CourseSection.Course.CourseTitleId</td>
+                <td>@Model.Registration.CourseSection.Course.CourseTitle</td>
+
+            </tr>
+    </tbody>
+</table>
+<div class="container">
+    <div class="row">
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group date' id='datetimepicker1'>
+                    <input id ="dateTimeText" type='text' class="form-control" />
+                    <span id ="dateTimeText" class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#datetimepicker1').datetimepicker();
+            });
+        </script>
+    </div>
+</div>
+<button id="attended" data-time-string="" type="button" class="btn btn-success">Attended</button>
+
+<button id="absent" data-time-string="" type="button" class="btn btn-danger">Absent</button>
+
+<script src="~/scripts/Attendance.js"></script>
+

@@ -1,0 +1,97 @@
+﻿@model IList<BryantUniversity.ViewModels.SectionRegistrationViewModel>
+
+@{
+    ViewBag.Title = "IndexCourse";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+
+        </div>
+        <div class="col-md-6">
+            @if(Model[0].Section.SemesterPeriod.StartEnrollmentDate > DateTime.Now)
+            {
+                <h2>Enrollment has not yet opened</h2>
+            } else if (Model[0].Section.SemesterPeriod.EndEnrollmentDate < DateTime.Now)
+            {
+                <h2>Enrollment date has closed</h2>
+            }
+            else if((DateTime.Now > Model[0].Section.SemesterPeriod.StartEnrollmentDate ))
+            {
+                <h2>Enrollment Open Until @Model[0].Section.SemesterPeriod.EndEnrollmentDate.ToString("dd.M.yyyy")</h2>
+            }
+        </div>
+        <div class="col-sm">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm">
+        </div>
+        <div class="col-md-6">
+
+        </div>
+        <div class="col-sm">
+        </div>
+    </div>
+    <div class="row">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr lass="bench-row">
+                    <th>Course Section</th>
+                    <th>Course Title</th>
+                    <th>Credits</th>
+                    <th>Duration</th>
+                    <th>Days</th>
+                    <th>Level</th>
+                    <th>Professor</th>
+                    <th>Room Number</th>
+                    <th>Remaining Seats</th>
+                    <th>Total Seats</th>
+                    <th></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var courseSection in Model)
+                {
+                    <tr>
+                        <td>@courseSection.Section.Id</td>
+                        <td>@courseSection.Section.Course.CourseTitle</td>
+                        <td>@courseSection.Section.Course.Credits</td>
+                        <td>@courseSection.Section.ClassDuration.TimeForClass.Value</td>
+                        <td>@courseSection.Section.ClassDays.Pattern.Value</td>
+                        <td>@courseSection.Section.Course.CourseLevel.Level.Value</td>
+                        <td>@courseSection.Section.Professor.Name</td>
+                        <td>@courseSection.Section.Room.Id</td>
+                        <td>@courseSection.SeatsRemaining</td>
+                        <td>@courseSection.Section.Room.RoomCapacity</td>
+                        @if ((User).IsInRole("4"))
+                        {
+                            if (Model[0].Section.SemesterPeriod.StartEnrollmentDate > DateTime.Now)
+                            {
+                                <td>
+                                    <button type="button" disabled class="btn btn-danger">Register</button>
+                                </td>
+                            }
+                            else if (Model[0].Section.SemesterPeriod.StartEnrollmentDate < DateTime.Now)
+                            {
+                                <td>
+                                    @using (Html.BeginForm("Add", "Registration", new { courseSectionId = courseSection.Section.Id, semesterPeriodId = courseSection.Section.SemesterPeriodId  }, FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
+                                    {
+                                        <div >
+                                            <button type="submit" class="btn btn-success">Register</button>
+                                        </div>
+                                    }
+                                </td>
+                            }
+                        }
+                                
+                            </tr>
+                    }
+            </tbody>
+        </table>
+    </div>
+</div>
+

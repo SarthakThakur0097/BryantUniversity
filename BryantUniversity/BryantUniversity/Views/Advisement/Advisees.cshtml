@@ -1,0 +1,72 @@
+﻿@model BryantUniversity.ViewModels.AdvisorViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+
+        </div>
+        <div class="col-sm">
+            <h2>All Advisees For @Model.AllAdvisees[0].Faculty.Name</h2>
+        </div>
+        <div class="col-md-5">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <div class="md-form mt-0">
+                <input id="myInput" class="form-control" type="text" placeholder="Search..">
+            </div>
+        </div>
+        <div class="col-md-8">
+
+        </div>
+        <div class="col-sm">
+        </div>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Student Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody id="myTable">
+                @foreach (var advisee in Model.AllAdvisees)
+                {
+                    <tr>
+                        <td>@advisee.StudentId</td>
+                        <td>@advisee.Student.Name</td>
+                        <td>@advisee.Student.Email</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div id="tableContainer">
+            <table id="list" class="pure-table pure-table-horizontal">
+                <thead>
+                    <tr></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<script src="~/scripts/user.js"></script>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>

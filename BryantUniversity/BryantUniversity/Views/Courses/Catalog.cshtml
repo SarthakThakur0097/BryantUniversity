@@ -1,0 +1,97 @@
+﻿@model BryantUniversity.ViewModels.CoursePreReqViewModel
+@{
+    ViewBag.Title = "Catalog";
+}
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+
+        </div>
+        <div class="col-sm">
+            <h2>Catalog</h2>
+        </div>
+        <div class="col-md-5">
+
+        </div>
+    </div>
+    @using (Html.BeginForm("Catalog", "Courses", FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="row">
+            <div class="col-sm">
+                @Html.LabelFor(model => model.DepartmentId, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.DropDownListFor(model => model.DepartmentId, Model.DepartmentList, "Department", new { @class = "form-control required", id = "department-list" })
+                @Html.ValidationMessageFor(model => model.DepartmentId)
+
+                <button type="submit" class="btn btn-success">Submit</button>
+            </div>
+            <div class="col-sm">
+
+            </div>
+ 
+            <div class="col-md-5">
+                <input id="myInput" class="form-control" type="text" placeholder="Search..">
+            </div>
+        </div>
+    }
+
+        <div class="row">
+            <div class="col">
+                @if(Model.Courses != null)
+                { 
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Course Id</th>
+                            <th>Course Name</th>
+                            <th>Description</th>
+                            <th>Course Level</th>
+                            <th>Department Name</th>
+                            <th>Credits</th>
+                            <th>Prerequisite</th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="myTable">
+                        @foreach (var course in Model.Courses)
+                        {
+                            <tr>
+                                <td>@course.CourseTitleId</td>
+                                <td>@course.CourseTitle</td>
+                                <td>@course.Description</td>
+                                <td>@course.CourseLevel.Level.Value</td>
+                                <td>@course.Department.Name</td>
+                                <td>@course.Credits</td>
+                                @if(course.CourseMajorPreRequisites.Count > 0)
+                                {
+                                    foreach(var prereq in course.CourseMajorPreRequisites)
+                                    {
+                                        if(prereq.PreReq != null)
+                                        {
+                                            <td>@prereq.PreReq.CourseTitleId</td>
+                                        }
+                                    }
+                                }
+                                <td></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                }
+            </div>
+        </div>
+</div>
+
+<script src="~/scripts/Schedule.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>

@@ -1,0 +1,78 @@
+﻿@model BryantUniversity.ViewModels.StudentHoldViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+
+        </div>
+        <div class="col-sm">
+        </div>
+        <div class="col-md-5">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <div class="md-form mt-0">
+                <input id="myInput" class="form-control" type="text" placeholder="Search..">
+            </div>
+        </div>
+        <div class="col-md-8">
+
+        </div>
+        <div class="col-sm">
+        </div>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Hold Type</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="myTable">
+                @if (Model.UserHolds.Count == 0)
+                {
+                    <tr>
+                        <td>No Holds</td>
+                    </tr>
+                }
+                else
+                {
+                    foreach (var hold in Model.UserHolds)
+                {
+                        <tr>
+                            <td>@hold.Hold.HoldName</td>
+                        </tr>
+                    }
+                }
+
+            </tbody>
+        </table>
+
+        <div id="tableContainer">
+            <table id="list" class="pure-table pure-table-horizontal">
+                <thead>
+                    <tr></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>

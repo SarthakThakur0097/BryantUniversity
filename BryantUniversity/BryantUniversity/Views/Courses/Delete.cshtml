@@ -1,0 +1,65 @@
+﻿@model BryantUniversity.ViewModels.CourseDeleteViewModel
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            
+        </div>
+        <div class="col-sm">
+            <h2>You Are Trying To Delete @Model.Course.CourseTitle</h2>
+        </div>
+
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-5">
+            
+        </div>
+        
+        <div class="col-md-5">
+            <h4>But You Must Delete The Following Prerequiste(s) first</h4>
+        </div>
+        
+        <div class="col-md-5">
+            
+        </div>
+    </div>
+    
+    <div class="row">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Course Id</th>
+                    <th>Course Name</th>
+                    <th>Description</th>
+                    <th>Course Level</th>
+                    <th>Department Name</th>
+                    <th>Credits</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="myTable">
+                @foreach (var prereqs in Model.Course.CourseMajorPreRequisites)
+                {
+                    <tr>
+                        <td>@prereqs.PreReq.CourseTitleId</td>
+                        <td>@prereqs.PreReq.CourseTitle</td>
+                        <td>@prereqs.PreReq.Description</td>
+                        <td>@prereqs.PreReq.CourseLevel.Level.Value</td>
+                        <td>@prereqs.PreReq.Department.Name</td>
+                        <td>@prereqs.PreReq.Credits</td>
+                        <td>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>

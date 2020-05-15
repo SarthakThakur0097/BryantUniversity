@@ -1,0 +1,75 @@
+﻿@model IList<BryantUniversity.Models.CourseSection>
+@{
+    ViewBag.Title = "Teaching";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            
+        </div>
+        <div class="col-sm">
+            <h2>Classes being taught by you</h2>
+        </div>
+        <div class="col-sm">
+
+        </div>
+    </div>
+    <div class="row">
+ <div class="col-md-5">
+                <input id="myInput" class="form-control" type="text" placeholder="Search..">
+            </div>
+        <div class="col-sm">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr lass="bench-row">
+                        <th>Semester</th>
+                        <th>CRN</th>
+                        <th>Course Title</th>
+                        <th>Description</th>
+                        <th>Days</th>
+                        <th>Time</th>
+                        <th>Level</th>
+                        <th>Professor</th>
+                        <th>Building</th>
+                        <th>Room Number</th>
+                        <th> </th>
+                        <th> </th>
+                    </tr>
+                </thead>
+
+                <tbody id="myTable">
+                    @foreach (var courseSection in Model)
+                    {
+                        <tr>
+                            <td>@courseSection.SemesterPeriod.Period.Value</td>
+                            <td>@courseSection.Course.Id</td>
+                            <td>@courseSection.Course.CourseTitle</td>
+                            <td>@courseSection.Course.Description</td>
+                            <td>@courseSection.ClassDays.Pattern.Value</td>
+                            <td>@courseSection.ClassDuration.TimeForClass.Value</td>
+                            <td>@courseSection.Course.CourseLevel.Level.Value</td>
+                            <td>@courseSection.Professor.Name</td>
+                            <td>@courseSection.Room.Building.BuildingName</td>
+                            <td>@courseSection.Room.Id</td>
+                            <td>
+                                @Html.ActionLink("View Enrolled Students", "Students", "Faculty", new { id = courseSection.Id }, new { @class = "btn btn-primary" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>

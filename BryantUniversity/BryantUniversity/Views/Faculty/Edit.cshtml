@@ -1,0 +1,155 @@
+﻿@model BryantUniversity.ViewModels.UserViewModel
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Adding New User</h2>
+@using (Html.BeginForm())
+{
+
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal speaker-form">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group form-row">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group form-row">
+            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group form-row">
+            @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group form-row">
+            @Html.LabelFor(model => model.PhoneNumber, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PhoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PhoneNumber, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group form-row">
+            @Html.LabelFor(model => model.City, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.City, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.City, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group form-row">
+            @Html.LabelFor(model => model.State, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.State, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.State, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group form-row">
+            @Html.LabelFor(model => model.ZipCode, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ZipCode, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ZipCode, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Submit" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+<style>
+    .speaker-form {
+        background-color: #F6F7F8;
+        border: 1px solid #D6D9DC;
+        border-radius: 3px;
+        align-items: center;
+        width: 40%;
+        padding: 50px;
+        margin: 0 0 40px 0;
+    }
+
+    .form-row {
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+        .form-row input[type='text'] {
+            background-color: #FFFFFF;
+            border: 1px solid #D6D9DC;
+            border-radius: 3px;
+            width: 100%;
+            padding: 7px;
+            font-size: 14px;
+        }
+
+        .form-row label {
+            margin-bottom: 15px;
+        }
+
+        .form-row input[type='text'] {
+            background-color: #FFFFFF;
+            border: 1px solid #D6D9DC;
+            border-radius: 3px;
+            width: 100%;
+            padding: 7px;
+            font-size: 14px;
+        }
+
+        .form-row label {
+            margin-bottom: 15px;
+        }
+
+        .form-row select {
+            width: 100%;
+            padding: 5px;
+            font-size: 14px; /* This won't work in Chrome or Safari */
+            -webkit-appearance: none; /* This will make it work */
+        }
+
+        .form-row textarea {
+            font-family: "Helvetica", "Arial", sans-serif;
+            font-size: 14px;
+            border: 1px solid #D6D9DC;
+            border-radius: 3px;
+            min-height: 200px;
+            margin-bottom: 10px;
+            padding: 7px;
+            resize: none;
+        }
+
+        .form-row .instructions {
+            color: #999999;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+</style>

@@ -1,0 +1,133 @@
+﻿@model BryantUniversity.ViewModels.SemesterDetailsViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+            @if (Model.IsPreviousSemesterConflict)
+            {
+                <h5> You can no longer register for this semester </h5>
+            }
+            else if (Model.PartTimeTryFullTime)
+            {
+                <h5> Part-Time Students Can Only Take Up-To 2 Classes Per Semester</h5>
+            }
+            else if (Model.UnderGradTryGrad)
+            {
+                <h5>This is a Graduate Level Course</h5>
+            }
+            else if (Model.HasNotTakenPrereq)
+            {
+                <h5>You have not taken the Prerequisites</h5>
+            }
+            else if (Model.NotTakePreqs)
+            {
+                <h5>You have not taken the Prerequisites</h5>
+            }
+            else if (Model.SpaceLeftInRoom)
+            {
+                <h5>There are no longer seats available</h5>
+            }
+            else if (Model.HasHold)
+            {
+                <h5>Please Contact Admin To Remove Hold</h5>
+            }
+            else if (Model.FullTimeOverFlow)
+            {
+                <h5>You Cannot Take More than 24 Credits</h5>
+            }
+            else if (Model.SameClass)
+            {
+                <h5> You Are Already Registered To This Course</h5>
+            }
+            else if (Model.TimeConflict)
+            {
+                <h5> You Are Registered TO Another Course At This Time</h5>
+            }
+            else if (Model.Success)
+            {
+                <h5> Successfully Registered!</h5>
+            }
+        </div>
+        <div class="col-sm">
+            <h2>Select Term</h2>
+        </div>
+        <div class="col-md-5">
+
+        </div>
+    </div>
+    @using (Html.BeginForm("Index", "Schedule", FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="row">
+            <div class="col-sm">
+
+                @Html.LabelFor(model => model.PeriodId, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.DropDownListFor(model => model.PeriodId, Model.PeriodList, "Period", new { @class = "form-control required", id = "period-list" })
+                @Html.ValidationMessageFor(model => model.PeriodId)
+
+            </div>
+            <div class="col-sm">
+
+                @Html.LabelFor(model => model.DepartmentId, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.DropDownListFor(model => model.DepartmentId, Model.DepartmentList, "Department", new { @class = "form-control required", id = "period-list" })
+                @Html.ValidationMessageFor(model => model.DepartmentId)
+            </div>
+            <button type="submit" class="btn btn-success">Submit</button>
+
+            <div class="col-md-5">
+                <input id="myInput" class="form-control" type="text" placeholder="Search..">
+            </div>
+        </div>
+    }
+    @if (Model.DisplayCourses)
+    {
+        <div class="row">
+            <div class="col">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Course Id</th>
+                            <th>Course Name</th>
+                            <th>Description</th>
+                            <th>Course Level</th>
+                            <th>Department Name</th>
+                            <th>Credits</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="myTable">
+                        @foreach (var course in Model.Courses)
+                        {
+                            <tr>
+                                <td>@course.CourseTitleId</td>
+                                <td>@course.CourseTitle</td>
+                                <td>@course.Description</td>
+                                <td>@course.CourseLevel.Level.Value</td>
+                                <td>@course.Department.Name</td>
+                                <td>@course.Credits</td>
+                                <td>
+                                    @Html.ActionLink("See Sections", "Index", "CourseSection", new { id = course.Id, semesterPeriodId = Model.PeriodId }, new { @class = "btn btn-info" })
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+</div>
+
+<script src="~/scripts/Schedule.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
+    });
+</script>

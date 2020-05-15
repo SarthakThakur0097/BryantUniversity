@@ -1,0 +1,77 @@
+﻿@model BryantUniversity.ViewModels.DropViewModel
+
+@{
+    ViewBag.Title = "Schedule";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+        </div>
+        <div class="col-sm">
+            <h3>Currently Registered For</h3>
+        </div>
+        <div class="col-sm">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+
+        </div>
+        <div class="col-sm">
+
+        </div>
+        <div class="col-md-5">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+        </div>
+        <div id="removeContainer">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr lass="bench-row">
+                        <th>Semester</th>
+                        <th>Course Title</th>
+                        <th>Course Time</th>
+                        <th>Days</th>
+                        <th>Professor</th>
+                        <th>Building</th>
+                        <th>Room Number</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.NonGraded != null)
+                    {
+                        foreach (var registered in Model.NonGraded)
+                        {
+                            <tr>
+                                <td>@registered.CourseSection.SemesterPeriod.Period.Value</td>
+                                <td>@registered.CourseSection.Course.CourseTitle</td>
+                                <td>@registered.CourseSection.ClassDuration.TimeForClass.Value</td>
+                                <td>@registered.CourseSection.ClassDays.Pattern.Value</td>
+                                <td>@registered.CourseSection.Professor.Name</td>
+                                <td>@registered.CourseSection.Room.Building.BuildingName</td>
+                                <td>@registered.CourseSection.Room.Id</td>
+
+                                <td>
+                                    <button type="button" data-registration-id="@registered.Id" class="btn btn-danger">Drop</button>
+                                </td>
+
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="col-sm">
+
+        </div>
+    </div>
+</div>
+
+<script src="~/scripts/DropSection.js"></script>

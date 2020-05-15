@@ -1,0 +1,42 @@
+﻿@model BryantUniversity.ViewModels.AdvisorsViewModel
+@{
+    ViewBag.Title = "Teaching";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+
+        </div>
+        <div class="col-sm">
+            <h2>Your Advisor</h2>
+        </div>
+        <div class="col-sm">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr lass="bench-row">
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    @foreach (var advisor in Model.Advisors)
+                    {
+                        <tr>
+                            <td>@advisor.Faculty.Name</td>
+                            <td>@advisor.Faculty.Email</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,81 @@
+﻿@model BryantUniversity.ViewModels.AdvisorViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+
+        </div>
+        <div class="col-sm">
+            <h2>All Advisements</h2>
+        </div>
+        <div class="col-md-5">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            <div class="md-form mt-0">
+                <input id="myInput" class="form-control" type="text" placeholder="Search..">
+            </div>
+        </div>
+        <div class="col-md-8">
+
+        </div>
+        <div class="col-sm">
+        </div>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Faculty Id</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>View</th>
+                </tr>
+            </thead>
+            <tbody id="myTable">
+                @foreach (var faculty in Model.AllFaculty)
+                {
+                    <tr>
+                        <td>@faculty.Id</td>
+                        <td>@faculty.Name</td>
+                        <td>@faculty.Email</td>
+                        <td>
+                            @using (Html.BeginForm("Advisees", "Advisement", new { id = faculty.Id }, FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
+                            {
+                                <div>
+                                    <button type="submit" class="btn btn-primary">Advisees</button>
+                                </div>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <div id="tableContainer">
+            <table id="list" class="pure-table pure-table-horizontal">
+                <thead>
+                    <tr></tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+
+<script src="~/scripts/user.js"></script>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>

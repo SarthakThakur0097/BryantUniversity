@@ -1,0 +1,13 @@
+﻿@model BryantUniversity.ViewModels.StudentHoldViewModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Are you sure you want to remove hold for @Model.HoldToDelete.User.Name?</h2>
+@using (Html.BeginForm("Delete", "Hold", FormMethod.Post, new { @class = "pure-form pure-form-aligned", id = "" }))
+{
+    @Html.LabelFor(model => model.HoldToDelete.UserId, htmlAttributes: new { @class = "control-label col-md-2" })
+    <button type="submit" class="btn btn-success">Submit</button>
+}
+@Html.ActionLink("See Sections", "Index", "CourseSection", new { @class = "btn btn-info" })

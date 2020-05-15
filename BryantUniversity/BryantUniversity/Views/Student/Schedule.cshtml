@@ -1,0 +1,95 @@
+﻿@model BryantUniversity.ViewModels.ScheduleViewModel
+
+@{
+    ViewBag.Title = "Schedule";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            @using (Html.BeginForm("Schedule", "Student", FormMethod.Post, new { @class = "pure-form pure-form-aligned", id = "" }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-horizontal">
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PeriodId, htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.DropDownListFor(model => model.PeriodId, Model.PeriodList, "Period", new { id = "period-list" })
+                        @Html.ValidationMessageFor(model => model.PeriodId, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+            }
+        </div>
+        <div class="col-sm">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-5">
+
+        </div>
+        <div class="col-sm">
+
+        </div>
+        <div class="col-md-5">
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm">
+            
+            @if (Model.RegisteredClasses.Count == 0)
+            {
+                <h3>You have no Registered classes</h3>
+            }
+            else
+            {
+            <h3>Schedule for @Model.RegisteredClasses[0].CourseSection.SemesterPeriod.Period.Value</h3>
+            }
+        </div>
+        <div class="col-md-5">
+           
+        </div>
+        <div class="col-sm">
+
+        </div>
+    </div>
+    <div class="row">
+        <table class="table">
+            <thead class="thead-dark">
+                <tr lass="bench-row">
+                    <th>CRN</th>
+                    <th>Course Title</th>
+                    <th>Course Time</th>
+                    <th>Days</th>
+                    <th>Professor</th>
+                    <th>Building</th>
+                    <th>Room Number</th>
+                </tr>
+            </thead>
+            <tbody>
+                @if (Model.RegisteredClasses != null)
+                {
+                    foreach (var reigstered in Model.RegisteredClasses)
+                    {
+                        <tr>
+                            <td>@reigstered.CourseSection.Course.Id</td>
+                            <td>@reigstered.CourseSection.Course.CourseTitle</td>
+                            <td>@reigstered.CourseSection.ClassDuration.TimeForClass.Value</td>
+                            <td>@reigstered.CourseSection.ClassDays.Pattern.Value</td>
+                            <td>@reigstered.CourseSection.Professor.Name</td>
+                            <td>@reigstered.CourseSection.Room.Building.BuildingName</td>
+                            <td>@reigstered.CourseSection.Room.Id</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+
+    </div>
+</div>
