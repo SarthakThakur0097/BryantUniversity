@@ -95,7 +95,8 @@ namespace BryantUniversity.Controllers
             return View(viewModel);
         }
 
-        [Authorize(Roles = "1")]
+
+        [Authorize(Roles = "1, 2")]
         [HttpGet]
         public ActionResult ScheduleAdmin(int studentId)
         {

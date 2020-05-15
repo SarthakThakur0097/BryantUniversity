@@ -35,13 +35,7 @@
                     @Html.ActionLink("view attendance", "Attendancebook", "Student", new { id = student.User.Id, cid = student.CourseSectionId }, new { @class = "btn btn-primary" })
                 </td>
                 <td>
-                    @using (Html.BeginForm("Schedule", "Student", new { id = student.UserId }, FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
-                    {
-                            <div >
-                                <button type="submit" class="btn btn-success">Schedule</button>
-                            </div>
-
-                    }
+                    @Html.ActionLink("Schedule", "ScheduleAdmin", "Student", new { studentId = student.User.Id}, new { @class = "btn btn-primary" })
                 </td>
                 <td>
                     @Html.ActionLink("Transcript", "TranscriptAdmin", "Student", new { id = student.User.Id }, new { @class = "btn btn-primary" })
