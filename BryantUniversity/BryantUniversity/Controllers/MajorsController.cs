@@ -1,10 +1,7 @@
 ﻿using BryantUniversity.Data;
-using BryantUniversity.Models.Repo;
 using BryantUniversity.Repo;
-using BryantUniversity.Security;
 using BryantUniversity.ViewModels;
 using System.Web.Mvc;
-using System.Web.Security;
 
 namespace BryantUniversity.Controllers
 {

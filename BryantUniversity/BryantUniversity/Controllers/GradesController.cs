@@ -3,7 +3,6 @@ using BryantUniversity.Models;
 using BryantUniversity.Models.Repo;
 using BryantUniversity.Repo;
 using BryantUniversity.ViewModels;
-using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace BryantUniversity.Controllers
