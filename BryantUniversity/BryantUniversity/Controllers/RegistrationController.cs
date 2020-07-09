@@ -50,7 +50,6 @@ namespace BryantUniversity.Controllers
         [HttpPost]
         public ActionResult AdminAdd(int studentId, int coursectionId)
         {
-
             MajorPreRequisitesRepo mprRepo;
             StudentLevelRepo sLRepo;
             StudentTimeTypeRepo stRepo;
@@ -90,14 +89,12 @@ namespace BryantUniversity.Controllers
 
                     return RedirectToAction("Index", "Schedule");
                 }
-
                 else if (totRegisteredSoFar >= 4)
                 {
                     TempData["FullTimeOverFlow"] = true;
 
                     return RedirectToAction("Index", "Schedule");
                 }
-
                 else if (allReqs.Count > 0 && allTakenCourses.Count == 0)
                 {
 
@@ -125,7 +122,6 @@ namespace BryantUniversity.Controllers
 
                     return RedirectToAction("Index", "Schedule");
                 }
-
 
                 studentHolds = hRepo.GetAllStudentHoldsByUserId(CustomUser.User.Id);
 
@@ -231,32 +227,12 @@ namespace BryantUniversity.Controllers
 
                     return RedirectToAction("Index", "Schedule");
                 }
-                //else if(studentTimeType.TimeTypes.TimeType == TimeType.PartTime && totRegisteredSoFar>=2)
-                //{
-                //    TempData["PartTimeTryFullTime"] = true;
-
-                //    return RedirectToAction("Index", "Schedule", new
-                //    {
-                //        id = roomCheck.CourseId,
-                //        semesterPeriodId = semesterPeriodId
-                //    });
-                //}
                 else if( totRegisteredSoFar >=4)
                 {
                     TempData["FullTimeOverFlow"] = true;
 
                     return RedirectToAction("Index", "Schedule");
                 }
-                //else if(studentLevel.CourseLevel.Level == Level.Undergraduate && toAdd.Course.CourseLevel.Level == Level.Graduate)
-                //{
-                //    TempData["UnderGradTryGrad"] = true;
-
-                //    return RedirectToAction("Index", "CourseSection", new
-                //    {
-                //        id = roomCheck.CourseId,
-                //        semesterPeriodId = semesterPeriodId
-                //    });
-                //}
                 else if (allReqs.Count > 0 && allTakenCourses.Count == 0)
                 {
 

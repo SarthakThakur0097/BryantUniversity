@@ -29,7 +29,5 @@ namespace BryantUniversity.Controllers
                 return View(viewModel);
             }
         }
-
-
     }
 }

@@ -232,7 +232,6 @@
     <Compile Include="Controllers\ScheduleController.cs" />
     <Compile Include="Controllers\SemesterPeriodController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
-    <Compile Include="Controllers\TranscriptController.cs" />
     <Compile Include="Data\Context.cs" />
     <Compile Include="Data\DatabaseIntializer.cs" />
     <Compile Include="Global.asax.cs">

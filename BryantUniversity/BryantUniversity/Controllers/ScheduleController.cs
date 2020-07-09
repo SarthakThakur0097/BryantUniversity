@@ -233,13 +233,5 @@ namespace BryantUniversity.Controllers
                 }
             }
         }
-
-        //[HttpGet]
-        //public ActionResult Courses(int departmentId, )
-        //
-
-        //    return View(cViewModel);
-        //}
-        // GET: Schedule
     }
 }

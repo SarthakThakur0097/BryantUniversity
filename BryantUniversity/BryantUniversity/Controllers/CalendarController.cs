@@ -11,7 +11,6 @@ namespace BryantUniversity.Controllers
     {
         private Context context = new Context();
 
-        // GET: Calendar
         [HttpGet]
         public ActionResult Index()
         {
