@@ -23,6 +23,7 @@ namespace BryantUniversity.ViewModels
         public string City { get; set; }
         [Required]
         public string State { get; set; }
+        [Required]
         public string ZipCode { get; set; }
         [Required]
         public string PhoneNumber { get; set; }
