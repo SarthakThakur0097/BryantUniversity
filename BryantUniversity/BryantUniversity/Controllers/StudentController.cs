@@ -95,7 +95,8 @@ namespace BryantUniversity.Controllers
             return View(viewModel);
         }
 
-        [Authorize(Roles = "1")]
+
+        [Authorize(Roles = "1, 2")]
         [HttpGet]
         public ActionResult ScheduleAdmin(int studentId)
         {
@@ -192,7 +193,7 @@ namespace BryantUniversity.Controllers
 
 
         [HttpGet]
-        public ActionResult DegreeAuditAdmin(int studentId)
+        public ActionResult DegreeAuditAdmin(int id)
         {
             using (context)
             {
@@ -208,8 +209,8 @@ namespace BryantUniversity.Controllers
                 mrRepo = new MajorRequirmentsRepo(context);
 
                 mRepo = new MajorRepo(context);
-                viewModel.AllCourses = gRepo.GetAllGradesByUserId(studentId);
-                viewModel.StudentMajor = sMRepo.GetByStudentId(studentId);
+                viewModel.AllCourses = gRepo.GetAllGradesByUserId(id);
+                viewModel.StudentMajor = sMRepo.GetByStudentId(id);
                 viewModel.MajorRequirements = mrRepo.GetAllMajorRequirementsByMajor(viewModel.StudentMajor.MajorId);
                 return View(viewModel);
             }
@@ -291,6 +292,7 @@ namespace BryantUniversity.Controllers
                 return View(viewModel);
             }
         }
+
 
         [HttpGet]
         public ActionResult Advisors()

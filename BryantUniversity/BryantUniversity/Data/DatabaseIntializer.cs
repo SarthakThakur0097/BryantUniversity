@@ -17,7 +17,7 @@ namespace BryantUniversity.Data
             //context.Database.ExecuteSqlCommand("DBCC CHECKIDENT('UserRole', RESEED, 500000);");
 
 
-            User adminUser = new User("Admin@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Admin 1", "Address","City", "state", "ZipCode", "PhoneNumber");
+            User adminUser = new User("Admin@gmail.com", "$2a$12$ZETppBODoyBuUBdv/2KI8OOF/LdefLSAog25oEszHDS5ZAZfNzSRq", "Admin 1", "Address","City", "state", "ZipCode", "PhoneNumber");
             //User adminUser2 = new User("Admin2@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Admin 2");
             //User teacherUser = new User("Teacher@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Teacher 1");
             //User teacherUser2 = new User("Teacher2@gmail.com", "$2a$12$mgIW22sS2uhKTduaFNugJeym8Li6VnFlyNRDWBC7Oaf39lIaBkBOq", "Teacher 2");

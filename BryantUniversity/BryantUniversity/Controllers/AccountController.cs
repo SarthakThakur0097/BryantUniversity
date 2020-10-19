@@ -75,19 +75,19 @@ namespace BryantUniversity.Controllers
         [AllowAnonymous]
         public ActionResult Register()
         {
-            var viewModel = new UserViewModel();
+            var viewModel = new RegistrationViewModel();
             return View(viewModel);
         }
 
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public ActionResult Register(UserViewModel viewModel)
+        public ActionResult Register(RegistrationViewModel viewModel)
         {
             string hashedPassword = BCrypt.Net.BCrypt.HashPassword(viewModel.Password, 12);
             if (ModelState.IsValid)
             {
-                User user = new User(viewModel.Email, hashedPassword, viewModel.Name);
+                User user = new User(viewModel.Email, hashedPassword, viewModel.Name, viewModel.Address, viewModel.City, viewModel.State, viewModel.ZipCode, viewModel.PhoneNumber);
                 UserRepo userRepo;
                 using (context)
                 {
