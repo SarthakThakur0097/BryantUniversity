@@ -3,7 +3,6 @@ using BryantUniversity.Models;
 using BryantUniversity.Models.Repo;
 using BryantUniversity.Repo;
 using BryantUniversity.ViewModels;
-using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace BryantUniversity.Controllers
@@ -41,7 +40,6 @@ namespace BryantUniversity.Controllers
             return View(viewModel);
         }
 
-        //I don't understand why rId is being populated in the GET action result but not for the post while the id is for both
         [HttpPost]
         public ActionResult AssignGrade(int id, int cid, AssignGradeViewModel viewModel)
         {

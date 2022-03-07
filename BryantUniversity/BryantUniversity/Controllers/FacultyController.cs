@@ -12,7 +12,6 @@ namespace BryantUniversity.Controllers
     [Authorize(Roles = "2,1")]
     public class FacultyController : Controller
     {
-
         private Context context;
 
         public CustomPrincipal CustomUser
@@ -27,8 +26,7 @@ namespace BryantUniversity.Controllers
         {
             context = new Context();
         }
-
-        // GET: Faculty
+        
         [HttpGet]
         public ActionResult Index()
         {
@@ -138,6 +136,7 @@ namespace BryantUniversity.Controllers
             }
                 return View();
         }
+
         [HttpGet]
         public ActionResult Edit(int id)
         {
@@ -167,17 +166,15 @@ namespace BryantUniversity.Controllers
         [HttpPost]
         public ActionResult Edit(int id, UserViewModel userViewModel)
         {
+            UserRepo repository;
+            using (context)
+            {
+                repository = new UserRepo(context);
+                User userId = repository.GetById(id);
+                User user = new User(userViewModel.Id, userId.HashedPassword, userViewModel.Email, userViewModel.Name, userViewModel.Address, userViewModel.City, userViewModel.State, userViewModel.ZipCode, userViewModel.PhoneNumber);
 
-                UserRepo repository;
-
-                using (context)
-                {
-                    repository = new UserRepo(context);
-                    User userId = repository.GetById(id);
-                    User user = new User(userViewModel.Id, userId.HashedPassword, userViewModel.Email, userViewModel.Name, userViewModel.Address, userViewModel.City, userViewModel.State, userViewModel.ZipCode, userViewModel.PhoneNumber);
-
-                    repository.Update(user);
-                }
+                repository.Update(user);
+            }
 
             return RedirectToAction("Index", "Faculty");
         }
@@ -236,6 +233,7 @@ namespace BryantUniversity.Controllers
                 viewModel.Student = uRepo.GetById(id);
                 viewModel.AllGradesClasses = gRepo.GetAllGradesByUserId(id);
             }
+
             return View(viewModel);
         }
 
@@ -250,6 +248,7 @@ namespace BryantUniversity.Controllers
             {
 
             }
+
             return View(viewModel);
         }
 
@@ -267,7 +266,6 @@ namespace BryantUniversity.Controllers
             }
                 return View(viewModel);
         }
-
 
         public ActionResult Advisor(int id)
         {
@@ -295,7 +293,6 @@ namespace BryantUniversity.Controllers
                     if(check != null)
                     {
                         
-
                     }
                     else
                     {
@@ -303,12 +300,10 @@ namespace BryantUniversity.Controllers
                         advisor = new Advisor(facultyId, id);
                         repository.Insert(advisor);
                     }
-
                 }
-
             }
-            return RedirectToAction("Index", "Faculty");
 
+            return RedirectToAction("Index", "Faculty");
         }
 
         [HttpGet]

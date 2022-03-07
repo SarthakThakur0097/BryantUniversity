@@ -65,6 +65,7 @@ namespace BryantUniversity.Controllers
                 viewModel.CoursePrereqId = courseId;
                 viewModel.Courses = cRepo.GetByDepartment(departmentId);
             }
+
             return View(viewModel);
         }
 
@@ -72,7 +73,6 @@ namespace BryantUniversity.Controllers
         [HttpPost]
         public ActionResult AddPreqPost(int courseId, int prereqId)
         {
-
             if (courseId == prereqId)
             {
                 return View();
@@ -80,15 +80,14 @@ namespace BryantUniversity.Controllers
             else
             {
                 MajorPreRequisitesRepo mprRepo;
-
                 MajorPreRequisite toAdd;
                 using (context)
                 {
-
                     mprRepo = new MajorPreRequisitesRepo(context);
                     toAdd = new MajorPreRequisite(prereqId, courseId);
                     mprRepo.Insert(toAdd);
                 }
+
                 return View();
             }
         }
@@ -101,15 +100,15 @@ namespace BryantUniversity.Controllers
             using (context)
             {
                 mRepo = new MajorRepo(context);
-
                 viewModel.Majors = mRepo.GetAllMajors();
             }
+
             return View(viewModel);
         }
+
         [HttpPost]
         public ActionResult Index(CourseViewModel viewModel)
         {
-
             return View();
         }
 
@@ -169,8 +168,6 @@ namespace BryantUniversity.Controllers
                     }
                     else
                     {
-
-
                         formModel.PopulateDepermentSelectList(dRepo.GetAllDepartments());
                         formModel.PopulateLevelsSelectList(clRepo.GetAllCourseLevels());
                         try
@@ -179,8 +176,7 @@ namespace BryantUniversity.Controllers
                             courseRepo.Insert(course);
 
                             Course cId = courseRepo.GetCourseByCourseTitleId(formModel.CourseTitleId);
-                            //var preReq = new MajorPreRequisite(null, cId.Id);
-                            //mPRepo.Insert(preReq);
+
                             return RedirectToAction("Index");
                         }
                         catch (DbUpdateException ex)
@@ -188,7 +184,6 @@ namespace BryantUniversity.Controllers
                             HandleDbUpdateException(ex);
                         }
                     }
-
                 }
                 else
                 {
@@ -199,7 +194,6 @@ namespace BryantUniversity.Controllers
                 }
                 return RedirectToAction("Index");
             }
-
         }
 
         [HttpGet]
@@ -219,7 +213,6 @@ namespace BryantUniversity.Controllers
                 viewModel.PopulateDepermentSelectList(dRepo.GetAllDepartments());
                 viewModel.PopulateLevelsSelectList(clRepo.GetAllCourseLevels());
                 course = courseRepo.GetById(id);
-
                 viewModel.Id = course.Id;
                 viewModel.CourseTitleId = course.CourseTitleId;
                 viewModel.CourseTitle = course.CourseTitle;
@@ -228,6 +221,7 @@ namespace BryantUniversity.Controllers
                 viewModel.CourseLevelId = course.CourseLevelId;
                 viewModel.DepartmentId = course.DepartmentId;
             }
+
             return View("Edit", viewModel);
         }
 
@@ -265,6 +259,7 @@ namespace BryantUniversity.Controllers
                     newCourse = null;
                 }
             }
+
             return View("Edit", viewModel);
         }
 
@@ -277,6 +272,7 @@ namespace BryantUniversity.Controllers
             {
                 mprRepo = new MajorPreRequisitesRepo(context);
             }
+
             return View();
         }
 
@@ -291,6 +287,7 @@ namespace BryantUniversity.Controllers
                 cRepo = new CoursesRepo(context);
                 viewModel = cRepo.GetById(id);
             }
+
                 return View(viewModel);
         }
 
@@ -302,10 +299,7 @@ namespace BryantUniversity.Controllers
             Course checkPrereqs;
             MajorPreRequisitesRepo mprRepo = new MajorPreRequisitesRepo(context);
             CourseDeleteViewModel viewModel = new CourseDeleteViewModel();
-
-
             cRepo = new CoursesRepo(context);
-
             checkPrereqs = cRepo.GetAllPreReqsByCourseId(id);
 
             if (checkPrereqs.CourseMajorPreRequisites.Count >= 1)
@@ -319,11 +313,12 @@ namespace BryantUniversity.Controllers
                 IList<MajorPreRequisite> preReqsToDelete = mprRepo.GetByPrereqId(checkPrereqs.Id);
                 if(preReqsToDelete.Count>1)
                 {
-                    //mprRepo.Delete(preReqToDelete);
+
                 }
                 cRepo.Delete(checkPrereqs);
                 TempData["Deleted"] = true;
             }
+
             return RedirectToAction("Index", "Courses");
         }
 
@@ -332,14 +327,12 @@ namespace BryantUniversity.Controllers
         {
             CoursesRepo cRepo;
             Course toDelete;
-
             using (context)
             {
                 try
                 {
                     cRepo = new CoursesRepo(context);
                     toDelete = new Course { Id = id };
-
                     cRepo.Delete(toDelete);
 
                     return RedirectToAction("Index");
@@ -363,6 +356,7 @@ namespace BryantUniversity.Controllers
                 dRepo = new DepartmentRepo(context);
                 viewModel.PopulateDepermentSelectList(dRepo.GetAllDepartments());
             }
+
             return View(viewModel);
         }
 
