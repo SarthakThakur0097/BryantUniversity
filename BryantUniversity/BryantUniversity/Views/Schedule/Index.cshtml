@@ -2,10 +2,10 @@
 @{
     ViewBag.Title = "Index";
 }
-
+<h5> Schedule </h5>
 <div class="container">
     <div class="row">
-        <div class="col-md-5">
+        <div class="col">
             @if (Model.IsPreviousSemesterConflict)
             {
                 <h5> You can no longer register for this semester </h5>
@@ -62,23 +62,25 @@
     {
         @Html.AntiForgeryToken()
         <div class="row">
-            <div class="col-sm">
+            <div class="col">
+                <input id="myInput" class="form-control" type="text" placeholder="Search..">
+            </div>
+            <div class="col">
 
                 @Html.LabelFor(model => model.PeriodId, htmlAttributes: new { @class = "control-label col-md-2" })
                 @Html.DropDownListFor(model => model.PeriodId, Model.PeriodList, "Period", new { @class = "form-control required", id = "period-list" })
                 @Html.ValidationMessageFor(model => model.PeriodId)
-
             </div>
-            <div class="col-sm">
+            <div class="col">
 
                 @Html.LabelFor(model => model.DepartmentId, htmlAttributes: new { @class = "control-label col-md-2" })
                 @Html.DropDownListFor(model => model.DepartmentId, Model.DepartmentList, "Department", new { @class = "form-control required", id = "period-list" })
                 @Html.ValidationMessageFor(model => model.DepartmentId)
             </div>
-            <button type="submit" class="btn btn-success">Submit</button>
+           
 
-            <div class="col-md-5">
-                <input id="myInput" class="form-control" type="text" placeholder="Search..">
+            <div class="col">
+                <button type="submit" class="btn btn-success rounded">Submit</button>
             </div>
         </div>
     }

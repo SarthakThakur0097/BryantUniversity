@@ -16,24 +16,27 @@
 
         </div>
     </div>
+   
+       
     @using (Html.BeginForm("Catalog", "Courses", FormMethod.Post, new { @class = "pure-form pure-form-aligned" }))
     {
         @Html.AntiForgeryToken()
         <div class="row">
-            <div class="col-sm">
+            <div class="col">
+                <input id="myInput" class="form-control" type="text" placeholder="Search..">
+            </div>
+            <div class="col">
                 @Html.LabelFor(model => model.DepartmentId, htmlAttributes: new { @class = "control-label col-md-2" })
                 @Html.DropDownListFor(model => model.DepartmentId, Model.DepartmentList, "Department", new { @class = "form-control required", id = "department-list" })
                 @Html.ValidationMessageFor(model => model.DepartmentId)
 
+                
+            </div>
+            <div class="col">
                 <button type="submit" class="btn btn-success">Submit</button>
             </div>
-            <div class="col-sm">
-
-            </div>
  
-            <div class="col-md-5">
-                <input id="myInput" class="form-control" type="text" placeholder="Search..">
-            </div>
+           
         </div>
     }
 

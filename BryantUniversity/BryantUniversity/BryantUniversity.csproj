@@ -166,8 +166,11 @@
     <Content Include="Content\Site.css" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Resources\bioinform.jpg" />
     <Content Include="Resources\BryantLogo.png" />
     <Content Include="Resources\BryantLogoBlack.png" />
+    <Content Include="Resources\economics.jpg" />
+    <Content Include="Resources\environmental_studies.jpg" />
     <Content Include="Resources\Gold.png" />
     <Content Include="Resources\img1.jpg" />
     <Content Include="Resources\img2.jpg" />
