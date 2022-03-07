@@ -2,10 +2,7 @@
 using BryantUniversity.Models;
 using BryantUniversity.Repo;
 using BryantUniversity.ViewModels;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace BryantUniversity.Controllers
@@ -28,15 +25,14 @@ namespace BryantUniversity.Controllers
             {
                 csRepo = new CourseSectionRepo(context);
                 viewModel.CourseSections = csRepo.GetAllCourseSections();
-       
             }
+
             return View(viewModel);
         }
 
 
         [HttpGet]
         public ActionResult IndexAdmin(int id, int studentId, int semesterPeriodId)
-
         {
             SectionRegistrationViewModel viewModel = new SectionRegistrationViewModel();
             int courseSectionId = id;
@@ -139,7 +135,6 @@ namespace BryantUniversity.Controllers
             }
             return View("IndexAdmin", AllSections);
         }
-
 
         [HttpGet]
         public ActionResult Index(int id, int semesterPeriodId)
