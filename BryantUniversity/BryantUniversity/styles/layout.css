@@ -1,0 +1,25 @@
+﻿body {
+
+}
+.body-content {
+    padding-left: 500px;
+    padding-right: 500px;
+}
+.img-fluid {
+        max-width: 100%;
+        height: auto;
+        position: absolute;
+        top: 0;
+    }
+
+.navbar-custom{
+    background-color: #24252A;
+}
+
+nav .navbar-nav li a{
+  font-family:'PT Sans', sans-serif;
+  color: white !important;
+  }
+nav .navbar-nav li a:hover{
+  color: mediumpurple !important;
+  }

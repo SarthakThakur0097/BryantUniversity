@@ -10,7 +10,7 @@ namespace BryantUniversity.ViewModels
     public class CoursePreReqViewModel
     {
         [Required]
-        [Display(Name = "Department: ")]
+        [Display(Name = "")]
         public int DepartmentId { get; set; }
         public IList<Course> Courses { get; set; }
         public IList<MajorPreRequisite> CoursesAndPreReqs { get; set; }

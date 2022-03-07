@@ -22,6 +22,7 @@ namespace BryantUniversity.Controllers
                 cRepo = new CalendarRepo(context);
                 spRepo = new SemesterPeriodRepo(context);
                 viewModel.PopulateSelectList(spRepo.GetAllSemesterPeriods());
+                viewModel.CalendarEvents = cRepo.GetById(1);
             }
                  
             return View(viewModel);
