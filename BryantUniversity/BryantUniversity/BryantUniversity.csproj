@@ -199,6 +199,9 @@
     <Content Include="scripts\MangeHold.js" />
     <Content Include="scripts\modernizr-2.6.2.js" />
     <Content Include="scripts\Schedule.js" />
+    <Content Include="styles\layout.css" />
+    <Content Include="styles\login.css" />
+    <Content Include="styles\navbar.css" />
     <Content Include="styles\scrollablemenu.css" />
     <Content Include="Web.config" />
   </ItemGroup>
