@@ -318,6 +318,7 @@
     <Compile Include="ViewModels\AssignGradeViewModel.cs" />
     <Compile Include="ViewModels\AttendancebookViewModel.cs" />
     <Compile Include="ViewModels\AttendanceViewModel.cs" />
+    <Compile Include="ViewModels\CalendarEventsViewModel.cs" />
     <Compile Include="ViewModels\CourseDeleteViewModel.cs" />
     <Compile Include="ViewModels\CoursePreReqViewModel.cs" />
     <Compile Include="ViewModels\CourseSectionViewModel.cs" />

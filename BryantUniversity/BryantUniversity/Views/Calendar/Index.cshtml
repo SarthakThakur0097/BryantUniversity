@@ -2,25 +2,25 @@
 @{
     ViewBag.Title = "Calendar";
 }
+@using (Html.BeginForm("Index", "Calendar", FormMethod.Post, new { @class = "pure-form pure-form-aligned", id = "" }))
+{
 
 <div class="row">
-    @using (Html.BeginForm("Index", "Notifications", FormMethod.Post, new { @class = "pure-form pure-form-aligned", id = "" }))
-    {
+
         @Html.AntiForgeryToken()
         <div class="col">
-            <div class="form-inline">
-                <div class="form-group">
-                    @Html.LabelFor(model => model.PeriodId, htmlAttributes: new { @class = "control-label col-md-2" })
-                    @Html.DropDownListFor(model => model.PeriodId, Model.PeriodList, "Period", new { @class = "form-control", id = "period-list" })
-                    @Html.ValidationMessageFor(model => model.PeriodId, "", new { @class = "text-danger" })
-                </div>
+            <div style=15px;>
+                @Html.LabelFor(model => model.PeriodId, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.DropDownListFor(model => model.PeriodId, Model.PeriodList, "Period", new { @class = "form-control", id = "period-list" })
+                @Html.ValidationMessageFor(model => model.PeriodId, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="col">
             <button type="submit" class="btn btn-success">Submit</button>
         </div>
-    }
+    
 </div>
+}
 <div class="row">
     <div class="col">
         <div id="tableContainer">
@@ -44,5 +44,3 @@
         </div>
     </div>
 </div>
-
-<script src="~/scripts/calendar.js"></script>
