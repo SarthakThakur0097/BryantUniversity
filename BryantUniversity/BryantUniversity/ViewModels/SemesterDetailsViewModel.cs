@@ -12,13 +12,13 @@ namespace BryantUniversity.ViewModels
         public int Id { get; set; }
         
         [Required]
-        [DisplayName("")]
+        [DisplayName(" ")]
         [Range(1, Int32.MaxValue, ErrorMessage = "Must Select A Value")]
         public int PeriodId { get; set; }
 
         [Required]
         [Range(1, Int32.MaxValue, ErrorMessage = "Must Select A Value")]
-        [DisplayName("")]
+        [DisplayName(" ")]
         public int DepartmentId { get; set; }
         public string Name { get; set; }
         public string UrlSlug { get; set; }

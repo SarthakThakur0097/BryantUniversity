@@ -26,20 +26,22 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" class="form-control" placeholder="username">
 
+                                @Html.TextBoxFor(m => m.Email,  new { @class="form-control", Style = "color:black;", id = "email", placeholder="username" })
                         </div>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                            <input type="password" class="form-control" placeholder="password">
+                            @Html.PasswordFor(m => m.Password, new {@class="form-control", Style = "color:black;", id = "password", placeholder="password" })
                         </div>
                         <div class="row align-items-center remember">
                             <input type="checkbox">Remember Me
                         </div>
                         <div class="form-group">
-                            <input type="submit" value="Login" class="btn float-right login_btn">
+                            <button type="submit" value="Login" id="submit" class="btn float-right login_btn">Login</button>
+
+                            @*<input type="submit" value="Login" class="btn float-right login_btn">*@
                         </div>
                     </form>
                 </div>
@@ -55,62 +57,4 @@
         </div>
     </div>
 
-    @*<div class="container" style="padding-top:25px">
-
-            <div class="row">
-                <div class="col">
-                    <div id="form-container">
-                        <div id="form">
-                            <h2 style="color: black; font-family: Roboto; font-weight: 800">Sign In</h2>
-                            <div id="label">
-                                @Html.LabelFor(m => m.Email, new { Style = "color:black;" })
-                                @Html.TextBoxFor(m => m.Email, new { Style = "color:black;", id = "email" })
-                            </div>
-
-                            <div id="label">
-                                @Html.LabelFor(m => m.Password, new { Style = "color:black;" })
-                                @Html.PasswordFor(m => m.Password, new { Style = "color:black;", id = "password" })
-                            </div>
-
-                            <div>
-                                <button type="submit" id="submit" class="btn btn-success btn-lg">Login</button>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div>
-            </div>
-        </div>*@
 }
-<style>
-    #form-container {
-        text-align: center;
-        color: #f8f8ff;
-    }
-
-    #form {
-        display: inline-block;
-        width: 350px;
-        height: 400px;
-        padding: 12px 20px;
-        margin: 8px 0 auto;
-        border: 2px solid #000000;
-        box-sizing: border-box;
-        border-radius: 10px;
-    }
-
-    #email, #password {
-        width: 100%;
-        height: 50px;
-        border: 2px solid #000000;
-        border-radius: 10px;
-        font-size: 13px;
-        font-family: Roboto;
-        font-weight: 600;
-    }
-
-    #label {
-        padding: 10px;
-    }
-</style>

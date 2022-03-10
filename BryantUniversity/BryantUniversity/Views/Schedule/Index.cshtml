@@ -2,10 +2,9 @@
 @{
     ViewBag.Title = "Index";
 }
-<h5> Schedule </h5>
 <div class="container">
     <div class="row">
-        <div class="col">
+        <div class="col-sm-3">
             @if (Model.IsPreviousSemesterConflict)
             {
                 <h5> You can no longer register for this semester </h5>
@@ -52,9 +51,9 @@
             }
         </div>
         <div class="col-sm">
-            <h2>Select Term</h2>
+            <h2>Select A Term And Department</h2>
         </div>
-        <div class="col-md-5">
+        <div class="col-sm-3">
 
         </div>
     </div>
@@ -62,65 +61,69 @@
     {
         @Html.AntiForgeryToken()
         <div class="row">
-            <div class="col">
+            <div class="col-sm-3">
                 <input id="myInput" class="form-control" type="text" placeholder="Search..">
             </div>
-            <div class="col">
+            <div class="col-sm-3">
 
                 @Html.LabelFor(model => model.PeriodId, htmlAttributes: new { @class = "control-label col-md-2" })
                 @Html.DropDownListFor(model => model.PeriodId, Model.PeriodList, "Period", new { @class = "form-control required", id = "period-list" })
                 @Html.ValidationMessageFor(model => model.PeriodId)
             </div>
-            <div class="col">
+            <div class="col-sm-3">
 
                 @Html.LabelFor(model => model.DepartmentId, htmlAttributes: new { @class = "control-label col-md-2" })
                 @Html.DropDownListFor(model => model.DepartmentId, Model.DepartmentList, "Department", new { @class = "form-control required", id = "period-list" })
                 @Html.ValidationMessageFor(model => model.DepartmentId)
             </div>
-           
 
-            <div class="col">
+
+            <div class="col-sm-3">
                 <button type="submit" class="btn btn-success rounded">Submit</button>
             </div>
         </div>
-    }
-    @if (Model.DisplayCourses)
-    {
-        <div class="row">
-            <div class="col">
-                <table class="table">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th>Course Id</th>
-                            <th>Course Name</th>
-                            <th>Description</th>
-                            <th>Course Level</th>
-                            <th>Department Name</th>
-                            <th>Credits</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody id="myTable">
-                        @foreach (var course in Model.Courses)
-                        {
-                            <tr>
-                                <td>@course.CourseTitleId</td>
-                                <td>@course.CourseTitle</td>
-                                <td>@course.Description</td>
-                                <td>@course.CourseLevel.Level.Value</td>
-                                <td>@course.Department.Name</td>
-                                <td>@course.Credits</td>
-                                <td>
-                                    @Html.ActionLink("See Sections", "Index", "CourseSection", new { id = course.Id, semesterPeriodId = Model.PeriodId }, new { @class = "btn btn-info" })
-                                </td>
-                            </tr>
-                        }
-                    </tbody>
-                </table>
+       
+            }
+
+            <div class="row">
+                <div class="col">
+                    @if (Model.DisplayCourses)
+                    {
+
+                        <table class="table">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>Course Id</th>
+                                    <th>Course Name</th>
+                                    <th>Description</th>
+                                    <th>Course Level</th>
+                                    <th>Department Name</th>
+                                    <th>Credits</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody id="myTable">
+                                @foreach (var course in Model.Courses)
+                                {
+                                    <tr>
+                                        <td>@course.CourseTitleId</td>
+                                        <td>@course.CourseTitle</td>
+                                        <td>@course.Description</td>
+                                        <td>@course.CourseLevel.Level.Value</td>
+                                        <td>@course.Department.Name</td>
+                                        <td>@course.Credits</td>
+                                        <td>
+                                            @Html.ActionLink("See Sections", "Index", "CourseSection", new { id = course.Id, semesterPeriodId = Model.PeriodId }, new { @class = "btn btn-info" })
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    }
+                </div>
             </div>
+
         </div>
-    }
-</div>
 
 <script src="~/scripts/Schedule.js"></script>
 <script>
